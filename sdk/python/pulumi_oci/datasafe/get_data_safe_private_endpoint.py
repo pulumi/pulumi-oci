@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -262,9 +267,6 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[str] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_data_safe_private_endpoint)
 def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafePrivateEndpointResult]:
     """
@@ -284,4 +286,24 @@ def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optiona
 
     :param str data_safe_private_endpoint_id: The OCID of the private endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['dataSafePrivateEndpointId'] = data_safe_private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint', __args__, opts=opts, typ=GetDataSafePrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetDataSafePrivateEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_safe_private_endpoint_id=pulumi.get(__response__, 'data_safe_private_endpoint_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoint_fqdn=pulumi.get(__response__, 'endpoint_fqdn'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        private_endpoint_ip=pulumi.get(__response__, 'private_endpoint_ip'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

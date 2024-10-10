@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
-
-
-@_utilities.lift_output_func(get_monitored_resource_task)
 def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTaskResult]:
     """
@@ -246,4 +248,21 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
 
     :param str monitored_resource_task_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of stack monitoring resource task.
     """
-    ...
+    __args__ = dict()
+    __args__['monitoredResourceTaskId'] = monitored_resource_task_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask', __args__, opts=opts, typ=GetMonitoredResourceTaskResult)
+    return __ret__.apply(lambda __response__: GetMonitoredResourceTaskResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        monitored_resource_task_id=pulumi.get(__response__, 'monitored_resource_task_id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        task_details=pulumi.get(__response__, 'task_details'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        work_request_ids=pulumi.get(__response__, 'work_request_ids')))

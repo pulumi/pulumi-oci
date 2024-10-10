@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -186,9 +191,6 @@ def get_commitment(commitment_id: Optional[str] = None,
         used_amount=pulumi.get(__ret__, 'used_amount'),
         x_one_gateway_subscription_id=pulumi.get(__ret__, 'x_one_gateway_subscription_id'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-
-
-@_utilities.lift_output_func(get_commitment)
 def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
                           x_one_gateway_subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                           x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
@@ -214,4 +216,20 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
     :param str x_one_gateway_subscription_id: This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
     :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
     """
-    ...
+    __args__ = dict()
+    __args__['commitmentId'] = commitment_id
+    __args__['xOneGatewaySubscriptionId'] = x_one_gateway_subscription_id
+    __args__['xOneOriginRegion'] = x_one_origin_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsubSubscription/getCommitment:getCommitment', __args__, opts=opts, typ=GetCommitmentResult)
+    return __ret__.apply(lambda __response__: GetCommitmentResult(
+        available_amount=pulumi.get(__response__, 'available_amount'),
+        commitment_id=pulumi.get(__response__, 'commitment_id'),
+        funded_allocation_value=pulumi.get(__response__, 'funded_allocation_value'),
+        id=pulumi.get(__response__, 'id'),
+        quantity=pulumi.get(__response__, 'quantity'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start'),
+        used_amount=pulumi.get(__response__, 'used_amount'),
+        x_one_gateway_subscription_id=pulumi.get(__response__, 'x_one_gateway_subscription_id'),
+        x_one_origin_region=pulumi.get(__response__, 'x_one_origin_region')))

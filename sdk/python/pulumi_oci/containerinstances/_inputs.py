@@ -4,15 +4,35 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetContainerInstanceShapesFilterArgs',
+    'GetContainerInstanceShapesFilterArgsDict',
     'GetContainerInstancesFilterArgs',
+    'GetContainerInstancesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetContainerInstanceShapesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name identifying the shape.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainerInstanceShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetContainerInstanceShapesFilterArgs:
@@ -58,6 +78,17 @@ class GetContainerInstanceShapesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetContainerInstancesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the volume. This must be unique within a single container instance.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainerInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetContainerInstancesFilterArgs:

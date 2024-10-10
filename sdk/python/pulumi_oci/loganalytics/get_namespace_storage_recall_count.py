@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -145,9 +150,6 @@ def get_namespace_storage_recall_count(namespace: Optional[str] = None,
         recall_limit=pulumi.get(__ret__, 'recall_limit'),
         recall_pending=pulumi.get(__ret__, 'recall_pending'),
         recall_succeeded=pulumi.get(__ret__, 'recall_succeeded'))
-
-
-@_utilities.lift_output_func(get_namespace_storage_recall_count)
 def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageRecallCountResult]:
     """
@@ -167,4 +169,15 @@ def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[s
 
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageRecallCount:getNamespaceStorageRecallCount', __args__, opts=opts, typ=GetNamespaceStorageRecallCountResult)
+    return __ret__.apply(lambda __response__: GetNamespaceStorageRecallCountResult(
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        recall_count=pulumi.get(__response__, 'recall_count'),
+        recall_failed=pulumi.get(__response__, 'recall_failed'),
+        recall_limit=pulumi.get(__response__, 'recall_limit'),
+        recall_pending=pulumi.get(__response__, 'recall_pending'),
+        recall_succeeded=pulumi.get(__response__, 'recall_succeeded')))

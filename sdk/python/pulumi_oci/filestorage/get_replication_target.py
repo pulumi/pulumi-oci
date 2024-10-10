@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -275,9 +280,6 @@ def get_replication_target(replication_target_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_replication_target)
 def get_replication_target_output(replication_target_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationTargetResult]:
     """
@@ -297,4 +299,25 @@ def get_replication_target_output(replication_target_id: Optional[pulumi.Input[s
 
     :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target.
     """
-    ...
+    __args__ = dict()
+    __args__['replicationTargetId'] = replication_target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getReplicationTarget:getReplicationTarget', __args__, opts=opts, typ=GetReplicationTargetResult)
+    return __ret__.apply(lambda __response__: GetReplicationTargetResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delta_progress=pulumi.get(__response__, 'delta_progress'),
+        delta_status=pulumi.get(__response__, 'delta_status'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        last_snapshot_id=pulumi.get(__response__, 'last_snapshot_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        recovery_point_time=pulumi.get(__response__, 'recovery_point_time'),
+        replication_id=pulumi.get(__response__, 'replication_id'),
+        replication_target_id=pulumi.get(__response__, 'replication_target_id'),
+        source_id=pulumi.get(__response__, 'source_id'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -166,9 +171,6 @@ def get_usagelimits(compartment_id: Optional[str] = None,
         service_type=pulumi.get(__ret__, 'service_type'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         usage_limit_collections=pulumi.get(__ret__, 'usage_limit_collections'))
-
-
-@_utilities.lift_output_func(get_usagelimits)
 def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict']]]]] = None,
                            limit_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,4 +203,21 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str service_type: Service Name.
     :param str subscription_id: The subscription ID for which rewards information is requested for.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['limitType'] = limit_type
+    __args__['resourceType'] = resource_type
+    __args__['serviceType'] = service_type
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getUsagelimits:getUsagelimits', __args__, opts=opts, typ=GetUsagelimitsResult)
+    return __ret__.apply(lambda __response__: GetUsagelimitsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        limit_type=pulumi.get(__response__, 'limit_type'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        service_type=pulumi.get(__response__, 'service_type'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        usage_limit_collections=pulumi.get(__response__, 'usage_limit_collections')))

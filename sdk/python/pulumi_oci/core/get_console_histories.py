@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_console_histories(availability_domain: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_console_histories)
 def get_console_histories_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConsoleHistoriesFilterArgs', 'GetConsoleHistoriesFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_console_histories_output(availability_domain: Optional[pulumi.Input[Opti
     :param str instance_id: The OCID of the instance.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['instanceId'] = instance_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getConsoleHistories:getConsoleHistories', __args__, opts=opts, typ=GetConsoleHistoriesResult)
+    return __ret__.apply(lambda __response__: GetConsoleHistoriesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        console_histories=pulumi.get(__response__, 'console_histories'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        state=pulumi.get(__response__, 'state')))

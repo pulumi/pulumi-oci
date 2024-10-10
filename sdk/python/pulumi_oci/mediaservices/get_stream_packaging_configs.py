@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         stream_packaging_config_collections=pulumi.get(__ret__, 'stream_packaging_config_collections'),
         stream_packaging_config_id=pulumi.get(__ret__, 'stream_packaging_config_id'))
-
-
-@_utilities.lift_output_func(get_stream_packaging_configs)
 def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         distribution_channel_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamPackagingConfigsFilterArgs', 'GetStreamPackagingConfigsFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
     :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
     :param str stream_packaging_config_id: Unique Stream Packaging Configuration identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['distributionChannelId'] = distribution_channel_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['streamPackagingConfigId'] = stream_packaging_config_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs', __args__, opts=opts, typ=GetStreamPackagingConfigsResult)
+    return __ret__.apply(lambda __response__: GetStreamPackagingConfigsResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_channel_id=pulumi.get(__response__, 'distribution_channel_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        stream_packaging_config_collections=pulumi.get(__response__, 'stream_packaging_config_collections'),
+        stream_packaging_config_id=pulumi.get(__response__, 'stream_packaging_config_id')))

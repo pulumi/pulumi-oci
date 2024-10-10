@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_news_reports(compartment_id: Optional[str] = None,
         news_report_id=pulumi.get(__ret__, 'news_report_id'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_news_reports)
 def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNewsReportsFilterArgs', 'GetNewsReportsFilterArgsDict']]]]] = None,
@@ -207,4 +209,21 @@ def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['newsReportId'] = news_report_id
+    __args__['states'] = states
+    __args__['statuses'] = statuses
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getNewsReports:getNewsReports', __args__, opts=opts, typ=GetNewsReportsResult)
+    return __ret__.apply(lambda __response__: GetNewsReportsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        news_report_collections=pulumi.get(__response__, 'news_report_collections'),
+        news_report_id=pulumi.get(__response__, 'news_report_id'),
+        states=pulumi.get(__response__, 'states'),
+        statuses=pulumi.get(__response__, 'statuses')))

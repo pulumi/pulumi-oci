@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -320,9 +325,6 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
         software_source_types=pulumi.get(__ret__, 'software_source_types'),
         states=pulumi.get(__ret__, 'states'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_software_sources)
 def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 availabilities: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 availability_anywheres: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -383,4 +385,39 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     :param Sequence[str] states: A filter to return only software sources whose state matches the given state.
     :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
-    ...
+    __args__ = dict()
+    __args__['archTypes'] = arch_types
+    __args__['availabilities'] = availabilities
+    __args__['availabilityAnywheres'] = availability_anywheres
+    __args__['availabilityAtOcis'] = availability_at_ocis
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNameNotEqualTos'] = display_name_not_equal_tos
+    __args__['filters'] = filters
+    __args__['isMandatoryForAutonomousLinux'] = is_mandatory_for_autonomous_linux
+    __args__['osFamilies'] = os_families
+    __args__['softwareSourceId'] = software_source_id
+    __args__['softwareSourceTypes'] = software_source_types
+    __args__['states'] = states
+    __args__['vendorName'] = vendor_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSources:getSoftwareSources', __args__, opts=opts, typ=GetSoftwareSourcesResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourcesResult(
+        arch_types=pulumi.get(__response__, 'arch_types'),
+        availabilities=pulumi.get(__response__, 'availabilities'),
+        availability_anywheres=pulumi.get(__response__, 'availability_anywheres'),
+        availability_at_ocis=pulumi.get(__response__, 'availability_at_ocis'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_name_not_equal_tos=pulumi.get(__response__, 'display_name_not_equal_tos'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_mandatory_for_autonomous_linux=pulumi.get(__response__, 'is_mandatory_for_autonomous_linux'),
+        os_families=pulumi.get(__response__, 'os_families'),
+        software_source_collections=pulumi.get(__response__, 'software_source_collections'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        software_source_types=pulumi.get(__response__, 'software_source_types'),
+        states=pulumi.get(__response__, 'states'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

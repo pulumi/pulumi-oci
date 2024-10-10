@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -251,9 +256,6 @@ def get_script(apm_domain_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_uploaded=pulumi.get(__ret__, 'time_uploaded'))
-
-
-@_utilities.lift_output_func(get_script)
 def get_script_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       script_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScriptResult]:
@@ -276,4 +278,24 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str script_id: The OCID of the script.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['scriptId'] = script_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getScript:getScript', __args__, opts=opts, typ=GetScriptResult)
+    return __ret__.apply(lambda __response__: GetScriptResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        content=pulumi.get(__response__, 'content'),
+        content_file_name=pulumi.get(__response__, 'content_file_name'),
+        content_size_in_bytes=pulumi.get(__response__, 'content_size_in_bytes'),
+        content_type=pulumi.get(__response__, 'content_type'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        monitor_status_count_maps=pulumi.get(__response__, 'monitor_status_count_maps'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        script_id=pulumi.get(__response__, 'script_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        time_uploaded=pulumi.get(__response__, 'time_uploaded')))

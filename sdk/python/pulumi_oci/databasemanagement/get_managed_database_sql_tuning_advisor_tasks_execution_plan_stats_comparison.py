@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -165,9 +170,6 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
         originals=pulumi.get(__ret__, 'originals'),
         sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison)
 def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison_output(execution_id: Optional[pulumi.Input[str]] = None,
                                                                                          managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                                          opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,4 +203,20 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['executionId'] = execution_id
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['sqlObjectId'] = sql_object_id
+    __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult(
+        execution_id=pulumi.get(__response__, 'execution_id'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        modifieds=pulumi.get(__response__, 'modifieds'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        originals=pulumi.get(__response__, 'originals'),
+        sql_object_id=pulumi.get(__response__, 'sql_object_id'),
+        sql_tuning_advisor_task_id=pulumi.get(__response__, 'sql_tuning_advisor_task_id')))

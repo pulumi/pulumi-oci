@@ -4,28 +4,59 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ManagedInstanceAutonomouseArgs',
+    'ManagedInstanceAutonomouseArgsDict',
     'ManagedInstanceChildSoftwareSourceArgs',
+    'ManagedInstanceChildSoftwareSourceArgsDict',
     'ManagedInstanceGroupManagedInstanceArgs',
+    'ManagedInstanceGroupManagedInstanceArgsDict',
     'ManagedInstanceManagedInstanceGroupArgs',
+    'ManagedInstanceManagedInstanceGroupArgsDict',
     'ManagedInstanceManagementChildSoftwareSourceArgs',
+    'ManagedInstanceManagementChildSoftwareSourceArgsDict',
     'ManagedInstanceManagementManagedInstanceGroupArgs',
+    'ManagedInstanceManagementManagedInstanceGroupArgsDict',
     'ManagedInstanceManagementParentSoftwareSourceArgs',
+    'ManagedInstanceManagementParentSoftwareSourceArgsDict',
     'ManagedInstanceParentSoftwareSourceArgs',
+    'ManagedInstanceParentSoftwareSourceArgsDict',
     'SoftwareSourceAssociatedManagedInstanceArgs',
+    'SoftwareSourceAssociatedManagedInstanceArgsDict',
     'GetManagedInstanceGroupsFilterArgs',
+    'GetManagedInstanceGroupsFilterArgsDict',
     'GetManagedInstanceModuleStreamsFilterArgs',
+    'GetManagedInstanceModuleStreamsFilterArgsDict',
     'GetManagedInstanceStreamProfileFilterArgs',
+    'GetManagedInstanceStreamProfileFilterArgsDict',
     'GetManagedInstancesFilterArgs',
+    'GetManagedInstancesFilterArgsDict',
     'GetSoftwareSourceStreamProfileFilterArgs',
+    'GetSoftwareSourceStreamProfileFilterArgsDict',
     'GetSoftwareSourcesFilterArgs',
+    'GetSoftwareSourcesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ManagedInstanceAutonomouseArgsDict(TypedDict):
+        is_auto_update_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        True if daily updates are enabled
+        """
+elif False:
+    ManagedInstanceAutonomouseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceAutonomouseArgs:
@@ -49,6 +80,19 @@ class ManagedInstanceAutonomouseArgs:
     def is_auto_update_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_auto_update_enabled", value)
 
+
+if not MYPY:
+    class ManagedInstanceChildSoftwareSourceArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        software source identifier
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        software source name
+        """
+elif False:
+    ManagedInstanceChildSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceChildSoftwareSourceArgs:
@@ -89,6 +133,19 @@ class ManagedInstanceChildSoftwareSourceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupManagedInstanceArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Managed Instance Group identifier
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        unique identifier that is immutable on creation
+        """
+elif False:
+    ManagedInstanceGroupManagedInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupManagedInstanceArgs:
     def __init__(__self__, *,
@@ -127,6 +184,19 @@ class ManagedInstanceGroupManagedInstanceArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ManagedInstanceManagedInstanceGroupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        User friendly name
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        software source identifier
+        """
+elif False:
+    ManagedInstanceManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceManagedInstanceGroupArgs:
@@ -167,6 +237,19 @@ class ManagedInstanceManagedInstanceGroupArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class ManagedInstanceManagementChildSoftwareSourceArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        software source identifier
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        software source name
+        """
+elif False:
+    ManagedInstanceManagementChildSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceManagementChildSoftwareSourceArgs:
     def __init__(__self__, *,
@@ -206,6 +289,19 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ManagedInstanceManagementManagedInstanceGroupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        User friendly name
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        unique identifier that is immutable on creation
+        """
+elif False:
+    ManagedInstanceManagementManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceManagementManagedInstanceGroupArgs:
     def __init__(__self__, *,
@@ -244,6 +340,23 @@ class ManagedInstanceManagementManagedInstanceGroupArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ManagedInstanceManagementParentSoftwareSourceArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        software source identifier
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        software source name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceManagementParentSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceManagementParentSoftwareSourceArgs:
@@ -292,6 +405,19 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ManagedInstanceParentSoftwareSourceArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        software source identifier
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        software source name
+        """
+elif False:
+    ManagedInstanceParentSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceParentSoftwareSourceArgs:
     def __init__(__self__, *,
@@ -330,6 +456,19 @@ class ManagedInstanceParentSoftwareSourceArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class SoftwareSourceAssociatedManagedInstanceArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User friendly name for the software source
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        OCID for the Software Source
+        """
+elif False:
+    SoftwareSourceAssociatedManagedInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SoftwareSourceAssociatedManagedInstanceArgs:
@@ -370,6 +509,14 @@ class SoftwareSourceAssociatedManagedInstanceArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class GetManagedInstanceGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceGroupsFilterArgs:
     def __init__(__self__, *,
@@ -408,6 +555,14 @@ class GetManagedInstanceGroupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceModuleStreamsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceModuleStreamsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceModuleStreamsFilterArgs:
@@ -448,6 +603,14 @@ class GetManagedInstanceModuleStreamsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceStreamProfileFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceStreamProfileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceStreamProfileFilterArgs:
     def __init__(__self__, *,
@@ -486,6 +649,17 @@ class GetManagedInstanceStreamProfileFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstancesFilterArgsDict(TypedDict):
+        name: str
+        """
+        software source name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstancesFilterArgs:
@@ -532,6 +706,14 @@ class GetManagedInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwareSourceStreamProfileFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceStreamProfileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwareSourceStreamProfileFilterArgs:
     def __init__(__self__, *,
@@ -570,6 +752,14 @@ class GetSoftwareSourceStreamProfileFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSoftwareSourcesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSoftwareSourcesFilterArgs:

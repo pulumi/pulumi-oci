@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_db_nodes(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_db_nodes)
 def get_db_nodes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         db_server_id: Optional[pulumi.Input[Optional[str]]] = None,
                         db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -207,4 +209,21 @@ def get_db_nodes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['dbServerId'] = db_server_id
+    __args__['dbSystemId'] = db_system_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['vmClusterId'] = vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodes:getDbNodes', __args__, opts=opts, typ=GetDbNodesResult)
+    return __ret__.apply(lambda __response__: GetDbNodesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_nodes=pulumi.get(__response__, 'db_nodes'),
+        db_server_id=pulumi.get(__response__, 'db_server_id'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

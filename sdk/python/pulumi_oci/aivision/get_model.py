@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -419,9 +424,6 @@ def get_model(model_id: Optional[str] = None,
         trained_duration_in_hours=pulumi.get(__ret__, 'trained_duration_in_hours'),
         training_datasets=pulumi.get(__ret__, 'training_datasets'),
         validation_datasets=pulumi.get(__ret__, 'validation_datasets'))
-
-
-@_utilities.lift_output_func(get_model)
 def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
@@ -441,4 +443,36 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
 
     :param str model_id: unique Model identifier
     """
-    ...
+    __args__ = dict()
+    __args__['modelId'] = model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AiVision/getModel:getModel', __args__, opts=opts, typ=GetModelResult)
+    return __ret__.apply(lambda __response__: GetModelResult(
+        average_precision=pulumi.get(__response__, 'average_precision'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        confidence_threshold=pulumi.get(__response__, 'confidence_threshold'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_quick_mode=pulumi.get(__response__, 'is_quick_mode'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        max_training_duration_in_hours=pulumi.get(__response__, 'max_training_duration_in_hours'),
+        metrics=pulumi.get(__response__, 'metrics'),
+        model_id=pulumi.get(__response__, 'model_id'),
+        model_type=pulumi.get(__response__, 'model_type'),
+        model_version=pulumi.get(__response__, 'model_version'),
+        precision=pulumi.get(__response__, 'precision'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        recall=pulumi.get(__response__, 'recall'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        test_image_count=pulumi.get(__response__, 'test_image_count'),
+        testing_datasets=pulumi.get(__response__, 'testing_datasets'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        total_image_count=pulumi.get(__response__, 'total_image_count'),
+        trained_duration_in_hours=pulumi.get(__response__, 'trained_duration_in_hours'),
+        training_datasets=pulumi.get(__response__, 'training_datasets'),
+        validation_datasets=pulumi.get(__response__, 'validation_datasets')))

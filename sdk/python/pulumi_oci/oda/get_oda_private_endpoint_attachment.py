@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -158,9 +163,6 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_oda_private_endpoint_attachment)
 def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentResult]:
     """
@@ -180,4 +182,16 @@ def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_i
 
     :param str oda_private_endpoint_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint Attachment.
     """
-    ...
+    __args__ = dict()
+    __args__['odaPrivateEndpointAttachmentId'] = oda_private_endpoint_attachment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaPrivateEndpointAttachment:getOdaPrivateEndpointAttachment', __args__, opts=opts, typ=GetOdaPrivateEndpointAttachmentResult)
+    return __ret__.apply(lambda __response__: GetOdaPrivateEndpointAttachmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        oda_instance_id=pulumi.get(__response__, 'oda_instance_id'),
+        oda_private_endpoint_attachment_id=pulumi.get(__response__, 'oda_private_endpoint_attachment_id'),
+        oda_private_endpoint_id=pulumi.get(__response__, 'oda_private_endpoint_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

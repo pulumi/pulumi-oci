@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
         size=pulumi.get(__ret__, 'size'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_instance_pool)
 def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolResult]:
     """
@@ -272,4 +274,23 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = Non
 
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
     """
-    ...
+    __args__ = dict()
+    __args__['instancePoolId'] = instance_pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstancePool:getInstancePool', __args__, opts=opts, typ=GetInstancePoolResult)
+    return __ret__.apply(lambda __response__: GetInstancePoolResult(
+        actual_size=pulumi.get(__response__, 'actual_size'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),
+        instance_display_name_formatter=pulumi.get(__response__, 'instance_display_name_formatter'),
+        instance_hostname_formatter=pulumi.get(__response__, 'instance_hostname_formatter'),
+        instance_pool_id=pulumi.get(__response__, 'instance_pool_id'),
+        load_balancers=pulumi.get(__response__, 'load_balancers'),
+        placement_configurations=pulumi.get(__response__, 'placement_configurations'),
+        size=pulumi.get(__response__, 'size'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

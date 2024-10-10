@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -239,9 +244,6 @@ def get_database_upgrade_history_entry(database_id: Optional[str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         upgrade_history_entry_id=pulumi.get(__ret__, 'upgrade_history_entry_id'))
-
-
-@_utilities.lift_output_func(get_database_upgrade_history_entry)
 def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input[str]] = None,
                                               upgrade_history_entry_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseUpgradeHistoryEntryResult]:
@@ -264,4 +266,23 @@ def get_database_upgrade_history_entry_output(database_id: Optional[pulumi.Input
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str upgrade_history_entry_id: The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['upgradeHistoryEntryId'] = upgrade_history_entry_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry', __args__, opts=opts, typ=GetDatabaseUpgradeHistoryEntryResult)
+    return __ret__.apply(lambda __response__: GetDatabaseUpgradeHistoryEntryResult(
+        action=pulumi.get(__response__, 'action'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        options=pulumi.get(__response__, 'options'),
+        source=pulumi.get(__response__, 'source'),
+        source_db_home_id=pulumi.get(__response__, 'source_db_home_id'),
+        state=pulumi.get(__response__, 'state'),
+        target_database_software_image_id=pulumi.get(__response__, 'target_database_software_image_id'),
+        target_db_home_id=pulumi.get(__response__, 'target_db_home_id'),
+        target_db_version=pulumi.get(__response__, 'target_db_version'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        upgrade_history_entry_id=pulumi.get(__response__, 'upgrade_history_entry_id')))

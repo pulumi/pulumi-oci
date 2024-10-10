@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -123,9 +128,6 @@ def get_console_history_data(console_history_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         length=pulumi.get(__ret__, 'length'),
         offset=pulumi.get(__ret__, 'offset'))
-
-
-@_utilities.lift_output_func(get_console_history_data)
 def get_console_history_data_output(console_history_id: Optional[pulumi.Input[str]] = None,
                                     length: Optional[pulumi.Input[Optional[int]]] = None,
                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
@@ -153,4 +155,15 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
     :param int length: Length of the snapshot data to retrieve. Cannot be less than 10240.
     :param int offset: Offset of the snapshot data to retrieve.
     """
-    ...
+    __args__ = dict()
+    __args__['consoleHistoryId'] = console_history_id
+    __args__['length'] = length
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getConsoleHistoryData:getConsoleHistoryData', __args__, opts=opts, typ=GetConsoleHistoryDataResult)
+    return __ret__.apply(lambda __response__: GetConsoleHistoryDataResult(
+        console_history_id=pulumi.get(__response__, 'console_history_id'),
+        data=pulumi.get(__response__, 'data'),
+        id=pulumi.get(__response__, 'id'),
+        length=pulumi.get(__response__, 'length'),
+        offset=pulumi.get(__response__, 'offset')))

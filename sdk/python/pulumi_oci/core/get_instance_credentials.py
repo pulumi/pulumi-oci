@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -107,9 +112,6 @@ def get_instance_credentials(instance_id: Optional[str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         password=pulumi.get(__ret__, 'password'),
         username=pulumi.get(__ret__, 'username'))
-
-
-@_utilities.lift_output_func(get_instance_credentials)
 def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceCredentialsResult]:
     """
@@ -130,4 +132,12 @@ def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = N
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
     """
-    ...
+    __args__ = dict()
+    __args__['instanceId'] = instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceCredentials:getInstanceCredentials', __args__, opts=opts, typ=GetInstanceCredentialsResult)
+    return __ret__.apply(lambda __response__: GetInstanceCredentialsResult(
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        password=pulumi.get(__response__, 'password'),
+        username=pulumi.get(__response__, 'username')))

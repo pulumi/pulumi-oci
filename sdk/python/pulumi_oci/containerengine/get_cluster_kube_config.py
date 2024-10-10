@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -135,9 +140,6 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
         expiration=pulumi.get(__ret__, 'expiration'),
         id=pulumi.get(__ret__, 'id'),
         token_version=pulumi.get(__ret__, 'token_version'))
-
-
-@_utilities.lift_output_func(get_cluster_kube_config)
 def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = None,
                                    endpoint: Optional[pulumi.Input[Optional[str]]] = None,
                                    expiration: Optional[pulumi.Input[Optional[int]]] = None,
@@ -166,4 +168,17 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
     :param int expiration: Deprecated. This field is no longer used.
     :param str token_version: The version of the kubeconfig token. Supported value 2.0.0
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['endpoint'] = endpoint
+    __args__['expiration'] = expiration
+    __args__['tokenVersion'] = token_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig', __args__, opts=opts, typ=GetClusterKubeConfigResult)
+    return __ret__.apply(lambda __response__: GetClusterKubeConfigResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        content=pulumi.get(__response__, 'content'),
+        endpoint=pulumi.get(__response__, 'endpoint'),
+        expiration=pulumi.get(__response__, 'expiration'),
+        id=pulumi.get(__response__, 'id'),
+        token_version=pulumi.get(__response__, 'token_version')))

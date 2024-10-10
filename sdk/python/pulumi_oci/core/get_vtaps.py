@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -230,9 +235,6 @@ def get_vtaps(compartment_id: Optional[str] = None,
         target_ip=pulumi.get(__ret__, 'target_ip'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vtaps=pulumi.get(__ret__, 'vtaps'))
-
-
-@_utilities.lift_output_func(get_vtaps)
 def get_vtaps_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVtapsFilterArgs', 'GetVtapsFilterArgsDict']]]]] = None,
@@ -276,4 +278,27 @@ def get_vtaps_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str target_ip: The IP address of the VTAP target.
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isVtapEnabled'] = is_vtap_enabled
+    __args__['source'] = source
+    __args__['state'] = state
+    __args__['targetId'] = target_id
+    __args__['targetIp'] = target_ip
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVtaps:getVtaps', __args__, opts=opts, typ=GetVtapsResult)
+    return __ret__.apply(lambda __response__: GetVtapsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_vtap_enabled=pulumi.get(__response__, 'is_vtap_enabled'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_ip=pulumi.get(__response__, 'target_ip'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        vtaps=pulumi.get(__response__, 'vtaps')))

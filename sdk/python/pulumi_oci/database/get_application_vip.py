@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -220,9 +225,6 @@ def get_application_vip(application_vip_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_assigned=pulumi.get(__ret__, 'time_assigned'))
-
-
-@_utilities.lift_output_func(get_application_vip)
 def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationVipResult]:
     """
@@ -242,4 +244,21 @@ def get_application_vip_output(application_vip_id: Optional[pulumi.Input[str]] =
 
     :param str application_vip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationVipId'] = application_vip_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getApplicationVip:getApplicationVip', __args__, opts=opts, typ=GetApplicationVipResult)
+    return __ret__.apply(lambda __response__: GetApplicationVipResult(
+        application_vip_id=pulumi.get(__response__, 'application_vip_id'),
+        cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_node_id=pulumi.get(__response__, 'db_node_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname_label=pulumi.get(__response__, 'hostname_label'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_assigned=pulumi.get(__response__, 'time_assigned')))

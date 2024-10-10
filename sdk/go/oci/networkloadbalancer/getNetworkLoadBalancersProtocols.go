@@ -30,7 +30,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancersProtocols(ctx, nil, nil)
+//			_, err := NetworkLoadBalancer.GetNetworkLoadBalancersProtocols(ctx, &networkloadbalancer.GetNetworkLoadBalancersProtocolsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -367,9 +372,6 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
         status=pulumi.get(__ret__, 'status'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_sensitive_data_models_sensitive_column)
 def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Optional[pulumi.Input[str]] = None,
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnResult]:
@@ -392,4 +394,33 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
     :param str sensitive_column_key: The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
     :param str sensitive_data_model_id: The OCID of the sensitive data model.
     """
-    ...
+    __args__ = dict()
+    __args__['sensitiveColumnKey'] = sensitive_column_key
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnResult)
+    return __ret__.apply(lambda __response__: GetSensitiveDataModelsSensitiveColumnResult(
+        app_defined_child_column_keys=pulumi.get(__response__, 'app_defined_child_column_keys'),
+        app_name=pulumi.get(__response__, 'app_name'),
+        column_groups=pulumi.get(__response__, 'column_groups'),
+        column_name=pulumi.get(__response__, 'column_name'),
+        data_type=pulumi.get(__response__, 'data_type'),
+        db_defined_child_column_keys=pulumi.get(__response__, 'db_defined_child_column_keys'),
+        estimated_data_value_count=pulumi.get(__response__, 'estimated_data_value_count'),
+        id=pulumi.get(__response__, 'id'),
+        key=pulumi.get(__response__, 'key'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        object=pulumi.get(__response__, 'object'),
+        object_type=pulumi.get(__response__, 'object_type'),
+        parent_column_keys=pulumi.get(__response__, 'parent_column_keys'),
+        relation_type=pulumi.get(__response__, 'relation_type'),
+        sample_data_values=pulumi.get(__response__, 'sample_data_values'),
+        schema_name=pulumi.get(__response__, 'schema_name'),
+        sensitive_column_key=pulumi.get(__response__, 'sensitive_column_key'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

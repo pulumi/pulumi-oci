@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_dkims(email_domain_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_dkims)
 def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDkimsFilterArgs', 'GetDkimsFilterArgsDict']]]]] = None,
                      id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -180,4 +182,18 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     :param str name: A filter to only return resources that match the given name exactly.
     :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['emailDomainId'] = email_domain_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getDkims:getDkims', __args__, opts=opts, typ=GetDkimsResult)
+    return __ret__.apply(lambda __response__: GetDkimsResult(
+        dkim_collections=pulumi.get(__response__, 'dkim_collections'),
+        email_domain_id=pulumi.get(__response__, 'email_domain_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

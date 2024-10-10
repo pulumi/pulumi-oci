@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -353,9 +358,6 @@ def get_delegation_control(delegation_control_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_key_id=pulumi.get(__ret__, 'vault_key_id'))
-
-
-@_utilities.lift_output_func(get_delegation_control)
 def get_delegation_control_output(delegation_control_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegationControlResult]:
     """
@@ -375,4 +377,31 @@ def get_delegation_control_output(delegation_control_id: Optional[pulumi.Input[s
 
     :param str delegation_control_id: unique Delegation Control identifier
     """
-    ...
+    __args__ = dict()
+    __args__['delegationControlId'] = delegation_control_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegationControl:getDelegationControl', __args__, opts=opts, typ=GetDelegationControlResult)
+    return __ret__.apply(lambda __response__: GetDelegationControlResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delegation_control_id=pulumi.get(__response__, 'delegation_control_id'),
+        delegation_subscription_ids=pulumi.get(__response__, 'delegation_subscription_ids'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_approve_during_maintenance=pulumi.get(__response__, 'is_auto_approve_during_maintenance'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        notification_message_format=pulumi.get(__response__, 'notification_message_format'),
+        notification_topic_id=pulumi.get(__response__, 'notification_topic_id'),
+        num_approvals_required=pulumi.get(__response__, 'num_approvals_required'),
+        pre_approved_service_provider_action_names=pulumi.get(__response__, 'pre_approved_service_provider_action_names'),
+        resource_ids=pulumi.get(__response__, 'resource_ids'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_deleted=pulumi.get(__response__, 'time_deleted'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        vault_key_id=pulumi.get(__response__, 'vault_key_id')))

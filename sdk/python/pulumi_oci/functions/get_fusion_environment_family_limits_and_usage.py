@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -120,9 +125,6 @@ def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id:
         id=pulumi.get(__ret__, 'id'),
         production_limit_and_usages=pulumi.get(__ret__, 'production_limit_and_usages'),
         test_limit_and_usages=pulumi.get(__ret__, 'test_limit_and_usages'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_family_limits_and_usage)
 def get_fusion_environment_family_limits_and_usage_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult]:
     """
@@ -142,4 +144,13 @@ def get_fusion_environment_family_limits_and_usage_output(fusion_environment_fam
 
     :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentFamilyLimitsAndUsage:getFusionEnvironmentFamilyLimitsAndUsage', __args__, opts=opts, typ=GetFusionEnvironmentFamilyLimitsAndUsageResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentFamilyLimitsAndUsageResult(
+        development_limit_and_usages=pulumi.get(__response__, 'development_limit_and_usages'),
+        fusion_environment_family_id=pulumi.get(__response__, 'fusion_environment_family_id'),
+        id=pulumi.get(__response__, 'id'),
+        production_limit_and_usages=pulumi.get(__response__, 'production_limit_and_usages'),
+        test_limit_and_usages=pulumi.get(__response__, 'test_limit_and_usages')))

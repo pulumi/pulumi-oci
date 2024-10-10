@@ -4,17 +4,37 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'RedisClusterNodeCollectionArgs',
+    'RedisClusterNodeCollectionArgsDict',
     'RedisClusterNodeCollectionItemArgs',
+    'RedisClusterNodeCollectionItemArgsDict',
     'GetRedisClusterNodesFilterArgs',
+    'GetRedisClusterNodesFilterArgsDict',
     'GetRedisClustersFilterArgs',
+    'GetRedisClustersFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class RedisClusterNodeCollectionArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]
+        """
+        Collection of node objects.
+        """
+elif False:
+    RedisClusterNodeCollectionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RedisClusterNodeCollectionArgs:
@@ -38,6 +58,23 @@ class RedisClusterNodeCollectionArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class RedisClusterNodeCollectionItemArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        private_endpoint_fqdn: NotRequired[pulumi.Input[str]]
+        """
+        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+        """
+        private_endpoint_ip_address: NotRequired[pulumi.Input[str]]
+        """
+        The private IP address of the API endpoint to access a specific node.
+        """
+elif False:
+    RedisClusterNodeCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RedisClusterNodeCollectionItemArgs:
@@ -94,6 +131,14 @@ class RedisClusterNodeCollectionItemArgs:
         pulumi.set(self, "private_endpoint_ip_address", value)
 
 
+if not MYPY:
+    class GetRedisClusterNodesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRedisClusterNodesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRedisClusterNodesFilterArgs:
     def __init__(__self__, *,
@@ -132,6 +177,14 @@ class GetRedisClusterNodesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRedisClustersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRedisClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRedisClustersFilterArgs:

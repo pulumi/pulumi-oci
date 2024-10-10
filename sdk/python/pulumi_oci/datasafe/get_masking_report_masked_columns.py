@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -209,9 +214,6 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
         objects=pulumi.get(__ret__, 'objects'),
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-
-
-@_utilities.lift_output_func(get_masking_report_masked_columns)
 def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportMaskedColumnsFilterArgs', 'GetMaskingReportMaskedColumnsFilterArgsDict']]]]] = None,
                                              masking_column_groups: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -250,4 +252,25 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['columnNames'] = column_names
+    __args__['filters'] = filters
+    __args__['maskingColumnGroups'] = masking_column_groups
+    __args__['maskingReportId'] = masking_report_id
+    __args__['objectTypes'] = object_types
+    __args__['objects'] = objects
+    __args__['schemaNames'] = schema_names
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns', __args__, opts=opts, typ=GetMaskingReportMaskedColumnsResult)
+    return __ret__.apply(lambda __response__: GetMaskingReportMaskedColumnsResult(
+        column_names=pulumi.get(__response__, 'column_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        masked_column_collections=pulumi.get(__response__, 'masked_column_collections'),
+        masking_column_groups=pulumi.get(__response__, 'masking_column_groups'),
+        masking_report_id=pulumi.get(__response__, 'masking_report_id'),
+        object_types=pulumi.get(__response__, 'object_types'),
+        objects=pulumi.get(__response__, 'objects'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id')))

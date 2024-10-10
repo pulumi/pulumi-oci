@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
         scheduled_task_collections=pulumi.get(__ret__, 'scheduled_task_collections'),
         target_service=pulumi.get(__ret__, 'target_service'),
         task_type=pulumi.get(__ret__, 'task_type'))
-
-
-@_utilities.lift_output_func(get_namespace_scheduled_tasks)
 def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
@@ -207,4 +209,21 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     :param str target_service: The target service to use for filtering.
     :param str task_type: Required parameter to specify schedule task type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['namespace'] = namespace
+    __args__['targetService'] = target_service
+    __args__['taskType'] = task_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks', __args__, opts=opts, typ=GetNamespaceScheduledTasksResult)
+    return __ret__.apply(lambda __response__: GetNamespaceScheduledTasksResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        scheduled_task_collections=pulumi.get(__response__, 'scheduled_task_collections'),
+        target_service=pulumi.get(__response__, 'target_service'),
+        task_type=pulumi.get(__response__, 'task_type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -159,9 +164,6 @@ def get_action(operator_action_id: Optional[str] = None,
         operator_action_id=pulumi.get(__ret__, 'operator_action_id'),
         properties=pulumi.get(__ret__, 'properties'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-
-
-@_utilities.lift_output_func(get_action)
 def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActionResult]:
     """
@@ -181,4 +183,16 @@ def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
 
     :param str operator_action_id: Unique Oracle supplied identifier associated with the operator action.
     """
-    ...
+    __args__ = dict()
+    __args__['operatorActionId'] = operator_action_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAction:getAction', __args__, opts=opts, typ=GetActionResult)
+    return __ret__.apply(lambda __response__: GetActionResult(
+        component=pulumi.get(__response__, 'component'),
+        customer_display_name=pulumi.get(__response__, 'customer_display_name'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        operator_action_id=pulumi.get(__response__, 'operator_action_id'),
+        properties=pulumi.get(__response__, 'properties'),
+        resource_type=pulumi.get(__response__, 'resource_type')))

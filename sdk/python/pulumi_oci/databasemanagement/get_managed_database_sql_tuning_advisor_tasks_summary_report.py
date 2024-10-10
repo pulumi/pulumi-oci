@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -231,9 +236,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
         task_infos=pulumi.get(__ret__, 'task_infos'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_summary_report)
 def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_exec_id_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                         end_exec_id_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                         managed_database_id: Optional[pulumi.Input[str]] = None,
@@ -274,4 +276,28 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
     :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
     :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
     """
-    ...
+    __args__ = dict()
+    __args__['beginExecIdGreaterThanOrEqualTo'] = begin_exec_id_greater_than_or_equal_to
+    __args__['endExecIdLessThanOrEqualTo'] = end_exec_id_less_than_or_equal_to
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['searchPeriod'] = search_period
+    __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
+    __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
+    __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult(
+        begin_exec_id_greater_than_or_equal_to=pulumi.get(__response__, 'begin_exec_id_greater_than_or_equal_to'),
+        end_exec_id_less_than_or_equal_to=pulumi.get(__response__, 'end_exec_id_less_than_or_equal_to'),
+        id=pulumi.get(__response__, 'id'),
+        index_findings=pulumi.get(__response__, 'index_findings'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        object_stat_findings=pulumi.get(__response__, 'object_stat_findings'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        search_period=pulumi.get(__response__, 'search_period'),
+        sql_tuning_advisor_task_id=pulumi.get(__response__, 'sql_tuning_advisor_task_id'),
+        statistics=pulumi.get(__response__, 'statistics'),
+        task_infos=pulumi.get(__response__, 'task_infos'),
+        time_greater_than_or_equal_to=pulumi.get(__response__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__response__, 'time_less_than_or_equal_to')))

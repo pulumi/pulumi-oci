@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_email_domain(email_domain_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_email_domain)
 def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailDomainResult]:
     """
@@ -258,4 +260,22 @@ def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
 
     :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
     """
-    ...
+    __args__ = dict()
+    __args__['emailDomainId'] = email_domain_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getEmailDomain:getEmailDomain', __args__, opts=opts, typ=GetEmailDomainResult)
+    return __ret__.apply(lambda __response__: GetEmailDomainResult(
+        active_dkim_id=pulumi.get(__response__, 'active_dkim_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        domain_verification_id=pulumi.get(__response__, 'domain_verification_id'),
+        domain_verification_status=pulumi.get(__response__, 'domain_verification_status'),
+        email_domain_id=pulumi.get(__response__, 'email_domain_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_spf=pulumi.get(__response__, 'is_spf'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

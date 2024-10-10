@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = No
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_catalog_private_endpoint)
 def get_catalog_private_endpoint_output(catalog_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogPrivateEndpointResult]:
     """
@@ -272,4 +274,23 @@ def get_catalog_private_endpoint_output(catalog_private_endpoint_id: Optional[pu
 
     :param str catalog_private_endpoint_id: Unique private reverse connection identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogPrivateEndpointId'] = catalog_private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint', __args__, opts=opts, typ=GetCatalogPrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetCatalogPrivateEndpointResult(
+        attached_catalogs=pulumi.get(__response__, 'attached_catalogs'),
+        catalog_private_endpoint_id=pulumi.get(__response__, 'catalog_private_endpoint_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_zones=pulumi.get(__response__, 'dns_zones'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

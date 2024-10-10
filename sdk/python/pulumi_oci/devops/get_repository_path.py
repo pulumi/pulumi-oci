@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -150,9 +155,6 @@ def get_repository_path(display_name: Optional[str] = None,
         paths_in_subtree=pulumi.get(__ret__, 'paths_in_subtree'),
         ref=pulumi.get(__ret__, 'ref'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_path)
 def get_repository_path_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                folder_path: Optional[pulumi.Input[Optional[str]]] = None,
                                paths_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -184,4 +186,19 @@ def get_repository_path_output(display_name: Optional[pulumi.Input[Optional[str]
     :param str ref: The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag. You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['folderPath'] = folder_path
+    __args__['pathsInSubtree'] = paths_in_subtree
+    __args__['ref'] = ref
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryPath:getRepositoryPath', __args__, opts=opts, typ=GetRepositoryPathResult)
+    return __ret__.apply(lambda __response__: GetRepositoryPathResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        folder_path=pulumi.get(__response__, 'folder_path'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        paths_in_subtree=pulumi.get(__response__, 'paths_in_subtree'),
+        ref=pulumi.get(__response__, 'ref'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

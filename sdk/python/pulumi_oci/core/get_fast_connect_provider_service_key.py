@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -134,9 +139,6 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[str] = N
         peering_location=pulumi.get(__ret__, 'peering_location'),
         provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
         provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'))
-
-
-@_utilities.lift_output_func(get_fast_connect_provider_service_key)
 def get_fast_connect_provider_service_key_output(provider_service_id: Optional[pulumi.Input[str]] = None,
                                                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceKeyResult]:
@@ -160,4 +162,15 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
     :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
     :param str provider_service_key_name: The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
     """
-    ...
+    __args__ = dict()
+    __args__['providerServiceId'] = provider_service_id
+    __args__['providerServiceKeyName'] = provider_service_key_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey', __args__, opts=opts, typ=GetFastConnectProviderServiceKeyResult)
+    return __ret__.apply(lambda __response__: GetFastConnectProviderServiceKeyResult(
+        bandwidth_shape_name=pulumi.get(__response__, 'bandwidth_shape_name'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        peering_location=pulumi.get(__response__, 'peering_location'),
+        provider_service_id=pulumi.get(__response__, 'provider_service_id'),
+        provider_service_key_name=pulumi.get(__response__, 'provider_service_key_name')))

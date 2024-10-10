@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -225,9 +230,6 @@ def get_report_definitions(access_level: Optional[str] = None,
         is_seeded=pulumi.get(__ret__, 'is_seeded'),
         report_definition_collections=pulumi.get(__ret__, 'report_definition_collections'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_report_definitions)
 def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                   category: Optional[pulumi.Input[Optional[str]]] = None,
                                   compartment_id: Optional[pulumi.Input[str]] = None,
@@ -271,4 +273,27 @@ def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[s
     :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['category'] = category
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSource'] = data_source
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isSeeded'] = is_seeded
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReportDefinitions:getReportDefinitions', __args__, opts=opts, typ=GetReportDefinitionsResult)
+    return __ret__.apply(lambda __response__: GetReportDefinitionsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        category=pulumi.get(__response__, 'category'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        data_source=pulumi.get(__response__, 'data_source'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_seeded=pulumi.get(__response__, 'is_seeded'),
+        report_definition_collections=pulumi.get(__response__, 'report_definition_collections'),
+        state=pulumi.get(__response__, 'state')))

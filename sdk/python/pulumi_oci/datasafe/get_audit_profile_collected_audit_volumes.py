@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -156,9 +161,6 @@ def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[str] = 
         month_in_consideration_greater_than=pulumi.get(__ret__, 'month_in_consideration_greater_than'),
         month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_audit_profile_collected_audit_volumes)
 def get_audit_profile_collected_audit_volumes_output(audit_profile_id: Optional[pulumi.Input[str]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict']]]]] = None,
                                                      month_in_consideration_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -192,4 +194,19 @@ def get_audit_profile_collected_audit_volumes_output(audit_profile_id: Optional[
            **Example:** 2016-12-19T00:00:00.000Z
     :param str work_request_id: The OCID of the work request.
     """
-    ...
+    __args__ = dict()
+    __args__['auditProfileId'] = audit_profile_id
+    __args__['filters'] = filters
+    __args__['monthInConsiderationGreaterThan'] = month_in_consideration_greater_than
+    __args__['monthInConsiderationLessThan'] = month_in_consideration_less_than
+    __args__['workRequestId'] = work_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes', __args__, opts=opts, typ=GetAuditProfileCollectedAuditVolumesResult)
+    return __ret__.apply(lambda __response__: GetAuditProfileCollectedAuditVolumesResult(
+        audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
+        collected_audit_volume_collections=pulumi.get(__response__, 'collected_audit_volume_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        month_in_consideration_greater_than=pulumi.get(__response__, 'month_in_consideration_greater_than'),
+        month_in_consideration_less_than=pulumi.get(__response__, 'month_in_consideration_less_than'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

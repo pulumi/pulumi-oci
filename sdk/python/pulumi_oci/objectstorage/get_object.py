@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -364,9 +369,6 @@ def get_object(base64_encode_content: Optional[bool] = None,
         object=pulumi.get(__ret__, 'object'),
         storage_tier=pulumi.get(__ret__, 'storage_tier'),
         version_id=pulumi.get(__ret__, 'version_id'))
-
-
-@_utilities.lift_output_func(get_object)
 def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                       bucket: Optional[pulumi.Input[str]] = None,
                       content_length_limit: Optional[pulumi.Input[Optional[int]]] = None,
@@ -416,4 +418,42 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
     :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
     :param str version_id: VersionId used to identify a particular version of the object
     """
-    ...
+    __args__ = dict()
+    __args__['base64EncodeContent'] = base64_encode_content
+    __args__['bucket'] = bucket
+    __args__['contentLengthLimit'] = content_length_limit
+    __args__['httpResponseCacheControl'] = http_response_cache_control
+    __args__['httpResponseContentDisposition'] = http_response_content_disposition
+    __args__['httpResponseContentEncoding'] = http_response_content_encoding
+    __args__['httpResponseContentLanguage'] = http_response_content_language
+    __args__['httpResponseContentType'] = http_response_content_type
+    __args__['httpResponseExpires'] = http_response_expires
+    __args__['namespace'] = namespace
+    __args__['object'] = object
+    __args__['versionId'] = version_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getObject:getObject', __args__, opts=opts, typ=GetObjectResult)
+    return __ret__.apply(lambda __response__: GetObjectResult(
+        base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        cache_control=pulumi.get(__response__, 'cache_control'),
+        content=pulumi.get(__response__, 'content'),
+        content_disposition=pulumi.get(__response__, 'content_disposition'),
+        content_encoding=pulumi.get(__response__, 'content_encoding'),
+        content_language=pulumi.get(__response__, 'content_language'),
+        content_length=pulumi.get(__response__, 'content_length'),
+        content_length_limit=pulumi.get(__response__, 'content_length_limit'),
+        content_md5=pulumi.get(__response__, 'content_md5'),
+        content_type=pulumi.get(__response__, 'content_type'),
+        http_response_cache_control=pulumi.get(__response__, 'http_response_cache_control'),
+        http_response_content_disposition=pulumi.get(__response__, 'http_response_content_disposition'),
+        http_response_content_encoding=pulumi.get(__response__, 'http_response_content_encoding'),
+        http_response_content_language=pulumi.get(__response__, 'http_response_content_language'),
+        http_response_content_type=pulumi.get(__response__, 'http_response_content_type'),
+        http_response_expires=pulumi.get(__response__, 'http_response_expires'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        storage_tier=pulumi.get(__response__, 'storage_tier'),
+        version_id=pulumi.get(__response__, 'version_id')))

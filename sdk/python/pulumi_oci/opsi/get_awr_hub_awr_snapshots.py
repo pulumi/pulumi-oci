@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -150,9 +155,6 @@ def get_awr_hub_awr_snapshots(awr_hub_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_awr_hub_awr_snapshots)
 def get_awr_hub_awr_snapshots_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
                                      awr_source_database_identifier: Optional[pulumi.Input[str]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAwrHubAwrSnapshotsFilterArgs', 'GetAwrHubAwrSnapshotsFilterArgsDict']]]]] = None,
@@ -183,4 +185,19 @@ def get_awr_hub_awr_snapshots_output(awr_hub_id: Optional[pulumi.Input[str]] = N
     :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
     :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
     """
-    ...
+    __args__ = dict()
+    __args__['awrHubId'] = awr_hub_id
+    __args__['awrSourceDatabaseIdentifier'] = awr_source_database_identifier
+    __args__['filters'] = filters
+    __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
+    __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots', __args__, opts=opts, typ=GetAwrHubAwrSnapshotsResult)
+    return __ret__.apply(lambda __response__: GetAwrHubAwrSnapshotsResult(
+        awr_hub_id=pulumi.get(__response__, 'awr_hub_id'),
+        awr_snapshot_collections=pulumi.get(__response__, 'awr_snapshot_collections'),
+        awr_source_database_identifier=pulumi.get(__response__, 'awr_source_database_identifier'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        time_greater_than_or_equal_to=pulumi.get(__response__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__response__, 'time_less_than_or_equal_to')))

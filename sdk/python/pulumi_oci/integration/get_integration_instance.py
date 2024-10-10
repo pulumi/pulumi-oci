@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -433,9 +438,6 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_integration_instance)
 def get_integration_instance_output(integration_instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIntegrationInstanceResult]:
     """
@@ -455,4 +457,38 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
 
     :param str integration_instance_id: Unique Integration Instance identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['integrationInstanceId'] = integration_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Integration/getIntegrationInstance:getIntegrationInstance', __args__, opts=opts, typ=GetIntegrationInstanceResult)
+    return __ret__.apply(lambda __response__: GetIntegrationInstanceResult(
+        alternate_custom_endpoints=pulumi.get(__response__, 'alternate_custom_endpoints'),
+        attachments=pulumi.get(__response__, 'attachments'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        consumption_model=pulumi.get(__response__, 'consumption_model'),
+        custom_endpoints=pulumi.get(__response__, 'custom_endpoints'),
+        data_retention_period=pulumi.get(__response__, 'data_retention_period'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain_id=pulumi.get(__response__, 'domain_id'),
+        enable_process_automation_trigger=pulumi.get(__response__, 'enable_process_automation_trigger'),
+        extend_data_retention_trigger=pulumi.get(__response__, 'extend_data_retention_trigger'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_at=pulumi.get(__response__, 'idcs_at'),
+        idcs_infos=pulumi.get(__response__, 'idcs_infos'),
+        instance_url=pulumi.get(__response__, 'instance_url'),
+        integration_instance_id=pulumi.get(__response__, 'integration_instance_id'),
+        integration_instance_type=pulumi.get(__response__, 'integration_instance_type'),
+        is_byol=pulumi.get(__response__, 'is_byol'),
+        is_file_server_enabled=pulumi.get(__response__, 'is_file_server_enabled'),
+        is_visual_builder_enabled=pulumi.get(__response__, 'is_visual_builder_enabled'),
+        message_packs=pulumi.get(__response__, 'message_packs'),
+        network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
+        private_endpoint_outbound_connections=pulumi.get(__response__, 'private_endpoint_outbound_connections'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        state_message=pulumi.get(__response__, 'state_message'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

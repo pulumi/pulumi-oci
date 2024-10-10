@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -328,9 +333,6 @@ def get_asset_source(asset_source_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         vcenter_endpoint=pulumi.get(__ret__, 'vcenter_endpoint'))
-
-
-@_utilities.lift_output_func(get_asset_source)
 def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetSourceResult]:
     """
@@ -350,4 +352,29 @@ def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
 
     :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
     """
-    ...
+    __args__ = dict()
+    __args__['assetSourceId'] = asset_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAssetSource:getAssetSource', __args__, opts=opts, typ=GetAssetSourceResult)
+    return __ret__.apply(lambda __response__: GetAssetSourceResult(
+        are_historical_metrics_collected=pulumi.get(__response__, 'are_historical_metrics_collected'),
+        are_realtime_metrics_collected=pulumi.get(__response__, 'are_realtime_metrics_collected'),
+        asset_source_id=pulumi.get(__response__, 'asset_source_id'),
+        assets_compartment_id=pulumi.get(__response__, 'assets_compartment_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovery_credentials=pulumi.get(__response__, 'discovery_credentials'),
+        discovery_schedule_id=pulumi.get(__response__, 'discovery_schedule_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        environment_id=pulumi.get(__response__, 'environment_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        inventory_id=pulumi.get(__response__, 'inventory_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        replication_credentials=pulumi.get(__response__, 'replication_credentials'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        vcenter_endpoint=pulumi.get(__response__, 'vcenter_endpoint')))

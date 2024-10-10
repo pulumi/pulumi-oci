@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -150,9 +155,6 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         os_name=pulumi.get(__ret__, 'os_name'),
         os_version=pulumi.get(__ret__, 'os_version'))
-
-
-@_utilities.lift_output_func(get_instance_available_plugin)
 def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceAvailablePluginFilterArgs', 'GetInstanceAvailablePluginFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -180,4 +182,19 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
     :param str os_name: The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
     :param str os_version: The OS version for which the plugin is supported.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['osName'] = os_name
+    __args__['osVersion'] = os_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ComputeInstanceAgent/getInstanceAvailablePlugin:getInstanceAvailablePlugin', __args__, opts=opts, typ=GetInstanceAvailablePluginResult)
+    return __ret__.apply(lambda __response__: GetInstanceAvailablePluginResult(
+        available_plugins=pulumi.get(__response__, 'available_plugins'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        os_name=pulumi.get(__response__, 'os_name'),
+        os_version=pulumi.get(__response__, 'os_version')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -111,9 +116,6 @@ def get_replication_status(management_endpoint: Optional[str] = None,
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
         replica_details=pulumi.get(__ret__, 'replica_details'),
         replication_id=pulumi.get(__ret__, 'replication_id'))
-
-
-@_utilities.lift_output_func(get_replication_status)
 def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str]] = None,
                                   replication_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationStatusResult]:
@@ -139,4 +141,13 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str
     :param str management_endpoint: The service endpoint to perform management operations against. See Vault Management endpoint.
     :param str replication_id: replicationId associated with an operation on a resource
     """
-    ...
+    __args__ = dict()
+    __args__['managementEndpoint'] = management_endpoint
+    __args__['replicationId'] = replication_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getReplicationStatus:getReplicationStatus', __args__, opts=opts, typ=GetReplicationStatusResult)
+    return __ret__.apply(lambda __response__: GetReplicationStatusResult(
+        id=pulumi.get(__response__, 'id'),
+        management_endpoint=pulumi.get(__response__, 'management_endpoint'),
+        replica_details=pulumi.get(__response__, 'replica_details'),
+        replication_id=pulumi.get(__response__, 'replication_id')))

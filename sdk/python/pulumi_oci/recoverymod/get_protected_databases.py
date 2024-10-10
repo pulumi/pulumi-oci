@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_protected_databases(compartment_id: Optional[str] = None,
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_protected_databases)
 def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
@@ -220,4 +222,22 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str recovery_service_subnet_id: The recovery service subnet OCID.
     :param str state: A filter to return only the resources that match the specified lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['protectionPolicyId'] = protection_policy_id
+    __args__['recoveryServiceSubnetId'] = recovery_service_subnet_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases', __args__, opts=opts, typ=GetProtectedDatabasesResult)
+    return __ret__.apply(lambda __response__: GetProtectedDatabasesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        protected_database_collections=pulumi.get(__response__, 'protected_database_collections'),
+        protection_policy_id=pulumi.get(__response__, 'protection_policy_id'),
+        recovery_service_subnet_id=pulumi.get(__response__, 'recovery_service_subnet_id'),
+        state=pulumi.get(__response__, 'state')))

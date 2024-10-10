@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -143,9 +148,6 @@ def get_events(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         start_time=pulumi.get(__ret__, 'start_time'))
-
-
-@_utilities.lift_output_func(get_events)
 def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       end_time: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEventsFilterArgs', 'GetEventsFilterArgsDict']]]]] = None,
@@ -177,4 +179,17 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
            
            For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC). You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['endTime'] = end_time
+    __args__['filters'] = filters
+    __args__['startTime'] = start_time
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Audit/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
+    return __ret__.apply(lambda __response__: GetEventsResult(
+        audit_events=pulumi.get(__response__, 'audit_events'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        end_time=pulumi.get(__response__, 'end_time'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        start_time=pulumi.get(__response__, 'start_time')))

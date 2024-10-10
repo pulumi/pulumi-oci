@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -238,9 +243,6 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[str] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_at_customer_ccc_upgrade_schedule)
 def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccUpgradeScheduleResult]:
     """
@@ -261,4 +263,22 @@ def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optiona
 
     :param str ccc_upgrade_schedule_id: Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['cccUpgradeScheduleId'] = ccc_upgrade_schedule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule', __args__, opts=opts, typ=GetAtCustomerCccUpgradeScheduleResult)
+    return __ret__.apply(lambda __response__: GetAtCustomerCccUpgradeScheduleResult(
+        ccc_upgrade_schedule_id=pulumi.get(__response__, 'ccc_upgrade_schedule_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        events=pulumi.get(__response__, 'events'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_ids=pulumi.get(__response__, 'infrastructure_ids'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

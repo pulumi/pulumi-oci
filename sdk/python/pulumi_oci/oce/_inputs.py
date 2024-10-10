@@ -4,14 +4,33 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetOceInstancesFilterArgs',
+    'GetOceInstancesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetOceInstancesFilterArgsDict(TypedDict):
+        name: str
+        """
+        OceInstance Name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOceInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOceInstancesFilterArgs:

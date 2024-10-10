@@ -4,51 +4,105 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs',
+    'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict',
     'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs',
+    'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict',
     'FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs',
+    'FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict',
     'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs',
+    'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict',
     'FleetAdvancedFeatureConfigurationJfrRecordingArgs',
+    'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict',
     'FleetAdvancedFeatureConfigurationLcmArgs',
+    'FleetAdvancedFeatureConfigurationLcmArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict',
     'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs',
+    'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict',
     'FleetInventoryLogArgs',
+    'FleetInventoryLogArgsDict',
     'FleetOperationLogArgs',
+    'FleetOperationLogArgsDict',
     'JavaDownloadsJavaDownloadReportCreatedByArgs',
+    'JavaDownloadsJavaDownloadReportCreatedByArgsDict',
     'JavaDownloadsJavaDownloadTokenCreatedByArgs',
+    'JavaDownloadsJavaDownloadTokenCreatedByArgsDict',
     'JavaDownloadsJavaDownloadTokenLastUpdatedByArgs',
+    'JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict',
     'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs',
+    'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict',
     'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs',
+    'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict',
     'GetAgentInstallersFilterArgs',
+    'GetAgentInstallersFilterArgsDict',
     'GetAnnouncementsFilterArgs',
+    'GetAnnouncementsFilterArgsDict',
     'GetFleetBlocklistsFilterArgs',
+    'GetFleetBlocklistsFilterArgsDict',
     'GetFleetCryptoAnalysisResultsFilterArgs',
+    'GetFleetCryptoAnalysisResultsFilterArgsDict',
     'GetFleetDiagnosesFilterArgs',
+    'GetFleetDiagnosesFilterArgsDict',
     'GetFleetDrsFilesFilterArgs',
+    'GetFleetDrsFilesFilterArgsDict',
     'GetFleetJavaMigrationAnalysisResultsFilterArgs',
+    'GetFleetJavaMigrationAnalysisResultsFilterArgsDict',
     'GetFleetPerformanceTuningAnalysisResultsFilterArgs',
+    'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict',
     'GetFleetsFilterArgs',
+    'GetFleetsFilterArgsDict',
     'GetInstallationSitesFilterArgs',
+    'GetInstallationSitesFilterArgsDict',
     'GetJavaDownloadsJavaDownloadRecordsFilterArgs',
+    'GetJavaDownloadsJavaDownloadRecordsFilterArgsDict',
     'GetJavaDownloadsJavaDownloadReportsFilterArgs',
+    'GetJavaDownloadsJavaDownloadReportsFilterArgsDict',
     'GetJavaDownloadsJavaDownloadTokensFilterArgs',
+    'GetJavaDownloadsJavaDownloadTokensFilterArgsDict',
     'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict',
     'GetJavaDownloadsJavaLicensesFilterArgs',
+    'GetJavaDownloadsJavaLicensesFilterArgsDict',
     'GetJavaFamiliesFilterArgs',
+    'GetJavaFamiliesFilterArgsDict',
     'GetJavaReleasesFilterArgs',
+    'GetJavaReleasesFilterArgsDict',
     'GetJmsPluginsFilterArgs',
+    'GetJmsPluginsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs:
@@ -72,6 +126,19 @@ class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+        """
+        summarized_events_log: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict']]
+        """
+        (Updatable) Summarized events log for advanced feature.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs:
@@ -112,6 +179,19 @@ class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs:
         pulumi.set(self, "summarized_events_log", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict(TypedDict):
+        log_group_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs:
     def __init__(__self__, *,
@@ -149,6 +229,15 @@ class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArg
         pulumi.set(self, "log_id", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs:
     def __init__(__self__, *,
@@ -172,6 +261,15 @@ class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs:
         pulumi.set(self, "is_enabled", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationJfrRecordingArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) JfrRecording flag to store enabled or disabled status.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationJfrRecordingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationJfrRecordingArgs:
     def __init__(__self__, *,
@@ -194,6 +292,19 @@ class FleetAdvancedFeatureConfigurationJfrRecordingArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Lifecycle management flag to store enabled or disabled status.
+        """
+        post_installation_actions: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict']]
+        """
+        (Updatable) List of available post actions you can execute after the successful Java installation.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmArgs:
@@ -233,6 +344,37 @@ class FleetAdvancedFeatureConfigurationLcmArgs:
     def post_installation_actions(self, value: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs']]):
         pulumi.set(self, "post_installation_actions", value)
 
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict(TypedDict):
+        add_logging_handler: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+        """
+        disabled_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The following post JRE installation actions are supported by the field:
+        * Disable TLS 1.0 , TLS 1.1
+        """
+        global_logging_level: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Sets the logging level in logging.properties file.
+        """
+        minimum_key_size_settings: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict']]
+        """
+        (Updatable) test
+        """
+        proxies: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict']]
+        """
+        (Updatable) List of proxy properties to be configured in net.properties file.
+        """
+        should_replace_certificates_operating_system: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+        * Replace JDK root certificates with a list provided by the operating system.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
@@ -341,6 +483,30 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
         pulumi.set(self, "should_replace_certificates_operating_system", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict(TypedDict):
+        certpaths: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict']]]]
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        jars: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict']]]]
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        tls: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict']]]]
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for Diffie-Hellman
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs:
     def __init__(__self__, *,
@@ -410,6 +576,19 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "tls", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict(TypedDict):
+        key_size: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The algorithm name.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs:
     def __init__(__self__, *,
@@ -448,6 +627,19 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict(TypedDict):
+        key_size: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The algorithm name.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs:
@@ -488,6 +680,19 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict(TypedDict):
+        key_size: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The algorithm name.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs:
     def __init__(__self__, *,
@@ -526,6 +731,47 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict(TypedDict):
+        ftp_proxy_host: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Ftp host to be set in net.properties file.
+        """
+        ftp_proxy_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Ftp port number to be set in net.properties file.
+        """
+        http_proxy_host: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Http host to be set in net.properties file.
+        """
+        http_proxy_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Http port number to be set in net.properties file.
+        """
+        https_proxy_host: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Https host to be set in net.properties file.
+        """
+        https_proxy_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Https port number to be set in net.properties file.
+        """
+        socks_proxy_host: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Socks host to be set in net.properties file.
+        """
+        socks_proxy_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Socks port number to be set in net.properties file.
+        """
+        use_system_proxies: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs:
@@ -678,6 +924,19 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs:
         pulumi.set(self, "use_system_proxies", value)
 
 
+if not MYPY:
+    class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
     def __init__(__self__, *,
@@ -708,6 +967,19 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class FleetInventoryLogArgsDict(TypedDict):
+        log_group_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    FleetInventoryLogArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetInventoryLogArgs:
@@ -745,6 +1017,23 @@ class FleetInventoryLogArgs:
     def log_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "log_id", value)
 
+
+if not MYPY:
+    class FleetOperationLogArgsDict(TypedDict):
+        log_group_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    FleetOperationLogArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FleetOperationLogArgs:
@@ -790,6 +1079,23 @@ class FleetOperationLogArgs:
     def log_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "log_id", value)
 
+
+if not MYPY:
+    class JavaDownloadsJavaDownloadReportCreatedByArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Display name for the Java download report.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email of the principal.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+elif False:
+    JavaDownloadsJavaDownloadReportCreatedByArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JavaDownloadsJavaDownloadReportCreatedByArgs:
@@ -846,6 +1152,23 @@ class JavaDownloadsJavaDownloadReportCreatedByArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class JavaDownloadsJavaDownloadTokenCreatedByArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User provided display name of the JavaDownloadToken.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email of the principal.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+elif False:
+    JavaDownloadsJavaDownloadTokenCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class JavaDownloadsJavaDownloadTokenCreatedByArgs:
     def __init__(__self__, *,
@@ -900,6 +1223,23 @@ class JavaDownloadsJavaDownloadTokenCreatedByArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User provided display name of the JavaDownloadToken.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email of the principal.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+elif False:
+    JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JavaDownloadsJavaDownloadTokenLastUpdatedByArgs:
@@ -956,6 +1296,23 @@ class JavaDownloadsJavaDownloadTokenLastUpdatedByArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the principal.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email of the principal.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+elif False:
+    JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs:
     def __init__(__self__, *,
@@ -1010,6 +1367,23 @@ class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the principal.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        The email of the principal.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+elif False:
+    JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs:
@@ -1066,6 +1440,14 @@ class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class GetAgentInstallersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAgentInstallersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAgentInstallersFilterArgs:
     def __init__(__self__, *,
@@ -1104,6 +1486,14 @@ class GetAgentInstallersFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetAnnouncementsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAnnouncementsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAnnouncementsFilterArgs:
@@ -1144,6 +1534,14 @@ class GetAnnouncementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFleetBlocklistsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetBlocklistsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFleetBlocklistsFilterArgs:
     def __init__(__self__, *,
@@ -1182,6 +1580,14 @@ class GetFleetBlocklistsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFleetCryptoAnalysisResultsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetCryptoAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFleetCryptoAnalysisResultsFilterArgs:
@@ -1222,6 +1628,14 @@ class GetFleetCryptoAnalysisResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFleetDiagnosesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetDiagnosesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFleetDiagnosesFilterArgs:
     def __init__(__self__, *,
@@ -1260,6 +1674,14 @@ class GetFleetDiagnosesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFleetDrsFilesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetDrsFilesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFleetDrsFilesFilterArgs:
@@ -1300,6 +1722,14 @@ class GetFleetDrsFilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFleetJavaMigrationAnalysisResultsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetJavaMigrationAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFleetJavaMigrationAnalysisResultsFilterArgs:
     def __init__(__self__, *,
@@ -1338,6 +1768,14 @@ class GetFleetJavaMigrationAnalysisResultsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFleetPerformanceTuningAnalysisResultsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetPerformanceTuningAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFleetPerformanceTuningAnalysisResultsFilterArgs:
@@ -1378,6 +1816,14 @@ class GetFleetPerformanceTuningAnalysisResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFleetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFleetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFleetsFilterArgs:
     def __init__(__self__, *,
@@ -1416,6 +1862,17 @@ class GetFleetsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetInstallationSitesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the operating system as provided by the Java system property os.name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInstallationSitesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetInstallationSitesFilterArgs:
@@ -1462,6 +1919,14 @@ class GetInstallationSitesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetJavaDownloadsJavaDownloadRecordsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaDownloadsJavaDownloadRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadRecordsFilterArgs:
     def __init__(__self__, *,
@@ -1500,6 +1965,14 @@ class GetJavaDownloadsJavaDownloadRecordsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetJavaDownloadsJavaDownloadReportsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaDownloadsJavaDownloadReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadReportsFilterArgs:
@@ -1540,6 +2013,14 @@ class GetJavaDownloadsJavaDownloadReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetJavaDownloadsJavaDownloadTokensFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaDownloadsJavaDownloadTokensFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadTokensFilterArgs:
     def __init__(__self__, *,
@@ -1578,6 +2059,14 @@ class GetJavaDownloadsJavaDownloadTokensFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs:
@@ -1618,6 +2107,14 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetJavaDownloadsJavaLicensesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaDownloadsJavaLicensesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetJavaDownloadsJavaLicensesFilterArgs:
     def __init__(__self__, *,
@@ -1656,6 +2153,14 @@ class GetJavaDownloadsJavaLicensesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetJavaFamiliesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaFamiliesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetJavaFamiliesFilterArgs:
@@ -1696,6 +2201,14 @@ class GetJavaFamiliesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetJavaReleasesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJavaReleasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetJavaReleasesFilterArgs:
     def __init__(__self__, *,
@@ -1734,6 +2247,14 @@ class GetJavaReleasesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetJmsPluginsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetJmsPluginsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetJmsPluginsFilterArgs:

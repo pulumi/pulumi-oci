@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -129,9 +134,6 @@ def get_fault_domains(availability_domain: Optional[str] = None,
         fault_domains=pulumi.get(__ret__, 'fault_domains'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_fault_domains)
 def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]]]] = None,
@@ -157,4 +159,15 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = 
     :param str availability_domain: The name of the availibilityDomain.
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getFaultDomains:getFaultDomains', __args__, opts=opts, typ=GetFaultDomainsResult)
+    return __ret__.apply(lambda __response__: GetFaultDomainsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        fault_domains=pulumi.get(__response__, 'fault_domains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -194,9 +199,6 @@ def get_namespace_effective_properties(agent_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         pattern_id=pulumi.get(__ret__, 'pattern_id'),
         source_name=pulumi.get(__ret__, 'source_name'))
-
-
-@_utilities.lift_output_func(get_namespace_effective_properties)
 def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceEffectivePropertiesFilterArgs', 'GetNamespaceEffectivePropertiesFilterArgsDict']]]]] = None,
@@ -235,4 +237,25 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     :param int pattern_id: The pattern id.
     :param str source_name: The source name.
     """
-    ...
+    __args__ = dict()
+    __args__['agentId'] = agent_id
+    __args__['entityId'] = entity_id
+    __args__['filters'] = filters
+    __args__['isIncludePatterns'] = is_include_patterns
+    __args__['name'] = name
+    __args__['namespace'] = namespace
+    __args__['patternId'] = pattern_id
+    __args__['sourceName'] = source_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceEffectiveProperties:getNamespaceEffectiveProperties', __args__, opts=opts, typ=GetNamespaceEffectivePropertiesResult)
+    return __ret__.apply(lambda __response__: GetNamespaceEffectivePropertiesResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        effective_property_collections=pulumi.get(__response__, 'effective_property_collections'),
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_include_patterns=pulumi.get(__response__, 'is_include_patterns'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        pattern_id=pulumi.get(__response__, 'pattern_id'),
+        source_name=pulumi.get(__response__, 'source_name')))

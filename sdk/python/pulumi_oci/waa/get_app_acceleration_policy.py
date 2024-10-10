@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_app_acceleration_policy(web_app_acceleration_policy_id: Optional[str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
-
-
-@_utilities.lift_output_func(get_app_acceleration_policy)
 def get_app_acceleration_policy_output(web_app_acceleration_policy_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppAccelerationPolicyResult]:
     """
@@ -246,4 +248,21 @@ def get_app_acceleration_policy_output(web_app_acceleration_policy_id: Optional[
 
     :param str web_app_acceleration_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
     """
-    ...
+    __args__ = dict()
+    __args__['webAppAccelerationPolicyId'] = web_app_acceleration_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy', __args__, opts=opts, typ=GetAppAccelerationPolicyResult)
+    return __ret__.apply(lambda __response__: GetAppAccelerationPolicyResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        response_caching_policies=pulumi.get(__response__, 'response_caching_policies'),
+        response_compression_policies=pulumi.get(__response__, 'response_compression_policies'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        web_app_acceleration_policy_id=pulumi.get(__response__, 'web_app_acceleration_policy_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -186,9 +191,6 @@ def get_tag_default(tag_default_id: Optional[str] = None,
         tag_namespace_id=pulumi.get(__ret__, 'tag_namespace_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         value=pulumi.get(__ret__, 'value'))
-
-
-@_utilities.lift_output_func(get_tag_default)
 def get_tag_default_output(tag_default_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagDefaultResult]:
     """
@@ -208,4 +210,18 @@ def get_tag_default_output(tag_default_id: Optional[pulumi.Input[str]] = None,
 
     :param str tag_default_id: The OCID of the tag default.
     """
-    ...
+    __args__ = dict()
+    __args__['tagDefaultId'] = tag_default_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagDefault:getTagDefault', __args__, opts=opts, typ=GetTagDefaultResult)
+    return __ret__.apply(lambda __response__: GetTagDefaultResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_required=pulumi.get(__response__, 'is_required'),
+        state=pulumi.get(__response__, 'state'),
+        tag_default_id=pulumi.get(__response__, 'tag_default_id'),
+        tag_definition_id=pulumi.get(__response__, 'tag_definition_id'),
+        tag_definition_name=pulumi.get(__response__, 'tag_definition_name'),
+        tag_namespace_id=pulumi.get(__response__, 'tag_namespace_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        value=pulumi.get(__response__, 'value')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -198,9 +203,6 @@ def get_vm_cluster_update(update_id: Optional[str] = None,
         update_type=pulumi.get(__ret__, 'update_type'),
         version=pulumi.get(__ret__, 'version'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_update)
 def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
                                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterUpdateResult]:
@@ -223,4 +225,20 @@ def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
     :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
     :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['updateId'] = update_id
+    __args__['vmClusterId'] = vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterUpdate:getVmClusterUpdate', __args__, opts=opts, typ=GetVmClusterUpdateResult)
+    return __ret__.apply(lambda __response__: GetVmClusterUpdateResult(
+        available_actions=pulumi.get(__response__, 'available_actions'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        last_action=pulumi.get(__response__, 'last_action'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        time_released=pulumi.get(__response__, 'time_released'),
+        update_id=pulumi.get(__response__, 'update_id'),
+        update_type=pulumi.get(__response__, 'update_type'),
+        version=pulumi.get(__response__, 'version'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

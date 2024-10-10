@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -111,9 +116,6 @@ def get_system_media_workflow(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_system_media_workflow)
 def get_system_media_workflow_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSystemMediaWorkflowResult]:
@@ -136,4 +138,13 @@ def get_system_media_workflow_output(compartment_id: Optional[pulumi.Input[Optio
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow', __args__, opts=opts, typ=GetSystemMediaWorkflowResult)
+    return __ret__.apply(lambda __response__: GetSystemMediaWorkflowResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        name=pulumi.get(__response__, 'name')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -188,9 +193,6 @@ def get_secret_version(secret_id: Optional[str] = None,
         time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         version_number=pulumi.get(__ret__, 'version_number'))
-
-
-@_utilities.lift_output_func(get_secret_version)
 def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
                               secret_version_number: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretVersionResult]:
@@ -213,4 +215,19 @@ def get_secret_version_output(secret_id: Optional[pulumi.Input[str]] = None,
     :param str secret_id: The OCID of the secret.
     :param str secret_version_number: The version number of the secret.
     """
-    ...
+    __args__ = dict()
+    __args__['secretId'] = secret_id
+    __args__['secretVersionNumber'] = secret_version_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Vault/getSecretVersion:getSecretVersion', __args__, opts=opts, typ=GetSecretVersionResult)
+    return __ret__.apply(lambda __response__: GetSecretVersionResult(
+        content_type=pulumi.get(__response__, 'content_type'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
+        secret_version_number=pulumi.get(__response__, 'secret_version_number'),
+        stages=pulumi.get(__response__, 'stages'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_current_version_expiry=pulumi.get(__response__, 'time_of_current_version_expiry'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        version_number=pulumi.get(__response__, 'version_number')))

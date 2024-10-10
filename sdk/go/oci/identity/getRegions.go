@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.GetRegions(ctx, nil, nil)
+//			_, err := Identity.GetRegions(ctx, &identity.GetRegionsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

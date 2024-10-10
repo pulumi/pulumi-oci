@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -145,9 +150,6 @@ def get_entitlements(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_entitlements)
 def get_entitlements_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             csi: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEntitlementsFilterArgs', 'GetEntitlementsFilterArgsDict']]]]] = None,
@@ -175,4 +177,17 @@ def get_entitlements_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str csi: A filter to return entitlements that match the given CSI.
     :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['csi'] = csi
+    __args__['filters'] = filters
+    __args__['vendorName'] = vendor_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getEntitlements:getEntitlements', __args__, opts=opts, typ=GetEntitlementsResult)
+    return __ret__.apply(lambda __response__: GetEntitlementsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        csi=pulumi.get(__response__, 'csi'),
+        entitlement_collections=pulumi.get(__response__, 'entitlement_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

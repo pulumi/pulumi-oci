@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -136,9 +141,6 @@ def get_network_firewall_policy_address_list(name: Optional[str] = None,
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         total_addresses=pulumi.get(__ret__, 'total_addresses'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_address_list)
 def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[str]] = None,
                                                     network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyAddressListResult]:
@@ -151,4 +153,16 @@ def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[
     :param str name: Unique name to identify the group of addresses to be used in the policy rules.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList', __args__, opts=opts, typ=GetNetworkFirewallPolicyAddressListResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyAddressListResult(
+        addresses=pulumi.get(__response__, 'addresses'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        total_addresses=pulumi.get(__response__, 'total_addresses'),
+        type=pulumi.get(__response__, 'type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -111,9 +116,6 @@ def get_backend_sets(filters: Optional[Sequence[Union['GetBackendSetsFilterArgs'
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-
-
-@_utilities.lift_output_func(get_backend_sets)
 def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendSetsFilterArgs', 'GetBackendSetsFilterArgsDict']]]]] = None,
                             load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetsResult]:
@@ -138,4 +140,13 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['loadBalancerId'] = load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getBackendSets:getBackendSets', __args__, opts=opts, typ=GetBackendSetsResult)
+    return __ret__.apply(lambda __response__: GetBackendSetsResult(
+        backendsets=pulumi.get(__response__, 'backendsets'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id')))

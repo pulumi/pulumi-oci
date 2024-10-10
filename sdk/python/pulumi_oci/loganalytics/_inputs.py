@@ -4,35 +4,73 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'LogAnalyticsEntityMetadataArgs',
+    'LogAnalyticsEntityMetadataArgsDict',
     'LogAnalyticsEntityMetadataItemArgs',
+    'LogAnalyticsEntityMetadataItemArgsDict',
     'LogAnalyticsImportCustomContentChangeListArgs',
+    'LogAnalyticsImportCustomContentChangeListArgsDict',
     'LogAnalyticsObjectCollectionRuleOverrideArgs',
+    'LogAnalyticsObjectCollectionRuleOverrideArgsDict',
     'LogAnalyticsPreferencesManagementItemArgs',
+    'LogAnalyticsPreferencesManagementItemArgsDict',
     'NamespaceIngestTimeRuleActionArgs',
+    'NamespaceIngestTimeRuleActionArgsDict',
     'NamespaceIngestTimeRuleConditionsArgs',
+    'NamespaceIngestTimeRuleConditionsArgsDict',
     'NamespaceIngestTimeRuleConditionsAdditionalConditionArgs',
+    'NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict',
     'NamespaceScheduledTaskActionArgs',
+    'NamespaceScheduledTaskActionArgsDict',
     'NamespaceScheduledTaskActionMetricExtractionArgs',
+    'NamespaceScheduledTaskActionMetricExtractionArgsDict',
     'NamespaceScheduledTaskSchedulesArgs',
+    'NamespaceScheduledTaskSchedulesArgsDict',
     'NamespaceScheduledTaskSchedulesScheduleArgs',
+    'NamespaceScheduledTaskSchedulesScheduleArgsDict',
     'GetLogAnalyticsEntitiesFilterArgs',
+    'GetLogAnalyticsEntitiesFilterArgsDict',
     'GetLogAnalyticsLogGroupsFilterArgs',
+    'GetLogAnalyticsLogGroupsFilterArgsDict',
     'GetLogAnalyticsObjectCollectionRulesFilterArgs',
+    'GetLogAnalyticsObjectCollectionRulesFilterArgsDict',
     'GetNamespaceEffectivePropertiesFilterArgs',
+    'GetNamespaceEffectivePropertiesFilterArgsDict',
     'GetNamespaceIngestTimeRulesFilterArgs',
+    'GetNamespaceIngestTimeRulesFilterArgsDict',
     'GetNamespacePropertiesMetadataFilterArgs',
+    'GetNamespacePropertiesMetadataFilterArgsDict',
     'GetNamespaceRulesFilterArgs',
+    'GetNamespaceRulesFilterArgsDict',
     'GetNamespaceScheduledTasksFilterArgs',
+    'GetNamespaceScheduledTasksFilterArgsDict',
     'GetNamespaceStorageOverlappingRecallsFilterArgs',
+    'GetNamespaceStorageOverlappingRecallsFilterArgsDict',
     'GetNamespacesFilterArgs',
+    'GetNamespacesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class LogAnalyticsEntityMetadataArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgsDict']]]]
+        """
+        (Updatable) An array of entity metadata details.
+        """
+elif False:
+    LogAnalyticsEntityMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LogAnalyticsEntityMetadataArgs:
@@ -56,6 +94,23 @@ class LogAnalyticsEntityMetadataArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class LogAnalyticsEntityMetadataItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The metadata name.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The metadata type.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The metadata value.
+        """
+elif False:
+    LogAnalyticsEntityMetadataItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LogAnalyticsEntityMetadataItemArgs:
@@ -111,6 +166,47 @@ class LogAnalyticsEntityMetadataItemArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class LogAnalyticsImportCustomContentChangeListArgsDict(TypedDict):
+        conflict_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of field display names with conflicts.
+        """
+        conflict_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of parser names with conflicts.
+        """
+        conflict_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of source names with conflicts.
+        """
+        created_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of created field display names.
+        """
+        created_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of created parser names.
+        """
+        created_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of created source names.
+        """
+        updated_field_display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of updated field display names.
+        """
+        updated_parser_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of updated parser names.
+        """
+        updated_source_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An array of updated source names.
+        """
+elif False:
+    LogAnalyticsImportCustomContentChangeListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LogAnalyticsImportCustomContentChangeListArgs:
@@ -263,6 +359,15 @@ class LogAnalyticsImportCustomContentChangeListArgs:
         pulumi.set(self, "updated_source_names", value)
 
 
+if not MYPY:
+    class LogAnalyticsObjectCollectionRuleOverrideArgsDict(TypedDict):
+        match_type: NotRequired[pulumi.Input[str]]
+        match_value: NotRequired[pulumi.Input[str]]
+        property_name: NotRequired[pulumi.Input[str]]
+        property_value: NotRequired[pulumi.Input[str]]
+elif False:
+    LogAnalyticsObjectCollectionRuleOverrideArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LogAnalyticsObjectCollectionRuleOverrideArgs:
     def __init__(__self__, *,
@@ -316,6 +421,19 @@ class LogAnalyticsObjectCollectionRuleOverrideArgs:
         pulumi.set(self, "property_value", value)
 
 
+if not MYPY:
+    class LogAnalyticsPreferencesManagementItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The preference name.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The preference value.
+        """
+elif False:
+    LogAnalyticsPreferencesManagementItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LogAnalyticsPreferencesManagementItemArgs:
     def __init__(__self__, *,
@@ -354,6 +472,35 @@ class LogAnalyticsPreferencesManagementItemArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NamespaceIngestTimeRuleActionArgsDict(TypedDict):
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        """
+        metric_name: pulumi.Input[str]
+        """
+        (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        namespace: pulumi.Input[str]
+        """
+        (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Discriminator.
+        """
+        dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        """
+        resource_group: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+elif False:
+    NamespaceIngestTimeRuleActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NamespaceIngestTimeRuleActionArgs:
@@ -454,6 +601,31 @@ class NamespaceIngestTimeRuleActionArgs:
         pulumi.set(self, "resource_group", value)
 
 
+if not MYPY:
+    class NamespaceIngestTimeRuleConditionsArgsDict(TypedDict):
+        field_name: pulumi.Input[str]
+        """
+        (Updatable) The field name to be evaluated.
+        """
+        field_operator: pulumi.Input[str]
+        """
+        (Updatable) The operator to be used for evaluating the field.
+        """
+        field_value: pulumi.Input[str]
+        """
+        (Updatable) The field value to be evaluated.
+        """
+        kind: pulumi.Input[str]
+        """
+        (Updatable) Discriminator.
+        """
+        additional_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict']]]]
+        """
+        (Updatable) Optional additional condition(s) to be evaluated.
+        """
+elif False:
+    NamespaceIngestTimeRuleConditionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NamespaceIngestTimeRuleConditionsArgs:
     def __init__(__self__, *,
@@ -537,6 +709,23 @@ class NamespaceIngestTimeRuleConditionsArgs:
         pulumi.set(self, "additional_conditions", value)
 
 
+if not MYPY:
+    class NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict(TypedDict):
+        condition_field: pulumi.Input[str]
+        """
+        (Updatable) The additional field name to be evaluated.
+        """
+        condition_operator: pulumi.Input[str]
+        """
+        (Updatable) The operator to be used for evaluating the additional field.
+        """
+        condition_value: pulumi.Input[str]
+        """
+        (Updatable) The additional field value to be evaluated.
+        """
+elif False:
+    NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     def __init__(__self__, *,
@@ -588,6 +777,43 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     def condition_value(self, value: pulumi.Input[str]):
         pulumi.set(self, "condition_value", value)
 
+
+if not MYPY:
+    class NamespaceScheduledTaskActionArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Action type discriminator.
+        """
+        compartment_id_in_subtree: NotRequired[pulumi.Input[bool]]
+        """
+        if true, purge child compartments data
+        """
+        data_type: NotRequired[pulumi.Input[str]]
+        """
+        the type of the log data to be purged
+        """
+        metric_extraction: NotRequired[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgsDict']]
+        """
+        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
+        """
+        purge_compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        the compartment OCID under which the data will be purged
+        """
+        purge_duration: NotRequired[pulumi.Input[str]]
+        """
+        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
+        """
+        query_string: NotRequired[pulumi.Input[str]]
+        """
+        Purge query string.
+        """
+        saved_search_id: NotRequired[pulumi.Input[str]]
+        """
+        The ManagementSavedSearch id [OCID] utilized in the action.
+        """
+elif False:
+    NamespaceScheduledTaskActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NamespaceScheduledTaskActionArgs:
@@ -723,6 +949,27 @@ class NamespaceScheduledTaskActionArgs:
         pulumi.set(self, "saved_search_id", value)
 
 
+if not MYPY:
+    class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
+        """
+        metric_name: NotRequired[pulumi.Input[str]]
+        """
+        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
+        """
+        resource_group: NotRequired[pulumi.Input[str]]
+        """
+        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+elif False:
+    NamespaceScheduledTaskActionMetricExtractionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NamespaceScheduledTaskActionMetricExtractionArgs:
     def __init__(__self__, *,
@@ -794,6 +1041,12 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
         pulumi.set(self, "resource_group", value)
 
 
+if not MYPY:
+    class NamespaceScheduledTaskSchedulesArgsDict(TypedDict):
+        schedules: pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskSchedulesScheduleArgsDict']]]
+elif False:
+    NamespaceScheduledTaskSchedulesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NamespaceScheduledTaskSchedulesArgs:
     def __init__(__self__, *,
@@ -809,6 +1062,35 @@ class NamespaceScheduledTaskSchedulesArgs:
     def schedules(self, value: pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskSchedulesScheduleArgs']]]):
         pulumi.set(self, "schedules", value)
 
+
+if not MYPY:
+    class NamespaceScheduledTaskSchedulesScheduleArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Schedule type discriminator.
+        """
+        expression: NotRequired[pulumi.Input[str]]
+        """
+        Value in cron format.
+        """
+        misfire_policy: NotRequired[pulumi.Input[str]]
+        """
+        Schedule misfire retry policy.
+        """
+        recurring_interval: NotRequired[pulumi.Input[str]]
+        """
+        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        """
+        repeat_count: NotRequired[pulumi.Input[int]]
+        """
+        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        """
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        Time zone, by default UTC.
+        """
+elif False:
+    NamespaceScheduledTaskSchedulesScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NamespaceScheduledTaskSchedulesScheduleArgs:
@@ -912,6 +1194,17 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
         pulumi.set(self, "time_zone", value)
 
 
+if not MYPY:
+    class GetLogAnalyticsEntitiesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLogAnalyticsEntitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetLogAnalyticsEntitiesFilterArgs:
     def __init__(__self__, *,
@@ -957,6 +1250,14 @@ class GetLogAnalyticsEntitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetLogAnalyticsLogGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLogAnalyticsLogGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetLogAnalyticsLogGroupsFilterArgs:
     def __init__(__self__, *,
@@ -995,6 +1296,17 @@ class GetLogAnalyticsLogGroupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetLogAnalyticsObjectCollectionRulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return rules only matching with this name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLogAnalyticsObjectCollectionRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetLogAnalyticsObjectCollectionRulesFilterArgs:
@@ -1041,6 +1353,17 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNamespaceEffectivePropertiesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The property name used for filtering.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceEffectivePropertiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNamespaceEffectivePropertiesFilterArgs:
     def __init__(__self__, *,
@@ -1086,6 +1409,14 @@ class GetNamespaceEffectivePropertiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNamespaceIngestTimeRulesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceIngestTimeRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNamespaceIngestTimeRulesFilterArgs:
     def __init__(__self__, *,
@@ -1124,6 +1455,17 @@ class GetNamespaceIngestTimeRulesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetNamespacePropertiesMetadataFilterArgsDict(TypedDict):
+        name: str
+        """
+        The property name used for filtering.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespacePropertiesMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNamespacePropertiesMetadataFilterArgs:
@@ -1170,6 +1512,14 @@ class GetNamespacePropertiesMetadataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNamespaceRulesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNamespaceRulesFilterArgs:
     def __init__(__self__, *,
@@ -1208,6 +1558,14 @@ class GetNamespaceRulesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetNamespaceScheduledTasksFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceScheduledTasksFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNamespaceScheduledTasksFilterArgs:
@@ -1248,6 +1606,14 @@ class GetNamespaceScheduledTasksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNamespaceStorageOverlappingRecallsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceStorageOverlappingRecallsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNamespaceStorageOverlappingRecallsFilterArgs:
     def __init__(__self__, *,
@@ -1286,6 +1652,14 @@ class GetNamespaceStorageOverlappingRecallsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetNamespacesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespacesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNamespacesFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -541,9 +546,6 @@ def get_domains_branding_setting(attribute_sets: Optional[Sequence[str]] = None,
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         terms_of_use_url=pulumi.get(__ret__, 'terms_of_use_url'),
         timezone=pulumi.get(__ret__, 'timezone'))
-
-
-@_utilities.lift_output_func(get_domains_branding_setting)
 def get_domains_branding_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                         authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -578,4 +580,50 @@ def get_domains_branding_setting_output(attribute_sets: Optional[pulumi.Input[Op
     :param str idcs_endpoint: The basic endpoint for the identity domain
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['brandingSettingId'] = branding_setting_id
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting', __args__, opts=opts, typ=GetDomainsBrandingSettingResult)
+    return __ret__.apply(lambda __response__: GetDomainsBrandingSettingResult(
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        branding_setting_id=pulumi.get(__response__, 'branding_setting_id'),
+        company_names=pulumi.get(__response__, 'company_names'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        custom_branding=pulumi.get(__response__, 'custom_branding'),
+        custom_css_location=pulumi.get(__response__, 'custom_css_location'),
+        custom_html_location=pulumi.get(__response__, 'custom_html_location'),
+        custom_translation=pulumi.get(__response__, 'custom_translation'),
+        default_company_names=pulumi.get(__response__, 'default_company_names'),
+        default_images=pulumi.get(__response__, 'default_images'),
+        default_login_texts=pulumi.get(__response__, 'default_login_texts'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        enable_terms_of_use=pulumi.get(__response__, 'enable_terms_of_use'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        images=pulumi.get(__response__, 'images'),
+        is_hosted_page=pulumi.get(__response__, 'is_hosted_page'),
+        locale=pulumi.get(__response__, 'locale'),
+        login_texts=pulumi.get(__response__, 'login_texts'),
+        metas=pulumi.get(__response__, 'metas'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        preferred_language=pulumi.get(__response__, 'preferred_language'),
+        privacy_policy_url=pulumi.get(__response__, 'privacy_policy_url'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        terms_of_use_url=pulumi.get(__response__, 'terms_of_use_url'),
+        timezone=pulumi.get(__response__, 'timezone')))

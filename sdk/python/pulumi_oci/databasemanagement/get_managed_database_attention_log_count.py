@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -195,9 +200,6 @@ def get_managed_database_attention_log_count(group_by: Optional[str] = None,
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'),
         type_filter=pulumi.get(__ret__, 'type_filter'),
         urgency_filter=pulumi.get(__ret__, 'urgency_filter'))
-
-
-@_utilities.lift_output_func(get_managed_database_attention_log_count)
 def get_managed_database_attention_log_count_output(group_by: Optional[pulumi.Input[Optional[str]]] = None,
                                                     is_regular_expression: Optional[pulumi.Input[Optional[bool]]] = None,
                                                     log_search_text: Optional[pulumi.Input[Optional[str]]] = None,
@@ -238,4 +240,25 @@ def get_managed_database_attention_log_count_output(group_by: Optional[pulumi.In
     :param str type_filter: The optional parameter to filter the attention or alert logs by type.
     :param str urgency_filter: The optional parameter to filter the attention logs by urgency.
     """
-    ...
+    __args__ = dict()
+    __args__['groupBy'] = group_by
+    __args__['isRegularExpression'] = is_regular_expression
+    __args__['logSearchText'] = log_search_text
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['timeGreaterThanOrEqualTo'] = time_greater_than_or_equal_to
+    __args__['timeLessThanOrEqualTo'] = time_less_than_or_equal_to
+    __args__['typeFilter'] = type_filter
+    __args__['urgencyFilter'] = urgency_filter
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount', __args__, opts=opts, typ=GetManagedDatabaseAttentionLogCountResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseAttentionLogCountResult(
+        group_by=pulumi.get(__response__, 'group_by'),
+        id=pulumi.get(__response__, 'id'),
+        is_regular_expression=pulumi.get(__response__, 'is_regular_expression'),
+        items=pulumi.get(__response__, 'items'),
+        log_search_text=pulumi.get(__response__, 'log_search_text'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        time_greater_than_or_equal_to=pulumi.get(__response__, 'time_greater_than_or_equal_to'),
+        time_less_than_or_equal_to=pulumi.get(__response__, 'time_less_than_or_equal_to'),
+        type_filter=pulumi.get(__response__, 'type_filter'),
+        urgency_filter=pulumi.get(__response__, 'urgency_filter')))

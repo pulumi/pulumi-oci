@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_java_downloads_java_license_acceptance_record(java_license_acceptance_re
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_last_updated=pulumi.get(__ret__, 'time_last_updated'))
-
-
-@_utilities.lift_output_func(get_java_downloads_java_license_acceptance_record)
 def get_java_downloads_java_license_acceptance_record_output(java_license_acceptance_record_id: Optional[pulumi.Input[str]] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaDownloadsJavaLicenseAcceptanceRecordResult]:
     """
@@ -246,4 +248,21 @@ def get_java_downloads_java_license_acceptance_record_output(java_license_accept
 
     :param str java_license_acceptance_record_id: Unique Java license acceptance record identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['javaLicenseAcceptanceRecordId'] = java_license_acceptance_record_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord', __args__, opts=opts, typ=GetJavaDownloadsJavaLicenseAcceptanceRecordResult)
+    return __ret__.apply(lambda __response__: GetJavaDownloadsJavaLicenseAcceptanceRecordResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_bies=pulumi.get(__response__, 'created_bies'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        java_license_acceptance_record_id=pulumi.get(__response__, 'java_license_acceptance_record_id'),
+        last_updated_bies=pulumi.get(__response__, 'last_updated_bies'),
+        license_acceptance_status=pulumi.get(__response__, 'license_acceptance_status'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_last_updated=pulumi.get(__response__, 'time_last_updated')))

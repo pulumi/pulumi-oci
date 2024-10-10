@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_backup_destinations)
 def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
                                    type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -153,4 +155,15 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str type: A filter to return only resources that match the given type of the Backup Destination.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getBackupDestinations:getBackupDestinations', __args__, opts=opts, typ=GetBackupDestinationsResult)
+    return __ret__.apply(lambda __response__: GetBackupDestinationsResult(
+        backup_destinations=pulumi.get(__response__, 'backup_destinations'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        type=pulumi.get(__response__, 'type')))

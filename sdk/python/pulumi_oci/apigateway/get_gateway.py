@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_gateway(gateway_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_gateway)
 def get_gateway_output(gateway_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGatewayResult]:
     """
@@ -311,4 +313,26 @@ def get_gateway_output(gateway_id: Optional[pulumi.Input[str]] = None,
 
     :param str gateway_id: The ocid of the gateway.
     """
-    ...
+    __args__ = dict()
+    __args__['gatewayId'] = gateway_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getGateway:getGateway', __args__, opts=opts, typ=GetGatewayResult)
+    return __ret__.apply(lambda __response__: GetGatewayResult(
+        ca_bundles=pulumi.get(__response__, 'ca_bundles'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoint_type=pulumi.get(__response__, 'endpoint_type'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gateway_id=pulumi.get(__response__, 'gateway_id'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        response_cache_details=pulumi.get(__response__, 'response_cache_details'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

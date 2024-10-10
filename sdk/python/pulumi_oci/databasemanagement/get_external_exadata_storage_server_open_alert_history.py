@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
         alerts=pulumi.get(__ret__, 'alerts'),
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_external_exadata_storage_server_open_alert_history)
 def get_external_exadata_storage_server_open_alert_history_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]:
     """
@@ -116,4 +118,11 @@ def get_external_exadata_storage_server_open_alert_history_output(external_exada
 
     :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
     """
-    ...
+    __args__ = dict()
+    __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalExadataStorageServerOpenAlertHistory:getExternalExadataStorageServerOpenAlertHistory', __args__, opts=opts, typ=GetExternalExadataStorageServerOpenAlertHistoryResult)
+    return __ret__.apply(lambda __response__: GetExternalExadataStorageServerOpenAlertHistoryResult(
+        alerts=pulumi.get(__response__, 'alerts'),
+        external_exadata_storage_server_id=pulumi.get(__response__, 'external_exadata_storage_server_id'),
+        id=pulumi.get(__response__, 'id')))

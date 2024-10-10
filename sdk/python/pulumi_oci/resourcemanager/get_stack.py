@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -192,9 +197,6 @@ def get_stack(stack_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'))
-
-
-@_utilities.lift_output_func(get_stack)
 def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStackResult]:
     """
@@ -214,4 +216,19 @@ def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
 
     :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
     """
-    ...
+    __args__ = dict()
+    __args__['stackId'] = stack_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getStack:getStack', __args__, opts=opts, typ=GetStackResult)
+    return __ret__.apply(lambda __response__: GetStackResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_sources=pulumi.get(__response__, 'config_sources'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        stack_id=pulumi.get(__response__, 'stack_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        variables=pulumi.get(__response__, 'variables')))

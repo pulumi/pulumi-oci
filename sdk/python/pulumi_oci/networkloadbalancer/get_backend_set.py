@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -186,9 +191,6 @@ def get_backend_set(backend_set_name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
         policy=pulumi.get(__ret__, 'policy'))
-
-
-@_utilities.lift_output_func(get_backend_set)
 def get_backend_set_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                            network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetResult]:
@@ -201,4 +203,20 @@ def get_backend_set_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     :param str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['backendSetName'] = backend_set_name
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getBackendSet:getBackendSet', __args__, opts=opts, typ=GetBackendSetResult)
+    return __ret__.apply(lambda __response__: GetBackendSetResult(
+        backend_set_name=pulumi.get(__response__, 'backend_set_name'),
+        backends=pulumi.get(__response__, 'backends'),
+        health_checkers=pulumi.get(__response__, 'health_checkers'),
+        id=pulumi.get(__response__, 'id'),
+        ip_version=pulumi.get(__response__, 'ip_version'),
+        is_fail_open=pulumi.get(__response__, 'is_fail_open'),
+        is_instant_failover_enabled=pulumi.get(__response__, 'is_instant_failover_enabled'),
+        is_preserve_source=pulumi.get(__response__, 'is_preserve_source'),
+        name=pulumi.get(__response__, 'name'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),
+        policy=pulumi.get(__response__, 'policy')))

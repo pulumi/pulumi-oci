@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -107,9 +112,6 @@ def get_instance_measured_boot_report(instance_id: Optional[str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_policy_verification_successful=pulumi.get(__ret__, 'is_policy_verification_successful'),
         measurements=pulumi.get(__ret__, 'measurements'))
-
-
-@_utilities.lift_output_func(get_instance_measured_boot_report)
 def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMeasuredBootReportResult]:
     """
@@ -129,4 +131,12 @@ def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
     """
-    ...
+    __args__ = dict()
+    __args__['instanceId'] = instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceMeasuredBootReport:getInstanceMeasuredBootReport', __args__, opts=opts, typ=GetInstanceMeasuredBootReportResult)
+    return __ret__.apply(lambda __response__: GetInstanceMeasuredBootReportResult(
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        is_policy_verification_successful=pulumi.get(__response__, 'is_policy_verification_successful'),
+        measurements=pulumi.get(__response__, 'measurements')))

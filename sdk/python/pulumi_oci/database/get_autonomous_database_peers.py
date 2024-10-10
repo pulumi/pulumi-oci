@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[str] = None,
         autonomous_database_peer_collections=pulumi.get(__ret__, 'autonomous_database_peer_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_autonomous_database_peers)
 def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
@@ -130,4 +132,13 @@ def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi
 
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousDatabaseId'] = autonomous_database_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers', __args__, opts=opts, typ=GetAutonomousDatabasePeersResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabasePeersResult(
+        autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),
+        autonomous_database_peer_collections=pulumi.get(__response__, 'autonomous_database_peer_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

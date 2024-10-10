@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -117,9 +122,6 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
         reporting_region=pulumi.get(__ret__, 'reporting_region'),
         self_manage_resources=pulumi.get(__ret__, 'self_manage_resources'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_cloud_guard_configuration)
 def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudGuardConfigurationResult]:
     """
@@ -140,4 +142,13 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
 
     :param str compartment_id: The OCID of the compartment in which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration', __args__, opts=opts, typ=GetCloudGuardConfigurationResult)
+    return __ret__.apply(lambda __response__: GetCloudGuardConfigurationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        reporting_region=pulumi.get(__response__, 'reporting_region'),
+        self_manage_resources=pulumi.get(__response__, 'self_manage_resources'),
+        status=pulumi.get(__response__, 'status')))

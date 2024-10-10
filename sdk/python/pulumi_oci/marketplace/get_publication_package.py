@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -251,9 +256,6 @@ def get_publication_package(package_version: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_publication_package)
 def get_publication_package_output(package_version: Optional[pulumi.Input[str]] = None,
                                    publication_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationPackageResult]:
@@ -276,4 +278,24 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[str]] 
     :param str package_version: The version of the package. Package versions are unique within a listing.
     :param str publication_id: The unique identifier for the publication.
     """
-    ...
+    __args__ = dict()
+    __args__['packageVersion'] = package_version
+    __args__['publicationId'] = publication_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getPublicationPackage:getPublicationPackage', __args__, opts=opts, typ=GetPublicationPackageResult)
+    return __ret__.apply(lambda __response__: GetPublicationPackageResult(
+        app_catalog_listing_id=pulumi.get(__response__, 'app_catalog_listing_id'),
+        app_catalog_listing_resource_version=pulumi.get(__response__, 'app_catalog_listing_resource_version'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        operating_systems=pulumi.get(__response__, 'operating_systems'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        package_version=pulumi.get(__response__, 'package_version'),
+        publication_id=pulumi.get(__response__, 'publication_id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_link=pulumi.get(__response__, 'resource_link'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        variables=pulumi.get(__response__, 'variables'),
+        version=pulumi.get(__response__, 'version')))

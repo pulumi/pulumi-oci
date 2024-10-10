@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -356,9 +361,6 @@ def get_scheduled_jobs(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_scheduled_jobs)
 def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -430,4 +432,46 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[str
     :param str time_end: A filter to return only resources with a date on or before the given value, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
     :param str time_start: A filter to return only resources with a date on or after the given value, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
+    __args__['isRestricted'] = is_restricted
+    __args__['lifecycleStageId'] = lifecycle_stage_id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
+    __args__['managedCompartmentId'] = managed_compartment_id
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['operationType'] = operation_type
+    __args__['scheduleType'] = schedule_type
+    __args__['state'] = state
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getScheduledJobs:getScheduledJobs', __args__, opts=opts, typ=GetScheduledJobsResult)
+    return __ret__.apply(lambda __response__: GetScheduledJobsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        is_restricted=pulumi.get(__response__, 'is_restricted'),
+        lifecycle_stage_id=pulumi.get(__response__, 'lifecycle_stage_id'),
+        location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
+        locations=pulumi.get(__response__, 'locations'),
+        managed_compartment_id=pulumi.get(__response__, 'managed_compartment_id'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        operation_type=pulumi.get(__response__, 'operation_type'),
+        schedule_type=pulumi.get(__response__, 'schedule_type'),
+        scheduled_job_collections=pulumi.get(__response__, 'scheduled_job_collections'),
+        state=pulumi.get(__response__, 'state'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

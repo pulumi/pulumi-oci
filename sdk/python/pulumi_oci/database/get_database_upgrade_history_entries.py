@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_database_upgrade_history_entries(database_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         upgrade_action=pulumi.get(__ret__, 'upgrade_action'))
-
-
-@_utilities.lift_output_func(get_database_upgrade_history_entries)
 def get_database_upgrade_history_entries_output(database_id: Optional[pulumi.Input[str]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseUpgradeHistoryEntriesFilterArgs', 'GetDatabaseUpgradeHistoryEntriesFilterArgsDict']]]]] = None,
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -167,4 +169,17 @@ def get_database_upgrade_history_entries_output(database_id: Optional[pulumi.Inp
     :param str state: A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
     :param str upgrade_action: A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['upgradeAction'] = upgrade_action
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseUpgradeHistoryEntries:getDatabaseUpgradeHistoryEntries', __args__, opts=opts, typ=GetDatabaseUpgradeHistoryEntriesResult)
+    return __ret__.apply(lambda __response__: GetDatabaseUpgradeHistoryEntriesResult(
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_upgrade_history_entries=pulumi.get(__response__, 'database_upgrade_history_entries'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        upgrade_action=pulumi.get(__response__, 'upgrade_action')))

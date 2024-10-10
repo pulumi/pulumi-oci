@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -178,9 +183,6 @@ def get_managed_instance_group_installed_packages(compartment_id: Optional[str] 
         managed_instance_group_installed_package_collections=pulumi.get(__ret__, 'managed_instance_group_installed_package_collections'),
         time_install_date_end=pulumi.get(__ret__, 'time_install_date_end'),
         time_install_date_start=pulumi.get(__ret__, 'time_install_date_start'))
-
-
-@_utilities.lift_output_func(get_managed_instance_group_installed_packages)
 def get_managed_instance_group_installed_packages_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                          display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                          display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -217,4 +219,23 @@ def get_managed_instance_group_installed_packages_output(compartment_id: Optiona
     :param str time_install_date_end: A filter to return only packages that were installed on or before the date provided, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
     :param str time_install_date_start: The install date after which to list all packages, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    __args__['timeInstallDateEnd'] = time_install_date_end
+    __args__['timeInstallDateStart'] = time_install_date_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages', __args__, opts=opts, typ=GetManagedInstanceGroupInstalledPackagesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupInstalledPackagesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_group_installed_package_collections=pulumi.get(__response__, 'managed_instance_group_installed_package_collections'),
+        time_install_date_end=pulumi.get(__response__, 'time_install_date_end'),
+        time_install_date_start=pulumi.get(__response__, 'time_install_date_start')))

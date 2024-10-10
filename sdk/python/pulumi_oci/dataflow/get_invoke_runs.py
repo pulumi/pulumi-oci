@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -223,9 +228,6 @@ def get_invoke_runs(application_id: Optional[str] = None,
         runs=pulumi.get(__ret__, 'runs'),
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than=pulumi.get(__ret__, 'time_created_greater_than'))
-
-
-@_utilities.lift_output_func(get_invoke_runs)
 def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
                            compartment_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -267,4 +269,27 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
     :param str state: The LifecycleState of the run.
     :param str time_created_greater_than: The epoch time that the resource was created.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationId'] = application_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['displayNameStartsWith'] = display_name_starts_with
+    __args__['filters'] = filters
+    __args__['ownerPrincipalId'] = owner_principal_id
+    __args__['poolId'] = pool_id
+    __args__['state'] = state
+    __args__['timeCreatedGreaterThan'] = time_created_greater_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getInvokeRuns:getInvokeRuns', __args__, opts=opts, typ=GetInvokeRunsResult)
+    return __ret__.apply(lambda __response__: GetInvokeRunsResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_starts_with=pulumi.get(__response__, 'display_name_starts_with'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        owner_principal_id=pulumi.get(__response__, 'owner_principal_id'),
+        pool_id=pulumi.get(__response__, 'pool_id'),
+        runs=pulumi.get(__response__, 'runs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created_greater_than=pulumi.get(__response__, 'time_created_greater_than')))

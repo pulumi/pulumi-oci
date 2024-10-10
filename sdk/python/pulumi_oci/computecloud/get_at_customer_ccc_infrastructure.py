@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -342,9 +347,6 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[str] = No
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_informations=pulumi.get(__ret__, 'upgrade_informations'))
-
-
-@_utilities.lift_output_func(get_at_customer_ccc_infrastructure)
 def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccInfrastructureResult]:
     """
@@ -365,4 +367,30 @@ def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pu
 
     :param str ccc_infrastructure_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
     """
-    ...
+    __args__ = dict()
+    __args__['cccInfrastructureId'] = ccc_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccInfrastructure:getAtCustomerCccInfrastructure', __args__, opts=opts, typ=GetAtCustomerCccInfrastructureResult)
+    return __ret__.apply(lambda __response__: GetAtCustomerCccInfrastructureResult(
+        ccc_infrastructure_id=pulumi.get(__response__, 'ccc_infrastructure_id'),
+        ccc_upgrade_schedule_id=pulumi.get(__response__, 'ccc_upgrade_schedule_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_details=pulumi.get(__response__, 'connection_details'),
+        connection_state=pulumi.get(__response__, 'connection_state'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_inventories=pulumi.get(__response__, 'infrastructure_inventories'),
+        infrastructure_network_configurations=pulumi.get(__response__, 'infrastructure_network_configurations'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        provisioning_fingerprint=pulumi.get(__response__, 'provisioning_fingerprint'),
+        provisioning_pin=pulumi.get(__response__, 'provisioning_pin'),
+        short_name=pulumi.get(__response__, 'short_name'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgrade_informations=pulumi.get(__response__, 'upgrade_informations')))

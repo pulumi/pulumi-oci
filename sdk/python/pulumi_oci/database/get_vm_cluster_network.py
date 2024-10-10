@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -288,9 +293,6 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
         vm_networks=pulumi.get(__ret__, 'vm_networks'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_network)
 def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                   vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterNetworkResult]:
@@ -314,4 +316,27 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    __args__['vmClusterNetworkId'] = vm_cluster_network_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterNetwork:getVmClusterNetwork', __args__, opts=opts, typ=GetVmClusterNetworkResult)
+    return __ret__.apply(lambda __response__: GetVmClusterNetworkResult(
+        action=pulumi.get(__response__, 'action'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns=pulumi.get(__response__, 'dns'),
+        dr_scans=pulumi.get(__response__, 'dr_scans'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        ntps=pulumi.get(__response__, 'ntps'),
+        scans=pulumi.get(__response__, 'scans'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        validate_vm_cluster_network=pulumi.get(__response__, 'validate_vm_cluster_network'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),
+        vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id'),
+        vm_networks=pulumi.get(__response__, 'vm_networks')))

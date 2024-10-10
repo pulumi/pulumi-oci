@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -409,9 +414,6 @@ def get_domains_my_completed_approval(authorization: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-
-
-@_utilities.lift_output_func(get_domains_my_completed_approval)
 def get_domains_my_completed_approval_output(authorization: Optional[pulumi.Input[Optional[str]]] = None,
                                              idcs_endpoint: Optional[pulumi.Input[str]] = None,
                                              my_completed_approval_id: Optional[pulumi.Input[str]] = None,
@@ -440,4 +442,38 @@ def get_domains_my_completed_approval_output(authorization: Optional[pulumi.Inpu
     :param str my_completed_approval_id: ID of the resource
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['myCompletedApprovalId'] = my_completed_approval_id
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval', __args__, opts=opts, typ=GetDomainsMyCompletedApprovalResult)
+    return __ret__.apply(lambda __response__: GetDomainsMyCompletedApprovalResult(
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        expires=pulumi.get(__response__, 'expires'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        justification=pulumi.get(__response__, 'justification'),
+        metas=pulumi.get(__response__, 'metas'),
+        my_completed_approval_id=pulumi.get(__response__, 'my_completed_approval_id'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        request_created_time=pulumi.get(__response__, 'request_created_time'),
+        request_details=pulumi.get(__response__, 'request_details'),
+        request_id=pulumi.get(__response__, 'request_id'),
+        request_ocid=pulumi.get(__response__, 'request_ocid'),
+        resource_display_name=pulumi.get(__response__, 'resource_display_name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        response_time=pulumi.get(__response__, 'response_time'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid')))

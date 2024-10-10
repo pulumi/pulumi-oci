@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -184,9 +189,6 @@ def get_managed_databases(compartment_id: Optional[str] = None,
         managed_database_collections=pulumi.get(__ret__, 'managed_database_collections'),
         management_option=pulumi.get(__ret__, 'management_option'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_managed_databases)
 def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  deployment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                  external_exadata_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -227,4 +229,22 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str management_option: A filter to return Managed Databases with the specified management option.
     :param str name: A filter to return only resources that match the entire name.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['deploymentType'] = deployment_type
+    __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['managementOption'] = management_option
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabases:getManagedDatabases', __args__, opts=opts, typ=GetManagedDatabasesResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabasesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        external_exadata_infrastructure_id=pulumi.get(__response__, 'external_exadata_infrastructure_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_collections=pulumi.get(__response__, 'managed_database_collections'),
+        management_option=pulumi.get(__response__, 'management_option'),
+        name=pulumi.get(__response__, 'name')))

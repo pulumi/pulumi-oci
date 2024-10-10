@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -111,9 +116,6 @@ def get_cost_tracking_tags(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         tags=pulumi.get(__ret__, 'tags'))
-
-
-@_utilities.lift_output_func(get_cost_tracking_tags)
 def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCostTrackingTagsFilterArgs', 'GetCostTrackingTagsFilterArgsDict']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCostTrackingTagsResult]:
@@ -135,4 +137,13 @@ def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getCostTrackingTags:getCostTrackingTags', __args__, opts=opts, typ=GetCostTrackingTagsResult)
+    return __ret__.apply(lambda __response__: GetCostTrackingTagsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        tags=pulumi.get(__response__, 'tags')))

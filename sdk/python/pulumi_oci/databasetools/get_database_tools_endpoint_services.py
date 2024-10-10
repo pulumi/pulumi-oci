@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_database_tools_endpoint_services)
 def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsEndpointServicesFilterArgs', 'GetDatabaseToolsEndpointServicesFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
     :param str name: A filter to return only resources that match the entire specified name.
     :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices', __args__, opts=opts, typ=GetDatabaseToolsEndpointServicesResult)
+    return __ret__.apply(lambda __response__: GetDatabaseToolsEndpointServicesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_tools_endpoint_service_collections=pulumi.get(__response__, 'database_tools_endpoint_service_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -209,9 +214,6 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
         ingest_time_rule_summary_collections=pulumi.get(__ret__, 'ingest_time_rule_summary_collections'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_namespace_ingest_time_rules)
 def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                            condition_kind: Optional[pulumi.Input[Optional[str]]] = None,
                                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -250,4 +252,25 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['conditionKind'] = condition_kind
+    __args__['displayName'] = display_name
+    __args__['fieldName'] = field_name
+    __args__['fieldValue'] = field_value
+    __args__['filters'] = filters
+    __args__['namespace'] = namespace
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules', __args__, opts=opts, typ=GetNamespaceIngestTimeRulesResult)
+    return __ret__.apply(lambda __response__: GetNamespaceIngestTimeRulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        condition_kind=pulumi.get(__response__, 'condition_kind'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        field_name=pulumi.get(__response__, 'field_name'),
+        field_value=pulumi.get(__response__, 'field_value'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ingest_time_rule_summary_collections=pulumi.get(__response__, 'ingest_time_rule_summary_collections'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        state=pulumi.get(__response__, 'state')))

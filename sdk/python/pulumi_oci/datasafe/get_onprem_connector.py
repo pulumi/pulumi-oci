@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_onprem_connector(on_prem_connector_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_onprem_connector)
 def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnpremConnectorResult]:
     """
@@ -245,4 +247,21 @@ def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[str]
 
     :param str on_prem_connector_id: The OCID of the on-premises connector.
     """
-    ...
+    __args__ = dict()
+    __args__['onPremConnectorId'] = on_prem_connector_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getOnpremConnector:getOnpremConnector', __args__, opts=opts, typ=GetOnpremConnectorResult)
+    return __ret__.apply(lambda __response__: GetOnpremConnectorResult(
+        available_version=pulumi.get(__response__, 'available_version'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_version=pulumi.get(__response__, 'created_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        on_prem_connector_id=pulumi.get(__response__, 'on_prem_connector_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

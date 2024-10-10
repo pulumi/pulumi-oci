@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -153,9 +158,6 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[str] = N
         total_backend_set_count=pulumi.get(__ret__, 'total_backend_set_count'),
         unknown_state_backend_set_names=pulumi.get(__ret__, 'unknown_state_backend_set_names'),
         warning_state_backend_set_names=pulumi.get(__ret__, 'warning_state_backend_set_names'))
-
-
-@_utilities.lift_output_func(get_network_load_balancer_health)
 def get_network_load_balancer_health_output(network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancerHealthResult]:
     """
@@ -175,4 +177,15 @@ def get_network_load_balancer_health_output(network_load_balancer_id: Optional[p
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth', __args__, opts=opts, typ=GetNetworkLoadBalancerHealthResult)
+    return __ret__.apply(lambda __response__: GetNetworkLoadBalancerHealthResult(
+        critical_state_backend_set_names=pulumi.get(__response__, 'critical_state_backend_set_names'),
+        id=pulumi.get(__response__, 'id'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),
+        status=pulumi.get(__response__, 'status'),
+        total_backend_set_count=pulumi.get(__response__, 'total_backend_set_count'),
+        unknown_state_backend_set_names=pulumi.get(__response__, 'unknown_state_backend_set_names'),
+        warning_state_backend_set_names=pulumi.get(__response__, 'warning_state_backend_set_names')))

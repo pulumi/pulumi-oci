@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -228,9 +233,6 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
         network_id=pulumi.get(__ret__, 'network_id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_drg_attachments)
 def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -277,4 +279,27 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
     :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
     :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['attachmentType'] = attachment_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['drgId'] = drg_id
+    __args__['drgRouteTableId'] = drg_route_table_id
+    __args__['filters'] = filters
+    __args__['networkId'] = network_id
+    __args__['state'] = state
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDrgAttachments:getDrgAttachments', __args__, opts=opts, typ=GetDrgAttachmentsResult)
+    return __ret__.apply(lambda __response__: GetDrgAttachmentsResult(
+        attachment_type=pulumi.get(__response__, 'attachment_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        drg_attachments=pulumi.get(__response__, 'drg_attachments'),
+        drg_id=pulumi.get(__response__, 'drg_id'),
+        drg_route_table_id=pulumi.get(__response__, 'drg_route_table_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_id=pulumi.get(__response__, 'network_id'),
+        state=pulumi.get(__response__, 'state'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

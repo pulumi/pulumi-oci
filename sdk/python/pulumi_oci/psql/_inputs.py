@@ -4,33 +4,73 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'BackupDbSystemDetailArgs',
+    'BackupDbSystemDetailArgsDict',
     'ConfigurationConfigurationDetailArgs',
+    'ConfigurationConfigurationDetailArgsDict',
     'ConfigurationConfigurationDetailItemArgs',
+    'ConfigurationConfigurationDetailItemArgsDict',
     'ConfigurationDbConfigurationOverridesArgs',
+    'ConfigurationDbConfigurationOverridesArgsDict',
     'ConfigurationDbConfigurationOverridesItemArgs',
+    'ConfigurationDbConfigurationOverridesItemArgsDict',
     'DbSystemCredentialsArgs',
+    'DbSystemCredentialsArgsDict',
     'DbSystemCredentialsPasswordDetailsArgs',
+    'DbSystemCredentialsPasswordDetailsArgsDict',
     'DbSystemInstanceArgs',
+    'DbSystemInstanceArgsDict',
     'DbSystemInstancesDetailArgs',
+    'DbSystemInstancesDetailArgsDict',
     'DbSystemManagementPolicyArgs',
+    'DbSystemManagementPolicyArgsDict',
     'DbSystemManagementPolicyBackupPolicyArgs',
+    'DbSystemManagementPolicyBackupPolicyArgsDict',
     'DbSystemNetworkDetailsArgs',
+    'DbSystemNetworkDetailsArgsDict',
     'DbSystemPatchOperationArgs',
+    'DbSystemPatchOperationArgsDict',
     'DbSystemSourceArgs',
+    'DbSystemSourceArgsDict',
     'DbSystemStorageDetailsArgs',
+    'DbSystemStorageDetailsArgsDict',
     'GetBackupsFilterArgs',
+    'GetBackupsFilterArgsDict',
     'GetConfigurationsFilterArgs',
+    'GetConfigurationsFilterArgsDict',
     'GetDbSystemsFilterArgs',
+    'GetDbSystemsFilterArgsDict',
     'GetDefaultConfigurationsFilterArgs',
+    'GetDefaultConfigurationsFilterArgsDict',
     'GetShapesFilterArgs',
+    'GetShapesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class BackupDbSystemDetailArgsDict(TypedDict):
+        db_version: NotRequired[pulumi.Input[str]]
+        """
+        The major and minor versions of the database system software.
+        """
+        system_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the database system.
+        """
+elif False:
+    BackupDbSystemDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BackupDbSystemDetailArgs:
@@ -71,6 +111,15 @@ class BackupDbSystemDetailArgs:
         pulumi.set(self, "system_type", value)
 
 
+if not MYPY:
+    class ConfigurationConfigurationDetailArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgsDict']]]]
+        """
+        List of ConfigParms object.
+        """
+elif False:
+    ConfigurationConfigurationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConfigurationConfigurationDetailArgs:
     def __init__(__self__, *,
@@ -93,6 +142,43 @@ class ConfigurationConfigurationDetailArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ConfigurationConfigurationDetailItemArgsDict(TypedDict):
+        allowed_values: NotRequired[pulumi.Input[str]]
+        """
+        Range or list of allowed values.
+        """
+        config_key: NotRequired[pulumi.Input[str]]
+        """
+        The configuration variable name.
+        """
+        data_type: NotRequired[pulumi.Input[str]]
+        """
+        Data type of the variable.
+        """
+        default_config_value: NotRequired[pulumi.Input[str]]
+        """
+        Default value for the configuration variable.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Details about the configuration set.
+        """
+        is_overridable: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the value can be overridden or not.
+        """
+        is_restart_required: NotRequired[pulumi.Input[bool]]
+        """
+        If true, modifying this configuration value will require a restart of the database.
+        """
+        overriden_config_value: NotRequired[pulumi.Input[str]]
+        """
+        User-selected configuration variable value.
+        """
+elif False:
+    ConfigurationConfigurationDetailItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConfigurationConfigurationDetailItemArgs:
@@ -229,6 +315,15 @@ class ConfigurationConfigurationDetailItemArgs:
         pulumi.set(self, "overriden_config_value", value)
 
 
+if not MYPY:
+    class ConfigurationDbConfigurationOverridesArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['ConfigurationDbConfigurationOverridesItemArgsDict']]]
+        """
+        List of configuration overridden values.
+        """
+elif False:
+    ConfigurationDbConfigurationOverridesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConfigurationDbConfigurationOverridesArgs:
     def __init__(__self__, *,
@@ -250,6 +345,19 @@ class ConfigurationDbConfigurationOverridesArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['ConfigurationDbConfigurationOverridesItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ConfigurationDbConfigurationOverridesItemArgsDict(TypedDict):
+        config_key: pulumi.Input[str]
+        """
+        Configuration variable name.
+        """
+        overriden_config_value: pulumi.Input[str]
+        """
+        User-selected variable value.
+        """
+elif False:
+    ConfigurationDbConfigurationOverridesItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConfigurationDbConfigurationOverridesItemArgs:
@@ -288,6 +396,19 @@ class ConfigurationDbConfigurationOverridesItemArgs:
         pulumi.set(self, "overriden_config_value", value)
 
 
+if not MYPY:
+    class DbSystemCredentialsArgsDict(TypedDict):
+        password_details: pulumi.Input['DbSystemCredentialsPasswordDetailsArgsDict']
+        """
+        Details for the database system password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
+        """
+        username: pulumi.Input[str]
+        """
+        The database system administrator username.
+        """
+elif False:
+    DbSystemCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DbSystemCredentialsArgs:
     def __init__(__self__, *,
@@ -324,6 +445,27 @@ class DbSystemCredentialsArgs:
     def username(self, value: pulumi.Input[str]):
         pulumi.set(self, "username", value)
 
+
+if not MYPY:
+    class DbSystemCredentialsPasswordDetailsArgsDict(TypedDict):
+        password_type: pulumi.Input[str]
+        """
+        The password type.
+        """
+        password: NotRequired[pulumi.Input[str]]
+        """
+        The database system password.
+        """
+        secret_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
+        """
+        secret_version: NotRequired[pulumi.Input[str]]
+        """
+        The secret version of the stored password.
+        """
+elif False:
+    DbSystemCredentialsPasswordDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DbSystemCredentialsPasswordDetailsArgs:
@@ -394,6 +536,43 @@ class DbSystemCredentialsPasswordDetailsArgs:
     def secret_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "secret_version", value)
 
+
+if not MYPY:
+    class DbSystemInstanceArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-provided description of a database system.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        A unique identifier for the database instance node. Immutable on creation.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the database system.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+elif False:
+    DbSystemInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DbSystemInstanceArgs:
@@ -530,6 +709,23 @@ class DbSystemInstanceArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class DbSystemInstancesDetailArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        A user-provided description of the database instance node.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Display name of the database instance node. Avoid entering confidential information.
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
+        """
+elif False:
+    DbSystemInstancesDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DbSystemInstancesDetailArgs:
     def __init__(__self__, *,
@@ -585,6 +781,21 @@ class DbSystemInstancesDetailArgs:
         pulumi.set(self, "private_ip", value)
 
 
+if not MYPY:
+    class DbSystemManagementPolicyArgsDict(TypedDict):
+        backup_policy: NotRequired[pulumi.Input['DbSystemManagementPolicyBackupPolicyArgsDict']]
+        """
+        (Updatable) PostgreSQL database system backup policy.
+        """
+        maintenance_window_start: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The start of the maintenance window in UTC.
+
+        This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+        """
+elif False:
+    DbSystemManagementPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DbSystemManagementPolicyArgs:
     def __init__(__self__, *,
@@ -627,6 +838,31 @@ class DbSystemManagementPolicyArgs:
     def maintenance_window_start(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "maintenance_window_start", value)
 
+
+if not MYPY:
+    class DbSystemManagementPolicyBackupPolicyArgsDict(TypedDict):
+        backup_start: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Hour of the day when the backup starts.
+        """
+        days_of_the_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
+        """
+        days_of_the_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The day of the week that the backup starts.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The kind of backup policy.
+        """
+        retention_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) How many days the data should be stored after the database system deletion.
+        """
+elif False:
+    DbSystemManagementPolicyBackupPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DbSystemManagementPolicyBackupPolicyArgs:
@@ -715,6 +951,23 @@ class DbSystemManagementPolicyBackupPolicyArgs:
         pulumi.set(self, "retention_days", value)
 
 
+if not MYPY:
+    class DbSystemNetworkDetailsArgsDict(TypedDict):
+        subnet_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+        """
+        primary_db_endpoint_private_ip: NotRequired[pulumi.Input[str]]
+        """
+        Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
+        """
+elif False:
+    DbSystemNetworkDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DbSystemNetworkDetailsArgs:
     def __init__(__self__, *,
@@ -768,6 +1021,26 @@ class DbSystemNetworkDetailsArgs:
     def primary_db_endpoint_private_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "primary_db_endpoint_private_ip", value)
 
+
+if not MYPY:
+    class DbSystemPatchOperationArgsDict(TypedDict):
+        operation: pulumi.Input[str]
+        """
+        The operation can be one of these values: `INSERT`, `REMOVE`.
+        """
+        selection: pulumi.Input[str]
+        """
+        In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+        """
+        from_: NotRequired[pulumi.Input[str]]
+        position: NotRequired[pulumi.Input[str]]
+        selected_item: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+        """
+elif False:
+    DbSystemPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DbSystemPatchOperationArgs:
@@ -858,6 +1131,23 @@ class DbSystemPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class DbSystemSourceArgsDict(TypedDict):
+        source_type: pulumi.Input[str]
+        """
+        The source descriminator. Example: `{"source_type": "BACKUP"}`.
+        """
+        backup_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        """
+        is_having_restore_config_overrides: NotRequired[pulumi.Input[bool]]
+        """
+        Deprecated. Don't use.
+        """
+elif False:
+    DbSystemSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DbSystemSourceArgs:
     def __init__(__self__, *,
@@ -911,6 +1201,27 @@ class DbSystemSourceArgs:
     def is_having_restore_config_overrides(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_having_restore_config_overrides", value)
 
+
+if not MYPY:
+    class DbSystemStorageDetailsArgsDict(TypedDict):
+        is_regionally_durable: pulumi.Input[bool]
+        """
+        Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        """
+        system_type: pulumi.Input[str]
+        """
+        Type of the database system.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
+        """
+        iops: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
+        """
+elif False:
+    DbSystemStorageDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DbSystemStorageDetailsArgs:
@@ -981,6 +1292,14 @@ class DbSystemStorageDetailsArgs:
         pulumi.set(self, "iops", value)
 
 
+if not MYPY:
+    class GetBackupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBackupsFilterArgs:
     def __init__(__self__, *,
@@ -1019,6 +1338,14 @@ class GetBackupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetConfigurationsFilterArgs:
@@ -1059,6 +1386,14 @@ class GetConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDbSystemsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDbSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDbSystemsFilterArgs:
     def __init__(__self__, *,
@@ -1098,6 +1433,14 @@ class GetDbSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDefaultConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDefaultConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDefaultConfigurationsFilterArgs:
     def __init__(__self__, *,
@@ -1136,6 +1479,14 @@ class GetDefaultConfigurationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetShapesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetShapesFilterArgs:

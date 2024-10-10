@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_virtual_service_route_table(virtual_service_route_table_id: Optional[str
         time_updated=pulumi.get(__ret__, 'time_updated'),
         virtual_service_id=pulumi.get(__ret__, 'virtual_service_id'),
         virtual_service_route_table_id=pulumi.get(__ret__, 'virtual_service_route_table_id'))
-
-
-@_utilities.lift_output_func(get_virtual_service_route_table)
 def get_virtual_service_route_table_output(virtual_service_route_table_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualServiceRouteTableResult]:
     """
@@ -272,4 +274,23 @@ def get_virtual_service_route_table_output(virtual_service_route_table_id: Optio
 
     :param str virtual_service_route_table_id: Unique VirtualServiceRouteTable identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['virtualServiceRouteTableId'] = virtual_service_route_table_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceMesh/getVirtualServiceRouteTable:getVirtualServiceRouteTable', __args__, opts=opts, typ=GetVirtualServiceRouteTableResult)
+    return __ret__.apply(lambda __response__: GetVirtualServiceRouteTableResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        priority=pulumi.get(__response__, 'priority'),
+        route_rules=pulumi.get(__response__, 'route_rules'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        virtual_service_id=pulumi.get(__response__, 'virtual_service_id'),
+        virtual_service_route_table_id=pulumi.get(__response__, 'virtual_service_route_table_id')))

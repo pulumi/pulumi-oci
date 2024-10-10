@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -305,9 +310,6 @@ def get_connections(catalog_id: Optional[str] = None,
         time_status_updated=pulumi.get(__ret__, 'time_status_updated'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updated_by_id=pulumi.get(__ret__, 'updated_by_id'))
-
-
-@_utilities.lift_output_func(get_connections)
 def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
                            created_by_id: Optional[pulumi.Input[Optional[str]]] = None,
                            data_asset_key: Optional[pulumi.Input[str]] = None,
@@ -364,4 +366,37 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
     :param str time_updated: Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
     :param str updated_by_id: OCID of the user who updated the resource.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogId'] = catalog_id
+    __args__['createdById'] = created_by_id
+    __args__['dataAssetKey'] = data_asset_key
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['externalKey'] = external_key
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['isDefault'] = is_default
+    __args__['state'] = state
+    __args__['timeCreated'] = time_created
+    __args__['timeStatusUpdated'] = time_status_updated
+    __args__['timeUpdated'] = time_updated
+    __args__['updatedById'] = updated_by_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
+    return __ret__.apply(lambda __response__: GetConnectionsResult(
+        catalog_id=pulumi.get(__response__, 'catalog_id'),
+        connection_collections=pulumi.get(__response__, 'connection_collections'),
+        created_by_id=pulumi.get(__response__, 'created_by_id'),
+        data_asset_key=pulumi.get(__response__, 'data_asset_key'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        external_key=pulumi.get(__response__, 'external_key'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_status_updated=pulumi.get(__response__, 'time_status_updated'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        updated_by_id=pulumi.get(__response__, 'updated_by_id')))

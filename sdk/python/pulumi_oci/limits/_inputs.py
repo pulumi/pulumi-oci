@@ -4,18 +4,51 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'QuotaLockArgs',
+    'QuotaLockArgsDict',
     'GetLimitDefinitionsFilterArgs',
+    'GetLimitDefinitionsFilterArgsDict',
     'GetLimitValuesFilterArgs',
+    'GetLimitValuesFilterArgsDict',
     'GetQuotasFilterArgs',
+    'GetQuotasFilterArgsDict',
     'GetServicesFilterArgs',
+    'GetServicesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class QuotaLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Lock type.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        """
+elif False:
+    QuotaLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class QuotaLockArgs:
@@ -87,6 +120,17 @@ class QuotaLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class GetLimitDefinitionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional field, filter for a specific resource limit.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLimitDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetLimitDefinitionsFilterArgs:
     def __init__(__self__, *,
@@ -131,6 +175,17 @@ class GetLimitDefinitionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetLimitValuesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Optional field, can be used to see a specific resource limit value.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLimitValuesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetLimitValuesFilterArgs:
@@ -177,6 +232,17 @@ class GetLimitValuesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetQuotasFilterArgsDict(TypedDict):
+        name: str
+        """
+        name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetQuotasFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetQuotasFilterArgs:
     def __init__(__self__, *,
@@ -221,6 +287,17 @@ class GetQuotasFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetServicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The service name. Use this when calling other APIs.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetServicesFilterArgs:

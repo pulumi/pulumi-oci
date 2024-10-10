@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_workspace_application_task_schedules(application_key: Optional[str] = No
         task_schedule_summary_collections=pulumi.get(__ret__, 'task_schedule_summary_collections'),
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_application_task_schedules)
 def get_workspace_application_task_schedules_output(application_key: Optional[pulumi.Input[str]] = None,
                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]]]] = None,
                                                     identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -247,4 +249,25 @@ def get_workspace_application_task_schedules_output(application_key: Optional[pu
     :param Sequence[str] types: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationKey'] = application_key
+    __args__['filters'] = filters
+    __args__['identifiers'] = identifiers
+    __args__['isEnabled'] = is_enabled
+    __args__['keys'] = keys
+    __args__['name'] = name
+    __args__['types'] = types
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceApplicationTaskSchedules:getWorkspaceApplicationTaskSchedules', __args__, opts=opts, typ=GetWorkspaceApplicationTaskSchedulesResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceApplicationTaskSchedulesResult(
+        application_key=pulumi.get(__response__, 'application_key'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        identifiers=pulumi.get(__response__, 'identifiers'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        keys=pulumi.get(__response__, 'keys'),
+        name=pulumi.get(__response__, 'name'),
+        task_schedule_summary_collections=pulumi.get(__response__, 'task_schedule_summary_collections'),
+        types=pulumi.get(__response__, 'types'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

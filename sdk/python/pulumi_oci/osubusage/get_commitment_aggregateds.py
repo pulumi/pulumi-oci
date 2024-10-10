@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_commitment_aggregateds(compartment_id: Optional[str] = None,
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-
-
-@_utilities.lift_output_func(get_commitment_aggregateds)
 def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]]]] = None,
                                       grouping: Optional[pulumi.Input[Optional[str]]] = None,
@@ -208,4 +210,25 @@ def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]
     :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
     :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['grouping'] = grouping
+    __args__['parentProduct'] = parent_product
+    __args__['subscriptionId'] = subscription_id
+    __args__['timeFrom'] = time_from
+    __args__['timeTo'] = time_to
+    __args__['xOneOriginRegion'] = x_one_origin_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds', __args__, opts=opts, typ=GetCommitmentAggregatedsResult)
+    return __ret__.apply(lambda __response__: GetCommitmentAggregatedsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        computed_usage_aggregateds=pulumi.get(__response__, 'computed_usage_aggregateds'),
+        filters=pulumi.get(__response__, 'filters'),
+        grouping=pulumi.get(__response__, 'grouping'),
+        id=pulumi.get(__response__, 'id'),
+        parent_product=pulumi.get(__response__, 'parent_product'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        time_from=pulumi.get(__response__, 'time_from'),
+        time_to=pulumi.get(__response__, 'time_to'),
+        x_one_origin_region=pulumi.get(__response__, 'x_one_origin_region')))

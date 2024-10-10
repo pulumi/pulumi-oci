@@ -4,35 +4,84 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GeneratedKeyKeyShapeArgs',
+    'GeneratedKeyKeyShapeArgsDict',
     'KeyAutoKeyRotationDetailsArgs',
+    'KeyAutoKeyRotationDetailsArgsDict',
     'KeyExternalKeyReferenceArgs',
+    'KeyExternalKeyReferenceArgsDict',
     'KeyExternalKeyReferenceDetailArgs',
+    'KeyExternalKeyReferenceDetailArgsDict',
     'KeyKeyShapeArgs',
+    'KeyKeyShapeArgsDict',
     'KeyReplicaDetailArgs',
+    'KeyReplicaDetailArgsDict',
     'KeyRestoreFromFileArgs',
+    'KeyRestoreFromFileArgsDict',
     'KeyRestoreFromObjectStoreArgs',
+    'KeyRestoreFromObjectStoreArgsDict',
     'KeyVersionExternalKeyReferenceDetailArgs',
+    'KeyVersionExternalKeyReferenceDetailArgsDict',
     'KeyVersionReplicaDetailArgs',
+    'KeyVersionReplicaDetailArgsDict',
     'VaultExternalKeyManagerMetadataArgs',
+    'VaultExternalKeyManagerMetadataArgsDict',
     'VaultExternalKeyManagerMetadataOauthMetadataArgs',
+    'VaultExternalKeyManagerMetadataOauthMetadataArgsDict',
     'VaultExternalKeyManagerMetadataSummaryArgs',
+    'VaultExternalKeyManagerMetadataSummaryArgsDict',
     'VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs',
+    'VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict',
     'VaultReplicaDetailArgs',
+    'VaultReplicaDetailArgsDict',
     'VaultRestoreFromFileArgs',
+    'VaultRestoreFromFileArgsDict',
     'VaultRestoreFromObjectStoreArgs',
+    'VaultRestoreFromObjectStoreArgsDict',
     'GetEkmsPrivateEndpointsFilterArgs',
+    'GetEkmsPrivateEndpointsFilterArgsDict',
     'GetKeyVersionsFilterArgs',
+    'GetKeyVersionsFilterArgsDict',
     'GetKeysFilterArgs',
+    'GetKeysFilterArgsDict',
     'GetVaultReplicasFilterArgs',
+    'GetVaultReplicasFilterArgsDict',
     'GetVaultsFilterArgs',
+    'GetVaultsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GeneratedKeyKeyShapeArgsDict(TypedDict):
+        algorithm: pulumi.Input[str]
+        """
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
+        """
+        length: pulumi.Input[int]
+        """
+        The length of the key in bytes, expressed as an integer. Supported values include the following:
+        * AES: 16, 24, or 32
+        * RSA: 256, 384, or 512
+        * ECDSA: 32, 48, or 66
+        """
+        curve_id: NotRequired[pulumi.Input[str]]
+        """
+        Supported curve IDs for ECDSA keys.
+        """
+elif False:
+    GeneratedKeyKeyShapeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GeneratedKeyKeyShapeArgs:
@@ -92,6 +141,35 @@ class GeneratedKeyKeyShapeArgs:
     def curve_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "curve_id", value)
 
+
+if not MYPY:
+    class KeyAutoKeyRotationDetailsArgsDict(TypedDict):
+        last_rotation_message: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The last execution status message of auto key rotation.
+        """
+        last_rotation_status: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The status of last execution of auto key rotation.
+        """
+        rotation_interval_in_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
+        """
+        time_of_last_rotation: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
+        """
+        time_of_next_rotation: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
+        """
+        time_of_schedule_start: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today’s date will be used if not specified by customer.
+        """
+elif False:
+    KeyAutoKeyRotationDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KeyAutoKeyRotationDetailsArgs:
@@ -196,6 +274,15 @@ class KeyAutoKeyRotationDetailsArgs:
         pulumi.set(self, "time_of_schedule_start", value)
 
 
+if not MYPY:
+    class KeyExternalKeyReferenceArgsDict(TypedDict):
+        external_key_id: pulumi.Input[str]
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        """
+elif False:
+    KeyExternalKeyReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KeyExternalKeyReferenceArgs:
     def __init__(__self__, *,
@@ -217,6 +304,19 @@ class KeyExternalKeyReferenceArgs:
     def external_key_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "external_key_id", value)
 
+
+if not MYPY:
+    class KeyExternalKeyReferenceDetailArgsDict(TypedDict):
+        external_key_id: NotRequired[pulumi.Input[str]]
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+        """
+        external_key_version_id: NotRequired[pulumi.Input[str]]
+        """
+        Key version ID associated with the external key.
+        """
+elif False:
+    KeyExternalKeyReferenceDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KeyExternalKeyReferenceDetailArgs:
@@ -256,6 +356,26 @@ class KeyExternalKeyReferenceDetailArgs:
     def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_key_version_id", value)
 
+
+if not MYPY:
+    class KeyKeyShapeArgsDict(TypedDict):
+        algorithm: pulumi.Input[str]
+        """
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
+        """
+        length: pulumi.Input[int]
+        """
+        The length of the key in bytes, expressed as an integer. Supported values include the following:
+        * AES: 16, 24, or 32
+        * RSA: 256, 384, or 512
+        * ECDSA: 32, 48, or 66
+        """
+        curve_id: NotRequired[pulumi.Input[str]]
+        """
+        Supported curve IDs for ECDSA keys.
+        """
+elif False:
+    KeyKeyShapeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KeyKeyShapeArgs:
@@ -316,6 +436,15 @@ class KeyKeyShapeArgs:
         pulumi.set(self, "curve_id", value)
 
 
+if not MYPY:
+    class KeyReplicaDetailArgsDict(TypedDict):
+        replication_id: NotRequired[pulumi.Input[str]]
+        """
+        ReplicationId associated with a key operation
+        """
+elif False:
+    KeyReplicaDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KeyReplicaDetailArgs:
     def __init__(__self__, *,
@@ -338,6 +467,23 @@ class KeyReplicaDetailArgs:
     def replication_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "replication_id", value)
 
+
+if not MYPY:
+    class KeyRestoreFromFileArgsDict(TypedDict):
+        content_length: pulumi.Input[str]
+        """
+        (Updatable) content length of key's backup binary file
+        """
+        restore_key_from_file_details: pulumi.Input[str]
+        """
+        Key backup file content.
+        """
+        content_md5: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) content md5 hashed value of key's backup file
+        """
+elif False:
+    KeyRestoreFromFileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KeyRestoreFromFileArgs:
@@ -391,6 +537,31 @@ class KeyRestoreFromFileArgs:
     def content_md5(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "content_md5", value)
 
+
+if not MYPY:
+    class KeyRestoreFromObjectStoreArgsDict(TypedDict):
+        destination: pulumi.Input[str]
+        """
+        (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the bucket where key was backed up
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Namespace of the bucket where key was backed up
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Object containing the backup
+        """
+        uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Pre-authenticated-request-uri of the backup
+        """
+elif False:
+    KeyRestoreFromObjectStoreArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KeyRestoreFromObjectStoreArgs:
@@ -478,6 +649,19 @@ class KeyRestoreFromObjectStoreArgs:
         pulumi.set(self, "uri", value)
 
 
+if not MYPY:
+    class KeyVersionExternalKeyReferenceDetailArgsDict(TypedDict):
+        external_key_id: NotRequired[pulumi.Input[str]]
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+        """
+        external_key_version_id: NotRequired[pulumi.Input[str]]
+        """
+        Key version ID associated with the external key.
+        """
+elif False:
+    KeyVersionExternalKeyReferenceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KeyVersionExternalKeyReferenceDetailArgs:
     def __init__(__self__, *,
@@ -517,6 +701,15 @@ class KeyVersionExternalKeyReferenceDetailArgs:
         pulumi.set(self, "external_key_version_id", value)
 
 
+if not MYPY:
+    class KeyVersionReplicaDetailArgsDict(TypedDict):
+        replication_id: NotRequired[pulumi.Input[str]]
+        """
+        ReplicationId associated with a key version operation
+        """
+elif False:
+    KeyVersionReplicaDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KeyVersionReplicaDetailArgs:
     def __init__(__self__, *,
@@ -539,6 +732,23 @@ class KeyVersionReplicaDetailArgs:
     def replication_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "replication_id", value)
 
+
+if not MYPY:
+    class VaultExternalKeyManagerMetadataArgsDict(TypedDict):
+        external_vault_endpoint_url: pulumi.Input[str]
+        """
+        URI of the vault on external key manager.
+        """
+        oauth_metadata: pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgsDict']
+        """
+        Authorization details required to get access token from IDP for accessing protected resources.
+        """
+        private_endpoint_id: pulumi.Input[str]
+        """
+        OCID of private endpoint created by customer.
+        """
+elif False:
+    VaultExternalKeyManagerMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataArgs:
@@ -592,6 +802,23 @@ class VaultExternalKeyManagerMetadataArgs:
         pulumi.set(self, "private_endpoint_id", value)
 
 
+if not MYPY:
+    class VaultExternalKeyManagerMetadataOauthMetadataArgsDict(TypedDict):
+        client_app_id: pulumi.Input[str]
+        """
+        ID of the client app created in IDP.
+        """
+        client_app_secret: pulumi.Input[str]
+        """
+        Secret of the client app created in IDP.
+        """
+        idcs_account_name_url: pulumi.Input[str]
+        """
+        Base URL of the IDCS account where confidential client app is created.
+        """
+elif False:
+    VaultExternalKeyManagerMetadataOauthMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataOauthMetadataArgs:
     def __init__(__self__, *,
@@ -643,6 +870,27 @@ class VaultExternalKeyManagerMetadataOauthMetadataArgs:
     def idcs_account_name_url(self, value: pulumi.Input[str]):
         pulumi.set(self, "idcs_account_name_url", value)
 
+
+if not MYPY:
+    class VaultExternalKeyManagerMetadataSummaryArgsDict(TypedDict):
+        external_vault_endpoint_url: NotRequired[pulumi.Input[str]]
+        """
+        URL of the vault on external key manager.
+        """
+        oauth_metadata_summaries: NotRequired[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict']]]]
+        """
+        Summary about authorization to be returned to the customer as a response.
+        """
+        private_endpoint_id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the private endpoint.
+        """
+        vendor: NotRequired[pulumi.Input[str]]
+        """
+        Vendor of the external key manager.
+        """
+elif False:
+    VaultExternalKeyManagerMetadataSummaryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataSummaryArgs:
@@ -715,6 +963,19 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
         pulumi.set(self, "vendor", value)
 
 
+if not MYPY:
+    class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict(TypedDict):
+        client_app_id: NotRequired[pulumi.Input[str]]
+        """
+        ID of the client app created in IDP.
+        """
+        idcs_account_name_url: NotRequired[pulumi.Input[str]]
+        """
+        Base URL of the IDCS account where confidential client app is created.
+        """
+elif False:
+    VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
     def __init__(__self__, *,
@@ -754,6 +1015,15 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
         pulumi.set(self, "idcs_account_name_url", value)
 
 
+if not MYPY:
+    class VaultReplicaDetailArgsDict(TypedDict):
+        replication_id: NotRequired[pulumi.Input[str]]
+        """
+        ReplicationId associated with a vault operation
+        """
+elif False:
+    VaultReplicaDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VaultReplicaDetailArgs:
     def __init__(__self__, *,
@@ -776,6 +1046,23 @@ class VaultReplicaDetailArgs:
     def replication_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "replication_id", value)
 
+
+if not MYPY:
+    class VaultRestoreFromFileArgsDict(TypedDict):
+        content_length: pulumi.Input[str]
+        """
+        content length of vault's backup binary file
+        """
+        restore_vault_from_file_details: pulumi.Input[str]
+        """
+        Vault backup file content
+        """
+        content_md5: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) content md5 hashed value of vault's backup file
+        """
+elif False:
+    VaultRestoreFromFileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VaultRestoreFromFileArgs:
@@ -829,6 +1116,31 @@ class VaultRestoreFromFileArgs:
     def content_md5(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "content_md5", value)
 
+
+if not MYPY:
+    class VaultRestoreFromObjectStoreArgsDict(TypedDict):
+        destination: pulumi.Input[str]
+        """
+        (Updatable) Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the bucket where vault was backed up
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Namespace of the bucket where vault was backed up
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Object containing the backup
+        """
+        uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+        """
+elif False:
+    VaultRestoreFromObjectStoreArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VaultRestoreFromObjectStoreArgs:
@@ -916,6 +1228,14 @@ class VaultRestoreFromObjectStoreArgs:
         pulumi.set(self, "uri", value)
 
 
+if not MYPY:
+    class GetEkmsPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEkmsPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEkmsPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -954,6 +1274,14 @@ class GetEkmsPrivateEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetKeyVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetKeyVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetKeyVersionsFilterArgs:
@@ -994,6 +1322,14 @@ class GetKeyVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetKeysFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetKeysFilterArgs:
     def __init__(__self__, *,
@@ -1033,6 +1369,14 @@ class GetKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetVaultReplicasFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVaultReplicasFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetVaultReplicasFilterArgs:
     def __init__(__self__, *,
@@ -1071,6 +1415,14 @@ class GetVaultReplicasFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetVaultsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVaultsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVaultsFilterArgs:

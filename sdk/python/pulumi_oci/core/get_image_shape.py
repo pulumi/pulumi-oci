@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -137,9 +142,6 @@ def get_image_shape(image_id: Optional[str] = None,
         ocpu_constraints=pulumi.get(__ret__, 'ocpu_constraints'),
         shape=pulumi.get(__ret__, 'shape'),
         shape_name=pulumi.get(__ret__, 'shape_name'))
-
-
-@_utilities.lift_output_func(get_image_shape)
 def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
                            shape_name: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageShapeResult]:
@@ -162,4 +164,15 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[str]] = None,
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
     :param str shape_name: Shape name.
     """
-    ...
+    __args__ = dict()
+    __args__['imageId'] = image_id
+    __args__['shapeName'] = shape_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getImageShape:getImageShape', __args__, opts=opts, typ=GetImageShapeResult)
+    return __ret__.apply(lambda __response__: GetImageShapeResult(
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        memory_constraints=pulumi.get(__response__, 'memory_constraints'),
+        ocpu_constraints=pulumi.get(__response__, 'ocpu_constraints'),
+        shape=pulumi.get(__response__, 'shape'),
+        shape_name=pulumi.get(__response__, 'shape_name')))

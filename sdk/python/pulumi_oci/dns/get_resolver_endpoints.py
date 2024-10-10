@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
         resolver_id=pulumi.get(__ret__, 'resolver_id'),
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_resolver_endpoints)
 def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   resolver_id: Optional[pulumi.Input[str]] = None,
@@ -193,4 +195,19 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
     :param str state: The state of a resource.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['resolverId'] = resolver_id
+    __args__['scope'] = scope
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolverEndpoints:getResolverEndpoints', __args__, opts=opts, typ=GetResolverEndpointsResult)
+    return __ret__.apply(lambda __response__: GetResolverEndpointsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        resolver_endpoints=pulumi.get(__response__, 'resolver_endpoints'),
+        resolver_id=pulumi.get(__response__, 'resolver_id'),
+        scope=pulumi.get(__response__, 'scope'),
+        state=pulumi.get(__response__, 'state')))

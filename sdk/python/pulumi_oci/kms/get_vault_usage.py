@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -132,9 +137,6 @@ def get_vault_usage(vault_id: Optional[str] = None,
         software_key_count=pulumi.get(__ret__, 'software_key_count'),
         software_key_version_count=pulumi.get(__ret__, 'software_key_version_count'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-
-
-@_utilities.lift_output_func(get_vault_usage)
 def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultUsageResult]:
     """
@@ -154,4 +156,14 @@ def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
 
     :param str vault_id: The OCID of the vault.
     """
-    ...
+    __args__ = dict()
+    __args__['vaultId'] = vault_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVaultUsage:getVaultUsage', __args__, opts=opts, typ=GetVaultUsageResult)
+    return __ret__.apply(lambda __response__: GetVaultUsageResult(
+        id=pulumi.get(__response__, 'id'),
+        key_count=pulumi.get(__response__, 'key_count'),
+        key_version_count=pulumi.get(__response__, 'key_version_count'),
+        software_key_count=pulumi.get(__response__, 'software_key_count'),
+        software_key_version_count=pulumi.get(__response__, 'software_key_version_count'),
+        vault_id=pulumi.get(__response__, 'vault_id')))

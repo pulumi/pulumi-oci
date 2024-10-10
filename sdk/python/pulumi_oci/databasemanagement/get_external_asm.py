@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_external_asm(external_asm_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_external_asm)
 def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmResult]:
     """
@@ -337,4 +339,28 @@ def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
     """
-    ...
+    __args__ = dict()
+    __args__['externalAsmId'] = external_asm_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalAsm:getExternalAsm', __args__, opts=opts, typ=GetExternalAsmResult)
+    return __ret__.apply(lambda __response__: GetExternalAsmResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        component_name=pulumi.get(__response__, 'component_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_asm_id=pulumi.get(__response__, 'external_asm_id'),
+        external_connector_id=pulumi.get(__response__, 'external_connector_id'),
+        external_db_system_id=pulumi.get(__response__, 'external_db_system_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        grid_home=pulumi.get(__response__, 'grid_home'),
+        id=pulumi.get(__response__, 'id'),
+        is_cluster=pulumi.get(__response__, 'is_cluster'),
+        is_flex_enabled=pulumi.get(__response__, 'is_flex_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        serviced_databases=pulumi.get(__response__, 'serviced_databases'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

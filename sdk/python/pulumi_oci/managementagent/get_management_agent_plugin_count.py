@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -109,9 +114,6 @@ def get_management_agent_plugin_count(compartment_id: Optional[str] = None,
         group_by=pulumi.get(__ret__, 'group_by'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-
-
-@_utilities.lift_output_func(get_management_agent_plugin_count)
 def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                              group_by: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentPluginCountResult]:
@@ -135,4 +137,13 @@ def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Inp
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param str group_by: The field by which to group Management Agent Plugins
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['groupBy'] = group_by
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount', __args__, opts=opts, typ=GetManagementAgentPluginCountResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentPluginCountResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        group_by=pulumi.get(__response__, 'group_by'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_dataset(dataset_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_dataset)
 def get_dataset_output(dataset_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatasetResult]:
     """
@@ -337,4 +339,28 @@ def get_dataset_output(dataset_id: Optional[pulumi.Input[str]] = None,
 
     :param str dataset_id: Unique Dataset OCID
     """
-    ...
+    __args__ = dict()
+    __args__['datasetId'] = dataset_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataLabellingService/getDataset:getDataset', __args__, opts=opts, typ=GetDatasetResult)
+    return __ret__.apply(lambda __response__: GetDatasetResult(
+        additional_properties=pulumi.get(__response__, 'additional_properties'),
+        annotation_format=pulumi.get(__response__, 'annotation_format'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dataset_format_details=pulumi.get(__response__, 'dataset_format_details'),
+        dataset_id=pulumi.get(__response__, 'dataset_id'),
+        dataset_source_details=pulumi.get(__response__, 'dataset_source_details'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        initial_import_dataset_configurations=pulumi.get(__response__, 'initial_import_dataset_configurations'),
+        initial_record_generation_configurations=pulumi.get(__response__, 'initial_record_generation_configurations'),
+        label_sets=pulumi.get(__response__, 'label_sets'),
+        labeling_instructions=pulumi.get(__response__, 'labeling_instructions'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        lifecycle_substate=pulumi.get(__response__, 'lifecycle_substate'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

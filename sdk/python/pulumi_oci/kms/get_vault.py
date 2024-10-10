@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -330,9 +335,6 @@ def get_vault(vault_id: Optional[str] = None,
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_type=pulumi.get(__ret__, 'vault_type'))
-
-
-@_utilities.lift_output_func(get_vault)
 def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultResult]:
     """
@@ -357,4 +359,29 @@ def get_vault_output(vault_id: Optional[pulumi.Input[str]] = None,
 
     :param str vault_id: The OCID of the vault.
     """
-    ...
+    __args__ = dict()
+    __args__['vaultId'] = vault_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getVault:getVault', __args__, opts=opts, typ=GetVaultResult)
+    return __ret__.apply(lambda __response__: GetVaultResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        crypto_endpoint=pulumi.get(__response__, 'crypto_endpoint'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_key_manager_metadata_summaries=pulumi.get(__response__, 'external_key_manager_metadata_summaries'),
+        external_key_manager_metadatas=pulumi.get(__response__, 'external_key_manager_metadatas'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_primary=pulumi.get(__response__, 'is_primary'),
+        is_vault_replicable=pulumi.get(__response__, 'is_vault_replicable'),
+        management_endpoint=pulumi.get(__response__, 'management_endpoint'),
+        replica_details=pulumi.get(__response__, 'replica_details'),
+        restore_from_files=pulumi.get(__response__, 'restore_from_files'),
+        restore_from_object_stores=pulumi.get(__response__, 'restore_from_object_stores'),
+        restore_trigger=pulumi.get(__response__, 'restore_trigger'),
+        restored_from_vault_id=pulumi.get(__response__, 'restored_from_vault_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        vault_type=pulumi.get(__response__, 'vault_type')))

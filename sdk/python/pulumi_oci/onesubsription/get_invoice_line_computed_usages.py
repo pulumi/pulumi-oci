@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -135,9 +140,6 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         invoice_line_id=pulumi.get(__ret__, 'invoice_line_id'),
         invoiceline_computed_usages=pulumi.get(__ret__, 'invoiceline_computed_usages'))
-
-
-@_utilities.lift_output_func(get_invoice_line_computed_usages)
 def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                             fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoiceLineComputedUsagesFilterArgs', 'GetInvoiceLineComputedUsagesFilterArgsDict']]]]] = None,
@@ -164,4 +166,17 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
     :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
     :param str invoice_line_id: Invoice Line Identifier - Primary Key SPM
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['invoiceLineId'] = invoice_line_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages', __args__, opts=opts, typ=GetInvoiceLineComputedUsagesResult)
+    return __ret__.apply(lambda __response__: GetInvoiceLineComputedUsagesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        invoice_line_id=pulumi.get(__response__, 'invoice_line_id'),
+        invoiceline_computed_usages=pulumi.get(__response__, 'invoiceline_computed_usages')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -176,9 +181,6 @@ def get_run_statement(run_id: Optional[str] = None,
         statement_id=pulumi.get(__ret__, 'statement_id'),
         time_completed=pulumi.get(__ret__, 'time_completed'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_run_statement)
 def get_run_statement_output(run_id: Optional[pulumi.Input[str]] = None,
                              statement_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunStatementResult]:
@@ -201,4 +203,18 @@ def get_run_statement_output(run_id: Optional[pulumi.Input[str]] = None,
     :param str run_id: The unique ID for the run
     :param str statement_id: The unique ID for the statement.
     """
-    ...
+    __args__ = dict()
+    __args__['runId'] = run_id
+    __args__['statementId'] = statement_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunStatement:getRunStatement', __args__, opts=opts, typ=GetRunStatementResult)
+    return __ret__.apply(lambda __response__: GetRunStatementResult(
+        code=pulumi.get(__response__, 'code'),
+        id=pulumi.get(__response__, 'id'),
+        outputs=pulumi.get(__response__, 'outputs'),
+        progress=pulumi.get(__response__, 'progress'),
+        run_id=pulumi.get(__response__, 'run_id'),
+        state=pulumi.get(__response__, 'state'),
+        statement_id=pulumi.get(__response__, 'statement_id'),
+        time_completed=pulumi.get(__response__, 'time_completed'),
+        time_created=pulumi.get(__response__, 'time_created')))

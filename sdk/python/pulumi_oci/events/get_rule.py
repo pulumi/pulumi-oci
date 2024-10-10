@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -225,9 +230,6 @@ def get_rule(rule_id: Optional[str] = None,
         rule_id=pulumi.get(__ret__, 'rule_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_rule)
 def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleResult]:
     """
@@ -247,4 +249,21 @@ def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
 
     :param str rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
     """
-    ...
+    __args__ = dict()
+    __args__['ruleId'] = rule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Events/getRule:getRule', __args__, opts=opts, typ=GetRuleResult)
+    return __ret__.apply(lambda __response__: GetRuleResult(
+        actions=pulumi.get(__response__, 'actions'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        condition=pulumi.get(__response__, 'condition'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        lifecycle_message=pulumi.get(__response__, 'lifecycle_message'),
+        rule_id=pulumi.get(__response__, 'rule_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

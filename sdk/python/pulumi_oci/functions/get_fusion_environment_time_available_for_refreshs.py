@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         time_available_for_refresh_collections=pulumi.get(__ret__, 'time_available_for_refresh_collections'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_time_available_for_refreshs)
 def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
                                                               fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
@@ -130,4 +132,13 @@ def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs', __args__, opts=opts, typ=GetFusionEnvironmentTimeAvailableForRefreshsResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentTimeAvailableForRefreshsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        time_available_for_refresh_collections=pulumi.get(__response__, 'time_available_for_refresh_collections')))

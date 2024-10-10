@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -521,9 +526,6 @@ def get_database(database_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_database)
 def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseResult]:
     """
@@ -543,4 +545,45 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabase:getDatabase', __args__, opts=opts, typ=GetDatabaseResult)
+    return __ret__.apply(lambda __response__: GetDatabaseResult(
+        character_set=pulumi.get(__response__, 'character_set'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_strings=pulumi.get(__response__, 'connection_strings'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_management_configs=pulumi.get(__response__, 'database_management_configs'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        databases=pulumi.get(__response__, 'databases'),
+        db_backup_configs=pulumi.get(__response__, 'db_backup_configs'),
+        db_home_id=pulumi.get(__response__, 'db_home_id'),
+        db_name=pulumi.get(__response__, 'db_name'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        db_unique_name=pulumi.get(__response__, 'db_unique_name'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        db_workload=pulumi.get(__response__, 'db_workload'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_cdb=pulumi.get(__response__, 'is_cdb'),
+        key_store_id=pulumi.get(__response__, 'key_store_id'),
+        key_store_wallet_name=pulumi.get(__response__, 'key_store_wallet_name'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kms_key_migration=pulumi.get(__response__, 'kms_key_migration'),
+        kms_key_rotation=pulumi.get(__response__, 'kms_key_rotation'),
+        kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
+        last_backup_duration_in_seconds=pulumi.get(__response__, 'last_backup_duration_in_seconds'),
+        last_backup_timestamp=pulumi.get(__response__, 'last_backup_timestamp'),
+        last_failed_backup_timestamp=pulumi.get(__response__, 'last_failed_backup_timestamp'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
+        pdb_name=pulumi.get(__response__, 'pdb_name'),
+        sid_prefix=pulumi.get(__response__, 'sid_prefix'),
+        source=pulumi.get(__response__, 'source'),
+        source_database_point_in_time_recovery_timestamp=pulumi.get(__response__, 'source_database_point_in_time_recovery_timestamp'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

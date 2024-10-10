@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -349,9 +354,6 @@ def get_config(apm_domain_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updated_by=pulumi.get(__ret__, 'updated_by'))
-
-
-@_utilities.lift_output_func(get_config)
 def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       config_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigResult]:
@@ -374,4 +376,32 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str apm_domain_id: The APM Domain ID the request is intended for.
     :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['configId'] = config_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmConfig/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult)
+    return __ret__.apply(lambda __response__: GetConfigResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        config_id=pulumi.get(__response__, 'config_id'),
+        config_type=pulumi.get(__response__, 'config_type'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        dimensions=pulumi.get(__response__, 'dimensions'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        etag=pulumi.get(__response__, 'etag'),
+        filter_id=pulumi.get(__response__, 'filter_id'),
+        filter_text=pulumi.get(__response__, 'filter_text'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        group=pulumi.get(__response__, 'group'),
+        id=pulumi.get(__response__, 'id'),
+        in_use_bies=pulumi.get(__response__, 'in_use_bies'),
+        metrics=pulumi.get(__response__, 'metrics'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        opc_dry_run=pulumi.get(__response__, 'opc_dry_run'),
+        options=pulumi.get(__response__, 'options'),
+        rules=pulumi.get(__response__, 'rules'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        updated_by=pulumi.get(__response__, 'updated_by')))

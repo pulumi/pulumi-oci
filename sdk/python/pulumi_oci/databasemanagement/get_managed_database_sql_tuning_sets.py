@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[Union['GetMa
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         owner=pulumi.get(__ret__, 'owner'),
         sql_tuning_set_collections=pulumi.get(__ret__, 'sql_tuning_set_collections'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_tuning_sets)
 def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningSetsFilterArgs', 'GetManagedDatabaseSqlTuningSetsFilterArgsDict']]]]] = None,
                                                 managed_database_id: Optional[pulumi.Input[str]] = None,
                                                 name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -187,4 +189,19 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str owner: The owner of the SQL tuning set.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['nameContains'] = name_contains
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['owner'] = owner
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningSetsResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningSetsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        owner=pulumi.get(__response__, 'owner'),
+        sql_tuning_set_collections=pulumi.get(__response__, 'sql_tuning_set_collections')))

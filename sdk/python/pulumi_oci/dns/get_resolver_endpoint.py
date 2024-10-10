@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -276,9 +281,6 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_resolver_endpoint)
 def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[str]] = None,
                                  resolver_id: Optional[pulumi.Input[str]] = None,
                                  scope: Optional[pulumi.Input[Optional[str]]] = None,
@@ -306,4 +308,27 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[s
     :param str resolver_id: The OCID of the target resolver.
     :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
     """
-    ...
+    __args__ = dict()
+    __args__['resolverEndpointName'] = resolver_endpoint_name
+    __args__['resolverId'] = resolver_id
+    __args__['scope'] = scope
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolverEndpoint:getResolverEndpoint', __args__, opts=opts, typ=GetResolverEndpointResult)
+    return __ret__.apply(lambda __response__: GetResolverEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        endpoint_type=pulumi.get(__response__, 'endpoint_type'),
+        forwarding_address=pulumi.get(__response__, 'forwarding_address'),
+        id=pulumi.get(__response__, 'id'),
+        is_forwarding=pulumi.get(__response__, 'is_forwarding'),
+        is_listening=pulumi.get(__response__, 'is_listening'),
+        listening_address=pulumi.get(__response__, 'listening_address'),
+        name=pulumi.get(__response__, 'name'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        resolver_endpoint_name=pulumi.get(__response__, 'resolver_endpoint_name'),
+        resolver_id=pulumi.get(__response__, 'resolver_id'),
+        scope=pulumi.get(__response__, 'scope'),
+        self=pulumi.get(__response__, 'self'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

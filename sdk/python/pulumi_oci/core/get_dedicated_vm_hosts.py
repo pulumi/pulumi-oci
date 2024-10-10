@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_dedicated_vm_hosts(availability_domain: Optional[str] = None,
         remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
         remaining_ocpus_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_ocpus_greater_than_or_equal_to'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_dedicated_vm_hosts)
 def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                   compartment_id: Optional[pulumi.Input[str]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -250,4 +252,25 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
     :param float remaining_ocpus_greater_than_or_equal_to: The available OCPUs of the dedicated VM host.
     :param str state: A filter to only return resources that match the given lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['instanceShapeName'] = instance_shape_name
+    __args__['remainingMemoryInGbsGreaterThanOrEqualTo'] = remaining_memory_in_gbs_greater_than_or_equal_to
+    __args__['remainingOcpusGreaterThanOrEqualTo'] = remaining_ocpus_greater_than_or_equal_to
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHosts:getDedicatedVmHosts', __args__, opts=opts, typ=GetDedicatedVmHostsResult)
+    return __ret__.apply(lambda __response__: GetDedicatedVmHostsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dedicated_vm_hosts=pulumi.get(__response__, 'dedicated_vm_hosts'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_shape_name=pulumi.get(__response__, 'instance_shape_name'),
+        remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__response__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
+        remaining_ocpus_greater_than_or_equal_to=pulumi.get(__response__, 'remaining_ocpus_greater_than_or_equal_to'),
+        state=pulumi.get(__response__, 'state')))

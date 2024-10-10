@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[str] = No
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_log_analytics_object_collection_rules)
 def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict']]]]] = None,
                                                      name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     :param str namespace: The Logging Analytics namespace used for the request.
     :param str state: Lifecycle state filter.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['namespace'] = namespace
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules', __args__, opts=opts, typ=GetLogAnalyticsObjectCollectionRulesResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsObjectCollectionRulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        log_analytics_object_collection_rule_collections=pulumi.get(__response__, 'log_analytics_object_collection_rule_collections'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        state=pulumi.get(__response__, 'state')))

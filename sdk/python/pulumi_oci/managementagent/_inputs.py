@@ -4,25 +4,121 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ManagementAgentDataSourceListArgs',
+    'ManagementAgentDataSourceListArgsDict',
     'ManagementAgentDataSourceListMetricDimensionArgs',
+    'ManagementAgentDataSourceListMetricDimensionArgsDict',
     'ManagementAgentDataSourceMetricDimensionArgs',
+    'ManagementAgentDataSourceMetricDimensionArgsDict',
     'ManagementAgentDataSourceSummaryListArgs',
+    'ManagementAgentDataSourceSummaryListArgsDict',
     'ManagementAgentManagementAgentPropertyArgs',
+    'ManagementAgentManagementAgentPropertyArgsDict',
     'ManagementAgentPluginListArgs',
+    'ManagementAgentPluginListArgsDict',
     'GetManagementAgentAvailableHistoriesFilterArgs',
+    'GetManagementAgentAvailableHistoriesFilterArgsDict',
     'GetManagementAgentDataSourcesFilterArgs',
+    'GetManagementAgentDataSourcesFilterArgsDict',
     'GetManagementAgentImagesFilterArgs',
+    'GetManagementAgentImagesFilterArgsDict',
     'GetManagementAgentInstallKeysFilterArgs',
+    'GetManagementAgentInstallKeysFilterArgsDict',
     'GetManagementAgentPluginsFilterArgs',
+    'GetManagementAgentPluginsFilterArgsDict',
     'GetManagementAgentsFilterArgs',
+    'GetManagementAgentsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ManagementAgentDataSourceListArgsDict(TypedDict):
+        allow_metrics: NotRequired[pulumi.Input[str]]
+        """
+        Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment owning this DataSource.
+        """
+        connection_timeout: NotRequired[pulumi.Input[int]]
+        """
+        Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
+        """
+        is_daemon_set: NotRequired[pulumi.Input[bool]]
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        key: NotRequired[pulumi.Input[str]]
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        metric_dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgsDict']]]]
+        """
+        The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the property
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+        """
+        proxy_url: NotRequired[pulumi.Input[str]]
+        """
+        The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
+        """
+        read_data_limit: NotRequired[pulumi.Input[int]]
+        """
+        Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        """
+        read_timeout: NotRequired[pulumi.Input[int]]
+        """
+        Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        """
+        resource_group: NotRequired[pulumi.Input[str]]
+        """
+        Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        """
+        schedule_mins: NotRequired[pulumi.Input[int]]
+        """
+        Number in minutes. The scraping occurs at the specified interval.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of managementAgent
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the Management Agent was created. An RFC3339 formatted datetime string
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the DataSource.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        The url through which the Prometheus Exporter publishes its metrics. (http only)
+        """
+elif False:
+    ManagementAgentDataSourceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagementAgentDataSourceListArgs:
@@ -319,6 +415,19 @@ class ManagementAgentDataSourceListArgs:
         pulumi.set(self, "url", value)
 
 
+if not MYPY:
+    class ManagementAgentDataSourceListMetricDimensionArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the property
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Value of the metric dimension
+        """
+elif False:
+    ManagementAgentDataSourceListMetricDimensionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagementAgentDataSourceListMetricDimensionArgs:
     def __init__(__self__, *,
@@ -358,6 +467,19 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ManagementAgentDataSourceMetricDimensionArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the metric dimension
+        """
+        value: pulumi.Input[str]
+        """
+        (Updatable) Value of the metric dimension
+        """
+elif False:
+    ManagementAgentDataSourceMetricDimensionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagementAgentDataSourceMetricDimensionArgs:
     def __init__(__self__, *,
@@ -394,6 +516,27 @@ class ManagementAgentDataSourceMetricDimensionArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ManagementAgentDataSourceSummaryListArgsDict(TypedDict):
+        is_daemon_set: NotRequired[pulumi.Input[bool]]
+        """
+        If the Kubernetes cluster type is Daemon set then this will be set to true.
+        """
+        key: NotRequired[pulumi.Input[str]]
+        """
+        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the property
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the DataSource.
+        """
+elif False:
+    ManagementAgentDataSourceSummaryListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagementAgentDataSourceSummaryListArgs:
@@ -466,6 +609,23 @@ class ManagementAgentDataSourceSummaryListArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class ManagementAgentManagementAgentPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the property
+        """
+        units: NotRequired[pulumi.Input[str]]
+        """
+        Unit for the property
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Values of the property
+        """
+elif False:
+    ManagementAgentManagementAgentPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagementAgentManagementAgentPropertyArgs:
     def __init__(__self__, *,
@@ -520,6 +680,39 @@ class ManagementAgentManagementAgentPropertyArgs:
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class ManagementAgentPluginListArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        flag indicating whether the plugin is in enabled mode or disabled mode.
+        """
+        plugin_display_name: NotRequired[pulumi.Input[str]]
+        """
+        Management Agent Plugin Identifier, can be renamed
+        """
+        plugin_id: NotRequired[pulumi.Input[str]]
+        """
+        Plugin Id
+        """
+        plugin_name: NotRequired[pulumi.Input[str]]
+        """
+        Management Agent Plugin Name
+        """
+        plugin_status: NotRequired[pulumi.Input[str]]
+        """
+        Plugin Status
+        """
+        plugin_status_message: NotRequired[pulumi.Input[str]]
+        """
+        Status message of the Plugin
+        """
+        plugin_version: NotRequired[pulumi.Input[str]]
+        """
+        Plugin Version
+        """
+elif False:
+    ManagementAgentPluginListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagementAgentPluginListArgs:
@@ -640,6 +833,14 @@ class ManagementAgentPluginListArgs:
         pulumi.set(self, "plugin_version", value)
 
 
+if not MYPY:
+    class GetManagementAgentAvailableHistoriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentAvailableHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagementAgentAvailableHistoriesFilterArgs:
     def __init__(__self__, *,
@@ -678,6 +879,17 @@ class GetManagementAgentAvailableHistoriesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagementAgentDataSourcesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique name of the dataSource.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentDataSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagementAgentDataSourcesFilterArgs:
@@ -724,6 +936,17 @@ class GetManagementAgentDataSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagementAgentImagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire platform name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagementAgentImagesFilterArgs:
     def __init__(__self__, *,
@@ -769,6 +992,14 @@ class GetManagementAgentImagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagementAgentInstallKeysFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentInstallKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagementAgentInstallKeysFilterArgs:
     def __init__(__self__, *,
@@ -807,6 +1038,17 @@ class GetManagementAgentInstallKeysFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagementAgentPluginsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Management Agent Plugin Name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentPluginsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagementAgentPluginsFilterArgs:
@@ -852,6 +1094,20 @@ class GetManagementAgentPluginsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagementAgentsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the property
+        """
+        values: Sequence[str]
+        """
+        Values of the property
+        """
+        regex: NotRequired[bool]
+elif False:
+    GetManagementAgentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagementAgentsFilterArgs:

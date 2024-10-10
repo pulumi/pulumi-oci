@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -298,9 +303,6 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
         source_db_home_id=pulumi.get(__ret__, 'source_db_home_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_database_software_image)
 def get_database_software_image_output(database_software_image_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSoftwareImageResult]:
     """
@@ -320,4 +322,27 @@ def get_database_software_image_output(database_software_image_id: Optional[pulu
 
     :param str database_software_image_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseSoftwareImageId'] = database_software_image_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage', __args__, opts=opts, typ=GetDatabaseSoftwareImageResult)
+    return __ret__.apply(lambda __response__: GetDatabaseSoftwareImageResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        database_software_image_included_patches=pulumi.get(__response__, 'database_software_image_included_patches'),
+        database_software_image_one_off_patches=pulumi.get(__response__, 'database_software_image_one_off_patches'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_shape_family=pulumi.get(__response__, 'image_shape_family'),
+        image_type=pulumi.get(__response__, 'image_type'),
+        included_patches_summary=pulumi.get(__response__, 'included_patches_summary'),
+        is_upgrade_supported=pulumi.get(__response__, 'is_upgrade_supported'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        ls_inventory=pulumi.get(__response__, 'ls_inventory'),
+        patch_set=pulumi.get(__response__, 'patch_set'),
+        source_db_home_id=pulumi.get(__response__, 'source_db_home_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -212,9 +217,6 @@ def get_subscription(subscription_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         topic_id=pulumi.get(__ret__, 'topic_id'))
-
-
-@_utilities.lift_output_func(get_subscription)
 def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
@@ -236,4 +238,20 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
 
     :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
     """
-    ...
+    __args__ = dict()
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ons/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_time=pulumi.get(__response__, 'created_time'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delivery_policy=pulumi.get(__response__, 'delivery_policy'),
+        endpoint=pulumi.get(__response__, 'endpoint'),
+        etag=pulumi.get(__response__, 'etag'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        protocol=pulumi.get(__response__, 'protocol'),
+        state=pulumi.get(__response__, 'state'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        topic_id=pulumi.get(__response__, 'topic_id')))

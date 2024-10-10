@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -227,9 +232,6 @@ def get_network_firewall_policy_decryption_profile(name: Optional[str] = None,
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_decryption_profile)
 def get_network_firewall_policy_decryption_profile_output(name: Optional[pulumi.Input[str]] = None,
                                                           network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfileResult]:
@@ -242,4 +244,23 @@ def get_network_firewall_policy_decryption_profile_output(name: Optional[pulumi.
     :param str name: Unique Name of the decryption profile.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile', __args__, opts=opts, typ=GetNetworkFirewallPolicyDecryptionProfileResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyDecryptionProfileResult(
+        are_certificate_extensions_restricted=pulumi.get(__response__, 'are_certificate_extensions_restricted'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_include_alt_name=pulumi.get(__response__, 'is_auto_include_alt_name'),
+        is_expired_certificate_blocked=pulumi.get(__response__, 'is_expired_certificate_blocked'),
+        is_out_of_capacity_blocked=pulumi.get(__response__, 'is_out_of_capacity_blocked'),
+        is_revocation_status_timeout_blocked=pulumi.get(__response__, 'is_revocation_status_timeout_blocked'),
+        is_unknown_revocation_status_blocked=pulumi.get(__response__, 'is_unknown_revocation_status_blocked'),
+        is_unsupported_cipher_blocked=pulumi.get(__response__, 'is_unsupported_cipher_blocked'),
+        is_unsupported_version_blocked=pulumi.get(__response__, 'is_unsupported_version_blocked'),
+        is_untrusted_issuer_blocked=pulumi.get(__response__, 'is_untrusted_issuer_blocked'),
+        name=pulumi.get(__response__, 'name'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        type=pulumi.get(__response__, 'type')))

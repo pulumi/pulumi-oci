@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -92,9 +97,6 @@ def get_edge_subnets(filters: Optional[Sequence[Union['GetEdgeSubnetsFilterArgs'
         edge_subnets=pulumi.get(__ret__, 'edge_subnets'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_edge_subnets)
 def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEdgeSubnetsFilterArgs', 'GetEdgeSubnetsFilterArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeSubnetsResult]:
     """
@@ -111,4 +113,11 @@ def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     test_edge_subnets = oci.Waas.get_edge_subnets()
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getEdgeSubnets:getEdgeSubnets', __args__, opts=opts, typ=GetEdgeSubnetsResult)
+    return __ret__.apply(lambda __response__: GetEdgeSubnetsResult(
+        edge_subnets=pulumi.get(__response__, 'edge_subnets'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

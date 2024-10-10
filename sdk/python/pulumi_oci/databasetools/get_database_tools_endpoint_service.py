@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_database_tools_endpoint_service)
 def get_database_tools_endpoint_service_output(database_tools_endpoint_service_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsEndpointServiceResult]:
     """
@@ -245,4 +247,21 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
 
     :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseToolsEndpointServiceId'] = database_tools_endpoint_service_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService', __args__, opts=opts, typ=GetDatabaseToolsEndpointServiceResult)
+    return __ret__.apply(lambda __response__: GetDatabaseToolsEndpointServiceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_tools_endpoint_service_id=pulumi.get(__response__, 'database_tools_endpoint_service_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

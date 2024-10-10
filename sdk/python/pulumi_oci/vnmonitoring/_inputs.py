@@ -4,22 +4,46 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetPathAnalyzerTestsFilterArgs',
+    'GetPathAnalyzerTestsFilterArgsDict',
     'PathAnalysiDestinationEndpointArgs',
+    'PathAnalysiDestinationEndpointArgsDict',
     'PathAnalysiProtocolParametersArgs',
+    'PathAnalysiProtocolParametersArgsDict',
     'PathAnalysiQueryOptionsArgs',
+    'PathAnalysiQueryOptionsArgsDict',
     'PathAnalysiSourceEndpointArgs',
+    'PathAnalysiSourceEndpointArgsDict',
     'PathAnalyzerTestDestinationEndpointArgs',
+    'PathAnalyzerTestDestinationEndpointArgsDict',
     'PathAnalyzerTestProtocolParametersArgs',
+    'PathAnalyzerTestProtocolParametersArgsDict',
     'PathAnalyzerTestQueryOptionsArgs',
+    'PathAnalyzerTestQueryOptionsArgsDict',
     'PathAnalyzerTestSourceEndpointArgs',
+    'PathAnalyzerTestSourceEndpointArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetPathAnalyzerTestsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPathAnalyzerTestsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPathAnalyzerTestsFilterArgs:
@@ -59,6 +83,48 @@ class GetPathAnalyzerTestsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class PathAnalysiDestinationEndpointArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of the `Endpoint`.
+        """
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+        """
+        instance_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+        """
+        listener_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+        """
+        network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+        """
+        vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        """
+elif False:
+    PathAnalysiDestinationEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PathAnalysiDestinationEndpointArgs:
@@ -222,6 +288,31 @@ class PathAnalysiDestinationEndpointArgs:
         pulumi.set(self, "vnic_id", value)
 
 
+if not MYPY:
+    class PathAnalysiProtocolParametersArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of the `ProtocolParameters` object.
+        """
+        destination_port: NotRequired[pulumi.Input[int]]
+        """
+        The destination port to use in a `PathAnalyzerTest` resource.
+        """
+        icmp_code: NotRequired[pulumi.Input[int]]
+        """
+        The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+        """
+        icmp_type: NotRequired[pulumi.Input[int]]
+        """
+        The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+        """
+        source_port: NotRequired[pulumi.Input[int]]
+        """
+        The source port to use in a `PathAnalyzerTest` resource.
+        """
+elif False:
+    PathAnalysiProtocolParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PathAnalysiProtocolParametersArgs:
     def __init__(__self__, *,
@@ -308,6 +399,15 @@ class PathAnalysiProtocolParametersArgs:
         pulumi.set(self, "source_port", value)
 
 
+if not MYPY:
+    class PathAnalysiQueryOptionsArgsDict(TypedDict):
+        is_bi_directional_analysis: NotRequired[pulumi.Input[bool]]
+        """
+        If true, a path analysis is done for both the forward and reverse routes.
+        """
+elif False:
+    PathAnalysiQueryOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PathAnalysiQueryOptionsArgs:
     def __init__(__self__, *,
@@ -330,6 +430,48 @@ class PathAnalysiQueryOptionsArgs:
     def is_bi_directional_analysis(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_bi_directional_analysis", value)
 
+
+if not MYPY:
+    class PathAnalysiSourceEndpointArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The type of the `Endpoint`.
+        """
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+        """
+        instance_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+        """
+        listener_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+        """
+        network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+        """
+        vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        """
+elif False:
+    PathAnalysiSourceEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PathAnalysiSourceEndpointArgs:
@@ -492,6 +634,51 @@ class PathAnalysiSourceEndpointArgs:
     def vnic_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vnic_id", value)
 
+
+if not MYPY:
+    class PathAnalyzerTestDestinationEndpointArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of the `Endpoint`.
+        """
+        address: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+        """
+        instance_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+        """
+        listener_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+        """
+        network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the `PathAnalyzerTest` resource.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+        """
+        vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        """
+elif False:
+    PathAnalyzerTestDestinationEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PathAnalyzerTestDestinationEndpointArgs:
@@ -659,6 +846,31 @@ class PathAnalyzerTestDestinationEndpointArgs:
         pulumi.set(self, "vnic_id", value)
 
 
+if not MYPY:
+    class PathAnalyzerTestProtocolParametersArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of the `ProtocolParameters` object.
+        """
+        destination_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
+        """
+        icmp_code: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+        """
+        icmp_type: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+        """
+        source_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The source port to use in a `PathAnalyzerTest` resource.
+        """
+elif False:
+    PathAnalyzerTestProtocolParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PathAnalyzerTestProtocolParametersArgs:
     def __init__(__self__, *,
@@ -745,6 +957,15 @@ class PathAnalyzerTestProtocolParametersArgs:
         pulumi.set(self, "source_port", value)
 
 
+if not MYPY:
+    class PathAnalyzerTestQueryOptionsArgsDict(TypedDict):
+        is_bi_directional_analysis: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If true, a path analysis is done for both the forward and reverse routes.
+        """
+elif False:
+    PathAnalyzerTestQueryOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PathAnalyzerTestQueryOptionsArgs:
     def __init__(__self__, *,
@@ -767,6 +988,55 @@ class PathAnalyzerTestQueryOptionsArgs:
     def is_bi_directional_analysis(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_bi_directional_analysis", value)
 
+
+if not MYPY:
+    class PathAnalyzerTestSourceEndpointArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of the `Endpoint`.
+        """
+        address: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+        """
+        instance_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+        """
+        listener_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+        """
+        network_load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the `PathAnalyzerTest` resource.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+        """
+        vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+        """
+        vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    PathAnalyzerTestSourceEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PathAnalyzerTestSourceEndpointArgs:

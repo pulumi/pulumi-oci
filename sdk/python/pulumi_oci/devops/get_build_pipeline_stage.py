@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -406,9 +411,6 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         wait_criterias=pulumi.get(__ret__, 'wait_criterias'))
-
-
-@_utilities.lift_output_func(get_build_pipeline_stage)
 def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineStageResult]:
     """
@@ -428,4 +430,35 @@ def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Inp
 
     :param str build_pipeline_stage_id: Unique stage identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['buildPipelineStageId'] = build_pipeline_stage_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getBuildPipelineStage:getBuildPipelineStage', __args__, opts=opts, typ=GetBuildPipelineStageResult)
+    return __ret__.apply(lambda __response__: GetBuildPipelineStageResult(
+        build_pipeline_id=pulumi.get(__response__, 'build_pipeline_id'),
+        build_pipeline_stage_id=pulumi.get(__response__, 'build_pipeline_stage_id'),
+        build_pipeline_stage_predecessor_collections=pulumi.get(__response__, 'build_pipeline_stage_predecessor_collections'),
+        build_pipeline_stage_type=pulumi.get(__response__, 'build_pipeline_stage_type'),
+        build_runner_shape_configs=pulumi.get(__response__, 'build_runner_shape_configs'),
+        build_source_collections=pulumi.get(__response__, 'build_source_collections'),
+        build_spec_file=pulumi.get(__response__, 'build_spec_file'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deliver_artifact_collections=pulumi.get(__response__, 'deliver_artifact_collections'),
+        deploy_pipeline_id=pulumi.get(__response__, 'deploy_pipeline_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image=pulumi.get(__response__, 'image'),
+        is_pass_all_parameters_enabled=pulumi.get(__response__, 'is_pass_all_parameters_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        primary_build_source=pulumi.get(__response__, 'primary_build_source'),
+        private_access_configs=pulumi.get(__response__, 'private_access_configs'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        stage_execution_timeout_in_seconds=pulumi.get(__response__, 'stage_execution_timeout_in_seconds'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        wait_criterias=pulumi.get(__response__, 'wait_criterias')))

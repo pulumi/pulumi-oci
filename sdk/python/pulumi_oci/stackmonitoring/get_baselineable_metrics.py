@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-
-
-@_utilities.lift_output_func(get_baselineable_metrics)
 def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict']]]]] = None,
@@ -247,4 +249,25 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
     :param str resource_group: Resource Group
     :param str resource_type: Resource Type
     """
-    ...
+    __args__ = dict()
+    __args__['baselineableMetricId'] = baselineable_metric_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['isOutOfBox'] = is_out_of_box
+    __args__['metricNamespace'] = metric_namespace
+    __args__['name'] = name
+    __args__['resourceGroup'] = resource_group
+    __args__['resourceType'] = resource_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics', __args__, opts=opts, typ=GetBaselineableMetricsResult)
+    return __ret__.apply(lambda __response__: GetBaselineableMetricsResult(
+        baselineable_metric_id=pulumi.get(__response__, 'baselineable_metric_id'),
+        baselineable_metric_summary_collections=pulumi.get(__response__, 'baselineable_metric_summary_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_out_of_box=pulumi.get(__response__, 'is_out_of_box'),
+        metric_namespace=pulumi.get(__response__, 'metric_namespace'),
+        name=pulumi.get(__response__, 'name'),
+        resource_group=pulumi.get(__response__, 'resource_group'),
+        resource_type=pulumi.get(__response__, 'resource_type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_connector_plugins(display_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_connector_plugins)
 def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -173,4 +175,17 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[st
     :param str name: A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
     :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Sch/getConnectorPlugins:getConnectorPlugins', __args__, opts=opts, typ=GetConnectorPluginsResult)
+    return __ret__.apply(lambda __response__: GetConnectorPluginsResult(
+        connector_plugin_collections=pulumi.get(__response__, 'connector_plugin_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

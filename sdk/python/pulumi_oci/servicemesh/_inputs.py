@@ -4,43 +4,97 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AccessPolicyRuleArgs',
+    'AccessPolicyRuleArgsDict',
     'AccessPolicyRuleDestinationArgs',
+    'AccessPolicyRuleDestinationArgsDict',
     'AccessPolicyRuleSourceArgs',
+    'AccessPolicyRuleSourceArgsDict',
     'IngressGatewayAccessLoggingArgs',
+    'IngressGatewayAccessLoggingArgsDict',
     'IngressGatewayHostArgs',
+    'IngressGatewayHostArgsDict',
     'IngressGatewayHostListenerArgs',
+    'IngressGatewayHostListenerArgsDict',
     'IngressGatewayHostListenerTlsArgs',
+    'IngressGatewayHostListenerTlsArgsDict',
     'IngressGatewayHostListenerTlsClientValidationArgs',
+    'IngressGatewayHostListenerTlsClientValidationArgsDict',
     'IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs',
+    'IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgsDict',
     'IngressGatewayHostListenerTlsServerCertificateArgs',
+    'IngressGatewayHostListenerTlsServerCertificateArgsDict',
     'IngressGatewayMtlsArgs',
+    'IngressGatewayMtlsArgsDict',
     'IngressGatewayRouteTableRouteRuleArgs',
+    'IngressGatewayRouteTableRouteRuleArgsDict',
     'IngressGatewayRouteTableRouteRuleDestinationArgs',
+    'IngressGatewayRouteTableRouteRuleDestinationArgsDict',
     'IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs',
+    'IngressGatewayRouteTableRouteRuleIngressGatewayHostArgsDict',
     'MeshCertificateAuthorityArgs',
+    'MeshCertificateAuthorityArgsDict',
     'MeshMtlsArgs',
+    'MeshMtlsArgsDict',
     'VirtualDeploymentAccessLoggingArgs',
+    'VirtualDeploymentAccessLoggingArgsDict',
     'VirtualDeploymentListenerArgs',
+    'VirtualDeploymentListenerArgsDict',
     'VirtualDeploymentServiceDiscoveryArgs',
+    'VirtualDeploymentServiceDiscoveryArgsDict',
     'VirtualServiceDefaultRoutingPolicyArgs',
+    'VirtualServiceDefaultRoutingPolicyArgsDict',
     'VirtualServiceMtlsArgs',
+    'VirtualServiceMtlsArgsDict',
     'VirtualServiceRouteTableRouteRuleArgs',
+    'VirtualServiceRouteTableRouteRuleArgsDict',
     'VirtualServiceRouteTableRouteRuleDestinationArgs',
+    'VirtualServiceRouteTableRouteRuleDestinationArgsDict',
     'GetAccessPoliciesFilterArgs',
+    'GetAccessPoliciesFilterArgsDict',
     'GetIngressGatewayRouteTablesFilterArgs',
+    'GetIngressGatewayRouteTablesFilterArgsDict',
     'GetIngressGatewaysFilterArgs',
+    'GetIngressGatewaysFilterArgsDict',
     'GetMeshesFilterArgs',
+    'GetMeshesFilterArgsDict',
     'GetVirtualDeploymentsFilterArgs',
+    'GetVirtualDeploymentsFilterArgsDict',
     'GetVirtualServiceRouteTablesFilterArgs',
+    'GetVirtualServiceRouteTablesFilterArgsDict',
     'GetVirtualServicesFilterArgs',
+    'GetVirtualServicesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AccessPolicyRuleArgsDict(TypedDict):
+        action: pulumi.Input[str]
+        """
+        (Updatable) Action for the traffic between the source and the destination.
+        """
+        destination: pulumi.Input['AccessPolicyRuleDestinationArgsDict']
+        """
+        (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
+        """
+        source: pulumi.Input['AccessPolicyRuleSourceArgsDict']
+        """
+        (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
+        """
+elif False:
+    AccessPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessPolicyRuleArgs:
@@ -93,6 +147,39 @@ class AccessPolicyRuleArgs:
     def source(self, value: pulumi.Input['AccessPolicyRuleSourceArgs']):
         pulumi.set(self, "source", value)
 
+
+if not MYPY:
+    class AccessPolicyRuleDestinationArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Traffic type of the target.
+        """
+        hostnames: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+        """
+        ingress_gateway_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the ingress gateway resource.
+        """
+        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+        """
+        ports: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
+        """
+        protocol: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Protocol of the external service
+        """
+        virtual_service_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the virtual service resource.
+        """
+elif False:
+    AccessPolicyRuleDestinationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessPolicyRuleDestinationArgs:
@@ -211,6 +298,43 @@ class AccessPolicyRuleDestinationArgs:
     def virtual_service_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "virtual_service_id", value)
 
+
+if not MYPY:
+    class AccessPolicyRuleSourceArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Traffic type of the target.
+        """
+        hostnames: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+        """
+        ingress_gateway_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the ingress gateway resource.
+        """
+        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+        """
+        ports: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
+        """
+        (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
+        """
+        protocol: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Protocol of the external service
+        """
+        virtual_service_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the virtual service resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    AccessPolicyRuleSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessPolicyRuleSourceArgs:
@@ -338,6 +462,15 @@ class AccessPolicyRuleSourceArgs:
         pulumi.set(self, "virtual_service_id", value)
 
 
+if not MYPY:
+    class IngressGatewayAccessLoggingArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Determines if the logging configuration is enabled.
+        """
+elif False:
+    IngressGatewayAccessLoggingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayAccessLoggingArgs:
     def __init__(__self__, *,
@@ -360,6 +493,23 @@ class IngressGatewayAccessLoggingArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class IngressGatewayHostArgsDict(TypedDict):
+        listeners: pulumi.Input[Sequence[pulumi.Input['IngressGatewayHostListenerArgsDict']]]
+        """
+        (Updatable) The listeners for the ingress gateway.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
+        """
+        hostnames: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+        """
+elif False:
+    IngressGatewayHostArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IngressGatewayHostArgs:
@@ -414,6 +564,23 @@ class IngressGatewayHostArgs:
         pulumi.set(self, "hostnames", value)
 
 
+if not MYPY:
+    class IngressGatewayHostListenerArgsDict(TypedDict):
+        port: pulumi.Input[int]
+        """
+        (Updatable) Port on which ingress gateway is listening.
+        """
+        protocol: pulumi.Input[str]
+        """
+        (Updatable) Type of protocol used.
+        """
+        tls: NotRequired[pulumi.Input['IngressGatewayHostListenerTlsArgsDict']]
+        """
+        (Updatable) TLS enforcement config for the ingress listener.
+        """
+elif False:
+    IngressGatewayHostListenerArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayHostListenerArgs:
     def __init__(__self__, *,
@@ -466,6 +633,23 @@ class IngressGatewayHostListenerArgs:
     def tls(self, value: Optional[pulumi.Input['IngressGatewayHostListenerTlsArgs']]):
         pulumi.set(self, "tls", value)
 
+
+if not MYPY:
+    class IngressGatewayHostListenerTlsArgsDict(TypedDict):
+        mode: pulumi.Input[str]
+        """
+        (Updatable) DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
+        """
+        client_validation: NotRequired[pulumi.Input['IngressGatewayHostListenerTlsClientValidationArgsDict']]
+        """
+        (Updatable) Resource representing the TLS configuration used for validating client certificates.
+        """
+        server_certificate: NotRequired[pulumi.Input['IngressGatewayHostListenerTlsServerCertificateArgsDict']]
+        """
+        (Updatable) Resource representing the location of the TLS certificate.
+        """
+elif False:
+    IngressGatewayHostListenerTlsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IngressGatewayHostListenerTlsArgs:
@@ -521,6 +705,19 @@ class IngressGatewayHostListenerTlsArgs:
         pulumi.set(self, "server_certificate", value)
 
 
+if not MYPY:
+    class IngressGatewayHostListenerTlsClientValidationArgsDict(TypedDict):
+        subject_alternate_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
+        """
+        trusted_ca_bundle: NotRequired[pulumi.Input['IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgsDict']]
+        """
+        (Updatable) Resource representing the CA bundle.
+        """
+elif False:
+    IngressGatewayHostListenerTlsClientValidationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayHostListenerTlsClientValidationArgs:
     def __init__(__self__, *,
@@ -559,6 +756,23 @@ class IngressGatewayHostListenerTlsClientValidationArgs:
     def trusted_ca_bundle(self, value: Optional[pulumi.Input['IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs']]):
         pulumi.set(self, "trusted_ca_bundle", value)
 
+
+if not MYPY:
+    class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of certificate.
+        """
+        ca_bundle_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the CA Bundle resource.
+        """
+        secret_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
+        """
+elif False:
+    IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs:
@@ -614,6 +828,23 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs:
         pulumi.set(self, "secret_name", value)
 
 
+if not MYPY:
+    class IngressGatewayHostListenerTlsServerCertificateArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of certificate.
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the leaf certificate resource.
+        """
+        secret_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+        """
+elif False:
+    IngressGatewayHostListenerTlsServerCertificateArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayHostListenerTlsServerCertificateArgs:
     def __init__(__self__, *,
@@ -668,6 +899,19 @@ class IngressGatewayHostListenerTlsServerCertificateArgs:
         pulumi.set(self, "secret_name", value)
 
 
+if not MYPY:
+    class IngressGatewayMtlsArgsDict(TypedDict):
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+        """
+        maximum_validity: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+        """
+elif False:
+    IngressGatewayMtlsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayMtlsArgs:
     def __init__(__self__, *,
@@ -706,6 +950,51 @@ class IngressGatewayMtlsArgs:
     def maximum_validity(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "maximum_validity", value)
 
+
+if not MYPY:
+    class IngressGatewayRouteTableRouteRuleArgsDict(TypedDict):
+        destinations: pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleDestinationArgsDict']]]
+        """
+        (Updatable) The destination of the request.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of protocol.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        ingress_gateway_host: NotRequired[pulumi.Input['IngressGatewayRouteTableRouteRuleIngressGatewayHostArgsDict']]
+        """
+        (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
+        """
+        is_grpc: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+        """
+        is_host_rewrite_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
+        """
+        is_path_rewrite_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Route to match
+        """
+        path_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Match type for the route
+        """
+        request_timeout_in_ms: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+elif False:
+    IngressGatewayRouteTableRouteRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IngressGatewayRouteTableRouteRuleArgs:
@@ -864,6 +1153,23 @@ class IngressGatewayRouteTableRouteRuleArgs:
         pulumi.set(self, "request_timeout_in_ms", value)
 
 
+if not MYPY:
+    class IngressGatewayRouteTableRouteRuleDestinationArgsDict(TypedDict):
+        virtual_service_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the virtual service where the request will be routed.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
+        """
+        weight: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Weight of traffic target.
+        """
+elif False:
+    IngressGatewayRouteTableRouteRuleDestinationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayRouteTableRouteRuleDestinationArgs:
     def __init__(__self__, *,
@@ -918,6 +1224,19 @@ class IngressGatewayRouteTableRouteRuleDestinationArgs:
         pulumi.set(self, "weight", value)
 
 
+if not MYPY:
+    class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the ingress gateway host that this route should apply to.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+        """
+elif False:
+    IngressGatewayRouteTableRouteRuleIngressGatewayHostArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs:
     def __init__(__self__, *,
@@ -956,6 +1275,15 @@ class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs:
         pulumi.set(self, "port", value)
 
 
+if not MYPY:
+    class MeshCertificateAuthorityArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        The OCID of the certificate authority resource.
+        """
+elif False:
+    MeshCertificateAuthorityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MeshCertificateAuthorityArgs:
     def __init__(__self__, *,
@@ -977,6 +1305,19 @@ class MeshCertificateAuthorityArgs:
     def id(self, value: pulumi.Input[str]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class MeshMtlsArgsDict(TypedDict):
+        minimum: pulumi.Input[str]
+        """
+        (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    MeshMtlsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MeshMtlsArgs:
@@ -1008,6 +1349,15 @@ class MeshMtlsArgs:
         pulumi.set(self, "minimum", value)
 
 
+if not MYPY:
+    class VirtualDeploymentAccessLoggingArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Determines if the logging configuration is enabled.
+        """
+elif False:
+    VirtualDeploymentAccessLoggingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualDeploymentAccessLoggingArgs:
     def __init__(__self__, *,
@@ -1030,6 +1380,27 @@ class VirtualDeploymentAccessLoggingArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class VirtualDeploymentListenerArgsDict(TypedDict):
+        port: pulumi.Input[int]
+        """
+        (Updatable) Port in which virtual deployment is running.
+        """
+        protocol: pulumi.Input[str]
+        """
+        (Updatable) Type of protocol used in virtual deployment.
+        """
+        idle_timeout_in_ms: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        """
+        request_timeout_in_ms: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+elif False:
+    VirtualDeploymentListenerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualDeploymentListenerArgs:
@@ -1100,6 +1471,19 @@ class VirtualDeploymentListenerArgs:
         pulumi.set(self, "request_timeout_in_ms", value)
 
 
+if not MYPY:
+    class VirtualDeploymentServiceDiscoveryArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of service discovery.
+        """
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The hostname of the virtual deployments.
+        """
+elif False:
+    VirtualDeploymentServiceDiscoveryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualDeploymentServiceDiscoveryArgs:
     def __init__(__self__, *,
@@ -1138,6 +1522,15 @@ class VirtualDeploymentServiceDiscoveryArgs:
         pulumi.set(self, "hostname", value)
 
 
+if not MYPY:
+    class VirtualServiceDefaultRoutingPolicyArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of the virtual service routing policy.
+        """
+elif False:
+    VirtualServiceDefaultRoutingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualServiceDefaultRoutingPolicyArgs:
     def __init__(__self__, *,
@@ -1159,6 +1552,23 @@ class VirtualServiceDefaultRoutingPolicyArgs:
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class VirtualServiceMtlsArgsDict(TypedDict):
+        mode: pulumi.Input[str]
+        """
+        (Updatable) DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+        """
+        maximum_validity: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+        """
+elif False:
+    VirtualServiceMtlsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualServiceMtlsArgs:
@@ -1213,6 +1623,35 @@ class VirtualServiceMtlsArgs:
     def maximum_validity(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "maximum_validity", value)
 
+
+if not MYPY:
+    class VirtualServiceRouteTableRouteRuleArgsDict(TypedDict):
+        destinations: pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleDestinationArgsDict']]]
+        """
+        (Updatable) The destination of the request.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of protocol.
+        """
+        is_grpc: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Route to match
+        """
+        path_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Match type for the route
+        """
+        request_timeout_in_ms: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+elif False:
+    VirtualServiceRouteTableRouteRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualServiceRouteTableRouteRuleArgs:
@@ -1315,6 +1754,23 @@ class VirtualServiceRouteTableRouteRuleArgs:
         pulumi.set(self, "request_timeout_in_ms", value)
 
 
+if not MYPY:
+    class VirtualServiceRouteTableRouteRuleDestinationArgsDict(TypedDict):
+        virtual_deployment_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the virtual deployment where the request will be routed.
+        """
+        weight: pulumi.Input[int]
+        """
+        (Updatable) Weight of traffic target.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
+        """
+elif False:
+    VirtualServiceRouteTableRouteRuleDestinationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualServiceRouteTableRouteRuleDestinationArgs:
     def __init__(__self__, *,
@@ -1368,6 +1824,17 @@ class VirtualServiceRouteTableRouteRuleDestinationArgs:
         pulumi.set(self, "port", value)
 
 
+if not MYPY:
+    class GetAccessPoliciesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAccessPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAccessPoliciesFilterArgs:
     def __init__(__self__, *,
@@ -1412,6 +1879,17 @@ class GetAccessPoliciesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetIngressGatewayRouteTablesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetIngressGatewayRouteTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetIngressGatewayRouteTablesFilterArgs:
@@ -1458,6 +1936,17 @@ class GetIngressGatewayRouteTablesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetIngressGatewaysFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetIngressGatewaysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetIngressGatewaysFilterArgs:
     def __init__(__self__, *,
@@ -1503,6 +1992,14 @@ class GetIngressGatewaysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMeshesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMeshesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMeshesFilterArgs:
     def __init__(__self__, *,
@@ -1541,6 +2038,17 @@ class GetMeshesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetVirtualDeploymentsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVirtualDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVirtualDeploymentsFilterArgs:
@@ -1587,6 +2095,17 @@ class GetVirtualDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetVirtualServiceRouteTablesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVirtualServiceRouteTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetVirtualServiceRouteTablesFilterArgs:
     def __init__(__self__, *,
@@ -1631,6 +2150,17 @@ class GetVirtualServiceRouteTablesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetVirtualServicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVirtualServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVirtualServicesFilterArgs:

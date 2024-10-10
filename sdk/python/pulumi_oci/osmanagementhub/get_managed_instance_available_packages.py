@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -152,9 +157,6 @@ def get_managed_instance_available_packages(compartment_id: Optional[str] = None
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'))
-
-
-@_utilities.lift_output_func(get_managed_instance_available_packages)
 def get_managed_instance_available_packages_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -184,4 +186,19 @@ def get_managed_instance_available_packages_output(compartment_id: Optional[pulu
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayNameContains'] = display_name_contains
+    __args__['displayNames'] = display_names
+    __args__['filters'] = filters
+    __args__['managedInstanceId'] = managed_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceAvailablePackages:getManagedInstanceAvailablePackages', __args__, opts=opts, typ=GetManagedInstanceAvailablePackagesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceAvailablePackagesResult(
+        available_package_collections=pulumi.get(__response__, 'available_package_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id')))

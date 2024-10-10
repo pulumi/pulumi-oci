@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -120,9 +125,6 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
         operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
         state=pulumi.get(__ret__, 'state'),
         storage_used_in_gbs=pulumi.get(__ret__, 'storage_used_in_gbs'))
-
-
-@_utilities.lift_output_func(get_operations_insights_warehouse_resource_usage_summary)
 def get_operations_insights_warehouse_resource_usage_summary_output(operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]:
     """
@@ -143,4 +145,13 @@ def get_operations_insights_warehouse_resource_usage_summary_output(operations_i
 
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
     """
-    ...
+    __args__ = dict()
+    __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouseResourceUsageSummary:getOperationsInsightsWarehouseResourceUsageSummary', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResourceUsageSummaryResult)
+    return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseResourceUsageSummaryResult(
+        cpu_used=pulumi.get(__response__, 'cpu_used'),
+        id=pulumi.get(__response__, 'id'),
+        operations_insights_warehouse_id=pulumi.get(__response__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__response__, 'state'),
+        storage_used_in_gbs=pulumi.get(__response__, 'storage_used_in_gbs')))

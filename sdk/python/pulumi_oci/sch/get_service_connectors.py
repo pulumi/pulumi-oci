@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -146,9 +151,6 @@ def get_service_connectors(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         service_connector_collections=pulumi.get(__ret__, 'service_connector_collections'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_service_connectors)
 def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceConnectorsFilterArgs', 'GetServiceConnectorsFilterArgsDict']]]]] = None,
@@ -177,4 +179,17 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
     :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
     :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Sch/getServiceConnectors:getServiceConnectors', __args__, opts=opts, typ=GetServiceConnectorsResult)
+    return __ret__.apply(lambda __response__: GetServiceConnectorsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        service_connector_collections=pulumi.get(__response__, 'service_connector_collections'),
+        state=pulumi.get(__response__, 'state')))

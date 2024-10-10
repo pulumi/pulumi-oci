@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_monitored_instance(monitored_instance_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_monitored_instance)
 def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredInstanceResult]:
     """
@@ -219,4 +221,19 @@ def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[s
 
     :param str monitored_instance_id: OCID of monitored instance.
     """
-    ...
+    __args__ = dict()
+    __args__['monitoredInstanceId'] = monitored_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance', __args__, opts=opts, typ=GetMonitoredInstanceResult)
+    return __ret__.apply(lambda __response__: GetMonitoredInstanceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        monitored_instance_id=pulumi.get(__response__, 'monitored_instance_id'),
+        monitoring_state=pulumi.get(__response__, 'monitoring_state'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_mount_targets(availability_domain: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         mount_targets=pulumi.get(__ret__, 'mount_targets'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_mount_targets)
 def get_mount_targets_output(availability_domain: Optional[pulumi.Input[str]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,4 +222,22 @@ def get_mount_targets_output(availability_domain: Optional[pulumi.Input[str]] = 
     :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
     :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['exportSetId'] = export_set_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getMountTargets:getMountTargets', __args__, opts=opts, typ=GetMountTargetsResult)
+    return __ret__.apply(lambda __response__: GetMountTargetsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        export_set_id=pulumi.get(__response__, 'export_set_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        mount_targets=pulumi.get(__response__, 'mount_targets'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -246,9 +251,6 @@ def get_recommendations(category_id: Optional[str] = None,
         recommendation_collections=pulumi.get(__ret__, 'recommendation_collections'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_recommendations)
 def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]] = None,
                                category_name: Optional[pulumi.Input[Optional[str]]] = None,
                                child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -305,4 +307,29 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
     :param str state: A filter that returns results that match the lifecycle state specified.
     :param str status: A filter that returns recommendations that match the status specified.
     """
-    ...
+    __args__ = dict()
+    __args__['categoryId'] = category_id
+    __args__['categoryName'] = category_name
+    __args__['childTenancyIds'] = child_tenancy_ids
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['includeOrganization'] = include_organization
+    __args__['name'] = name
+    __args__['state'] = state
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getRecommendations:getRecommendations', __args__, opts=opts, typ=GetRecommendationsResult)
+    return __ret__.apply(lambda __response__: GetRecommendationsResult(
+        category_id=pulumi.get(__response__, 'category_id'),
+        category_name=pulumi.get(__response__, 'category_name'),
+        child_tenancy_ids=pulumi.get(__response__, 'child_tenancy_ids'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        include_organization=pulumi.get(__response__, 'include_organization'),
+        name=pulumi.get(__response__, 'name'),
+        recommendation_collections=pulumi.get(__response__, 'recommendation_collections'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status')))

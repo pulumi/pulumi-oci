@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -229,9 +234,6 @@ def get_preauthrequest(bucket: Optional[str] = None,
         par_id=pulumi.get(__ret__, 'par_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_expires=pulumi.get(__ret__, 'time_expires'))
-
-
-@_utilities.lift_output_func(get_preauthrequest)
 def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
                               namespace: Optional[pulumi.Input[str]] = None,
                               par_id: Optional[pulumi.Input[str]] = None,
@@ -257,4 +259,23 @@ def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
     :param str namespace: The Object Storage namespace used for the request.
     :param str par_id: The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
     """
-    ...
+    __args__ = dict()
+    __args__['bucket'] = bucket
+    __args__['namespace'] = namespace
+    __args__['parId'] = par_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ObjectStorage/getPreauthrequest:getPreauthrequest', __args__, opts=opts, typ=GetPreauthrequestResult)
+    return __ret__.apply(lambda __response__: GetPreauthrequestResult(
+        access_type=pulumi.get(__response__, 'access_type'),
+        access_uri=pulumi.get(__response__, 'access_uri'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        bucket_listing_action=pulumi.get(__response__, 'bucket_listing_action'),
+        full_path=pulumi.get(__response__, 'full_path'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        object_name=pulumi.get(__response__, 'object_name'),
+        par_id=pulumi.get(__response__, 'par_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expires=pulumi.get(__response__, 'time_expires')))

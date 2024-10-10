@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_sensitive_data_model)
 def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelResult]:
     """
@@ -337,4 +339,28 @@ def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Inp
 
     :param str sensitive_data_model_id: The OCID of the sensitive data model.
     """
-    ...
+    __args__ = dict()
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModel:getSensitiveDataModel', __args__, opts=opts, typ=GetSensitiveDataModelResult)
+    return __ret__.apply(lambda __response__: GetSensitiveDataModelResult(
+        app_suite_name=pulumi.get(__response__, 'app_suite_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_app_defined_relation_discovery_enabled=pulumi.get(__response__, 'is_app_defined_relation_discovery_enabled'),
+        is_include_all_schemas=pulumi.get(__response__, 'is_include_all_schemas'),
+        is_include_all_sensitive_types=pulumi.get(__response__, 'is_include_all_sensitive_types'),
+        is_sample_data_collection_enabled=pulumi.get(__response__, 'is_sample_data_collection_enabled'),
+        schemas_for_discoveries=pulumi.get(__response__, 'schemas_for_discoveries'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_ids_for_discoveries'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tables_for_discoveries=pulumi.get(__response__, 'tables_for_discoveries'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

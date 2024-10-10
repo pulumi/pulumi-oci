@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -233,9 +238,6 @@ def get_wlp_agent(wlp_agent_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         wlp_agent_id=pulumi.get(__ret__, 'wlp_agent_id'))
-
-
-@_utilities.lift_output_func(get_wlp_agent)
 def get_wlp_agent_output(wlp_agent_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWlpAgentResult]:
     """
@@ -255,4 +257,22 @@ def get_wlp_agent_output(wlp_agent_id: Optional[pulumi.Input[str]] = None,
 
     :param str wlp_agent_id: WLP agent OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['wlpAgentId'] = wlp_agent_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getWlpAgent:getWlpAgent', __args__, opts=opts, typ=GetWlpAgentResult)
+    return __ret__.apply(lambda __response__: GetWlpAgentResult(
+        agent_version=pulumi.get(__response__, 'agent_version'),
+        certificate_id=pulumi.get(__response__, 'certificate_id'),
+        certificate_signed_request=pulumi.get(__response__, 'certificate_signed_request'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        id=pulumi.get(__response__, 'id'),
+        os_info=pulumi.get(__response__, 'os_info'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        wlp_agent_id=pulumi.get(__response__, 'wlp_agent_id')))

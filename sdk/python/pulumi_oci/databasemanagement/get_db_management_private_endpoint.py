@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -262,9 +267,6 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_db_management_private_endpoint)
 def get_db_management_private_endpoint_output(db_management_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointResult]:
     """
@@ -284,4 +286,24 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
 
     :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['dbManagementPrivateEndpointId'] = db_management_private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint', __args__, opts=opts, typ=GetDbManagementPrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetDbManagementPrivateEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_management_private_endpoint_id=pulumi.get(__response__, 'db_management_private_endpoint_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_cluster=pulumi.get(__response__, 'is_cluster'),
+        is_dns_resolution_enabled=pulumi.get(__response__, 'is_dns_resolution_enabled'),
+        name=pulumi.get(__response__, 'name'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_ip=pulumi.get(__response__, 'private_ip'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

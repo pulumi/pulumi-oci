@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
         target_selecteds=pulumi.get(__ret__, 'target_selecteds'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_data_mask_rule)
 def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataMaskRuleResult]:
     """
@@ -285,4 +287,24 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
 
     :param str data_mask_rule_id: OCID of the data mask rule
     """
-    ...
+    __args__ = dict()
+    __args__['dataMaskRuleId'] = data_mask_rule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataMaskRule:getDataMaskRule', __args__, opts=opts, typ=GetDataMaskRuleResult)
+    return __ret__.apply(lambda __response__: GetDataMaskRuleResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_mask_categories=pulumi.get(__response__, 'data_mask_categories'),
+        data_mask_rule_id=pulumi.get(__response__, 'data_mask_rule_id'),
+        data_mask_rule_status=pulumi.get(__response__, 'data_mask_rule_status'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        iam_group_id=pulumi.get(__response__, 'iam_group_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_selecteds=pulumi.get(__response__, 'target_selecteds'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -208,9 +213,6 @@ def get_key_store(key_store_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         type_details=pulumi.get(__ret__, 'type_details'))
-
-
-@_utilities.lift_output_func(get_key_store)
 def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyStoreResult]:
     """
@@ -230,4 +232,20 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
 
     :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
     """
-    ...
+    __args__ = dict()
+    __args__['keyStoreId'] = key_store_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getKeyStore:getKeyStore', __args__, opts=opts, typ=GetKeyStoreResult)
+    return __ret__.apply(lambda __response__: GetKeyStoreResult(
+        associated_databases=pulumi.get(__response__, 'associated_databases'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        confirm_details_trigger=pulumi.get(__response__, 'confirm_details_trigger'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        key_store_id=pulumi.get(__response__, 'key_store_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        type_details=pulumi.get(__response__, 'type_details')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -175,9 +180,6 @@ def get_repository_ref(ref_name: Optional[str] = None,
         ref_name=pulumi.get(__ret__, 'ref_name'),
         ref_type=pulumi.get(__ret__, 'ref_type'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-
-
-@_utilities.lift_output_func(get_repository_ref)
 def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
                               repository_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryRefResult]:
@@ -200,4 +202,18 @@ def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
     :param str ref_name: A filter to return only resources that match the given reference name.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['refName'] = ref_name
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryRef:getRepositoryRef', __args__, opts=opts, typ=GetRepositoryRefResult)
+    return __ret__.apply(lambda __response__: GetRepositoryRefResult(
+        commit_id=pulumi.get(__response__, 'commit_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        full_ref_name=pulumi.get(__response__, 'full_ref_name'),
+        id=pulumi.get(__response__, 'id'),
+        object_id=pulumi.get(__response__, 'object_id'),
+        ref_name=pulumi.get(__response__, 'ref_name'),
+        ref_type=pulumi.get(__response__, 'ref_type'),
+        repository_id=pulumi.get(__response__, 'repository_id')))

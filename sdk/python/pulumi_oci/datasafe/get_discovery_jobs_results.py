@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -212,9 +217,6 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
         objects=pulumi.get(__ret__, 'objects'),
         planned_action=pulumi.get(__ret__, 'planned_action'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-
-
-@_utilities.lift_output_func(get_discovery_jobs_results)
 def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       discovery_job_id: Optional[pulumi.Input[str]] = None,
                                       discovery_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -253,4 +255,25 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     :param str planned_action: A filter to return only the resources that match the specified planned action.
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     """
-    ...
+    __args__ = dict()
+    __args__['columnNames'] = column_names
+    __args__['discoveryJobId'] = discovery_job_id
+    __args__['discoveryType'] = discovery_type
+    __args__['filters'] = filters
+    __args__['isResultApplied'] = is_result_applied
+    __args__['objects'] = objects
+    __args__['plannedAction'] = planned_action
+    __args__['schemaNames'] = schema_names
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults', __args__, opts=opts, typ=GetDiscoveryJobsResultsResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryJobsResultsResult(
+        column_names=pulumi.get(__response__, 'column_names'),
+        discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),
+        discovery_job_result_collections=pulumi.get(__response__, 'discovery_job_result_collections'),
+        discovery_type=pulumi.get(__response__, 'discovery_type'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_result_applied=pulumi.get(__response__, 'is_result_applied'),
+        objects=pulumi.get(__response__, 'objects'),
+        planned_action=pulumi.get(__response__, 'planned_action'),
+        schema_names=pulumi.get(__response__, 'schema_names')))

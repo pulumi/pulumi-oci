@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -107,9 +112,6 @@ def get_usage_carbon_emissions_query(usage_carbon_emissions_query_id: Optional[s
         id=pulumi.get(__ret__, 'id'),
         query_definitions=pulumi.get(__ret__, 'query_definitions'),
         usage_carbon_emissions_query_id=pulumi.get(__ret__, 'usage_carbon_emissions_query_id'))
-
-
-@_utilities.lift_output_func(get_usage_carbon_emissions_query)
 def get_usage_carbon_emissions_query_output(usage_carbon_emissions_query_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueryResult]:
     """
@@ -129,4 +131,12 @@ def get_usage_carbon_emissions_query_output(usage_carbon_emissions_query_id: Opt
 
     :param str usage_carbon_emissions_query_id: The query unique OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['usageCarbonEmissionsQueryId'] = usage_carbon_emissions_query_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery', __args__, opts=opts, typ=GetUsageCarbonEmissionsQueryResult)
+    return __ret__.apply(lambda __response__: GetUsageCarbonEmissionsQueryResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        query_definitions=pulumi.get(__response__, 'query_definitions'),
+        usage_carbon_emissions_query_id=pulumi.get(__response__, 'usage_carbon_emissions_query_id')))

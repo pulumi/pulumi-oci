@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -214,9 +219,6 @@ def get_target_databases_columns(column_name_contains: Optional[str] = None,
         table_name_contains=pulumi.get(__ret__, 'table_name_contains'),
         table_names=pulumi.get(__ret__, 'table_names'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-
-
-@_utilities.lift_output_func(get_target_databases_columns)
 def get_target_databases_columns_output(column_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                         column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         datatypes: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -258,4 +260,27 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
     :param Sequence[str] table_names: A filter to return only items related to specific table name.
     :param str target_database_id: The OCID of the Data Safe target database.
     """
-    ...
+    __args__ = dict()
+    __args__['columnNameContains'] = column_name_contains
+    __args__['columnNames'] = column_names
+    __args__['datatypes'] = datatypes
+    __args__['filters'] = filters
+    __args__['schemaNameContains'] = schema_name_contains
+    __args__['schemaNames'] = schema_names
+    __args__['tableNameContains'] = table_name_contains
+    __args__['tableNames'] = table_names
+    __args__['targetDatabaseId'] = target_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabasesColumns:getTargetDatabasesColumns', __args__, opts=opts, typ=GetTargetDatabasesColumnsResult)
+    return __ret__.apply(lambda __response__: GetTargetDatabasesColumnsResult(
+        column_name_contains=pulumi.get(__response__, 'column_name_contains'),
+        column_names=pulumi.get(__response__, 'column_names'),
+        columns=pulumi.get(__response__, 'columns'),
+        datatypes=pulumi.get(__response__, 'datatypes'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        schema_name_contains=pulumi.get(__response__, 'schema_name_contains'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        table_name_contains=pulumi.get(__response__, 'table_name_contains'),
+        table_names=pulumi.get(__response__, 'table_names'),
+        target_database_id=pulumi.get(__response__, 'target_database_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -176,9 +181,6 @@ def get_software_source_module_streams(filters: Optional[Sequence[Union['GetSoft
         module_stream_collections=pulumi.get(__ret__, 'module_stream_collections'),
         name=pulumi.get(__ret__, 'name'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-
-
-@_utilities.lift_output_func(get_software_source_module_streams)
 def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceModuleStreamsFilterArgs', 'GetSoftwareSourceModuleStreamsFilterArgsDict']]]]] = None,
                                               is_latest: Optional[pulumi.Input[Optional[bool]]] = None,
                                               module_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -212,4 +214,21 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     :param str name: The name of the entity to be queried.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['isLatest'] = is_latest
+    __args__['moduleName'] = module_name
+    __args__['moduleNameContains'] = module_name_contains
+    __args__['name'] = name
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceModuleStreams:getSoftwareSourceModuleStreams', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamsResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceModuleStreamsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        module_name=pulumi.get(__response__, 'module_name'),
+        module_name_contains=pulumi.get(__response__, 'module_name_contains'),
+        module_stream_collections=pulumi.get(__response__, 'module_stream_collections'),
+        name=pulumi.get(__response__, 'name'),
+        software_source_id=pulumi.get(__response__, 'software_source_id')))

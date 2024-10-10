@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -801,9 +806,6 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[str]] = None,
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         user_name_disallowed=pulumi.get(__ret__, 'user_name_disallowed'))
-
-
-@_utilities.lift_output_func(get_domains_password_policy)
 def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                        authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -838,4 +840,70 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
     :param str password_policy_id: ID of the resource
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['passwordPolicyId'] = password_policy_id
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy', __args__, opts=opts, typ=GetDomainsPasswordPolicyResult)
+    return __ret__.apply(lambda __response__: GetDomainsPasswordPolicyResult(
+        allowed_chars=pulumi.get(__response__, 'allowed_chars'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        configured_password_policy_rules=pulumi.get(__response__, 'configured_password_policy_rules'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        dictionary_delimiter=pulumi.get(__response__, 'dictionary_delimiter'),
+        dictionary_location=pulumi.get(__response__, 'dictionary_location'),
+        dictionary_word_disallowed=pulumi.get(__response__, 'dictionary_word_disallowed'),
+        disallowed_chars=pulumi.get(__response__, 'disallowed_chars'),
+        disallowed_substrings=pulumi.get(__response__, 'disallowed_substrings'),
+        disallowed_user_attribute_values=pulumi.get(__response__, 'disallowed_user_attribute_values'),
+        distinct_characters=pulumi.get(__response__, 'distinct_characters'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        first_name_disallowed=pulumi.get(__response__, 'first_name_disallowed'),
+        force_password_reset=pulumi.get(__response__, 'force_password_reset'),
+        groups=pulumi.get(__response__, 'groups'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        last_name_disallowed=pulumi.get(__response__, 'last_name_disallowed'),
+        lockout_duration=pulumi.get(__response__, 'lockout_duration'),
+        max_incorrect_attempts=pulumi.get(__response__, 'max_incorrect_attempts'),
+        max_length=pulumi.get(__response__, 'max_length'),
+        max_repeated_chars=pulumi.get(__response__, 'max_repeated_chars'),
+        max_special_chars=pulumi.get(__response__, 'max_special_chars'),
+        metas=pulumi.get(__response__, 'metas'),
+        min_alpha_numerals=pulumi.get(__response__, 'min_alpha_numerals'),
+        min_alphas=pulumi.get(__response__, 'min_alphas'),
+        min_length=pulumi.get(__response__, 'min_length'),
+        min_lower_case=pulumi.get(__response__, 'min_lower_case'),
+        min_numerals=pulumi.get(__response__, 'min_numerals'),
+        min_password_age=pulumi.get(__response__, 'min_password_age'),
+        min_special_chars=pulumi.get(__response__, 'min_special_chars'),
+        min_unique_chars=pulumi.get(__response__, 'min_unique_chars'),
+        min_upper_case=pulumi.get(__response__, 'min_upper_case'),
+        name=pulumi.get(__response__, 'name'),
+        num_passwords_in_history=pulumi.get(__response__, 'num_passwords_in_history'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        password_expire_warning=pulumi.get(__response__, 'password_expire_warning'),
+        password_expires_after=pulumi.get(__response__, 'password_expires_after'),
+        password_policy_id=pulumi.get(__response__, 'password_policy_id'),
+        password_strength=pulumi.get(__response__, 'password_strength'),
+        priority=pulumi.get(__response__, 'priority'),
+        required_chars=pulumi.get(__response__, 'required_chars'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        starts_with_alphabet=pulumi.get(__response__, 'starts_with_alphabet'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        user_name_disallowed=pulumi.get(__response__, 'user_name_disallowed')))

@@ -4,41 +4,105 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'CertificateAuthorityCertificateAuthorityConfigArgs',
+    'CertificateAuthorityCertificateAuthorityConfigArgsDict',
     'CertificateAuthorityCertificateAuthorityConfigSubjectArgs',
+    'CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict',
     'CertificateAuthorityCertificateAuthorityConfigValidityArgs',
+    'CertificateAuthorityCertificateAuthorityConfigValidityArgsDict',
     'CertificateAuthorityCertificateAuthorityRuleArgs',
+    'CertificateAuthorityCertificateAuthorityRuleArgsDict',
     'CertificateAuthorityCertificateRevocationListDetailsArgs',
+    'CertificateAuthorityCertificateRevocationListDetailsArgsDict',
     'CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs',
+    'CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgsDict',
     'CertificateAuthorityCurrentVersionArgs',
+    'CertificateAuthorityCurrentVersionArgsDict',
     'CertificateAuthorityCurrentVersionRevocationStatusArgs',
+    'CertificateAuthorityCurrentVersionRevocationStatusArgsDict',
     'CertificateAuthorityCurrentVersionValidityArgs',
+    'CertificateAuthorityCurrentVersionValidityArgsDict',
     'CertificateAuthoritySubjectArgs',
+    'CertificateAuthoritySubjectArgsDict',
     'CertificateCertificateConfigArgs',
+    'CertificateCertificateConfigArgsDict',
     'CertificateCertificateConfigSubjectArgs',
+    'CertificateCertificateConfigSubjectArgsDict',
     'CertificateCertificateConfigSubjectAlternativeNameArgs',
+    'CertificateCertificateConfigSubjectAlternativeNameArgsDict',
     'CertificateCertificateConfigValidityArgs',
+    'CertificateCertificateConfigValidityArgsDict',
     'CertificateCertificateRevocationListDetailArgs',
+    'CertificateCertificateRevocationListDetailArgsDict',
     'CertificateCertificateRevocationListDetailObjectStorageConfigArgs',
+    'CertificateCertificateRevocationListDetailObjectStorageConfigArgsDict',
     'CertificateCertificateRuleArgs',
+    'CertificateCertificateRuleArgsDict',
     'CertificateCurrentVersionArgs',
+    'CertificateCurrentVersionArgsDict',
     'CertificateCurrentVersionRevocationStatusArgs',
+    'CertificateCurrentVersionRevocationStatusArgsDict',
     'CertificateCurrentVersionSubjectAlternativeNameArgs',
+    'CertificateCurrentVersionSubjectAlternativeNameArgsDict',
     'CertificateCurrentVersionValidityArgs',
+    'CertificateCurrentVersionValidityArgsDict',
     'CertificateSubjectArgs',
+    'CertificateSubjectArgsDict',
     'GetAssociationsFilterArgs',
+    'GetAssociationsFilterArgsDict',
     'GetCaBundlesFilterArgs',
+    'GetCaBundlesFilterArgsDict',
     'GetCertificateAuthoritiesFilterArgs',
+    'GetCertificateAuthoritiesFilterArgsDict',
     'GetCertificateAuthorityVersionsFilterArgs',
+    'GetCertificateAuthorityVersionsFilterArgsDict',
     'GetCertificateVersionsFilterArgs',
+    'GetCertificateVersionsFilterArgsDict',
     'GetCertificatesFilterArgs',
+    'GetCertificatesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityConfigArgsDict(TypedDict):
+        config_type: pulumi.Input[str]
+        """
+        (Updatable) The origin of the CA.
+        """
+        subject: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict']
+        """
+        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        """
+        issuer_certificate_authority_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the private CA.
+        """
+        signing_algorithm: NotRequired[pulumi.Input[str]]
+        """
+        The algorithm used to sign public key certificates that the CA issues.
+        """
+        validity: NotRequired[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigValidityArgsDict']]
+        """
+        (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        """
+        version_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthorityCertificateAuthorityConfigArgs:
@@ -140,6 +204,79 @@ class CertificateAuthorityCertificateAuthorityConfigArgs:
     def version_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "version_name", value)
 
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict(TypedDict):
+        common_name: pulumi.Input[str]
+        """
+        Common name or fully-qualified domain name (RDN CN).
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country name (RDN C).
+        """
+        distinguished_name_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Distinguished name qualifier(RDN DNQ).
+        """
+        domain_component: NotRequired[pulumi.Input[str]]
+        """
+        Domain component (RDN DC).
+        """
+        generation_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+        """
+        given_name: NotRequired[pulumi.Input[str]]
+        """
+        Personal given name (RDN G or GN).
+        """
+        initials: NotRequired[pulumi.Input[str]]
+        """
+        Personal initials.
+        """
+        locality_name: NotRequired[pulumi.Input[str]]
+        """
+        Locality (RDN L).
+        """
+        organization: NotRequired[pulumi.Input[str]]
+        """
+        Organization (RDN O).
+        """
+        organizational_unit: NotRequired[pulumi.Input[str]]
+        """
+        Organizational unit (RDN OU).
+        """
+        pseudonym: NotRequired[pulumi.Input[str]]
+        """
+        Subject pseudonym.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        state_or_province_name: NotRequired[pulumi.Input[str]]
+        """
+        State or province name (RDN ST or S).
+        """
+        street: NotRequired[pulumi.Input[str]]
+        """
+        Street address (RDN STREET).
+        """
+        surname: NotRequired[pulumi.Input[str]]
+        """
+        Personal surname (RDN SN).
+        """
+        title: NotRequired[pulumi.Input[str]]
+        """
+        Title (RDN T or TITLE).
+        """
+        user_id: NotRequired[pulumi.Input[str]]
+        """
+        User ID (RDN UID).
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthorityCertificateAuthorityConfigSubjectArgs:
@@ -419,6 +556,19 @@ class CertificateAuthorityCertificateAuthorityConfigSubjectArgs:
         pulumi.set(self, "user_id", value)
 
 
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityConfigValidityArgsDict(TypedDict):
+        time_of_validity_not_after: pulumi.Input[str]
+        """
+        (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_validity_not_before: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityConfigValidityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateAuthorityCertificateAuthorityConfigValidityArgs:
     def __init__(__self__, *,
@@ -456,6 +606,23 @@ class CertificateAuthorityCertificateAuthorityConfigValidityArgs:
     def time_of_validity_not_before(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_validity_not_before", value)
 
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityRuleArgsDict(TypedDict):
+        rule_type: pulumi.Input[str]
+        """
+        (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+        """
+        certificate_authority_max_validity_duration: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+        """
+        leaf_certificate_max_validity_duration: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthorityCertificateAuthorityRuleArgs:
@@ -511,6 +678,19 @@ class CertificateAuthorityCertificateAuthorityRuleArgs:
         pulumi.set(self, "leaf_certificate_max_validity_duration", value)
 
 
+if not MYPY:
+    class CertificateAuthorityCertificateRevocationListDetailsArgsDict(TypedDict):
+        object_storage_config: pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgsDict']
+        """
+        (Updatable) The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
+        """
+        custom_formatted_urls: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+        """
+elif False:
+    CertificateAuthorityCertificateRevocationListDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateAuthorityCertificateRevocationListDetailsArgs:
     def __init__(__self__, *,
@@ -548,6 +728,23 @@ class CertificateAuthorityCertificateRevocationListDetailsArgs:
     def custom_formatted_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "custom_formatted_urls", value)
 
+
+if not MYPY:
+    class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgsDict(TypedDict):
+        object_storage_bucket_name: pulumi.Input[str]
+        """
+        (Updatable) The name of the bucket where the CRL is stored.
+        """
+        object_storage_object_name_format: pulumi.Input[str]
+        """
+        (Updatable) The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+        """
+        object_storage_namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tenancy of the bucket where the CRL is stored.
+        """
+elif False:
+    CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs:
@@ -601,6 +798,51 @@ class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArg
     def object_storage_namespace(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "object_storage_namespace", value)
 
+
+if not MYPY:
+    class CertificateAuthorityCurrentVersionArgsDict(TypedDict):
+        certificate_authority_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the CA.
+        """
+        issuer_ca_version_number: NotRequired[pulumi.Input[str]]
+        """
+        The version number of the issuing CA.
+        """
+        revocation_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionRevocationStatusArgsDict']]]]
+        """
+        The current revocation status of the entity.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        stages: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of rotation states for this CA version.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_deletion: NotRequired[pulumi.Input[str]]
+        """
+        An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        validities: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionValidityArgsDict']]]]
+        """
+        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        """
+        version_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
+        """
+        version_number: NotRequired[pulumi.Input[str]]
+        """
+        The version number of the CA.
+        """
+elif False:
+    CertificateAuthorityCurrentVersionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthorityCurrentVersionArgs:
@@ -769,6 +1011,19 @@ class CertificateAuthorityCurrentVersionArgs:
         pulumi.set(self, "version_number", value)
 
 
+if not MYPY:
+    class CertificateAuthorityCurrentVersionRevocationStatusArgsDict(TypedDict):
+        revocation_reason: NotRequired[pulumi.Input[str]]
+        """
+        The reason the certificate or certificate authority (CA) was revoked.
+        """
+        time_of_revocation: NotRequired[pulumi.Input[str]]
+        """
+        The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateAuthorityCurrentVersionRevocationStatusArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateAuthorityCurrentVersionRevocationStatusArgs:
     def __init__(__self__, *,
@@ -808,6 +1063,19 @@ class CertificateAuthorityCurrentVersionRevocationStatusArgs:
         pulumi.set(self, "time_of_revocation", value)
 
 
+if not MYPY:
+    class CertificateAuthorityCurrentVersionValidityArgsDict(TypedDict):
+        time_of_validity_not_after: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_validity_not_before: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateAuthorityCurrentVersionValidityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateAuthorityCurrentVersionValidityArgs:
     def __init__(__self__, *,
@@ -846,6 +1114,79 @@ class CertificateAuthorityCurrentVersionValidityArgs:
     def time_of_validity_not_before(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_validity_not_before", value)
 
+
+if not MYPY:
+    class CertificateAuthoritySubjectArgsDict(TypedDict):
+        common_name: NotRequired[pulumi.Input[str]]
+        """
+        Common name or fully-qualified domain name (RDN CN).
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country name (RDN C).
+        """
+        distinguished_name_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Distinguished name qualifier(RDN DNQ).
+        """
+        domain_component: NotRequired[pulumi.Input[str]]
+        """
+        Domain component (RDN DC).
+        """
+        generation_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+        """
+        given_name: NotRequired[pulumi.Input[str]]
+        """
+        Personal given name (RDN G or GN).
+        """
+        initials: NotRequired[pulumi.Input[str]]
+        """
+        Personal initials.
+        """
+        locality_name: NotRequired[pulumi.Input[str]]
+        """
+        Locality (RDN L).
+        """
+        organization: NotRequired[pulumi.Input[str]]
+        """
+        Organization (RDN O).
+        """
+        organizational_unit: NotRequired[pulumi.Input[str]]
+        """
+        Organizational unit (RDN OU).
+        """
+        pseudonym: NotRequired[pulumi.Input[str]]
+        """
+        Subject pseudonym.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        state_or_province_name: NotRequired[pulumi.Input[str]]
+        """
+        State or province name (RDN ST or S).
+        """
+        street: NotRequired[pulumi.Input[str]]
+        """
+        Street address (RDN STREET).
+        """
+        surname: NotRequired[pulumi.Input[str]]
+        """
+        Personal surname (RDN SN).
+        """
+        title: NotRequired[pulumi.Input[str]]
+        """
+        Title (RDN T or TITLE).
+        """
+        user_id: NotRequired[pulumi.Input[str]]
+        """
+        User ID (RDN UID).
+        """
+elif False:
+    CertificateAuthoritySubjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateAuthoritySubjectArgs:
@@ -1126,6 +1467,51 @@ class CertificateAuthoritySubjectArgs:
         pulumi.set(self, "user_id", value)
 
 
+if not MYPY:
+    class CertificateCertificateConfigArgsDict(TypedDict):
+        config_type: pulumi.Input[str]
+        """
+        (Updatable) The origin of the certificate.
+        """
+        certificate_profile_type: NotRequired[pulumi.Input[str]]
+        """
+        The name of the profile used to create the certificate, which depends on the type of certificate you need.
+        """
+        csr_pem: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The certificate signing request (in PEM format).
+        """
+        issuer_certificate_authority_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the private CA.
+        """
+        key_algorithm: NotRequired[pulumi.Input[str]]
+        """
+        The algorithm to use to create key pairs.
+        """
+        signature_algorithm: NotRequired[pulumi.Input[str]]
+        """
+        The algorithm to use to sign the public key certificate.
+        """
+        subject: NotRequired[pulumi.Input['CertificateCertificateConfigSubjectArgsDict']]
+        """
+        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        """
+        subject_alternative_names: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateCertificateConfigSubjectAlternativeNameArgsDict']]]]
+        """
+        A list of subject alternative names.
+        """
+        validity: NotRequired[pulumi.Input['CertificateCertificateConfigValidityArgsDict']]
+        """
+        (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        """
+        version_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+        """
+elif False:
+    CertificateCertificateConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCertificateConfigArgs:
     def __init__(__self__, *,
@@ -1291,6 +1677,79 @@ class CertificateCertificateConfigArgs:
     def version_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "version_name", value)
 
+
+if not MYPY:
+    class CertificateCertificateConfigSubjectArgsDict(TypedDict):
+        common_name: pulumi.Input[str]
+        """
+        Common name or fully-qualified domain name (RDN CN).
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country name (RDN C).
+        """
+        distinguished_name_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Distinguished name qualifier(RDN DNQ).
+        """
+        domain_component: NotRequired[pulumi.Input[str]]
+        """
+        Domain component (RDN DC).
+        """
+        generation_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+        """
+        given_name: NotRequired[pulumi.Input[str]]
+        """
+        Personal given name (RDN G or GN).
+        """
+        initials: NotRequired[pulumi.Input[str]]
+        """
+        Personal initials.
+        """
+        locality_name: NotRequired[pulumi.Input[str]]
+        """
+        Locality (RDN L).
+        """
+        organization: NotRequired[pulumi.Input[str]]
+        """
+        Organization (RDN O).
+        """
+        organizational_unit: NotRequired[pulumi.Input[str]]
+        """
+        Organizational unit (RDN OU).
+        """
+        pseudonym: NotRequired[pulumi.Input[str]]
+        """
+        Subject pseudonym.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        state_or_province_name: NotRequired[pulumi.Input[str]]
+        """
+        State or province name (RDN ST or S).
+        """
+        street: NotRequired[pulumi.Input[str]]
+        """
+        Street address (RDN STREET).
+        """
+        surname: NotRequired[pulumi.Input[str]]
+        """
+        Personal surname (RDN SN).
+        """
+        title: NotRequired[pulumi.Input[str]]
+        """
+        Title (RDN T or TITLE).
+        """
+        user_id: NotRequired[pulumi.Input[str]]
+        """
+        User ID (RDN UID).
+        """
+elif False:
+    CertificateCertificateConfigSubjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateCertificateConfigSubjectArgs:
@@ -1570,6 +2029,19 @@ class CertificateCertificateConfigSubjectArgs:
         pulumi.set(self, "user_id", value)
 
 
+if not MYPY:
+    class CertificateCertificateConfigSubjectAlternativeNameArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+        """
+        value: pulumi.Input[str]
+        """
+        The subject alternative name.
+        """
+elif False:
+    CertificateCertificateConfigSubjectAlternativeNameArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCertificateConfigSubjectAlternativeNameArgs:
     def __init__(__self__, *,
@@ -1606,6 +2078,19 @@ class CertificateCertificateConfigSubjectAlternativeNameArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class CertificateCertificateConfigValidityArgsDict(TypedDict):
+        time_of_validity_not_after: pulumi.Input[str]
+        """
+        (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_validity_not_before: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateCertificateConfigValidityArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateCertificateConfigValidityArgs:
@@ -1645,6 +2130,19 @@ class CertificateCertificateConfigValidityArgs:
         pulumi.set(self, "time_of_validity_not_before", value)
 
 
+if not MYPY:
+    class CertificateCertificateRevocationListDetailArgsDict(TypedDict):
+        custom_formatted_urls: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+        """
+        object_storage_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailObjectStorageConfigArgsDict']]]]
+        """
+        The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
+        """
+elif False:
+    CertificateCertificateRevocationListDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCertificateRevocationListDetailArgs:
     def __init__(__self__, *,
@@ -1683,6 +2181,23 @@ class CertificateCertificateRevocationListDetailArgs:
     def object_storage_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailObjectStorageConfigArgs']]]]):
         pulumi.set(self, "object_storage_configs", value)
 
+
+if not MYPY:
+    class CertificateCertificateRevocationListDetailObjectStorageConfigArgsDict(TypedDict):
+        object_storage_bucket_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the bucket where the CRL is stored.
+        """
+        object_storage_namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tenancy of the bucket where the CRL is stored.
+        """
+        object_storage_object_name_format: NotRequired[pulumi.Input[str]]
+        """
+        The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
+        """
+elif False:
+    CertificateCertificateRevocationListDetailObjectStorageConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateCertificateRevocationListDetailObjectStorageConfigArgs:
@@ -1739,6 +2254,23 @@ class CertificateCertificateRevocationListDetailObjectStorageConfigArgs:
         pulumi.set(self, "object_storage_object_name_format", value)
 
 
+if not MYPY:
+    class CertificateCertificateRuleArgsDict(TypedDict):
+        advance_renewal_period: pulumi.Input[str]
+        """
+        (Updatable) A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+        """
+        renewal_interval: pulumi.Input[str]
+        """
+        (Updatable) A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+        """
+        rule_type: pulumi.Input[str]
+        """
+        (Updatable) The type of rule.
+        """
+elif False:
+    CertificateCertificateRuleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCertificateRuleArgs:
     def __init__(__self__, *,
@@ -1790,6 +2322,55 @@ class CertificateCertificateRuleArgs:
     def rule_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "rule_type", value)
 
+
+if not MYPY:
+    class CertificateCurrentVersionArgsDict(TypedDict):
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the certificate.
+        """
+        issuer_ca_version_number: NotRequired[pulumi.Input[str]]
+        """
+        The version number of the issuing certificate authority (CA).
+        """
+        revocation_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateCurrentVersionRevocationStatusArgsDict']]]]
+        """
+        The current revocation status of the entity.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        stages: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of rotation states for this certificate version.
+        """
+        subject_alternative_names: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateCurrentVersionSubjectAlternativeNameArgsDict']]]]
+        """
+        A list of subject alternative names.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_deletion: NotRequired[pulumi.Input[str]]
+        """
+        An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        validities: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateCurrentVersionValidityArgsDict']]]]
+        """
+        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        """
+        version_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
+        """
+        version_number: NotRequired[pulumi.Input[str]]
+        """
+        The version number of the certificate.
+        """
+elif False:
+    CertificateCurrentVersionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateCurrentVersionArgs:
@@ -1974,6 +2555,19 @@ class CertificateCurrentVersionArgs:
         pulumi.set(self, "version_number", value)
 
 
+if not MYPY:
+    class CertificateCurrentVersionRevocationStatusArgsDict(TypedDict):
+        revocation_reason: NotRequired[pulumi.Input[str]]
+        """
+        The reason the certificate or certificate authority (CA) was revoked.
+        """
+        time_of_revocation: NotRequired[pulumi.Input[str]]
+        """
+        The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateCurrentVersionRevocationStatusArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCurrentVersionRevocationStatusArgs:
     def __init__(__self__, *,
@@ -2012,6 +2606,19 @@ class CertificateCurrentVersionRevocationStatusArgs:
     def time_of_revocation(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_revocation", value)
 
+
+if not MYPY:
+    class CertificateCurrentVersionSubjectAlternativeNameArgsDict(TypedDict):
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The subject alternative name.
+        """
+elif False:
+    CertificateCurrentVersionSubjectAlternativeNameArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateCurrentVersionSubjectAlternativeNameArgs:
@@ -2052,6 +2659,19 @@ class CertificateCurrentVersionSubjectAlternativeNameArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class CertificateCurrentVersionValidityArgsDict(TypedDict):
+        time_of_validity_not_after: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+        time_of_validity_not_before: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        """
+elif False:
+    CertificateCurrentVersionValidityArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CertificateCurrentVersionValidityArgs:
     def __init__(__self__, *,
@@ -2090,6 +2710,79 @@ class CertificateCurrentVersionValidityArgs:
     def time_of_validity_not_before(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_validity_not_before", value)
 
+
+if not MYPY:
+    class CertificateSubjectArgsDict(TypedDict):
+        common_name: NotRequired[pulumi.Input[str]]
+        """
+        Common name or fully-qualified domain name (RDN CN).
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country name (RDN C).
+        """
+        distinguished_name_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Distinguished name qualifier(RDN DNQ).
+        """
+        domain_component: NotRequired[pulumi.Input[str]]
+        """
+        Domain component (RDN DC).
+        """
+        generation_qualifier: NotRequired[pulumi.Input[str]]
+        """
+        Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
+        """
+        given_name: NotRequired[pulumi.Input[str]]
+        """
+        Personal given name (RDN G or GN).
+        """
+        initials: NotRequired[pulumi.Input[str]]
+        """
+        Personal initials.
+        """
+        locality_name: NotRequired[pulumi.Input[str]]
+        """
+        Locality (RDN L).
+        """
+        organization: NotRequired[pulumi.Input[str]]
+        """
+        Organization (RDN O).
+        """
+        organizational_unit: NotRequired[pulumi.Input[str]]
+        """
+        Organizational unit (RDN OU).
+        """
+        pseudonym: NotRequired[pulumi.Input[str]]
+        """
+        Subject pseudonym.
+        """
+        serial_number: NotRequired[pulumi.Input[str]]
+        """
+        Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
+        """
+        state_or_province_name: NotRequired[pulumi.Input[str]]
+        """
+        State or province name (RDN ST or S).
+        """
+        street: NotRequired[pulumi.Input[str]]
+        """
+        Street address (RDN STREET).
+        """
+        surname: NotRequired[pulumi.Input[str]]
+        """
+        Personal surname (RDN SN).
+        """
+        title: NotRequired[pulumi.Input[str]]
+        """
+        Title (RDN T or TITLE).
+        """
+        user_id: NotRequired[pulumi.Input[str]]
+        """
+        User ID (RDN UID).
+        """
+elif False:
+    CertificateSubjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CertificateSubjectArgs:
@@ -2370,6 +3063,17 @@ class CertificateSubjectArgs:
         pulumi.set(self, "user_id", value)
 
 
+if not MYPY:
+    class GetAssociationsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter that returns only resources that match the specified name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAssociationsFilterArgs:
     def __init__(__self__, *,
@@ -2414,6 +3118,17 @@ class GetAssociationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetCaBundlesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter that returns only resources that match the specified name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCaBundlesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCaBundlesFilterArgs:
@@ -2460,6 +3175,17 @@ class GetCaBundlesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetCertificateAuthoritiesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter that returns only resources that match the specified name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCertificateAuthoritiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCertificateAuthoritiesFilterArgs:
     def __init__(__self__, *,
@@ -2505,6 +3231,14 @@ class GetCertificateAuthoritiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetCertificateAuthorityVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCertificateAuthorityVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCertificateAuthorityVersionsFilterArgs:
     def __init__(__self__, *,
@@ -2544,6 +3278,14 @@ class GetCertificateAuthorityVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetCertificateVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCertificateVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCertificateVersionsFilterArgs:
     def __init__(__self__, *,
@@ -2582,6 +3324,17 @@ class GetCertificateVersionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetCertificatesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter that returns only resources that match the specified name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCertificatesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCertificatesFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -691,9 +696,6 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
-
-
-@_utilities.lift_output_func(get_exadata_infrastructure)
 def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureResult]:
     """
@@ -705,4 +707,58 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadataInfrastructure:getExadataInfrastructure', __args__, opts=opts, typ=GetExadataInfrastructureResult)
+    return __ret__.apply(lambda __response__: GetExadataInfrastructureResult(
+        activated_storage_count=pulumi.get(__response__, 'activated_storage_count'),
+        activation_file=pulumi.get(__response__, 'activation_file'),
+        additional_compute_count=pulumi.get(__response__, 'additional_compute_count'),
+        additional_compute_system_model=pulumi.get(__response__, 'additional_compute_system_model'),
+        additional_storage_count=pulumi.get(__response__, 'additional_storage_count'),
+        admin_network_cidr=pulumi.get(__response__, 'admin_network_cidr'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cloud_control_plane_server1=pulumi.get(__response__, 'cloud_control_plane_server1'),
+        cloud_control_plane_server2=pulumi.get(__response__, 'cloud_control_plane_server2'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_count=pulumi.get(__response__, 'compute_count'),
+        contacts=pulumi.get(__response__, 'contacts'),
+        corporate_proxy=pulumi.get(__response__, 'corporate_proxy'),
+        cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),
+        create_async=pulumi.get(__response__, 'create_async'),
+        csi_number=pulumi.get(__response__, 'csi_number'),
+        data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_server_version=pulumi.get(__response__, 'db_server_version'),
+        defined_file_system_configurations=pulumi.get(__response__, 'defined_file_system_configurations'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_servers=pulumi.get(__response__, 'dns_servers'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gateway=pulumi.get(__response__, 'gateway'),
+        id=pulumi.get(__response__, 'id'),
+        infini_band_network_cidr=pulumi.get(__response__, 'infini_band_network_cidr'),
+        is_cps_offline_report_enabled=pulumi.get(__response__, 'is_cps_offline_report_enabled'),
+        is_multi_rack_deployment=pulumi.get(__response__, 'is_multi_rack_deployment'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenance_slo_status=pulumi.get(__response__, 'maintenance_slo_status'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        max_cpu_count=pulumi.get(__response__, 'max_cpu_count'),
+        max_data_storage_in_tbs=pulumi.get(__response__, 'max_data_storage_in_tbs'),
+        max_db_node_storage_in_gbs=pulumi.get(__response__, 'max_db_node_storage_in_gbs'),
+        max_memory_in_gbs=pulumi.get(__response__, 'max_memory_in_gbs'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        monthly_db_server_version=pulumi.get(__response__, 'monthly_db_server_version'),
+        multi_rack_configuration_file=pulumi.get(__response__, 'multi_rack_configuration_file'),
+        netmask=pulumi.get(__response__, 'netmask'),
+        network_bonding_mode_details=pulumi.get(__response__, 'network_bonding_mode_details'),
+        ntp_servers=pulumi.get(__response__, 'ntp_servers'),
+        rack_serial_number=pulumi.get(__response__, 'rack_serial_number'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        storage_count=pulumi.get(__response__, 'storage_count'),
+        storage_server_version=pulumi.get(__response__, 'storage_server_version'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone')))

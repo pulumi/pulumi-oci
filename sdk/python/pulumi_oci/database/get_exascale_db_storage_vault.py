@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -276,9 +281,6 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[str] = 
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vm_cluster_count=pulumi.get(__ret__, 'vm_cluster_count'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
-
-
-@_utilities.lift_output_func(get_exascale_db_storage_vault)
 def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExascaleDbStorageVaultResult]:
     """
@@ -298,4 +300,25 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
 
     :param str exascale_db_storage_vault_id: The Exadata Database Storage Vault [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['exascaleDbStorageVaultId'] = exascale_db_storage_vault_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault', __args__, opts=opts, typ=GetExascaleDbStorageVaultResult)
+    return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultResult(
+        additional_flash_cache_in_percent=pulumi.get(__response__, 'additional_flash_cache_in_percent'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exascale_db_storage_vault_id=pulumi.get(__response__, 'exascale_db_storage_vault_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        high_capacity_database_storages=pulumi.get(__response__, 'high_capacity_database_storages'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        vm_cluster_count=pulumi.get(__response__, 'vm_cluster_count'),
+        vm_cluster_ids=pulumi.get(__response__, 'vm_cluster_ids')))

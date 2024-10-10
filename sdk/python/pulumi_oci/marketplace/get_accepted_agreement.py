@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -194,9 +199,6 @@ def get_accepted_agreement(accepted_agreement_id: Optional[str] = None,
         package_version=pulumi.get(__ret__, 'package_version'),
         signature=pulumi.get(__ret__, 'signature'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'))
-
-
-@_utilities.lift_output_func(get_accepted_agreement)
 def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAcceptedAgreementResult]:
     """
@@ -216,4 +218,19 @@ def get_accepted_agreement_output(accepted_agreement_id: Optional[pulumi.Input[s
 
     :param str accepted_agreement_id: The unique identifier for the accepted terms of use agreement.
     """
-    ...
+    __args__ = dict()
+    __args__['acceptedAgreementId'] = accepted_agreement_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement', __args__, opts=opts, typ=GetAcceptedAgreementResult)
+    return __ret__.apply(lambda __response__: GetAcceptedAgreementResult(
+        accepted_agreement_id=pulumi.get(__response__, 'accepted_agreement_id'),
+        agreement_id=pulumi.get(__response__, 'agreement_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        package_version=pulumi.get(__response__, 'package_version'),
+        signature=pulumi.get(__response__, 'signature'),
+        time_accepted=pulumi.get(__response__, 'time_accepted')))

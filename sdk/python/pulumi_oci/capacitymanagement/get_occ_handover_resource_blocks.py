@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_occ_handover_resource_blocks(compartment_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         occ_handover_resource_block_collections=pulumi.get(__ret__, 'occ_handover_resource_block_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-
-
-@_utilities.lift_output_func(get_occ_handover_resource_blocks)
 def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccHandoverResourceBlocksFilterArgs', 'GetOccHandoverResourceBlocksFilterArgsDict']]]]] = None,
                                             handover_date_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
@@ -224,4 +226,23 @@ def get_occ_handover_resource_blocks_output(compartment_id: Optional[pulumi.Inpu
     :param str namespace: The namespace by which we would filter the list.
     :param str occ_handover_resource_block_id: This filter helps in fetching the handed over resource for which the occHandoverResourceId is equal to the one provided here.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['handoverDateGreaterThanOrEqualTo'] = handover_date_greater_than_or_equal_to
+    __args__['handoverDateLessThanOrEqualTo'] = handover_date_less_than_or_equal_to
+    __args__['handoverResourceName'] = handover_resource_name
+    __args__['namespace'] = namespace
+    __args__['occHandoverResourceBlockId'] = occ_handover_resource_block_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccHandoverResourceBlocks:getOccHandoverResourceBlocks', __args__, opts=opts, typ=GetOccHandoverResourceBlocksResult)
+    return __ret__.apply(lambda __response__: GetOccHandoverResourceBlocksResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        handover_date_greater_than_or_equal_to=pulumi.get(__response__, 'handover_date_greater_than_or_equal_to'),
+        handover_date_less_than_or_equal_to=pulumi.get(__response__, 'handover_date_less_than_or_equal_to'),
+        handover_resource_name=pulumi.get(__response__, 'handover_resource_name'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        occ_handover_resource_block_collections=pulumi.get(__response__, 'occ_handover_resource_block_collections'),
+        occ_handover_resource_block_id=pulumi.get(__response__, 'occ_handover_resource_block_id')))

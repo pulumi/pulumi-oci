@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -456,9 +461,6 @@ def get_alarm(alarm_id: Optional[str] = None,
         suppressions=pulumi.get(__ret__, 'suppressions'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_alarm)
 def get_alarm_output(alarm_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmResult]:
     """
@@ -486,4 +488,38 @@ def get_alarm_output(alarm_id: Optional[pulumi.Input[str]] = None,
 
     :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
     """
-    ...
+    __args__ = dict()
+    __args__['alarmId'] = alarm_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarm:getAlarm', __args__, opts=opts, typ=GetAlarmResult)
+    return __ret__.apply(lambda __response__: GetAlarmResult(
+        alarm_id=pulumi.get(__response__, 'alarm_id'),
+        alarm_summary=pulumi.get(__response__, 'alarm_summary'),
+        body=pulumi.get(__response__, 'body'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        destinations=pulumi.get(__response__, 'destinations'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        evaluation_slack_duration=pulumi.get(__response__, 'evaluation_slack_duration'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        is_notifications_per_metric_dimension_enabled=pulumi.get(__response__, 'is_notifications_per_metric_dimension_enabled'),
+        message_format=pulumi.get(__response__, 'message_format'),
+        metric_compartment_id=pulumi.get(__response__, 'metric_compartment_id'),
+        metric_compartment_id_in_subtree=pulumi.get(__response__, 'metric_compartment_id_in_subtree'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        notification_title=pulumi.get(__response__, 'notification_title'),
+        notification_version=pulumi.get(__response__, 'notification_version'),
+        overrides=pulumi.get(__response__, 'overrides'),
+        pending_duration=pulumi.get(__response__, 'pending_duration'),
+        query=pulumi.get(__response__, 'query'),
+        repeat_notification_duration=pulumi.get(__response__, 'repeat_notification_duration'),
+        resolution=pulumi.get(__response__, 'resolution'),
+        resource_group=pulumi.get(__response__, 'resource_group'),
+        rule_name=pulumi.get(__response__, 'rule_name'),
+        severity=pulumi.get(__response__, 'severity'),
+        state=pulumi.get(__response__, 'state'),
+        suppressions=pulumi.get(__response__, 'suppressions'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

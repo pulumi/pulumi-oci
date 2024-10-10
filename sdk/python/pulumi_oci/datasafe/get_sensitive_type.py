@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -327,9 +332,6 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_sensitive_type)
 def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveTypeResult]:
     """
@@ -349,4 +351,29 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = N
 
     :param str sensitive_type_id: The OCID of the sensitive type.
     """
-    ...
+    __args__ = dict()
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveType:getSensitiveType', __args__, opts=opts, typ=GetSensitiveTypeResult)
+    return __ret__.apply(lambda __response__: GetSensitiveTypeResult(
+        comment_pattern=pulumi.get(__response__, 'comment_pattern'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_pattern=pulumi.get(__response__, 'data_pattern'),
+        default_masking_format_id=pulumi.get(__response__, 'default_masking_format_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_common=pulumi.get(__response__, 'is_common'),
+        name_pattern=pulumi.get(__response__, 'name_pattern'),
+        parent_category_id=pulumi.get(__response__, 'parent_category_id'),
+        search_type=pulumi.get(__response__, 'search_type'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        short_name=pulumi.get(__response__, 'short_name'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

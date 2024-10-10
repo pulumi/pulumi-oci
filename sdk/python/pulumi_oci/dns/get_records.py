@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -205,9 +210,6 @@ def get_records(compartment_id: Optional[str] = None,
         sort_order=pulumi.get(__ret__, 'sort_order'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
         zone_version=pulumi.get(__ret__, 'zone_version'))
-
-
-@_utilities.lift_output_func(get_records)
 def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        domain: Optional[pulumi.Input[Optional[str]]] = None,
                        domain_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -239,4 +241,27 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     :param str zone_name_or_id: The name or OCID of the target zone.
     :param str zone_version: The version of the zone for which data is requested.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['domain'] = domain
+    __args__['domainContains'] = domain_contains
+    __args__['filters'] = filters
+    __args__['rtype'] = rtype
+    __args__['sortBy'] = sort_by
+    __args__['sortOrder'] = sort_order
+    __args__['zoneNameOrId'] = zone_name_or_id
+    __args__['zoneVersion'] = zone_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRecords:getRecords', __args__, opts=opts, typ=GetRecordsResult)
+    return __ret__.apply(lambda __response__: GetRecordsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        domain=pulumi.get(__response__, 'domain'),
+        domain_contains=pulumi.get(__response__, 'domain_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        records=pulumi.get(__response__, 'records'),
+        rtype=pulumi.get(__response__, 'rtype'),
+        sort_by=pulumi.get(__response__, 'sort_by'),
+        sort_order=pulumi.get(__response__, 'sort_order'),
+        zone_name_or_id=pulumi.get(__response__, 'zone_name_or_id'),
+        zone_version=pulumi.get(__response__, 'zone_version')))

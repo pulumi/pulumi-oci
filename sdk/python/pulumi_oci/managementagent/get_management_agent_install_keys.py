@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         management_agent_install_keys=pulumi.get(__ret__, 'management_agent_install_keys'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_management_agent_install_keys)
 def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                              compartment_id: Optional[pulumi.Input[str]] = None,
                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -207,4 +209,21 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
     :param str display_name: The display name for which the Key needs to be listed.
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys', __args__, opts=opts, typ=GetManagementAgentInstallKeysResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentInstallKeysResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        management_agent_install_keys=pulumi.get(__response__, 'management_agent_install_keys'),
+        state=pulumi.get(__response__, 'state')))

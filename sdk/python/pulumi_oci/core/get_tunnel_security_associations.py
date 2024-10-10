@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_tunnel_security_associations(filters: Optional[Sequence[Union['GetTunnel
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
         tunnel_security_associations=pulumi.get(__ret__, 'tunnel_security_associations'))
-
-
-@_utilities.lift_output_func(get_tunnel_security_associations)
 def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]]]] = None,
                                             ipsec_id: Optional[pulumi.Input[str]] = None,
                                             tunnel_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
     :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['ipsecId'] = ipsec_id
+    __args__['tunnelId'] = tunnel_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getTunnelSecurityAssociations:getTunnelSecurityAssociations', __args__, opts=opts, typ=GetTunnelSecurityAssociationsResult)
+    return __ret__.apply(lambda __response__: GetTunnelSecurityAssociationsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ipsec_id=pulumi.get(__response__, 'ipsec_id'),
+        tunnel_id=pulumi.get(__response__, 'tunnel_id'),
+        tunnel_security_associations=pulumi.get(__response__, 'tunnel_security_associations')))

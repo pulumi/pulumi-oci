@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'))
-
-
-@_utilities.lift_output_func(get_dedicated_vm_host_shapes)
 def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostShapesFilterArgs', 'GetDedicatedVmHostShapesFilterArgsDict']]]]] = None,
@@ -167,4 +169,17 @@ def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Inp
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str instance_shape_name: The name for the instance's shape.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['instanceShapeName'] = instance_shape_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes', __args__, opts=opts, typ=GetDedicatedVmHostShapesResult)
+    return __ret__.apply(lambda __response__: GetDedicatedVmHostShapesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dedicated_vm_host_shapes=pulumi.get(__response__, 'dedicated_vm_host_shapes'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_shape_name=pulumi.get(__response__, 'instance_shape_name')))

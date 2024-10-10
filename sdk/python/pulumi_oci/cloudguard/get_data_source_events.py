@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -129,9 +134,6 @@ def get_data_source_events(data_source_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         region=pulumi.get(__ret__, 'region'))
-
-
-@_utilities.lift_output_func(get_data_source_events)
 def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataSourceEventsFilterArgs', 'GetDataSourceEventsFilterArgsDict']]]]] = None,
                                   region: Optional[pulumi.Input[Optional[str]]] = None,
@@ -157,4 +159,15 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
     :param str data_source_id: Data source OCID.
     :param str region: A filter to return only resource where their region matches the given region.
     """
-    ...
+    __args__ = dict()
+    __args__['dataSourceId'] = data_source_id
+    __args__['filters'] = filters
+    __args__['region'] = region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSourceEvents:getDataSourceEvents', __args__, opts=opts, typ=GetDataSourceEventsResult)
+    return __ret__.apply(lambda __response__: GetDataSourceEventsResult(
+        data_source_event_collections=pulumi.get(__response__, 'data_source_event_collections'),
+        data_source_id=pulumi.get(__response__, 'data_source_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        region=pulumi.get(__response__, 'region')))

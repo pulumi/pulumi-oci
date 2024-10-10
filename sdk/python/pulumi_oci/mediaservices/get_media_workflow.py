@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -273,9 +278,6 @@ def get_media_workflow(media_workflow_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_media_workflow)
 def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowResult]:
     """
@@ -295,4 +297,25 @@ def get_media_workflow_output(media_workflow_id: Optional[pulumi.Input[str]] = N
 
     :param str media_workflow_id: Unique MediaWorkflow identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['mediaWorkflowId'] = media_workflow_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflow:getMediaWorkflow', __args__, opts=opts, typ=GetMediaWorkflowResult)
+    return __ret__.apply(lambda __response__: GetMediaWorkflowResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        locks=pulumi.get(__response__, 'locks'),
+        media_workflow_configuration_ids=pulumi.get(__response__, 'media_workflow_configuration_ids'),
+        media_workflow_id=pulumi.get(__response__, 'media_workflow_id'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tasks=pulumi.get(__response__, 'tasks'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        version=pulumi.get(__response__, 'version')))

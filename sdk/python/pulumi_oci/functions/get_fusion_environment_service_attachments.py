@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
         service_attachment_collections=pulumi.get(__ret__, 'service_attachment_collections'),
         service_instance_type=pulumi.get(__ret__, 'service_instance_type'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_service_attachments)
 def get_fusion_environment_service_attachments_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentServiceAttachmentsFilterArgs', 'GetFusionEnvironmentServiceAttachmentsFilterArgsDict']]]]] = None,
                                                       fusion_environment_id: Optional[pulumi.Input[str]] = None,
@@ -190,4 +192,19 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
     :param str service_instance_type: A filter that returns all resources that match the specified lifecycle state.
     :param str state: A filter that returns all resources that match the specified lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['serviceInstanceType'] = service_instance_type
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentsResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentServiceAttachmentsResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        service_attachment_collections=pulumi.get(__response__, 'service_attachment_collections'),
+        service_instance_type=pulumi.get(__response__, 'service_instance_type'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_data_source(data_source_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_data_source)
 def get_data_source_output(data_source_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSourceResult]:
     """
@@ -272,4 +274,23 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[str]] = None,
 
     :param str data_source_id: Data source OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['dataSourceId'] = data_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSource:getDataSource', __args__, opts=opts, typ=GetDataSourceResult)
+    return __ret__.apply(lambda __response__: GetDataSourceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_source_details=pulumi.get(__response__, 'data_source_details'),
+        data_source_detector_mapping_infos=pulumi.get(__response__, 'data_source_detector_mapping_infos'),
+        data_source_feed_provider=pulumi.get(__response__, 'data_source_feed_provider'),
+        data_source_id=pulumi.get(__response__, 'data_source_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        region_status_details=pulumi.get(__response__, 'region_status_details'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

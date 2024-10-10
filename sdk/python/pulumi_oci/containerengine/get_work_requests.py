@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_work_requests(cluster_id: Optional[str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         statuses=pulumi.get(__ret__, 'statuses'),
         work_requests=pulumi.get(__ret__, 'work_requests'))
-
-
-@_utilities.lift_output_func(get_work_requests)
 def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkRequestsFilterArgs', 'GetWorkRequestsFilterArgsDict']]]]] = None,
@@ -204,4 +206,21 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
     :param str resource_type: Type of the resource associated with a work request
     :param Sequence[str] statuses: A work request status to filter on. Can have multiple parameters of this name.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
+    __args__['resourceType'] = resource_type
+    __args__['statuses'] = statuses
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getWorkRequests:getWorkRequests', __args__, opts=opts, typ=GetWorkRequestsResult)
+    return __ret__.apply(lambda __response__: GetWorkRequestsResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        statuses=pulumi.get(__response__, 'statuses'),
+        work_requests=pulumi.get(__response__, 'work_requests')))

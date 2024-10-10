@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -510,9 +515,6 @@ def get_application(application_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
-
-
-@_utilities.lift_output_func(get_application)
 def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationResult]:
     """
@@ -532,4 +534,43 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
 
     :param str application_id: The unique ID for an application.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationId'] = application_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getApplication:getApplication', __args__, opts=opts, typ=GetApplicationResult)
+    return __ret__.apply(lambda __response__: GetApplicationResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        application_log_configs=pulumi.get(__response__, 'application_log_configs'),
+        archive_uri=pulumi.get(__response__, 'archive_uri'),
+        arguments=pulumi.get(__response__, 'arguments'),
+        class_name=pulumi.get(__response__, 'class_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration=pulumi.get(__response__, 'configuration'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        driver_shape=pulumi.get(__response__, 'driver_shape'),
+        driver_shape_configs=pulumi.get(__response__, 'driver_shape_configs'),
+        execute=pulumi.get(__response__, 'execute'),
+        executor_shape=pulumi.get(__response__, 'executor_shape'),
+        executor_shape_configs=pulumi.get(__response__, 'executor_shape_configs'),
+        file_uri=pulumi.get(__response__, 'file_uri'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idle_timeout_in_minutes=pulumi.get(__response__, 'idle_timeout_in_minutes'),
+        language=pulumi.get(__response__, 'language'),
+        logs_bucket_uri=pulumi.get(__response__, 'logs_bucket_uri'),
+        max_duration_in_minutes=pulumi.get(__response__, 'max_duration_in_minutes'),
+        metastore_id=pulumi.get(__response__, 'metastore_id'),
+        num_executors=pulumi.get(__response__, 'num_executors'),
+        owner_principal_id=pulumi.get(__response__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__response__, 'owner_user_name'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        pool_id=pulumi.get(__response__, 'pool_id'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        spark_version=pulumi.get(__response__, 'spark_version'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        warehouse_bucket_uri=pulumi.get(__response__, 'warehouse_bucket_uri')))

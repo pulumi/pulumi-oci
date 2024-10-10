@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -173,9 +178,6 @@ def get_desktop_pool_volumes(availability_domain: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_desktop_pool_volumes)
 def get_desktop_pool_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[str]] = None,
                                     desktop_pool_id: Optional[pulumi.Input[str]] = None,
@@ -211,4 +213,22 @@ def get_desktop_pool_volumes_output(availability_domain: Optional[pulumi.Input[O
     :param str id: A filter to return only results with the given OCID.
     :param str state: A filter to return only results with the given lifecycleState.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['desktopPoolId'] = desktop_pool_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Desktops/getDesktopPoolVolumes:getDesktopPoolVolumes', __args__, opts=opts, typ=GetDesktopPoolVolumesResult)
+    return __ret__.apply(lambda __response__: GetDesktopPoolVolumesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        desktop_pool_id=pulumi.get(__response__, 'desktop_pool_id'),
+        desktop_pool_volume_collections=pulumi.get(__response__, 'desktop_pool_volume_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

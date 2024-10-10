@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -279,9 +284,6 @@ def get_resolver(resolver_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_resolver)
 def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
                         scope: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverResult]:
@@ -306,4 +308,26 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
     :param str resolver_id: The OCID of the target resolver.
     :param str scope: Value must be `PRIVATE` when listing private name resolvers.
     """
-    ...
+    __args__ = dict()
+    __args__['resolverId'] = resolver_id
+    __args__['scope'] = scope
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolver:getResolver', __args__, opts=opts, typ=GetResolverResult)
+    return __ret__.apply(lambda __response__: GetResolverResult(
+        attached_vcn_id=pulumi.get(__response__, 'attached_vcn_id'),
+        attached_views=pulumi.get(__response__, 'attached_views'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        default_view_id=pulumi.get(__response__, 'default_view_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        endpoints=pulumi.get(__response__, 'endpoints'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_protected=pulumi.get(__response__, 'is_protected'),
+        resolver_id=pulumi.get(__response__, 'resolver_id'),
+        rules=pulumi.get(__response__, 'rules'),
+        scope=pulumi.get(__response__, 'scope'),
+        self=pulumi.get(__response__, 'self'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

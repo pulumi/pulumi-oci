@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -207,9 +212,6 @@ def get_monitored_resource_types(compartment_id: Optional[str] = None,
         monitored_resource_types_collections=pulumi.get(__ret__, 'monitored_resource_types_collections'),
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_monitored_resource_types)
 def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                         exclude_fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                         fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -255,4 +257,25 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
     :param str name: A filter to return monitored resource types that match exactly with the resource type name given.
     :param str status: A filter to return only resources that matches with lifecycleState given.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['excludeFields'] = exclude_fields
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['isExcludeSystemTypes'] = is_exclude_system_types
+    __args__['metricNamespace'] = metric_namespace
+    __args__['name'] = name
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes', __args__, opts=opts, typ=GetMonitoredResourceTypesResult)
+    return __ret__.apply(lambda __response__: GetMonitoredResourceTypesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        exclude_fields=pulumi.get(__response__, 'exclude_fields'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_exclude_system_types=pulumi.get(__response__, 'is_exclude_system_types'),
+        metric_namespace=pulumi.get(__response__, 'metric_namespace'),
+        monitored_resource_types_collections=pulumi.get(__response__, 'monitored_resource_types_collections'),
+        name=pulumi.get(__response__, 'name'),
+        status=pulumi.get(__response__, 'status')))

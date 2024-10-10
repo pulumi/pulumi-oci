@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -278,9 +283,6 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
         is_resource_pool_leader=pulumi.get(__ret__, 'is_resource_pool_leader'),
         resource_pool_leader_id=pulumi.get(__ret__, 'resource_pool_leader_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_autonomous_databases)
 def get_autonomous_databases_output(autonomous_container_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     compartment_id: Optional[pulumi.Input[str]] = None,
                                     db_version: Optional[pulumi.Input[Optional[str]]] = None,
@@ -317,4 +319,35 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str state: The current state of the Autonomous Database.
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
+    __args__['compartmentId'] = compartment_id
+    __args__['dbVersion'] = db_version
+    __args__['dbWorkload'] = db_workload
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['infrastructureType'] = infrastructure_type
+    __args__['isDataGuardEnabled'] = is_data_guard_enabled
+    __args__['isFreeTier'] = is_free_tier
+    __args__['isRefreshableClone'] = is_refreshable_clone
+    __args__['isResourcePoolLeader'] = is_resource_pool_leader
+    __args__['resourcePoolLeaderId'] = resource_pool_leader_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabases:getAutonomousDatabases', __args__, opts=opts, typ=GetAutonomousDatabasesResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabasesResult(
+        autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),
+        autonomous_databases=pulumi.get(__response__, 'autonomous_databases'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        db_workload=pulumi.get(__response__, 'db_workload'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
+        is_data_guard_enabled=pulumi.get(__response__, 'is_data_guard_enabled'),
+        is_free_tier=pulumi.get(__response__, 'is_free_tier'),
+        is_refreshable_clone=pulumi.get(__response__, 'is_refreshable_clone'),
+        is_resource_pool_leader=pulumi.get(__response__, 'is_resource_pool_leader'),
+        resource_pool_leader_id=pulumi.get(__response__, 'resource_pool_leader_id'),
+        state=pulumi.get(__response__, 'state')))

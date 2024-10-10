@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_senders(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         senders=pulumi.get(__ret__, 'senders'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_senders)
 def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        domain: Optional[pulumi.Input[Optional[str]]] = None,
                        email_address: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str email_address: The email address of the approved sender.
     :param str state: The current state of a sender.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['domain'] = domain
+    __args__['emailAddress'] = email_address
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getSenders:getSenders', __args__, opts=opts, typ=GetSendersResult)
+    return __ret__.apply(lambda __response__: GetSendersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        domain=pulumi.get(__response__, 'domain'),
+        email_address=pulumi.get(__response__, 'email_address'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        senders=pulumi.get(__response__, 'senders'),
+        state=pulumi.get(__response__, 'state')))

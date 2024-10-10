@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -354,9 +359,6 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_redis_cluster)
 def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRedisClusterResult]:
     """
@@ -376,4 +378,31 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = Non
 
     :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['redisClusterId'] = redis_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Redis/getRedisCluster:getRedisCluster', __args__, opts=opts, typ=GetRedisClusterResult)
+    return __ret__.apply(lambda __response__: GetRedisClusterResult(
+        cluster_mode=pulumi.get(__response__, 'cluster_mode'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        node_collections=pulumi.get(__response__, 'node_collections'),
+        node_count=pulumi.get(__response__, 'node_count'),
+        node_memory_in_gbs=pulumi.get(__response__, 'node_memory_in_gbs'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        primary_endpoint_ip_address=pulumi.get(__response__, 'primary_endpoint_ip_address'),
+        primary_fqdn=pulumi.get(__response__, 'primary_fqdn'),
+        redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),
+        replicas_endpoint_ip_address=pulumi.get(__response__, 'replicas_endpoint_ip_address'),
+        replicas_fqdn=pulumi.get(__response__, 'replicas_fqdn'),
+        shard_count=pulumi.get(__response__, 'shard_count'),
+        software_version=pulumi.get(__response__, 'software_version'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

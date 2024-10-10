@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_secrets(compartment_id: Optional[str] = None,
         secrets=pulumi.get(__ret__, 'secrets'),
         state=pulumi.get(__ret__, 'state'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-
-
-@_utilities.lift_output_func(get_secrets)
 def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
     :param str vault_id: The OCID of the vault.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    __args__['vaultId'] = vault_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Vault/getSecrets:getSecrets', __args__, opts=opts, typ=GetSecretsResult)
+    return __ret__.apply(lambda __response__: GetSecretsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        secrets=pulumi.get(__response__, 'secrets'),
+        state=pulumi.get(__response__, 'state'),
+        vault_id=pulumi.get(__response__, 'vault_id')))

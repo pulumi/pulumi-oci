@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -213,9 +218,6 @@ def get_view(scope: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         view_id=pulumi.get(__ret__, 'view_id'))
-
-
-@_utilities.lift_output_func(get_view)
 def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
                     view_id: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewResult]:
@@ -240,4 +242,21 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
     :param str scope: Value must be `PRIVATE` when listing views for private zones.
     :param str view_id: The OCID of the target view.
     """
-    ...
+    __args__ = dict()
+    __args__['scope'] = scope
+    __args__['viewId'] = view_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getView:getView', __args__, opts=opts, typ=GetViewResult)
+    return __ret__.apply(lambda __response__: GetViewResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_protected=pulumi.get(__response__, 'is_protected'),
+        scope=pulumi.get(__response__, 'scope'),
+        self=pulumi.get(__response__, 'self'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        view_id=pulumi.get(__response__, 'view_id')))

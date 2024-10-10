@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -413,9 +418,6 @@ def get_exadata_insight(exadata_insight_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_exadata_insight)
 def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInsightResult]:
     """
@@ -435,4 +437,36 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] =
 
     :param str exadata_insight_id: Unique Exadata insight identifier
     """
-    ...
+    __args__ = dict()
+    __args__['exadataInsightId'] = exadata_insight_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getExadataInsight:getExadataInsight', __args__, opts=opts, typ=GetExadataInsightResult)
+    return __ret__.apply(lambda __response__: GetExadataInsightResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        enterprise_manager_bridge_id=pulumi.get(__response__, 'enterprise_manager_bridge_id'),
+        enterprise_manager_entity_display_name=pulumi.get(__response__, 'enterprise_manager_entity_display_name'),
+        enterprise_manager_entity_identifier=pulumi.get(__response__, 'enterprise_manager_entity_identifier'),
+        enterprise_manager_entity_name=pulumi.get(__response__, 'enterprise_manager_entity_name'),
+        enterprise_manager_entity_type=pulumi.get(__response__, 'enterprise_manager_entity_type'),
+        enterprise_manager_identifier=pulumi.get(__response__, 'enterprise_manager_identifier'),
+        entity_source=pulumi.get(__response__, 'entity_source'),
+        exadata_display_name=pulumi.get(__response__, 'exadata_display_name'),
+        exadata_infra_id=pulumi.get(__response__, 'exadata_infra_id'),
+        exadata_infra_resource_type=pulumi.get(__response__, 'exadata_infra_resource_type'),
+        exadata_insight_id=pulumi.get(__response__, 'exadata_insight_id'),
+        exadata_name=pulumi.get(__response__, 'exadata_name'),
+        exadata_rack_type=pulumi.get(__response__, 'exadata_rack_type'),
+        exadata_shape=pulumi.get(__response__, 'exadata_shape'),
+        exadata_type=pulumi.get(__response__, 'exadata_type'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_sync_enabled=pulumi.get(__response__, 'is_auto_sync_enabled'),
+        is_virtualized_exadata=pulumi.get(__response__, 'is_virtualized_exadata'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        member_vm_cluster_details=pulumi.get(__response__, 'member_vm_cluster_details'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

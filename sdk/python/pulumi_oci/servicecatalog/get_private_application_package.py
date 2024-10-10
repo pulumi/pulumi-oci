@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -165,9 +170,6 @@ def get_private_application_package(private_application_package_id: Optional[str
         private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_private_application_package)
 def get_private_application_package_output(private_application_package_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationPackageResult]:
     """
@@ -187,4 +189,17 @@ def get_private_application_package_output(private_application_package_id: Optio
 
     :param str private_application_package_id: The unique identifier for the private application package.
     """
-    ...
+    __args__ = dict()
+    __args__['privateApplicationPackageId'] = private_application_package_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplicationPackage:getPrivateApplicationPackage', __args__, opts=opts, typ=GetPrivateApplicationPackageResult)
+    return __ret__.apply(lambda __response__: GetPrivateApplicationPackageResult(
+        content_url=pulumi.get(__response__, 'content_url'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        mime_type=pulumi.get(__response__, 'mime_type'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        private_application_id=pulumi.get(__response__, 'private_application_id'),
+        private_application_package_id=pulumi.get(__response__, 'private_application_package_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        version=pulumi.get(__response__, 'version')))

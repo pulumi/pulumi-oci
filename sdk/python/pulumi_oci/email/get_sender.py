@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_sender(sender_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_sender)
 def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSenderResult]:
     """
@@ -219,4 +221,19 @@ def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
 
     :param str sender_id: The unique OCID of the sender.
     """
-    ...
+    __args__ = dict()
+    __args__['senderId'] = sender_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getSender:getSender', __args__, opts=opts, typ=GetSenderResult)
+    return __ret__.apply(lambda __response__: GetSenderResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        email_address=pulumi.get(__response__, 'email_address'),
+        email_domain_id=pulumi.get(__response__, 'email_domain_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_spf=pulumi.get(__response__, 'is_spf'),
+        sender_id=pulumi.get(__response__, 'sender_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

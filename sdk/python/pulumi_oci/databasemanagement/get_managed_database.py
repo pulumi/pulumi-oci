@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -357,9 +362,6 @@ def get_managed_database(database_platform_name: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-
-
-@_utilities.lift_output_func(get_managed_database)
 def get_managed_database_output(database_platform_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 managed_database_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseResult]:
@@ -381,4 +383,32 @@ def get_managed_database_output(database_platform_name: Optional[pulumi.Input[Op
     :param str database_platform_name: The operating system of database.
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     """
-    ...
+    __args__ = dict()
+    __args__['databasePlatformName'] = database_platform_name
+    __args__['managedDatabaseId'] = managed_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabase:getManagedDatabase', __args__, opts=opts, typ=GetManagedDatabaseResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseResult(
+        additional_details=pulumi.get(__response__, 'additional_details'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_platform_name=pulumi.get(__response__, 'database_platform_name'),
+        database_status=pulumi.get(__response__, 'database_status'),
+        database_sub_type=pulumi.get(__response__, 'database_sub_type'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        database_version=pulumi.get(__response__, 'database_version'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        dbmgmt_feature_configs=pulumi.get(__response__, 'dbmgmt_feature_configs'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_cluster=pulumi.get(__response__, 'is_cluster'),
+        managed_database_groups=pulumi.get(__response__, 'managed_database_groups'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        management_option=pulumi.get(__response__, 'management_option'),
+        name=pulumi.get(__response__, 'name'),
+        parent_container_id=pulumi.get(__response__, 'parent_container_id'),
+        storage_system_id=pulumi.get(__response__, 'storage_system_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        workload_type=pulumi.get(__response__, 'workload_type')))

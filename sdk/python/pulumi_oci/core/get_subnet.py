@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -353,9 +358,6 @@ def get_subnet(subnet_id: Optional[str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         virtual_router_ip=pulumi.get(__ret__, 'virtual_router_ip'),
         virtual_router_mac=pulumi.get(__ret__, 'virtual_router_mac'))
-
-
-@_utilities.lift_output_func(get_subnet)
 def get_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetResult]:
     """
@@ -375,4 +377,31 @@ def get_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
 
     :param str subnet_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     """
-    ...
+    __args__ = dict()
+    __args__['subnetId'] = subnet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getSubnet:getSubnet', __args__, opts=opts, typ=GetSubnetResult)
+    return __ret__.apply(lambda __response__: GetSubnetResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cidr_block=pulumi.get(__response__, 'cidr_block'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        dhcp_options_id=pulumi.get(__response__, 'dhcp_options_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_label=pulumi.get(__response__, 'dns_label'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ipv6cidr_block=pulumi.get(__response__, 'ipv6cidr_block'),
+        ipv6cidr_blocks=pulumi.get(__response__, 'ipv6cidr_blocks'),
+        ipv6virtual_router_ip=pulumi.get(__response__, 'ipv6virtual_router_ip'),
+        prohibit_internet_ingress=pulumi.get(__response__, 'prohibit_internet_ingress'),
+        prohibit_public_ip_on_vnic=pulumi.get(__response__, 'prohibit_public_ip_on_vnic'),
+        route_table_id=pulumi.get(__response__, 'route_table_id'),
+        security_list_ids=pulumi.get(__response__, 'security_list_ids'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_domain_name=pulumi.get(__response__, 'subnet_domain_name'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        virtual_router_ip=pulumi.get(__response__, 'virtual_router_ip'),
+        virtual_router_mac=pulumi.get(__response__, 'virtual_router_mac')))

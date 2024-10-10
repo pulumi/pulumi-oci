@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_namespace_properties_metadata(constraints: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         property_metadata_summary_collections=pulumi.get(__ret__, 'property_metadata_summary_collections'))
-
-
-@_utilities.lift_output_func(get_namespace_properties_metadata)
 def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[Optional[str]]] = None,
                                              display_text: Optional[pulumi.Input[Optional[str]]] = None,
                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacePropertiesMetadataFilterArgs', 'GetNamespacePropertiesMetadataFilterArgsDict']]]]] = None,
@@ -204,4 +206,21 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
     :param str name: The property name used for filtering.
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['constraints'] = constraints
+    __args__['displayText'] = display_text
+    __args__['filters'] = filters
+    __args__['level'] = level
+    __args__['name'] = name
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata', __args__, opts=opts, typ=GetNamespacePropertiesMetadataResult)
+    return __ret__.apply(lambda __response__: GetNamespacePropertiesMetadataResult(
+        constraints=pulumi.get(__response__, 'constraints'),
+        display_text=pulumi.get(__response__, 'display_text'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        level=pulumi.get(__response__, 'level'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        property_metadata_summary_collections=pulumi.get(__response__, 'property_metadata_summary_collections')))

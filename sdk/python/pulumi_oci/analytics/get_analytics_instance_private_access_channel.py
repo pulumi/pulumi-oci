@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -209,9 +214,6 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
         private_source_scan_hosts=pulumi.get(__ret__, 'private_source_scan_hosts'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_analytics_instance_private_access_channel)
 def get_analytics_instance_private_access_channel_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
                                                          private_access_channel_key: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstancePrivateAccessChannelResult]:
@@ -234,4 +236,21 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.
     :param str private_access_channel_key: The unique identifier key of the Private Access Channel.
     """
-    ...
+    __args__ = dict()
+    __args__['analyticsInstanceId'] = analytics_instance_id
+    __args__['privateAccessChannelKey'] = private_access_channel_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel', __args__, opts=opts, typ=GetAnalyticsInstancePrivateAccessChannelResult)
+    return __ret__.apply(lambda __response__: GetAnalyticsInstancePrivateAccessChannelResult(
+        analytics_instance_id=pulumi.get(__response__, 'analytics_instance_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        egress_source_ip_addresses=pulumi.get(__response__, 'egress_source_ip_addresses'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        key=pulumi.get(__response__, 'key'),
+        network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        private_access_channel_key=pulumi.get(__response__, 'private_access_channel_key'),
+        private_source_dns_zones=pulumi.get(__response__, 'private_source_dns_zones'),
+        private_source_scan_hosts=pulumi.get(__response__, 'private_source_scan_hosts'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

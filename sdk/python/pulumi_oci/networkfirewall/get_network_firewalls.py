@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
         network_firewall_collections=pulumi.get(__ret__, 'network_firewall_collections'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_network_firewalls)
 def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,4 +222,22 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
     :param str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
     :param str state: A filter to return only resources with a lifecycleState matching the given value.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewalls:getNetworkFirewalls', __args__, opts=opts, typ=GetNetworkFirewallsResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        network_firewall_collections=pulumi.get(__response__, 'network_firewall_collections'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        state=pulumi.get(__response__, 'state')))

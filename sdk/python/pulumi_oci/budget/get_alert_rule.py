@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -266,9 +271,6 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_alert_rule)
 def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
                           budget_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRuleResult]:
@@ -291,4 +293,25 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
     :param str alert_rule_id: The unique Alert Rule OCID.
     :param str budget_id: The unique budget OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['alertRuleId'] = alert_rule_id
+    __args__['budgetId'] = budget_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Budget/getAlertRule:getAlertRule', __args__, opts=opts, typ=GetAlertRuleResult)
+    return __ret__.apply(lambda __response__: GetAlertRuleResult(
+        alert_rule_id=pulumi.get(__response__, 'alert_rule_id'),
+        budget_id=pulumi.get(__response__, 'budget_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        message=pulumi.get(__response__, 'message'),
+        recipients=pulumi.get(__response__, 'recipients'),
+        state=pulumi.get(__response__, 'state'),
+        threshold=pulumi.get(__response__, 'threshold'),
+        threshold_type=pulumi.get(__response__, 'threshold_type'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        version=pulumi.get(__response__, 'version')))

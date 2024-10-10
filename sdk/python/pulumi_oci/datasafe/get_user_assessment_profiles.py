@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -377,9 +382,6 @@ def get_user_assessment_profiles(access_level: Optional[str] = None,
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'),
         user_count_greater_than_or_equal=pulumi.get(__ret__, 'user_count_greater_than_or_equal'),
         user_count_less_than=pulumi.get(__ret__, 'user_count_less_than'))
-
-
-@_utilities.lift_output_func(get_user_assessment_profiles)
 def get_user_assessment_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[str]] = None,
                                         compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -465,4 +467,47 @@ def get_user_assessment_profiles_output(access_level: Optional[pulumi.Input[Opti
     :param str user_count_greater_than_or_equal: An optional filter to return the profiles having user count greater than or equal to the provided value.
     :param str user_count_less_than: An optional filter to return the profiles having user count less than the provided value.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['failedLoginAttemptsGreaterThanOrEqual'] = failed_login_attempts_greater_than_or_equal
+    __args__['failedLoginAttemptsLessThan'] = failed_login_attempts_less_than
+    __args__['filters'] = filters
+    __args__['inactiveAccountTimeGreaterThanOrEqual'] = inactive_account_time_greater_than_or_equal
+    __args__['inactiveAccountTimeLessThan'] = inactive_account_time_less_than
+    __args__['isUserCreated'] = is_user_created
+    __args__['passwordLockTimeGreaterThanOrEqual'] = password_lock_time_greater_than_or_equal
+    __args__['passwordLockTimeLessThan'] = password_lock_time_less_than
+    __args__['passwordVerificationFunction'] = password_verification_function
+    __args__['profileName'] = profile_name
+    __args__['sessionsPerUserGreaterThanOrEqual'] = sessions_per_user_greater_than_or_equal
+    __args__['sessionsPerUserLessThan'] = sessions_per_user_less_than
+    __args__['targetId'] = target_id
+    __args__['userAssessmentId'] = user_assessment_id
+    __args__['userCountGreaterThanOrEqual'] = user_count_greater_than_or_equal
+    __args__['userCountLessThan'] = user_count_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentProfiles:getUserAssessmentProfiles', __args__, opts=opts, typ=GetUserAssessmentProfilesResult)
+    return __ret__.apply(lambda __response__: GetUserAssessmentProfilesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        failed_login_attempts_greater_than_or_equal=pulumi.get(__response__, 'failed_login_attempts_greater_than_or_equal'),
+        failed_login_attempts_less_than=pulumi.get(__response__, 'failed_login_attempts_less_than'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        inactive_account_time_greater_than_or_equal=pulumi.get(__response__, 'inactive_account_time_greater_than_or_equal'),
+        inactive_account_time_less_than=pulumi.get(__response__, 'inactive_account_time_less_than'),
+        is_user_created=pulumi.get(__response__, 'is_user_created'),
+        password_lock_time_greater_than_or_equal=pulumi.get(__response__, 'password_lock_time_greater_than_or_equal'),
+        password_lock_time_less_than=pulumi.get(__response__, 'password_lock_time_less_than'),
+        password_verification_function=pulumi.get(__response__, 'password_verification_function'),
+        profile_name=pulumi.get(__response__, 'profile_name'),
+        profiles=pulumi.get(__response__, 'profiles'),
+        sessions_per_user_greater_than_or_equal=pulumi.get(__response__, 'sessions_per_user_greater_than_or_equal'),
+        sessions_per_user_less_than=pulumi.get(__response__, 'sessions_per_user_less_than'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        user_assessment_id=pulumi.get(__response__, 'user_assessment_id'),
+        user_count_greater_than_or_equal=pulumi.get(__response__, 'user_count_greater_than_or_equal'),
+        user_count_less_than=pulumi.get(__response__, 'user_count_less_than')))

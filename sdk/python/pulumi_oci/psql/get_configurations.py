@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_configurations(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_configurations)
 def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                               configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
                               db_version: Optional[pulumi.Input[Optional[str]]] = None,
@@ -230,4 +232,23 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
     :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['configurationId'] = configuration_id
+    __args__['dbVersion'] = db_version
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['shape'] = shape
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfigurations:getConfigurations', __args__, opts=opts, typ=GetConfigurationsResult)
+    return __ret__.apply(lambda __response__: GetConfigurationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_collections=pulumi.get(__response__, 'configuration_collections'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state')))

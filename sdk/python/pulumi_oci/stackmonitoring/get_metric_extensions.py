@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_metric_extensions)
 def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  enabled_on_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
@@ -230,4 +232,23 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str state: A filter to return metric extensions based on Lifecycle State
     :param str status: A filter to return resources based on status e.g. Draft or Published
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['enabledOnResourceId'] = enabled_on_resource_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['resourceType'] = resource_type
+    __args__['state'] = state
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMetricExtensions:getMetricExtensions', __args__, opts=opts, typ=GetMetricExtensionsResult)
+    return __ret__.apply(lambda __response__: GetMetricExtensionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        enabled_on_resource_id=pulumi.get(__response__, 'enabled_on_resource_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        metric_extension_collections=pulumi.get(__response__, 'metric_extension_collections'),
+        name=pulumi.get(__response__, 'name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status')))

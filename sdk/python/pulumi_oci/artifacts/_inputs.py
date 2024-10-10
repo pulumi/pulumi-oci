@@ -4,19 +4,49 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ContainerRepositoryReadmeArgs',
+    'ContainerRepositoryReadmeArgsDict',
     'GetContainerImagesFilterArgs',
+    'GetContainerImagesFilterArgsDict',
     'GetContainerRepositoriesFilterArgs',
+    'GetContainerRepositoriesFilterArgsDict',
     'GetContainerSignaturesFilterArgs',
+    'GetContainerSignaturesFilterArgsDict',
     'GetGenericArtifactsFilterArgs',
+    'GetGenericArtifactsFilterArgsDict',
     'GetRepositoriesFilterArgs',
+    'GetRepositoriesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ContainerRepositoryReadmeArgsDict(TypedDict):
+        content: pulumi.Input[str]
+        """
+        (Updatable) Readme content. Avoid entering confidential information.
+        """
+        format: pulumi.Input[str]
+        """
+        (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ContainerRepositoryReadmeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerRepositoryReadmeArgs:
@@ -63,6 +93,14 @@ class ContainerRepositoryReadmeArgs:
         pulumi.set(self, "format", value)
 
 
+if not MYPY:
+    class GetContainerImagesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainerImagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetContainerImagesFilterArgs:
     def __init__(__self__, *,
@@ -101,6 +139,14 @@ class GetContainerImagesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetContainerRepositoriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainerRepositoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetContainerRepositoriesFilterArgs:
@@ -141,6 +187,14 @@ class GetContainerRepositoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetContainerSignaturesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetContainerSignaturesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetContainerSignaturesFilterArgs:
     def __init__(__self__, *,
@@ -180,6 +234,14 @@ class GetContainerSignaturesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetGenericArtifactsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetGenericArtifactsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetGenericArtifactsFilterArgs:
     def __init__(__self__, *,
@@ -218,6 +280,14 @@ class GetGenericArtifactsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRepositoriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRepositoriesFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -131,9 +136,6 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
         generate_type=pulumi.get(__ret__, 'generate_type'),
         id=pulumi.get(__ret__, 'id'),
         password=pulumi.get(__ret__, 'password'))
-
-
-@_utilities.lift_output_func(get_autonomous_database_wallet)
 def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                           base64_encode_content: Optional[pulumi.Input[Optional[bool]]] = None,
                                           generate_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -157,4 +159,17 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
            **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
     :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousDatabaseId'] = autonomous_database_id
+    __args__['base64EncodeContent'] = base64_encode_content
+    __args__['generateType'] = generate_type
+    __args__['password'] = password
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet', __args__, opts=opts, typ=GetAutonomousDatabaseWalletResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabaseWalletResult(
+        autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),
+        base64_encode_content=pulumi.get(__response__, 'base64_encode_content'),
+        content=pulumi.get(__response__, 'content'),
+        generate_type=pulumi.get(__response__, 'generate_type'),
+        id=pulumi.get(__response__, 'id'),
+        password=pulumi.get(__response__, 'password')))

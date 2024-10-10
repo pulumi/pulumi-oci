@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -217,9 +222,6 @@ def get_file_systems(availability_domain: Optional[str] = None,
         parent_file_system_id=pulumi.get(__ret__, 'parent_file_system_id'),
         source_snapshot_id=pulumi.get(__ret__, 'source_snapshot_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_file_systems)
 def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
                             display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -262,4 +264,26 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
     :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['parentFileSystemId'] = parent_file_system_id
+    __args__['sourceSnapshotId'] = source_snapshot_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getFileSystems:getFileSystems', __args__, opts=opts, typ=GetFileSystemsResult)
+    return __ret__.apply(lambda __response__: GetFileSystemsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        file_systems=pulumi.get(__response__, 'file_systems'),
+        filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        parent_file_system_id=pulumi.get(__response__, 'parent_file_system_id'),
+        source_snapshot_id=pulumi.get(__response__, 'source_snapshot_id'),
+        state=pulumi.get(__response__, 'state')))

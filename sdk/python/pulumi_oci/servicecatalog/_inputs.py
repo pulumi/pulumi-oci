@@ -4,19 +4,49 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'PrivateApplicationLogoArgs',
+    'PrivateApplicationLogoArgsDict',
     'PrivateApplicationPackageDetailsArgs',
+    'PrivateApplicationPackageDetailsArgsDict',
     'GetPrivateApplicationPackagesFilterArgs',
+    'GetPrivateApplicationPackagesFilterArgsDict',
     'GetPrivateApplicationsFilterArgs',
+    'GetPrivateApplicationsFilterArgsDict',
     'GetServiceCatalogAssociationsFilterArgs',
+    'GetServiceCatalogAssociationsFilterArgsDict',
     'GetServiceCatalogsFilterArgs',
+    'GetServiceCatalogsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class PrivateApplicationLogoArgsDict(TypedDict):
+        content_url: NotRequired[pulumi.Input[str]]
+        """
+        The content URL of the uploaded data.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the private application.
+        """
+        mime_type: NotRequired[pulumi.Input[str]]
+        """
+        The MIME type of the uploaded data.
+        """
+elif False:
+    PrivateApplicationLogoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PrivateApplicationLogoArgs:
@@ -73,6 +103,20 @@ class PrivateApplicationLogoArgs:
         pulumi.set(self, "mime_type", value)
 
 
+if not MYPY:
+    class PrivateApplicationPackageDetailsArgsDict(TypedDict):
+        package_type: pulumi.Input[str]
+        """
+        The package's type.
+        """
+        version: pulumi.Input[str]
+        """
+        The package version.
+        """
+        zip_file_base64encoded: NotRequired[pulumi.Input[str]]
+elif False:
+    PrivateApplicationPackageDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PrivateApplicationPackageDetailsArgs:
     def __init__(__self__, *,
@@ -122,6 +166,14 @@ class PrivateApplicationPackageDetailsArgs:
         pulumi.set(self, "zip_file_base64encoded", value)
 
 
+if not MYPY:
+    class GetPrivateApplicationPackagesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPrivateApplicationPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPrivateApplicationPackagesFilterArgs:
     def __init__(__self__, *,
@@ -160,6 +212,14 @@ class GetPrivateApplicationPackagesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetPrivateApplicationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPrivateApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPrivateApplicationsFilterArgs:
@@ -200,6 +260,14 @@ class GetPrivateApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetServiceCatalogAssociationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetServiceCatalogAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetServiceCatalogAssociationsFilterArgs:
     def __init__(__self__, *,
@@ -238,6 +306,14 @@ class GetServiceCatalogAssociationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetServiceCatalogsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetServiceCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetServiceCatalogsFilterArgs:

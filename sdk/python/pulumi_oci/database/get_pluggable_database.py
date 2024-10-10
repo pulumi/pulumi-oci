@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -353,9 +358,6 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         tde_wallet_password=pulumi.get(__ret__, 'tde_wallet_password'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_pluggable_database)
 def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPluggableDatabaseResult]:
     """
@@ -375,4 +377,33 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[s
 
     :param str pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['pluggableDatabaseId'] = pluggable_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getPluggableDatabase:getPluggableDatabase', __args__, opts=opts, typ=GetPluggableDatabaseResult)
+    return __ret__.apply(lambda __response__: GetPluggableDatabaseResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_strings=pulumi.get(__response__, 'connection_strings'),
+        container_database_admin_password=pulumi.get(__response__, 'container_database_admin_password'),
+        container_database_id=pulumi.get(__response__, 'container_database_id'),
+        convert_to_regular_trigger=pulumi.get(__response__, 'convert_to_regular_trigger'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_restricted=pulumi.get(__response__, 'is_restricted'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        open_mode=pulumi.get(__response__, 'open_mode'),
+        pdb_admin_password=pulumi.get(__response__, 'pdb_admin_password'),
+        pdb_creation_type_details=pulumi.get(__response__, 'pdb_creation_type_details'),
+        pdb_name=pulumi.get(__response__, 'pdb_name'),
+        pdb_node_level_details=pulumi.get(__response__, 'pdb_node_level_details'),
+        pluggable_database_id=pulumi.get(__response__, 'pluggable_database_id'),
+        pluggable_database_management_configs=pulumi.get(__response__, 'pluggable_database_management_configs'),
+        refresh_trigger=pulumi.get(__response__, 'refresh_trigger'),
+        refreshable_clone_configs=pulumi.get(__response__, 'refreshable_clone_configs'),
+        rotate_key_trigger=pulumi.get(__response__, 'rotate_key_trigger'),
+        should_create_pdb_backup=pulumi.get(__response__, 'should_create_pdb_backup'),
+        should_pdb_admin_account_be_locked=pulumi.get(__response__, 'should_pdb_admin_account_be_locked'),
+        state=pulumi.get(__response__, 'state'),
+        tde_wallet_password=pulumi.get(__response__, 'tde_wallet_password'),
+        time_created=pulumi.get(__response__, 'time_created')))

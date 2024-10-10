@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -562,9 +567,6 @@ def get_access_request(access_request_id: Optional[str] = None,
         time_requested_for_future_access=pulumi.get(__ret__, 'time_requested_for_future_access'),
         user_id=pulumi.get(__ret__, 'user_id'),
         workflow_ids=pulumi.get(__ret__, 'workflow_ids'))
-
-
-@_utilities.lift_output_func(get_access_request)
 def get_access_request_output(access_request_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestResult]:
     """
@@ -584,4 +586,47 @@ def get_access_request_output(access_request_id: Optional[pulumi.Input[str]] = N
 
     :param str access_request_id: unique AccessRequest identifier
     """
-    ...
+    __args__ = dict()
+    __args__['accessRequestId'] = access_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getAccessRequest:getAccessRequest', __args__, opts=opts, typ=GetAccessRequestResult)
+    return __ret__.apply(lambda __response__: GetAccessRequestResult(
+        access_reason_summary=pulumi.get(__response__, 'access_reason_summary'),
+        access_request_id=pulumi.get(__response__, 'access_request_id'),
+        action_requests_lists=pulumi.get(__response__, 'action_requests_lists'),
+        approver_comment=pulumi.get(__response__, 'approver_comment'),
+        approver_details=pulumi.get(__response__, 'approver_details'),
+        audit_types=pulumi.get(__response__, 'audit_types'),
+        closure_comment=pulumi.get(__response__, 'closure_comment'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        duration=pulumi.get(__response__, 'duration'),
+        extend_duration=pulumi.get(__response__, 'extend_duration'),
+        extension_approver_details=pulumi.get(__response__, 'extension_approver_details'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_approved=pulumi.get(__response__, 'is_auto_approved'),
+        is_validate_assignment=pulumi.get(__response__, 'is_validate_assignment'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        number_of_approvers=pulumi.get(__response__, 'number_of_approvers'),
+        number_of_approvers_required=pulumi.get(__response__, 'number_of_approvers_required'),
+        number_of_extension_approvers=pulumi.get(__response__, 'number_of_extension_approvers'),
+        opctl_additional_message=pulumi.get(__response__, 'opctl_additional_message'),
+        opctl_id=pulumi.get(__response__, 'opctl_id'),
+        opctl_name=pulumi.get(__response__, 'opctl_name'),
+        operator_id=pulumi.get(__response__, 'operator_id'),
+        reason=pulumi.get(__response__, 'reason'),
+        request_id=pulumi.get(__response__, 'request_id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_name=pulumi.get(__response__, 'resource_name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        severity=pulumi.get(__response__, 'severity'),
+        state=pulumi.get(__response__, 'state'),
+        sub_resource_lists=pulumi.get(__response__, 'sub_resource_lists'),
+        system_message=pulumi.get(__response__, 'system_message'),
+        time_of_creation=pulumi.get(__response__, 'time_of_creation'),
+        time_of_modification=pulumi.get(__response__, 'time_of_modification'),
+        time_of_user_creation=pulumi.get(__response__, 'time_of_user_creation'),
+        time_requested_for_future_access=pulumi.get(__response__, 'time_requested_for_future_access'),
+        user_id=pulumi.get(__response__, 'user_id'),
+        workflow_ids=pulumi.get(__response__, 'workflow_ids')))

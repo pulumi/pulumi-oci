@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_shapes(availability_domain: Optional[str] = None,
         is_supported_fors=pulumi.get(__ret__, 'is_supported_fors'),
         name=pulumi.get(__ret__, 'name'),
         shapes=pulumi.get(__ret__, 'shapes'))
-
-
-@_utilities.lift_output_func(get_shapes)
 def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                       compartment_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
     :param Sequence[str] is_supported_fors: Return shapes that are supported by the service feature.
     :param str name: Name
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['isSupportedFors'] = is_supported_fors
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult)
+    return __ret__.apply(lambda __response__: GetShapesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_supported_fors=pulumi.get(__response__, 'is_supported_fors'),
+        name=pulumi.get(__response__, 'name'),
+        shapes=pulumi.get(__response__, 'shapes')))

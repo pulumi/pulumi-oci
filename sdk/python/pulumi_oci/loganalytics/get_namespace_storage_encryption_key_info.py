@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         namespace=pulumi.get(__ret__, 'namespace'))
-
-
-@_utilities.lift_output_func(get_namespace_storage_encryption_key_info)
 def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageEncryptionKeyInfoResult]:
     """
@@ -116,4 +118,11 @@ def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.
 
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo', __args__, opts=opts, typ=GetNamespaceStorageEncryptionKeyInfoResult)
+    return __ret__.apply(lambda __response__: GetNamespaceStorageEncryptionKeyInfoResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        namespace=pulumi.get(__response__, 'namespace')))

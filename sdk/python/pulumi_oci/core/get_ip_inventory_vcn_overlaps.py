@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -174,9 +179,6 @@ def get_ip_inventory_vcn_overlaps(compartment_lists: Optional[Sequence[str]] = N
         overlap_count=pulumi.get(__ret__, 'overlap_count'),
         region_lists=pulumi.get(__ret__, 'region_lists'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_ip_inventory_vcn_overlaps)
 def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Input[Sequence[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpInventoryVcnOverlapsFilterArgs', 'GetIpInventoryVcnOverlapsFilterArgsDict']]]]] = None,
                                          region_lists: Optional[pulumi.Input[Sequence[str]]] = None,
@@ -203,4 +205,20 @@ def get_ip_inventory_vcn_overlaps_output(compartment_lists: Optional[pulumi.Inpu
     :param Sequence[str] region_lists: Lists the selected regions.
     :param str vcn_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentLists'] = compartment_lists
+    __args__['filters'] = filters
+    __args__['regionLists'] = region_lists
+    __args__['vcnId'] = vcn_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps', __args__, opts=opts, typ=GetIpInventoryVcnOverlapsResult)
+    return __ret__.apply(lambda __response__: GetIpInventoryVcnOverlapsResult(
+        compartment_lists=pulumi.get(__response__, 'compartment_lists'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ip_inventory_vcn_overlap_summaries=pulumi.get(__response__, 'ip_inventory_vcn_overlap_summaries'),
+        last_updated_timestamp=pulumi.get(__response__, 'last_updated_timestamp'),
+        message=pulumi.get(__response__, 'message'),
+        overlap_count=pulumi.get(__response__, 'overlap_count'),
+        region_lists=pulumi.get(__response__, 'region_lists'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

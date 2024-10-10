@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -420,9 +425,6 @@ def get_monitor(apm_domain_id: Optional[str] = None,
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         vantage_point_count=pulumi.get(__ret__, 'vantage_point_count'),
         vantage_points=pulumi.get(__ret__, 'vantage_points'))
-
-
-@_utilities.lift_output_func(get_monitor)
 def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        monitor_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorResult]:
@@ -445,4 +447,37 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str monitor_id: The OCID of the monitor.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['monitorId'] = monitor_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getMonitor:getMonitor', __args__, opts=opts, typ=GetMonitorResult)
+    return __ret__.apply(lambda __response__: GetMonitorResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        availability_configurations=pulumi.get(__response__, 'availability_configurations'),
+        batch_interval_in_seconds=pulumi.get(__response__, 'batch_interval_in_seconds'),
+        configurations=pulumi.get(__response__, 'configurations'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_ipv6=pulumi.get(__response__, 'is_ipv6'),
+        is_run_now=pulumi.get(__response__, 'is_run_now'),
+        is_run_once=pulumi.get(__response__, 'is_run_once'),
+        last_updated_by=pulumi.get(__response__, 'last_updated_by'),
+        maintenance_window_schedules=pulumi.get(__response__, 'maintenance_window_schedules'),
+        monitor_id=pulumi.get(__response__, 'monitor_id'),
+        monitor_type=pulumi.get(__response__, 'monitor_type'),
+        repeat_interval_in_seconds=pulumi.get(__response__, 'repeat_interval_in_seconds'),
+        scheduling_policy=pulumi.get(__response__, 'scheduling_policy'),
+        script_id=pulumi.get(__response__, 'script_id'),
+        script_name=pulumi.get(__response__, 'script_name'),
+        script_parameters=pulumi.get(__response__, 'script_parameters'),
+        status=pulumi.get(__response__, 'status'),
+        target=pulumi.get(__response__, 'target'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),
+        vantage_point_count=pulumi.get(__response__, 'vantage_point_count'),
+        vantage_points=pulumi.get(__response__, 'vantage_points')))

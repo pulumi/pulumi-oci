@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -341,9 +346,6 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_dr_plan_execution)
 def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlanExecutionResult]:
     """
@@ -363,4 +365,30 @@ def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str
 
     :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['drPlanExecutionId'] = dr_plan_execution_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlanExecution:getDrPlanExecution', __args__, opts=opts, typ=GetDrPlanExecutionResult)
+    return __ret__.apply(lambda __response__: GetDrPlanExecutionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dr_plan_execution_id=pulumi.get(__response__, 'dr_plan_execution_id'),
+        dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
+        execution_duration_in_sec=pulumi.get(__response__, 'execution_duration_in_sec'),
+        execution_options=pulumi.get(__response__, 'execution_options'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        group_executions=pulumi.get(__response__, 'group_executions'),
+        id=pulumi.get(__response__, 'id'),
+        life_cycle_details=pulumi.get(__response__, 'life_cycle_details'),
+        log_locations=pulumi.get(__response__, 'log_locations'),
+        peer_dr_protection_group_id=pulumi.get(__response__, 'peer_dr_protection_group_id'),
+        peer_region=pulumi.get(__response__, 'peer_region'),
+        plan_execution_type=pulumi.get(__response__, 'plan_execution_type'),
+        plan_id=pulumi.get(__response__, 'plan_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

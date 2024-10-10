@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -349,9 +354,6 @@ def get_management_agents(access_level: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         versions=pulumi.get(__ret__, 'versions'),
         wait_for_host_id=pulumi.get(__ret__, 'wait_for_host_id'))
-
-
-@_utilities.lift_output_func(get_management_agents)
 def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                  availability_status: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -419,4 +421,43 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     :param Sequence[str] versions: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
     :param int wait_for_host_id: When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['availabilityStatus'] = availability_status
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSourceNames'] = data_source_names
+    __args__['dataSourceType'] = data_source_type
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['gatewayIds'] = gateway_ids
+    __args__['hostId'] = host_id
+    __args__['installType'] = install_type
+    __args__['isCustomerDeployed'] = is_customer_deployed
+    __args__['platformTypes'] = platform_types
+    __args__['pluginNames'] = plugin_names
+    __args__['state'] = state
+    __args__['versions'] = versions
+    __args__['waitForHostId'] = wait_for_host_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgents:getManagementAgents', __args__, opts=opts, typ=GetManagementAgentsResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        availability_status=pulumi.get(__response__, 'availability_status'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        data_source_names=pulumi.get(__response__, 'data_source_names'),
+        data_source_type=pulumi.get(__response__, 'data_source_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        gateway_ids=pulumi.get(__response__, 'gateway_ids'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        id=pulumi.get(__response__, 'id'),
+        install_type=pulumi.get(__response__, 'install_type'),
+        is_customer_deployed=pulumi.get(__response__, 'is_customer_deployed'),
+        management_agents=pulumi.get(__response__, 'management_agents'),
+        platform_types=pulumi.get(__response__, 'platform_types'),
+        plugin_names=pulumi.get(__response__, 'plugin_names'),
+        state=pulumi.get(__response__, 'state'),
+        versions=pulumi.get(__response__, 'versions'),
+        wait_for_host_id=pulumi.get(__response__, 'wait_for_host_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -415,9 +420,6 @@ def get_host_insight(host_insight_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_host_insight)
 def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostInsightResult]:
     """
@@ -437,4 +439,36 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[str]] = None,
 
     :param str host_insight_id: Unique host insight identifier
     """
-    ...
+    __args__ = dict()
+    __args__['hostInsightId'] = host_insight_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getHostInsight:getHostInsight', __args__, opts=opts, typ=GetHostInsightResult)
+    return __ret__.apply(lambda __response__: GetHostInsightResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_id=pulumi.get(__response__, 'compute_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        enterprise_manager_bridge_id=pulumi.get(__response__, 'enterprise_manager_bridge_id'),
+        enterprise_manager_entity_display_name=pulumi.get(__response__, 'enterprise_manager_entity_display_name'),
+        enterprise_manager_entity_identifier=pulumi.get(__response__, 'enterprise_manager_entity_identifier'),
+        enterprise_manager_entity_name=pulumi.get(__response__, 'enterprise_manager_entity_name'),
+        enterprise_manager_entity_type=pulumi.get(__response__, 'enterprise_manager_entity_type'),
+        enterprise_manager_identifier=pulumi.get(__response__, 'enterprise_manager_identifier'),
+        entity_source=pulumi.get(__response__, 'entity_source'),
+        exadata_insight_id=pulumi.get(__response__, 'exadata_insight_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        host_display_name=pulumi.get(__response__, 'host_display_name'),
+        host_insight_id=pulumi.get(__response__, 'host_insight_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        host_type=pulumi.get(__response__, 'host_type'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        platform_name=pulumi.get(__response__, 'platform_name'),
+        platform_type=pulumi.get(__response__, 'platform_type'),
+        platform_version=pulumi.get(__response__, 'platform_version'),
+        processor_count=pulumi.get(__response__, 'processor_count'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

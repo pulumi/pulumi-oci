@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -446,9 +451,6 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone=pulumi.get(__ret__, 'timezone'))
-
-
-@_utilities.lift_output_func(get_log_analytics_object_collection_rule)
 def get_log_analytics_object_collection_rule_output(log_analytics_object_collection_rule_id: Optional[pulumi.Input[str]] = None,
                                                     namespace: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRuleResult]:
@@ -471,4 +473,39 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     :param str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['logAnalyticsObjectCollectionRuleId'] = log_analytics_object_collection_rule_id
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule', __args__, opts=opts, typ=GetLogAnalyticsObjectCollectionRuleResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsObjectCollectionRuleResult(
+        char_encoding=pulumi.get(__response__, 'char_encoding'),
+        collection_type=pulumi.get(__response__, 'collection_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        is_force_historic_collection=pulumi.get(__response__, 'is_force_historic_collection'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        log_analytics_object_collection_rule_id=pulumi.get(__response__, 'log_analytics_object_collection_rule_id'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
+        log_set=pulumi.get(__response__, 'log_set'),
+        log_set_ext_regex=pulumi.get(__response__, 'log_set_ext_regex'),
+        log_set_key=pulumi.get(__response__, 'log_set_key'),
+        log_source_name=pulumi.get(__response__, 'log_source_name'),
+        log_type=pulumi.get(__response__, 'log_type'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object_name_filters=pulumi.get(__response__, 'object_name_filters'),
+        os_bucket_name=pulumi.get(__response__, 'os_bucket_name'),
+        os_namespace=pulumi.get(__response__, 'os_namespace'),
+        overrides=pulumi.get(__response__, 'overrides'),
+        poll_since=pulumi.get(__response__, 'poll_since'),
+        poll_till=pulumi.get(__response__, 'poll_till'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timezone=pulumi.get(__response__, 'timezone')))

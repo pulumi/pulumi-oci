@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -198,9 +203,6 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vtap_capture_filter_rules=pulumi.get(__ret__, 'vtap_capture_filter_rules'))
-
-
-@_utilities.lift_output_func(get_capture_filter)
 def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFilterResult]:
     """
@@ -220,4 +222,19 @@ def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = N
 
     :param str capture_filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
     """
-    ...
+    __args__ = dict()
+    __args__['captureFilterId'] = capture_filter_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCaptureFilter:getCaptureFilter', __args__, opts=opts, typ=GetCaptureFilterResult)
+    return __ret__.apply(lambda __response__: GetCaptureFilterResult(
+        capture_filter_id=pulumi.get(__response__, 'capture_filter_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filter_type=pulumi.get(__response__, 'filter_type'),
+        flow_log_capture_filter_rules=pulumi.get(__response__, 'flow_log_capture_filter_rules'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vtap_capture_filter_rules=pulumi.get(__response__, 'vtap_capture_filter_rules')))

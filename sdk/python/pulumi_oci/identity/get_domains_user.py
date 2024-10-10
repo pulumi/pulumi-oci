@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -879,9 +884,6 @@ def get_domains_user(attribute_sets: Optional[Sequence[str]] = None,
         user_name=pulumi.get(__ret__, 'user_name'),
         user_type=pulumi.get(__ret__, 'user_type'),
         x509certificates=pulumi.get(__ret__, 'x509certificates'))
-
-
-@_utilities.lift_output_func(get_domains_user)
 def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             attributes: Optional[pulumi.Input[Optional[str]]] = None,
                             authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -916,4 +918,76 @@ def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param str user_id: ID of the resource
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsUser:getDomainsUser', __args__, opts=opts, typ=GetDomainsUserResult)
+    return __ret__.apply(lambda __response__: GetDomainsUserResult(
+        active=pulumi.get(__response__, 'active'),
+        addresses=pulumi.get(__response__, 'addresses'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        emails=pulumi.get(__response__, 'emails'),
+        entitlements=pulumi.get(__response__, 'entitlements'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        force_delete=pulumi.get(__response__, 'force_delete'),
+        groups=pulumi.get(__response__, 'groups'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        ims=pulumi.get(__response__, 'ims'),
+        locale=pulumi.get(__response__, 'locale'),
+        metas=pulumi.get(__response__, 'metas'),
+        names=pulumi.get(__response__, 'names'),
+        nick_name=pulumi.get(__response__, 'nick_name'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        password=pulumi.get(__response__, 'password'),
+        phone_numbers=pulumi.get(__response__, 'phone_numbers'),
+        photos=pulumi.get(__response__, 'photos'),
+        preferred_language=pulumi.get(__response__, 'preferred_language'),
+        profile_url=pulumi.get(__response__, 'profile_url'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        roles=pulumi.get(__response__, 'roles'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        timezone=pulumi.get(__response__, 'timezone'),
+        title=pulumi.get(__response__, 'title'),
+        urnietfparamsscimschemasextensionenterprise20users=pulumi.get(__response__, 'urnietfparamsscimschemasextensionenterprise20users'),
+        urnietfparamsscimschemasoracleidcsextension_oci_tags=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextension_oci_tags'),
+        urnietfparamsscimschemasoracleidcsextensionadaptive_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionadaptive_users'),
+        urnietfparamsscimschemasoracleidcsextensioncapabilities_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensioncapabilities_users'),
+        urnietfparamsscimschemasoracleidcsextensiondb_credentials_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensiondb_credentials_users'),
+        urnietfparamsscimschemasoracleidcsextensiondb_user_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensiondb_user_users'),
+        urnietfparamsscimschemasoracleidcsextensionkerberos_user_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionkerberos_user_users'),
+        urnietfparamsscimschemasoracleidcsextensionmfa_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionmfa_users'),
+        urnietfparamsscimschemasoracleidcsextensionpassword_state_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionpassword_state_users'),
+        urnietfparamsscimschemasoracleidcsextensionpasswordless_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionpasswordless_users'),
+        urnietfparamsscimschemasoracleidcsextensionposix_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionposix_users'),
+        urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users'),
+        urnietfparamsscimschemasoracleidcsextensionself_change_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionself_change_users'),
+        urnietfparamsscimschemasoracleidcsextensionself_registration_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionself_registration_users'),
+        urnietfparamsscimschemasoracleidcsextensionsff_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionsff_users'),
+        urnietfparamsscimschemasoracleidcsextensionsocial_account_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionsocial_account_users'),
+        urnietfparamsscimschemasoracleidcsextensionterms_of_use_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionterms_of_use_users'),
+        urnietfparamsscimschemasoracleidcsextensionuser_credentials_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionuser_credentials_users'),
+        urnietfparamsscimschemasoracleidcsextensionuser_state_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionuser_state_users'),
+        urnietfparamsscimschemasoracleidcsextensionuser_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionuser_users'),
+        user_id=pulumi.get(__response__, 'user_id'),
+        user_name=pulumi.get(__response__, 'user_name'),
+        user_type=pulumi.get(__response__, 'user_type'),
+        x509certificates=pulumi.get(__response__, 'x509certificates')))

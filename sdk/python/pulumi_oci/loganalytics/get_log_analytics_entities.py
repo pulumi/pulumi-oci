@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -296,9 +301,6 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         source_id=pulumi.get(__ret__, 'source_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_log_analytics_entities)
 def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       compartment_id: Optional[pulumi.Input[str]] = None,
                                       entity_type_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -355,4 +357,37 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
     :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['cloudResourceId'] = cloud_resource_id
+    __args__['compartmentId'] = compartment_id
+    __args__['entityTypeNames'] = entity_type_names
+    __args__['filters'] = filters
+    __args__['hostname'] = hostname
+    __args__['hostnameContains'] = hostname_contains
+    __args__['isManagementAgentIdNull'] = is_management_agent_id_null
+    __args__['lifecycleDetailsContains'] = lifecycle_details_contains
+    __args__['metadataEquals'] = metadata_equals
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['namespace'] = namespace
+    __args__['sourceId'] = source_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntities:getLogAnalyticsEntities', __args__, opts=opts, typ=GetLogAnalyticsEntitiesResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsEntitiesResult(
+        cloud_resource_id=pulumi.get(__response__, 'cloud_resource_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        entity_type_names=pulumi.get(__response__, 'entity_type_names'),
+        filters=pulumi.get(__response__, 'filters'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        hostname_contains=pulumi.get(__response__, 'hostname_contains'),
+        id=pulumi.get(__response__, 'id'),
+        is_management_agent_id_null=pulumi.get(__response__, 'is_management_agent_id_null'),
+        lifecycle_details_contains=pulumi.get(__response__, 'lifecycle_details_contains'),
+        log_analytics_entity_collections=pulumi.get(__response__, 'log_analytics_entity_collections'),
+        metadata_equals=pulumi.get(__response__, 'metadata_equals'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        source_id=pulumi.get(__response__, 'source_id'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -180,9 +185,6 @@ def get_internal_namespace_occ_overviews(compartment_id: Optional[str] = None,
         occ_overview_collections=pulumi.get(__ret__, 'occ_overview_collections'),
         to=pulumi.get(__ret__, 'to'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-
-
-@_utilities.lift_output_func(get_internal_namespace_occ_overviews)
 def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict']]]]] = None,
                                                 from_: Optional[pulumi.Input[Optional[str]]] = None,
@@ -218,4 +220,23 @@ def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.
     :param str to: The month corresponding to this date would be considered as the ending point of the time period against which we would like to perform an aggregation.
     :param str workload_type: Workload type using the resources in an availability catalog can be filtered.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['from'] = from_
+    __args__['namespace'] = namespace
+    __args__['occCustomerGroupId'] = occ_customer_group_id
+    __args__['to'] = to
+    __args__['workloadType'] = workload_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalNamespaceOccOverviews:getInternalNamespaceOccOverviews', __args__, opts=opts, typ=GetInternalNamespaceOccOverviewsResult)
+    return __ret__.apply(lambda __response__: GetInternalNamespaceOccOverviewsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        from_=pulumi.get(__response__, 'from_'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        occ_customer_group_id=pulumi.get(__response__, 'occ_customer_group_id'),
+        occ_overview_collections=pulumi.get(__response__, 'occ_overview_collections'),
+        to=pulumi.get(__response__, 'to'),
+        workload_type=pulumi.get(__response__, 'workload_type')))

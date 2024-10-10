@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_pluggable_databases(compartment_id: Optional[str] = None,
         pdb_name=pulumi.get(__ret__, 'pdb_name'),
         pluggable_databases=pulumi.get(__ret__, 'pluggable_databases'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_pluggable_databases)
 def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
     :param str pdb_name: A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['databaseId'] = database_id
+    __args__['filters'] = filters
+    __args__['pdbName'] = pdb_name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getPluggableDatabases:getPluggableDatabases', __args__, opts=opts, typ=GetPluggableDatabasesResult)
+    return __ret__.apply(lambda __response__: GetPluggableDatabasesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        pdb_name=pulumi.get(__response__, 'pdb_name'),
+        pluggable_databases=pulumi.get(__response__, 'pluggable_databases'),
+        state=pulumi.get(__response__, 'state')))

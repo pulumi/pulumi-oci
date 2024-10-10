@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -111,9 +116,6 @@ def get_smtp_credentials(filters: Optional[Sequence[Union['GetSmtpCredentialsFil
         id=pulumi.get(__ret__, 'id'),
         smtp_credentials=pulumi.get(__ret__, 'smtp_credentials'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_smtp_credentials)
 def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSmtpCredentialsFilterArgs', 'GetSmtpCredentialsFilterArgsDict']]]]] = None,
                                 user_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
@@ -135,4 +137,13 @@ def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence
 
     :param str user_id: The OCID of the user.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getSmtpCredentials:getSmtpCredentials', __args__, opts=opts, typ=GetSmtpCredentialsResult)
+    return __ret__.apply(lambda __response__: GetSmtpCredentialsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        smtp_credentials=pulumi.get(__response__, 'smtp_credentials'),
+        user_id=pulumi.get(__response__, 'user_id')))

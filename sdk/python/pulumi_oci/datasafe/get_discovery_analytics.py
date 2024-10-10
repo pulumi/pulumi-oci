@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -202,9 +207,6 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-
-
-@_utilities.lift_output_func(get_discovery_analytics)
 def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryAnalyticsFilterArgs', 'GetDiscoveryAnalyticsFilterArgsDict']]]]] = None,
@@ -245,4 +247,25 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['groupBy'] = group_by
+    __args__['isCommon'] = is_common
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics', __args__, opts=opts, typ=GetDiscoveryAnalyticsResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryAnalyticsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        discovery_analytics_collections=pulumi.get(__response__, 'discovery_analytics_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        group_by=pulumi.get(__response__, 'group_by'),
+        id=pulumi.get(__response__, 'id'),
+        is_common=pulumi.get(__response__, 'is_common'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        target_id=pulumi.get(__response__, 'target_id')))

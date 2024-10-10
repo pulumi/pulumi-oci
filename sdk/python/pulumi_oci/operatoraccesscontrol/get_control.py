@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -340,9 +345,6 @@ def get_control(operator_control_id: Optional[str] = None,
         time_of_creation=pulumi.get(__ret__, 'time_of_creation'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         time_of_modification=pulumi.get(__ret__, 'time_of_modification'))
-
-
-@_utilities.lift_output_func(get_control)
 def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlResult]:
     """
@@ -362,4 +364,30 @@ def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
 
     :param str operator_control_id: unique OperatorControl identifier
     """
-    ...
+    __args__ = dict()
+    __args__['operatorControlId'] = operator_control_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OperatorAccessControl/getControl:getControl', __args__, opts=opts, typ=GetControlResult)
+    return __ret__.apply(lambda __response__: GetControlResult(
+        approval_required_op_action_lists=pulumi.get(__response__, 'approval_required_op_action_lists'),
+        approver_groups_lists=pulumi.get(__response__, 'approver_groups_lists'),
+        approvers_lists=pulumi.get(__response__, 'approvers_lists'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        email_id_lists=pulumi.get(__response__, 'email_id_lists'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_default_operator_control=pulumi.get(__response__, 'is_default_operator_control'),
+        is_fully_pre_approved=pulumi.get(__response__, 'is_fully_pre_approved'),
+        last_modified_info=pulumi.get(__response__, 'last_modified_info'),
+        number_of_approvers=pulumi.get(__response__, 'number_of_approvers'),
+        operator_control_id=pulumi.get(__response__, 'operator_control_id'),
+        operator_control_name=pulumi.get(__response__, 'operator_control_name'),
+        pre_approved_op_action_lists=pulumi.get(__response__, 'pre_approved_op_action_lists'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_message=pulumi.get(__response__, 'system_message'),
+        time_of_creation=pulumi.get(__response__, 'time_of_creation'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        time_of_modification=pulumi.get(__response__, 'time_of_modification')))

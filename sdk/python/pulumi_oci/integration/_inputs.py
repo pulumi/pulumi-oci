@@ -4,21 +4,57 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'IntegrationInstanceAlternateCustomEndpointArgs',
+    'IntegrationInstanceAlternateCustomEndpointArgsDict',
     'IntegrationInstanceAttachmentArgs',
+    'IntegrationInstanceAttachmentArgsDict',
     'IntegrationInstanceCustomEndpointArgs',
+    'IntegrationInstanceCustomEndpointArgsDict',
     'IntegrationInstanceIdcsInfoArgs',
+    'IntegrationInstanceIdcsInfoArgsDict',
     'IntegrationInstanceNetworkEndpointDetailsArgs',
+    'IntegrationInstanceNetworkEndpointDetailsArgsDict',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs',
+    'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict',
     'IntegrationInstancePrivateEndpointOutboundConnectionArgs',
+    'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict',
     'GetIntegrationInstancesFilterArgs',
+    'GetIntegrationInstancesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class IntegrationInstanceAlternateCustomEndpointArgsDict(TypedDict):
+        hostname: pulumi.Input[str]
+        """
+        (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
+        """
+        alias: NotRequired[pulumi.Input[str]]
+        """
+        When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+        """
+        certificate_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+        """
+        certificate_secret_version: NotRequired[pulumi.Input[int]]
+        """
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        """
+elif False:
+    IntegrationInstanceAlternateCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IntegrationInstanceAlternateCustomEndpointArgs:
@@ -89,6 +125,34 @@ class IntegrationInstanceAlternateCustomEndpointArgs:
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
 
+
+if not MYPY:
+    class IntegrationInstanceAttachmentArgsDict(TypedDict):
+        is_implicit: NotRequired[pulumi.Input[bool]]
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        target_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        target_instance_url: NotRequired[pulumi.Input[str]]
+        """
+        The dataplane instance URL of the attached instance
+        """
+        target_role: NotRequired[pulumi.Input[str]]
+        """
+        The role of the target attachment.
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
+        """
+        target_service_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the target instance, such as "FUSION".
+        """
+elif False:
+    IntegrationInstanceAttachmentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IntegrationInstanceAttachmentArgs:
@@ -183,6 +247,27 @@ class IntegrationInstanceAttachmentArgs:
         pulumi.set(self, "target_service_type", value)
 
 
+if not MYPY:
+    class IntegrationInstanceCustomEndpointArgsDict(TypedDict):
+        hostname: pulumi.Input[str]
+        """
+        (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
+        """
+        alias: NotRequired[pulumi.Input[str]]
+        """
+        When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+        """
+        certificate_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
+        """
+        certificate_secret_version: NotRequired[pulumi.Input[int]]
+        """
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        """
+elif False:
+    IntegrationInstanceCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IntegrationInstanceCustomEndpointArgs:
     def __init__(__self__, *,
@@ -252,6 +337,31 @@ class IntegrationInstanceCustomEndpointArgs:
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
 
+
+if not MYPY:
+    class IntegrationInstanceIdcsInfoArgsDict(TypedDict):
+        idcs_app_display_name: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application display name associated with the instance
+        """
+        idcs_app_id: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application ID associated with the instance
+        """
+        idcs_app_location_url: NotRequired[pulumi.Input[str]]
+        """
+        URL for the location of the IDCS Application (used by IDCS APIs)
+        """
+        idcs_app_name: NotRequired[pulumi.Input[str]]
+        """
+        The IDCS application name associated with the instance
+        """
+        instance_primary_audience_url: NotRequired[pulumi.Input[str]]
+        """
+        The URL used as the primary audience for integration flows in this instance type: string
+        """
+elif False:
+    IntegrationInstanceIdcsInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IntegrationInstanceIdcsInfoArgs:
@@ -340,6 +450,27 @@ class IntegrationInstanceIdcsInfoArgs:
         pulumi.set(self, "instance_primary_audience_url", value)
 
 
+if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsArgsDict(TypedDict):
+        network_endpoint_type: pulumi.Input[str]
+        """
+        The type of network endpoint.
+        """
+        allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict']]]]
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        is_integration_vcn_allowlisted: NotRequired[pulumi.Input[bool]]
+        """
+        The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IntegrationInstanceNetworkEndpointDetailsArgs:
     def __init__(__self__, *,
@@ -410,6 +541,19 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
         pulumi.set(self, "is_integration_vcn_allowlisted", value)
 
 
+if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        The Virtual Cloud Network OCID.
+        """
+        allowlisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
     def __init__(__self__, *,
@@ -447,6 +591,23 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
     def allowlisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "allowlisted_ips", value)
 
+
+if not MYPY:
+    class IntegrationInstancePrivateEndpointOutboundConnectionArgsDict(TypedDict):
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
+        outbound_connection_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of Outbound Connection.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
+elif False:
+    IntegrationInstancePrivateEndpointOutboundConnectionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IntegrationInstancePrivateEndpointOutboundConnectionArgs:
@@ -502,6 +663,14 @@ class IntegrationInstancePrivateEndpointOutboundConnectionArgs:
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
 
+
+if not MYPY:
+    class GetIntegrationInstancesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetIntegrationInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetIntegrationInstancesFilterArgs:

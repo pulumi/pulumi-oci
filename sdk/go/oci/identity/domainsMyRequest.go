@@ -35,7 +35,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.NewDomainsMyRequest(ctx, "test_my_request", &Identity.DomainsMyRequestArgs{
 //				ApprovalDetails: identity.DomainsMyRequestApprovalDetailArray{
-//					nil,
+//					&identity.DomainsMyRequestApprovalDetailArgs{},
 //				},
 //				IdcsEndpoint:  pulumi.Any(testDomain.Url),
 //				Justification: pulumi.Any(myRequestJustification),

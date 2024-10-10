@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -140,9 +145,6 @@ def get_cross_connect_status(cross_connect_id: Optional[str] = None,
         interface_state=pulumi.get(__ret__, 'interface_state'),
         light_level_ind_bm=pulumi.get(__ret__, 'light_level_ind_bm'),
         light_level_indicator=pulumi.get(__ret__, 'light_level_indicator'))
-
-
-@_utilities.lift_output_func(get_cross_connect_status)
 def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectStatusResult]:
     """
@@ -162,4 +164,14 @@ def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[str]
 
     :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
     """
-    ...
+    __args__ = dict()
+    __args__['crossConnectId'] = cross_connect_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getCrossConnectStatus:getCrossConnectStatus', __args__, opts=opts, typ=GetCrossConnectStatusResult)
+    return __ret__.apply(lambda __response__: GetCrossConnectStatusResult(
+        cross_connect_id=pulumi.get(__response__, 'cross_connect_id'),
+        encryption_status=pulumi.get(__response__, 'encryption_status'),
+        id=pulumi.get(__response__, 'id'),
+        interface_state=pulumi.get(__response__, 'interface_state'),
+        light_level_ind_bm=pulumi.get(__response__, 'light_level_ind_bm'),
+        light_level_indicator=pulumi.get(__response__, 'light_level_indicator')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -308,9 +313,6 @@ def get_queue(queue_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         visibility_in_seconds=pulumi.get(__ret__, 'visibility_in_seconds'))
-
-
-@_utilities.lift_output_func(get_queue)
 def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueueResult]:
     """
@@ -330,4 +332,28 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
 
     :param str queue_id: The unique queue identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['queueId'] = queue_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Queue/getQueue:getQueue', __args__, opts=opts, typ=GetQueueResult)
+    return __ret__.apply(lambda __response__: GetQueueResult(
+        channel_consumption_limit=pulumi.get(__response__, 'channel_consumption_limit'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_encryption_key_id=pulumi.get(__response__, 'custom_encryption_key_id'),
+        dead_letter_queue_delivery_count=pulumi.get(__response__, 'dead_letter_queue_delivery_count'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        messages_endpoint=pulumi.get(__response__, 'messages_endpoint'),
+        purge_trigger=pulumi.get(__response__, 'purge_trigger'),
+        purge_type=pulumi.get(__response__, 'purge_type'),
+        queue_id=pulumi.get(__response__, 'queue_id'),
+        retention_in_seconds=pulumi.get(__response__, 'retention_in_seconds'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),
+        visibility_in_seconds=pulumi.get(__response__, 'visibility_in_seconds')))

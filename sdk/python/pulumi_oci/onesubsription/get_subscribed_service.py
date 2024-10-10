@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -1528,9 +1533,6 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
         type=pulumi.get(__ret__, 'type'),
         updated_by=pulumi.get(__ret__, 'updated_by'),
         used_amount=pulumi.get(__ret__, 'used_amount'))
-
-
-@_utilities.lift_output_func(get_subscribed_service)
 def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   subscribed_service_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscribedServiceResult]:
@@ -1553,4 +1555,122 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat
     :param str subscribed_service_id: The Subscribed Service Id
     """
-    ...
+    __args__ = dict()
+    __args__['fields'] = fields
+    __args__['subscribedServiceId'] = subscribed_service_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getSubscribedService:getSubscribedService', __args__, opts=opts, typ=GetSubscribedServiceResult)
+    return __ret__.apply(lambda __response__: GetSubscribedServiceResult(
+        admin_email=pulumi.get(__response__, 'admin_email'),
+        agreement_id=pulumi.get(__response__, 'agreement_id'),
+        agreement_name=pulumi.get(__response__, 'agreement_name'),
+        agreement_type=pulumi.get(__response__, 'agreement_type'),
+        available_amount=pulumi.get(__response__, 'available_amount'),
+        bill_to_addresses=pulumi.get(__response__, 'bill_to_addresses'),
+        bill_to_contacts=pulumi.get(__response__, 'bill_to_contacts'),
+        bill_to_customers=pulumi.get(__response__, 'bill_to_customers'),
+        billing_frequency=pulumi.get(__response__, 'billing_frequency'),
+        booking_opty_number=pulumi.get(__response__, 'booking_opty_number'),
+        buyer_email=pulumi.get(__response__, 'buyer_email'),
+        commitment_schedule_id=pulumi.get(__response__, 'commitment_schedule_id'),
+        commitment_services=pulumi.get(__response__, 'commitment_services'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        credit_percentage=pulumi.get(__response__, 'credit_percentage'),
+        csi=pulumi.get(__response__, 'csi'),
+        customer_transaction_reference=pulumi.get(__response__, 'customer_transaction_reference'),
+        data_center=pulumi.get(__response__, 'data_center'),
+        data_center_region=pulumi.get(__response__, 'data_center_region'),
+        eligible_to_renew=pulumi.get(__response__, 'eligible_to_renew'),
+        end_user_addresses=pulumi.get(__response__, 'end_user_addresses'),
+        end_user_contacts=pulumi.get(__response__, 'end_user_contacts'),
+        end_user_customers=pulumi.get(__response__, 'end_user_customers'),
+        fields=pulumi.get(__response__, 'fields'),
+        fulfillment_set=pulumi.get(__response__, 'fulfillment_set'),
+        funded_allocation_value=pulumi.get(__response__, 'funded_allocation_value'),
+        id=pulumi.get(__response__, 'id'),
+        is_allowance=pulumi.get(__response__, 'is_allowance'),
+        is_cap_to_price_list=pulumi.get(__response__, 'is_cap_to_price_list'),
+        is_credit_enabled=pulumi.get(__response__, 'is_credit_enabled'),
+        is_having_usage=pulumi.get(__response__, 'is_having_usage'),
+        is_intent_to_pay=pulumi.get(__response__, 'is_intent_to_pay'),
+        is_payg=pulumi.get(__response__, 'is_payg'),
+        is_single_rate_card=pulumi.get(__response__, 'is_single_rate_card'),
+        is_variable_commitment=pulumi.get(__response__, 'is_variable_commitment'),
+        line_net_amount=pulumi.get(__response__, 'line_net_amount'),
+        major_set=pulumi.get(__response__, 'major_set'),
+        net_unit_price=pulumi.get(__response__, 'net_unit_price'),
+        operation_type=pulumi.get(__response__, 'operation_type'),
+        order_header_id=pulumi.get(__response__, 'order_header_id'),
+        order_line_id=pulumi.get(__response__, 'order_line_id'),
+        order_line_number=pulumi.get(__response__, 'order_line_number'),
+        order_number=pulumi.get(__response__, 'order_number'),
+        order_type=pulumi.get(__response__, 'order_type'),
+        original_promo_amount=pulumi.get(__response__, 'original_promo_amount'),
+        overage_bill_to=pulumi.get(__response__, 'overage_bill_to'),
+        overage_discount_percentage=pulumi.get(__response__, 'overage_discount_percentage'),
+        overage_policy=pulumi.get(__response__, 'overage_policy'),
+        partner_credit_amount=pulumi.get(__response__, 'partner_credit_amount'),
+        partner_transaction_type=pulumi.get(__response__, 'partner_transaction_type'),
+        payg_policy=pulumi.get(__response__, 'payg_policy'),
+        payment_method=pulumi.get(__response__, 'payment_method'),
+        payment_number=pulumi.get(__response__, 'payment_number'),
+        payment_terms=pulumi.get(__response__, 'payment_terms'),
+        price_period=pulumi.get(__response__, 'price_period'),
+        pricing_model=pulumi.get(__response__, 'pricing_model'),
+        products=pulumi.get(__response__, 'products'),
+        program_type=pulumi.get(__response__, 'program_type'),
+        promo_order_line_id=pulumi.get(__response__, 'promo_order_line_id'),
+        promo_type=pulumi.get(__response__, 'promo_type'),
+        promotion_pricing_type=pulumi.get(__response__, 'promotion_pricing_type'),
+        provisioning_source=pulumi.get(__response__, 'provisioning_source'),
+        quantity=pulumi.get(__response__, 'quantity'),
+        rate_card_discount_percentage=pulumi.get(__response__, 'rate_card_discount_percentage'),
+        rate_cards=pulumi.get(__response__, 'rate_cards'),
+        ratecard_type=pulumi.get(__response__, 'ratecard_type'),
+        renewal_opty_id=pulumi.get(__response__, 'renewal_opty_id'),
+        renewal_opty_number=pulumi.get(__response__, 'renewal_opty_number'),
+        renewal_opty_type=pulumi.get(__response__, 'renewal_opty_type'),
+        renewed_subscribed_service_id=pulumi.get(__response__, 'renewed_subscribed_service_id'),
+        reseller_addresses=pulumi.get(__response__, 'reseller_addresses'),
+        reseller_contacts=pulumi.get(__response__, 'reseller_contacts'),
+        reseller_customers=pulumi.get(__response__, 'reseller_customers'),
+        revenue_line_id=pulumi.get(__response__, 'revenue_line_id'),
+        revenue_line_number=pulumi.get(__response__, 'revenue_line_number'),
+        revised_arr_in_lc=pulumi.get(__response__, 'revised_arr_in_lc'),
+        revised_arr_in_sc=pulumi.get(__response__, 'revised_arr_in_sc'),
+        sales_account_party_id=pulumi.get(__response__, 'sales_account_party_id'),
+        sales_channel=pulumi.get(__response__, 'sales_channel'),
+        serial_number=pulumi.get(__response__, 'serial_number'),
+        service_to_addresses=pulumi.get(__response__, 'service_to_addresses'),
+        service_to_contacts=pulumi.get(__response__, 'service_to_contacts'),
+        service_to_customers=pulumi.get(__response__, 'service_to_customers'),
+        sold_to_contacts=pulumi.get(__response__, 'sold_to_contacts'),
+        sold_to_customers=pulumi.get(__response__, 'sold_to_customers'),
+        start_date_type=pulumi.get(__response__, 'start_date_type'),
+        status=pulumi.get(__response__, 'status'),
+        subscribed_service_id=pulumi.get(__response__, 'subscribed_service_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        subscription_source=pulumi.get(__response__, 'subscription_source'),
+        system_arr_in_lc=pulumi.get(__response__, 'system_arr_in_lc'),
+        system_arr_in_sc=pulumi.get(__response__, 'system_arr_in_sc'),
+        system_atr_arr_in_lc=pulumi.get(__response__, 'system_atr_arr_in_lc'),
+        system_atr_arr_in_sc=pulumi.get(__response__, 'system_atr_arr_in_sc'),
+        term_value=pulumi.get(__response__, 'term_value'),
+        term_value_uom=pulumi.get(__response__, 'term_value_uom'),
+        time_agreement_end=pulumi.get(__response__, 'time_agreement_end'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_customer_config=pulumi.get(__response__, 'time_customer_config'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_majorset_end=pulumi.get(__response__, 'time_majorset_end'),
+        time_majorset_start=pulumi.get(__response__, 'time_majorset_start'),
+        time_payment_expiry=pulumi.get(__response__, 'time_payment_expiry'),
+        time_provisioned=pulumi.get(__response__, 'time_provisioned'),
+        time_service_configuration_email_sent=pulumi.get(__response__, 'time_service_configuration_email_sent'),
+        time_start=pulumi.get(__response__, 'time_start'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        time_welcome_email_sent=pulumi.get(__response__, 'time_welcome_email_sent'),
+        total_value=pulumi.get(__response__, 'total_value'),
+        transaction_extension_id=pulumi.get(__response__, 'transaction_extension_id'),
+        type=pulumi.get(__response__, 'type'),
+        updated_by=pulumi.get(__response__, 'updated_by'),
+        used_amount=pulumi.get(__response__, 'used_amount')))

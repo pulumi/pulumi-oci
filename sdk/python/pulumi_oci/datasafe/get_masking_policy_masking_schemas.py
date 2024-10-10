@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -124,9 +129,6 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMask
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         masking_schema_collections=pulumi.get(__ret__, 'masking_schema_collections'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-
-
-@_utilities.lift_output_func(get_masking_policy_masking_schemas)
 def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]]]] = None,
                                               masking_policy_id: Optional[pulumi.Input[str]] = None,
                                               schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -150,4 +152,15 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
     :param str masking_policy_id: The OCID of the masking policy.
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['maskingPolicyId'] = masking_policy_id
+    __args__['schemaNames'] = schema_names
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicyMaskingSchemas:getMaskingPolicyMaskingSchemas', __args__, opts=opts, typ=GetMaskingPolicyMaskingSchemasResult)
+    return __ret__.apply(lambda __response__: GetMaskingPolicyMaskingSchemasResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        masking_schema_collections=pulumi.get(__response__, 'masking_schema_collections'),
+        schema_names=pulumi.get(__response__, 'schema_names')))

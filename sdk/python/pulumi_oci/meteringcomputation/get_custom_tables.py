@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_custom_tables(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         saved_report_id=pulumi.get(__ret__, 'saved_report_id'))
-
-
-@_utilities.lift_output_func(get_custom_tables)
 def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomTablesFilterArgs', 'GetCustomTablesFilterArgsDict']]]]] = None,
                              saved_report_id: Optional[pulumi.Input[str]] = None,
@@ -153,4 +155,15 @@ def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The compartment ID in which to list resources.
     :param str saved_report_id: The saved report ID in which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['savedReportId'] = saved_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getCustomTables:getCustomTables', __args__, opts=opts, typ=GetCustomTablesResult)
+    return __ret__.apply(lambda __response__: GetCustomTablesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_table_collections=pulumi.get(__response__, 'custom_table_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        saved_report_id=pulumi.get(__response__, 'saved_report_id')))

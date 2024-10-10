@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -200,9 +205,6 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_at_customer_ccc_infrastructures)
 def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                                ccc_infrastructure_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -241,4 +243,25 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
     :param str display_name_contains: A filter to return only resources whose display name contains the substring.
     :param str state: A filter used to return only resources that match the given lifecycleState.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['cccInfrastructureId'] = ccc_infrastructure_id
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures', __args__, opts=opts, typ=GetAtCustomerCccInfrastructuresResult)
+    return __ret__.apply(lambda __response__: GetAtCustomerCccInfrastructuresResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        ccc_infrastructure_collections=pulumi.get(__response__, 'ccc_infrastructure_collections'),
+        ccc_infrastructure_id=pulumi.get(__response__, 'ccc_infrastructure_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

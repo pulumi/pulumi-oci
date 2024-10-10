@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -260,9 +265,6 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_external_db_system_discovery)
 def get_external_db_system_discovery_output(external_db_system_discovery_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemDiscoveryResult]:
     """
@@ -282,4 +284,24 @@ def get_external_db_system_discovery_output(external_db_system_discovery_id: Opt
 
     :param str external_db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
     """
-    ...
+    __args__ = dict()
+    __args__['externalDbSystemDiscoveryId'] = external_db_system_discovery_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getExternalDbSystemDiscovery:getExternalDbSystemDiscovery', __args__, opts=opts, typ=GetExternalDbSystemDiscoveryResult)
+    return __ret__.apply(lambda __response__: GetExternalDbSystemDiscoveryResult(
+        agent_id=pulumi.get(__response__, 'agent_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovered_components=pulumi.get(__response__, 'discovered_components'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_db_system_discovery_id=pulumi.get(__response__, 'external_db_system_discovery_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        grid_home=pulumi.get(__response__, 'grid_home'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        patch_operations=pulumi.get(__response__, 'patch_operations'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

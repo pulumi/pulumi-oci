@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -310,9 +315,6 @@ def get_model(model_id: Optional[str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_model)
 def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
@@ -332,4 +334,29 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
 
     :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
     """
-    ...
+    __args__ = dict()
+    __args__['modelId'] = model_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModel:getModel', __args__, opts=opts, typ=GetModelResult)
+    return __ret__.apply(lambda __response__: GetModelResult(
+        artifact_content_disposition=pulumi.get(__response__, 'artifact_content_disposition'),
+        artifact_content_length=pulumi.get(__response__, 'artifact_content_length'),
+        artifact_content_md5=pulumi.get(__response__, 'artifact_content_md5'),
+        artifact_last_modified=pulumi.get(__response__, 'artifact_last_modified'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        custom_metadata_lists=pulumi.get(__response__, 'custom_metadata_lists'),
+        defined_metadata_lists=pulumi.get(__response__, 'defined_metadata_lists'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        empty_model=pulumi.get(__response__, 'empty_model'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        input_schema=pulumi.get(__response__, 'input_schema'),
+        model_artifact=pulumi.get(__response__, 'model_artifact'),
+        model_id=pulumi.get(__response__, 'model_id'),
+        output_schema=pulumi.get(__response__, 'output_schema'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

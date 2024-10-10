@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
         min_resource_count=pulumi.get(__ret__, 'min_resource_count'),
         policies=pulumi.get(__ret__, 'policies'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_auto_scaling_configuration)
 def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationResult]:
     """
@@ -246,4 +248,21 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
 
     :param str auto_scaling_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['autoScalingConfigurationId'] = auto_scaling_configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration', __args__, opts=opts, typ=GetAutoScalingConfigurationResult)
+    return __ret__.apply(lambda __response__: GetAutoScalingConfigurationResult(
+        auto_scaling_configuration_id=pulumi.get(__response__, 'auto_scaling_configuration_id'),
+        auto_scaling_resources=pulumi.get(__response__, 'auto_scaling_resources'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cool_down_in_seconds=pulumi.get(__response__, 'cool_down_in_seconds'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        max_resource_count=pulumi.get(__response__, 'max_resource_count'),
+        min_resource_count=pulumi.get(__response__, 'min_resource_count'),
+        policies=pulumi.get(__response__, 'policies'),
+        time_created=pulumi.get(__response__, 'time_created')))

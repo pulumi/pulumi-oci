@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -355,9 +360,6 @@ def get_vtap(vtap_id: Optional[str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vtap_id=pulumi.get(__ret__, 'vtap_id'),
         vxlan_network_identifier=pulumi.get(__ret__, 'vxlan_network_identifier'))
-
-
-@_utilities.lift_output_func(get_vtap)
 def get_vtap_output(vtap_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVtapResult]:
     """
@@ -377,4 +379,31 @@ def get_vtap_output(vtap_id: Optional[pulumi.Input[str]] = None,
 
     :param str vtap_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.
     """
-    ...
+    __args__ = dict()
+    __args__['vtapId'] = vtap_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVtap:getVtap', __args__, opts=opts, typ=GetVtapResult)
+    return __ret__.apply(lambda __response__: GetVtapResult(
+        capture_filter_id=pulumi.get(__response__, 'capture_filter_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        encapsulation_protocol=pulumi.get(__response__, 'encapsulation_protocol'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_vtap_enabled=pulumi.get(__response__, 'is_vtap_enabled'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        max_packet_size=pulumi.get(__response__, 'max_packet_size'),
+        source_id=pulumi.get(__response__, 'source_id'),
+        source_private_endpoint_ip=pulumi.get(__response__, 'source_private_endpoint_ip'),
+        source_private_endpoint_subnet_id=pulumi.get(__response__, 'source_private_endpoint_subnet_id'),
+        source_type=pulumi.get(__response__, 'source_type'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_ip=pulumi.get(__response__, 'target_ip'),
+        target_type=pulumi.get(__response__, 'target_type'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        traffic_mode=pulumi.get(__response__, 'traffic_mode'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        vtap_id=pulumi.get(__response__, 'vtap_id'),
+        vxlan_network_identifier=pulumi.get(__response__, 'vxlan_network_identifier')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -195,9 +200,6 @@ def get_listener(listener_name: Optional[str] = None,
         protocol=pulumi.get(__ret__, 'protocol'),
         tcp_idle_timeout=pulumi.get(__ret__, 'tcp_idle_timeout'),
         udp_idle_timeout=pulumi.get(__ret__, 'udp_idle_timeout'))
-
-
-@_utilities.lift_output_func(get_listener)
 def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerResult]:
@@ -220,4 +222,20 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
     :param str listener_name: The name of the listener to get.  Example: `example_listener`
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
     """
-    ...
+    __args__ = dict()
+    __args__['listenerName'] = listener_name
+    __args__['networkLoadBalancerId'] = network_load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkLoadBalancer/getListener:getListener', __args__, opts=opts, typ=GetListenerResult)
+    return __ret__.apply(lambda __response__: GetListenerResult(
+        default_backend_set_name=pulumi.get(__response__, 'default_backend_set_name'),
+        id=pulumi.get(__response__, 'id'),
+        ip_version=pulumi.get(__response__, 'ip_version'),
+        is_ppv2enabled=pulumi.get(__response__, 'is_ppv2enabled'),
+        listener_name=pulumi.get(__response__, 'listener_name'),
+        name=pulumi.get(__response__, 'name'),
+        network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),
+        port=pulumi.get(__response__, 'port'),
+        protocol=pulumi.get(__response__, 'protocol'),
+        tcp_idle_timeout=pulumi.get(__response__, 'tcp_idle_timeout'),
+        udp_idle_timeout=pulumi.get(__response__, 'udp_idle_timeout')))

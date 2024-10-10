@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_rrsets(domain: Optional[str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'))
-
-
-@_utilities.lift_output_func(get_rrsets)
 def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
                       domain_contains: Optional[pulumi.Input[Optional[str]]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict']]]]] = None,
@@ -227,4 +229,23 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     :param str view_id: The OCID of the view the resource is associated with.
     :param str zone_name_or_id: The name or OCID of the target zone.
     """
-    ...
+    __args__ = dict()
+    __args__['domain'] = domain
+    __args__['domainContains'] = domain_contains
+    __args__['filters'] = filters
+    __args__['rtype'] = rtype
+    __args__['scope'] = scope
+    __args__['viewId'] = view_id
+    __args__['zoneNameOrId'] = zone_name_or_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getRrsets:getRrsets', __args__, opts=opts, typ=GetRrsetsResult)
+    return __ret__.apply(lambda __response__: GetRrsetsResult(
+        domain=pulumi.get(__response__, 'domain'),
+        domain_contains=pulumi.get(__response__, 'domain_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        rrsets=pulumi.get(__response__, 'rrsets'),
+        rtype=pulumi.get(__response__, 'rtype'),
+        scope=pulumi.get(__response__, 'scope'),
+        view_id=pulumi.get(__response__, 'view_id'),
+        zone_name_or_id=pulumi.get(__response__, 'zone_name_or_id')))

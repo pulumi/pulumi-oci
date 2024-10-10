@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         virtual_node_pool_id=pulumi.get(__ret__, 'virtual_node_pool_id'),
         virtual_node_tags=pulumi.get(__ret__, 'virtual_node_tags'))
-
-
-@_utilities.lift_output_func(get_virtual_node_pool)
 def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualNodePoolResult]:
     """
@@ -337,4 +339,28 @@ def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[str
 
     :param str virtual_node_pool_id: The OCID of the virtual node pool.
     """
-    ...
+    __args__ = dict()
+    __args__['virtualNodePoolId'] = virtual_node_pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getVirtualNodePool:getVirtualNodePool', __args__, opts=opts, typ=GetVirtualNodePoolResult)
+    return __ret__.apply(lambda __response__: GetVirtualNodePoolResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        initial_virtual_node_labels=pulumi.get(__response__, 'initial_virtual_node_labels'),
+        kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        placement_configurations=pulumi.get(__response__, 'placement_configurations'),
+        pod_configurations=pulumi.get(__response__, 'pod_configurations'),
+        size=pulumi.get(__response__, 'size'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        taints=pulumi.get(__response__, 'taints'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        virtual_node_pool_id=pulumi.get(__response__, 'virtual_node_pool_id'),
+        virtual_node_tags=pulumi.get(__response__, 'virtual_node_tags')))

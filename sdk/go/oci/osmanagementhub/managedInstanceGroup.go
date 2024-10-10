@@ -32,7 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &OsManagementHub.ManagedInstanceGroupArgs{
 //				SoftwareSourceIds: pulumi.StringArray{
-//					nil,
+//					pulumi.String{},
 //				},
 //				ArchType:      pulumi.Any(managedInstanceGroupArchType),
 //				CompartmentId: pulumi.Any(compartmentId),

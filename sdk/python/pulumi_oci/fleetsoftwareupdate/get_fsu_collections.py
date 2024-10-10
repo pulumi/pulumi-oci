@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_fsu_collections(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_fsu_collections)
 def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFsuCollectionsFilterArgs', 'GetFsuCollectionsFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_fsu_collections_output(compartment_id: Optional[pulumi.Input[str]] = Non
     :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
     :param str type: A filter to return only resources whose type matches the given type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FleetSoftwareUpdate/getFsuCollections:getFsuCollections', __args__, opts=opts, typ=GetFsuCollectionsResult)
+    return __ret__.apply(lambda __response__: GetFsuCollectionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        fsu_collection_summary_collections=pulumi.get(__response__, 'fsu_collection_summary_collections'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type')))

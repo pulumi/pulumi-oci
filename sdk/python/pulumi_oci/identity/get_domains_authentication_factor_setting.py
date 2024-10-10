@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -632,9 +637,6 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
         urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings'),
         user_enrollment_disabled_factors=pulumi.get(__ret__, 'user_enrollment_disabled_factors'),
         yubico_otp_enabled=pulumi.get(__ret__, 'yubico_otp_enabled'))
-
-
-@_utilities.lift_output_func(get_domains_authentication_factor_setting)
 def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                      attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                                      authentication_factor_setting_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -669,4 +671,57 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
     :param str idcs_endpoint: The basic endpoint for the identity domain
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authenticationFactorSettingId'] = authentication_factor_setting_id
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting', __args__, opts=opts, typ=GetDomainsAuthenticationFactorSettingResult)
+    return __ret__.apply(lambda __response__: GetDomainsAuthenticationFactorSettingResult(
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authentication_factor_setting_id=pulumi.get(__response__, 'authentication_factor_setting_id'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        auto_enroll_email_factor_disabled=pulumi.get(__response__, 'auto_enroll_email_factor_disabled'),
+        bypass_code_enabled=pulumi.get(__response__, 'bypass_code_enabled'),
+        bypass_code_settings=pulumi.get(__response__, 'bypass_code_settings'),
+        client_app_settings=pulumi.get(__response__, 'client_app_settings'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        compliance_policies=pulumi.get(__response__, 'compliance_policies'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        email_enabled=pulumi.get(__response__, 'email_enabled'),
+        email_settings=pulumi.get(__response__, 'email_settings'),
+        endpoint_restrictions=pulumi.get(__response__, 'endpoint_restrictions'),
+        fido_authenticator_enabled=pulumi.get(__response__, 'fido_authenticator_enabled'),
+        hide_backup_factor_enabled=pulumi.get(__response__, 'hide_backup_factor_enabled'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        identity_store_settings=pulumi.get(__response__, 'identity_store_settings'),
+        metas=pulumi.get(__response__, 'metas'),
+        mfa_enabled_category=pulumi.get(__response__, 'mfa_enabled_category'),
+        mfa_enrollment_type=pulumi.get(__response__, 'mfa_enrollment_type'),
+        notification_settings=pulumi.get(__response__, 'notification_settings'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        phone_call_enabled=pulumi.get(__response__, 'phone_call_enabled'),
+        push_enabled=pulumi.get(__response__, 'push_enabled'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        security_questions_enabled=pulumi.get(__response__, 'security_questions_enabled'),
+        sms_enabled=pulumi.get(__response__, 'sms_enabled'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        third_party_factors=pulumi.get(__response__, 'third_party_factors'),
+        totp_enabled=pulumi.get(__response__, 'totp_enabled'),
+        totp_settings=pulumi.get(__response__, 'totp_settings'),
+        urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings'),
+        urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings'),
+        user_enrollment_disabled_factors=pulumi.get(__response__, 'user_enrollment_disabled_factors'),
+        yubico_otp_enabled=pulumi.get(__response__, 'yubico_otp_enabled')))

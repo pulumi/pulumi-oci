@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -302,9 +307,6 @@ def get_guard_target(target_id: Optional[str] = None,
         target_responder_recipes=pulumi.get(__ret__, 'target_responder_recipes'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_guard_target)
 def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGuardTargetResult]:
     """
@@ -324,4 +326,27 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
 
     :param str target_id: OCID of the target
     """
-    ...
+    __args__ = dict()
+    __args__['targetId'] = target_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getGuardTarget:getGuardTarget', __args__, opts=opts, typ=GetGuardTargetResult)
+    return __ret__.apply(lambda __response__: GetGuardTargetResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        inherited_by_compartments=pulumi.get(__response__, 'inherited_by_compartments'),
+        lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),
+        recipe_count=pulumi.get(__response__, 'recipe_count'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_details=pulumi.get(__response__, 'target_details'),
+        target_detector_recipes=pulumi.get(__response__, 'target_detector_recipes'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_resource_id=pulumi.get(__response__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__response__, 'target_resource_type'),
+        target_responder_recipes=pulumi.get(__response__, 'target_responder_recipes'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

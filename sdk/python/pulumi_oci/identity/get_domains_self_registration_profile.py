@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -583,9 +588,6 @@ def get_domains_self_registration_profile(attribute_sets: Optional[Sequence[str]
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         user_attributes=pulumi.get(__ret__, 'user_attributes'))
-
-
-@_utilities.lift_output_func(get_domains_self_registration_profile)
 def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                  attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                                  authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -620,4 +622,52 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param str self_registration_profile_id: ID of the resource
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['selfRegistrationProfileId'] = self_registration_profile_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile', __args__, opts=opts, typ=GetDomainsSelfRegistrationProfileResult)
+    return __ret__.apply(lambda __response__: GetDomainsSelfRegistrationProfileResult(
+        activation_email_required=pulumi.get(__response__, 'activation_email_required'),
+        active=pulumi.get(__response__, 'active'),
+        after_submit_texts=pulumi.get(__response__, 'after_submit_texts'),
+        allowed_email_domains=pulumi.get(__response__, 'allowed_email_domains'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        consent_text_present=pulumi.get(__response__, 'consent_text_present'),
+        consent_texts=pulumi.get(__response__, 'consent_texts'),
+        default_groups=pulumi.get(__response__, 'default_groups'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        disallowed_email_domains=pulumi.get(__response__, 'disallowed_email_domains'),
+        display_names=pulumi.get(__response__, 'display_names'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        email_templates=pulumi.get(__response__, 'email_templates'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        footer_logo=pulumi.get(__response__, 'footer_logo'),
+        footer_texts=pulumi.get(__response__, 'footer_texts'),
+        header_logo=pulumi.get(__response__, 'header_logo'),
+        header_texts=pulumi.get(__response__, 'header_texts'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        metas=pulumi.get(__response__, 'metas'),
+        name=pulumi.get(__response__, 'name'),
+        number_of_days_redirect_url_is_valid=pulumi.get(__response__, 'number_of_days_redirect_url_is_valid'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        redirect_url=pulumi.get(__response__, 'redirect_url'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        self_registration_profile_id=pulumi.get(__response__, 'self_registration_profile_id'),
+        show_on_login_page=pulumi.get(__response__, 'show_on_login_page'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        user_attributes=pulumi.get(__response__, 'user_attributes')))

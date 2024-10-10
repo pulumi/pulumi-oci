@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -194,9 +199,6 @@ def get_ca_bundle(ca_bundle_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_ca_bundle)
 def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaBundleResult]:
     """
@@ -216,4 +218,19 @@ def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
 
     :param str ca_bundle_id: The OCID of the CA bundle.
     """
-    ...
+    __args__ = dict()
+    __args__['caBundleId'] = ca_bundle_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CertificatesManagement/getCaBundle:getCaBundle', __args__, opts=opts, typ=GetCaBundleResult)
+    return __ret__.apply(lambda __response__: GetCaBundleResult(
+        ca_bundle_id=pulumi.get(__response__, 'ca_bundle_id'),
+        ca_bundle_pem=pulumi.get(__response__, 'ca_bundle_pem'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

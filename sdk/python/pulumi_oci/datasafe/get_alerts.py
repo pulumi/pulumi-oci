@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_alerts(access_level: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         scim_query=pulumi.get(__ret__, 'scim_query'))
-
-
-@_utilities.lift_output_func(get_alerts)
 def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                       compartment_id: Optional[pulumi.Input[str]] = None,
                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -212,4 +214,22 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
            
            **Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') query=(featureDetails.userName eq "user") and (targetNames eq "target_1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['scimQuery'] = scim_query
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAlerts:getAlerts', __args__, opts=opts, typ=GetAlertsResult)
+    return __ret__.apply(lambda __response__: GetAlertsResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        alert_collections=pulumi.get(__response__, 'alert_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        scim_query=pulumi.get(__response__, 'scim_query')))

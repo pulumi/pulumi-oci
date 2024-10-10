@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_subscriptions(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
         subscription_collections=pulumi.get(__ret__, 'subscription_collections'))
-
-
-@_utilities.lift_output_func(get_subscriptions)
 def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
                              osp_home_region: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str osp_home_region: The home region's public name of the logged in user.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['ospHomeRegion'] = osp_home_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getSubscriptions:getSubscriptions', __args__, opts=opts, typ=GetSubscriptionsResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region'),
+        subscription_collections=pulumi.get(__response__, 'subscription_collections')))

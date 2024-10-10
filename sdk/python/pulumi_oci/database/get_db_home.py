@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -326,9 +331,6 @@ def get_db_home(db_home_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_db_home)
 def get_db_home_output(db_home_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomeResult]:
     """
@@ -348,4 +350,30 @@ def get_db_home_output(db_home_id: Optional[pulumi.Input[str]] = None,
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbHomeId'] = db_home_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbHome:getDbHome', __args__, opts=opts, typ=GetDbHomeResult)
+    return __ret__.apply(lambda __response__: GetDbHomeResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        databases=pulumi.get(__response__, 'databases'),
+        db_home_id=pulumi.get(__response__, 'db_home_id'),
+        db_home_location=pulumi.get(__response__, 'db_home_location'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        enable_database_delete=pulumi.get(__response__, 'enable_database_delete'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_desupported_version=pulumi.get(__response__, 'is_desupported_version'),
+        is_unified_auditing_enabled=pulumi.get(__response__, 'is_unified_auditing_enabled'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
+        last_patch_history_entry_id=pulumi.get(__response__, 'last_patch_history_entry_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

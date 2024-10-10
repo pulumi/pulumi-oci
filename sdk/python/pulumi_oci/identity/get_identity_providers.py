@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -166,9 +171,6 @@ def get_identity_providers(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         protocol=pulumi.get(__ret__, 'protocol'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_identity_providers)
 def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdentityProvidersFilterArgs', 'GetIdentityProvidersFilterArgsDict']]]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -203,4 +205,19 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
     :param str protocol: The protocol used for federation.
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['protocol'] = protocol
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getIdentityProviders:getIdentityProviders', __args__, opts=opts, typ=GetIdentityProvidersResult)
+    return __ret__.apply(lambda __response__: GetIdentityProvidersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        identity_providers=pulumi.get(__response__, 'identity_providers'),
+        name=pulumi.get(__response__, 'name'),
+        protocol=pulumi.get(__response__, 'protocol'),
+        state=pulumi.get(__response__, 'state')))

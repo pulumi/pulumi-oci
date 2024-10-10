@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'),
         waf_configs=pulumi.get(__ret__, 'waf_configs'))
-
-
-@_utilities.lift_output_func(get_waas_policy)
 def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWaasPolicyResult]:
     """
@@ -272,4 +274,23 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
 
     :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
     """
-    ...
+    __args__ = dict()
+    __args__['waasPolicyId'] = waas_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getWaasPolicy:getWaasPolicy', __args__, opts=opts, typ=GetWaasPolicyResult)
+    return __ret__.apply(lambda __response__: GetWaasPolicyResult(
+        additional_domains=pulumi.get(__response__, 'additional_domains'),
+        cname=pulumi.get(__response__, 'cname'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        origin_groups=pulumi.get(__response__, 'origin_groups'),
+        origins=pulumi.get(__response__, 'origins'),
+        policy_configs=pulumi.get(__response__, 'policy_configs'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        waas_policy_id=pulumi.get(__response__, 'waas_policy_id'),
+        waf_configs=pulumi.get(__response__, 'waf_configs')))

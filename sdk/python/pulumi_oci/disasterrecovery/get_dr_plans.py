@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_dr_plans(display_name: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_dr_plans)
 def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                         dr_plan_id: Optional[pulumi.Input[Optional[str]]] = None,
                         dr_plan_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -207,4 +209,21 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     :param str state: A filter to return only DR plans that match the given lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['drPlanId'] = dr_plan_id
+    __args__['drPlanType'] = dr_plan_type
+    __args__['drProtectionGroupId'] = dr_protection_group_id
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DisasterRecovery/getDrPlans:getDrPlans', __args__, opts=opts, typ=GetDrPlansResult)
+    return __ret__.apply(lambda __response__: GetDrPlansResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        dr_plan_collections=pulumi.get(__response__, 'dr_plan_collections'),
+        dr_plan_id=pulumi.get(__response__, 'dr_plan_id'),
+        dr_plan_type=pulumi.get(__response__, 'dr_plan_type'),
+        dr_protection_group_id=pulumi.get(__response__, 'dr_protection_group_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -206,9 +211,6 @@ def get_delegated_resource_access_requests(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_delegated_resource_access_requests)
 def get_delegated_resource_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                   delegation_control_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegatedResourceAccessRequestsFilterArgs', 'GetDelegatedResourceAccessRequestsFilterArgsDict']]]]] = None,
@@ -247,4 +249,25 @@ def get_delegated_resource_access_requests_output(compartment_id: Optional[pulum
     :param str time_end: Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used together.
     :param str time_start: Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used together.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['delegationControlId'] = delegation_control_id
+    __args__['filters'] = filters
+    __args__['requestStatus'] = request_status
+    __args__['resourceId'] = resource_id
+    __args__['state'] = state
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequests:getDelegatedResourceAccessRequests', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestsResult)
+    return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        delegated_resource_access_request_summary_collections=pulumi.get(__response__, 'delegated_resource_access_request_summary_collections'),
+        delegation_control_id=pulumi.get(__response__, 'delegation_control_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        request_status=pulumi.get(__response__, 'request_status'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_nat_gateway(nat_gateway_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_nat_gateway)
 def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNatGatewayResult]:
     """
@@ -245,4 +247,21 @@ def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[str]] = None,
 
     :param str nat_gateway_id: The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['natGatewayId'] = nat_gateway_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getNatGateway:getNatGateway', __args__, opts=opts, typ=GetNatGatewayResult)
+    return __ret__.apply(lambda __response__: GetNatGatewayResult(
+        block_traffic=pulumi.get(__response__, 'block_traffic'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        nat_gateway_id=pulumi.get(__response__, 'nat_gateway_id'),
+        nat_ip=pulumi.get(__response__, 'nat_ip'),
+        public_ip_id=pulumi.get(__response__, 'public_ip_id'),
+        route_table_id=pulumi.get(__response__, 'route_table_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

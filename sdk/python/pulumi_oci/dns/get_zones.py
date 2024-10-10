@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -284,9 +289,6 @@ def get_zones(compartment_id: Optional[str] = None,
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_type=pulumi.get(__ret__, 'zone_type'),
         zones=pulumi.get(__ret__, 'zones'))
-
-
-@_utilities.lift_output_func(get_zones)
 def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -342,4 +344,35 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str view_id: The OCID of the view the resource is associated with.
     :param str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['scope'] = scope
+    __args__['sortBy'] = sort_by
+    __args__['sortOrder'] = sort_order
+    __args__['state'] = state
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['tsigKeyId'] = tsig_key_id
+    __args__['viewId'] = view_id
+    __args__['zoneType'] = zone_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getZones:getZones', __args__, opts=opts, typ=GetZonesResult)
+    return __ret__.apply(lambda __response__: GetZonesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        scope=pulumi.get(__response__, 'scope'),
+        sort_by=pulumi.get(__response__, 'sort_by'),
+        sort_order=pulumi.get(__response__, 'sort_order'),
+        state=pulumi.get(__response__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        tsig_key_id=pulumi.get(__response__, 'tsig_key_id'),
+        view_id=pulumi.get(__response__, 'view_id'),
+        zone_type=pulumi.get(__response__, 'zone_type'),
+        zones=pulumi.get(__response__, 'zones')))

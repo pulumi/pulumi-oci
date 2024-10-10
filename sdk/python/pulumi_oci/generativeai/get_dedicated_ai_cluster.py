@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -221,9 +226,6 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         unit_count=pulumi.get(__ret__, 'unit_count'),
         unit_shape=pulumi.get(__ret__, 'unit_shape'))
-
-
-@_utilities.lift_output_func(get_dedicated_ai_cluster)
 def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedAiClusterResult]:
     """
@@ -243,4 +245,24 @@ def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Inp
 
     :param str dedicated_ai_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['dedicatedAiClusterId'] = dedicated_ai_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster', __args__, opts=opts, typ=GetDedicatedAiClusterResult)
+    return __ret__.apply(lambda __response__: GetDedicatedAiClusterResult(
+        capacities=pulumi.get(__response__, 'capacities'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dedicated_ai_cluster_id=pulumi.get(__response__, 'dedicated_ai_cluster_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        unit_count=pulumi.get(__response__, 'unit_count'),
+        unit_shape=pulumi.get(__response__, 'unit_shape')))

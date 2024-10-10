@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -335,9 +340,6 @@ def get_job_run(job_run_id: Optional[str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_job_run)
 def get_job_run_output(job_run_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobRunResult]:
     """
@@ -357,4 +359,30 @@ def get_job_run_output(job_run_id: Optional[pulumi.Input[str]] = None,
 
     :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
     """
-    ...
+    __args__ = dict()
+    __args__['jobRunId'] = job_run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getJobRun:getJobRun', __args__, opts=opts, typ=GetJobRunResult)
+    return __ret__.apply(lambda __response__: GetJobRunResult(
+        asynchronous=pulumi.get(__response__, 'asynchronous'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        job_configuration_override_details=pulumi.get(__response__, 'job_configuration_override_details'),
+        job_environment_configuration_override_details=pulumi.get(__response__, 'job_environment_configuration_override_details'),
+        job_id=pulumi.get(__response__, 'job_id'),
+        job_infrastructure_configuration_details=pulumi.get(__response__, 'job_infrastructure_configuration_details'),
+        job_log_configuration_override_details=pulumi.get(__response__, 'job_log_configuration_override_details'),
+        job_run_id=pulumi.get(__response__, 'job_run_id'),
+        job_storage_mount_configuration_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_details_lists'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        log_details=pulumi.get(__response__, 'log_details'),
+        opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -144,9 +149,6 @@ def get_profiles(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         profile_collections=pulumi.get(__ret__, 'profile_collections'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_profiles)
 def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfilesFilterArgs', 'GetProfilesFilterArgsDict']]]]] = None,
                         name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -173,4 +175,17 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str state: A filter that returns results that match the lifecycle state specified.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getProfiles:getProfiles', __args__, opts=opts, typ=GetProfilesResult)
+    return __ret__.apply(lambda __response__: GetProfilesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        profile_collections=pulumi.get(__response__, 'profile_collections'),
+        state=pulumi.get(__response__, 'state')))

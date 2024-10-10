@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -362,9 +367,6 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
-
-
-@_utilities.lift_output_func(get_sensitive_data_models_sensitive_columns)
 def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pulumi.Input[Optional[str]]] = None,
                                                        column_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                        data_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -437,4 +439,45 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """
-    ...
+    __args__ = dict()
+    __args__['columnGroup'] = column_group
+    __args__['columnNames'] = column_names
+    __args__['dataTypes'] = data_types
+    __args__['filters'] = filters
+    __args__['isCaseInSensitive'] = is_case_in_sensitive
+    __args__['objectTypes'] = object_types
+    __args__['objects'] = objects
+    __args__['parentColumnKeys'] = parent_column_keys
+    __args__['relationTypes'] = relation_types
+    __args__['schemaNames'] = schema_names
+    __args__['sensitiveColumnLifecycleState'] = sensitive_column_lifecycle_state
+    __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    __args__['sensitiveTypeIds'] = sensitive_type_ids
+    __args__['statuses'] = statuses
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['timeUpdatedGreaterThanOrEqualTo'] = time_updated_greater_than_or_equal_to
+    __args__['timeUpdatedLessThan'] = time_updated_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnsResult)
+    return __ret__.apply(lambda __response__: GetSensitiveDataModelsSensitiveColumnsResult(
+        column_group=pulumi.get(__response__, 'column_group'),
+        column_names=pulumi.get(__response__, 'column_names'),
+        data_types=pulumi.get(__response__, 'data_types'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_case_in_sensitive=pulumi.get(__response__, 'is_case_in_sensitive'),
+        object_types=pulumi.get(__response__, 'object_types'),
+        objects=pulumi.get(__response__, 'objects'),
+        parent_column_keys=pulumi.get(__response__, 'parent_column_keys'),
+        relation_types=pulumi.get(__response__, 'relation_types'),
+        schema_names=pulumi.get(__response__, 'schema_names'),
+        sensitive_column_collections=pulumi.get(__response__, 'sensitive_column_collections'),
+        sensitive_column_lifecycle_state=pulumi.get(__response__, 'sensitive_column_lifecycle_state'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_ids=pulumi.get(__response__, 'sensitive_type_ids'),
+        statuses=pulumi.get(__response__, 'statuses'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        time_updated_greater_than_or_equal_to=pulumi.get(__response__, 'time_updated_greater_than_or_equal_to'),
+        time_updated_less_than=pulumi.get(__response__, 'time_updated_less_than')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_report(report_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_generated=pulumi.get(__ret__, 'time_generated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_report)
 def get_report_output(report_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportResult]:
     """
@@ -258,4 +260,22 @@ def get_report_output(report_id: Optional[pulumi.Input[str]] = None,
 
     :param str report_id: Unique report identifier
     """
-    ...
+    __args__ = dict()
+    __args__['reportId'] = report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReport:getReport', __args__, opts=opts, typ=GetReportResult)
+    return __ret__.apply(lambda __response__: GetReportResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        mime_type=pulumi.get(__response__, 'mime_type'),
+        report_definition_id=pulumi.get(__response__, 'report_definition_id'),
+        report_id=pulumi.get(__response__, 'report_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_generated=pulumi.get(__response__, 'time_generated'),
+        type=pulumi.get(__response__, 'type')))

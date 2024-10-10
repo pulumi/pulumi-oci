@@ -4,32 +4,75 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ClusterDatastoreArgs',
+    'ClusterDatastoreArgsDict',
     'ClusterNetworkConfigurationArgs',
+    'ClusterNetworkConfigurationArgsDict',
     'ClusterUpgradeLicenseArgs',
+    'ClusterUpgradeLicenseArgsDict',
     'ClusterVsphereUpgradeObjectArgs',
+    'ClusterVsphereUpgradeObjectArgsDict',
     'SddcDatastoreArgs',
+    'SddcDatastoreArgsDict',
     'SddcHcxOnPremLicenseArgs',
+    'SddcHcxOnPremLicenseArgsDict',
     'SddcInitialConfigurationArgs',
+    'SddcInitialConfigurationArgsDict',
     'SddcInitialConfigurationInitialClusterConfigurationArgs',
+    'SddcInitialConfigurationInitialClusterConfigurationArgsDict',
     'SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs',
+    'SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict',
     'SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs',
+    'SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict',
     'SddcUpgradeLicenseArgs',
+    'SddcUpgradeLicenseArgsDict',
     'SddcVsphereUpgradeObjectArgs',
+    'SddcVsphereUpgradeObjectArgsDict',
     'GetClustersFilterArgs',
+    'GetClustersFilterArgsDict',
     'GetExsiHostsFilterArgs',
+    'GetExsiHostsFilterArgsDict',
     'GetSddcsFilterArgs',
+    'GetSddcsFilterArgsDict',
     'GetSupportedCommitmentsFilterArgs',
+    'GetSupportedCommitmentsFilterArgsDict',
     'GetSupportedHostShapesFilterArgs',
+    'GetSupportedHostShapesFilterArgsDict',
     'GetSupportedSkusFilterArgs',
+    'GetSupportedSkusFilterArgsDict',
     'GetSupportedVmwareSoftwareVersionsFilterArgs',
+    'GetSupportedVmwareSoftwareVersionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ClusterDatastoreArgsDict(TypedDict):
+        block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        datastore_type: pulumi.Input[str]
+        """
+        Type of the datastore.
+        """
+        capacity: NotRequired[pulumi.Input[float]]
+        """
+        Size of the Block Storage Volume in GB.
+        """
+elif False:
+    ClusterDatastoreArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ClusterDatastoreArgs:
@@ -83,6 +126,87 @@ class ClusterDatastoreArgs:
     def capacity(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "capacity", value)
 
+
+if not MYPY:
+    class ClusterNetworkConfigurationArgsDict(TypedDict):
+        nsx_edge_vtep_vlan_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+        """
+        nsx_vtep_vlan_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+        """
+        provisioning_subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        """
+        vmotion_vlan_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+        """
+        vsan_vlan_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+        """
+        hcx_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+
+        This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+        """
+        nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+        """
+        nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+        """
+        provisioning_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        """
+        replication_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        """
+        vsphere_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+        """
+elif False:
+    ClusterNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ClusterNetworkConfigurationArgs:
@@ -326,6 +450,19 @@ class ClusterNetworkConfigurationArgs:
         pulumi.set(self, "vsphere_vlan_id", value)
 
 
+if not MYPY:
+    class ClusterUpgradeLicenseArgsDict(TypedDict):
+        license_key: NotRequired[pulumi.Input[str]]
+        """
+        vSphere license key value.
+        """
+        license_type: NotRequired[pulumi.Input[str]]
+        """
+        vSphere license type.
+        """
+elif False:
+    ClusterUpgradeLicenseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterUpgradeLicenseArgs:
     def __init__(__self__, *,
@@ -365,6 +502,19 @@ class ClusterUpgradeLicenseArgs:
         pulumi.set(self, "license_type", value)
 
 
+if not MYPY:
+    class ClusterVsphereUpgradeObjectArgsDict(TypedDict):
+        download_link: NotRequired[pulumi.Input[str]]
+        """
+        Binary object download link.
+        """
+        link_description: NotRequired[pulumi.Input[str]]
+        """
+        Binary object description.
+        """
+elif False:
+    ClusterVsphereUpgradeObjectArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterVsphereUpgradeObjectArgs:
     def __init__(__self__, *,
@@ -403,6 +553,23 @@ class ClusterVsphereUpgradeObjectArgs:
     def link_description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "link_description", value)
 
+
+if not MYPY:
+    class SddcDatastoreArgsDict(TypedDict):
+        block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        datastore_type: pulumi.Input[str]
+        """
+        Type of the datastore.
+        """
+        capacity: NotRequired[pulumi.Input[float]]
+        """
+        Size of the Block Storage Volume in GB.
+        """
+elif False:
+    SddcDatastoreArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SddcDatastoreArgs:
@@ -456,6 +623,23 @@ class SddcDatastoreArgs:
     def capacity(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "capacity", value)
 
+
+if not MYPY:
+    class SddcHcxOnPremLicenseArgsDict(TypedDict):
+        activation_key: NotRequired[pulumi.Input[str]]
+        """
+        HCX on-premise license key value.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of HCX on-premise license.
+        """
+        system_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the system that consumed the HCX on-premise license
+        """
+elif False:
+    SddcHcxOnPremLicenseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SddcHcxOnPremLicenseArgs:
@@ -512,6 +696,15 @@ class SddcHcxOnPremLicenseArgs:
         pulumi.set(self, "system_name", value)
 
 
+if not MYPY:
+    class SddcInitialConfigurationArgsDict(TypedDict):
+        initial_cluster_configurations: pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationArgsDict']]]
+        """
+        The configurations for Clusters initially created in the SDDC.
+        """
+elif False:
+    SddcInitialConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SddcInitialConfigurationArgs:
     def __init__(__self__, *,
@@ -533,6 +726,71 @@ class SddcInitialConfigurationArgs:
     def initial_cluster_configurations(self, value: pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationArgs']]]):
         pulumi.set(self, "initial_cluster_configurations", value)
 
+
+if not MYPY:
+    class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
+        compute_availability_domain: pulumi.Input[str]
+        """
+        The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+        """
+        esxi_hosts_count: pulumi.Input[int]
+        """
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+
+        **Note:** If you later delete EXSi hosts from a production Cluster to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+        """
+        vsphere_type: pulumi.Input[str]
+        """
+        vSphere Cluster types.
+        """
+        actual_esxi_hosts_count: NotRequired[pulumi.Input[int]]
+        """
+        The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
+        """
+        capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        datastores: NotRequired[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict']]]]
+        """
+        A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        """
+        initial_commitment: NotRequired[pulumi.Input[str]]
+        """
+        The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        """
+        initial_host_ocpu_count: NotRequired[pulumi.Input[float]]
+        """
+        The initial OCPU count of the Cluster's ESXi hosts.
+        """
+        initial_host_shape_name: NotRequired[pulumi.Input[str]]
+        """
+        The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        instance_display_name_prefix: NotRequired[pulumi.Input[str]]
+        """
+        A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+
+        For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
+        """
+        is_shielded_instance_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether shielded instance is enabled for this Cluster.
+        """
+        network_configuration: NotRequired[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict']]
+        """
+        The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        """
+        workload_network_cidr: NotRequired[pulumi.Input[str]]
+        """
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+        """
+elif False:
+    SddcInitialConfigurationInitialClusterConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SddcInitialConfigurationInitialClusterConfigurationArgs:
@@ -770,6 +1028,19 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
         pulumi.set(self, "workload_network_cidr", value)
 
 
+if not MYPY:
+    class SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict(TypedDict):
+        block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+        """
+        datastore_type: pulumi.Input[str]
+        """
+        Type of the datastore.
+        """
+elif False:
+    SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs:
     def __init__(__self__, *,
@@ -806,6 +1077,87 @@ class SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs:
     def datastore_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "datastore_type", value)
 
+
+if not MYPY:
+    class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict(TypedDict):
+        nsx_edge_vtep_vlan_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+        """
+        nsx_vtep_vlan_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+        """
+        provisioning_subnet_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        """
+        vmotion_vlan_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+        """
+        vsan_vlan_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+        """
+        hcx_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+
+        This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+        """
+        nsx_edge_uplink1vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+        """
+        nsx_edge_uplink2vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+        """
+        provisioning_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        """
+        replication_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        """
+        vsphere_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+
+        This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+
+        Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+        """
+elif False:
+    SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs:
@@ -1049,6 +1401,19 @@ class SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArg
         pulumi.set(self, "vsphere_vlan_id", value)
 
 
+if not MYPY:
+    class SddcUpgradeLicenseArgsDict(TypedDict):
+        license_key: NotRequired[pulumi.Input[str]]
+        """
+        vSphere license key value.
+        """
+        license_type: NotRequired[pulumi.Input[str]]
+        """
+        vSphere license type.
+        """
+elif False:
+    SddcUpgradeLicenseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SddcUpgradeLicenseArgs:
     def __init__(__self__, *,
@@ -1087,6 +1452,19 @@ class SddcUpgradeLicenseArgs:
     def license_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "license_type", value)
 
+
+if not MYPY:
+    class SddcVsphereUpgradeObjectArgsDict(TypedDict):
+        download_link: NotRequired[pulumi.Input[str]]
+        """
+        Binary object download link.
+        """
+        link_description: NotRequired[pulumi.Input[str]]
+        """
+        Binary object description.
+        """
+elif False:
+    SddcVsphereUpgradeObjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SddcVsphereUpgradeObjectArgs:
@@ -1127,6 +1505,14 @@ class SddcVsphereUpgradeObjectArgs:
         pulumi.set(self, "link_description", value)
 
 
+if not MYPY:
+    class GetClustersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetClustersFilterArgs:
     def __init__(__self__, *,
@@ -1165,6 +1551,14 @@ class GetClustersFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetExsiHostsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetExsiHostsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetExsiHostsFilterArgs:
@@ -1205,6 +1599,14 @@ class GetExsiHostsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSddcsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSddcsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSddcsFilterArgs:
     def __init__(__self__, *,
@@ -1243,6 +1645,17 @@ class GetSddcsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSupportedCommitmentsFilterArgsDict(TypedDict):
+        name: str
+        """
+        name of Commitment
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSupportedCommitmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSupportedCommitmentsFilterArgs:
@@ -1289,6 +1702,17 @@ class GetSupportedCommitmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSupportedHostShapesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the given name exactly.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSupportedHostShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSupportedHostShapesFilterArgs:
     def __init__(__self__, *,
@@ -1334,6 +1758,17 @@ class GetSupportedHostShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSupportedSkusFilterArgsDict(TypedDict):
+        name: str
+        """
+        name of SKU
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSupportedSkusFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSupportedSkusFilterArgs:
     def __init__(__self__, *,
@@ -1378,6 +1813,14 @@ class GetSupportedSkusFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSupportedVmwareSoftwareVersionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSupportedVmwareSoftwareVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSupportedVmwareSoftwareVersionsFilterArgs:

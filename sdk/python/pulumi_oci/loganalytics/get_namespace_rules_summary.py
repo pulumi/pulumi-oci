@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -133,9 +138,6 @@ def get_namespace_rules_summary(compartment_id: Optional[str] = None,
         namespace=pulumi.get(__ret__, 'namespace'),
         saved_search_rules_count=pulumi.get(__ret__, 'saved_search_rules_count'),
         total_count=pulumi.get(__ret__, 'total_count'))
-
-
-@_utilities.lift_output_func(get_namespace_rules_summary)
 def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        namespace: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesSummaryResult]:
@@ -158,4 +160,15 @@ def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary', __args__, opts=opts, typ=GetNamespaceRulesSummaryResult)
+    return __ret__.apply(lambda __response__: GetNamespaceRulesSummaryResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        ingest_time_rules_count=pulumi.get(__response__, 'ingest_time_rules_count'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        saved_search_rules_count=pulumi.get(__response__, 'saved_search_rules_count'),
+        total_count=pulumi.get(__response__, 'total_count')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -416,9 +421,6 @@ def get_security_assessment(security_assessment_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_security_assessment)
 def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentResult]:
     """
@@ -438,4 +440,36 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
 
     :param str security_assessment_id: The OCID of the security assessment.
     """
-    ...
+    __args__ = dict()
+    __args__['securityAssessmentId'] = security_assessment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessment:getSecurityAssessment', __args__, opts=opts, typ=GetSecurityAssessmentResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ignored_assessment_ids=pulumi.get(__response__, 'ignored_assessment_ids'),
+        ignored_targets=pulumi.get(__response__, 'ignored_targets'),
+        is_assessment_scheduled=pulumi.get(__response__, 'is_assessment_scheduled'),
+        is_baseline=pulumi.get(__response__, 'is_baseline'),
+        is_deviated_from_baseline=pulumi.get(__response__, 'is_deviated_from_baseline'),
+        last_compared_baseline_id=pulumi.get(__response__, 'last_compared_baseline_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        link=pulumi.get(__response__, 'link'),
+        schedule=pulumi.get(__response__, 'schedule'),
+        schedule_security_assessment_id=pulumi.get(__response__, 'schedule_security_assessment_id'),
+        security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
+        state=pulumi.get(__response__, 'state'),
+        statistics=pulumi.get(__response__, 'statistics'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_ids=pulumi.get(__response__, 'target_ids'),
+        target_version=pulumi.get(__response__, 'target_version'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_assessed=pulumi.get(__response__, 'time_last_assessed'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        triggered_by=pulumi.get(__response__, 'triggered_by'),
+        type=pulumi.get(__response__, 'type')))

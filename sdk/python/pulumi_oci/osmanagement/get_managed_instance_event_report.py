@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -132,9 +137,6 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
         latest_timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'latest_timestamp_greater_than_or_equal_to'),
         latest_timestamp_less_than=pulumi.get(__ret__, 'latest_timestamp_less_than'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'))
-
-
-@_utilities.lift_output_func(get_managed_instance_event_report)
 def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                              latest_timestamp_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                              latest_timestamp_less_than: Optional[pulumi.Input[Optional[str]]] = None,
@@ -163,4 +165,17 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
     :param str latest_timestamp_less_than: filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z
     :param str managed_instance_id: Instance Oracle Cloud identifier (ocid)
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['latestTimestampGreaterThanOrEqualTo'] = latest_timestamp_greater_than_or_equal_to
+    __args__['latestTimestampLessThan'] = latest_timestamp_less_than
+    __args__['managedInstanceId'] = managed_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport', __args__, opts=opts, typ=GetManagedInstanceEventReportResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceEventReportResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        counts=pulumi.get(__response__, 'counts'),
+        id=pulumi.get(__response__, 'id'),
+        latest_timestamp_greater_than_or_equal_to=pulumi.get(__response__, 'latest_timestamp_greater_than_or_equal_to'),
+        latest_timestamp_less_than=pulumi.get(__response__, 'latest_timestamp_less_than'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id')))

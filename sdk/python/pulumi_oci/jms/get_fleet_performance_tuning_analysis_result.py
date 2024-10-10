@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -292,9 +297,6 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         warning_count=pulumi.get(__ret__, 'warning_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_fleet_performance_tuning_analysis_result)
 def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                                         performance_tuning_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultResult]:
@@ -317,4 +319,27 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     :param str performance_tuning_analysis_result_id: The OCID of the performance tuning analysis result.
     """
-    ...
+    __args__ = dict()
+    __args__['fleetId'] = fleet_id
+    __args__['performanceTuningAnalysisResultId'] = performance_tuning_analysis_result_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetPerformanceTuningAnalysisResult:getFleetPerformanceTuningAnalysisResult', __args__, opts=opts, typ=GetFleetPerformanceTuningAnalysisResultResult)
+    return __ret__.apply(lambda __response__: GetFleetPerformanceTuningAnalysisResultResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        application_installation_id=pulumi.get(__response__, 'application_installation_id'),
+        application_installation_path=pulumi.get(__response__, 'application_installation_path'),
+        application_name=pulumi.get(__response__, 'application_name'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object=pulumi.get(__response__, 'object'),
+        performance_tuning_analysis_result_id=pulumi.get(__response__, 'performance_tuning_analysis_result_id'),
+        result=pulumi.get(__response__, 'result'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        warning_count=pulumi.get(__response__, 'warning_count'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -366,9 +371,6 @@ def get_awr_hub_source(awr_hub_source_id: Optional[str] = None,
         time_last_snapshot_generated=pulumi.get(__ret__, 'time_last_snapshot_generated'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_awr_hub_source)
 def get_awr_hub_source_output(awr_hub_source_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubSourceResult]:
     """
@@ -388,4 +390,32 @@ def get_awr_hub_source_output(awr_hub_source_id: Optional[pulumi.Input[str]] = N
 
     :param str awr_hub_source_id: Unique Awr Hub Source identifier
     """
-    ...
+    __args__ = dict()
+    __args__['awrHubSourceId'] = awr_hub_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getAwrHubSource:getAwrHubSource', __args__, opts=opts, typ=GetAwrHubSourceResult)
+    return __ret__.apply(lambda __response__: GetAwrHubSourceResult(
+        associated_opsi_id=pulumi.get(__response__, 'associated_opsi_id'),
+        associated_resource_id=pulumi.get(__response__, 'associated_resource_id'),
+        awr_hub_id=pulumi.get(__response__, 'awr_hub_id'),
+        awr_hub_opsi_source_id=pulumi.get(__response__, 'awr_hub_opsi_source_id'),
+        awr_hub_source_id=pulumi.get(__response__, 'awr_hub_source_id'),
+        awr_source_database_id=pulumi.get(__response__, 'awr_source_database_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hours_since_last_import=pulumi.get(__response__, 'hours_since_last_import'),
+        id=pulumi.get(__response__, 'id'),
+        is_registered_with_awr_hub=pulumi.get(__response__, 'is_registered_with_awr_hub'),
+        max_snapshot_identifier=pulumi.get(__response__, 'max_snapshot_identifier'),
+        min_snapshot_identifier=pulumi.get(__response__, 'min_snapshot_identifier'),
+        name=pulumi.get(__response__, 'name'),
+        source_mail_box_url=pulumi.get(__response__, 'source_mail_box_url'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_first_snapshot_generated=pulumi.get(__response__, 'time_first_snapshot_generated'),
+        time_last_snapshot_generated=pulumi.get(__response__, 'time_last_snapshot_generated'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

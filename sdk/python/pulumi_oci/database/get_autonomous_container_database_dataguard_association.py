@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -376,9 +381,6 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'),
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         transport_lag=pulumi.get(__ret__, 'transport_lag'))
-
-
-@_utilities.lift_output_func(get_autonomous_container_database_dataguard_association)
 def get_autonomous_container_database_dataguard_association_output(autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                                                                    autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationResult]:
@@ -401,4 +403,35 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     :param str autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousContainerDatabaseDataguardAssociationId'] = autonomous_container_database_dataguard_association_id
+    __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousContainerDatabaseDataguardAssociationResult)
+    return __ret__.apply(lambda __response__: GetAutonomousContainerDatabaseDataguardAssociationResult(
+        apply_lag=pulumi.get(__response__, 'apply_lag'),
+        apply_rate=pulumi.get(__response__, 'apply_rate'),
+        autonomous_container_database_dataguard_association_id=pulumi.get(__response__, 'autonomous_container_database_dataguard_association_id'),
+        autonomous_container_database_id=pulumi.get(__response__, 'autonomous_container_database_id'),
+        fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__response__, 'fast_start_fail_over_lag_limit_in_seconds'),
+        id=pulumi.get(__response__, 'id'),
+        is_automatic_failover_enabled=pulumi.get(__response__, 'is_automatic_failover_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        peer_autonomous_container_database_backup_configs=pulumi.get(__response__, 'peer_autonomous_container_database_backup_configs'),
+        peer_autonomous_container_database_compartment_id=pulumi.get(__response__, 'peer_autonomous_container_database_compartment_id'),
+        peer_autonomous_container_database_dataguard_association_id=pulumi.get(__response__, 'peer_autonomous_container_database_dataguard_association_id'),
+        peer_autonomous_container_database_display_name=pulumi.get(__response__, 'peer_autonomous_container_database_display_name'),
+        peer_autonomous_container_database_id=pulumi.get(__response__, 'peer_autonomous_container_database_id'),
+        peer_autonomous_vm_cluster_id=pulumi.get(__response__, 'peer_autonomous_vm_cluster_id'),
+        peer_cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'peer_cloud_autonomous_vm_cluster_id'),
+        peer_db_unique_name=pulumi.get(__response__, 'peer_db_unique_name'),
+        peer_lifecycle_state=pulumi.get(__response__, 'peer_lifecycle_state'),
+        peer_role=pulumi.get(__response__, 'peer_role'),
+        protection_mode=pulumi.get(__response__, 'protection_mode'),
+        role=pulumi.get(__response__, 'role'),
+        standby_maintenance_buffer_in_days=pulumi.get(__response__, 'standby_maintenance_buffer_in_days'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_role_changed=pulumi.get(__response__, 'time_last_role_changed'),
+        time_last_synced=pulumi.get(__response__, 'time_last_synced'),
+        transport_lag=pulumi.get(__response__, 'transport_lag')))

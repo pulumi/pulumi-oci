@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -270,9 +275,6 @@ def get_listings(categories: Optional[Sequence[str]] = None,
         package_type=pulumi.get(__ret__, 'package_type'),
         pricings=pulumi.get(__ret__, 'pricings'),
         publisher_id=pulumi.get(__ret__, 'publisher_id'))
-
-
-@_utilities.lift_output_func(get_listings)
 def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingsFilterArgs', 'GetListingsFilterArgsDict']]]]] = None,
@@ -337,4 +339,33 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
     :param Sequence[str] pricings: Name of the pricing type. If multiple pricing types are provided, then any listing with one or more matching pricing models will be returned.
     :param str publisher_id: Limit results to just this publisher.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['imageId'] = image_id
+    __args__['isFeatured'] = is_featured
+    __args__['listingId'] = listing_id
+    __args__['listingTypes'] = listing_types
+    __args__['names'] = names
+    __args__['operatingSystems'] = operating_systems
+    __args__['packageType'] = package_type
+    __args__['pricings'] = pricings
+    __args__['publisherId'] = publisher_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListings:getListings', __args__, opts=opts, typ=GetListingsResult)
+    return __ret__.apply(lambda __response__: GetListingsResult(
+        categories=pulumi.get(__response__, 'categories'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        is_featured=pulumi.get(__response__, 'is_featured'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        listing_types=pulumi.get(__response__, 'listing_types'),
+        listings=pulumi.get(__response__, 'listings'),
+        names=pulumi.get(__response__, 'names'),
+        operating_systems=pulumi.get(__response__, 'operating_systems'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        pricings=pulumi.get(__response__, 'pricings'),
+        publisher_id=pulumi.get(__response__, 'publisher_id')))

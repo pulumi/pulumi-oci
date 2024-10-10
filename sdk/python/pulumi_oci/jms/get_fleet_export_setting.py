@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -226,9 +231,6 @@ def get_fleet_export_setting(fleet_id: Optional[str] = None,
         target_bucket_region=pulumi.get(__ret__, 'target_bucket_region'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-
-
-@_utilities.lift_output_func(get_fleet_export_setting)
 def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetExportSettingResult]:
     """
@@ -248,4 +250,21 @@ def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[str]] = None
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     """
-    ...
+    __args__ = dict()
+    __args__['fleetId'] = fleet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetExportSetting:getFleetExportSetting', __args__, opts=opts, typ=GetFleetExportSettingResult)
+    return __ret__.apply(lambda __response__: GetFleetExportSettingResult(
+        export_duration=pulumi.get(__response__, 'export_duration'),
+        export_frequency=pulumi.get(__response__, 'export_frequency'),
+        export_resources=pulumi.get(__response__, 'export_resources'),
+        export_setting_key=pulumi.get(__response__, 'export_setting_key'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_cross_region_acknowledged=pulumi.get(__response__, 'is_cross_region_acknowledged'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        target_bucket_name=pulumi.get(__response__, 'target_bucket_name'),
+        target_bucket_namespace=pulumi.get(__response__, 'target_bucket_namespace'),
+        target_bucket_region=pulumi.get(__response__, 'target_bucket_region'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_modified=pulumi.get(__response__, 'time_last_modified')))

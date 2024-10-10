@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -252,9 +257,6 @@ def get_snapshot(snapshot_id: Optional[str] = None,
         snapshot_type=pulumi.get(__ret__, 'snapshot_type'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_snapshot)
 def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotResult]:
     """
@@ -274,4 +276,23 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
 
     :param str snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
     """
-    ...
+    __args__ = dict()
+    __args__['snapshotId'] = snapshot_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:FileStorage/getSnapshot:getSnapshot', __args__, opts=opts, typ=GetSnapshotResult)
+    return __ret__.apply(lambda __response__: GetSnapshotResult(
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        expiration_time=pulumi.get(__response__, 'expiration_time'),
+        file_system_id=pulumi.get(__response__, 'file_system_id'),
+        filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_clone_source=pulumi.get(__response__, 'is_clone_source'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        provenance_id=pulumi.get(__response__, 'provenance_id'),
+        snapshot_id=pulumi.get(__response__, 'snapshot_id'),
+        snapshot_time=pulumi.get(__response__, 'snapshot_time'),
+        snapshot_type=pulumi.get(__response__, 'snapshot_type'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -205,9 +210,6 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
         profiles=pulumi.get(__ret__, 'profiles'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
-
-
-@_utilities.lift_output_func(get_software_source_module_stream)
 def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[str]] = None,
                                              software_source_id: Optional[pulumi.Input[str]] = None,
                                              stream_name: Optional[pulumi.Input[str]] = None,
@@ -233,4 +235,21 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     :param str stream_name: The name of the stream of the containing module.
     """
-    ...
+    __args__ = dict()
+    __args__['moduleName'] = module_name
+    __args__['softwareSourceId'] = software_source_id
+    __args__['streamName'] = stream_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream', __args__, opts=opts, typ=GetSoftwareSourceModuleStreamResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceModuleStreamResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        module_name=pulumi.get(__response__, 'module_name'),
+        name=pulumi.get(__response__, 'name'),
+        packages=pulumi.get(__response__, 'packages'),
+        profiles=pulumi.get(__response__, 'profiles'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        stream_name=pulumi.get(__response__, 'stream_name')))

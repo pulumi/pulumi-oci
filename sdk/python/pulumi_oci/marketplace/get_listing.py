@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -486,9 +491,6 @@ def get_listing(compartment_id: Optional[str] = None,
         usage_information=pulumi.get(__ret__, 'usage_information'),
         version=pulumi.get(__ret__, 'version'),
         videos=pulumi.get(__ret__, 'videos'))
-
-
-@_utilities.lift_output_func(get_listing)
 def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        listing_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResult]:
@@ -525,4 +527,41 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
     :param str listing_id: The unique identifier for the listing.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['listingId'] = listing_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListing:getListing', __args__, opts=opts, typ=GetListingResult)
+    return __ret__.apply(lambda __response__: GetListingResult(
+        banners=pulumi.get(__response__, 'banners'),
+        categories=pulumi.get(__response__, 'categories'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compatible_architectures=pulumi.get(__response__, 'compatible_architectures'),
+        default_package_version=pulumi.get(__response__, 'default_package_version'),
+        documentation_links=pulumi.get(__response__, 'documentation_links'),
+        icons=pulumi.get(__response__, 'icons'),
+        id=pulumi.get(__response__, 'id'),
+        is_featured=pulumi.get(__response__, 'is_featured'),
+        keywords=pulumi.get(__response__, 'keywords'),
+        languages=pulumi.get(__response__, 'languages'),
+        license_model_description=pulumi.get(__response__, 'license_model_description'),
+        links=pulumi.get(__response__, 'links'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        listing_type=pulumi.get(__response__, 'listing_type'),
+        long_description=pulumi.get(__response__, 'long_description'),
+        name=pulumi.get(__response__, 'name'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        publishers=pulumi.get(__response__, 'publishers'),
+        regions=pulumi.get(__response__, 'regions'),
+        release_notes=pulumi.get(__response__, 'release_notes'),
+        screenshots=pulumi.get(__response__, 'screenshots'),
+        short_description=pulumi.get(__response__, 'short_description'),
+        support_contacts=pulumi.get(__response__, 'support_contacts'),
+        support_links=pulumi.get(__response__, 'support_links'),
+        supported_operating_systems=pulumi.get(__response__, 'supported_operating_systems'),
+        system_requirements=pulumi.get(__response__, 'system_requirements'),
+        tagline=pulumi.get(__response__, 'tagline'),
+        time_released=pulumi.get(__response__, 'time_released'),
+        usage_information=pulumi.get(__response__, 'usage_information'),
+        version=pulumi.get(__response__, 'version'),
+        videos=pulumi.get(__response__, 'videos')))

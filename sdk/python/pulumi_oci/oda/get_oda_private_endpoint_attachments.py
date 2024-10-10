@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[str] = None,
         oda_private_endpoint_attachment_collections=pulumi.get(__ret__, 'oda_private_endpoint_attachment_collections'),
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_oda_private_endpoint_attachments)
 def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaPrivateEndpointAttachmentsFilterArgs', 'GetOdaPrivateEndpointAttachmentsFilterArgsDict']]]]] = None,
                                                 oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -181,4 +183,17 @@ def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.
     :param str oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
     :param str state: List only the ODA Private Endpoint Attachments that are in this lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['odaPrivateEndpointId'] = oda_private_endpoint_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments', __args__, opts=opts, typ=GetOdaPrivateEndpointAttachmentsResult)
+    return __ret__.apply(lambda __response__: GetOdaPrivateEndpointAttachmentsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        oda_private_endpoint_attachment_collections=pulumi.get(__response__, 'oda_private_endpoint_attachment_collections'),
+        oda_private_endpoint_id=pulumi.get(__response__, 'oda_private_endpoint_id'),
+        state=pulumi.get(__response__, 'state')))

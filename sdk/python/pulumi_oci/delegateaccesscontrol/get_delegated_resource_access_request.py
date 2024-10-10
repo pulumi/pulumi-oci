@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -510,9 +515,6 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
         time_access_requested=pulumi.get(__ret__, 'time_access_requested'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_delegated_resource_access_request)
 def get_delegated_resource_access_request_output(delegated_resource_access_request_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDelegatedResourceAccessRequestResult]:
     """
@@ -532,4 +534,43 @@ def get_delegated_resource_access_request_output(delegated_resource_access_reque
 
     :param str delegated_resource_access_request_id: Unique Delegated Resource Access Request identifier
     """
-    ...
+    __args__ = dict()
+    __args__['delegatedResourceAccessRequestId'] = delegated_resource_access_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getDelegatedResourceAccessRequest:getDelegatedResourceAccessRequest', __args__, opts=opts, typ=GetDelegatedResourceAccessRequestResult)
+    return __ret__.apply(lambda __response__: GetDelegatedResourceAccessRequestResult(
+        approval_infos=pulumi.get(__response__, 'approval_infos'),
+        audit_types=pulumi.get(__response__, 'audit_types'),
+        closure_comment=pulumi.get(__response__, 'closure_comment'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_name_lists=pulumi.get(__response__, 'database_name_lists'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delegated_resource_access_request_id=pulumi.get(__response__, 'delegated_resource_access_request_id'),
+        delegation_control_id=pulumi.get(__response__, 'delegation_control_id'),
+        delegation_subscription_ids=pulumi.get(__response__, 'delegation_subscription_ids'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        duration_in_hours=pulumi.get(__response__, 'duration_in_hours'),
+        extend_duration_in_hours=pulumi.get(__response__, 'extend_duration_in_hours'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_approved=pulumi.get(__response__, 'is_auto_approved'),
+        is_pending_more_info=pulumi.get(__response__, 'is_pending_more_info'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        num_extension_approvals=pulumi.get(__response__, 'num_extension_approvals'),
+        num_initial_approvals=pulumi.get(__response__, 'num_initial_approvals'),
+        provided_service_types=pulumi.get(__response__, 'provided_service_types'),
+        reason_for_request=pulumi.get(__response__, 'reason_for_request'),
+        request_status=pulumi.get(__response__, 'request_status'),
+        requested_action_names=pulumi.get(__response__, 'requested_action_names'),
+        requester_type=pulumi.get(__response__, 'requester_type'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        resource_name=pulumi.get(__response__, 'resource_name'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        severity=pulumi.get(__response__, 'severity'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        ticket_numbers=pulumi.get(__response__, 'ticket_numbers'),
+        time_access_requested=pulumi.get(__response__, 'time_access_requested'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -189,9 +194,6 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         trace_key=pulumi.get(__ret__, 'trace_key'),
         trace_snapshot_details=pulumi.get(__ret__, 'trace_snapshot_details'))
-
-
-@_utilities.lift_output_func(get_trace_snapshot_data)
 def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                    is_summarized: Optional[pulumi.Input[Optional[bool]]] = None,
                                    snapshot_time: Optional[pulumi.Input[Optional[str]]] = None,
@@ -223,4 +225,22 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
     :param str thread_id: Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['isSummarized'] = is_summarized
+    __args__['snapshotTime'] = snapshot_time
+    __args__['threadId'] = thread_id
+    __args__['traceKey'] = trace_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTraceSnapshotData:getTraceSnapshotData', __args__, opts=opts, typ=GetTraceSnapshotDataResult)
+    return __ret__.apply(lambda __response__: GetTraceSnapshotDataResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_summarized=pulumi.get(__response__, 'is_summarized'),
+        key=pulumi.get(__response__, 'key'),
+        snapshot_time=pulumi.get(__response__, 'snapshot_time'),
+        thread_id=pulumi.get(__response__, 'thread_id'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        trace_key=pulumi.get(__response__, 'trace_key'),
+        trace_snapshot_details=pulumi.get(__response__, 'trace_snapshot_details')))

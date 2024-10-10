@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_category(category_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_category)
 def get_category_output(category_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoryResult]:
     """
@@ -246,4 +248,21 @@ def get_category_output(category_id: Optional[pulumi.Input[str]] = None,
 
     :param str category_id: The unique OCID associated with the category.
     """
-    ...
+    __args__ = dict()
+    __args__['categoryId'] = category_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Optimizer/getCategory:getCategory', __args__, opts=opts, typ=GetCategoryResult)
+    return __ret__.apply(lambda __response__: GetCategoryResult(
+        category_id=pulumi.get(__response__, 'category_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_name=pulumi.get(__response__, 'compartment_name'),
+        description=pulumi.get(__response__, 'description'),
+        estimated_cost_saving=pulumi.get(__response__, 'estimated_cost_saving'),
+        extended_metadata=pulumi.get(__response__, 'extended_metadata'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        recommendation_counts=pulumi.get(__response__, 'recommendation_counts'),
+        resource_counts=pulumi.get(__response__, 'resource_counts'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

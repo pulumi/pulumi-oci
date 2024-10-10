@@ -4,18 +4,55 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ModelTestingDatasetArgs',
+    'ModelTestingDatasetArgsDict',
     'ModelTrainingDatasetArgs',
+    'ModelTrainingDatasetArgsDict',
     'ModelValidationDatasetArgs',
+    'ModelValidationDatasetArgsDict',
     'GetModelsFilterArgs',
+    'GetModelsFilterArgsDict',
     'GetProjectsFilterArgs',
+    'GetProjectsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ModelTestingDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Type of the Dataset.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The name of the ObjectStorage bucket that contains the input data file.
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Data Science Labeling Dataset.
+        """
+        namespace_name: NotRequired[pulumi.Input[str]]
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name of the input data file.
+        """
+elif False:
+    ModelTestingDatasetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelTestingDatasetArgs:
@@ -103,6 +140,31 @@ class ModelTestingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class ModelTrainingDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Type of the Dataset.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The name of the ObjectStorage bucket that contains the input data file.
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Data Science Labeling Dataset.
+        """
+        namespace_name: NotRequired[pulumi.Input[str]]
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name of the input data file.
+        """
+elif False:
+    ModelTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ModelTrainingDatasetArgs:
     def __init__(__self__, *,
@@ -188,6 +250,35 @@ class ModelTrainingDatasetArgs:
     def object(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "object", value)
 
+
+if not MYPY:
+    class ModelValidationDatasetArgsDict(TypedDict):
+        dataset_type: pulumi.Input[str]
+        """
+        Type of the Dataset.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        The name of the ObjectStorage bucket that contains the input data file.
+        """
+        dataset_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Data Science Labeling Dataset.
+        """
+        namespace_name: NotRequired[pulumi.Input[str]]
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        The object name of the input data file.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ModelValidationDatasetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ModelValidationDatasetArgs:
@@ -283,6 +374,14 @@ class ModelValidationDatasetArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class GetModelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetModelsFilterArgs:
     def __init__(__self__, *,
@@ -321,6 +420,14 @@ class GetModelsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProjectsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProjectsFilterArgs:

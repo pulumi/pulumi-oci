@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -189,9 +194,6 @@ def get_fleet_java_migration_analysis_results(application_name: Optional[str] = 
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_fleet_java_migration_analysis_results)
 def get_fleet_java_migration_analysis_results_output(application_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetJavaMigrationAnalysisResultsFilterArgs', 'GetFleetJavaMigrationAnalysisResultsFilterArgsDict']]]]] = None,
                                                      fleet_id: Optional[pulumi.Input[str]] = None,
@@ -227,4 +229,23 @@ def get_fleet_java_migration_analysis_results_output(application_name: Optional[
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['applicationName'] = application_name
+    __args__['filters'] = filters
+    __args__['fleetId'] = fleet_id
+    __args__['hostName'] = host_name
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults', __args__, opts=opts, typ=GetFleetJavaMigrationAnalysisResultsResult)
+    return __ret__.apply(lambda __response__: GetFleetJavaMigrationAnalysisResultsResult(
+        application_name=pulumi.get(__response__, 'application_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        java_migration_analysis_result_collections=pulumi.get(__response__, 'java_migration_analysis_result_collections'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

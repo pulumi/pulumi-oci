@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -240,9 +245,6 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'))
-
-
-@_utilities.lift_output_func(get_autonomous_database_dataguard_association)
 def get_autonomous_database_dataguard_association_output(autonomous_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
                                                          autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationResult]:
@@ -265,4 +267,23 @@ def get_autonomous_database_dataguard_association_output(autonomous_database_dat
     :param str autonomous_database_dataguard_association_id: The Autonomous Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousDatabaseDataguardAssociationId'] = autonomous_database_dataguard_association_id
+    __args__['autonomousDatabaseId'] = autonomous_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation', __args__, opts=opts, typ=GetAutonomousDatabaseDataguardAssociationResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabaseDataguardAssociationResult(
+        apply_lag=pulumi.get(__response__, 'apply_lag'),
+        apply_rate=pulumi.get(__response__, 'apply_rate'),
+        autonomous_database_dataguard_association_id=pulumi.get(__response__, 'autonomous_database_dataguard_association_id'),
+        autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        peer_autonomous_database_id=pulumi.get(__response__, 'peer_autonomous_database_id'),
+        peer_autonomous_database_life_cycle_state=pulumi.get(__response__, 'peer_autonomous_database_life_cycle_state'),
+        peer_role=pulumi.get(__response__, 'peer_role'),
+        protection_mode=pulumi.get(__response__, 'protection_mode'),
+        role=pulumi.get(__response__, 'role'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_role_changed=pulumi.get(__response__, 'time_last_role_changed')))

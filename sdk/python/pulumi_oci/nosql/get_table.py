@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -319,9 +324,6 @@ def get_table(compartment_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_expiration=pulumi.get(__ret__, 'time_of_expiration'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_table)
 def get_table_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      table_name_or_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTableResult]:
@@ -344,4 +346,29 @@ def get_table_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
     :param str table_name_or_id: A table name within the compartment, or a table OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['tableNameOrId'] = table_name_or_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Nosql/getTable:getTable', __args__, opts=opts, typ=GetTableResult)
+    return __ret__.apply(lambda __response__: GetTableResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        ddl_statement=pulumi.get(__response__, 'ddl_statement'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_reclaimable=pulumi.get(__response__, 'is_auto_reclaimable'),
+        is_multi_region=pulumi.get(__response__, 'is_multi_region'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        local_replica_initialization_in_percent=pulumi.get(__response__, 'local_replica_initialization_in_percent'),
+        name=pulumi.get(__response__, 'name'),
+        replicas=pulumi.get(__response__, 'replicas'),
+        schema_state=pulumi.get(__response__, 'schema_state'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        table_limits=pulumi.get(__response__, 'table_limits'),
+        table_name_or_id=pulumi.get(__response__, 'table_name_or_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_expiration=pulumi.get(__response__, 'time_of_expiration'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

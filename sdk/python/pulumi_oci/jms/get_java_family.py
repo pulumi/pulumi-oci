@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -188,9 +193,6 @@ def get_java_family(family_version: Optional[str] = None,
         latest_release_version=pulumi.get(__ret__, 'latest_release_version'),
         release_date=pulumi.get(__ret__, 'release_date'),
         support_type=pulumi.get(__ret__, 'support_type'))
-
-
-@_utilities.lift_output_func(get_java_family)
 def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamilyResult]:
     """
@@ -210,4 +212,18 @@ def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
 
     :param str family_version: Unique Java family version identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['familyVersion'] = family_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaFamily:getJavaFamily', __args__, opts=opts, typ=GetJavaFamilyResult)
+    return __ret__.apply(lambda __response__: GetJavaFamilyResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        doc_url=pulumi.get(__response__, 'doc_url'),
+        end_of_support_life_date=pulumi.get(__response__, 'end_of_support_life_date'),
+        family_version=pulumi.get(__response__, 'family_version'),
+        id=pulumi.get(__response__, 'id'),
+        is_supported_version=pulumi.get(__response__, 'is_supported_version'),
+        latest_release_artifacts=pulumi.get(__response__, 'latest_release_artifacts'),
+        latest_release_version=pulumi.get(__response__, 'latest_release_version'),
+        release_date=pulumi.get(__response__, 'release_date'),
+        support_type=pulumi.get(__response__, 'support_type')))

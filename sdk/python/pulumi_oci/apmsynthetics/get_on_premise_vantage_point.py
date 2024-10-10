@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -212,9 +217,6 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         workers_summaries=pulumi.get(__ret__, 'workers_summaries'))
-
-
-@_utilities.lift_output_func(get_on_premise_vantage_point)
 def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                         on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnPremiseVantagePointResult]:
@@ -237,4 +239,21 @@ def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str on_premise_vantage_point_id: The OCID of the On-premise vantage point.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['onPremiseVantagePointId'] = on_premise_vantage_point_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getOnPremiseVantagePoint:getOnPremiseVantagePoint', __args__, opts=opts, typ=GetOnPremiseVantagePointResult)
+    return __ret__.apply(lambda __response__: GetOnPremiseVantagePointResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        on_premise_vantage_point_id=pulumi.get(__response__, 'on_premise_vantage_point_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        workers_summaries=pulumi.get(__response__, 'workers_summaries')))

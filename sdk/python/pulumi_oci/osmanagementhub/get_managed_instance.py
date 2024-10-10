@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -562,9 +567,6 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updates_available=pulumi.get(__ret__, 'updates_available'),
         work_request_count=pulumi.get(__ret__, 'work_request_count'))
-
-
-@_utilities.lift_output_func(get_managed_instance)
 def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceResult]:
     """
@@ -584,4 +586,47 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
 
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     """
-    ...
+    __args__ = dict()
+    __args__['managedInstanceId'] = managed_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstance:getManagedInstance', __args__, opts=opts, typ=GetManagedInstanceResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceResult(
+        architecture=pulumi.get(__response__, 'architecture'),
+        autonomous_settings=pulumi.get(__response__, 'autonomous_settings'),
+        bug_updates_available=pulumi.get(__response__, 'bug_updates_available'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        enhancement_updates_available=pulumi.get(__response__, 'enhancement_updates_available'),
+        id=pulumi.get(__response__, 'id'),
+        installed_packages=pulumi.get(__response__, 'installed_packages'),
+        installed_windows_updates=pulumi.get(__response__, 'installed_windows_updates'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        is_management_station=pulumi.get(__response__, 'is_management_station'),
+        is_reboot_required=pulumi.get(__response__, 'is_reboot_required'),
+        ksplice_effective_kernel_version=pulumi.get(__response__, 'ksplice_effective_kernel_version'),
+        lifecycle_environments=pulumi.get(__response__, 'lifecycle_environments'),
+        lifecycle_stages=pulumi.get(__response__, 'lifecycle_stages'),
+        location=pulumi.get(__response__, 'location'),
+        managed_instance_groups=pulumi.get(__response__, 'managed_instance_groups'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        notification_topic_id=pulumi.get(__response__, 'notification_topic_id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        os_kernel_version=pulumi.get(__response__, 'os_kernel_version'),
+        os_name=pulumi.get(__response__, 'os_name'),
+        os_version=pulumi.get(__response__, 'os_version'),
+        other_updates_available=pulumi.get(__response__, 'other_updates_available'),
+        primary_management_station_id=pulumi.get(__response__, 'primary_management_station_id'),
+        profile=pulumi.get(__response__, 'profile'),
+        scheduled_job_count=pulumi.get(__response__, 'scheduled_job_count'),
+        secondary_management_station_id=pulumi.get(__response__, 'secondary_management_station_id'),
+        security_updates_available=pulumi.get(__response__, 'security_updates_available'),
+        software_sources=pulumi.get(__response__, 'software_sources'),
+        status=pulumi.get(__response__, 'status'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_boot=pulumi.get(__response__, 'time_last_boot'),
+        time_last_checkin=pulumi.get(__response__, 'time_last_checkin'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        updates_available=pulumi.get(__response__, 'updates_available'),
+        work_request_count=pulumi.get(__response__, 'work_request_count')))

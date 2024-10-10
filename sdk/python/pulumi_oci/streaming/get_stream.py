@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -223,9 +228,6 @@ def get_stream(stream_id: Optional[str] = None,
         stream_id=pulumi.get(__ret__, 'stream_id'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_stream)
 def get_stream_output(stream_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamResult]:
     """
@@ -245,4 +247,21 @@ def get_stream_output(stream_id: Optional[pulumi.Input[str]] = None,
 
     :param str stream_id: The OCID of the stream.
     """
-    ...
+    __args__ = dict()
+    __args__['streamId'] = stream_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getStream:getStream', __args__, opts=opts, typ=GetStreamResult)
+    return __ret__.apply(lambda __response__: GetStreamResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        messages_endpoint=pulumi.get(__response__, 'messages_endpoint'),
+        name=pulumi.get(__response__, 'name'),
+        partitions=pulumi.get(__response__, 'partitions'),
+        retention_in_hours=pulumi.get(__response__, 'retention_in_hours'),
+        state=pulumi.get(__response__, 'state'),
+        stream_id=pulumi.get(__response__, 'stream_id'),
+        stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
+        time_created=pulumi.get(__response__, 'time_created')))

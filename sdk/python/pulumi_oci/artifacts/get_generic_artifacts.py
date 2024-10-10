@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -216,9 +221,6 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
         sha256=pulumi.get(__ret__, 'sha256'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_generic_artifacts)
 def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -260,4 +262,26 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
     :param str state: A filter to return only resources that match the given lifecycle state name exactly.
     :param str version: Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
     """
-    ...
+    __args__ = dict()
+    __args__['artifactPath'] = artifact_path
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['repositoryId'] = repository_id
+    __args__['sha256'] = sha256
+    __args__['state'] = state
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getGenericArtifacts:getGenericArtifacts', __args__, opts=opts, typ=GetGenericArtifactsResult)
+    return __ret__.apply(lambda __response__: GetGenericArtifactsResult(
+        artifact_path=pulumi.get(__response__, 'artifact_path'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        generic_artifact_collections=pulumi.get(__response__, 'generic_artifact_collections'),
+        id=pulumi.get(__response__, 'id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        sha256=pulumi.get(__response__, 'sha256'),
+        state=pulumi.get(__response__, 'state'),
+        version=pulumi.get(__response__, 'version')))

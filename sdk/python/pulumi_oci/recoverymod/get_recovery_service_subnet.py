@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -250,9 +255,6 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_recovery_service_subnet)
 def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecoveryServiceSubnetResult]:
     """
@@ -272,4 +274,23 @@ def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulu
 
     :param str recovery_service_subnet_id: The recovery service subnet OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['recoveryServiceSubnetId'] = recovery_service_subnet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getRecoveryServiceSubnet:getRecoveryServiceSubnet', __args__, opts=opts, typ=GetRecoveryServiceSubnetResult)
+    return __ret__.apply(lambda __response__: GetRecoveryServiceSubnetResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        recovery_service_subnet_id=pulumi.get(__response__, 'recovery_service_subnet_id'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subnets=pulumi.get(__response__, 'subnets'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

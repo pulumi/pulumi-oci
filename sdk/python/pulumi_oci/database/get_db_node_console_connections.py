@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_db_node_console_connections(db_node_id: Optional[str] = None,
         db_node_id=pulumi.get(__ret__, 'db_node_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_db_node_console_connections)
 def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodeConsoleConnectionsFilterArgs', 'GetDbNodeConsoleConnectionsFilterArgsDict']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
@@ -133,4 +135,13 @@ def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dbNodeId'] = db_node_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections', __args__, opts=opts, typ=GetDbNodeConsoleConnectionsResult)
+    return __ret__.apply(lambda __response__: GetDbNodeConsoleConnectionsResult(
+        console_connections=pulumi.get(__response__, 'console_connections'),
+        db_node_id=pulumi.get(__response__, 'db_node_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

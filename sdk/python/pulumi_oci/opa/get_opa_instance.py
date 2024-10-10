@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -338,9 +343,6 @@ def get_opa_instance(opa_instance_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_opa_instance)
 def get_opa_instance_output(opa_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpaInstanceResult]:
     """
@@ -360,4 +362,30 @@ def get_opa_instance_output(opa_instance_id: Optional[pulumi.Input[str]] = None,
 
     :param str opa_instance_id: unique OpaInstance identifier
     """
-    ...
+    __args__ = dict()
+    __args__['opaInstanceId'] = opa_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opa/getOpaInstance:getOpaInstance', __args__, opts=opts, typ=GetOpaInstanceResult)
+    return __ret__.apply(lambda __response__: GetOpaInstanceResult(
+        attachments=pulumi.get(__response__, 'attachments'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        consumption_model=pulumi.get(__response__, 'consumption_model'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_at=pulumi.get(__response__, 'idcs_at'),
+        identity_app_display_name=pulumi.get(__response__, 'identity_app_display_name'),
+        identity_app_guid=pulumi.get(__response__, 'identity_app_guid'),
+        identity_app_opc_service_instance_guid=pulumi.get(__response__, 'identity_app_opc_service_instance_guid'),
+        identity_domain_url=pulumi.get(__response__, 'identity_domain_url'),
+        instance_url=pulumi.get(__response__, 'instance_url'),
+        is_breakglass_enabled=pulumi.get(__response__, 'is_breakglass_enabled'),
+        metering_type=pulumi.get(__response__, 'metering_type'),
+        opa_instance_id=pulumi.get(__response__, 'opa_instance_id'),
+        shape_name=pulumi.get(__response__, 'shape_name'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

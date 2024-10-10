@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -137,9 +142,6 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[str] = None
         standard_tag_namespace_name=pulumi.get(__ret__, 'standard_tag_namespace_name'),
         status=pulumi.get(__ret__, 'status'),
         tag_definition_templates=pulumi.get(__ret__, 'tag_definition_templates'))
-
-
-@_utilities.lift_output_func(get_tag_standard_tag_namespace_template)
 def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                    standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplateResult]:
@@ -162,4 +164,15 @@ def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulu
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
     :param str standard_tag_namespace_name: The name of the standard tag namespace tempate that is requested
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['standardTagNamespaceName'] = standard_tag_namespace_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate', __args__, opts=opts, typ=GetTagStandardTagNamespaceTemplateResult)
+    return __ret__.apply(lambda __response__: GetTagStandardTagNamespaceTemplateResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        standard_tag_namespace_name=pulumi.get(__response__, 'standard_tag_namespace_name'),
+        status=pulumi.get(__response__, 'status'),
+        tag_definition_templates=pulumi.get(__response__, 'tag_definition_templates')))

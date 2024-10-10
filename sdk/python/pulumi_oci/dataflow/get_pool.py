@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -276,9 +281,6 @@ def get_pool(pool_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_pool)
 def get_pool_output(pool_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoolResult]:
     """
@@ -298,4 +300,25 @@ def get_pool_output(pool_id: Optional[pulumi.Input[str]] = None,
 
     :param str pool_id: The unique ID for a pool.
     """
-    ...
+    __args__ = dict()
+    __args__['poolId'] = pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getPool:getPool', __args__, opts=opts, typ=GetPoolResult)
+    return __ret__.apply(lambda __response__: GetPoolResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configurations=pulumi.get(__response__, 'configurations'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idle_timeout_in_minutes=pulumi.get(__response__, 'idle_timeout_in_minutes'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        owner_principal_id=pulumi.get(__response__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__response__, 'owner_user_name'),
+        pool_id=pulumi.get(__response__, 'pool_id'),
+        pool_metrics=pulumi.get(__response__, 'pool_metrics'),
+        schedules=pulumi.get(__response__, 'schedules'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

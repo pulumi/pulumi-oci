@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -297,9 +302,6 @@ def get_event(event_id: Optional[str] = None,
         time_occurred=pulumi.get(__ret__, 'time_occurred'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_event)
 def get_event_output(event_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventResult]:
     """
@@ -319,4 +321,26 @@ def get_event_output(event_id: Optional[pulumi.Input[str]] = None,
 
     :param str event_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
     """
-    ...
+    __args__ = dict()
+    __args__['eventId'] = event_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getEvent:getEvent', __args__, opts=opts, typ=GetEventResult)
+    return __ret__.apply(lambda __response__: GetEventResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        datas=pulumi.get(__response__, 'datas'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        event_details=pulumi.get(__response__, 'event_details'),
+        event_id=pulumi.get(__response__, 'event_id'),
+        event_summary=pulumi.get(__response__, 'event_summary'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_details=pulumi.get(__response__, 'system_details'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_occurred=pulumi.get(__response__, 'time_occurred'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

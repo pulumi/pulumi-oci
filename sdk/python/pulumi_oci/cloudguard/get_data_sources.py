@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -222,9 +227,6 @@ def get_data_sources(access_level: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         logging_query_type=pulumi.get(__ret__, 'logging_query_type'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_data_sources)
 def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -279,4 +281,25 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     :param str logging_query_type: A filter to return only resources where their query type matches the given LoggingQueryType.
     :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSourceFeedProvider'] = data_source_feed_provider
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['loggingQueryType'] = logging_query_type
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getDataSources:getDataSources', __args__, opts=opts, typ=GetDataSourcesResult)
+    return __ret__.apply(lambda __response__: GetDataSourcesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        data_source_collections=pulumi.get(__response__, 'data_source_collections'),
+        data_source_feed_provider=pulumi.get(__response__, 'data_source_feed_provider'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        logging_query_type=pulumi.get(__response__, 'logging_query_type'),
+        state=pulumi.get(__response__, 'state')))

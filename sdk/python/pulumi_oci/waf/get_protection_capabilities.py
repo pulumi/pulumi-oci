@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -191,9 +196,6 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
         key=pulumi.get(__ret__, 'key'),
         protection_capability_collections=pulumi.get(__ret__, 'protection_capability_collections'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_protection_capabilities)
 def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilitiesFilterArgs', 'GetProtectionCapabilitiesFilterArgsDict']]]]] = None,
@@ -229,4 +231,23 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
     :param str key: The unique key of protection capability to filter by.
     :param str type: A filter to return only resources that matches given type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['groupTags'] = group_tags
+    __args__['isLatestVersions'] = is_latest_versions
+    __args__['key'] = key
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waf/getProtectionCapabilities:getProtectionCapabilities', __args__, opts=opts, typ=GetProtectionCapabilitiesResult)
+    return __ret__.apply(lambda __response__: GetProtectionCapabilitiesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        group_tags=pulumi.get(__response__, 'group_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_latest_versions=pulumi.get(__response__, 'is_latest_versions'),
+        key=pulumi.get(__response__, 'key'),
+        protection_capability_collections=pulumi.get(__response__, 'protection_capability_collections'),
+        type=pulumi.get(__response__, 'type')))

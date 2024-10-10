@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -137,9 +142,6 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, str]] = None,
         id=pulumi.get(__ret__, 'id'),
         key_id=pulumi.get(__ret__, 'key_id'),
         plaintext=pulumi.get(__ret__, 'plaintext'))
-
-
-@_utilities.lift_output_func(get_encrypted_data)
 def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                               crypto_endpoint: Optional[pulumi.Input[str]] = None,
                               key_id: Optional[pulumi.Input[str]] = None,
@@ -170,4 +172,17 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     :param str key_id: The OCID of the key to encrypt with.
     :param str plaintext: The plaintext data to encrypt.
     """
-    ...
+    __args__ = dict()
+    __args__['associatedData'] = associated_data
+    __args__['cryptoEndpoint'] = crypto_endpoint
+    __args__['keyId'] = key_id
+    __args__['plaintext'] = plaintext
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getEncryptedData:getEncryptedData', __args__, opts=opts, typ=GetEncryptedDataResult)
+    return __ret__.apply(lambda __response__: GetEncryptedDataResult(
+        associated_data=pulumi.get(__response__, 'associated_data'),
+        ciphertext=pulumi.get(__response__, 'ciphertext'),
+        crypto_endpoint=pulumi.get(__response__, 'crypto_endpoint'),
+        id=pulumi.get(__response__, 'id'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        plaintext=pulumi.get(__response__, 'plaintext')))

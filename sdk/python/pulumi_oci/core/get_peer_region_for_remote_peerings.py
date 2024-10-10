@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -93,9 +98,6 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[Union['GetPee
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         peer_region_for_remote_peerings=pulumi.get(__ret__, 'peer_region_for_remote_peerings'))
-
-
-@_utilities.lift_output_func(get_peer_region_for_remote_peerings)
 def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPeerRegionForRemotePeeringsFilterArgs', 'GetPeerRegionForRemotePeeringsFilterArgsDict']]]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerRegionForRemotePeeringsResult]:
     """
@@ -113,4 +115,11 @@ def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Op
     test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
     ```
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings', __args__, opts=opts, typ=GetPeerRegionForRemotePeeringsResult)
+    return __ret__.apply(lambda __response__: GetPeerRegionForRemotePeeringsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        peer_region_for_remote_peerings=pulumi.get(__response__, 'peer_region_for_remote_peerings')))

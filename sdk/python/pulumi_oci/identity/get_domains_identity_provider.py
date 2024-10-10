@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -905,9 +910,6 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[str]] = None
         urnietfparamsscimschemasoracleidcsextensionx509identity_providers=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionx509identity_providers'),
         user_mapping_method=pulumi.get(__ret__, 'user_mapping_method'),
         user_mapping_store_attribute=pulumi.get(__ret__, 'user_mapping_store_attribute'))
-
-
-@_utilities.lift_output_func(get_domains_identity_provider)
 def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                          attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                          authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -942,4 +944,78 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
     :param str identity_provider_id: ID of the resource
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['identityProviderId'] = identity_provider_id
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsIdentityProvider:getDomainsIdentityProvider', __args__, opts=opts, typ=GetDomainsIdentityProviderResult)
+    return __ret__.apply(lambda __response__: GetDomainsIdentityProviderResult(
+        assertion_attribute=pulumi.get(__response__, 'assertion_attribute'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authn_request_binding=pulumi.get(__response__, 'authn_request_binding'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        correlation_policies=pulumi.get(__response__, 'correlation_policies'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        enabled=pulumi.get(__response__, 'enabled'),
+        encryption_certificate=pulumi.get(__response__, 'encryption_certificate'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        icon_url=pulumi.get(__response__, 'icon_url'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        identity_provider_id=pulumi.get(__response__, 'identity_provider_id'),
+        idp_sso_url=pulumi.get(__response__, 'idp_sso_url'),
+        include_signing_cert_in_signature=pulumi.get(__response__, 'include_signing_cert_in_signature'),
+        jit_user_prov_assigned_groups=pulumi.get(__response__, 'jit_user_prov_assigned_groups'),
+        jit_user_prov_attribute_update_enabled=pulumi.get(__response__, 'jit_user_prov_attribute_update_enabled'),
+        jit_user_prov_attributes=pulumi.get(__response__, 'jit_user_prov_attributes'),
+        jit_user_prov_create_user_enabled=pulumi.get(__response__, 'jit_user_prov_create_user_enabled'),
+        jit_user_prov_enabled=pulumi.get(__response__, 'jit_user_prov_enabled'),
+        jit_user_prov_group_assertion_attribute_enabled=pulumi.get(__response__, 'jit_user_prov_group_assertion_attribute_enabled'),
+        jit_user_prov_group_assignment_method=pulumi.get(__response__, 'jit_user_prov_group_assignment_method'),
+        jit_user_prov_group_mapping_mode=pulumi.get(__response__, 'jit_user_prov_group_mapping_mode'),
+        jit_user_prov_group_mappings=pulumi.get(__response__, 'jit_user_prov_group_mappings'),
+        jit_user_prov_group_saml_attribute_name=pulumi.get(__response__, 'jit_user_prov_group_saml_attribute_name'),
+        jit_user_prov_group_static_list_enabled=pulumi.get(__response__, 'jit_user_prov_group_static_list_enabled'),
+        jit_user_prov_ignore_error_on_absent_groups=pulumi.get(__response__, 'jit_user_prov_ignore_error_on_absent_groups'),
+        last_notification_sent_time=pulumi.get(__response__, 'last_notification_sent_time'),
+        logout_binding=pulumi.get(__response__, 'logout_binding'),
+        logout_enabled=pulumi.get(__response__, 'logout_enabled'),
+        logout_request_url=pulumi.get(__response__, 'logout_request_url'),
+        logout_response_url=pulumi.get(__response__, 'logout_response_url'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        metas=pulumi.get(__response__, 'metas'),
+        name_id_format=pulumi.get(__response__, 'name_id_format'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        partner_name=pulumi.get(__response__, 'partner_name'),
+        partner_provider_id=pulumi.get(__response__, 'partner_provider_id'),
+        requested_authentication_contexts=pulumi.get(__response__, 'requested_authentication_contexts'),
+        require_force_authn=pulumi.get(__response__, 'require_force_authn'),
+        requires_encrypted_assertion=pulumi.get(__response__, 'requires_encrypted_assertion'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        saml_ho_krequired=pulumi.get(__response__, 'saml_ho_krequired'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        service_instance_identifier=pulumi.get(__response__, 'service_instance_identifier'),
+        shown_on_login_page=pulumi.get(__response__, 'shown_on_login_page'),
+        signature_hash_algorithm=pulumi.get(__response__, 'signature_hash_algorithm'),
+        signing_certificate=pulumi.get(__response__, 'signing_certificate'),
+        succinct_id=pulumi.get(__response__, 'succinct_id'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        tenant_provider_id=pulumi.get(__response__, 'tenant_provider_id'),
+        type=pulumi.get(__response__, 'type'),
+        urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers'),
+        urnietfparamsscimschemasoracleidcsextensionx509identity_providers=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionx509identity_providers'),
+        user_mapping_method=pulumi.get(__response__, 'user_mapping_method'),
+        user_mapping_store_attribute=pulumi.get(__response__, 'user_mapping_store_attribute')))

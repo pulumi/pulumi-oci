@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -208,9 +213,6 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         service_name=pulumi.get(__ret__, 'service_name'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_alarm_statuses)
 def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -260,4 +262,25 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str service_name: A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
     :param str status: The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['entityId'] = entity_id
+    __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
+    __args__['serviceName'] = service_name
+    __args__['status'] = status
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Monitoring/getAlarmStatuses:getAlarmStatuses', __args__, opts=opts, typ=GetAlarmStatusesResult)
+    return __ret__.apply(lambda __response__: GetAlarmStatusesResult(
+        alarm_statuses=pulumi.get(__response__, 'alarm_statuses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        entity_id=pulumi.get(__response__, 'entity_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        service_name=pulumi.get(__response__, 'service_name'),
+        status=pulumi.get(__response__, 'status')))

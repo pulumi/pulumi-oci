@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -213,9 +218,6 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
         profile_name=pulumi.get(__ret__, 'profile_name'),
         profile_status=pulumi.get(__ret__, 'profile_status'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
-
-
-@_utilities.lift_output_func(get_managed_instance_stream_profile)
 def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceStreamProfileFilterArgs', 'GetManagedInstanceStreamProfileFilterArgsDict']]]]] = None,
                                                managed_instance_id: Optional[pulumi.Input[str]] = None,
@@ -278,4 +280,23 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
            A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
     :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['moduleName'] = module_name
+    __args__['profileName'] = profile_name
+    __args__['profileStatus'] = profile_status
+    __args__['streamName'] = stream_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile', __args__, opts=opts, typ=GetManagedInstanceStreamProfileResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceStreamProfileResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        module_name=pulumi.get(__response__, 'module_name'),
+        module_stream_profile_on_managed_instances=pulumi.get(__response__, 'module_stream_profile_on_managed_instances'),
+        profile_name=pulumi.get(__response__, 'profile_name'),
+        profile_status=pulumi.get(__response__, 'profile_status'),
+        stream_name=pulumi.get(__response__, 'stream_name')))

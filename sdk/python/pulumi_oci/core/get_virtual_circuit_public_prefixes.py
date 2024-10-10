@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -127,9 +132,6 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
         verification_state=pulumi.get(__ret__, 'verification_state'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_public_prefixes=pulumi.get(__ret__, 'virtual_circuit_public_prefixes'))
-
-
-@_utilities.lift_output_func(get_virtual_circuit_public_prefixes)
 def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
                                                verification_state: Optional[pulumi.Input[Optional[str]]] = None,
                                                virtual_circuit_id: Optional[pulumi.Input[str]] = None,
@@ -156,4 +158,15 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
            The state value is case-insensitive.
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['verificationState'] = verification_state
+    __args__['virtualCircuitId'] = virtual_circuit_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes', __args__, opts=opts, typ=GetVirtualCircuitPublicPrefixesResult)
+    return __ret__.apply(lambda __response__: GetVirtualCircuitPublicPrefixesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        verification_state=pulumi.get(__response__, 'verification_state'),
+        virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id'),
+        virtual_circuit_public_prefixes=pulumi.get(__response__, 'virtual_circuit_public_prefixes')))

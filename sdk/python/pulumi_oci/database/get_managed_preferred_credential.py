@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -191,9 +196,6 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'),
         user_name=pulumi.get(__ret__, 'user_name'))
-
-
-@_utilities.lift_output_func(get_managed_preferred_credential)
 def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Input[str]] = None,
                                             managed_database_id: Optional[pulumi.Input[str]] = None,
                                             named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -218,4 +220,20 @@ def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Inp
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
     """
-    ...
+    __args__ = dict()
+    __args__['credentialName'] = credential_name
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['namedCredentialId'] = named_credential_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getManagedPreferredCredential:getManagedPreferredCredential', __args__, opts=opts, typ=GetManagedPreferredCredentialResult)
+    return __ret__.apply(lambda __response__: GetManagedPreferredCredentialResult(
+        credential_name=pulumi.get(__response__, 'credential_name'),
+        id=pulumi.get(__response__, 'id'),
+        is_accessible=pulumi.get(__response__, 'is_accessible'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        named_credential_id=pulumi.get(__response__, 'named_credential_id'),
+        password_secret_id=pulumi.get(__response__, 'password_secret_id'),
+        role=pulumi.get(__response__, 'role'),
+        status=pulumi.get(__response__, 'status'),
+        type=pulumi.get(__response__, 'type'),
+        user_name=pulumi.get(__response__, 'user_name')))

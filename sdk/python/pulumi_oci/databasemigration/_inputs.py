@@ -4,45 +4,97 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ConnectionAdditionalAttributeArgs',
+    'ConnectionAdditionalAttributeArgsDict',
     'ConnectionIngressIpArgs',
+    'ConnectionIngressIpArgsDict',
     'JobParameterFileVersionArgs',
+    'JobParameterFileVersionArgsDict',
     'JobProgressArgs',
+    'JobProgressArgsDict',
     'JobProgressPhaseArgs',
+    'JobProgressPhaseArgsDict',
     'JobProgressPhaseExtractArgs',
+    'JobProgressPhaseExtractArgsDict',
     'JobProgressPhaseLogLocationArgs',
+    'JobProgressPhaseLogLocationArgsDict',
     'JobUnsupportedObjectArgs',
+    'JobUnsupportedObjectArgsDict',
     'MigrationAdvancedParameterArgs',
+    'MigrationAdvancedParameterArgsDict',
     'MigrationAdvisorSettingsArgs',
+    'MigrationAdvisorSettingsArgsDict',
     'MigrationDataTransferMediumDetailsArgs',
+    'MigrationDataTransferMediumDetailsArgsDict',
     'MigrationDataTransferMediumDetailsObjectStorageBucketArgs',
+    'MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict',
     'MigrationDataTransferMediumDetailsSourceArgs',
+    'MigrationDataTransferMediumDetailsSourceArgsDict',
     'MigrationDataTransferMediumDetailsTargetArgs',
+    'MigrationDataTransferMediumDetailsTargetArgsDict',
     'MigrationExcludeObjectArgs',
+    'MigrationExcludeObjectArgsDict',
     'MigrationGgsDetailsArgs',
+    'MigrationGgsDetailsArgsDict',
     'MigrationGgsDetailsExtractArgs',
+    'MigrationGgsDetailsExtractArgsDict',
     'MigrationGgsDetailsGgsDeploymentArgs',
+    'MigrationGgsDetailsGgsDeploymentArgsDict',
     'MigrationGgsDetailsReplicatArgs',
+    'MigrationGgsDetailsReplicatArgsDict',
     'MigrationHubDetailsArgs',
+    'MigrationHubDetailsArgsDict',
     'MigrationHubDetailsExtractArgs',
+    'MigrationHubDetailsExtractArgsDict',
     'MigrationHubDetailsReplicatArgs',
+    'MigrationHubDetailsReplicatArgsDict',
     'MigrationHubDetailsRestAdminCredentialsArgs',
+    'MigrationHubDetailsRestAdminCredentialsArgsDict',
     'MigrationIncludeObjectArgs',
+    'MigrationIncludeObjectArgsDict',
     'MigrationInitialLoadSettingsArgs',
+    'MigrationInitialLoadSettingsArgsDict',
     'MigrationInitialLoadSettingsDataPumpParametersArgs',
+    'MigrationInitialLoadSettingsDataPumpParametersArgsDict',
     'MigrationInitialLoadSettingsExportDirectoryObjectArgs',
+    'MigrationInitialLoadSettingsExportDirectoryObjectArgsDict',
     'MigrationInitialLoadSettingsImportDirectoryObjectArgs',
+    'MigrationInitialLoadSettingsImportDirectoryObjectArgsDict',
     'MigrationInitialLoadSettingsMetadataRemapArgs',
+    'MigrationInitialLoadSettingsMetadataRemapArgsDict',
     'MigrationInitialLoadSettingsTablespaceDetailsArgs',
+    'MigrationInitialLoadSettingsTablespaceDetailsArgsDict',
     'GetConnectionsFilterArgs',
+    'GetConnectionsFilterArgsDict',
     'GetMigrationObjectTypesFilterArgs',
+    'GetMigrationObjectTypesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ConnectionAdditionalAttributeArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the property entry.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the property entry.
+        """
+elif False:
+    ConnectionAdditionalAttributeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectionAdditionalAttributeArgs:
@@ -83,6 +135,15 @@ class ConnectionAdditionalAttributeArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ConnectionIngressIpArgsDict(TypedDict):
+        ingress_ip: NotRequired[pulumi.Input[str]]
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+elif False:
+    ConnectionIngressIpArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectionIngressIpArgs:
     def __init__(__self__, *,
@@ -105,6 +166,47 @@ class ConnectionIngressIpArgs:
     def ingress_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ingress_ip", value)
 
+
+if not MYPY:
+    class JobParameterFileVersionArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        A description to discribe the current parameter file version
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        """
+        is_current: NotRequired[pulumi.Input[bool]]
+        """
+        Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
+        """
+        is_factory: NotRequired[pulumi.Input[bool]]
+        """
+        Return true/false for whether the parameter file is oracle provided (Factory)
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Phase name
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the Migration Job was created. An RFC3339 formatted datetime string
+        """
+elif False:
+    JobParameterFileVersionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JobParameterFileVersionArgs:
@@ -257,6 +359,23 @@ class JobParameterFileVersionArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class JobProgressArgsDict(TypedDict):
+        current_phase: NotRequired[pulumi.Input[str]]
+        """
+        Current phase of the job.
+        """
+        current_status: NotRequired[pulumi.Input[str]]
+        """
+        Current status of the job.
+        """
+        phases: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgsDict']]]]
+        """
+        List of phase status for the job.
+        """
+elif False:
+    JobProgressArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class JobProgressArgs:
     def __init__(__self__, *,
@@ -311,6 +430,55 @@ class JobProgressArgs:
     def phases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]):
         pulumi.set(self, "phases", value)
 
+
+if not MYPY:
+    class JobProgressPhaseArgsDict(TypedDict):
+        action: NotRequired[pulumi.Input[str]]
+        """
+        The text describing the action required to fix the issue
+        """
+        duration_in_ms: NotRequired[pulumi.Input[int]]
+        """
+        Duration of the phase in milliseconds
+        """
+        editable_parameter_files: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+        """
+        extracts: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgsDict']]]]
+        """
+        Summary of phase status results.
+        """
+        is_advisor_report_available: NotRequired[pulumi.Input[bool]]
+        """
+        True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+        """
+        is_suspend_available: NotRequired[pulumi.Input[bool]]
+        """
+        This is returned as true if the current phase can be suspended.
+        """
+        issue: NotRequired[pulumi.Input[str]]
+        """
+        The text describing the root cause of the reported issue
+        """
+        log_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgsDict']]]]
+        """
+        Details to access log file in the specified Object Storage bucket, if any.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Phase name
+        """
+        progress: NotRequired[pulumi.Input[int]]
+        """
+        Percent progress of job phase.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Phase status
+        """
+elif False:
+    JobProgressPhaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JobProgressPhaseArgs:
@@ -495,6 +663,19 @@ class JobProgressPhaseArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class JobProgressPhaseExtractArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        Message in entry.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of unsupported object
+        """
+elif False:
+    JobProgressPhaseExtractArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class JobProgressPhaseExtractArgs:
     def __init__(__self__, *,
@@ -533,6 +714,23 @@ class JobProgressPhaseExtractArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class JobProgressPhaseLogLocationArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        Name of the bucket containing the log file.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        Object Storage namespace.
+        """
+        object: NotRequired[pulumi.Input[str]]
+        """
+        Name of the object (regular expression is allowed)
+        """
+elif False:
+    JobProgressPhaseLogLocationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class JobProgressPhaseLogLocationArgs:
@@ -589,6 +787,23 @@ class JobProgressPhaseLogLocationArgs:
         pulumi.set(self, "object", value)
 
 
+if not MYPY:
+    class JobUnsupportedObjectArgsDict(TypedDict):
+        object: NotRequired[pulumi.Input[str]]
+        """
+        Name of the object (regular expression is allowed)
+        """
+        owner: NotRequired[pulumi.Input[str]]
+        """
+        Owner of the object (regular expression is allowed)
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of unsupported object
+        """
+elif False:
+    JobUnsupportedObjectArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class JobUnsupportedObjectArgs:
     def __init__(__self__, *,
@@ -643,6 +858,23 @@ class JobUnsupportedObjectArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MigrationAdvancedParameterArgsDict(TypedDict):
+        data_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Parameter data type.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Parameter name.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+elif False:
+    MigrationAdvancedParameterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationAdvancedParameterArgs:
@@ -699,6 +931,19 @@ class MigrationAdvancedParameterArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class MigrationAdvisorSettingsArgsDict(TypedDict):
+        is_ignore_errors: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+        """
+        is_skip_advisor: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+        """
+elif False:
+    MigrationAdvisorSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationAdvisorSettingsArgs:
     def __init__(__self__, *,
@@ -737,6 +982,47 @@ class MigrationAdvisorSettingsArgs:
     def is_skip_advisor(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_skip_advisor", value)
 
+
+if not MYPY:
+    class MigrationDataTransferMediumDetailsArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) Type of the data transfer medium to use.
+        """
+        access_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+        """
+        object_storage_bucket: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict']]
+        """
+        (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        """
+        secret_access_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
+        shared_storage_mount_target_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OCID of the shared storage mount target
+        """
+        source: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsSourceArgsDict']]
+        """
+        (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+        """
+        target: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgsDict']]
+        """
+        (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+        """
+elif False:
+    MigrationDataTransferMediumDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationDataTransferMediumDetailsArgs:
@@ -888,6 +1174,19 @@ class MigrationDataTransferMediumDetailsArgs:
         pulumi.set(self, "target", value)
 
 
+if not MYPY:
+    class MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Bucket name.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Namespace name of the object store bucket.
+        """
+elif False:
+    MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationDataTransferMediumDetailsObjectStorageBucketArgs:
     def __init__(__self__, *,
@@ -926,6 +1225,23 @@ class MigrationDataTransferMediumDetailsObjectStorageBucketArgs:
     def namespace(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "namespace", value)
 
+
+if not MYPY:
+    class MigrationDataTransferMediumDetailsSourceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+        """
+        oci_home: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        """
+        wallet_location: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+elif False:
+    MigrationDataTransferMediumDetailsSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationDataTransferMediumDetailsSourceArgs:
@@ -981,6 +1297,23 @@ class MigrationDataTransferMediumDetailsSourceArgs:
         pulumi.set(self, "wallet_location", value)
 
 
+if not MYPY:
+    class MigrationDataTransferMediumDetailsTargetArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+        """
+        oci_home: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+        """
+        wallet_location: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+        """
+elif False:
+    MigrationDataTransferMediumDetailsTargetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationDataTransferMediumDetailsTargetArgs:
     def __init__(__self__, *,
@@ -1034,6 +1367,31 @@ class MigrationDataTransferMediumDetailsTargetArgs:
     def wallet_location(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "wallet_location", value)
 
+
+if not MYPY:
+    class MigrationExcludeObjectArgsDict(TypedDict):
+        object: pulumi.Input[str]
+        """
+        Name of the object (regular expression is allowed)
+        """
+        is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[bool]]
+        """
+        Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        """
+        owner: NotRequired[pulumi.Input[str]]
+        """
+        Owner of the object (regular expression is allowed)
+        """
+        schema: NotRequired[pulumi.Input[str]]
+        """
+        Schema of the object (regular expression is allowed)
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+elif False:
+    MigrationExcludeObjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationExcludeObjectArgs:
@@ -1121,6 +1479,27 @@ class MigrationExcludeObjectArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MigrationGgsDetailsArgsDict(TypedDict):
+        acceptable_lag: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+        """
+        extract: NotRequired[pulumi.Input['MigrationGgsDetailsExtractArgsDict']]
+        """
+        (Updatable) Parameters for GoldenGate Extract processes.
+        """
+        ggs_deployments: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgsDict']]]]
+        """
+        Details about Oracle GoldenGate GGS Deployment.
+        """
+        replicat: NotRequired[pulumi.Input['MigrationGgsDetailsReplicatArgsDict']]
+        """
+        (Updatable) Parameters for GoldenGate Replicat processes.
+        """
+elif False:
+    MigrationGgsDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationGgsDetailsArgs:
     def __init__(__self__, *,
@@ -1192,6 +1571,19 @@ class MigrationGgsDetailsArgs:
         pulumi.set(self, "replicat", value)
 
 
+if not MYPY:
+    class MigrationGgsDetailsExtractArgsDict(TypedDict):
+        long_trans_duration: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+        """
+        performance_profile: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Extract performance.
+        """
+elif False:
+    MigrationGgsDetailsExtractArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationGgsDetailsExtractArgs:
     def __init__(__self__, *,
@@ -1230,6 +1622,19 @@ class MigrationGgsDetailsExtractArgs:
     def performance_profile(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "performance_profile", value)
 
+
+if not MYPY:
+    class MigrationGgsDetailsGgsDeploymentArgsDict(TypedDict):
+        deployment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the resource being referenced.
+        """
+        ggs_admin_credentials_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the resource being referenced.
+        """
+elif False:
+    MigrationGgsDetailsGgsDeploymentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationGgsDetailsGgsDeploymentArgs:
@@ -1270,6 +1675,15 @@ class MigrationGgsDetailsGgsDeploymentArgs:
         pulumi.set(self, "ggs_admin_credentials_secret_id", value)
 
 
+if not MYPY:
+    class MigrationGgsDetailsReplicatArgsDict(TypedDict):
+        performance_profile: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Replicat performance.
+        """
+elif False:
+    MigrationGgsDetailsReplicatArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationGgsDetailsReplicatArgs:
     def __init__(__self__, *,
@@ -1292,6 +1706,43 @@ class MigrationGgsDetailsReplicatArgs:
     def performance_profile(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "performance_profile", value)
 
+
+if not MYPY:
+    class MigrationHubDetailsArgsDict(TypedDict):
+        key_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        rest_admin_credentials: pulumi.Input['MigrationHubDetailsRestAdminCredentialsArgsDict']
+        """
+        (Updatable) Database Administrator Credentials details.
+        """
+        url: pulumi.Input[str]
+        """
+        (Updatable) Endpoint URL.
+        """
+        vault_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        acceptable_lag: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+        """
+        compute_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        extract: NotRequired[pulumi.Input['MigrationHubDetailsExtractArgsDict']]
+        """
+        (Updatable) Parameters for GoldenGate Extract processes.
+        """
+        replicat: NotRequired[pulumi.Input['MigrationHubDetailsReplicatArgsDict']]
+        """
+        (Updatable) Parameters for GoldenGate Replicat processes.
+        """
+elif False:
+    MigrationHubDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationHubDetailsArgs:
@@ -1424,6 +1875,19 @@ class MigrationHubDetailsArgs:
         pulumi.set(self, "replicat", value)
 
 
+if not MYPY:
+    class MigrationHubDetailsExtractArgsDict(TypedDict):
+        long_trans_duration: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+        """
+        performance_profile: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Extract performance.
+        """
+elif False:
+    MigrationHubDetailsExtractArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationHubDetailsExtractArgs:
     def __init__(__self__, *,
@@ -1463,6 +1927,15 @@ class MigrationHubDetailsExtractArgs:
         pulumi.set(self, "performance_profile", value)
 
 
+if not MYPY:
+    class MigrationHubDetailsReplicatArgsDict(TypedDict):
+        performance_profile: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Replicat performance.
+        """
+elif False:
+    MigrationHubDetailsReplicatArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationHubDetailsReplicatArgs:
     def __init__(__self__, *,
@@ -1485,6 +1958,19 @@ class MigrationHubDetailsReplicatArgs:
     def performance_profile(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "performance_profile", value)
 
+
+if not MYPY:
+    class MigrationHubDetailsRestAdminCredentialsArgsDict(TypedDict):
+        password: pulumi.Input[str]
+        """
+        (Updatable) Administrator password
+        """
+        username: pulumi.Input[str]
+        """
+        (Updatable) Administrator username
+        """
+elif False:
+    MigrationHubDetailsRestAdminCredentialsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationHubDetailsRestAdminCredentialsArgs:
@@ -1522,6 +2008,31 @@ class MigrationHubDetailsRestAdminCredentialsArgs:
     def username(self, value: pulumi.Input[str]):
         pulumi.set(self, "username", value)
 
+
+if not MYPY:
+    class MigrationIncludeObjectArgsDict(TypedDict):
+        object: pulumi.Input[str]
+        """
+        Name of the object (regular expression is allowed)
+        """
+        is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[bool]]
+        """
+        Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+        """
+        owner: NotRequired[pulumi.Input[str]]
+        """
+        Owner of the object (regular expression is allowed)
+        """
+        schema: NotRequired[pulumi.Input[str]]
+        """
+        Schema of the object (regular expression is allowed)
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+        """
+elif False:
+    MigrationIncludeObjectArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationIncludeObjectArgs:
@@ -1608,6 +2119,59 @@ class MigrationIncludeObjectArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MigrationInitialLoadSettingsArgsDict(TypedDict):
+        job_mode: pulumi.Input[str]
+        """
+        (Updatable) Oracle Job Mode
+        """
+        compatibilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+        """
+        data_pump_parameters: NotRequired[pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgsDict']]
+        """
+        (Updatable) Optional parameters for Data Pump Export and Import.
+        """
+        export_directory_object: NotRequired[pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgsDict']]
+        """
+        (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+        """
+        handle_grant_errors: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+        """
+        import_directory_object: NotRequired[pulumi.Input['MigrationInitialLoadSettingsImportDirectoryObjectArgsDict']]
+        """
+        (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+        """
+        is_consistent: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+        """
+        is_ignore_existing_objects: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+        """
+        is_tz_utc: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+        """
+        metadata_remaps: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgsDict']]]]
+        """
+        (Updatable) Defines remapping to be applied to objects as they are processed.
+        """
+        primary_key_compatibility: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Primary key compatibility option
+        """
+        tablespace_details: NotRequired[pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgsDict']]
+        """
+        (Updatable) Migration tablespace settings.
+        """
+elif False:
+    MigrationInitialLoadSettingsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationInitialLoadSettingsArgs:
@@ -1807,6 +2371,35 @@ class MigrationInitialLoadSettingsArgs:
         pulumi.set(self, "tablespace_details", value)
 
 
+if not MYPY:
+    class MigrationInitialLoadSettingsDataPumpParametersArgsDict(TypedDict):
+        estimate: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Estimate size of dumps that will be generated.
+        """
+        exclude_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Exclude paratemers for Export and Import.
+        """
+        export_parallelism_degree: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+        """
+        import_parallelism_degree: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+        """
+        is_cluster: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Set to false to force Data Pump worker process to run on one instance.
+        """
+        table_exists_action: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+        """
+elif False:
+    MigrationInitialLoadSettingsDataPumpParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationInitialLoadSettingsDataPumpParametersArgs:
     def __init__(__self__, *,
@@ -1910,6 +2503,19 @@ class MigrationInitialLoadSettingsDataPumpParametersArgs:
         pulumi.set(self, "table_exists_action", value)
 
 
+if not MYPY:
+    class MigrationInitialLoadSettingsExportDirectoryObjectArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of directory object in database
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Absolute path of directory on database server
+        """
+elif False:
+    MigrationInitialLoadSettingsExportDirectoryObjectArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationInitialLoadSettingsExportDirectoryObjectArgs:
     def __init__(__self__, *,
@@ -1949,6 +2555,19 @@ class MigrationInitialLoadSettingsExportDirectoryObjectArgs:
         pulumi.set(self, "path", value)
 
 
+if not MYPY:
+    class MigrationInitialLoadSettingsImportDirectoryObjectArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of directory object in database
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Absolute path of directory on database server
+        """
+elif False:
+    MigrationInitialLoadSettingsImportDirectoryObjectArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MigrationInitialLoadSettingsImportDirectoryObjectArgs:
     def __init__(__self__, *,
@@ -1987,6 +2606,23 @@ class MigrationInitialLoadSettingsImportDirectoryObjectArgs:
     def path(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "path", value)
 
+
+if not MYPY:
+    class MigrationInitialLoadSettingsMetadataRemapArgsDict(TypedDict):
+        new_value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies the new value that oldValue should be translated into.
+        """
+        old_value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies the value which needs to be reset.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+        """
+elif False:
+    MigrationInitialLoadSettingsMetadataRemapArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationInitialLoadSettingsMetadataRemapArgs:
@@ -2042,6 +2678,35 @@ class MigrationInitialLoadSettingsMetadataRemapArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MigrationInitialLoadSettingsTablespaceDetailsArgsDict(TypedDict):
+        target_type: pulumi.Input[str]
+        """
+        (Updatable) Type of Database Base Migration Target.
+        """
+        block_size_in_kbs: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Size of Oracle database blocks in KB.
+        """
+        extend_size_in_mbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+        """
+        is_auto_create: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+        """
+        is_big_file: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Set this property to true to enable tablespace of the type big file.
+        """
+        remap_target: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+        """
+elif False:
+    MigrationInitialLoadSettingsTablespaceDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MigrationInitialLoadSettingsTablespaceDetailsArgs:
@@ -2145,6 +2810,17 @@ class MigrationInitialLoadSettingsTablespaceDetailsArgs:
         pulumi.set(self, "remap_target", value)
 
 
+if not MYPY:
+    class GetConnectionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the property entry.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetConnectionsFilterArgs:
     def __init__(__self__, *,
@@ -2189,6 +2865,17 @@ class GetConnectionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMigrationObjectTypesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Object type name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMigrationObjectTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMigrationObjectTypesFilterArgs:

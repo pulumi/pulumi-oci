@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -351,9 +356,6 @@ def get_workspace(workspace_id: Optional[str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace)
 def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceResult]:
     """
@@ -373,4 +375,32 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
 
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspace:getWorkspace', __args__, opts=opts, typ=GetWorkspaceResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns_server_ip=pulumi.get(__response__, 'dns_server_ip'),
+        dns_server_zone=pulumi.get(__response__, 'dns_server_zone'),
+        endpoint_compartment_id=pulumi.get(__response__, 'endpoint_compartment_id'),
+        endpoint_id=pulumi.get(__response__, 'endpoint_id'),
+        endpoint_name=pulumi.get(__response__, 'endpoint_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_force_operation=pulumi.get(__response__, 'is_force_operation'),
+        is_private_network_enabled=pulumi.get(__response__, 'is_private_network_enabled'),
+        quiesce_timeout=pulumi.get(__response__, 'quiesce_timeout'),
+        registry_compartment_id=pulumi.get(__response__, 'registry_compartment_id'),
+        registry_id=pulumi.get(__response__, 'registry_id'),
+        registry_name=pulumi.get(__response__, 'registry_name'),
+        state=pulumi.get(__response__, 'state'),
+        state_message=pulumi.get(__response__, 'state_message'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vcn_id=pulumi.get(__response__, 'vcn_id'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

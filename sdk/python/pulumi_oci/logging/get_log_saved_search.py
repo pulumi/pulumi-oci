@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-
-
-@_utilities.lift_output_func(get_log_saved_search)
 def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchResult]:
     """
@@ -219,4 +221,19 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
 
     :param str log_saved_search_id: OCID of the logSavedSearch.
     """
-    ...
+    __args__ = dict()
+    __args__['logSavedSearchId'] = log_saved_search_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogSavedSearch:getLogSavedSearch', __args__, opts=opts, typ=GetLogSavedSearchResult)
+    return __ret__.apply(lambda __response__: GetLogSavedSearchResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        log_saved_search_id=pulumi.get(__response__, 'log_saved_search_id'),
+        name=pulumi.get(__response__, 'name'),
+        query=pulumi.get(__response__, 'query'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_modified=pulumi.get(__response__, 'time_last_modified')))

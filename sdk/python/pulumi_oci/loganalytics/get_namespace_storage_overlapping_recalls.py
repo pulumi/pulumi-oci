@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[Union['
         overlapping_recall_collections=pulumi.get(__ret__, 'overlapping_recall_collections'),
         time_data_ended=pulumi.get(__ret__, 'time_data_ended'),
         time_data_started=pulumi.get(__ret__, 'time_data_started'))
-
-
-@_utilities.lift_output_func(get_namespace_storage_overlapping_recalls)
 def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceStorageOverlappingRecallsFilterArgs', 'GetNamespaceStorageOverlappingRecallsFilterArgsDict']]]]] = None,
                                                      namespace: Optional[pulumi.Input[str]] = None,
                                                      time_data_ended: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,17 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
     :param str time_data_ended: This is the end of the time range for recalled data
     :param str time_data_started: This is the start of the time range for recalled data
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['namespace'] = namespace
+    __args__['timeDataEnded'] = time_data_ended
+    __args__['timeDataStarted'] = time_data_started
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageOverlappingRecalls:getNamespaceStorageOverlappingRecalls', __args__, opts=opts, typ=GetNamespaceStorageOverlappingRecallsResult)
+    return __ret__.apply(lambda __response__: GetNamespaceStorageOverlappingRecallsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        overlapping_recall_collections=pulumi.get(__response__, 'overlapping_recall_collections'),
+        time_data_ended=pulumi.get(__response__, 'time_data_ended'),
+        time_data_started=pulumi.get(__response__, 'time_data_started')))

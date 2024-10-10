@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -275,9 +280,6 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-
-
-@_utilities.lift_output_func(get_private_endpoint)
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
@@ -297,4 +299,25 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]]
 
     :param str private_endpoint_id: Oracle Sharded Database PrivateEndpoint identifier
     """
-    ...
+    __args__ = dict()
+    __args__['privateEndpointId'] = private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GloballyDistributedDatabase/getPrivateEndpoint:getPrivateEndpoint', __args__, opts=opts, typ=GetPrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetPrivateEndpointResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        private_ip=pulumi.get(__response__, 'private_ip'),
+        sharded_databases=pulumi.get(__response__, 'sharded_databases'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vcn_id=pulumi.get(__response__, 'vcn_id')))

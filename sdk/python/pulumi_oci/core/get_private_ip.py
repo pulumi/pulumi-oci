@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -252,9 +257,6 @@ def get_private_ip(private_ip_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_private_ip)
 def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateIpResult]:
     """
@@ -277,4 +279,23 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
 
     :param str private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
     """
-    ...
+    __args__ = dict()
+    __args__['privateIpId'] = private_ip_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPrivateIp:getPrivateIp', __args__, opts=opts, typ=GetPrivateIpResult)
+    return __ret__.apply(lambda __response__: GetPrivateIpResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname_label=pulumi.get(__response__, 'hostname_label'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        is_primary=pulumi.get(__response__, 'is_primary'),
+        is_reserved=pulumi.get(__response__, 'is_reserved'),
+        private_ip_id=pulumi.get(__response__, 'private_ip_id'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vlan_id=pulumi.get(__response__, 'vlan_id'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

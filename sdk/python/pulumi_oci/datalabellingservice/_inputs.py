@@ -4,24 +4,55 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DatasetDatasetFormatDetailsArgs',
+    'DatasetDatasetFormatDetailsArgsDict',
     'DatasetDatasetFormatDetailsTextFileTypeMetadataArgs',
+    'DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict',
     'DatasetDatasetSourceDetailsArgs',
+    'DatasetDatasetSourceDetailsArgsDict',
     'DatasetInitialImportDatasetConfigurationArgs',
+    'DatasetInitialImportDatasetConfigurationArgsDict',
     'DatasetInitialImportDatasetConfigurationImportFormatArgs',
+    'DatasetInitialImportDatasetConfigurationImportFormatArgsDict',
     'DatasetInitialImportDatasetConfigurationImportMetadataPathArgs',
+    'DatasetInitialImportDatasetConfigurationImportMetadataPathArgsDict',
     'DatasetInitialRecordGenerationConfigurationArgs',
+    'DatasetInitialRecordGenerationConfigurationArgsDict',
     'DatasetLabelSetArgs',
+    'DatasetLabelSetArgsDict',
     'DatasetLabelSetItemArgs',
+    'DatasetLabelSetItemArgsDict',
     'GetAnnotationFormatsFilterArgs',
+    'GetAnnotationFormatsFilterArgsDict',
     'GetDatasetsFilterArgs',
+    'GetDatasetsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DatasetDatasetFormatDetailsArgsDict(TypedDict):
+        format_type: pulumi.Input[str]
+        """
+        The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
+        """
+        text_file_type_metadata: NotRequired[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict']]
+        """
+        Metadata for files with text content.
+        """
+elif False:
+    DatasetDatasetFormatDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatasetDatasetFormatDetailsArgs:
@@ -60,6 +91,35 @@ class DatasetDatasetFormatDetailsArgs:
     def text_file_type_metadata(self, value: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]):
         pulumi.set(self, "text_file_type_metadata", value)
 
+
+if not MYPY:
+    class DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict(TypedDict):
+        column_index: pulumi.Input[int]
+        """
+        The index of a selected column. This is a zero-based index.
+        """
+        format_type: pulumi.Input[str]
+        """
+        It defines the format type of text files.
+        """
+        column_delimiter: NotRequired[pulumi.Input[str]]
+        """
+        A column delimiter
+        """
+        column_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of a selected column.
+        """
+        escape_character: NotRequired[pulumi.Input[str]]
+        """
+        An escape character.
+        """
+        line_delimiter: NotRequired[pulumi.Input[str]]
+        """
+        A line delimiter.
+        """
+elif False:
+    DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
@@ -162,6 +222,27 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
         pulumi.set(self, "line_delimiter", value)
 
 
+if not MYPY:
+    class DatasetDatasetSourceDetailsArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        The object storage bucket that contains the dataset data source.
+        """
+        namespace: pulumi.Input[str]
+        """
+        The namespace of the bucket that contains the dataset data source.
+        """
+        source_type: pulumi.Input[str]
+        """
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        """
+        prefix: NotRequired[pulumi.Input[str]]
+        """
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
+        """
+elif False:
+    DatasetDatasetSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatasetDatasetSourceDetailsArgs:
     def __init__(__self__, *,
@@ -230,6 +311,19 @@ class DatasetDatasetSourceDetailsArgs:
         pulumi.set(self, "prefix", value)
 
 
+if not MYPY:
+    class DatasetInitialImportDatasetConfigurationArgsDict(TypedDict):
+        import_format: pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgsDict']
+        """
+        File format details used for importing dataset
+        """
+        import_metadata_path: pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgsDict']
+        """
+        Object storage path for the metadata file
+        """
+elif False:
+    DatasetInitialImportDatasetConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatasetInitialImportDatasetConfigurationArgs:
     def __init__(__self__, *,
@@ -266,6 +360,19 @@ class DatasetInitialImportDatasetConfigurationArgs:
     def import_metadata_path(self, value: pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs']):
         pulumi.set(self, "import_metadata_path", value)
 
+
+if not MYPY:
+    class DatasetInitialImportDatasetConfigurationImportFormatArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        Name of import format
+        """
+        version: NotRequired[pulumi.Input[str]]
+        """
+        Version of import format
+        """
+elif False:
+    DatasetInitialImportDatasetConfigurationImportFormatArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatasetInitialImportDatasetConfigurationImportFormatArgs:
@@ -304,6 +411,27 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
     def version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "version", value)
 
+
+if not MYPY:
+    class DatasetInitialImportDatasetConfigurationImportMetadataPathArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        Bucket name
+        """
+        namespace: pulumi.Input[str]
+        """
+        Bucket namespace name
+        """
+        path: pulumi.Input[str]
+        """
+        Path for the metadata file.
+        """
+        source_type: pulumi.Input[str]
+        """
+        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        """
+elif False:
+    DatasetInitialImportDatasetConfigurationImportMetadataPathArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
@@ -372,11 +500,26 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
         pulumi.set(self, "source_type", value)
 
 
+if not MYPY:
+    class DatasetInitialRecordGenerationConfigurationArgsDict(TypedDict):
+        pass
+elif False:
+    DatasetInitialRecordGenerationConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatasetInitialRecordGenerationConfigurationArgs:
     def __init__(__self__):
         pass
 
+
+if not MYPY:
+    class DatasetLabelSetArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['DatasetLabelSetItemArgsDict']]]
+        """
+        An ordered collection of labels that are unique by name.
+        """
+elif False:
+    DatasetLabelSetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatasetLabelSetArgs:
@@ -400,6 +543,15 @@ class DatasetLabelSetArgs:
         pulumi.set(self, "items", value)
 
 
+if not MYPY:
+    class DatasetLabelSetItemArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        An unique name for a label within its dataset.
+        """
+elif False:
+    DatasetLabelSetItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatasetLabelSetItemArgs:
     def __init__(__self__, *,
@@ -421,6 +573,17 @@ class DatasetLabelSetItemArgs:
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class GetAnnotationFormatsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A unique name for the target AnnotationFormat for the Dataset.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAnnotationFormatsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAnnotationFormatsFilterArgs:
@@ -466,6 +629,17 @@ class GetAnnotationFormatsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDatasetsFilterArgsDict(TypedDict):
+        name: str
+        """
+        An unique name for a label within its dataset.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDatasetsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDatasetsFilterArgs:

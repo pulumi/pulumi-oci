@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
         state=pulumi.get(__ret__, 'state'),
         time_expected_finish_less_than_or_equal_to=pulumi.get(__ret__, 'time_expected_finish_less_than_or_equal_to'),
         time_scheduled_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_start_greater_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_refresh_activities)
 def get_fusion_environment_refresh_activities_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentRefreshActivitiesFilterArgs', 'GetFusionEnvironmentRefreshActivitiesFilterArgsDict']]]]] = None,
                                                      fusion_environment_id: Optional[pulumi.Input[str]] = None,
@@ -204,4 +206,21 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
     :param str time_expected_finish_less_than_or_equal_to: A filter that returns all resources that end before this date
     :param str time_scheduled_start_greater_than_or_equal_to: A filter that returns all resources that are scheduled after this date
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['state'] = state
+    __args__['timeExpectedFinishLessThanOrEqualTo'] = time_expected_finish_less_than_or_equal_to
+    __args__['timeScheduledStartGreaterThanOrEqualTo'] = time_scheduled_start_greater_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities', __args__, opts=opts, typ=GetFusionEnvironmentRefreshActivitiesResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentRefreshActivitiesResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        refresh_activity_collections=pulumi.get(__response__, 'refresh_activity_collections'),
+        state=pulumi.get(__response__, 'state'),
+        time_expected_finish_less_than_or_equal_to=pulumi.get(__response__, 'time_expected_finish_less_than_or_equal_to'),
+        time_scheduled_start_greater_than_or_equal_to=pulumi.get(__response__, 'time_scheduled_start_greater_than_or_equal_to')))

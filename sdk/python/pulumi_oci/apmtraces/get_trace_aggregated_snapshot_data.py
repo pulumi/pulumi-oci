@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -164,9 +169,6 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
         span_key=pulumi.get(__ret__, 'span_key'),
         span_name=pulumi.get(__ret__, 'span_name'),
         trace_key=pulumi.get(__ret__, 'trace_key'))
-
-
-@_utilities.lift_output_func(get_trace_aggregated_snapshot_data)
 def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                                               server_name: Optional[pulumi.Input[Optional[str]]] = None,
                                               service_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -201,4 +203,21 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     :param str span_name: Name of the span associated with the trace.
     :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['serverName'] = server_name
+    __args__['serviceName'] = service_name
+    __args__['spanKey'] = span_key
+    __args__['spanName'] = span_name
+    __args__['traceKey'] = trace_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData', __args__, opts=opts, typ=GetTraceAggregatedSnapshotDataResult)
+    return __ret__.apply(lambda __response__: GetTraceAggregatedSnapshotDataResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        details=pulumi.get(__response__, 'details'),
+        id=pulumi.get(__response__, 'id'),
+        server_name=pulumi.get(__response__, 'server_name'),
+        service_name=pulumi.get(__response__, 'service_name'),
+        span_key=pulumi.get(__response__, 'span_key'),
+        span_name=pulumi.get(__response__, 'span_name'),
+        trace_key=pulumi.get(__response__, 'trace_key')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -424,9 +429,6 @@ def get_invoice(compartment_id: Optional[str] = None,
         tax=pulumi.get(__ret__, 'tax'),
         time_invoice=pulumi.get(__ret__, 'time_invoice'),
         time_invoice_due=pulumi.get(__ret__, 'time_invoice_due'))
-
-
-@_utilities.lift_output_func(get_invoice)
 def get_invoice_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        internal_invoice_id: Optional[pulumi.Input[str]] = None,
                        osp_home_region: Optional[pulumi.Input[str]] = None,
@@ -452,4 +454,38 @@ def get_invoice_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str internal_invoice_id: The identifier of the invoice.
     :param str osp_home_region: The home region's public name of the logged in user.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['internalInvoiceId'] = internal_invoice_id
+    __args__['ospHomeRegion'] = osp_home_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getInvoice:getInvoice', __args__, opts=opts, typ=GetInvoiceResult)
+    return __ret__.apply(lambda __response__: GetInvoiceResult(
+        bill_to_addresses=pulumi.get(__response__, 'bill_to_addresses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        currencies=pulumi.get(__response__, 'currencies'),
+        id=pulumi.get(__response__, 'id'),
+        internal_invoice_id=pulumi.get(__response__, 'internal_invoice_id'),
+        invoice_amount=pulumi.get(__response__, 'invoice_amount'),
+        invoice_amount_adjusted=pulumi.get(__response__, 'invoice_amount_adjusted'),
+        invoice_amount_applied=pulumi.get(__response__, 'invoice_amount_applied'),
+        invoice_amount_credited=pulumi.get(__response__, 'invoice_amount_credited'),
+        invoice_amount_due=pulumi.get(__response__, 'invoice_amount_due'),
+        invoice_id=pulumi.get(__response__, 'invoice_id'),
+        invoice_number=pulumi.get(__response__, 'invoice_number'),
+        invoice_po_number=pulumi.get(__response__, 'invoice_po_number'),
+        invoice_ref_number=pulumi.get(__response__, 'invoice_ref_number'),
+        invoice_status=pulumi.get(__response__, 'invoice_status'),
+        invoice_type=pulumi.get(__response__, 'invoice_type'),
+        is_credit_card_payable=pulumi.get(__response__, 'is_credit_card_payable'),
+        is_display_download_pdf=pulumi.get(__response__, 'is_display_download_pdf'),
+        is_payable=pulumi.get(__response__, 'is_payable'),
+        is_pdf_email_available=pulumi.get(__response__, 'is_pdf_email_available'),
+        last_payment_details=pulumi.get(__response__, 'last_payment_details'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region'),
+        payment_terms=pulumi.get(__response__, 'payment_terms'),
+        preferred_email=pulumi.get(__response__, 'preferred_email'),
+        subscription_ids=pulumi.get(__response__, 'subscription_ids'),
+        tax=pulumi.get(__response__, 'tax'),
+        time_invoice=pulumi.get(__response__, 'time_invoice'),
+        time_invoice_due=pulumi.get(__response__, 'time_invoice_due')))

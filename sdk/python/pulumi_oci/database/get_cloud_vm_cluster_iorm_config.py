@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -133,9 +138,6 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         objective=pulumi.get(__ret__, 'objective'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_cloud_vm_cluster_iorm_config)
 def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClusterIormConfigResult]:
     """
@@ -158,4 +160,14 @@ def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi
 
     :param str cloud_vm_cluster_id: The cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['cloudVmClusterId'] = cloud_vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig', __args__, opts=opts, typ=GetCloudVmClusterIormConfigResult)
+    return __ret__.apply(lambda __response__: GetCloudVmClusterIormConfigResult(
+        cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),
+        db_plans=pulumi.get(__response__, 'db_plans'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        objective=pulumi.get(__response__, 'objective'),
+        state=pulumi.get(__response__, 'state')))

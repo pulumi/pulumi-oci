@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_mysql_backups(backup_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_mysql_backups)
 def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              creation_type: Optional[pulumi.Input[Optional[str]]] = None,
@@ -230,4 +232,23 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
     :param str display_name: A filter to return only the resource matching the given display name exactly.
     :param str state: Backup Lifecycle State
     """
-    ...
+    __args__ = dict()
+    __args__['backupId'] = backup_id
+    __args__['compartmentId'] = compartment_id
+    __args__['creationType'] = creation_type
+    __args__['dbSystemId'] = db_system_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlBackups:getMysqlBackups', __args__, opts=opts, typ=GetMysqlBackupsResult)
+    return __ret__.apply(lambda __response__: GetMysqlBackupsResult(
+        backup_id=pulumi.get(__response__, 'backup_id'),
+        backups=pulumi.get(__response__, 'backups'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        creation_type=pulumi.get(__response__, 'creation_type'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -304,9 +309,6 @@ def get_vnic(vnic_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_vnic)
 def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVnicResult]:
     """
@@ -329,4 +331,27 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
 
     :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
     """
-    ...
+    __args__ = dict()
+    __args__['vnicId'] = vnic_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVnic:getVnic', __args__, opts=opts, typ=GetVnicResult)
+    return __ret__.apply(lambda __response__: GetVnicResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname_label=pulumi.get(__response__, 'hostname_label'),
+        id=pulumi.get(__response__, 'id'),
+        ipv6addresses=pulumi.get(__response__, 'ipv6addresses'),
+        is_primary=pulumi.get(__response__, 'is_primary'),
+        mac_address=pulumi.get(__response__, 'mac_address'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_ip_address=pulumi.get(__response__, 'private_ip_address'),
+        public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        skip_source_dest_check=pulumi.get(__response__, 'skip_source_dest_check'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        vlan_id=pulumi.get(__response__, 'vlan_id'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

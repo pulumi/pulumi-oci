@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -156,9 +161,6 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
         is_latest=pulumi.get(__ret__, 'is_latest'),
         software_package_collections=pulumi.get(__ret__, 'software_package_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-
-
-@_utilities.lift_output_func(get_software_source_software_packages)
 def get_software_source_software_packages_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                  display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceSoftwarePackagesFilterArgs', 'GetSoftwareSourceSoftwarePackagesFilterArgsDict']]]]] = None,
@@ -189,4 +191,19 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
     :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['isLatest'] = is_latest
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceSoftwarePackages:getSoftwareSourceSoftwarePackages', __args__, opts=opts, typ=GetSoftwareSourceSoftwarePackagesResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceSoftwarePackagesResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        software_package_collections=pulumi.get(__response__, 'software_package_collections'),
+        software_source_id=pulumi.get(__response__, 'software_source_id')))

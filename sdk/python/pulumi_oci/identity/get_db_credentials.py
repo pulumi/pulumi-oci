@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_db_credentials(filters: Optional[Sequence[Union['GetDbCredentialsFilterA
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_db_credentials)
 def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbCredentialsFilterArgs', 'GetDbCredentialsFilterArgsDict']]]]] = None,
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -170,4 +172,17 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[U
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
     :param str user_id: The OCID of the user.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDbCredentials:getDbCredentials', __args__, opts=opts, typ=GetDbCredentialsResult)
+    return __ret__.apply(lambda __response__: GetDbCredentialsResult(
+        db_credentials=pulumi.get(__response__, 'db_credentials'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        user_id=pulumi.get(__response__, 'user_id')))

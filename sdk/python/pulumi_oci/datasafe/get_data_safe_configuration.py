@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -185,9 +190,6 @@ def get_data_safe_configuration(compartment_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_enabled=pulumi.get(__ret__, 'time_enabled'),
         url=pulumi.get(__ret__, 'url'))
-
-
-@_utilities.lift_output_func(get_data_safe_configuration)
 def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafeConfigurationResult]:
     """
@@ -207,4 +209,18 @@ def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[str
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDataSafeConfiguration:getDataSafeConfiguration', __args__, opts=opts, typ=GetDataSafeConfigurationResult)
+    return __ret__.apply(lambda __response__: GetDataSafeConfigurationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_safe_nat_gateway_ip_address=pulumi.get(__response__, 'data_safe_nat_gateway_ip_address'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        global_settings=pulumi.get(__response__, 'global_settings'),
+        id=pulumi.get(__response__, 'id'),
+        is_enabled=pulumi.get(__response__, 'is_enabled'),
+        state=pulumi.get(__response__, 'state'),
+        time_enabled=pulumi.get(__response__, 'time_enabled'),
+        url=pulumi.get(__response__, 'url')))

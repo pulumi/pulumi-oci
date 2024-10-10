@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -151,9 +156,6 @@ def get_network_firewall_policy_mapped_secret(name: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         vault_secret_id=pulumi.get(__ret__, 'vault_secret_id'),
         version_number=pulumi.get(__ret__, 'version_number'))
-
-
-@_utilities.lift_output_func(get_network_firewall_policy_mapped_secret)
 def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input[str]] = None,
                                                      network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretResult]:
@@ -166,4 +168,17 @@ def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input
     :param str name: Name of the secret.
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['networkFirewallPolicyId'] = network_firewall_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret', __args__, opts=opts, typ=GetNetworkFirewallPolicyMappedSecretResult)
+    return __ret__.apply(lambda __response__: GetNetworkFirewallPolicyMappedSecretResult(
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        source=pulumi.get(__response__, 'source'),
+        type=pulumi.get(__response__, 'type'),
+        vault_secret_id=pulumi.get(__response__, 'vault_secret_id'),
+        version_number=pulumi.get(__response__, 'version_number')))

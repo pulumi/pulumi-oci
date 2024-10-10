@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggers=pulumi.get(__ret__, 'triggers'))
-
-
-@_utilities.lift_output_func(get_pbf_listing_version)
 def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingVersionResult]:
     """
@@ -259,4 +261,22 @@ def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input
 
     :param str pbf_listing_version_id: unique PbfListingVersion identifier
     """
-    ...
+    __args__ = dict()
+    __args__['pbfListingVersionId'] = pbf_listing_version_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListingVersion:getPbfListingVersion', __args__, opts=opts, typ=GetPbfListingVersionResult)
+    return __ret__.apply(lambda __response__: GetPbfListingVersionResult(
+        change_summary=pulumi.get(__response__, 'change_summary'),
+        configs=pulumi.get(__response__, 'configs'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        pbf_listing_id=pulumi.get(__response__, 'pbf_listing_id'),
+        pbf_listing_version_id=pulumi.get(__response__, 'pbf_listing_version_id'),
+        requirements=pulumi.get(__response__, 'requirements'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        triggers=pulumi.get(__response__, 'triggers')))

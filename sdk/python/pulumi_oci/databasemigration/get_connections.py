@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -188,9 +193,6 @@ def get_connections(compartment_id: Optional[str] = None,
         source_connection_id=pulumi.get(__ret__, 'source_connection_id'),
         state=pulumi.get(__ret__, 'state'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
-
-
-@_utilities.lift_output_func(get_connections)
 def get_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            connection_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -222,4 +224,23 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str state: The current state of the Database Migration Deployment.
     :param Sequence[str] technology_types: The array of technology types.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['connectionTypes'] = connection_types
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['sourceConnectionId'] = source_connection_id
+    __args__['state'] = state
+    __args__['technologyTypes'] = technology_types
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getConnections:getConnections', __args__, opts=opts, typ=GetConnectionsResult)
+    return __ret__.apply(lambda __response__: GetConnectionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_collections=pulumi.get(__response__, 'connection_collections'),
+        connection_types=pulumi.get(__response__, 'connection_types'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        source_connection_id=pulumi.get(__response__, 'source_connection_id'),
+        state=pulumi.get(__response__, 'state'),
+        technology_types=pulumi.get(__response__, 'technology_types')))

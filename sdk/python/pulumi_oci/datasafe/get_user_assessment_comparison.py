@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -134,9 +139,6 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
         summaries=pulumi.get(__ret__, 'summaries'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
-
-
-@_utilities.lift_output_func(get_user_assessment_comparison)
 def get_user_assessment_comparison_output(comparison_user_assessment_id: Optional[pulumi.Input[str]] = None,
                                           user_assessment_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentComparisonResult]:
@@ -159,4 +161,15 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
     :param str comparison_user_assessment_id: The OCID of the baseline user assessment.
     :param str user_assessment_id: The OCID of the user assessment.
     """
-    ...
+    __args__ = dict()
+    __args__['comparisonUserAssessmentId'] = comparison_user_assessment_id
+    __args__['userAssessmentId'] = user_assessment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getUserAssessmentComparison:getUserAssessmentComparison', __args__, opts=opts, typ=GetUserAssessmentComparisonResult)
+    return __ret__.apply(lambda __response__: GetUserAssessmentComparisonResult(
+        comparison_user_assessment_id=pulumi.get(__response__, 'comparison_user_assessment_id'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        summaries=pulumi.get(__response__, 'summaries'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        user_assessment_id=pulumi.get(__response__, 'user_assessment_id')))

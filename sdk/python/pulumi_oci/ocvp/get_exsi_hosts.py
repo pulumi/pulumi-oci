@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -231,9 +236,6 @@ def get_exsi_hosts(cluster_id: Optional[str] = None,
         is_swap_billing_only=pulumi.get(__ret__, 'is_swap_billing_only'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_exsi_hosts)
 def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compute_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -283,4 +285,27 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
     :param str state: The lifecycle state of the resource.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['compartmentId'] = compartment_id
+    __args__['computeInstanceId'] = compute_instance_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isBillingDonorsOnly'] = is_billing_donors_only
+    __args__['isSwapBillingOnly'] = is_swap_billing_only
+    __args__['sddcId'] = sddc_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getExsiHosts:getExsiHosts', __args__, opts=opts, typ=GetExsiHostsResult)
+    return __ret__.apply(lambda __response__: GetExsiHostsResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_instance_id=pulumi.get(__response__, 'compute_instance_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        esxi_host_collections=pulumi.get(__response__, 'esxi_host_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_billing_donors_only=pulumi.get(__response__, 'is_billing_donors_only'),
+        is_swap_billing_only=pulumi.get(__response__, 'is_swap_billing_only'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
+        state=pulumi.get(__response__, 'state')))

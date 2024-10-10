@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -152,9 +157,6 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[str] =
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'))
-
-
-@_utilities.lift_output_func(get_managed_instance_group_available_modules)
 def get_managed_instance_group_available_modules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupAvailableModulesFilterArgs', 'GetManagedInstanceGroupAvailableModulesFilterArgsDict']]]]] = None,
                                                         managed_instance_group_id: Optional[pulumi.Input[str]] = None,
@@ -184,4 +186,19 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     :param str name: The resource name.
     :param str name_contains: A filter to return resources that may partially match the name given.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroupAvailableModules:getManagedInstanceGroupAvailableModules', __args__, opts=opts, typ=GetManagedInstanceGroupAvailableModulesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupAvailableModulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_group_available_module_collections=pulumi.get(__response__, 'managed_instance_group_available_module_collections'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains')))

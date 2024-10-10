@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -502,9 +507,6 @@ def get_software_source(software_source_id: Optional[str] = None,
         url=pulumi.get(__ret__, 'url'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'),
         vendor_software_sources=pulumi.get(__ret__, 'vendor_software_sources'))
-
-
-@_utilities.lift_output_func(get_software_source)
 def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
@@ -524,4 +526,42 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
 
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSource:getSoftwareSource', __args__, opts=opts, typ=GetSoftwareSourceResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        availability=pulumi.get(__response__, 'availability'),
+        availability_at_oci=pulumi.get(__response__, 'availability_at_oci'),
+        checksum_type=pulumi.get(__response__, 'checksum_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_software_source_filters=pulumi.get(__response__, 'custom_software_source_filters'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gpg_key_fingerprint=pulumi.get(__response__, 'gpg_key_fingerprint'),
+        gpg_key_id=pulumi.get(__response__, 'gpg_key_id'),
+        gpg_key_url=pulumi.get(__response__, 'gpg_key_url'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_resolve_dependencies=pulumi.get(__response__, 'is_auto_resolve_dependencies'),
+        is_automatically_updated=pulumi.get(__response__, 'is_automatically_updated'),
+        is_created_from_package_list=pulumi.get(__response__, 'is_created_from_package_list'),
+        is_latest_content_only=pulumi.get(__response__, 'is_latest_content_only'),
+        is_mandatory_for_autonomous_linux=pulumi.get(__response__, 'is_mandatory_for_autonomous_linux'),
+        origin_software_source_id=pulumi.get(__response__, 'origin_software_source_id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        package_count=pulumi.get(__response__, 'package_count'),
+        packages=pulumi.get(__response__, 'packages'),
+        repo_id=pulumi.get(__response__, 'repo_id'),
+        size=pulumi.get(__response__, 'size'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        software_source_type=pulumi.get(__response__, 'software_source_type'),
+        software_source_version=pulumi.get(__response__, 'software_source_version'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        url=pulumi.get(__response__, 'url'),
+        vendor_name=pulumi.get(__response__, 'vendor_name'),
+        vendor_software_sources=pulumi.get(__response__, 'vendor_software_sources')))

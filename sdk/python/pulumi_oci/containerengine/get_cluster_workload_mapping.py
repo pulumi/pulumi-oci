@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -188,9 +193,6 @@ def get_cluster_workload_mapping(cluster_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         workload_mapping_id=pulumi.get(__ret__, 'workload_mapping_id'))
-
-
-@_utilities.lift_output_func(get_cluster_workload_mapping)
 def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[str]] = None,
                                         workload_mapping_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterWorkloadMappingResult]:
@@ -213,4 +215,19 @@ def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[str]] 
     :param str cluster_id: The OCID of the cluster.
     :param str workload_mapping_id: The OCID of the workloadMapping.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['workloadMappingId'] = workload_mapping_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getClusterWorkloadMapping:getClusterWorkloadMapping', __args__, opts=opts, typ=GetClusterWorkloadMappingResult)
+    return __ret__.apply(lambda __response__: GetClusterWorkloadMappingResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        mapped_compartment_id=pulumi.get(__response__, 'mapped_compartment_id'),
+        mapped_tenancy_id=pulumi.get(__response__, 'mapped_tenancy_id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        workload_mapping_id=pulumi.get(__response__, 'workload_mapping_id')))

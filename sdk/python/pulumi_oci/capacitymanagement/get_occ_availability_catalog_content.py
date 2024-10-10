@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -80,9 +85,6 @@ def get_occ_availability_catalog_content(occ_availability_catalog_id: Optional[s
     return AwaitableGetOccAvailabilityCatalogContentResult(
         id=pulumi.get(__ret__, 'id'),
         occ_availability_catalog_id=pulumi.get(__ret__, 'occ_availability_catalog_id'))
-
-
-@_utilities.lift_output_func(get_occ_availability_catalog_content)
 def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccAvailabilityCatalogContentResult]:
     """
@@ -102,4 +104,10 @@ def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Opt
 
     :param str occ_availability_catalog_id: The OCID of the availability catalog.
     """
-    ...
+    __args__ = dict()
+    __args__['occAvailabilityCatalogId'] = occ_availability_catalog_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent', __args__, opts=opts, typ=GetOccAvailabilityCatalogContentResult)
+    return __ret__.apply(lambda __response__: GetOccAvailabilityCatalogContentResult(
+        id=pulumi.get(__response__, 'id'),
+        occ_availability_catalog_id=pulumi.get(__response__, 'occ_availability_catalog_id')))

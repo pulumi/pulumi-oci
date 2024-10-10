@@ -4,22 +4,111 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ShardedDatabaseCatalogDetailArgs',
+    'ShardedDatabaseCatalogDetailArgsDict',
     'ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs',
+    'ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgsDict',
     'ShardedDatabaseConnectionStringArgs',
+    'ShardedDatabaseConnectionStringArgsDict',
     'ShardedDatabaseGsmArgs',
+    'ShardedDatabaseGsmArgsDict',
     'ShardedDatabasePatchOperationArgs',
+    'ShardedDatabasePatchOperationArgsDict',
     'ShardedDatabaseShardDetailArgs',
+    'ShardedDatabaseShardDetailArgsDict',
     'ShardedDatabaseShardDetailEncryptionKeyDetailsArgs',
+    'ShardedDatabaseShardDetailEncryptionKeyDetailsArgsDict',
     'GetPrivateEndpointsFilterArgs',
+    'GetPrivateEndpointsFilterArgsDict',
     'GetShardedDatabasesFilterArgs',
+    'GetShardedDatabasesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ShardedDatabaseCatalogDetailArgsDict(TypedDict):
+        admin_password: pulumi.Input[str]
+        """
+        Admin password for the catalog database.
+        """
+        cloud_autonomous_vm_cluster_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+        """
+        compute_count: pulumi.Input[float]
+        """
+        The compute count for the catalog database. It has to be in multiple of 2.
+        """
+        data_storage_size_in_gbs: pulumi.Input[float]
+        """
+        The data disk group size to be allocated in GBs for the catalog database.
+        """
+        is_auto_scaling_enabled: pulumi.Input[bool]
+        """
+        Determines the auto-scaling mode for the catalog database.
+        """
+        container_database_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying container database.
+        """
+        container_database_parent_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying container database parent.
+        """
+        encryption_key_details: NotRequired[pulumi.Input['ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgsDict']]
+        """
+        Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+        """
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Additional metadata related to shard's underlying supporting resource.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the shard.
+        """
+        peer_cloud_autonomous_vm_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        """
+        shard_group: NotRequired[pulumi.Input[str]]
+        """
+        Name of the shard-group to which the shard belongs.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Status of shard or catalog or gsm for the sharded database.
+        """
+        supporting_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying supporting resource.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the the Sharded Database was created. An RFC3339 formatted datetime string
+        """
+        time_ssl_certificate_expires: NotRequired[pulumi.Input[str]]
+        """
+        The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+        """
+elif False:
+    ShardedDatabaseCatalogDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ShardedDatabaseCatalogDetailArgs:
@@ -295,6 +384,23 @@ class ShardedDatabaseCatalogDetailArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgsDict(TypedDict):
+        kms_key_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+        """
+        vault_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+        """
+        kms_key_version_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+        """
+elif False:
+    ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs:
     def __init__(__self__, *,
@@ -348,6 +454,15 @@ class ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs:
         pulumi.set(self, "kms_key_version_id", value)
 
 
+if not MYPY:
+    class ShardedDatabaseConnectionStringArgsDict(TypedDict):
+        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Collection of connection strings.
+        """
+elif False:
+    ShardedDatabaseConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ShardedDatabaseConnectionStringArgs:
     def __init__(__self__, *,
@@ -370,6 +485,47 @@ class ShardedDatabaseConnectionStringArgs:
     def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
+
+if not MYPY:
+    class ShardedDatabaseGsmArgsDict(TypedDict):
+        compute_count: NotRequired[pulumi.Input[float]]
+        """
+        The compute amount available to the underlying autonomous database associated with shard.
+        """
+        data_storage_size_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        The data disk group size to be allocated in GBs.
+        """
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Additional metadata related to shard's underlying supporting resource.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the shard.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Status of shard or catalog or gsm for the sharded database.
+        """
+        supporting_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying supporting resource.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the the Sharded Database was created. An RFC3339 formatted datetime string
+        """
+        time_ssl_certificate_expires: NotRequired[pulumi.Input[str]]
+        """
+        The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+        """
+elif False:
+    ShardedDatabaseGsmArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ShardedDatabaseGsmArgs:
@@ -522,6 +678,23 @@ class ShardedDatabaseGsmArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class ShardedDatabasePatchOperationArgsDict(TypedDict):
+        operation: pulumi.Input[str]
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        selection: pulumi.Input[str]
+        """
+        (Updatable)
+        """
+        value: pulumi.Input[str]
+        """
+        (Updatable)
+        """
+elif False:
+    ShardedDatabasePatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ShardedDatabasePatchOperationArgs:
     def __init__(__self__, *,
@@ -573,6 +746,83 @@ class ShardedDatabasePatchOperationArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ShardedDatabaseShardDetailArgsDict(TypedDict):
+        admin_password: pulumi.Input[str]
+        """
+        Admin password for shard database.
+        """
+        cloud_autonomous_vm_cluster_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+        """
+        compute_count: pulumi.Input[float]
+        """
+        The compute count for the shard database. It has to be in multiples of 2.
+        """
+        data_storage_size_in_gbs: pulumi.Input[float]
+        """
+        The data disk group size to be allocated in GBs for the shard database.
+        """
+        is_auto_scaling_enabled: pulumi.Input[bool]
+        """
+        Determines the auto-scaling mode for the shard database.
+        """
+        container_database_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying container database.
+        """
+        container_database_parent_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying container database parent.
+        """
+        encryption_key_details: NotRequired[pulumi.Input['ShardedDatabaseShardDetailEncryptionKeyDetailsArgsDict']]
+        """
+        Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+        """
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Additional metadata related to shard's underlying supporting resource.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the shard.
+        """
+        peer_cloud_autonomous_vm_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        """
+        shard_group: NotRequired[pulumi.Input[str]]
+        """
+        Name of the shard-group to which the shard belongs.
+        """
+        shard_space: NotRequired[pulumi.Input[str]]
+        """
+        The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Status of shard or catalog or gsm for the sharded database.
+        """
+        supporting_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Identifier of the underlying supporting resource.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the the Sharded Database was created. An RFC3339 formatted datetime string
+        """
+        time_ssl_certificate_expires: NotRequired[pulumi.Input[str]]
+        """
+        The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+        """
+elif False:
+    ShardedDatabaseShardDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ShardedDatabaseShardDetailArgs:
@@ -864,6 +1114,23 @@ class ShardedDatabaseShardDetailArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class ShardedDatabaseShardDetailEncryptionKeyDetailsArgsDict(TypedDict):
+        kms_key_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+        """
+        vault_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+        """
+        kms_key_version_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+        """
+elif False:
+    ShardedDatabaseShardDetailEncryptionKeyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ShardedDatabaseShardDetailEncryptionKeyDetailsArgs:
     def __init__(__self__, *,
@@ -917,6 +1184,14 @@ class ShardedDatabaseShardDetailEncryptionKeyDetailsArgs:
         pulumi.set(self, "kms_key_version_id", value)
 
 
+if not MYPY:
+    class GetPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPrivateEndpointsFilterArgs:
     def __init__(__self__, *,
@@ -955,6 +1230,17 @@ class GetPrivateEndpointsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetShardedDatabasesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the shard.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetShardedDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetShardedDatabasesFilterArgs:

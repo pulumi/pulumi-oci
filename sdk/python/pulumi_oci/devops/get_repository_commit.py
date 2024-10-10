@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -201,9 +206,6 @@ def get_repository_commit(commit_id: Optional[str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         tree_id=pulumi.get(__ret__, 'tree_id'))
-
-
-@_utilities.lift_output_func(get_repository_commit)
 def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
                                  repository_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryCommitResult]:
@@ -226,4 +228,20 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
     :param str commit_id: A filter to return only resources that match the given commit ID.
     :param str repository_id: Unique repository identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['commitId'] = commit_id
+    __args__['repositoryId'] = repository_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryCommit:getRepositoryCommit', __args__, opts=opts, typ=GetRepositoryCommitResult)
+    return __ret__.apply(lambda __response__: GetRepositoryCommitResult(
+        author_email=pulumi.get(__response__, 'author_email'),
+        author_name=pulumi.get(__response__, 'author_name'),
+        commit_id=pulumi.get(__response__, 'commit_id'),
+        commit_message=pulumi.get(__response__, 'commit_message'),
+        committer_email=pulumi.get(__response__, 'committer_email'),
+        committer_name=pulumi.get(__response__, 'committer_name'),
+        id=pulumi.get(__response__, 'id'),
+        parent_commit_ids=pulumi.get(__response__, 'parent_commit_ids'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        tree_id=pulumi.get(__response__, 'tree_id')))

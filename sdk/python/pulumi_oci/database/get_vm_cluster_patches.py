@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_vm_cluster_patches(filters: Optional[Sequence[Union['GetVmClusterPatches
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_patches)
 def get_vm_cluster_patches_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterPatchesFilterArgs', 'GetVmClusterPatchesFilterArgsDict']]]]] = None,
                                   vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchesResult]:
@@ -130,4 +132,13 @@ def get_vm_cluster_patches_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['vmClusterId'] = vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterPatches:getVmClusterPatches', __args__, opts=opts, typ=GetVmClusterPatchesResult)
+    return __ret__.apply(lambda __response__: GetVmClusterPatchesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        patches=pulumi.get(__response__, 'patches'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

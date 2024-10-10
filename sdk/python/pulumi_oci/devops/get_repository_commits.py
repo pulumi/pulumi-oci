@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -211,9 +216,6 @@ def get_repository_commits(author_name: Optional[str] = None,
         repository_id=pulumi.get(__ret__, 'repository_id'),
         timestamp_greater_than_or_equal_to=pulumi.get(__ret__, 'timestamp_greater_than_or_equal_to'),
         timestamp_less_than_or_equal_to=pulumi.get(__ret__, 'timestamp_less_than_or_equal_to'))
-
-
-@_utilities.lift_output_func(get_repository_commits)
 def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   commit_message: Optional[pulumi.Input[Optional[str]]] = None,
                                   exclude_ref_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -255,4 +257,27 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
     :param str timestamp_greater_than_or_equal_to: A filter to return commits only created after the specified timestamp value.
     :param str timestamp_less_than_or_equal_to: A filter to return commits only created before the specified timestamp value.
     """
-    ...
+    __args__ = dict()
+    __args__['authorName'] = author_name
+    __args__['commitMessage'] = commit_message
+    __args__['excludeRefName'] = exclude_ref_name
+    __args__['filePath'] = file_path
+    __args__['filters'] = filters
+    __args__['refName'] = ref_name
+    __args__['repositoryId'] = repository_id
+    __args__['timestampGreaterThanOrEqualTo'] = timestamp_greater_than_or_equal_to
+    __args__['timestampLessThanOrEqualTo'] = timestamp_less_than_or_equal_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryCommits:getRepositoryCommits', __args__, opts=opts, typ=GetRepositoryCommitsResult)
+    return __ret__.apply(lambda __response__: GetRepositoryCommitsResult(
+        author_name=pulumi.get(__response__, 'author_name'),
+        commit_message=pulumi.get(__response__, 'commit_message'),
+        exclude_ref_name=pulumi.get(__response__, 'exclude_ref_name'),
+        file_path=pulumi.get(__response__, 'file_path'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ref_name=pulumi.get(__response__, 'ref_name'),
+        repository_commit_collections=pulumi.get(__response__, 'repository_commit_collections'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        timestamp_greater_than_or_equal_to=pulumi.get(__response__, 'timestamp_greater_than_or_equal_to'),
+        timestamp_less_than_or_equal_to=pulumi.get(__response__, 'timestamp_less_than_or_equal_to')))

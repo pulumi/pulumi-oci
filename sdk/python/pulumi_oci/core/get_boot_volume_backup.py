@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -312,9 +317,6 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[str] = None,
         time_request_received=pulumi.get(__ret__, 'time_request_received'),
         type=pulumi.get(__ret__, 'type'),
         unique_size_in_gbs=pulumi.get(__ret__, 'unique_size_in_gbs'))
-
-
-@_utilities.lift_output_func(get_boot_volume_backup)
 def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeBackupResult]:
     """
@@ -334,4 +336,28 @@ def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[s
 
     :param str boot_volume_backup_id: The OCID of the boot volume backup.
     """
-    ...
+    __args__ = dict()
+    __args__['bootVolumeBackupId'] = boot_volume_backup_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getBootVolumeBackup:getBootVolumeBackup', __args__, opts=opts, typ=GetBootVolumeBackupResult)
+    return __ret__.apply(lambda __response__: GetBootVolumeBackupResult(
+        boot_volume_backup_id=pulumi.get(__response__, 'boot_volume_backup_id'),
+        boot_volume_id=pulumi.get(__response__, 'boot_volume_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        expiration_time=pulumi.get(__response__, 'expiration_time'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
+        source_boot_volume_backup_id=pulumi.get(__response__, 'source_boot_volume_backup_id'),
+        source_details=pulumi.get(__response__, 'source_details'),
+        source_type=pulumi.get(__response__, 'source_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_request_received=pulumi.get(__response__, 'time_request_received'),
+        type=pulumi.get(__response__, 'type'),
+        unique_size_in_gbs=pulumi.get(__response__, 'unique_size_in_gbs')))

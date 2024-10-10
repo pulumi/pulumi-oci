@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -249,9 +254,6 @@ def get_ekms_private_endpoint(ekms_private_endpoint_id: Optional[str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_ekms_private_endpoint)
 def get_ekms_private_endpoint_output(ekms_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEkmsPrivateEndpointResult]:
     """
@@ -271,4 +273,23 @@ def get_ekms_private_endpoint_output(ekms_private_endpoint_id: Optional[pulumi.I
 
     :param str ekms_private_endpoint_id: Unique EKMS private endpoint identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['ekmsPrivateEndpointId'] = ekms_private_endpoint_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint', __args__, opts=opts, typ=GetEkmsPrivateEndpointResult)
+    return __ret__.apply(lambda __response__: GetEkmsPrivateEndpointResult(
+        ca_bundle=pulumi.get(__response__, 'ca_bundle'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        ekms_private_endpoint_id=pulumi.get(__response__, 'ekms_private_endpoint_id'),
+        external_key_manager_ip=pulumi.get(__response__, 'external_key_manager_ip'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        port=pulumi.get(__response__, 'port'),
+        private_endpoint_ip=pulumi.get(__response__, 'private_endpoint_ip'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

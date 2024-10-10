@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -226,9 +231,6 @@ def get_assets(asset_id: Optional[str] = None,
         inventory_id=pulumi.get(__ret__, 'inventory_id'),
         source_key=pulumi.get(__ret__, 'source_key'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_assets)
 def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
                       asset_type: Optional[pulumi.Input[Optional[str]]] = None,
                       compartment_id: Optional[pulumi.Input[str]] = None,
@@ -270,4 +272,27 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str source_key: Source key from where the assets originate.
     :param str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
     """
-    ...
+    __args__ = dict()
+    __args__['assetId'] = asset_id
+    __args__['assetType'] = asset_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['externalAssetKey'] = external_asset_key
+    __args__['filters'] = filters
+    __args__['inventoryId'] = inventory_id
+    __args__['sourceKey'] = source_key
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAssets:getAssets', __args__, opts=opts, typ=GetAssetsResult)
+    return __ret__.apply(lambda __response__: GetAssetsResult(
+        asset_collections=pulumi.get(__response__, 'asset_collections'),
+        asset_id=pulumi.get(__response__, 'asset_id'),
+        asset_type=pulumi.get(__response__, 'asset_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_asset_key=pulumi.get(__response__, 'external_asset_key'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        inventory_id=pulumi.get(__response__, 'inventory_id'),
+        source_key=pulumi.get(__response__, 'source_key'),
+        state=pulumi.get(__response__, 'state')))

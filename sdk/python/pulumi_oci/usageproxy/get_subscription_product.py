@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -136,9 +141,6 @@ def get_subscription_product(producttype: Optional[str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         usage_period_key=pulumi.get(__ret__, 'usage_period_key'))
-
-
-@_utilities.lift_output_func(get_subscription_product)
 def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[str]]] = None,
                                     subscription_id: Optional[pulumi.Input[str]] = None,
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -167,4 +169,17 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
     :param str tenancy_id: The OCID of the tenancy.
     :param str usage_period_key: The SPM Identifier for the usage period.
     """
-    ...
+    __args__ = dict()
+    __args__['producttype'] = producttype
+    __args__['subscriptionId'] = subscription_id
+    __args__['tenancyId'] = tenancy_id
+    __args__['usagePeriodKey'] = usage_period_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct', __args__, opts=opts, typ=GetSubscriptionProductResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionProductResult(
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        producttype=pulumi.get(__response__, 'producttype'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        tenancy_id=pulumi.get(__response__, 'tenancy_id'),
+        usage_period_key=pulumi.get(__response__, 'usage_period_key')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -217,9 +222,6 @@ def get_monitors(apm_domain_id: Optional[str] = None,
         script_id=pulumi.get(__ret__, 'script_id'),
         status=pulumi.get(__ret__, 'status'),
         vantage_point=pulumi.get(__ret__, 'vantage_point'))
-
-
-@_utilities.lift_output_func(get_monitors)
 def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]]]] = None,
@@ -261,4 +263,27 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str status: A filter to return only monitors that match the status given.
     :param str vantage_point: The name of the public or dedicated vantage point.
     """
-    ...
+    __args__ = dict()
+    __args__['apmDomainId'] = apm_domain_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['isMaintenanceWindowActive'] = is_maintenance_window_active
+    __args__['isMaintenanceWindowSet'] = is_maintenance_window_set
+    __args__['monitorType'] = monitor_type
+    __args__['scriptId'] = script_id
+    __args__['status'] = status
+    __args__['vantagePoint'] = vantage_point
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApmSynthetics/getMonitors:getMonitors', __args__, opts=opts, typ=GetMonitorsResult)
+    return __ret__.apply(lambda __response__: GetMonitorsResult(
+        apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_maintenance_window_active=pulumi.get(__response__, 'is_maintenance_window_active'),
+        is_maintenance_window_set=pulumi.get(__response__, 'is_maintenance_window_set'),
+        monitor_collections=pulumi.get(__response__, 'monitor_collections'),
+        monitor_type=pulumi.get(__response__, 'monitor_type'),
+        script_id=pulumi.get(__response__, 'script_id'),
+        status=pulumi.get(__response__, 'status'),
+        vantage_point=pulumi.get(__response__, 'vantage_point')))

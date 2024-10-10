@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -108,9 +113,6 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         idcs_open_id=pulumi.get(__ret__, 'idcs_open_id'),
         vb_instance_id=pulumi.get(__ret__, 'vb_instance_id'))
-
-
-@_utilities.lift_output_func(get_vb_instance_applications)
 def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         vb_instance_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVbInstanceApplicationsResult]:
@@ -133,4 +135,13 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
     :param str idcs_open_id: Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
     :param str vb_instance_id: Unique Vb Instance identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['idcsOpenId'] = idcs_open_id
+    __args__['vbInstanceId'] = vb_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications', __args__, opts=opts, typ=GetVbInstanceApplicationsResult)
+    return __ret__.apply(lambda __response__: GetVbInstanceApplicationsResult(
+        application_summary_collections=pulumi.get(__response__, 'application_summary_collections'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_open_id=pulumi.get(__response__, 'idcs_open_id'),
+        vb_instance_id=pulumi.get(__response__, 'vb_instance_id')))

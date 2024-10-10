@@ -4,62 +4,151 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DiscoveryJobDiscoveryDetailsArgs',
+    'DiscoveryJobDiscoveryDetailsArgsDict',
     'DiscoveryJobDiscoveryDetailsCredentialsArgs',
+    'DiscoveryJobDiscoveryDetailsCredentialsArgsDict',
     'DiscoveryJobDiscoveryDetailsCredentialsItemArgs',
+    'DiscoveryJobDiscoveryDetailsCredentialsItemArgsDict',
     'DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs',
+    'DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgsDict',
     'DiscoveryJobDiscoveryDetailsPropertiesArgs',
+    'DiscoveryJobDiscoveryDetailsPropertiesArgsDict',
     'DiscoveryJobDiscoveryDetailsTagsArgs',
+    'DiscoveryJobDiscoveryDetailsTagsArgsDict',
     'MetricExtensionEnabledOnResourceArgs',
+    'MetricExtensionEnabledOnResourceArgsDict',
     'MetricExtensionMetricListArgs',
+    'MetricExtensionMetricListArgsDict',
     'MetricExtensionQueryPropertiesArgs',
+    'MetricExtensionQueryPropertiesArgsDict',
     'MetricExtensionQueryPropertiesInParamDetailArgs',
+    'MetricExtensionQueryPropertiesInParamDetailArgsDict',
     'MetricExtensionQueryPropertiesOutParamDetailsArgs',
+    'MetricExtensionQueryPropertiesOutParamDetailsArgsDict',
     'MetricExtensionQueryPropertiesScriptDetailsArgs',
+    'MetricExtensionQueryPropertiesScriptDetailsArgsDict',
     'MetricExtensionQueryPropertiesSqlDetailsArgs',
+    'MetricExtensionQueryPropertiesSqlDetailsArgsDict',
     'MonitoredResourceAdditionalAliasArgs',
+    'MonitoredResourceAdditionalAliasArgsDict',
     'MonitoredResourceAdditionalAliasCredentialArgs',
+    'MonitoredResourceAdditionalAliasCredentialArgsDict',
     'MonitoredResourceAdditionalCredentialArgs',
+    'MonitoredResourceAdditionalCredentialArgsDict',
     'MonitoredResourceAdditionalCredentialPropertyArgs',
+    'MonitoredResourceAdditionalCredentialPropertyArgsDict',
     'MonitoredResourceAliasesArgs',
+    'MonitoredResourceAliasesArgsDict',
     'MonitoredResourceAliasesCredentialArgs',
+    'MonitoredResourceAliasesCredentialArgsDict',
     'MonitoredResourceCredentialsArgs',
+    'MonitoredResourceCredentialsArgsDict',
     'MonitoredResourceCredentialsPropertyArgs',
+    'MonitoredResourceCredentialsPropertyArgsDict',
     'MonitoredResourceDatabaseConnectionDetailsArgs',
+    'MonitoredResourceDatabaseConnectionDetailsArgsDict',
     'MonitoredResourcePropertyArgs',
+    'MonitoredResourcePropertyArgsDict',
     'MonitoredResourceTaskTaskDetailsArgs',
+    'MonitoredResourceTaskTaskDetailsArgsDict',
     'MonitoredResourceTypeMetadataArgs',
+    'MonitoredResourceTypeMetadataArgsDict',
     'MonitoredResourceTypeMetadataUniquePropertySetArgs',
+    'MonitoredResourceTypeMetadataUniquePropertySetArgsDict',
     'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs',
+    'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict',
     'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs',
+    'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict',
     'MonitoredResourcesListMemberItemArgs',
+    'MonitoredResourcesListMemberItemArgsDict',
     'MonitoredResourcesSearchAssociationItemArgs',
+    'MonitoredResourcesSearchAssociationItemArgsDict',
     'MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs',
+    'MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgsDict',
     'MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs',
+    'MonitoredResourcesSearchAssociationItemSourceResourceDetailArgsDict',
     'MonitoredResourcesSearchItemArgs',
+    'MonitoredResourcesSearchItemArgsDict',
     'MonitoredResourcesSearchItemPropertyArgs',
+    'MonitoredResourcesSearchItemPropertyArgsDict',
     'ProcessSetSpecificationArgs',
+    'ProcessSetSpecificationArgsDict',
     'ProcessSetSpecificationItemArgs',
+    'ProcessSetSpecificationItemArgsDict',
     'GetBaselineableMetricsEvaluateItemArgs',
+    'GetBaselineableMetricsEvaluateItemArgsDict',
     'GetBaselineableMetricsEvaluateItemDataPointArgs',
+    'GetBaselineableMetricsEvaluateItemDataPointArgsDict',
     'GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs',
+    'GetBaselineableMetricsEvaluateItemEvaluationDataPointArgsDict',
     'GetBaselineableMetricsEvaluateItemTrainingDataPointArgs',
+    'GetBaselineableMetricsEvaluateItemTrainingDataPointArgsDict',
     'GetBaselineableMetricsFilterArgs',
+    'GetBaselineableMetricsFilterArgsDict',
     'GetConfigsFilterArgs',
+    'GetConfigsFilterArgsDict',
     'GetDiscoveryJobLogsFilterArgs',
+    'GetDiscoveryJobLogsFilterArgsDict',
     'GetDiscoveryJobsFilterArgs',
+    'GetDiscoveryJobsFilterArgsDict',
     'GetMetricExtensionsFilterArgs',
+    'GetMetricExtensionsFilterArgsDict',
     'GetMonitoredResourceTasksFilterArgs',
+    'GetMonitoredResourceTasksFilterArgsDict',
     'GetMonitoredResourceTypesFilterArgs',
+    'GetMonitoredResourceTypesFilterArgsDict',
     'GetMonitoredResourcesFilterArgs',
+    'GetMonitoredResourcesFilterArgsDict',
     'GetProcessSetsFilterArgs',
+    'GetProcessSetsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsArgsDict(TypedDict):
+        agent_id: pulumi.Input[str]
+        """
+        The OCID of Management Agent
+        """
+        properties: pulumi.Input['DiscoveryJobDiscoveryDetailsPropertiesArgsDict']
+        """
+        Property Details
+        """
+        resource_name: pulumi.Input[str]
+        """
+        The Name of resource type
+        """
+        resource_type: pulumi.Input[str]
+        """
+        Resource Type.
+        """
+        credentials: NotRequired[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsArgsDict']]
+        """
+        List of DiscoveryJob Credential Details.
+        """
+        license: NotRequired[pulumi.Input[str]]
+        """
+        License edition of the monitored resource.
+        """
+        tags: NotRequired[pulumi.Input['DiscoveryJobDiscoveryDetailsTagsArgsDict']]
+        """
+        Property Details
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsArgs:
@@ -176,6 +265,15 @@ class DiscoveryJobDiscoveryDetailsArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsCredentialsArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsItemArgsDict']]]
+        """
+        List of DiscoveryJob credentials.
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsCredentialsArgs:
     def __init__(__self__, *,
@@ -197,6 +295,23 @@ class DiscoveryJobDiscoveryDetailsCredentialsArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsCredentialsItemArgsDict(TypedDict):
+        credential_name: pulumi.Input[str]
+        """
+        Name of Credential
+        """
+        credential_type: pulumi.Input[str]
+        """
+        Name of Credential Type
+        """
+        properties: pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgsDict']
+        """
+        Property Details
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsCredentialsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsCredentialsItemArgs:
@@ -250,6 +365,15 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemArgs:
         pulumi.set(self, "properties", value)
 
 
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgsDict(TypedDict):
+        properties_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Key/Value pair of Property
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs:
     def __init__(__self__, *,
@@ -272,6 +396,15 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs:
     def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties_map", value)
 
+
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsPropertiesArgsDict(TypedDict):
+        properties_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Key/Value pair of Property
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsPropertiesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsPropertiesArgs:
@@ -296,6 +429,15 @@ class DiscoveryJobDiscoveryDetailsPropertiesArgs:
         pulumi.set(self, "properties_map", value)
 
 
+if not MYPY:
+    class DiscoveryJobDiscoveryDetailsTagsArgsDict(TypedDict):
+        properties_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Key/Value pair of Property
+        """
+elif False:
+    DiscoveryJobDiscoveryDetailsTagsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsTagsArgs:
     def __init__(__self__, *,
@@ -319,6 +461,15 @@ class DiscoveryJobDiscoveryDetailsTagsArgs:
         pulumi.set(self, "properties_map", value)
 
 
+if not MYPY:
+    class MetricExtensionEnabledOnResourceArgsDict(TypedDict):
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the resource on which Metric Extension is enabled
+        """
+elif False:
+    MetricExtensionEnabledOnResourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MetricExtensionEnabledOnResourceArgs:
     def __init__(__self__, *,
@@ -341,6 +492,43 @@ class MetricExtensionEnabledOnResourceArgs:
     def resource_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_id", value)
 
+
+if not MYPY:
+    class MetricExtensionMetricListArgsDict(TypedDict):
+        data_type: pulumi.Input[str]
+        """
+        (Updatable) Data type of value of this metric
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the metric.
+        """
+        compute_expression: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Compute Expression to calculate the value of this metric
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Display name of the metric.
+        """
+        is_dimension: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Current metric need to be included as dimension or not
+        """
+        is_hidden: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+        """
+        metric_category: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Metric category
+        """
+        unit: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Unit of metric value
+        """
+elif False:
+    MetricExtensionMetricListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricExtensionMetricListArgs:
@@ -474,6 +662,71 @@ class MetricExtensionMetricListArgs:
     def unit(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unit", value)
 
+
+if not MYPY:
+    class MetricExtensionQueryPropertiesArgsDict(TypedDict):
+        collection_method: pulumi.Input[str]
+        """
+        (Updatable) Type of possible collection methods.
+        """
+        arguments: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Arguments required by either command or script
+        """
+        auto_row_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+        """
+        command: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OS command to execute without arguments
+        """
+        delimiter: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Character used to delimit multiple metric values in single line of output
+        """
+        identity_metric: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+        """
+        in_param_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgsDict']]]]
+        """
+        (Updatable) List of values and position of PL/SQL procedure IN parameters
+        """
+        is_metric_service_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Indicates if Metric Service is enabled on server domain
+        """
+        jmx_attributes: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+        """
+        managed_bean_query: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) JMX Managed Bean Query or Metric Service Table name
+        """
+        out_param_details: NotRequired[pulumi.Input['MetricExtensionQueryPropertiesOutParamDetailsArgsDict']]
+        """
+        (Updatable) Position and SQL Type of PL/SQL OUT parameter
+        """
+        script_details: NotRequired[pulumi.Input['MetricExtensionQueryPropertiesScriptDetailsArgsDict']]
+        """
+        (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        """
+        sql_details: NotRequired[pulumi.Input['MetricExtensionQueryPropertiesSqlDetailsArgsDict']]
+        """
+        (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+        """
+        sql_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+        """
+        starts_with: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) String prefix used to identify metric output of the OS Command
+        """
+elif False:
+    MetricExtensionQueryPropertiesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricExtensionQueryPropertiesArgs:
@@ -721,6 +974,19 @@ class MetricExtensionQueryPropertiesArgs:
         pulumi.set(self, "starts_with", value)
 
 
+if not MYPY:
+    class MetricExtensionQueryPropertiesInParamDetailArgsDict(TypedDict):
+        in_param_position: pulumi.Input[int]
+        """
+        (Updatable) Position of IN parameter
+        """
+        in_param_value: pulumi.Input[str]
+        """
+        (Updatable) Value of IN parameter
+        """
+elif False:
+    MetricExtensionQueryPropertiesInParamDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MetricExtensionQueryPropertiesInParamDetailArgs:
     def __init__(__self__, *,
@@ -757,6 +1023,19 @@ class MetricExtensionQueryPropertiesInParamDetailArgs:
     def in_param_value(self, value: pulumi.Input[str]):
         pulumi.set(self, "in_param_value", value)
 
+
+if not MYPY:
+    class MetricExtensionQueryPropertiesOutParamDetailsArgsDict(TypedDict):
+        out_param_position: pulumi.Input[int]
+        """
+        (Updatable) Position of PL/SQL procedure OUT parameter
+        """
+        out_param_type: pulumi.Input[str]
+        """
+        (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        """
+elif False:
+    MetricExtensionQueryPropertiesOutParamDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricExtensionQueryPropertiesOutParamDetailsArgs:
@@ -795,6 +1074,19 @@ class MetricExtensionQueryPropertiesOutParamDetailsArgs:
         pulumi.set(self, "out_param_type", value)
 
 
+if not MYPY:
+    class MetricExtensionQueryPropertiesScriptDetailsArgsDict(TypedDict):
+        content: pulumi.Input[str]
+        """
+        (Updatable) Content of the script file as base64 encoded string
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the script file
+        """
+elif False:
+    MetricExtensionQueryPropertiesScriptDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MetricExtensionQueryPropertiesScriptDetailsArgs:
     def __init__(__self__, *,
@@ -831,6 +1123,19 @@ class MetricExtensionQueryPropertiesScriptDetailsArgs:
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class MetricExtensionQueryPropertiesSqlDetailsArgsDict(TypedDict):
+        content: pulumi.Input[str]
+        """
+        (Updatable) Sql statement or script file content as base64 encoded string
+        """
+        script_file_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) If a script needs to be executed, then provide file name of the script
+        """
+elif False:
+    MetricExtensionQueryPropertiesSqlDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MetricExtensionQueryPropertiesSqlDetailsArgs:
@@ -869,6 +1174,23 @@ class MetricExtensionQueryPropertiesSqlDetailsArgs:
     def script_file_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "script_file_name", value)
 
+
+if not MYPY:
+    class MonitoredResourceAdditionalAliasArgsDict(TypedDict):
+        credential: pulumi.Input['MonitoredResourceAdditionalAliasCredentialArgsDict']
+        """
+        (Updatable) Monitored Resource Alias Reference Source Credential.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) The name of the alias, within the context of the source.
+        """
+        source: pulumi.Input[str]
+        """
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
+        """
+elif False:
+    MonitoredResourceAdditionalAliasArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceAdditionalAliasArgs:
@@ -922,6 +1244,23 @@ class MonitoredResourceAdditionalAliasArgs:
         pulumi.set(self, "source", value)
 
 
+if not MYPY:
+    class MonitoredResourceAdditionalAliasCredentialArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
+        """
+        service: pulumi.Input[str]
+        """
+        (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        """
+        source: pulumi.Input[str]
+        """
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+        """
+elif False:
+    MonitoredResourceAdditionalAliasCredentialArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceAdditionalAliasCredentialArgs:
     def __init__(__self__, *,
@@ -973,6 +1312,42 @@ class MonitoredResourceAdditionalAliasCredentialArgs:
     def source(self, value: pulumi.Input[str]):
         pulumi.set(self, "source", value)
 
+
+if not MYPY:
+    class MonitoredResourceAdditionalCredentialArgsDict(TypedDict):
+        credential_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The user-specified textual description of the credential.
+        """
+        key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the credential, within the context of the source.
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgsDict']]]]
+        """
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
+        """
+        source: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
+        """
+elif False:
+    MonitoredResourceAdditionalCredentialArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceAdditionalCredentialArgs:
@@ -1099,6 +1474,19 @@ class MonitoredResourceAdditionalCredentialArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MonitoredResourceAdditionalCredentialPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+        """
+elif False:
+    MonitoredResourceAdditionalCredentialPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceAdditionalCredentialPropertyArgs:
     def __init__(__self__, *,
@@ -1137,6 +1525,23 @@ class MonitoredResourceAdditionalCredentialPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class MonitoredResourceAliasesArgsDict(TypedDict):
+        credential: pulumi.Input['MonitoredResourceAliasesCredentialArgsDict']
+        """
+        (Updatable) Monitored Resource Alias Reference Source Credential.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) The name of the alias, within the context of the source.
+        """
+        source: pulumi.Input[str]
+        """
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
+        """
+elif False:
+    MonitoredResourceAliasesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceAliasesArgs:
@@ -1190,6 +1595,23 @@ class MonitoredResourceAliasesArgs:
         pulumi.set(self, "source", value)
 
 
+if not MYPY:
+    class MonitoredResourceAliasesCredentialArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
+        """
+        service: pulumi.Input[str]
+        """
+        (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+        """
+        source: pulumi.Input[str]
+        """
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+        """
+elif False:
+    MonitoredResourceAliasesCredentialArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceAliasesCredentialArgs:
     def __init__(__self__, *,
@@ -1241,6 +1663,42 @@ class MonitoredResourceAliasesCredentialArgs:
     def source(self, value: pulumi.Input[str]):
         pulumi.set(self, "source", value)
 
+
+if not MYPY:
+    class MonitoredResourceCredentialsArgsDict(TypedDict):
+        credential_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+        * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+        * PLAINTEXT - The credential properties will have credentials in plain text format.
+        * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The user-specified textual description of the credential.
+        """
+        key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the credential, within the context of the source.
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgsDict']]]]
+        """
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
+        """
+        source: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
+        """
+elif False:
+    MonitoredResourceCredentialsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceCredentialsArgs:
@@ -1367,6 +1825,19 @@ class MonitoredResourceCredentialsArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MonitoredResourceCredentialsPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+        """
+elif False:
+    MonitoredResourceCredentialsPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceCredentialsPropertyArgs:
     def __init__(__self__, *,
@@ -1405,6 +1876,39 @@ class MonitoredResourceCredentialsPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class MonitoredResourceDatabaseConnectionDetailsArgsDict(TypedDict):
+        port: pulumi.Input[int]
+        """
+        (Updatable) Listener Port number used for connection requests.
+        """
+        protocol: pulumi.Input[str]
+        """
+        (Updatable) Protocol used in DB connection string when connecting to external database service.
+        """
+        service_name: pulumi.Input[str]
+        """
+        (Updatable) Service name used for connection requests.
+        """
+        connector_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        db_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) dbId of the database.
+        """
+        db_unique_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) UniqueName used for database connection requests.
+        """
+        ssl_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+elif False:
+    MonitoredResourceDatabaseConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceDatabaseConnectionDetailsArgs:
@@ -1522,6 +2026,19 @@ class MonitoredResourceDatabaseConnectionDetailsArgs:
         pulumi.set(self, "ssl_secret_id", value)
 
 
+if not MYPY:
+    class MonitoredResourcePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Property Name.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Property Value.
+        """
+elif False:
+    MonitoredResourcePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcePropertyArgs:
     def __init__(__self__, *,
@@ -1560,6 +2077,77 @@ class MonitoredResourcePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class MonitoredResourceTaskTaskDetailsArgsDict(TypedDict):
+        namespace: pulumi.Input[str]
+        """
+        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        """
+        source: pulumi.Input[str]
+        """
+        Source from where the metrics pushed to telemetry. Possible values:
+        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        """
+        type: pulumi.Input[str]
+        """
+        Task type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        availability_proxy_metric_collection_interval: NotRequired[pulumi.Input[int]]
+        """
+        Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+        """
+        availability_proxy_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for the resource during the specified interval using the property 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        """
+        console_path_prefix: NotRequired[pulumi.Input[str]]
+        """
+        The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+        """
+        external_id_mapping: NotRequired[pulumi.Input[str]]
+        """
+        The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        """
+        lifecycle_status_mappings_for_up_statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Lifecycle states of the external resource which reflects the status of the resource being up.
+        """
+        resource_group: NotRequired[pulumi.Input[str]]
+        """
+        The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+        """
+        resource_name_filter: NotRequired[pulumi.Input[str]]
+        """
+        The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+        """
+        resource_name_mapping: NotRequired[pulumi.Input[str]]
+        """
+        The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+        """
+        resource_type_filter: NotRequired[pulumi.Input[str]]
+        """
+        The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+        """
+        resource_type_mapping: NotRequired[pulumi.Input[str]]
+        """
+        The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        """
+        service_base_url: NotRequired[pulumi.Input[str]]
+        """
+        The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+        """
+        should_use_metrics_flow_for_status: NotRequired[pulumi.Input[bool]]
+        """
+        Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+        """
+elif False:
+    MonitoredResourceTaskTaskDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourceTaskTaskDetailsArgs:
@@ -1817,6 +2405,40 @@ class MonitoredResourceTaskTaskDetailsArgs:
         pulumi.set(self, "should_use_metrics_flow_for_status", value)
 
 
+if not MYPY:
+    class MonitoredResourceTypeMetadataArgsDict(TypedDict):
+        format: pulumi.Input[str]
+        """
+        (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+        * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+        """
+        agent_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+        """
+        required_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of required properties for resource type.
+        """
+        unique_property_sets: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgsDict']]]]
+        """
+        (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+        """
+        valid_properties_for_creates: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+        """
+        valid_properties_for_updates: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+        """
+        valid_property_values: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        """
+elif False:
+    MonitoredResourceTypeMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceTypeMetadataArgs:
     def __init__(__self__, *,
@@ -1937,6 +2559,15 @@ class MonitoredResourceTypeMetadataArgs:
         pulumi.set(self, "valid_property_values", value)
 
 
+if not MYPY:
+    class MonitoredResourceTypeMetadataUniquePropertySetArgsDict(TypedDict):
+        properties: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) List of properties.
+        """
+elif False:
+    MonitoredResourceTypeMetadataUniquePropertySetArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourceTypeMetadataUniquePropertySetArgs:
     def __init__(__self__, *,
@@ -1958,6 +2589,23 @@ class MonitoredResourceTypeMetadataUniquePropertySetArgs:
     def properties(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "properties", value)
 
+
+if not MYPY:
+    class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Name.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Type.
+        """
+elif False:
+    MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs:
@@ -2014,6 +2662,23 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Name.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Type.
+        """
+elif False:
+    MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs:
     def __init__(__self__, *,
@@ -2068,6 +2733,71 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MonitoredResourcesListMemberItemArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        external_id: NotRequired[pulumi.Input[str]]
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        host_name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Host Name.
+        """
+        license: NotRequired[pulumi.Input[str]]
+        """
+        License edition of the monitored resource.
+        """
+        parent_id: NotRequired[pulumi.Input[str]]
+        """
+        Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        resource_category: NotRequired[pulumi.Input[str]]
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        resource_display_name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource display name.
+        """
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        resource_name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Name.
+        """
+        resource_type: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Type.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the Resource.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+elif False:
+    MonitoredResourcesListMemberItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourcesListMemberItemArgs:
@@ -2316,6 +3046,35 @@ class MonitoredResourcesListMemberItemArgs:
         pulumi.set(self, "system_tags", value)
 
 
+if not MYPY:
+    class MonitoredResourcesSearchAssociationItemArgsDict(TypedDict):
+        association_type: NotRequired[pulumi.Input[str]]
+        """
+        Association type filter to search associated resources.
+        """
+        destination_resource_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgsDict']]]]
+        """
+        Association Resource Details.
+        """
+        destination_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        source_resource_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgsDict']]]]
+        """
+        Association Resource Details.
+        """
+        source_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The association creation time. An RFC3339 formatted datetime string.
+        """
+elif False:
+    MonitoredResourcesSearchAssociationItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcesSearchAssociationItemArgs:
     def __init__(__self__, *,
@@ -2419,6 +3178,23 @@ class MonitoredResourcesSearchAssociationItemArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Name.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Type.
+        """
+elif False:
+    MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs:
     def __init__(__self__, *,
@@ -2474,6 +3250,23 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Name.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Monitored Resource Type.
+        """
+elif False:
+    MonitoredResourcesSearchAssociationItemSourceResourceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs:
     def __init__(__self__, *,
@@ -2528,6 +3321,87 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class MonitoredResourcesSearchItemArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource display name.
+        """
+        external_id: NotRequired[pulumi.Input[str]]
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        host_name: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources with host name match.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        license: NotRequired[pulumi.Input[str]]
+        """
+        License edition of the monitored resource.
+        """
+        management_agent_id: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources with matching management agent id.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources that match exact resource name.
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgsDict']]]]
+        """
+        List of monitored resource properties.
+        """
+        resource_category: NotRequired[pulumi.Input[str]]
+        """
+        Resource category filter.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        Source type filter.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources with matching lifecycle state.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource creation time. An RFC3339 formatted datetime string.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        Monitored resource update time. An RFC3339 formatted datetime string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    MonitoredResourcesSearchItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MonitoredResourcesSearchItemArgs:
@@ -2832,6 +3706,19 @@ class MonitoredResourcesSearchItemArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class MonitoredResourcesSearchItemPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        A filter to return resources that match exact resource name.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Property Value.
+        """
+elif False:
+    MonitoredResourcesSearchItemPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MonitoredResourcesSearchItemPropertyArgs:
     def __init__(__self__, *,
@@ -2871,6 +3758,15 @@ class MonitoredResourcesSearchItemPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ProcessSetSpecificationArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgsDict']]]
+        """
+        (Updatable) List of Process Set specification details.
+        """
+elif False:
+    ProcessSetSpecificationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProcessSetSpecificationArgs:
     def __init__(__self__, *,
@@ -2892,6 +3788,31 @@ class ProcessSetSpecificationArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProcessSetSpecificationItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ProcessSetSpecificationItemArgsDict(TypedDict):
+        label: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Optional label used to identify a single filter.
+        """
+        process_command: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) String literal used for exact matching on process name.
+        """
+        process_line_regex_pattern: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Regex pattern matching on process arguments.
+        """
+        process_user: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) String literal used for exact matching on process user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ProcessSetSpecificationItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProcessSetSpecificationItemArgs:
@@ -2972,6 +3893,27 @@ class ProcessSetSpecificationItemArgs:
         pulumi.set(self, "process_user", value)
 
 
+if not MYPY:
+    class GetBaselineableMetricsEvaluateItemArgsDict(TypedDict):
+        data_points: Sequence['GetBaselineableMetricsEvaluateItemDataPointArgsDict']
+        """
+        list of anomaly data points for the metric
+        """
+        dimensions: Mapping[str, str]
+        """
+        list of dimensions for the metric
+        """
+        evaluation_data_points: Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgsDict']
+        """
+        list of data points for the metric for evaluation of anomalies
+        """
+        training_data_points: Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgsDict']
+        """
+        list of data points for the metric for training of baseline
+        """
+elif False:
+    GetBaselineableMetricsEvaluateItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBaselineableMetricsEvaluateItemArgs:
     def __init__(__self__, *,
@@ -3038,6 +3980,31 @@ class GetBaselineableMetricsEvaluateItemArgs:
     def training_data_points(self, value: Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs']):
         pulumi.set(self, "training_data_points", value)
 
+
+if not MYPY:
+    class GetBaselineableMetricsEvaluateItemDataPointArgsDict(TypedDict):
+        anomaly: float
+        """
+        if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+        """
+        high: float
+        """
+        upper threshold for the metric value
+        """
+        low: float
+        """
+        lower threshold for the metric value
+        """
+        timestamp: str
+        """
+        timestamp of when the metric was collected
+        """
+        value: float
+        """
+        value for the metric data point
+        """
+elif False:
+    GetBaselineableMetricsEvaluateItemDataPointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetBaselineableMetricsEvaluateItemDataPointArgs:
@@ -3121,6 +4088,19 @@ class GetBaselineableMetricsEvaluateItemDataPointArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetBaselineableMetricsEvaluateItemEvaluationDataPointArgsDict(TypedDict):
+        timestamp: str
+        """
+        timestamp of when the metric was collected
+        """
+        value: float
+        """
+        value for the metric data point
+        """
+elif False:
+    GetBaselineableMetricsEvaluateItemEvaluationDataPointArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs:
     def __init__(__self__, *,
@@ -3158,6 +4138,19 @@ class GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetBaselineableMetricsEvaluateItemTrainingDataPointArgsDict(TypedDict):
+        timestamp: str
+        """
+        timestamp of when the metric was collected
+        """
+        value: float
+        """
+        value for the metric data point
+        """
+elif False:
+    GetBaselineableMetricsEvaluateItemTrainingDataPointArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBaselineableMetricsEvaluateItemTrainingDataPointArgs:
     def __init__(__self__, *,
@@ -3194,6 +4187,17 @@ class GetBaselineableMetricsEvaluateItemTrainingDataPointArgs:
     def value(self, value: float):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetBaselineableMetricsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Metric Name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBaselineableMetricsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetBaselineableMetricsFilterArgs:
@@ -3240,6 +4244,14 @@ class GetBaselineableMetricsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetConfigsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetConfigsFilterArgs:
     def __init__(__self__, *,
@@ -3279,6 +4291,14 @@ class GetConfigsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDiscoveryJobLogsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDiscoveryJobLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDiscoveryJobLogsFilterArgs:
     def __init__(__self__, *,
@@ -3317,6 +4337,17 @@ class GetDiscoveryJobLogsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDiscoveryJobsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only discovery jobs that match the entire resource name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDiscoveryJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDiscoveryJobsFilterArgs:
@@ -3363,6 +4394,17 @@ class GetDiscoveryJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMetricExtensionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return resources based on name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMetricExtensionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMetricExtensionsFilterArgs:
     def __init__(__self__, *,
@@ -3407,6 +4449,17 @@ class GetMetricExtensionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMonitoredResourceTasksFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the task.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMonitoredResourceTasksFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMonitoredResourceTasksFilterArgs:
@@ -3453,6 +4506,17 @@ class GetMonitoredResourceTasksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMonitoredResourceTypesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return monitored resource types that match exactly with the resource type name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMonitoredResourceTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMonitoredResourceTypesFilterArgs:
     def __init__(__self__, *,
@@ -3498,6 +4562,17 @@ class GetMonitoredResourceTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMonitoredResourcesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return resources that match exact resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMonitoredResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMonitoredResourcesFilterArgs:
     def __init__(__self__, *,
@@ -3542,6 +4617,14 @@ class GetMonitoredResourcesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProcessSetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProcessSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProcessSetsFilterArgs:

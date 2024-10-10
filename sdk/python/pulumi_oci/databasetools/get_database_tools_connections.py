@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -192,9 +197,6 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
         runtime_supports=pulumi.get(__ret__, 'runtime_supports'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
-
-
-@_utilities.lift_output_func(get_database_tools_connections)
 def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsConnectionsFilterArgs', 'GetDatabaseToolsConnectionsFilterArgsDict']]]]] = None,
@@ -230,4 +232,23 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     :param Sequence[str] types: A filter to return only resources their type matches the specified type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['relatedResourceIdentifier'] = related_resource_identifier
+    __args__['runtimeSupports'] = runtime_supports
+    __args__['state'] = state
+    __args__['types'] = types
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections', __args__, opts=opts, typ=GetDatabaseToolsConnectionsResult)
+    return __ret__.apply(lambda __response__: GetDatabaseToolsConnectionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_tools_connection_collections=pulumi.get(__response__, 'database_tools_connection_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        related_resource_identifier=pulumi.get(__response__, 'related_resource_identifier'),
+        runtime_supports=pulumi.get(__response__, 'runtime_supports'),
+        state=pulumi.get(__response__, 'state'),
+        types=pulumi.get(__response__, 'types')))

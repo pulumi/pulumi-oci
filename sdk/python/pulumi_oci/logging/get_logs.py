@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -189,9 +194,6 @@ def get_logs(display_name: Optional[str] = None,
         source_resource=pulumi.get(__ret__, 'source_resource'),
         source_service=pulumi.get(__ret__, 'source_service'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_logs)
 def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]]]] = None,
                     log_group_id: Optional[pulumi.Input[str]] = None,
@@ -227,4 +229,23 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
     :param str source_service: Service that created the log object, which is a field of LogSummary.Configuration.Source.
     :param str state: Lifecycle state of the log object
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['logGroupId'] = log_group_id
+    __args__['logType'] = log_type
+    __args__['sourceResource'] = source_resource
+    __args__['sourceService'] = source_service
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Logging/getLogs:getLogs', __args__, opts=opts, typ=GetLogsResult)
+    return __ret__.apply(lambda __response__: GetLogsResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
+        log_type=pulumi.get(__response__, 'log_type'),
+        logs=pulumi.get(__response__, 'logs'),
+        source_resource=pulumi.get(__response__, 'source_resource'),
+        source_service=pulumi.get(__response__, 'source_service'),
+        state=pulumi.get(__response__, 'state')))

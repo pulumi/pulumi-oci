@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_node_pools(cluster_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         node_pools=pulumi.get(__ret__, 'node_pools'),
         states=pulumi.get(__ret__, 'states'))
-
-
-@_utilities.lift_output_func(get_node_pools)
 def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
     :param str name: The name to filter on.
     :param Sequence[str] states: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['states'] = states
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ContainerEngine/getNodePools:getNodePools', __args__, opts=opts, typ=GetNodePoolsResult)
+    return __ret__.apply(lambda __response__: GetNodePoolsResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        node_pools=pulumi.get(__response__, 'node_pools'),
+        states=pulumi.get(__response__, 'states')))

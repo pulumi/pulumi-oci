@@ -4,135 +4,273 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'BuildPipelineBuildPipelineParametersArgs',
+    'BuildPipelineBuildPipelineParametersArgsDict',
     'BuildPipelineBuildPipelineParametersItemArgs',
+    'BuildPipelineBuildPipelineParametersItemArgsDict',
     'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs',
+    'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict',
     'BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs',
+    'BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgsDict',
     'BuildPipelineStageBuildRunnerShapeConfigArgs',
+    'BuildPipelineStageBuildRunnerShapeConfigArgsDict',
     'BuildPipelineStageBuildSourceCollectionArgs',
+    'BuildPipelineStageBuildSourceCollectionArgsDict',
     'BuildPipelineStageBuildSourceCollectionItemArgs',
+    'BuildPipelineStageBuildSourceCollectionItemArgsDict',
     'BuildPipelineStageDeliverArtifactCollectionArgs',
+    'BuildPipelineStageDeliverArtifactCollectionArgsDict',
     'BuildPipelineStageDeliverArtifactCollectionItemArgs',
+    'BuildPipelineStageDeliverArtifactCollectionItemArgsDict',
     'BuildPipelineStagePrivateAccessConfigArgs',
+    'BuildPipelineStagePrivateAccessConfigArgsDict',
     'BuildPipelineStageWaitCriteriaArgs',
+    'BuildPipelineStageWaitCriteriaArgsDict',
     'BuildRunBuildOutputArgs',
+    'BuildRunBuildOutputArgsDict',
     'BuildRunBuildOutputArtifactOverrideParameterArgs',
+    'BuildRunBuildOutputArtifactOverrideParameterArgsDict',
     'BuildRunBuildOutputArtifactOverrideParameterItemArgs',
+    'BuildRunBuildOutputArtifactOverrideParameterItemArgsDict',
     'BuildRunBuildOutputDeliveredArtifactArgs',
+    'BuildRunBuildOutputDeliveredArtifactArgsDict',
     'BuildRunBuildOutputDeliveredArtifactItemArgs',
+    'BuildRunBuildOutputDeliveredArtifactItemArgsDict',
     'BuildRunBuildOutputExportedVariableArgs',
+    'BuildRunBuildOutputExportedVariableArgsDict',
     'BuildRunBuildOutputExportedVariableItemArgs',
+    'BuildRunBuildOutputExportedVariableItemArgsDict',
     'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict',
     'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgsDict',
     'BuildRunBuildRunArgumentsArgs',
+    'BuildRunBuildRunArgumentsArgsDict',
     'BuildRunBuildRunArgumentsItemArgs',
+    'BuildRunBuildRunArgumentsItemArgsDict',
     'BuildRunBuildRunProgressArgs',
+    'BuildRunBuildRunProgressArgsDict',
     'BuildRunBuildRunSourceArgs',
+    'BuildRunBuildRunSourceArgsDict',
     'BuildRunBuildRunSourceTriggerInfoArgs',
+    'BuildRunBuildRunSourceTriggerInfoArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionFilterArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict',
     'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgsDict',
     'BuildRunCommitInfoArgs',
+    'BuildRunCommitInfoArgsDict',
     'ConnectionLastConnectionValidationResultArgs',
+    'ConnectionLastConnectionValidationResultArgsDict',
     'ConnectionTlsVerifyConfigArgs',
+    'ConnectionTlsVerifyConfigArgsDict',
     'DeployArtifactDeployArtifactSourceArgs',
+    'DeployArtifactDeployArtifactSourceArgsDict',
     'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs',
+    'DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgsDict',
     'DeployEnvironmentComputeInstanceGroupSelectorsArgs',
+    'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict',
     'DeployEnvironmentComputeInstanceGroupSelectorsItemArgs',
+    'DeployEnvironmentComputeInstanceGroupSelectorsItemArgsDict',
     'DeployEnvironmentNetworkChannelArgs',
+    'DeployEnvironmentNetworkChannelArgsDict',
     'DeployPipelineDeployPipelineArtifactArgs',
+    'DeployPipelineDeployPipelineArtifactArgsDict',
     'DeployPipelineDeployPipelineArtifactItemArgs',
+    'DeployPipelineDeployPipelineArtifactItemArgsDict',
     'DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs',
+    'DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict',
     'DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs',
+    'DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgsDict',
     'DeployPipelineDeployPipelineEnvironmentArgs',
+    'DeployPipelineDeployPipelineEnvironmentArgsDict',
     'DeployPipelineDeployPipelineEnvironmentItemArgs',
+    'DeployPipelineDeployPipelineEnvironmentItemArgsDict',
     'DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs',
+    'DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict',
     'DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs',
+    'DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict',
     'DeployPipelineDeployPipelineParametersArgs',
+    'DeployPipelineDeployPipelineParametersArgsDict',
     'DeployPipelineDeployPipelineParametersItemArgs',
+    'DeployPipelineDeployPipelineParametersItemArgsDict',
     'DeployStageApprovalPolicyArgs',
+    'DeployStageApprovalPolicyArgsDict',
     'DeployStageBlueBackendIpsArgs',
+    'DeployStageBlueBackendIpsArgsDict',
     'DeployStageBlueGreenStrategyArgs',
+    'DeployStageBlueGreenStrategyArgsDict',
     'DeployStageCanaryStrategyArgs',
+    'DeployStageCanaryStrategyArgsDict',
     'DeployStageContainerConfigArgs',
+    'DeployStageContainerConfigArgsDict',
     'DeployStageContainerConfigNetworkChannelArgs',
+    'DeployStageContainerConfigNetworkChannelArgsDict',
     'DeployStageContainerConfigShapeConfigArgs',
+    'DeployStageContainerConfigShapeConfigArgsDict',
     'DeployStageDeployStagePredecessorCollectionArgs',
+    'DeployStageDeployStagePredecessorCollectionArgsDict',
     'DeployStageDeployStagePredecessorCollectionItemArgs',
+    'DeployStageDeployStagePredecessorCollectionItemArgsDict',
     'DeployStageFailurePolicyArgs',
+    'DeployStageFailurePolicyArgsDict',
     'DeployStageGreenBackendIpsArgs',
+    'DeployStageGreenBackendIpsArgsDict',
     'DeployStageLoadBalancerConfigArgs',
+    'DeployStageLoadBalancerConfigArgsDict',
     'DeployStageProductionLoadBalancerConfigArgs',
+    'DeployStageProductionLoadBalancerConfigArgsDict',
     'DeployStageRollbackPolicyArgs',
+    'DeployStageRollbackPolicyArgsDict',
     'DeployStageRolloutPolicyArgs',
+    'DeployStageRolloutPolicyArgsDict',
     'DeployStageSetStringArgs',
+    'DeployStageSetStringArgsDict',
     'DeployStageSetStringItemArgs',
+    'DeployStageSetStringItemArgsDict',
     'DeployStageSetValuesArgs',
+    'DeployStageSetValuesArgsDict',
     'DeployStageSetValuesItemArgs',
+    'DeployStageSetValuesItemArgsDict',
     'DeployStageTestLoadBalancerConfigArgs',
+    'DeployStageTestLoadBalancerConfigArgsDict',
     'DeployStageWaitCriteriaArgs',
+    'DeployStageWaitCriteriaArgsDict',
     'DeploymentDeployArtifactOverrideArgumentsArgs',
+    'DeploymentDeployArtifactOverrideArgumentsArgsDict',
     'DeploymentDeployArtifactOverrideArgumentsItemArgs',
+    'DeploymentDeployArtifactOverrideArgumentsItemArgsDict',
     'DeploymentDeployPipelineArtifactArgs',
+    'DeploymentDeployPipelineArtifactArgsDict',
     'DeploymentDeployPipelineArtifactItemArgs',
+    'DeploymentDeployPipelineArtifactItemArgsDict',
     'DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs',
+    'DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict',
     'DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs',
+    'DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgsDict',
     'DeploymentDeployPipelineEnvironmentArgs',
+    'DeploymentDeployPipelineEnvironmentArgsDict',
     'DeploymentDeployPipelineEnvironmentItemArgs',
+    'DeploymentDeployPipelineEnvironmentItemArgsDict',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs',
+    'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict',
     'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs',
+    'DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict',
     'DeploymentDeployStageOverrideArgumentsArgs',
+    'DeploymentDeployStageOverrideArgumentsArgsDict',
     'DeploymentDeployStageOverrideArgumentsItemArgs',
+    'DeploymentDeployStageOverrideArgumentsItemArgsDict',
     'DeploymentDeploymentArgumentsArgs',
+    'DeploymentDeploymentArgumentsArgsDict',
     'DeploymentDeploymentArgumentsItemArgs',
+    'DeploymentDeploymentArgumentsItemArgsDict',
     'DeploymentDeploymentExecutionProgressArgs',
+    'DeploymentDeploymentExecutionProgressArgsDict',
     'ProjectNotificationConfigArgs',
+    'ProjectNotificationConfigArgsDict',
     'ProjectRepositorySettingApprovalRulesArgs',
+    'ProjectRepositorySettingApprovalRulesArgsDict',
     'ProjectRepositorySettingApprovalRulesItemArgs',
+    'ProjectRepositorySettingApprovalRulesItemArgsDict',
     'ProjectRepositorySettingApprovalRulesItemReviewerArgs',
+    'ProjectRepositorySettingApprovalRulesItemReviewerArgsDict',
     'ProjectRepositorySettingMergeSettingsArgs',
+    'ProjectRepositorySettingMergeSettingsArgsDict',
     'RepositoryMirrorRepositoryConfigArgs',
+    'RepositoryMirrorRepositoryConfigArgsDict',
     'RepositoryMirrorRepositoryConfigTriggerScheduleArgs',
+    'RepositoryMirrorRepositoryConfigTriggerScheduleArgsDict',
     'RepositorySettingApprovalRulesArgs',
+    'RepositorySettingApprovalRulesArgsDict',
     'RepositorySettingApprovalRulesItemArgs',
+    'RepositorySettingApprovalRulesItemArgsDict',
     'RepositorySettingApprovalRulesItemReviewerArgs',
+    'RepositorySettingApprovalRulesItemReviewerArgsDict',
     'RepositorySettingMergeChecksArgs',
+    'RepositorySettingMergeChecksArgsDict',
     'RepositorySettingMergeSettingsArgs',
+    'RepositorySettingMergeSettingsArgsDict',
     'TriggerActionArgs',
+    'TriggerActionArgsDict',
     'TriggerActionFilterArgs',
+    'TriggerActionFilterArgsDict',
     'TriggerActionFilterExcludeArgs',
+    'TriggerActionFilterExcludeArgsDict',
     'TriggerActionFilterExcludeFileFilterArgs',
+    'TriggerActionFilterExcludeFileFilterArgsDict',
     'TriggerActionFilterIncludeArgs',
+    'TriggerActionFilterIncludeArgsDict',
     'TriggerActionFilterIncludeFileFilterArgs',
+    'TriggerActionFilterIncludeFileFilterArgsDict',
     'GetBuildPipelineStagesFilterArgs',
+    'GetBuildPipelineStagesFilterArgsDict',
     'GetBuildPipelinesFilterArgs',
+    'GetBuildPipelinesFilterArgsDict',
     'GetBuildRunsFilterArgs',
+    'GetBuildRunsFilterArgsDict',
     'GetConnectionsFilterArgs',
+    'GetConnectionsFilterArgsDict',
     'GetDeployArtifactsFilterArgs',
+    'GetDeployArtifactsFilterArgsDict',
     'GetDeployEnvironmentsFilterArgs',
+    'GetDeployEnvironmentsFilterArgsDict',
     'GetDeployPipelinesFilterArgs',
+    'GetDeployPipelinesFilterArgsDict',
     'GetDeployStagesFilterArgs',
+    'GetDeployStagesFilterArgsDict',
     'GetDeploymentsFilterArgs',
+    'GetDeploymentsFilterArgsDict',
     'GetProjectsFilterArgs',
+    'GetProjectsFilterArgsDict',
     'GetRepositoriesFilterArgs',
+    'GetRepositoriesFilterArgsDict',
     'GetRepositoryAuthorsFilterArgs',
+    'GetRepositoryAuthorsFilterArgsDict',
     'GetRepositoryCommitsFilterArgs',
+    'GetRepositoryCommitsFilterArgsDict',
     'GetRepositoryDiffsFilterArgs',
+    'GetRepositoryDiffsFilterArgsDict',
     'GetRepositoryMirrorRecordsFilterArgs',
+    'GetRepositoryMirrorRecordsFilterArgsDict',
     'GetRepositoryPathsFilterArgs',
+    'GetRepositoryPathsFilterArgsDict',
     'GetRepositoryProtectedBranchesFilterArgs',
+    'GetRepositoryProtectedBranchesFilterArgsDict',
     'GetRepositoryRefsFilterArgs',
+    'GetRepositoryRefsFilterArgsDict',
     'GetTriggersFilterArgs',
+    'GetTriggersFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class BuildPipelineBuildPipelineParametersArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['BuildPipelineBuildPipelineParametersItemArgsDict']]]
+        """
+        (Updatable) List of parameters defined for a build pipeline.
+        """
+elif False:
+    BuildPipelineBuildPipelineParametersArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineBuildPipelineParametersArgs:
@@ -155,6 +293,23 @@ class BuildPipelineBuildPipelineParametersArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['BuildPipelineBuildPipelineParametersItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildPipelineBuildPipelineParametersItemArgsDict(TypedDict):
+        default_value: pulumi.Input[str]
+        """
+        (Updatable) Default value of the parameter.
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Description of the parameter.
+        """
+elif False:
+    BuildPipelineBuildPipelineParametersItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineBuildPipelineParametersItemArgs:
@@ -209,6 +364,15 @@ class BuildPipelineBuildPipelineParametersItemArgs:
         pulumi.set(self, "description", value)
 
 
+if not MYPY:
+    class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgsDict']]]
+        """
+        (Updatable) A list of build pipeline stage predecessors for a stage.
+        """
+elif False:
+    BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs:
     def __init__(__self__, *,
@@ -231,6 +395,15 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs:
         pulumi.set(self, "items", value)
 
 
+if not MYPY:
+    class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's OCID.
+        """
+elif False:
+    BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs:
     def __init__(__self__, *,
@@ -252,6 +425,23 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs:
     def id(self, value: pulumi.Input[str]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class BuildPipelineStageBuildRunnerShapeConfigArgsDict(TypedDict):
+        build_runner_type: pulumi.Input[str]
+        """
+        (Updatable) Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The total amount of memory set for the instance in gigabytes.
+        """
+        ocpus: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The total number of OCPUs set for the instance.
+        """
+elif False:
+    BuildPipelineStageBuildRunnerShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineStageBuildRunnerShapeConfigArgs:
@@ -307,6 +497,15 @@ class BuildPipelineStageBuildRunnerShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
+if not MYPY:
+    class BuildPipelineStageBuildSourceCollectionArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildPipelineStageBuildSourceCollectionItemArgsDict']]]]
+        """
+        (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
+        """
+elif False:
+    BuildPipelineStageBuildSourceCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildPipelineStageBuildSourceCollectionArgs:
     def __init__(__self__, *,
@@ -329,6 +528,35 @@ class BuildPipelineStageBuildSourceCollectionArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildPipelineStageBuildSourceCollectionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildPipelineStageBuildSourceCollectionItemArgsDict(TypedDict):
+        connection_type: pulumi.Input[str]
+        """
+        (Updatable) The type of source provider.
+        """
+        branch: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Branch name.
+        """
+        connection_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Connection identifier pertinent to Bitbucket Server source provider
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
+        """
+        repository_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The DevOps code repository ID.
+        """
+        repository_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) URL for the repository.
+        """
+elif False:
+    BuildPipelineStageBuildSourceCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineStageBuildSourceCollectionItemArgs:
@@ -432,6 +660,15 @@ class BuildPipelineStageBuildSourceCollectionItemArgs:
         pulumi.set(self, "repository_url", value)
 
 
+if not MYPY:
+    class BuildPipelineStageDeliverArtifactCollectionArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionItemArgsDict']]]]
+        """
+        (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        """
+elif False:
+    BuildPipelineStageDeliverArtifactCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildPipelineStageDeliverArtifactCollectionArgs:
     def __init__(__self__, *,
@@ -454,6 +691,19 @@ class BuildPipelineStageDeliverArtifactCollectionArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildPipelineStageDeliverArtifactCollectionItemArgsDict(TypedDict):
+        artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Artifact identifier that contains the artifact definition.
+        """
+        artifact_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the artifact specified in the build_spec.yaml file.
+        """
+elif False:
+    BuildPipelineStageDeliverArtifactCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineStageDeliverArtifactCollectionItemArgs:
@@ -493,6 +743,23 @@ class BuildPipelineStageDeliverArtifactCollectionItemArgs:
     def artifact_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "artifact_name", value)
 
+
+if not MYPY:
+    class BuildPipelineStagePrivateAccessConfigArgsDict(TypedDict):
+        network_channel_type: pulumi.Input[str]
+        """
+        (Updatable) Network channel type.
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+elif False:
+    BuildPipelineStagePrivateAccessConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildPipelineStagePrivateAccessConfigArgs:
@@ -547,6 +814,23 @@ class BuildPipelineStagePrivateAccessConfigArgs:
         pulumi.set(self, "nsg_ids", value)
 
 
+if not MYPY:
+    class BuildPipelineStageWaitCriteriaArgsDict(TypedDict):
+        wait_duration: pulumi.Input[str]
+        """
+        (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
+        """
+        wait_type: pulumi.Input[str]
+        """
+        (Updatable) Wait criteria type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    BuildPipelineStageWaitCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildPipelineStageWaitCriteriaArgs:
     def __init__(__self__, *,
@@ -591,6 +875,27 @@ class BuildPipelineStageWaitCriteriaArgs:
     def wait_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "wait_type", value)
 
+
+if not MYPY:
+    class BuildRunBuildOutputArgsDict(TypedDict):
+        artifact_override_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterArgsDict']]]]
+        """
+        Specifies the list of artifact override arguments at the time of deployment.
+        """
+        delivered_artifacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactArgsDict']]]]
+        """
+        Specifies the list of artifacts delivered through the Deliver Artifacts stage.
+        """
+        exported_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgsDict']]]]
+        """
+        Specifies list of exported variables.
+        """
+        vulnerability_audit_summary_collections: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict']]]]
+        """
+        List of vulnerability audit summary.
+        """
+elif False:
+    BuildRunBuildOutputArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildOutputArgs:
@@ -663,6 +968,15 @@ class BuildRunBuildOutputArgs:
         pulumi.set(self, "vulnerability_audit_summary_collections", value)
 
 
+if not MYPY:
+    class BuildRunBuildOutputArtifactOverrideParameterArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterItemArgsDict']]]]
+        """
+        List of exported variables.
+        """
+elif False:
+    BuildRunBuildOutputArtifactOverrideParameterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildOutputArtifactOverrideParameterArgs:
     def __init__(__self__, *,
@@ -685,6 +999,23 @@ class BuildRunBuildOutputArtifactOverrideParameterArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildRunBuildOutputArtifactOverrideParameterItemArgsDict(TypedDict):
+        deploy_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the deployment artifact definition.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the step.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Value of the argument.
+        """
+elif False:
+    BuildRunBuildOutputArtifactOverrideParameterItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildOutputArtifactOverrideParameterItemArgs:
@@ -741,6 +1072,15 @@ class BuildRunBuildOutputArtifactOverrideParameterItemArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class BuildRunBuildOutputDeliveredArtifactArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactItemArgsDict']]]]
+        """
+        List of exported variables.
+        """
+elif False:
+    BuildRunBuildOutputDeliveredArtifactArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildOutputDeliveredArtifactArgs:
     def __init__(__self__, *,
@@ -763,6 +1103,47 @@ class BuildRunBuildOutputDeliveredArtifactArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildRunBuildOutputDeliveredArtifactItemArgsDict(TypedDict):
+        artifact_repository_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the artifact registry repository used by the DeliverArtifactStage
+        """
+        artifact_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of artifact delivered.
+        """
+        delivered_artifact_hash: NotRequired[pulumi.Input[str]]
+        """
+        The hash of the container registry artifact pushed by the Deliver Artifacts stage.
+        """
+        delivered_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the artifact pushed by the Deliver Artifacts stage.
+        """
+        deploy_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the deployment artifact definition.
+        """
+        image_uri: NotRequired[pulumi.Input[str]]
+        """
+        The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
+        """
+        output_artifact_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the output artifact defined in the build specification file.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        Path of the repository where artifact was pushed
+        """
+        version: NotRequired[pulumi.Input[str]]
+        """
+        Version of the artifact pushed
+        """
+elif False:
+    BuildRunBuildOutputDeliveredArtifactItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildOutputDeliveredArtifactItemArgs:
@@ -915,6 +1296,15 @@ class BuildRunBuildOutputDeliveredArtifactItemArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class BuildRunBuildOutputExportedVariableArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableItemArgsDict']]]]
+        """
+        List of exported variables.
+        """
+elif False:
+    BuildRunBuildOutputExportedVariableArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildOutputExportedVariableArgs:
     def __init__(__self__, *,
@@ -937,6 +1327,19 @@ class BuildRunBuildOutputExportedVariableArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildRunBuildOutputExportedVariableItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the step.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Value of the argument.
+        """
+elif False:
+    BuildRunBuildOutputExportedVariableItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildOutputExportedVariableItemArgs:
@@ -977,6 +1380,15 @@ class BuildRunBuildOutputExportedVariableItemArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgsDict']]]]
+        """
+        List of exported variables.
+        """
+elif False:
+    BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs:
     def __init__(__self__, *,
@@ -999,6 +1411,23 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgsDict(TypedDict):
+        build_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        Build stage OCID where scan was configured.
+        """
+        commit_hash: NotRequired[pulumi.Input[str]]
+        """
+        Commit hash pertinent to the repository URL and the specified branch.
+        """
+        vulnerability_audit_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the vulnerability audit.
+        """
+elif False:
+    BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs:
@@ -1055,6 +1484,15 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs:
         pulumi.set(self, "vulnerability_audit_id", value)
 
 
+if not MYPY:
+    class BuildRunBuildRunArgumentsArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunArgumentsItemArgsDict']]]
+        """
+        List of arguments provided at the time of running the build.
+        """
+elif False:
+    BuildRunBuildRunArgumentsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildRunArgumentsArgs:
     def __init__(__self__, *,
@@ -1076,6 +1514,19 @@ class BuildRunBuildRunArgumentsArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunArgumentsItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunArgumentsItemArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        """
+        value: pulumi.Input[str]
+        """
+        Value of the argument.
+        """
+elif False:
+    BuildRunBuildRunArgumentsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunArgumentsItemArgs:
@@ -1113,6 +1564,23 @@ class BuildRunBuildRunArgumentsItemArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunProgressArgsDict(TypedDict):
+        build_pipeline_stage_run_progress: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Map of stage OCIDs to build pipeline stage run progress model.
+        """
+        time_finished: NotRequired[pulumi.Input[str]]
+        """
+        The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        time_started: NotRequired[pulumi.Input[str]]
+        """
+        The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+elif False:
+    BuildRunBuildRunProgressArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunProgressArgs:
@@ -1168,6 +1636,27 @@ class BuildRunBuildRunProgressArgs:
     def time_started(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_started", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunSourceArgsDict(TypedDict):
+        repository_id: NotRequired[pulumi.Input[str]]
+        """
+        The DevOps code repository identifier that invoked the build run.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        The source from which the build run is triggered.
+        """
+        trigger_id: NotRequired[pulumi.Input[str]]
+        """
+        The trigger that invoked the build run.
+        """
+        trigger_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoArgsDict']]]]
+        """
+        Trigger details that need to be used for the BuildRun
+        """
+elif False:
+    BuildRunBuildRunSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunSourceArgs:
@@ -1240,6 +1729,19 @@ class BuildRunBuildRunSourceArgs:
         pulumi.set(self, "trigger_infos", value)
 
 
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoArgsDict(TypedDict):
+        actions: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionArgsDict']]]]
+        """
+        The list of actions that are to be performed for this Trigger
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoArgs:
     def __init__(__self__, *,
@@ -1278,6 +1780,20 @@ class BuildRunBuildRunSourceTriggerInfoArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionArgsDict(TypedDict):
+        build_pipeline_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the build pipeline.
+        """
+        filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict']]]]
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionArgs:
@@ -1329,6 +1845,27 @@ class BuildRunBuildRunSourceTriggerInfoActionArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict(TypedDict):
+        events: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+        """
+        excludes: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict']]]]
+        """
+        Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        """
+        includes: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict']]]]
+        """
+        Attributes to filter GitLab self-hosted server events.
+        """
+        trigger_source: NotRequired[pulumi.Input[str]]
+        """
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
@@ -1401,6 +1938,15 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
         pulumi.set(self, "trigger_source", value)
 
 
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict(TypedDict):
+        file_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgsDict']]]]
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs:
     def __init__(__self__, *,
@@ -1424,6 +1970,15 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs:
         pulumi.set(self, "file_filters", value)
 
 
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgsDict(TypedDict):
+        file_paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The file paths/glob pattern for files.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs:
     def __init__(__self__, *,
@@ -1446,6 +2001,27 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs:
     def file_paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "file_paths", value)
 
+
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict(TypedDict):
+        base_ref: NotRequired[pulumi.Input[str]]
+        """
+        The target branch for pull requests; not applicable for push requests.
+        """
+        file_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgsDict']]]]
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
+        head_ref: NotRequired[pulumi.Input[str]]
+        """
+        Branch for push event; source branch for pull requests.
+        """
+        repository_name: NotRequired[pulumi.Input[str]]
+        """
+        The repository name for trigger events.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
@@ -1518,6 +2094,15 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs:
         pulumi.set(self, "repository_name", value)
 
 
+if not MYPY:
+    class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgsDict(TypedDict):
+        file_paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The file paths/glob pattern for files.
+        """
+elif False:
+    BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs:
     def __init__(__self__, *,
@@ -1540,6 +2125,23 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs:
     def file_paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "file_paths", value)
 
+
+if not MYPY:
+    class BuildRunCommitInfoArgsDict(TypedDict):
+        commit_hash: pulumi.Input[str]
+        """
+        Commit hash pertinent to the repository URL and the specified branch.
+        """
+        repository_branch: pulumi.Input[str]
+        """
+        Name of the repository branch.
+        """
+        repository_url: pulumi.Input[str]
+        """
+        Repository URL.
+        """
+elif False:
+    BuildRunCommitInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class BuildRunCommitInfoArgs:
@@ -1592,6 +2194,23 @@ class BuildRunCommitInfoArgs:
     def repository_url(self, value: pulumi.Input[str]):
         pulumi.set(self, "repository_url", value)
 
+
+if not MYPY:
+    class ConnectionLastConnectionValidationResultArgsDict(TypedDict):
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message describing the result of connection validation in more detail.
+        """
+        result: NotRequired[pulumi.Input[str]]
+        """
+        The latest result of whether the credentials pass the validation.
+        """
+        time_validated: NotRequired[pulumi.Input[str]]
+        """
+        The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+elif False:
+    ConnectionLastConnectionValidationResultArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectionLastConnectionValidationResultArgs:
@@ -1648,6 +2267,19 @@ class ConnectionLastConnectionValidationResultArgs:
         pulumi.set(self, "time_validated", value)
 
 
+if not MYPY:
+    class ConnectionTlsVerifyConfigArgsDict(TypedDict):
+        ca_certificate_bundle_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
+        """
+        tls_verify_mode: pulumi.Input[str]
+        """
+        (Updatable) The type of TLS verification.
+        """
+elif False:
+    ConnectionTlsVerifyConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectionTlsVerifyConfigArgs:
     def __init__(__self__, *,
@@ -1684,6 +2316,51 @@ class ConnectionTlsVerifyConfigArgs:
     def tls_verify_mode(self, value: pulumi.Input[str]):
         pulumi.set(self, "tls_verify_mode", value)
 
+
+if not MYPY:
+    class DeployArtifactDeployArtifactSourceArgsDict(TypedDict):
+        deploy_artifact_source_type: pulumi.Input[str]
+        """
+        (Updatable) Specifies types of artifact sources.
+        """
+        base64encoded_content: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The Helm commands to be executed, base 64 encoded
+        """
+        chart_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The URL of an OCIR repository.
+        """
+        deploy_artifact_path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies the artifact path in the repository.
+        """
+        deploy_artifact_version: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+        """
+        helm_artifact_source_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies types of artifact sources.
+        """
+        helm_verification_key_source: NotRequired[pulumi.Input['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgsDict']]
+        """
+        (Updatable) The source of the verification material.
+        """
+        image_digest: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies image digest for the version of the image.
+        """
+        image_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies OCIR Image Path - optionally include tag.
+        """
+        repository_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of a repository
+        """
+elif False:
+    DeployArtifactDeployArtifactSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployArtifactDeployArtifactSourceArgs:
@@ -1851,6 +2528,27 @@ class DeployArtifactDeployArtifactSourceArgs:
         pulumi.set(self, "repository_id", value)
 
 
+if not MYPY:
+    class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgsDict(TypedDict):
+        verification_key_source_type: pulumi.Input[str]
+        """
+        (Updatable) Specifies type of verification material.
+        """
+        current_public_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Current version of Base64 encoding of the public key which is in binary GPG exported format.
+        """
+        previous_public_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+        """
+        vault_secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault Secret containing the verification key versions.
+        """
+elif False:
+    DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs:
     def __init__(__self__, *,
@@ -1921,6 +2619,15 @@ class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs:
         pulumi.set(self, "vault_secret_id", value)
 
 
+if not MYPY:
+    class DeployEnvironmentComputeInstanceGroupSelectorsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsItemArgsDict']]]]
+        """
+        (Updatable) A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
+        """
+elif False:
+    DeployEnvironmentComputeInstanceGroupSelectorsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployEnvironmentComputeInstanceGroupSelectorsArgs:
     def __init__(__self__, *,
@@ -1943,6 +2650,27 @@ class DeployEnvironmentComputeInstanceGroupSelectorsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployEnvironmentComputeInstanceGroupSelectorsItemArgsDict(TypedDict):
+        selector_type: pulumi.Input[str]
+        """
+        (Updatable) Defines the type of the instance selector for the group.
+        """
+        compute_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Compute instance OCID identifiers that are members of this group.
+        """
+        query: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        """
+elif False:
+    DeployEnvironmentComputeInstanceGroupSelectorsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs:
@@ -2014,6 +2742,23 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItemArgs:
         pulumi.set(self, "region", value)
 
 
+if not MYPY:
+    class DeployEnvironmentNetworkChannelArgsDict(TypedDict):
+        network_channel_type: pulumi.Input[str]
+        """
+        (Updatable) Network channel type.
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+elif False:
+    DeployEnvironmentNetworkChannelArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployEnvironmentNetworkChannelArgs:
     def __init__(__self__, *,
@@ -2067,6 +2812,15 @@ class DeployEnvironmentNetworkChannelArgs:
         pulumi.set(self, "nsg_ids", value)
 
 
+if not MYPY:
+    class DeployPipelineDeployPipelineArtifactArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemArgsDict']]]]
+        """
+        List of parameters defined for a deployment pipeline.
+        """
+elif False:
+    DeployPipelineDeployPipelineArtifactArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployPipelineDeployPipelineArtifactArgs:
     def __init__(__self__, *,
@@ -2089,6 +2843,23 @@ class DeployPipelineDeployPipelineArtifactArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployPipelineDeployPipelineArtifactItemArgsDict(TypedDict):
+        deploy_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of an artifact
+        """
+        deploy_pipeline_stages: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict']]]]
+        """
+        List of stages.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment pipeline display name. Avoid entering confidential information.
+        """
+elif False:
+    DeployPipelineDeployPipelineArtifactItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployPipelineDeployPipelineArtifactItemArgs:
@@ -2145,6 +2916,15 @@ class DeployPipelineDeployPipelineArtifactItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgsDict']]]]
+        """
+        List of parameters defined for a deployment pipeline.
+        """
+elif False:
+    DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs:
     def __init__(__self__, *,
@@ -2167,6 +2947,19 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgsDict(TypedDict):
+        deploy_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of a stage
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment pipeline display name. Avoid entering confidential information.
+        """
+elif False:
+    DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs:
@@ -2207,6 +3000,15 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeployPipelineDeployPipelineEnvironmentArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemArgsDict']]]]
+        """
+        List of parameters defined for a deployment pipeline.
+        """
+elif False:
+    DeployPipelineDeployPipelineEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployPipelineDeployPipelineEnvironmentArgs:
     def __init__(__self__, *,
@@ -2229,6 +3031,23 @@ class DeployPipelineDeployPipelineEnvironmentArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployPipelineDeployPipelineEnvironmentItemArgsDict(TypedDict):
+        deploy_environment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of an Environment
+        """
+        deploy_pipeline_stages: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict']]]]
+        """
+        List of stages.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment pipeline display name. Avoid entering confidential information.
+        """
+elif False:
+    DeployPipelineDeployPipelineEnvironmentItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployPipelineDeployPipelineEnvironmentItemArgs:
@@ -2285,6 +3104,15 @@ class DeployPipelineDeployPipelineEnvironmentItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict']]]]
+        """
+        List of parameters defined for a deployment pipeline.
+        """
+elif False:
+    DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs:
     def __init__(__self__, *,
@@ -2307,6 +3135,19 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict(TypedDict):
+        deploy_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of a stage
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment pipeline display name. Avoid entering confidential information.
+        """
+elif False:
+    DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
@@ -2347,6 +3188,15 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeployPipelineDeployPipelineParametersArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineParametersItemArgsDict']]]
+        """
+        (Updatable) List of parameters defined for a deployment pipeline.
+        """
+elif False:
+    DeployPipelineDeployPipelineParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployPipelineDeployPipelineParametersArgs:
     def __init__(__self__, *,
@@ -2368,6 +3218,23 @@ class DeployPipelineDeployPipelineParametersArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['DeployPipelineDeployPipelineParametersItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployPipelineDeployPipelineParametersItemArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        """
+        default_value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Default value of the parameter.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Description of the parameter.
+        """
+elif False:
+    DeployPipelineDeployPipelineParametersItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployPipelineDeployPipelineParametersItemArgs:
@@ -2423,6 +3290,19 @@ class DeployPipelineDeployPipelineParametersItemArgs:
         pulumi.set(self, "description", value)
 
 
+if not MYPY:
+    class DeployStageApprovalPolicyArgsDict(TypedDict):
+        approval_policy_type: pulumi.Input[str]
+        """
+        (Updatable) Approval policy type.
+        """
+        number_of_approvals_required: pulumi.Input[int]
+        """
+        (Updatable) A minimum number of approvals required for stage to proceed.
+        """
+elif False:
+    DeployStageApprovalPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageApprovalPolicyArgs:
     def __init__(__self__, *,
@@ -2460,6 +3340,15 @@ class DeployStageApprovalPolicyArgs:
         pulumi.set(self, "number_of_approvals_required", value)
 
 
+if not MYPY:
+    class DeployStageBlueBackendIpsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        """
+elif False:
+    DeployStageBlueBackendIpsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageBlueBackendIpsArgs:
     def __init__(__self__, *,
@@ -2482,6 +3371,27 @@ class DeployStageBlueBackendIpsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployStageBlueGreenStrategyArgsDict(TypedDict):
+        ingress_name: pulumi.Input[str]
+        """
+        Name of the Ingress resource.
+        """
+        namespace_a: pulumi.Input[str]
+        """
+        First Namespace for deployment.
+        """
+        namespace_b: pulumi.Input[str]
+        """
+        Second Namespace for deployment.
+        """
+        strategy_type: pulumi.Input[str]
+        """
+        Blue Green strategy type
+        """
+elif False:
+    DeployStageBlueGreenStrategyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageBlueGreenStrategyArgs:
@@ -2550,6 +3460,23 @@ class DeployStageBlueGreenStrategyArgs:
         pulumi.set(self, "strategy_type", value)
 
 
+if not MYPY:
+    class DeployStageCanaryStrategyArgsDict(TypedDict):
+        ingress_name: pulumi.Input[str]
+        """
+        Name of the Ingress resource.
+        """
+        namespace: pulumi.Input[str]
+        """
+        Canary namespace to be used for Kubernetes canary deployment.
+        """
+        strategy_type: pulumi.Input[str]
+        """
+        Canary strategy type.
+        """
+elif False:
+    DeployStageCanaryStrategyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageCanaryStrategyArgs:
     def __init__(__self__, *,
@@ -2601,6 +3528,35 @@ class DeployStageCanaryStrategyArgs:
     def strategy_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "strategy_type", value)
 
+
+if not MYPY:
+    class DeployStageContainerConfigArgsDict(TypedDict):
+        container_config_type: pulumi.Input[str]
+        """
+        (Updatable) Container configuration type.
+        """
+        network_channel: pulumi.Input['DeployStageContainerConfigNetworkChannelArgsDict']
+        """
+        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        """
+        shape_config: pulumi.Input['DeployStageContainerConfigShapeConfigArgsDict']
+        """
+        (Updatable) Determines the size and amount of resources available to the instance.
+        """
+        shape_name: pulumi.Input[str]
+        """
+        (Updatable) The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Availability domain where the ContainerInstance will be created.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        """
+elif False:
+    DeployStageContainerConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageContainerConfigArgs:
@@ -2701,6 +3657,23 @@ class DeployStageContainerConfigArgs:
         pulumi.set(self, "compartment_id", value)
 
 
+if not MYPY:
+    class DeployStageContainerConfigNetworkChannelArgsDict(TypedDict):
+        network_channel_type: pulumi.Input[str]
+        """
+        (Updatable) Network channel type.
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the subnet where VNIC resources will be created for private endpoint.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) An array of network security group OCIDs.
+        """
+elif False:
+    DeployStageContainerConfigNetworkChannelArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageContainerConfigNetworkChannelArgs:
     def __init__(__self__, *,
@@ -2754,6 +3727,19 @@ class DeployStageContainerConfigNetworkChannelArgs:
         pulumi.set(self, "nsg_ids", value)
 
 
+if not MYPY:
+    class DeployStageContainerConfigShapeConfigArgsDict(TypedDict):
+        ocpus: pulumi.Input[float]
+        """
+        (Updatable) The total number of OCPUs available to the instance.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The total amount of memory available to the instance, in gigabytes.
+        """
+elif False:
+    DeployStageContainerConfigShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageContainerConfigShapeConfigArgs:
     def __init__(__self__, *,
@@ -2792,6 +3778,15 @@ class DeployStageContainerConfigShapeConfigArgs:
         pulumi.set(self, "memory_in_gbs", value)
 
 
+if not MYPY:
+    class DeployStageDeployStagePredecessorCollectionArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['DeployStageDeployStagePredecessorCollectionItemArgsDict']]]
+        """
+        (Updatable) A list of stage predecessors for a stage.
+        """
+elif False:
+    DeployStageDeployStagePredecessorCollectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageDeployStagePredecessorCollectionArgs:
     def __init__(__self__, *,
@@ -2814,6 +3809,15 @@ class DeployStageDeployStagePredecessorCollectionArgs:
         pulumi.set(self, "items", value)
 
 
+if not MYPY:
+    class DeployStageDeployStagePredecessorCollectionItemArgsDict(TypedDict):
+        id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's OCID.
+        """
+elif False:
+    DeployStageDeployStagePredecessorCollectionItemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageDeployStagePredecessorCollectionItemArgs:
     def __init__(__self__, *,
@@ -2835,6 +3839,23 @@ class DeployStageDeployStagePredecessorCollectionItemArgs:
     def id(self, value: pulumi.Input[str]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class DeployStageFailurePolicyArgsDict(TypedDict):
+        policy_type: pulumi.Input[str]
+        """
+        (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
+        """
+        failure_count: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
+        """
+        failure_percentage: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+        """
+elif False:
+    DeployStageFailurePolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageFailurePolicyArgs:
@@ -2890,6 +3911,15 @@ class DeployStageFailurePolicyArgs:
         pulumi.set(self, "failure_percentage", value)
 
 
+if not MYPY:
+    class DeployStageGreenBackendIpsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
+        """
+elif False:
+    DeployStageGreenBackendIpsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageGreenBackendIpsArgs:
     def __init__(__self__, *,
@@ -2912,6 +3942,27 @@ class DeployStageGreenBackendIpsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployStageLoadBalancerConfigArgsDict(TypedDict):
+        backend_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Listen port for the backend server.
+        """
+        listener_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the deployment stage.
+        """
+elif False:
+    DeployStageLoadBalancerConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageLoadBalancerConfigArgs:
@@ -2984,6 +4035,27 @@ class DeployStageLoadBalancerConfigArgs:
         pulumi.set(self, "state", value)
 
 
+if not MYPY:
+    class DeployStageProductionLoadBalancerConfigArgsDict(TypedDict):
+        backend_port: NotRequired[pulumi.Input[int]]
+        """
+        Listen port for the backend server.
+        """
+        listener_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the deployment stage.
+        """
+elif False:
+    DeployStageProductionLoadBalancerConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageProductionLoadBalancerConfigArgs:
     def __init__(__self__, *,
@@ -3055,6 +4127,15 @@ class DeployStageProductionLoadBalancerConfigArgs:
         pulumi.set(self, "state", value)
 
 
+if not MYPY:
+    class DeployStageRollbackPolicyArgsDict(TypedDict):
+        policy_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies type of the deployment stage rollback policy.
+        """
+elif False:
+    DeployStageRollbackPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageRollbackPolicyArgs:
     def __init__(__self__, *,
@@ -3077,6 +4158,31 @@ class DeployStageRollbackPolicyArgs:
     def policy_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "policy_type", value)
 
+
+if not MYPY:
+    class DeployStageRolloutPolicyArgsDict(TypedDict):
+        batch_count: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The number that will be used to determine how many instances will be deployed concurrently.
+        """
+        batch_delay_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The duration of delay between batch rollout. The default delay is 1 minute.
+        """
+        batch_percentage: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The percentage that will be used to determine how many instances will be deployed concurrently.
+        """
+        policy_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of policy used for rolling out a deployment stage.
+        """
+        ramp_limit_percent: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) Indicates the criteria to stop.
+        """
+elif False:
+    DeployStageRolloutPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageRolloutPolicyArgs:
@@ -3165,6 +4271,15 @@ class DeployStageRolloutPolicyArgs:
         pulumi.set(self, "ramp_limit_percent", value)
 
 
+if not MYPY:
+    class DeployStageSetStringArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgsDict']]]]
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+elif False:
+    DeployStageSetStringArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageSetStringArgs:
     def __init__(__self__, *,
@@ -3187,6 +4302,19 @@ class DeployStageSetStringArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployStageSetStringItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Value of the parameter.
+        """
+elif False:
+    DeployStageSetStringItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageSetStringItemArgs:
@@ -3227,6 +4355,15 @@ class DeployStageSetStringItemArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class DeployStageSetValuesArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgsDict']]]]
+        """
+        (Updatable) List of parameters defined to set helm value.
+        """
+elif False:
+    DeployStageSetValuesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageSetValuesArgs:
     def __init__(__self__, *,
@@ -3249,6 +4386,19 @@ class DeployStageSetValuesArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeployStageSetValuesItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the parameter (case-sensitive).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Value of the parameter.
+        """
+elif False:
+    DeployStageSetValuesItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageSetValuesItemArgs:
@@ -3288,6 +4438,27 @@ class DeployStageSetValuesItemArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class DeployStageTestLoadBalancerConfigArgsDict(TypedDict):
+        backend_port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Listen port for the backend server.
+        """
+        listener_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the load balancer listener.
+        """
+        load_balancer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the load balancer.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the deployment stage.
+        """
+elif False:
+    DeployStageTestLoadBalancerConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeployStageTestLoadBalancerConfigArgs:
@@ -3360,6 +4531,23 @@ class DeployStageTestLoadBalancerConfigArgs:
         pulumi.set(self, "state", value)
 
 
+if not MYPY:
+    class DeployStageWaitCriteriaArgsDict(TypedDict):
+        wait_duration: pulumi.Input[str]
+        """
+        (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
+        """
+        wait_type: pulumi.Input[str]
+        """
+        (Updatable) Wait criteria type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    DeployStageWaitCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeployStageWaitCriteriaArgs:
     def __init__(__self__, *,
@@ -3405,6 +4593,15 @@ class DeployStageWaitCriteriaArgs:
         pulumi.set(self, "wait_type", value)
 
 
+if not MYPY:
+    class DeploymentDeployArtifactOverrideArgumentsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsItemArgsDict']]]]
+        """
+        List of artifact override arguments at the time of deployment.
+        """
+elif False:
+    DeploymentDeployArtifactOverrideArgumentsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployArtifactOverrideArgumentsArgs:
     def __init__(__self__, *,
@@ -3427,6 +4624,23 @@ class DeploymentDeployArtifactOverrideArgumentsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployArtifactOverrideArgumentsItemArgsDict(TypedDict):
+        deploy_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the artifact to which this parameter applies.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the parameter (case-sensitive).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Value of the parameter.
+        """
+elif False:
+    DeploymentDeployArtifactOverrideArgumentsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployArtifactOverrideArgumentsItemArgs:
@@ -3483,6 +4697,15 @@ class DeploymentDeployArtifactOverrideArgumentsItemArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class DeploymentDeployPipelineArtifactArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemArgsDict']]]]
+        """
+        A list of stage predecessors for a stage.
+        """
+elif False:
+    DeploymentDeployPipelineArtifactArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployPipelineArtifactArgs:
     def __init__(__self__, *,
@@ -3505,6 +4728,23 @@ class DeploymentDeployPipelineArtifactArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployPipelineArtifactItemArgsDict(TypedDict):
+        deploy_artifact_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of an artifact
+        """
+        deploy_pipeline_stages: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict']]]]
+        """
+        List of stages.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment display name. Avoid entering confidential information.
+        """
+elif False:
+    DeploymentDeployPipelineArtifactItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployPipelineArtifactItemArgs:
@@ -3561,6 +4801,15 @@ class DeploymentDeployPipelineArtifactItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgsDict']]]]
+        """
+        A list of stage predecessors for a stage.
+        """
+elif False:
+    DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs:
     def __init__(__self__, *,
@@ -3583,6 +4832,19 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgsDict(TypedDict):
+        deploy_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        Specifies the OCID of the stage to be redeployed.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment display name. Avoid entering confidential information.
+        """
+elif False:
+    DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs:
@@ -3623,6 +4885,15 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeploymentDeployPipelineEnvironmentArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemArgsDict']]]]
+        """
+        A list of stage predecessors for a stage.
+        """
+elif False:
+    DeploymentDeployPipelineEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployPipelineEnvironmentArgs:
     def __init__(__self__, *,
@@ -3645,6 +4916,23 @@ class DeploymentDeployPipelineEnvironmentArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployPipelineEnvironmentItemArgsDict(TypedDict):
+        deploy_environment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of an Environment
+        """
+        deploy_pipeline_stages: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict']]]]
+        """
+        List of stages.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment display name. Avoid entering confidential information.
+        """
+elif False:
+    DeploymentDeployPipelineEnvironmentItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployPipelineEnvironmentItemArgs:
@@ -3701,6 +4989,15 @@ class DeploymentDeployPipelineEnvironmentItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict']]]]
+        """
+        A list of stage predecessors for a stage.
+        """
+elif False:
+    DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs:
     def __init__(__self__, *,
@@ -3723,6 +5020,19 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict(TypedDict):
+        deploy_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        Specifies the OCID of the stage to be redeployed.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Deployment display name. Avoid entering confidential information.
+        """
+elif False:
+    DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
@@ -3763,6 +5073,15 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class DeploymentDeployStageOverrideArgumentsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgsDict']]]]
+        """
+        List of stage override arguments at the time of deployment.
+        """
+elif False:
+    DeploymentDeployStageOverrideArgumentsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeployStageOverrideArgumentsArgs:
     def __init__(__self__, *,
@@ -3785,6 +5104,23 @@ class DeploymentDeployStageOverrideArgumentsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeployStageOverrideArgumentsItemArgsDict(TypedDict):
+        deploy_stage_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the stage.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the parameter (case-sensitive).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Value of the parameter.
+        """
+elif False:
+    DeploymentDeployStageOverrideArgumentsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeployStageOverrideArgumentsItemArgs:
@@ -3841,6 +5177,15 @@ class DeploymentDeployStageOverrideArgumentsItemArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class DeploymentDeploymentArgumentsArgsDict(TypedDict):
+        items: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentArgumentsItemArgsDict']]]]
+        """
+        List of arguments provided at the time of deployment.
+        """
+elif False:
+    DeploymentDeploymentArgumentsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DeploymentDeploymentArgumentsArgs:
     def __init__(__self__, *,
@@ -3863,6 +5208,20 @@ class DeploymentDeploymentArgumentsArgs:
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentArgumentsItemArgs']]]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class DeploymentDeploymentArgumentsItemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the parameter (case-sensitive).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of the argument.
+        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        """
+elif False:
+    DeploymentDeploymentArgumentsItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeploymentArgumentsItemArgs:
@@ -3904,6 +5263,23 @@ class DeploymentDeploymentArgumentsItemArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class DeploymentDeploymentExecutionProgressArgsDict(TypedDict):
+        deploy_stage_execution_progress: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Map of stage OCIDs to deploy stage execution progress model.
+        """
+        time_finished: NotRequired[pulumi.Input[str]]
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        time_started: NotRequired[pulumi.Input[str]]
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+elif False:
+    DeploymentDeploymentExecutionProgressArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DeploymentDeploymentExecutionProgressArgs:
@@ -3960,6 +5336,19 @@ class DeploymentDeploymentExecutionProgressArgs:
         pulumi.set(self, "time_started", value)
 
 
+if not MYPY:
+    class ProjectNotificationConfigArgsDict(TypedDict):
+        topic_id: pulumi.Input[str]
+        """
+        (Updatable) The topic ID for notifications.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ProjectNotificationConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectNotificationConfigArgs:
     def __init__(__self__, *,
@@ -3990,6 +5379,15 @@ class ProjectNotificationConfigArgs:
         pulumi.set(self, "topic_id", value)
 
 
+if not MYPY:
+    class ProjectRepositorySettingApprovalRulesArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgsDict']]]
+        """
+        (Updatable) List of approval rules.
+        """
+elif False:
+    ProjectRepositorySettingApprovalRulesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectRepositorySettingApprovalRulesArgs:
     def __init__(__self__, *,
@@ -4011,6 +5409,27 @@ class ProjectRepositorySettingApprovalRulesArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class ProjectRepositorySettingApprovalRulesItemArgsDict(TypedDict):
+        min_approvals_count: pulumi.Input[int]
+        """
+        (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name which is used to uniquely identify an approval rule.
+        """
+        destination_branch: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        """
+        reviewers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgsDict']]]]
+        """
+        (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+elif False:
+    ProjectRepositorySettingApprovalRulesItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectRepositorySettingApprovalRulesItemArgs:
@@ -4080,6 +5499,27 @@ class ProjectRepositorySettingApprovalRulesItemArgs:
     def reviewers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]]]):
         pulumi.set(self, "reviewers", value)
 
+
+if not MYPY:
+    class ProjectRepositorySettingApprovalRulesItemReviewerArgsDict(TypedDict):
+        principal_id: pulumi.Input[str]
+        """
+        (Updatable) Pull Request reviewer id
+        """
+        principal_name: NotRequired[pulumi.Input[str]]
+        """
+        the name of the principal
+        """
+        principal_state: NotRequired[pulumi.Input[str]]
+        """
+        The state of the principal, it can be active or inactive or suppressed for emails
+        """
+        principal_type: NotRequired[pulumi.Input[str]]
+        """
+        the type of principal
+        """
+elif False:
+    ProjectRepositorySettingApprovalRulesItemReviewerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectRepositorySettingApprovalRulesItemReviewerArgs:
@@ -4151,6 +5591,19 @@ class ProjectRepositorySettingApprovalRulesItemReviewerArgs:
         pulumi.set(self, "principal_type", value)
 
 
+if not MYPY:
+    class ProjectRepositorySettingMergeSettingsArgsDict(TypedDict):
+        allowed_merge_strategies: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        """
+        default_merge_strategy: pulumi.Input[str]
+        """
+        (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+elif False:
+    ProjectRepositorySettingMergeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectRepositorySettingMergeSettingsArgs:
     def __init__(__self__, *,
@@ -4187,6 +5640,23 @@ class ProjectRepositorySettingMergeSettingsArgs:
     def default_merge_strategy(self, value: pulumi.Input[str]):
         pulumi.set(self, "default_merge_strategy", value)
 
+
+if not MYPY:
+    class RepositoryMirrorRepositoryConfigArgsDict(TypedDict):
+        connector_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Upstream git repository connection identifier.
+        """
+        repository_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) URL of external repository you want to mirror.
+        """
+        trigger_schedule: NotRequired[pulumi.Input['RepositoryMirrorRepositoryConfigTriggerScheduleArgsDict']]
+        """
+        (Updatable) Specifies a trigger schedule. Timing information for when to initiate automated syncs.
+        """
+elif False:
+    RepositoryMirrorRepositoryConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RepositoryMirrorRepositoryConfigArgs:
@@ -4243,6 +5713,19 @@ class RepositoryMirrorRepositoryConfigArgs:
         pulumi.set(self, "trigger_schedule", value)
 
 
+if not MYPY:
+    class RepositoryMirrorRepositoryConfigTriggerScheduleArgsDict(TypedDict):
+        schedule_type: pulumi.Input[str]
+        """
+        (Updatable) Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
+        """
+        custom_schedule: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        """
+elif False:
+    RepositoryMirrorRepositoryConfigTriggerScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RepositoryMirrorRepositoryConfigTriggerScheduleArgs:
     def __init__(__self__, *,
@@ -4281,6 +5764,15 @@ class RepositoryMirrorRepositoryConfigTriggerScheduleArgs:
         pulumi.set(self, "custom_schedule", value)
 
 
+if not MYPY:
+    class RepositorySettingApprovalRulesArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgsDict']]]
+        """
+        (Updatable) List of approval rules.
+        """
+elif False:
+    RepositorySettingApprovalRulesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RepositorySettingApprovalRulesArgs:
     def __init__(__self__, *,
@@ -4302,6 +5794,27 @@ class RepositorySettingApprovalRulesArgs:
     def items(self, value: pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemArgs']]]):
         pulumi.set(self, "items", value)
 
+
+if not MYPY:
+    class RepositorySettingApprovalRulesItemArgsDict(TypedDict):
+        min_approvals_count: pulumi.Input[int]
+        """
+        (Updatable) Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+        """
+        name: pulumi.Input[str]
+        """
+        (Updatable) Name which is used to uniquely identify an approval rule.
+        """
+        destination_branch: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+        """
+        reviewers: NotRequired[pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgsDict']]]]
+        """
+        (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+        """
+elif False:
+    RepositorySettingApprovalRulesItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RepositorySettingApprovalRulesItemArgs:
@@ -4371,6 +5884,27 @@ class RepositorySettingApprovalRulesItemArgs:
     def reviewers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]]]):
         pulumi.set(self, "reviewers", value)
 
+
+if not MYPY:
+    class RepositorySettingApprovalRulesItemReviewerArgsDict(TypedDict):
+        principal_id: pulumi.Input[str]
+        """
+        (Updatable) Pull Request reviewer id
+        """
+        principal_name: NotRequired[pulumi.Input[str]]
+        """
+        the name of the principal
+        """
+        principal_state: NotRequired[pulumi.Input[str]]
+        """
+        The state of the principal, it can be active or inactive or suppressed for emails
+        """
+        principal_type: NotRequired[pulumi.Input[str]]
+        """
+        the type of principal
+        """
+elif False:
+    RepositorySettingApprovalRulesItemReviewerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RepositorySettingApprovalRulesItemReviewerArgs:
@@ -4442,6 +5976,15 @@ class RepositorySettingApprovalRulesItemReviewerArgs:
         pulumi.set(self, "principal_type", value)
 
 
+if not MYPY:
+    class RepositorySettingMergeChecksArgsDict(TypedDict):
+        last_build_succeeded: pulumi.Input[str]
+        """
+        (Updatable) Indicates whether or not a pull request must have a successful build run and no queued builds before it can be merged
+        """
+elif False:
+    RepositorySettingMergeChecksArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RepositorySettingMergeChecksArgs:
     def __init__(__self__, *,
@@ -4463,6 +6006,19 @@ class RepositorySettingMergeChecksArgs:
     def last_build_succeeded(self, value: pulumi.Input[str]):
         pulumi.set(self, "last_build_succeeded", value)
 
+
+if not MYPY:
+    class RepositorySettingMergeSettingsArgsDict(TypedDict):
+        allowed_merge_strategies: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) List of merge strategies which are allowed for a Project or Repository.
+        """
+        default_merge_strategy: pulumi.Input[str]
+        """
+        (Updatable) Default type of merge strategy associated with the a Project or Repository.
+        """
+elif False:
+    RepositorySettingMergeSettingsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RepositorySettingMergeSettingsArgs:
@@ -4500,6 +6056,20 @@ class RepositorySettingMergeSettingsArgs:
     def default_merge_strategy(self, value: pulumi.Input[str]):
         pulumi.set(self, "default_merge_strategy", value)
 
+
+if not MYPY:
+    class TriggerActionArgsDict(TypedDict):
+        build_pipeline_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the build pipeline to be triggered.
+        """
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
+        """
+        filter: NotRequired[pulumi.Input['TriggerActionFilterArgsDict']]
+elif False:
+    TriggerActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TriggerActionArgs:
@@ -4549,6 +6119,31 @@ class TriggerActionArgs:
     def filter(self, value: Optional[pulumi.Input['TriggerActionFilterArgs']]):
         pulumi.set(self, "filter", value)
 
+
+if not MYPY:
+    class TriggerActionFilterArgsDict(TypedDict):
+        trigger_source: pulumi.Input[str]
+        """
+        (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        events: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
+        """
+        exclude: NotRequired[pulumi.Input['TriggerActionFilterExcludeArgsDict']]
+        """
+        Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        """
+        include: NotRequired[pulumi.Input['TriggerActionFilterIncludeArgsDict']]
+        """
+        Attributes to filter GitLab self-hosted server events.
+        """
+elif False:
+    TriggerActionFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TriggerActionFilterArgs:
@@ -4628,6 +6223,15 @@ class TriggerActionFilterArgs:
         pulumi.set(self, "include", value)
 
 
+if not MYPY:
+    class TriggerActionFilterExcludeArgsDict(TypedDict):
+        file_filter: NotRequired[pulumi.Input['TriggerActionFilterExcludeFileFilterArgsDict']]
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
+elif False:
+    TriggerActionFilterExcludeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TriggerActionFilterExcludeArgs:
     def __init__(__self__, *,
@@ -4651,6 +6255,15 @@ class TriggerActionFilterExcludeArgs:
         pulumi.set(self, "file_filter", value)
 
 
+if not MYPY:
+    class TriggerActionFilterExcludeFileFilterArgsDict(TypedDict):
+        file_paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The file paths/glob pattern for files.
+        """
+elif False:
+    TriggerActionFilterExcludeFileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TriggerActionFilterExcludeFileFilterArgs:
     def __init__(__self__, *,
@@ -4673,6 +6286,27 @@ class TriggerActionFilterExcludeFileFilterArgs:
     def file_paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "file_paths", value)
 
+
+if not MYPY:
+    class TriggerActionFilterIncludeArgsDict(TypedDict):
+        base_ref: NotRequired[pulumi.Input[str]]
+        """
+        The target branch for pull requests; not applicable for push requests.
+        """
+        file_filter: NotRequired[pulumi.Input['TriggerActionFilterIncludeFileFilterArgsDict']]
+        """
+        Attributes to support include/exclude files for triggering build runs.
+        """
+        head_ref: NotRequired[pulumi.Input[str]]
+        """
+        Branch for push event; source branch for pull requests.
+        """
+        repository_name: NotRequired[pulumi.Input[str]]
+        """
+        The repository name for trigger events.
+        """
+elif False:
+    TriggerActionFilterIncludeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class TriggerActionFilterIncludeArgs:
@@ -4745,6 +6379,15 @@ class TriggerActionFilterIncludeArgs:
         pulumi.set(self, "repository_name", value)
 
 
+if not MYPY:
+    class TriggerActionFilterIncludeFileFilterArgsDict(TypedDict):
+        file_paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The file paths/glob pattern for files.
+        """
+elif False:
+    TriggerActionFilterIncludeFileFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class TriggerActionFilterIncludeFileFilterArgs:
     def __init__(__self__, *,
@@ -4767,6 +6410,17 @@ class TriggerActionFilterIncludeFileFilterArgs:
     def file_paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "file_paths", value)
 
+
+if not MYPY:
+    class GetBuildPipelineStagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBuildPipelineStagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetBuildPipelineStagesFilterArgs:
@@ -4813,6 +6467,17 @@ class GetBuildPipelineStagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetBuildPipelinesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBuildPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetBuildPipelinesFilterArgs:
     def __init__(__self__, *,
@@ -4857,6 +6522,17 @@ class GetBuildPipelinesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetBuildRunsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the step.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetBuildRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetBuildRunsFilterArgs:
@@ -4903,6 +6579,14 @@ class GetBuildRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetConnectionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetConnectionsFilterArgs:
     def __init__(__self__, *,
@@ -4941,6 +6625,14 @@ class GetConnectionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDeployArtifactsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeployArtifactsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDeployArtifactsFilterArgs:
@@ -4981,6 +6673,14 @@ class GetDeployArtifactsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDeployEnvironmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeployEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDeployEnvironmentsFilterArgs:
     def __init__(__self__, *,
@@ -5019,6 +6719,17 @@ class GetDeployEnvironmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDeployPipelinesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeployPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDeployPipelinesFilterArgs:
@@ -5065,6 +6776,17 @@ class GetDeployPipelinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetDeployStagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the parameter (case-sensitive).
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeployStagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetDeployStagesFilterArgs:
     def __init__(__self__, *,
@@ -5109,6 +6831,17 @@ class GetDeployStagesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDeploymentsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the step.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDeploymentsFilterArgs:
@@ -5155,6 +6888,17 @@ class GetDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetProjectsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProjectsFilterArgs:
     def __init__(__self__, *,
@@ -5199,6 +6943,17 @@ class GetProjectsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRepositoriesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRepositoriesFilterArgs:
@@ -5245,6 +7000,14 @@ class GetRepositoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRepositoryAuthorsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryAuthorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRepositoryAuthorsFilterArgs:
     def __init__(__self__, *,
@@ -5283,6 +7046,14 @@ class GetRepositoryAuthorsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRepositoryCommitsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryCommitsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRepositoryCommitsFilterArgs:
@@ -5323,6 +7094,14 @@ class GetRepositoryCommitsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRepositoryDiffsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryDiffsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRepositoryDiffsFilterArgs:
     def __init__(__self__, *,
@@ -5362,6 +7141,14 @@ class GetRepositoryDiffsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRepositoryMirrorRecordsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryMirrorRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRepositoryMirrorRecordsFilterArgs:
     def __init__(__self__, *,
@@ -5400,6 +7187,17 @@ class GetRepositoryMirrorRecordsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetRepositoryPathsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of file or directory.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryPathsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRepositoryPathsFilterArgs:
@@ -5446,6 +7244,17 @@ class GetRepositoryPathsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRepositoryProtectedBranchesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the given branch name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryProtectedBranchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRepositoryProtectedBranchesFilterArgs:
     def __init__(__self__, *,
@@ -5491,6 +7300,14 @@ class GetRepositoryProtectedBranchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRepositoryRefsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRepositoryRefsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRepositoryRefsFilterArgs:
     def __init__(__self__, *,
@@ -5529,6 +7346,14 @@ class GetRepositoryRefsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetTriggersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetTriggersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetTriggersFilterArgs:

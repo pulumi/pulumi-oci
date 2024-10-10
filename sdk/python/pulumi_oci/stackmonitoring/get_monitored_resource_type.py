@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_monitored_resource_type)
 def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTypeResult]:
     """
@@ -285,4 +287,24 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
 
     :param str monitored_resource_type_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['monitoredResourceTypeId'] = monitored_resource_type_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType', __args__, opts=opts, typ=GetMonitoredResourceTypeResult)
+    return __ret__.apply(lambda __response__: GetMonitoredResourceTypeResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        metric_namespace=pulumi.get(__response__, 'metric_namespace'),
+        monitored_resource_type_id=pulumi.get(__response__, 'monitored_resource_type_id'),
+        name=pulumi.get(__response__, 'name'),
+        resource_category=pulumi.get(__response__, 'resource_category'),
+        source_type=pulumi.get(__response__, 'source_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

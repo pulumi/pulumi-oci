@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetAutonomousDatabaseRegionalWalletManagement(ctx, nil, nil)
+//			_, err := Database.GetAutonomousDatabaseRegionalWalletManagement(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -94,9 +99,6 @@ def get_api_validation(api_id: Optional[str] = None,
         api_id=pulumi.get(__ret__, 'api_id'),
         id=pulumi.get(__ret__, 'id'),
         validations=pulumi.get(__ret__, 'validations'))
-
-
-@_utilities.lift_output_func(get_api_validation)
 def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiValidationResult]:
     """
@@ -116,4 +118,11 @@ def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
 
     :param str api_id: The ocid of the API.
     """
-    ...
+    __args__ = dict()
+    __args__['apiId'] = api_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ApiGateway/getApiValidation:getApiValidation', __args__, opts=opts, typ=GetApiValidationResult)
+    return __ret__.apply(lambda __response__: GetApiValidationResult(
+        api_id=pulumi.get(__response__, 'api_id'),
+        id=pulumi.get(__response__, 'id'),
+        validations=pulumi.get(__response__, 'validations')))

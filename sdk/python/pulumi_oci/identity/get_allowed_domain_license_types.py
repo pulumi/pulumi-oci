@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -112,9 +117,6 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
         current_license_type_name=pulumi.get(__ret__, 'current_license_type_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_allowed_domain_license_types)
 def get_allowed_domain_license_types_output(current_license_type_name: Optional[pulumi.Input[Optional[str]]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAllowedDomainLicenseTypesFilterArgs', 'GetAllowedDomainLicenseTypesFilterArgsDict']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
@@ -140,4 +142,13 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
 
     :param str current_license_type_name: The domain license type
     """
-    ...
+    __args__ = dict()
+    __args__['currentLicenseTypeName'] = current_license_type_name
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes', __args__, opts=opts, typ=GetAllowedDomainLicenseTypesResult)
+    return __ret__.apply(lambda __response__: GetAllowedDomainLicenseTypesResult(
+        allowed_domain_license_types=pulumi.get(__response__, 'allowed_domain_license_types'),
+        current_license_type_name=pulumi.get(__response__, 'current_license_type_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

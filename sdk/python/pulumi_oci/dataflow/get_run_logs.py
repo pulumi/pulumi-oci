@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_run_logs(filters: Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRu
         id=pulumi.get(__ret__, 'id'),
         run_id=pulumi.get(__ret__, 'run_id'),
         run_logs=pulumi.get(__ret__, 'run_logs'))
-
-
-@_utilities.lift_output_func(get_run_logs)
 def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRunLogsFilterArgs', 'GetRunLogsFilterArgsDict']]]]] = None,
                         run_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogsResult]:
@@ -130,4 +132,13 @@ def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['
 
     :param str run_id: The unique ID for the run
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['runId'] = run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getRunLogs:getRunLogs', __args__, opts=opts, typ=GetRunLogsResult)
+    return __ret__.apply(lambda __response__: GetRunLogsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        run_id=pulumi.get(__response__, 'run_id'),
+        run_logs=pulumi.get(__response__, 'run_logs')))

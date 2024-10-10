@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -300,9 +305,6 @@ def get_workspace_import_request(import_request_key: Optional[str] = None,
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         total_imported_object_count=pulumi.get(__ret__, 'total_imported_object_count'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_import_request)
 def get_workspace_import_request_output(import_request_key: Optional[pulumi.Input[str]] = None,
                                         workspace_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceImportRequestResult]:
@@ -325,4 +327,28 @@ def get_workspace_import_request_output(import_request_key: Optional[pulumi.Inpu
     :param str import_request_key: The key of the object export object request
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['importRequestKey'] = import_request_key
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceImportRequest:getWorkspaceImportRequest', __args__, opts=opts, typ=GetWorkspaceImportRequestResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceImportRequestResult(
+        are_data_asset_references_included=pulumi.get(__response__, 'are_data_asset_references_included'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        error_messages=pulumi.get(__response__, 'error_messages'),
+        file_name=pulumi.get(__response__, 'file_name'),
+        id=pulumi.get(__response__, 'id'),
+        import_conflict_resolutions=pulumi.get(__response__, 'import_conflict_resolutions'),
+        import_request_key=pulumi.get(__response__, 'import_request_key'),
+        imported_objects=pulumi.get(__response__, 'imported_objects'),
+        key=pulumi.get(__response__, 'key'),
+        name=pulumi.get(__response__, 'name'),
+        object_key_for_import=pulumi.get(__response__, 'object_key_for_import'),
+        object_storage_region=pulumi.get(__response__, 'object_storage_region'),
+        object_storage_tenancy_id=pulumi.get(__response__, 'object_storage_tenancy_id'),
+        status=pulumi.get(__response__, 'status'),
+        time_ended_in_millis=pulumi.get(__response__, 'time_ended_in_millis'),
+        time_started_in_millis=pulumi.get(__response__, 'time_started_in_millis'),
+        total_imported_object_count=pulumi.get(__response__, 'total_imported_object_count'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -222,9 +227,6 @@ def get_managed_database_sql_tuning_advisor_tasks_findings(begin_exec_id: Option
         sql_tuning_advisor_task_finding_collections=pulumi.get(__ret__, 'sql_tuning_advisor_task_finding_collections'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'),
         stats_hash_filter=pulumi.get(__ret__, 'stats_hash_filter'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_tuning_advisor_tasks_findings)
 def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   end_exec_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict']]]]] = None,
@@ -269,4 +271,29 @@ def get_managed_database_sql_tuning_advisor_tasks_findings_output(begin_exec_id:
     :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str stats_hash_filter: The hash value of the object for the statistic finding search.
     """
-    ...
+    __args__ = dict()
+    __args__['beginExecId'] = begin_exec_id
+    __args__['endExecId'] = end_exec_id
+    __args__['filters'] = filters
+    __args__['findingFilter'] = finding_filter
+    __args__['indexHashFilter'] = index_hash_filter
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['searchPeriod'] = search_period
+    __args__['sqlTuningAdvisorTaskId'] = sql_tuning_advisor_task_id
+    __args__['statsHashFilter'] = stats_hash_filter
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings', __args__, opts=opts, typ=GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(
+        begin_exec_id=pulumi.get(__response__, 'begin_exec_id'),
+        end_exec_id=pulumi.get(__response__, 'end_exec_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        finding_filter=pulumi.get(__response__, 'finding_filter'),
+        id=pulumi.get(__response__, 'id'),
+        index_hash_filter=pulumi.get(__response__, 'index_hash_filter'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        search_period=pulumi.get(__response__, 'search_period'),
+        sql_tuning_advisor_task_finding_collections=pulumi.get(__response__, 'sql_tuning_advisor_task_finding_collections'),
+        sql_tuning_advisor_task_id=pulumi.get(__response__, 'sql_tuning_advisor_task_id'),
+        stats_hash_filter=pulumi.get(__response__, 'stats_hash_filter')))

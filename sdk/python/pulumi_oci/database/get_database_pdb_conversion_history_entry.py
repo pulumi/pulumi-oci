@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -229,9 +234,6 @@ def get_database_pdb_conversion_history_entry(database_id: Optional[str] = None,
         target_database_id=pulumi.get(__ret__, 'target_database_id'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_database_pdb_conversion_history_entry)
 def get_database_pdb_conversion_history_entry_output(database_id: Optional[pulumi.Input[str]] = None,
                                                      pdb_conversion_history_entry_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntryResult]:
@@ -254,4 +256,22 @@ def get_database_pdb_conversion_history_entry_output(database_id: Optional[pulum
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str pdb_conversion_history_entry_id: The database conversion history [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['pdbConversionHistoryEntryId'] = pdb_conversion_history_entry_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry', __args__, opts=opts, typ=GetDatabasePdbConversionHistoryEntryResult)
+    return __ret__.apply(lambda __response__: GetDatabasePdbConversionHistoryEntryResult(
+        action=pulumi.get(__response__, 'action'),
+        additional_cdb_params=pulumi.get(__response__, 'additional_cdb_params'),
+        cdb_name=pulumi.get(__response__, 'cdb_name'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        pdb_conversion_history_entry_id=pulumi.get(__response__, 'pdb_conversion_history_entry_id'),
+        source_database_id=pulumi.get(__response__, 'source_database_id'),
+        state=pulumi.get(__response__, 'state'),
+        target=pulumi.get(__response__, 'target'),
+        target_database_id=pulumi.get(__response__, 'target_database_id'),
+        time_ended=pulumi.get(__response__, 'time_ended'),
+        time_started=pulumi.get(__response__, 'time_started')))

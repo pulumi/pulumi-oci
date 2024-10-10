@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         sddc_type=pulumi.get(__ret__, 'sddc_type'))
-
-
-@_utilities.lift_output_func(get_supported_host_shapes)
 def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict']]]]] = None,
                                      initial_host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -203,4 +205,21 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
     :param str name: A filter to return only resources that match the given name exactly.
     :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['initialHostShapeName'] = initial_host_shape_name
+    __args__['isSingleHostSddcSupported'] = is_single_host_sddc_supported
+    __args__['name'] = name
+    __args__['sddcType'] = sddc_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes', __args__, opts=opts, typ=GetSupportedHostShapesResult)
+    return __ret__.apply(lambda __response__: GetSupportedHostShapesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        initial_host_shape_name=pulumi.get(__response__, 'initial_host_shape_name'),
+        is_single_host_sddc_supported=pulumi.get(__response__, 'is_single_host_sddc_supported'),
+        items=pulumi.get(__response__, 'items'),
+        name=pulumi.get(__response__, 'name'),
+        sddc_type=pulumi.get(__response__, 'sddc_type')))

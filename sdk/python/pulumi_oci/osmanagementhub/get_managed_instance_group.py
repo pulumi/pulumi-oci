@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -354,9 +359,6 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-
-
-@_utilities.lift_output_func(get_managed_instance_group)
 def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupResult]:
     """
@@ -376,4 +378,31 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
 
     :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
-    ...
+    __args__ = dict()
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroup:getManagedInstanceGroup', __args__, opts=opts, typ=GetManagedInstanceGroupResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        autonomous_settings=pulumi.get(__response__, 'autonomous_settings'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        location=pulumi.get(__response__, 'location'),
+        managed_instance_count=pulumi.get(__response__, 'managed_instance_count'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_ids=pulumi.get(__response__, 'managed_instance_ids'),
+        notification_topic_id=pulumi.get(__response__, 'notification_topic_id'),
+        os_family=pulumi.get(__response__, 'os_family'),
+        pending_job_count=pulumi.get(__response__, 'pending_job_count'),
+        software_source_ids=pulumi.get(__response__, 'software_source_ids'),
+        software_sources=pulumi.get(__response__, 'software_sources'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_modified=pulumi.get(__response__, 'time_modified'),
+        vendor_name=pulumi.get(__response__, 'vendor_name')))

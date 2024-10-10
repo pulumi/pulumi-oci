@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -159,9 +164,6 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
         solution=pulumi.get(__ret__, 'solution'),
         timestamp=pulumi.get(__ret__, 'timestamp'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'))
-
-
-@_utilities.lift_output_func(get_ipsec_connection_tunnel_error)
 def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str]] = None,
                                              tunnel_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelErrorResult]:
@@ -184,4 +186,17 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
     :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
     """
-    ...
+    __args__ = dict()
+    __args__['ipsecId'] = ipsec_id
+    __args__['tunnelId'] = tunnel_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnelError:getIpsecConnectionTunnelError', __args__, opts=opts, typ=GetIpsecConnectionTunnelErrorResult)
+    return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelErrorResult(
+        error_code=pulumi.get(__response__, 'error_code'),
+        error_description=pulumi.get(__response__, 'error_description'),
+        id=pulumi.get(__response__, 'id'),
+        ipsec_id=pulumi.get(__response__, 'ipsec_id'),
+        oci_resources_link=pulumi.get(__response__, 'oci_resources_link'),
+        solution=pulumi.get(__response__, 'solution'),
+        timestamp=pulumi.get(__response__, 'timestamp'),
+        tunnel_id=pulumi.get(__response__, 'tunnel_id')))

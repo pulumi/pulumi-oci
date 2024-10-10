@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_ai_private_endpoints)
 def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAiPrivateEndpointsFilterArgs', 'GetAiPrivateEndpointsFilterArgsDict']]]]] = None,
@@ -180,4 +182,18 @@ def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] 
     :param str id: unique AiPrivateEndpoint identifier
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getAiPrivateEndpoints:getAiPrivateEndpoints', __args__, opts=opts, typ=GetAiPrivateEndpointsResult)
+    return __ret__.apply(lambda __response__: GetAiPrivateEndpointsResult(
+        ai_private_endpoint_collections=pulumi.get(__response__, 'ai_private_endpoint_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

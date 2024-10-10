@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -403,9 +408,6 @@ def get_cluster(cluster_id: Optional[str] = None,
         vsphere_type=pulumi.get(__ret__, 'vsphere_type'),
         vsphere_upgrade_objects=pulumi.get(__ret__, 'vsphere_upgrade_objects'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
-
-
-@_utilities.lift_output_func(get_cluster)
 def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
     """
@@ -425,4 +427,35 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
 
     :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
+    return __ret__.apply(lambda __response__: GetClusterResult(
+        actual_esxi_hosts_count=pulumi.get(__response__, 'actual_esxi_hosts_count'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_availability_domain=pulumi.get(__response__, 'compute_availability_domain'),
+        datastores=pulumi.get(__response__, 'datastores'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        esxi_hosts_count=pulumi.get(__response__, 'esxi_hosts_count'),
+        esxi_software_version=pulumi.get(__response__, 'esxi_software_version'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        initial_commitment=pulumi.get(__response__, 'initial_commitment'),
+        initial_host_ocpu_count=pulumi.get(__response__, 'initial_host_ocpu_count'),
+        initial_host_shape_name=pulumi.get(__response__, 'initial_host_shape_name'),
+        instance_display_name_prefix=pulumi.get(__response__, 'instance_display_name_prefix'),
+        is_shielded_instance_enabled=pulumi.get(__response__, 'is_shielded_instance_enabled'),
+        network_configurations=pulumi.get(__response__, 'network_configurations'),
+        sddc_id=pulumi.get(__response__, 'sddc_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgrade_licenses=pulumi.get(__response__, 'upgrade_licenses'),
+        vmware_software_version=pulumi.get(__response__, 'vmware_software_version'),
+        vsphere_type=pulumi.get(__response__, 'vsphere_type'),
+        vsphere_upgrade_objects=pulumi.get(__response__, 'vsphere_upgrade_objects'),
+        workload_network_cidr=pulumi.get(__response__, 'workload_network_cidr')))

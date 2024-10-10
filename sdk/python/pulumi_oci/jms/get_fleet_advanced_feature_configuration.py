@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -195,9 +200,6 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
         lcms=pulumi.get(__ret__, 'lcms'),
         performance_tuning_analyses=pulumi.get(__ret__, 'performance_tuning_analyses'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-
-
-@_utilities.lift_output_func(get_fleet_advanced_feature_configuration)
 def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetAdvancedFeatureConfigurationResult]:
     """
@@ -217,4 +219,19 @@ def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.In
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     """
-    ...
+    __args__ = dict()
+    __args__['fleetId'] = fleet_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration', __args__, opts=opts, typ=GetFleetAdvancedFeatureConfigurationResult)
+    return __ret__.apply(lambda __response__: GetFleetAdvancedFeatureConfigurationResult(
+        advanced_usage_trackings=pulumi.get(__response__, 'advanced_usage_trackings'),
+        analytic_bucket_name=pulumi.get(__response__, 'analytic_bucket_name'),
+        analytic_namespace=pulumi.get(__response__, 'analytic_namespace'),
+        crypto_event_analyses=pulumi.get(__response__, 'crypto_event_analyses'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        id=pulumi.get(__response__, 'id'),
+        java_migration_analyses=pulumi.get(__response__, 'java_migration_analyses'),
+        jfr_recordings=pulumi.get(__response__, 'jfr_recordings'),
+        lcms=pulumi.get(__response__, 'lcms'),
+        performance_tuning_analyses=pulumi.get(__response__, 'performance_tuning_analyses'),
+        time_last_modified=pulumi.get(__response__, 'time_last_modified')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -236,9 +241,6 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[s
         time_created=pulumi.get(__ret__, 'time_created'),
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_management_agent_install_key)
 def get_management_agent_install_key_output(management_agent_install_key_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeyResult]:
     """
@@ -258,4 +260,22 @@ def get_management_agent_install_key_output(management_agent_install_key_id: Opt
 
     :param str management_agent_install_key_id: Unique Management Agent Install Key identifier
     """
-    ...
+    __args__ = dict()
+    __args__['managementAgentInstallKeyId'] = management_agent_install_key_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementAgent/getManagementAgentInstallKey:getManagementAgentInstallKey', __args__, opts=opts, typ=GetManagementAgentInstallKeyResult)
+    return __ret__.apply(lambda __response__: GetManagementAgentInstallKeyResult(
+        allowed_key_install_count=pulumi.get(__response__, 'allowed_key_install_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by_principal_id=pulumi.get(__response__, 'created_by_principal_id'),
+        current_key_install_count=pulumi.get(__response__, 'current_key_install_count'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        is_unlimited=pulumi.get(__response__, 'is_unlimited'),
+        key=pulumi.get(__response__, 'key'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        management_agent_install_key_id=pulumi.get(__response__, 'management_agent_install_key_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_expires=pulumi.get(__response__, 'time_expires'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

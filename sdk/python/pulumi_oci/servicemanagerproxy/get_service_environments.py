@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_service_environments(compartment_id: Optional[str] = None,
         service_environment_collections=pulumi.get(__ret__, 'service_environment_collections'),
         service_environment_id=pulumi.get(__ret__, 'service_environment_id'),
         service_environment_type=pulumi.get(__ret__, 'service_environment_type'))
-
-
-@_utilities.lift_output_func(get_service_environments)
 def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceEnvironmentsFilterArgs', 'GetServiceEnvironmentsFilterArgsDict']]]]] = None,
@@ -193,4 +195,19 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['serviceEnvironmentId'] = service_environment_id
+    __args__['serviceEnvironmentType'] = service_environment_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceManagerProxy/getServiceEnvironments:getServiceEnvironments', __args__, opts=opts, typ=GetServiceEnvironmentsResult)
+    return __ret__.apply(lambda __response__: GetServiceEnvironmentsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        service_environment_collections=pulumi.get(__response__, 'service_environment_collections'),
+        service_environment_id=pulumi.get(__response__, 'service_environment_id'),
+        service_environment_type=pulumi.get(__response__, 'service_environment_type')))

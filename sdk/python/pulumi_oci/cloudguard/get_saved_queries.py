@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -155,9 +160,6 @@ def get_saved_queries(access_level: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         saved_query_collections=pulumi.get(__ret__, 'saved_query_collections'))
-
-
-@_utilities.lift_output_func(get_saved_queries)
 def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                              compartment_id: Optional[pulumi.Input[str]] = None,
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -187,4 +189,19 @@ def get_saved_queries_output(access_level: Optional[pulumi.Input[Optional[str]]]
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getSavedQueries:getSavedQueries', __args__, opts=opts, typ=GetSavedQueriesResult)
+    return __ret__.apply(lambda __response__: GetSavedQueriesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        saved_query_collections=pulumi.get(__response__, 'saved_query_collections')))

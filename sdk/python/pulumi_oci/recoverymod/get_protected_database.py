@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -387,9 +392,6 @@ def get_protected_database(protected_database_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vpc_user_name=pulumi.get(__ret__, 'vpc_user_name'))
-
-
-@_utilities.lift_output_func(get_protected_database)
 def get_protected_database_output(protected_database_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectedDatabaseResult]:
     """
@@ -409,4 +411,34 @@ def get_protected_database_output(protected_database_id: Optional[pulumi.Input[s
 
     :param str protected_database_id: The protected database OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['protectedDatabaseId'] = protected_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:RecoveryMod/getProtectedDatabase:getProtectedDatabase', __args__, opts=opts, typ=GetProtectedDatabaseResult)
+    return __ret__.apply(lambda __response__: GetProtectedDatabaseResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_size=pulumi.get(__response__, 'database_size'),
+        db_unique_name=pulumi.get(__response__, 'db_unique_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deletion_schedule=pulumi.get(__response__, 'deletion_schedule'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        health=pulumi.get(__response__, 'health'),
+        health_details=pulumi.get(__response__, 'health_details'),
+        id=pulumi.get(__response__, 'id'),
+        is_read_only_resource=pulumi.get(__response__, 'is_read_only_resource'),
+        is_redo_logs_shipped=pulumi.get(__response__, 'is_redo_logs_shipped'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        metrics=pulumi.get(__response__, 'metrics'),
+        password=pulumi.get(__response__, 'password'),
+        policy_locked_date_time=pulumi.get(__response__, 'policy_locked_date_time'),
+        protected_database_id=pulumi.get(__response__, 'protected_database_id'),
+        protection_policy_id=pulumi.get(__response__, 'protection_policy_id'),
+        recovery_service_subnets=pulumi.get(__response__, 'recovery_service_subnets'),
+        state=pulumi.get(__response__, 'state'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vpc_user_name=pulumi.get(__response__, 'vpc_user_name')))

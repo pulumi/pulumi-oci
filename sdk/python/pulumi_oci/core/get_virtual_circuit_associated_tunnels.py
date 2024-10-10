@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[Union['Get
         id=pulumi.get(__ret__, 'id'),
         virtual_circuit_associated_tunnel_details=pulumi.get(__ret__, 'virtual_circuit_associated_tunnel_details'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
-
-
-@_utilities.lift_output_func(get_virtual_circuit_associated_tunnels)
 def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitAssociatedTunnelsFilterArgs', 'GetVirtualCircuitAssociatedTunnelsFilterArgsDict']]]]] = None,
                                                   virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
@@ -130,4 +132,13 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
 
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['virtualCircuitId'] = virtual_circuit_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getVirtualCircuitAssociatedTunnels:getVirtualCircuitAssociatedTunnels', __args__, opts=opts, typ=GetVirtualCircuitAssociatedTunnelsResult)
+    return __ret__.apply(lambda __response__: GetVirtualCircuitAssociatedTunnelsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        virtual_circuit_associated_tunnel_details=pulumi.get(__response__, 'virtual_circuit_associated_tunnel_details'),
+        virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id')))

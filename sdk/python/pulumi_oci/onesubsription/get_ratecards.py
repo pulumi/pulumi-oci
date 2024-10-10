@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -167,9 +172,6 @@ def get_ratecards(compartment_id: Optional[str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-
-
-@_utilities.lift_output_func(get_ratecards)
 def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]]]] = None,
                          part_number: Optional[pulumi.Input[Optional[str]]] = None,
@@ -203,4 +205,21 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str time_from: This param is used to get the rate card(s) whose effective start date starts on or after a particular date
     :param str time_to: This param is used to get the rate card(s) whose effective end date ends on or before a particular date
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['partNumber'] = part_number
+    __args__['subscriptionId'] = subscription_id
+    __args__['timeFrom'] = time_from
+    __args__['timeTo'] = time_to
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getRatecards:getRatecards', __args__, opts=opts, typ=GetRatecardsResult)
+    return __ret__.apply(lambda __response__: GetRatecardsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        part_number=pulumi.get(__response__, 'part_number'),
+        rate_cards=pulumi.get(__response__, 'rate_cards'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        time_from=pulumi.get(__response__, 'time_from'),
+        time_to=pulumi.get(__response__, 'time_to')))

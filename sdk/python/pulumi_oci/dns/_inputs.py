@@ -4,39 +4,89 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ActionCreateZoneFromZoneFileExternalDownstreamArgs',
+    'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict',
     'ActionCreateZoneFromZoneFileExternalMasterArgs',
+    'ActionCreateZoneFromZoneFileExternalMasterArgsDict',
     'ActionCreateZoneFromZoneFileNameserverArgs',
+    'ActionCreateZoneFromZoneFileNameserverArgsDict',
     'ActionCreateZoneFromZoneFileZoneTransferServerArgs',
+    'ActionCreateZoneFromZoneFileZoneTransferServerArgsDict',
     'ResolverAttachedViewArgs',
+    'ResolverAttachedViewArgsDict',
     'ResolverEndpointArgs',
+    'ResolverEndpointArgsDict',
     'ResolverRuleArgs',
+    'ResolverRuleArgsDict',
     'RrsetItemArgs',
+    'RrsetItemArgsDict',
     'SteeringPolicyAnswerArgs',
+    'SteeringPolicyAnswerArgsDict',
     'SteeringPolicyRuleArgs',
+    'SteeringPolicyRuleArgsDict',
     'SteeringPolicyRuleCaseArgs',
+    'SteeringPolicyRuleCaseArgsDict',
     'SteeringPolicyRuleCaseAnswerDataArgs',
+    'SteeringPolicyRuleCaseAnswerDataArgsDict',
     'SteeringPolicyRuleDefaultAnswerDataArgs',
+    'SteeringPolicyRuleDefaultAnswerDataArgsDict',
     'ZoneExternalDownstreamArgs',
+    'ZoneExternalDownstreamArgsDict',
     'ZoneExternalMasterArgs',
+    'ZoneExternalMasterArgsDict',
     'ZoneNameserverArgs',
+    'ZoneNameserverArgsDict',
     'ZoneZoneTransferServerArgs',
+    'ZoneZoneTransferServerArgsDict',
     'GetRecordsFilterArgs',
+    'GetRecordsFilterArgsDict',
     'GetResolverEndpointsFilterArgs',
+    'GetResolverEndpointsFilterArgsDict',
     'GetResolversFilterArgs',
+    'GetResolversFilterArgsDict',
     'GetRrsetsFilterArgs',
+    'GetRrsetsFilterArgsDict',
     'GetSteeringPoliciesFilterArgs',
+    'GetSteeringPoliciesFilterArgsDict',
     'GetSteeringPolicyAttachmentsFilterArgs',
+    'GetSteeringPolicyAttachmentsFilterArgsDict',
     'GetTsigKeysFilterArgs',
+    'GetTsigKeysFilterArgsDict',
     'GetViewsFilterArgs',
+    'GetViewsFilterArgsDict',
     'GetZonesFilterArgs',
+    'GetZonesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ActionCreateZoneFromZoneFileExternalDownstreamArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The server's port.
+        """
+        tsig_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the TSIG key.
+        """
+elif False:
+    ActionCreateZoneFromZoneFileExternalDownstreamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
@@ -93,6 +143,23 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
+if not MYPY:
+    class ActionCreateZoneFromZoneFileExternalMasterArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The server's port.
+        """
+        tsig_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the TSIG key.
+        """
+elif False:
+    ActionCreateZoneFromZoneFileExternalMasterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileExternalMasterArgs:
     def __init__(__self__, *,
@@ -148,6 +215,15 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
+if not MYPY:
+    class ActionCreateZoneFromZoneFileNameserverArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        The hostname of the nameserver.
+        """
+elif False:
+    ActionCreateZoneFromZoneFileNameserverArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileNameserverArgs:
     def __init__(__self__, *,
@@ -170,6 +246,27 @@ class ActionCreateZoneFromZoneFileNameserverArgs:
     def hostname(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "hostname", value)
 
+
+if not MYPY:
+    class ActionCreateZoneFromZoneFileZoneTransferServerArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        is_transfer_destination: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        is_transfer_source: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The server's port.
+        """
+elif False:
+    ActionCreateZoneFromZoneFileZoneTransferServerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
@@ -242,6 +339,15 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
         pulumi.set(self, "port", value)
 
 
+if not MYPY:
+    class ResolverAttachedViewArgsDict(TypedDict):
+        view_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the view.
+        """
+elif False:
+    ResolverAttachedViewArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ResolverAttachedViewArgs:
     def __init__(__self__, *,
@@ -263,6 +369,59 @@ class ResolverAttachedViewArgs:
     def view_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "view_id", value)
 
+
+if not MYPY:
+    class ResolverEndpointArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the owning compartment.
+        """
+        endpoint_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of resolver endpoint. VNIC is currently the only supported type.
+        """
+        forwarding_address: NotRequired[pulumi.Input[str]]
+        """
+        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        """
+        is_forwarding: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+        """
+        is_listening: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the resolver endpoint is for listening.
+        """
+        listening_address: NotRequired[pulumi.Input[str]]
+        """
+        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        """
+        self: NotRequired[pulumi.Input[str]]
+        """
+        The canonical absolute URL of the resource.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the resource.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+elif False:
+    ResolverEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ResolverEndpointArgs:
@@ -463,6 +622,32 @@ class ResolverEndpointArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class ResolverRuleArgsDict(TypedDict):
+        action: pulumi.Input[str]
+        """
+        (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+        * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
+        """
+        destination_addresses: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
+        """
+        source_endpoint_name: pulumi.Input[str]
+        """
+        (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+        """
+        client_address_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+        """
+        qname_cover_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        """
+elif False:
+    ResolverRuleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ResolverRuleArgs:
     def __init__(__self__, *,
@@ -548,6 +733,39 @@ class ResolverRuleArgs:
     def qname_cover_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "qname_cover_conditions", value)
 
+
+if not MYPY:
+    class RrsetItemArgsDict(TypedDict):
+        domain: pulumi.Input[str]
+        """
+        The fully qualified domain name where the record can be located.
+        """
+        rdata: pulumi.Input[str]
+        """
+        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        rtype: pulumi.Input[str]
+        """
+        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        """
+        ttl: pulumi.Input[int]
+        """
+        (Updatable) The Time To Live for the record, in seconds.
+        """
+        is_protected: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+        """
+        record_hash: NotRequired[pulumi.Input[str]]
+        """
+        A unique identifier for the record within its zone.
+        """
+        rrset_version: NotRequired[pulumi.Input[str]]
+        """
+        The latest version of the record's zone in which its RRSet differs from the preceding version.
+        """
+elif False:
+    RrsetItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RrsetItemArgs:
@@ -664,6 +882,31 @@ class RrsetItemArgs:
         pulumi.set(self, "rrset_version", value)
 
 
+if not MYPY:
+    class SteeringPolicyAnswerArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        """
+        rdata: pulumi.Input[str]
+        """
+        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+        """
+        rtype: pulumi.Input[str]
+        """
+        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+        """
+        is_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+        """
+        pool: NotRequired[pulumi.Input[str]]
+        """
+        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
+        """
+elif False:
+    SteeringPolicyAnswerArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SteeringPolicyAnswerArgs:
     def __init__(__self__, *,
@@ -747,6 +990,36 @@ class SteeringPolicyAnswerArgs:
     def pool(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "pool", value)
 
+
+if not MYPY:
+    class SteeringPolicyRuleArgsDict(TypedDict):
+        rule_type: pulumi.Input[str]
+        """
+        The type of a rule determines its sorting/filtering behavior.
+        * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+        * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+        * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+        * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+        * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
+        """
+        cases: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgsDict']]]]
+        """
+        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
+        """
+        default_answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgsDict']]]]
+        """
+        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
+        """
+        default_count: NotRequired[pulumi.Input[int]]
+        """
+        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        A user-defined description of the rule's purpose or behavior.
+        """
+elif False:
+    SteeringPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SteeringPolicyRuleArgs:
@@ -844,6 +1117,23 @@ class SteeringPolicyRuleArgs:
         pulumi.set(self, "description", value)
 
 
+if not MYPY:
+    class SteeringPolicyRuleCaseArgsDict(TypedDict):
+        answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgsDict']]]]
+        """
+        An array of `SteeringPolicyPriorityAnswerData` objects.
+        """
+        case_condition: NotRequired[pulumi.Input[str]]
+        """
+        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        """
+        count: NotRequired[pulumi.Input[int]]
+        """
+        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
+        """
+elif False:
+    SteeringPolicyRuleCaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SteeringPolicyRuleCaseArgs:
     def __init__(__self__, *,
@@ -898,6 +1188,23 @@ class SteeringPolicyRuleCaseArgs:
     def count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class SteeringPolicyRuleCaseAnswerDataArgsDict(TypedDict):
+        answer_condition: NotRequired[pulumi.Input[str]]
+        """
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+        """
+        should_keep: NotRequired[pulumi.Input[bool]]
+        """
+        Keeps the answer only if the value is `true`.
+        """
+        value: NotRequired[pulumi.Input[int]]
+        """
+        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+        """
+elif False:
+    SteeringPolicyRuleCaseAnswerDataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SteeringPolicyRuleCaseAnswerDataArgs:
@@ -954,6 +1261,23 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class SteeringPolicyRuleDefaultAnswerDataArgsDict(TypedDict):
+        answer_condition: NotRequired[pulumi.Input[str]]
+        """
+        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+        """
+        should_keep: NotRequired[pulumi.Input[bool]]
+        """
+        Keeps the answer only if the value is `true`.
+        """
+        value: NotRequired[pulumi.Input[int]]
+        """
+        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+        """
+elif False:
+    SteeringPolicyRuleDefaultAnswerDataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SteeringPolicyRuleDefaultAnswerDataArgs:
     def __init__(__self__, *,
@@ -1009,6 +1333,23 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ZoneExternalDownstreamArgsDict(TypedDict):
+        address: pulumi.Input[str]
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        tsig_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
+        """
+elif False:
+    ZoneExternalDownstreamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ZoneExternalDownstreamArgs:
     def __init__(__self__, *,
@@ -1062,6 +1403,23 @@ class ZoneExternalDownstreamArgs:
     def tsig_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "tsig_key_id", value)
 
+
+if not MYPY:
+    class ZoneExternalMasterArgsDict(TypedDict):
+        address: pulumi.Input[str]
+        """
+        (Updatable) The server's IP address (IPv4 or IPv6).
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        """
+        tsig_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the TSIG key.
+        """
+elif False:
+    ZoneExternalMasterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ZoneExternalMasterArgs:
@@ -1117,6 +1475,15 @@ class ZoneExternalMasterArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
+if not MYPY:
+    class ZoneNameserverArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        The hostname of the nameserver.
+        """
+elif False:
+    ZoneNameserverArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ZoneNameserverArgs:
     def __init__(__self__, *,
@@ -1139,6 +1506,27 @@ class ZoneNameserverArgs:
     def hostname(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "hostname", value)
 
+
+if not MYPY:
+    class ZoneZoneTransferServerArgsDict(TypedDict):
+        address: NotRequired[pulumi.Input[str]]
+        """
+        The server's IP address (IPv4 or IPv6).
+        """
+        is_transfer_destination: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer destination.
+        """
+        is_transfer_source: NotRequired[pulumi.Input[bool]]
+        """
+        A Boolean flag indicating whether or not the server is a zone data transfer source.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The server's port.
+        """
+elif False:
+    ZoneZoneTransferServerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ZoneZoneTransferServerArgs:
@@ -1211,6 +1599,14 @@ class ZoneZoneTransferServerArgs:
         pulumi.set(self, "port", value)
 
 
+if not MYPY:
+    class GetRecordsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRecordsFilterArgs:
     def __init__(__self__, *,
@@ -1249,6 +1645,17 @@ class GetRecordsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetResolverEndpointsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of a resource.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetResolverEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetResolverEndpointsFilterArgs:
@@ -1295,6 +1702,14 @@ class GetResolverEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetResolversFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetResolversFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetResolversFilterArgs:
     def __init__(__self__, *,
@@ -1334,6 +1749,14 @@ class GetResolversFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetRrsetsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetRrsetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRrsetsFilterArgs:
     def __init__(__self__, *,
@@ -1372,6 +1795,17 @@ class GetRrsetsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSteeringPoliciesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSteeringPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSteeringPoliciesFilterArgs:
@@ -1418,6 +1852,14 @@ class GetSteeringPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSteeringPolicyAttachmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSteeringPolicyAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSteeringPolicyAttachmentsFilterArgs:
     def __init__(__self__, *,
@@ -1456,6 +1898,17 @@ class GetSteeringPolicyAttachmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetTsigKeysFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of a resource.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetTsigKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetTsigKeysFilterArgs:
@@ -1502,6 +1955,14 @@ class GetTsigKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetViewsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetViewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetViewsFilterArgs:
     def __init__(__self__, *,
@@ -1540,6 +2001,17 @@ class GetViewsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetZonesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetZonesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetZonesFilterArgs:

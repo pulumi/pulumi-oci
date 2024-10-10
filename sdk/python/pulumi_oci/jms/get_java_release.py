@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -253,9 +258,6 @@ def get_java_release(release_version: Optional[str] = None,
         release_type=pulumi.get(__ret__, 'release_type'),
         release_version=pulumi.get(__ret__, 'release_version'),
         security_status=pulumi.get(__ret__, 'security_status'))
-
-
-@_utilities.lift_output_func(get_java_release)
 def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaReleaseResult]:
     """
@@ -275,4 +277,23 @@ def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
 
     :param str release_version: Unique Java release version identifier
     """
-    ...
+    __args__ = dict()
+    __args__['releaseVersion'] = release_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getJavaRelease:getJavaRelease', __args__, opts=opts, typ=GetJavaReleaseResult)
+    return __ret__.apply(lambda __response__: GetJavaReleaseResult(
+        artifact_content_types=pulumi.get(__response__, 'artifact_content_types'),
+        artifacts=pulumi.get(__response__, 'artifacts'),
+        days_under_security_baseline=pulumi.get(__response__, 'days_under_security_baseline'),
+        family_details=pulumi.get(__response__, 'family_details'),
+        family_version=pulumi.get(__response__, 'family_version'),
+        id=pulumi.get(__response__, 'id'),
+        license_details=pulumi.get(__response__, 'license_details'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        mos_patches=pulumi.get(__response__, 'mos_patches'),
+        parent_release_version=pulumi.get(__response__, 'parent_release_version'),
+        release_date=pulumi.get(__response__, 'release_date'),
+        release_notes_url=pulumi.get(__response__, 'release_notes_url'),
+        release_type=pulumi.get(__response__, 'release_type'),
+        release_version=pulumi.get(__response__, 'release_version'),
+        security_status=pulumi.get(__response__, 'security_status')))

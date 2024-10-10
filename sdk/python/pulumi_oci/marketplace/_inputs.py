@@ -4,28 +4,71 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'PublicationIconArgs',
+    'PublicationIconArgsDict',
     'PublicationPackageDetailsArgs',
+    'PublicationPackageDetailsArgsDict',
     'PublicationPackageDetailsEulaArgs',
+    'PublicationPackageDetailsEulaArgsDict',
     'PublicationPackageDetailsOperatingSystemArgs',
+    'PublicationPackageDetailsOperatingSystemArgsDict',
     'PublicationSupportContactArgs',
+    'PublicationSupportContactArgsDict',
     'PublicationSupportedOperatingSystemArgs',
+    'PublicationSupportedOperatingSystemArgsDict',
     'GetAcceptedAgreementsFilterArgs',
+    'GetAcceptedAgreementsFilterArgsDict',
     'GetCategoriesFilterArgs',
+    'GetCategoriesFilterArgsDict',
     'GetListingPackageAgreementsFilterArgs',
+    'GetListingPackageAgreementsFilterArgsDict',
     'GetListingPackagesFilterArgs',
+    'GetListingPackagesFilterArgsDict',
     'GetListingTaxesFilterArgs',
+    'GetListingTaxesFilterArgsDict',
     'GetListingsFilterArgs',
+    'GetListingsFilterArgsDict',
     'GetPublicationPackagesFilterArgs',
+    'GetPublicationPackagesFilterArgsDict',
     'GetPublicationsFilterArgs',
+    'GetPublicationsFilterArgsDict',
     'GetPublishersFilterArgs',
+    'GetPublishersFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class PublicationIconArgsDict(TypedDict):
+        content_url: NotRequired[pulumi.Input[str]]
+        """
+        The content URL of the upload data.
+        """
+        file_extension: NotRequired[pulumi.Input[str]]
+        """
+        The file extension of the upload data.
+        """
+        mime_type: NotRequired[pulumi.Input[str]]
+        """
+        The MIME type of the upload data.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the publication, which is also used in the listing.
+        """
+elif False:
+    PublicationIconArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PublicationIconArgs:
@@ -97,6 +140,31 @@ class PublicationIconArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class PublicationPackageDetailsArgsDict(TypedDict):
+        eulas: pulumi.Input[Sequence[pulumi.Input['PublicationPackageDetailsEulaArgsDict']]]
+        """
+        The end user license agreeement (EULA) that consumers of this listing must accept.
+        """
+        operating_system: pulumi.Input['PublicationPackageDetailsOperatingSystemArgsDict']
+        """
+        The operating system used by the listing.
+        """
+        package_type: pulumi.Input[str]
+        """
+        The package's type.
+        """
+        package_version: pulumi.Input[str]
+        """
+        The package version.
+        """
+        image_id: NotRequired[pulumi.Input[str]]
+        """
+        The unique identifier for the base image of the publication.
+        """
+elif False:
+    PublicationPackageDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PublicationPackageDetailsArgs:
@@ -181,6 +249,19 @@ class PublicationPackageDetailsArgs:
         pulumi.set(self, "image_id", value)
 
 
+if not MYPY:
+    class PublicationPackageDetailsEulaArgsDict(TypedDict):
+        eula_type: pulumi.Input[str]
+        """
+        The end user license agreement's type.
+        """
+        license_text: NotRequired[pulumi.Input[str]]
+        """
+        The text of the end user license agreement.
+        """
+elif False:
+    PublicationPackageDetailsEulaArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PublicationPackageDetailsEulaArgs:
     def __init__(__self__, *,
@@ -219,6 +300,15 @@ class PublicationPackageDetailsEulaArgs:
         pulumi.set(self, "license_text", value)
 
 
+if not MYPY:
+    class PublicationPackageDetailsOperatingSystemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the operating system.
+        """
+elif False:
+    PublicationPackageDetailsOperatingSystemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PublicationPackageDetailsOperatingSystemArgs:
     def __init__(__self__, *,
@@ -241,6 +331,31 @@ class PublicationPackageDetailsOperatingSystemArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class PublicationSupportContactArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The email of the contact.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the contact.
+        """
+        phone: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The phone number of the contact.
+        """
+        subject: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The email subject line to use when contacting support.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    PublicationSupportContactArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PublicationSupportContactArgs:
@@ -321,6 +436,15 @@ class PublicationSupportContactArgs:
         pulumi.set(self, "subject", value)
 
 
+if not MYPY:
+    class PublicationSupportedOperatingSystemArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the publication, which is also used in the listing.
+        """
+elif False:
+    PublicationSupportedOperatingSystemArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PublicationSupportedOperatingSystemArgs:
     def __init__(__self__, *,
@@ -343,6 +467,14 @@ class PublicationSupportedOperatingSystemArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class GetAcceptedAgreementsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAcceptedAgreementsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAcceptedAgreementsFilterArgs:
@@ -382,6 +514,17 @@ class GetAcceptedAgreementsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetCategoriesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the product category.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCategoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetCategoriesFilterArgs:
@@ -428,6 +571,14 @@ class GetCategoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetListingPackageAgreementsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetListingPackageAgreementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetListingPackageAgreementsFilterArgs:
     def __init__(__self__, *,
@@ -466,6 +617,17 @@ class GetListingPackageAgreementsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetListingPackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the variable.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetListingPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetListingPackagesFilterArgs:
@@ -512,6 +674,17 @@ class GetListingPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetListingTaxesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the tax code.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetListingTaxesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetListingTaxesFilterArgs:
     def __init__(__self__, *,
@@ -556,6 +729,17 @@ class GetListingTaxesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetListingsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the listing.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetListingsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetListingsFilterArgs:
@@ -602,6 +786,17 @@ class GetListingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetPublicationPackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the variable.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPublicationPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPublicationPackagesFilterArgs:
     def __init__(__self__, *,
@@ -647,6 +842,17 @@ class GetPublicationPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetPublicationsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the publication.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPublicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPublicationsFilterArgs:
     def __init__(__self__, *,
@@ -691,6 +897,17 @@ class GetPublicationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetPublishersFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the publisher.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPublishersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPublishersFilterArgs:

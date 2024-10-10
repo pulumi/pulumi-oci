@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -175,9 +180,6 @@ def get_block_volume_replicas(availability_domain: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         volume_group_replica_id=pulumi.get(__ret__, 'volume_group_replica_id'))
-
-
-@_utilities.lift_output_func(get_block_volume_replicas)
 def get_block_volume_replicas_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                      compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -210,4 +212,21 @@ def get_block_volume_replicas_output(availability_domain: Optional[pulumi.Input[
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
     :param str volume_group_replica_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the volume group replica.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    __args__['volumeGroupReplicaId'] = volume_group_replica_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getBlockVolumeReplicas:getBlockVolumeReplicas', __args__, opts=opts, typ=GetBlockVolumeReplicasResult)
+    return __ret__.apply(lambda __response__: GetBlockVolumeReplicasResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        block_volume_replicas=pulumi.get(__response__, 'block_volume_replicas'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        volume_group_replica_id=pulumi.get(__response__, 'volume_group_replica_id')))

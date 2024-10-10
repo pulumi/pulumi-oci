@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_steering_policy_attachment(steering_policy_attachment_id: Optional[str] 
         steering_policy_id=pulumi.get(__ret__, 'steering_policy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-
-
-@_utilities.lift_output_func(get_steering_policy_attachment)
 def get_steering_policy_attachment_output(steering_policy_attachment_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyAttachmentResult]:
     """
@@ -219,4 +221,19 @@ def get_steering_policy_attachment_output(steering_policy_attachment_id: Optiona
 
     :param str steering_policy_attachment_id: The OCID of the target steering policy attachment.
     """
-    ...
+    __args__ = dict()
+    __args__['steeringPolicyAttachmentId'] = steering_policy_attachment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment', __args__, opts=opts, typ=GetSteeringPolicyAttachmentResult)
+    return __ret__.apply(lambda __response__: GetSteeringPolicyAttachmentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain_name=pulumi.get(__response__, 'domain_name'),
+        id=pulumi.get(__response__, 'id'),
+        rtypes=pulumi.get(__response__, 'rtypes'),
+        self=pulumi.get(__response__, 'self'),
+        state=pulumi.get(__response__, 'state'),
+        steering_policy_attachment_id=pulumi.get(__response__, 'steering_policy_attachment_id'),
+        steering_policy_id=pulumi.get(__response__, 'steering_policy_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        zone_id=pulumi.get(__response__, 'zone_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_suppressions(compartment_id: Optional[str] = None,
         suppressions=pulumi.get(__ret__, 'suppressions'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-
-
-@_utilities.lift_output_func(get_suppressions)
 def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             email_address: Optional[pulumi.Input[Optional[str]]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict']]]]] = None,
@@ -199,4 +201,19 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
            
            **Example:** 2016-12-19T16:39:57.600Z
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['emailAddress'] = email_address
+    __args__['filters'] = filters
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getSuppressions:getSuppressions', __args__, opts=opts, typ=GetSuppressionsResult)
+    return __ret__.apply(lambda __response__: GetSuppressionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        email_address=pulumi.get(__response__, 'email_address'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        suppressions=pulumi.get(__response__, 'suppressions'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than')))

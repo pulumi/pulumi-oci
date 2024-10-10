@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -254,9 +259,6 @@ def get_remediation_run_stage(remediation_run_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_remediation_run_stage)
 def get_remediation_run_stage_output(remediation_run_id: Optional[pulumi.Input[str]] = None,
                                      stage_type: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunStageResult]:
@@ -279,4 +281,24 @@ def get_remediation_run_stage_output(remediation_run_id: Optional[pulumi.Input[s
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
     :param str stage_type: The type of Remediation Run Stage, as a URL path parameter.
     """
-    ...
+    __args__ = dict()
+    __args__['remediationRunId'] = remediation_run_id
+    __args__['stageType'] = stage_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Adm/getRemediationRunStage:getRemediationRunStage', __args__, opts=opts, typ=GetRemediationRunStageResult)
+    return __ret__.apply(lambda __response__: GetRemediationRunStageResult(
+        audit_id=pulumi.get(__response__, 'audit_id'),
+        id=pulumi.get(__response__, 'id'),
+        next_stage_type=pulumi.get(__response__, 'next_stage_type'),
+        pipeline_properties=pulumi.get(__response__, 'pipeline_properties'),
+        previous_stage_type=pulumi.get(__response__, 'previous_stage_type'),
+        pull_request_properties=pulumi.get(__response__, 'pull_request_properties'),
+        recommended_updates_count=pulumi.get(__response__, 'recommended_updates_count'),
+        remediation_run_id=pulumi.get(__response__, 'remediation_run_id'),
+        stage_type=pulumi.get(__response__, 'stage_type'),
+        status=pulumi.get(__response__, 'status'),
+        summary=pulumi.get(__response__, 'summary'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        type=pulumi.get(__response__, 'type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -171,9 +176,6 @@ def get_commitment(commitment_id: Optional[str] = None,
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'),
         used_amount=pulumi.get(__ret__, 'used_amount'))
-
-
-@_utilities.lift_output_func(get_commitment)
 def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentResult]:
     """
@@ -193,4 +195,17 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
 
     :param str commitment_id: The Commitment Id
     """
-    ...
+    __args__ = dict()
+    __args__['commitmentId'] = commitment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getCommitment:getCommitment', __args__, opts=opts, typ=GetCommitmentResult)
+    return __ret__.apply(lambda __response__: GetCommitmentResult(
+        available_amount=pulumi.get(__response__, 'available_amount'),
+        commitment_id=pulumi.get(__response__, 'commitment_id'),
+        funded_allocation_value=pulumi.get(__response__, 'funded_allocation_value'),
+        id=pulumi.get(__response__, 'id'),
+        quantity=pulumi.get(__response__, 'quantity'),
+        subscribed_service_id=pulumi.get(__response__, 'subscribed_service_id'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start'),
+        used_amount=pulumi.get(__response__, 'used_amount')))

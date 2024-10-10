@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -182,9 +187,6 @@ def get_model_deployments(compartment_id: Optional[str] = None,
         model_deployments=pulumi.get(__ret__, 'model_deployments'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_model_deployments)
 def get_model_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  created_by: Optional[pulumi.Input[Optional[str]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -220,4 +222,22 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[str]] = N
     :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['createdBy'] = created_by
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['projectId'] = project_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getModelDeployments:getModelDeployments', __args__, opts=opts, typ=GetModelDeploymentsResult)
+    return __ret__.apply(lambda __response__: GetModelDeploymentsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        model_deployments=pulumi.get(__response__, 'model_deployments'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -116,9 +121,6 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         opensearch_versions_collections=pulumi.get(__ret__, 'opensearch_versions_collections'))
-
-
-@_utilities.lift_output_func(get_opensearch_versions)
 def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchVersionsFilterArgs', 'GetOpensearchVersionsFilterArgsDict']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchVersionsResult]:
@@ -148,4 +150,13 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opensearch/getOpensearchVersions:getOpensearchVersions', __args__, opts=opts, typ=GetOpensearchVersionsResult)
+    return __ret__.apply(lambda __response__: GetOpensearchVersionsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        opensearch_versions_collections=pulumi.get(__response__, 'opensearch_versions_collections')))

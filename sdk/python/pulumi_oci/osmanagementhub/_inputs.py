@@ -4,102 +4,235 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'EventDataArgs',
+    'EventDataArgsDict',
     'EventDataAdditionalDetailArgs',
+    'EventDataAdditionalDetailArgsDict',
     'EventDataAdditionalDetailVmcoreArgs',
+    'EventDataAdditionalDetailVmcoreArgsDict',
     'EventDataContentArgs',
+    'EventDataContentArgsDict',
     'EventSystemDetailArgs',
+    'EventSystemDetailArgsDict',
     'LifecycleEnvironmentManagedInstanceIdArgs',
+    'LifecycleEnvironmentManagedInstanceIdArgsDict',
     'LifecycleEnvironmentStageArgs',
+    'LifecycleEnvironmentStageArgsDict',
     'LifecycleEnvironmentStageManagedInstanceIdArgs',
+    'LifecycleEnvironmentStageManagedInstanceIdArgsDict',
     'LifecycleEnvironmentStageSoftwareSourceIdArgs',
+    'LifecycleEnvironmentStageSoftwareSourceIdArgsDict',
     'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs',
+    'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict',
     'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs',
+    'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict',
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs',
+    'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict',
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs',
+    'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict',
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs',
+    'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceAutonomousSettingsArgs',
+    'ManagedInstanceAutonomousSettingsArgsDict',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupAutonomousSettingsArgs',
+    'ManagedInstanceGroupAutonomousSettingsArgsDict',
     'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementDisableArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementEnableArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementInstallArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict',
     'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupSoftwareSourceArgs',
+    'ManagedInstanceGroupSoftwareSourceArgsDict',
     'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceLifecycleEnvironmentArgs',
+    'ManagedInstanceLifecycleEnvironmentArgsDict',
     'ManagedInstanceLifecycleStageArgs',
+    'ManagedInstanceLifecycleStageArgsDict',
     'ManagedInstanceManagedInstanceGroupArgs',
+    'ManagedInstanceManagedInstanceGroupArgsDict',
     'ManagedInstanceSoftwareSourceArgs',
+    'ManagedInstanceSoftwareSourceArgsDict',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict',
     'ManagementStationHealthArgs',
+    'ManagementStationHealthArgsDict',
     'ManagementStationMirrorArgs',
+    'ManagementStationMirrorArgsDict',
     'ManagementStationMirrorSyncStatusArgs',
+    'ManagementStationMirrorSyncStatusArgsDict',
     'ManagementStationProxyArgs',
+    'ManagementStationProxyArgsDict',
     'ProfileLifecycleEnvironmentArgs',
+    'ProfileLifecycleEnvironmentArgsDict',
     'ProfileLifecycleStageArgs',
+    'ProfileLifecycleStageArgsDict',
     'ProfileManagedInstanceGroupArgs',
+    'ProfileManagedInstanceGroupArgsDict',
     'ProfileSoftwareSourceArgs',
+    'ProfileSoftwareSourceArgsDict',
     'ScheduledJobOperationArgs',
+    'ScheduledJobOperationArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsDisableArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsEnableArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsInstallArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict',
     'ScheduledJobOperationSwitchModuleStreamsDetailsArgs',
+    'ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict',
     'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs',
+    'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict',
     'SoftwareSourceCustomSoftwareSourceFilterArgs',
+    'SoftwareSourceCustomSoftwareSourceFilterArgsDict',
     'SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs',
+    'SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict',
     'SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs',
+    'SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict',
     'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs',
+    'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict',
     'SoftwareSourceVendorSoftwareSourceArgs',
+    'SoftwareSourceVendorSoftwareSourceArgsDict',
     'GetEntitlementsFilterArgs',
+    'GetEntitlementsFilterArgsDict',
     'GetErrataFilterArgs',
+    'GetErrataFilterArgsDict',
     'GetEventsFilterArgs',
+    'GetEventsFilterArgsDict',
     'GetLifecycleEnvironmentsFilterArgs',
+    'GetLifecycleEnvironmentsFilterArgsDict',
     'GetLifecycleStagesFilterArgs',
+    'GetLifecycleStagesFilterArgsDict',
     'GetManagedInstanceAvailablePackagesFilterArgs',
+    'GetManagedInstanceAvailablePackagesFilterArgsDict',
     'GetManagedInstanceAvailableSoftwareSourcesFilterArgs',
+    'GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict',
     'GetManagedInstanceAvailableWindowsUpdatesFilterArgs',
+    'GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict',
     'GetManagedInstanceErrataFilterArgs',
+    'GetManagedInstanceErrataFilterArgsDict',
     'GetManagedInstanceGroupAvailableModulesFilterArgs',
+    'GetManagedInstanceGroupAvailableModulesFilterArgsDict',
     'GetManagedInstanceGroupAvailablePackagesFilterArgs',
+    'GetManagedInstanceGroupAvailablePackagesFilterArgsDict',
     'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs',
+    'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict',
     'GetManagedInstanceGroupInstalledPackagesFilterArgs',
+    'GetManagedInstanceGroupInstalledPackagesFilterArgsDict',
     'GetManagedInstanceGroupModulesFilterArgs',
+    'GetManagedInstanceGroupModulesFilterArgsDict',
     'GetManagedInstanceGroupsFilterArgs',
+    'GetManagedInstanceGroupsFilterArgsDict',
     'GetManagedInstanceInstalledPackagesFilterArgs',
+    'GetManagedInstanceInstalledPackagesFilterArgsDict',
     'GetManagedInstanceInstalledWindowsUpdatesFilterArgs',
+    'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict',
     'GetManagedInstanceModulesFilterArgs',
+    'GetManagedInstanceModulesFilterArgsDict',
     'GetManagedInstanceUpdatablePackagesFilterArgs',
+    'GetManagedInstanceUpdatablePackagesFilterArgsDict',
     'GetManagedInstancesFilterArgs',
+    'GetManagedInstancesFilterArgsDict',
     'GetManagementStationMirrorsFilterArgs',
+    'GetManagementStationMirrorsFilterArgsDict',
     'GetManagementStationsFilterArgs',
+    'GetManagementStationsFilterArgsDict',
     'GetProfilesFilterArgs',
+    'GetProfilesFilterArgsDict',
     'GetScheduledJobsFilterArgs',
+    'GetScheduledJobsFilterArgsDict',
     'GetSoftwarePackageSoftwareSourceFilterArgs',
+    'GetSoftwarePackageSoftwareSourceFilterArgsDict',
     'GetSoftwarePackagesFilterArgs',
+    'GetSoftwarePackagesFilterArgsDict',
     'GetSoftwareSourceModuleStreamProfilesFilterArgs',
+    'GetSoftwareSourceModuleStreamProfilesFilterArgsDict',
     'GetSoftwareSourceModuleStreamsFilterArgs',
+    'GetSoftwareSourceModuleStreamsFilterArgsDict',
     'GetSoftwareSourcePackageGroupsFilterArgs',
+    'GetSoftwareSourcePackageGroupsFilterArgsDict',
     'GetSoftwareSourceSoftwarePackagesFilterArgs',
+    'GetSoftwareSourceSoftwarePackagesFilterArgsDict',
     'GetSoftwareSourceVendorsFilterArgs',
+    'GetSoftwareSourceVendorsFilterArgsDict',
     'GetSoftwareSourcesFilterArgs',
+    'GetSoftwareSourcesFilterArgsDict',
     'GetWindowsUpdatesFilterArgs',
+    'GetWindowsUpdatesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class EventDataArgsDict(TypedDict):
+        additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgsDict']]]]
+        """
+        Provides additional information for the work request associated with an event.
+        """
+        contents: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgsDict']]]]
+        """
+        Provides information collected for the exploit attempt event.
+        """
+        event_count: NotRequired[pulumi.Input[int]]
+        """
+        Number of times the event has occurred.
+        """
+        event_fingerprint: NotRequired[pulumi.Input[str]]
+        """
+        Fingerprint of the event.
+        """
+        operation_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of management station operation.
+        """
+        reason: NotRequired[pulumi.Input[str]]
+        """
+        Reason for the event.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        Status of the management station operation.
+        """
+        time_first_occurred: NotRequired[pulumi.Input[str]]
+        """
+        The date and time that the event first occurred.
+        """
+elif False:
+    EventDataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class EventDataArgs:
@@ -236,6 +369,27 @@ class EventDataArgs:
         pulumi.set(self, "time_first_occurred", value)
 
 
+if not MYPY:
+    class EventDataAdditionalDetailArgsDict(TypedDict):
+        exploit_cves: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of CVEs in the exploit.
+        """
+        initiator_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
+        """
+        vmcores: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgsDict']]]]
+        """
+        Kernel event vmcore details
+        """
+        work_request_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
+        """
+elif False:
+    EventDataAdditionalDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class EventDataAdditionalDetailArgs:
     def __init__(__self__, *,
@@ -307,6 +461,19 @@ class EventDataAdditionalDetailArgs:
         pulumi.set(self, "work_request_ids", value)
 
 
+if not MYPY:
+    class EventDataAdditionalDetailVmcoreArgsDict(TypedDict):
+        backtrace: NotRequired[pulumi.Input[str]]
+        """
+        Kernel vmcore backtrace.
+        """
+        component: NotRequired[pulumi.Input[str]]
+        """
+        Kernel vmcore component.
+        """
+elif False:
+    EventDataAdditionalDetailVmcoreArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class EventDataAdditionalDetailVmcoreArgs:
     def __init__(__self__, *,
@@ -345,6 +512,48 @@ class EventDataAdditionalDetailVmcoreArgs:
     def component(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "component", value)
 
+
+if not MYPY:
+    class EventDataContentArgsDict(TypedDict):
+        content_availability: NotRequired[pulumi.Input[str]]
+        """
+        Crash content availability status:
+        * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+        * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+        * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+        * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+        * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+        """
+        content_location: NotRequired[pulumi.Input[str]]
+        """
+        Location of the Kernel event content.
+        """
+        exploit_detection_log_content: NotRequired[pulumi.Input[str]]
+        """
+        The content of the exploit detection log.
+        """
+        exploit_object_store_location: NotRequired[pulumi.Input[str]]
+        """
+        The location of the exploit detection log within object storage.
+        """
+        size: NotRequired[pulumi.Input[int]]
+        """
+        Size of the event content.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
+        """
+elif False:
+    EventDataContentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class EventDataContentArgs:
@@ -475,6 +684,39 @@ class EventDataContentArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class EventSystemDetailArgsDict(TypedDict):
+        architecture: NotRequired[pulumi.Input[str]]
+        """
+        Architecture type.
+        """
+        ksplice_effective_kernel_version: NotRequired[pulumi.Input[str]]
+        """
+        Version of the Ksplice effective kernel.
+        """
+        os_family: NotRequired[pulumi.Input[str]]
+        """
+        Operating system type.
+        """
+        os_kernel_release: NotRequired[pulumi.Input[str]]
+        """
+        Release of the kernel.
+        """
+        os_kernel_version: NotRequired[pulumi.Input[str]]
+        """
+        Version of the kernel.
+        """
+        os_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the operating system.
+        """
+        os_system_version: NotRequired[pulumi.Input[str]]
+        """
+        Version of the operating system.
+        """
+elif False:
+    EventSystemDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class EventSystemDetailArgs:
     def __init__(__self__, *,
@@ -594,6 +836,19 @@ class EventSystemDetailArgs:
         pulumi.set(self, "os_system_version", value)
 
 
+if not MYPY:
+    class LifecycleEnvironmentManagedInstanceIdArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    LifecycleEnvironmentManagedInstanceIdArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LifecycleEnvironmentManagedInstanceIdArgs:
     def __init__(__self__, *,
@@ -632,6 +887,83 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class LifecycleEnvironmentStageArgsDict(TypedDict):
+        display_name: pulumi.Input[str]
+        """
+        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        rank: pulumi.Input[int]
+        """
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
+        """
+        arch_type: NotRequired[pulumi.Input[str]]
+        """
+        The CPU architecture of the managed instances in the lifecycle environment.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        lifecycle_environment_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
+        """
+        location: NotRequired[pulumi.Input[str]]
+        """
+        The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        """
+        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgsDict']]]]
+        """
+        The list of managed instances associated with the lifecycle stage.
+        """
+        os_family: NotRequired[pulumi.Input[str]]
+        """
+        The operating system of the managed instances in the lifecycle environment.
+        """
+        software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgsDict']]]]
+        """
+        Provides identifying information for the specified software source.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the lifecycle environment.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        time_modified: NotRequired[pulumi.Input[str]]
+        """
+        The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        vendor_name: NotRequired[pulumi.Input[str]]
+        """
+        The vendor of the operating system used by the managed instances in the lifecycle environment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    LifecycleEnvironmentStageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LifecycleEnvironmentStageArgs:
@@ -918,6 +1250,19 @@ class LifecycleEnvironmentStageArgs:
         pulumi.set(self, "vendor_name", value)
 
 
+if not MYPY:
+    class LifecycleEnvironmentStageManagedInstanceIdArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    LifecycleEnvironmentStageManagedInstanceIdArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LifecycleEnvironmentStageManagedInstanceIdArgs:
     def __init__(__self__, *,
@@ -956,6 +1301,31 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class LifecycleEnvironmentStageSoftwareSourceIdArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        software_source_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the software source.
+        """
+elif False:
+    LifecycleEnvironmentStageSoftwareSourceIdArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LifecycleEnvironmentStageSoftwareSourceIdArgs:
@@ -1044,6 +1414,19 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
         pulumi.set(self, "software_source_type", value)
 
 
+if not MYPY:
+    class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
+        managed_instances: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        The list of managed instance OCIDs to be attached/detached.
+        """
+        work_request_details: NotRequired[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
+        """
+        Provides the name and description of the job.
+        """
+elif False:
+    LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs:
     def __init__(__self__, *,
@@ -1081,6 +1464,23 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs:
     def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
+
+if not MYPY:
+    class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
@@ -1129,6 +1529,19 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict(TypedDict):
+        managed_instances: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        The list of managed instance OCIDs to be attached/detached.
+        """
+        work_request_details: NotRequired[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]
+        """
+        Provides the name and description of the job.
+        """
+elif False:
+    LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs:
     def __init__(__self__, *,
@@ -1166,6 +1579,23 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs:
     def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
+
+if not MYPY:
+    class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
@@ -1214,6 +1644,23 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1261,6 +1708,19 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceAutonomousSettingsArgsDict(TypedDict):
+        is_data_collection_authorized: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        """
+        scheduled_job_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+elif False:
+    ManagedInstanceAutonomousSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceAutonomousSettingsArgs:
     def __init__(__self__, *,
@@ -1299,6 +1759,23 @@ class ManagedInstanceAutonomousSettingsArgs:
     def scheduled_job_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scheduled_job_id", value)
 
+
+if not MYPY:
+    class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs:
@@ -1347,6 +1824,23 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1394,6 +1888,19 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupAutonomousSettingsArgsDict(TypedDict):
+        is_data_collection_authorized: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        """
+        scheduled_job_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+elif False:
+    ManagedInstanceGroupAutonomousSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupAutonomousSettingsArgs:
     def __init__(__self__, *,
@@ -1432,6 +1939,23 @@ class ManagedInstanceGroupAutonomousSettingsArgs:
     def scheduled_job_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scheduled_job_id", value)
 
+
+if not MYPY:
+    class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
@@ -1480,6 +2004,23 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1527,6 +2068,23 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1573,6 +2131,23 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+
+if not MYPY:
+    class ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        The name of a module.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementDisableArgs:
@@ -1627,6 +2202,23 @@ class ManagedInstanceGroupManageModuleStreamsManagementDisableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        The name of a module.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementEnableArgs:
     def __init__(__self__, *,
@@ -1679,6 +2271,27 @@ class ManagedInstanceGroupManageModuleStreamsManagementEnableArgs:
     def software_source_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_id", value)
 
+
+if not MYPY:
+    class ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        The name of a module.
+        """
+        profile_name: pulumi.Input[str]
+        """
+        The name of a profile of the specified module stream.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementInstallArgs:
@@ -1748,6 +2361,27 @@ class ManagedInstanceGroupManageModuleStreamsManagementInstallArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        The name of a module.
+        """
+        profile_name: pulumi.Input[str]
+        """
+        The name of a profile of the specified module stream.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs:
     def __init__(__self__, *,
@@ -1816,6 +2450,23 @@ class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1863,6 +2514,23 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -1909,6 +2577,31 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+
+if not MYPY:
+    class ManagedInstanceGroupSoftwareSourceArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        software_source_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the software source.
+        """
+elif False:
+    ManagedInstanceGroupSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceGroupSoftwareSourceArgs:
@@ -1997,6 +2690,23 @@ class ManagedInstanceGroupSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
+if not MYPY:
+    class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -2043,6 +2753,23 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+
+if not MYPY:
+    class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
@@ -2091,6 +2818,19 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagedInstanceLifecycleEnvironmentArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Software source name.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ManagedInstanceLifecycleEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceLifecycleEnvironmentArgs:
     def __init__(__self__, *,
@@ -2129,6 +2869,19 @@ class ManagedInstanceLifecycleEnvironmentArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ManagedInstanceLifecycleStageArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Software source name.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ManagedInstanceLifecycleStageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceLifecycleStageArgs:
@@ -2169,6 +2922,19 @@ class ManagedInstanceLifecycleStageArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class ManagedInstanceManagedInstanceGroupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Software source name.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ManagedInstanceManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceManagedInstanceGroupArgs:
     def __init__(__self__, *,
@@ -2207,6 +2973,31 @@ class ManagedInstanceManagedInstanceGroupArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ManagedInstanceSoftwareSourceArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        Software source name.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        software_source_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the software source.
+        """
+elif False:
+    ManagedInstanceSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagedInstanceSoftwareSourceArgs:
@@ -2295,6 +3086,23 @@ class ManagedInstanceSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
+if not MYPY:
+    class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
@@ -2342,6 +3150,19 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+if not MYPY:
+    class ManagementStationHealthArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The current state of the management station.
+        """
+elif False:
+    ManagementStationHealthArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagementStationHealthArgs:
     def __init__(__self__, *,
@@ -2380,6 +3201,27 @@ class ManagementStationHealthArgs:
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
 
+
+if not MYPY:
+    class ManagementStationMirrorArgsDict(TypedDict):
+        directory: pulumi.Input[str]
+        """
+        (Updatable) Path to the data volume on the management station where software source mirrors are stored.
+        """
+        port: pulumi.Input[str]
+        """
+        (Updatable) Default mirror listening port for http.
+        """
+        sslport: pulumi.Input[str]
+        """
+        (Updatable) Default mirror listening port for https.
+        """
+        sslcert: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Path to the SSL cerfificate.
+        """
+elif False:
+    ManagementStationMirrorArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagementStationMirrorArgs:
@@ -2448,6 +3290,31 @@ class ManagementStationMirrorArgs:
     def sslcert(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "sslcert", value)
 
+
+if not MYPY:
+    class ManagementStationMirrorSyncStatusArgsDict(TypedDict):
+        failed: NotRequired[pulumi.Input[int]]
+        """
+        Total number of software sources that failed to sync.
+        """
+        queued: NotRequired[pulumi.Input[int]]
+        """
+        Total number of software sources that are queued for sync.
+        """
+        synced: NotRequired[pulumi.Input[int]]
+        """
+        Total number of software sources that successfully synced.
+        """
+        syncing: NotRequired[pulumi.Input[int]]
+        """
+        Total number of software sources currently syncing.
+        """
+        unsynced: NotRequired[pulumi.Input[int]]
+        """
+        Total number of software sources that have not yet been synced.
+        """
+elif False:
+    ManagementStationMirrorSyncStatusArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ManagementStationMirrorSyncStatusArgs:
@@ -2536,6 +3403,27 @@ class ManagementStationMirrorSyncStatusArgs:
         pulumi.set(self, "unsynced", value)
 
 
+if not MYPY:
+    class ManagementStationProxyArgsDict(TypedDict):
+        is_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
+        """
+        forward: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The URL the proxy will forward to.
+        """
+        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of hosts.
+        """
+        port: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Listening port used for the proxy.
+        """
+elif False:
+    ManagementStationProxyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ManagementStationProxyArgs:
     def __init__(__self__, *,
@@ -2606,6 +3494,19 @@ class ManagementStationProxyArgs:
         pulumi.set(self, "port", value)
 
 
+if not MYPY:
+    class ProfileLifecycleEnvironmentArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ProfileLifecycleEnvironmentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProfileLifecycleEnvironmentArgs:
     def __init__(__self__, *,
@@ -2644,6 +3545,19 @@ class ProfileLifecycleEnvironmentArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ProfileLifecycleStageArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ProfileLifecycleStageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProfileLifecycleStageArgs:
@@ -2684,6 +3598,19 @@ class ProfileLifecycleStageArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class ProfileManagedInstanceGroupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+elif False:
+    ProfileManagedInstanceGroupArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProfileManagedInstanceGroupArgs:
     def __init__(__self__, *,
@@ -2722,6 +3649,31 @@ class ProfileManagedInstanceGroupArgs:
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
 
+
+if not MYPY:
+    class ProfileSoftwareSourceArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-specified description of the registration profile.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        is_mandatory_for_autonomous_linux: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        software_source_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of the software source.
+        """
+elif False:
+    ProfileSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProfileSoftwareSourceArgs:
@@ -2809,6 +3761,35 @@ class ProfileSoftwareSourceArgs:
     def software_source_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_type", value)
 
+
+if not MYPY:
+    class ScheduledJobOperationArgsDict(TypedDict):
+        operation_type: pulumi.Input[str]
+        """
+        (Updatable) The type of operation this scheduled job performs.
+        """
+        manage_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgsDict']]
+        """
+        (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
+        """
+        package_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        """
+        software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
+        """
+        switch_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict']]
+        """
+        (Updatable) Provides the information used to update a module stream.
+        """
+        windows_update_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+        """
+elif False:
+    ScheduledJobOperationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduledJobOperationArgs:
@@ -2912,6 +3893,27 @@ class ScheduledJobOperationArgs:
         pulumi.set(self, "windows_update_names", value)
 
 
+if not MYPY:
+    class ScheduledJobOperationManageModuleStreamsDetailsArgsDict(TypedDict):
+        disables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict']]]]
+        """
+        (Updatable) The set of module streams to disable.
+        """
+        enables: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict']]]]
+        """
+        (Updatable) The set of module streams to enable.
+        """
+        installs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict']]]]
+        """
+        (Updatable) The set of module stream profiles to install.
+        """
+        removes: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict']]]]
+        """
+        (Updatable) The set of module stream profiles to remove.
+        """
+elif False:
+    ScheduledJobOperationManageModuleStreamsDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsArgs:
     def __init__(__self__, *,
@@ -2983,6 +3985,23 @@ class ScheduledJobOperationManageModuleStreamsDetailsArgs:
         pulumi.set(self, "removes", value)
 
 
+if not MYPY:
+    class ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a module.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsDisableArgs:
     def __init__(__self__, *,
@@ -3036,6 +4055,23 @@ class ScheduledJobOperationManageModuleStreamsDetailsDisableArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a module.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsEnableArgs:
     def __init__(__self__, *,
@@ -3088,6 +4124,27 @@ class ScheduledJobOperationManageModuleStreamsDetailsEnableArgs:
     def software_source_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_id", value)
 
+
+if not MYPY:
+    class ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a module.
+        """
+        profile_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a profile of the specified module stream.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsInstallArgs:
@@ -3157,6 +4214,27 @@ class ScheduledJobOperationManageModuleStreamsDetailsInstallArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a module.
+        """
+        profile_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a profile of the specified module stream.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
     def __init__(__self__, *,
@@ -3225,6 +4303,23 @@ class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+if not MYPY:
+    class ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict(TypedDict):
+        module_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a module.
+        """
+        stream_name: pulumi.Input[str]
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        software_source_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+elif False:
+    ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
     def __init__(__self__, *,
@@ -3277,6 +4372,27 @@ class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
     def software_source_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_id", value)
 
+
+if not MYPY:
+    class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict(TypedDict):
+        software_source_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        availability: NotRequired[pulumi.Input[str]]
+        """
+        Availability of the software source to instances in private data centers or third-party clouds.
+        """
+        availability_at_oci: NotRequired[pulumi.Input[str]]
+        """
+        Availability of the software source to Oracle Cloud Infrastructure instances.
+        """
+elif False:
+    SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
@@ -3340,6 +4456,23 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
         pulumi.set(self, "availability_at_oci", value)
 
 
+if not MYPY:
+    class SoftwareSourceCustomSoftwareSourceFilterArgsDict(TypedDict):
+        module_stream_profile_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict']]]]
+        """
+        (Updatable) The list of module stream/profile filters.
+        """
+        package_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict']]]]
+        """
+        (Updatable) The list of package filters.
+        """
+        package_group_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict']]]]
+        """
+        (Updatable) The list of group filters.
+        """
+elif False:
+    SoftwareSourceCustomSoftwareSourceFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterArgs:
     def __init__(__self__, *,
@@ -3394,6 +4527,27 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
     def package_group_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs']]]]):
         pulumi.set(self, "package_group_filters", value)
 
+
+if not MYPY:
+    class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict(TypedDict):
+        filter_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of the filter.
+        """
+        module_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Module name.
+        """
+        profile_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Profile name.
+        """
+        stream_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Stream name.
+        """
+elif False:
+    SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
@@ -3466,6 +4620,27 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
         pulumi.set(self, "stream_name", value)
 
 
+if not MYPY:
+    class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict(TypedDict):
+        filter_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of the filter.
+        """
+        package_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The package name.
+        """
+        package_name_pattern: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The package name pattern.
+        """
+        package_version: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
+        """
+elif False:
+    SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     def __init__(__self__, *,
@@ -3537,6 +4712,19 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
         pulumi.set(self, "package_version", value)
 
 
+if not MYPY:
+    class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict(TypedDict):
+        filter_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type of the filter.
+        """
+        package_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of package group names.
+        """
+elif False:
+    SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     def __init__(__self__, *,
@@ -3575,6 +4763,23 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     def package_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "package_groups", value)
 
+
+if not MYPY:
+    class SoftwareSourceVendorSoftwareSourceArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) User-friendly name.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    SoftwareSourceVendorSoftwareSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SoftwareSourceVendorSoftwareSourceArgs:
@@ -3623,6 +4828,14 @@ class SoftwareSourceVendorSoftwareSourceArgs:
         pulumi.set(self, "id", value)
 
 
+if not MYPY:
+    class GetEntitlementsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEntitlementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEntitlementsFilterArgs:
     def __init__(__self__, *,
@@ -3661,6 +4874,17 @@ class GetEntitlementsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetErrataFilterArgsDict(TypedDict):
+        name: str
+        """
+        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetErrataFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetErrataFilterArgs:
@@ -3707,6 +4931,14 @@ class GetErrataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetEventsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetEventsFilterArgs:
     def __init__(__self__, *,
@@ -3745,6 +4977,14 @@ class GetEventsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetLifecycleEnvironmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLifecycleEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetLifecycleEnvironmentsFilterArgs:
@@ -3785,6 +5025,14 @@ class GetLifecycleEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetLifecycleStagesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLifecycleStagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetLifecycleStagesFilterArgs:
     def __init__(__self__, *,
@@ -3823,6 +5071,17 @@ class GetLifecycleStagesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceAvailablePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceAvailablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceAvailablePackagesFilterArgs:
@@ -3869,6 +5128,14 @@ class GetManagedInstanceAvailablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceAvailableSoftwareSourcesFilterArgs:
     def __init__(__self__, *,
@@ -3907,6 +5174,17 @@ class GetManagedInstanceAvailableSoftwareSourcesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceAvailableWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceAvailableWindowsUpdatesFilterArgs:
@@ -3953,6 +5231,17 @@ class GetManagedInstanceAvailableWindowsUpdatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceErrataFilterArgsDict(TypedDict):
+        name: str
+        """
+        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceErrataFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceErrataFilterArgs:
     def __init__(__self__, *,
@@ -3997,6 +5286,17 @@ class GetManagedInstanceErrataFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceGroupAvailableModulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupAvailableModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceGroupAvailableModulesFilterArgs:
@@ -4043,6 +5343,17 @@ class GetManagedInstanceGroupAvailableModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceGroupAvailablePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupAvailablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceGroupAvailablePackagesFilterArgs:
     def __init__(__self__, *,
@@ -4088,6 +5399,14 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs:
     def __init__(__self__, *,
@@ -4126,6 +5445,17 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceGroupInstalledPackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the package that is installed on the managed instance group.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupInstalledPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceGroupInstalledPackagesFilterArgs:
@@ -4172,6 +5502,17 @@ class GetManagedInstanceGroupInstalledPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceGroupModulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceGroupModulesFilterArgs:
     def __init__(__self__, *,
@@ -4217,6 +5558,14 @@ class GetManagedInstanceGroupModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceGroupsFilterArgs:
     def __init__(__self__, *,
@@ -4255,6 +5604,17 @@ class GetManagedInstanceGroupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceInstalledPackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceInstalledPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceInstalledPackagesFilterArgs:
@@ -4301,6 +5661,17 @@ class GetManagedInstanceInstalledPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceInstalledWindowsUpdatesFilterArgs:
     def __init__(__self__, *,
@@ -4345,6 +5716,17 @@ class GetManagedInstanceInstalledWindowsUpdatesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagedInstanceModulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The resource name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceModulesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagedInstanceModulesFilterArgs:
@@ -4391,6 +5773,17 @@ class GetManagedInstanceModulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstanceUpdatablePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstanceUpdatablePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstanceUpdatablePackagesFilterArgs:
     def __init__(__self__, *,
@@ -4436,6 +5829,14 @@ class GetManagedInstanceUpdatablePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagedInstancesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagedInstancesFilterArgs:
     def __init__(__self__, *,
@@ -4474,6 +5875,14 @@ class GetManagedInstancesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetManagementStationMirrorsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementStationMirrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetManagementStationMirrorsFilterArgs:
@@ -4514,6 +5923,14 @@ class GetManagementStationMirrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetManagementStationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetManagementStationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetManagementStationsFilterArgs:
     def __init__(__self__, *,
@@ -4552,6 +5969,14 @@ class GetManagementStationsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProfilesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProfilesFilterArgs:
@@ -4592,6 +6017,14 @@ class GetProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetScheduledJobsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetScheduledJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetScheduledJobsFilterArgs:
     def __init__(__self__, *,
@@ -4631,6 +6064,14 @@ class GetScheduledJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwarePackageSoftwareSourceFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwarePackageSoftwareSourceFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwarePackageSoftwareSourceFilterArgs:
     def __init__(__self__, *,
@@ -4669,6 +6110,17 @@ class GetSoftwarePackageSoftwareSourceFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSoftwarePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSoftwarePackagesFilterArgs:
@@ -4715,6 +6167,17 @@ class GetSoftwarePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwareSourceModuleStreamProfilesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the entity to be queried.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceModuleStreamProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwareSourceModuleStreamProfilesFilterArgs:
     def __init__(__self__, *,
@@ -4759,6 +6222,17 @@ class GetSoftwareSourceModuleStreamProfilesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSoftwareSourceModuleStreamsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the entity to be queried.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceModuleStreamsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSoftwareSourceModuleStreamsFilterArgs:
@@ -4805,6 +6279,17 @@ class GetSoftwareSourceModuleStreamsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwareSourcePackageGroupsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the entity to be queried.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourcePackageGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwareSourcePackageGroupsFilterArgs:
     def __init__(__self__, *,
@@ -4849,6 +6334,17 @@ class GetSoftwareSourcePackageGroupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSoftwareSourceSoftwarePackagesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceSoftwarePackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSoftwareSourceSoftwarePackagesFilterArgs:
@@ -4895,6 +6391,17 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwareSourceVendorsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name of the entity to be queried.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourceVendorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwareSourceVendorsFilterArgs:
     def __init__(__self__, *,
@@ -4940,6 +6447,14 @@ class GetSoftwareSourceVendorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetSoftwareSourcesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSoftwareSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSoftwareSourcesFilterArgs:
     def __init__(__self__, *,
@@ -4978,6 +6493,17 @@ class GetSoftwareSourcesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetWindowsUpdatesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetWindowsUpdatesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetWindowsUpdatesFilterArgs:

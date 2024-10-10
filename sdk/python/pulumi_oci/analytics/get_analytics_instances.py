@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -178,9 +183,6 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_analytics_instances)
 def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional[str]]] = None,
                                    compartment_id: Optional[pulumi.Input[str]] = None,
                                    feature_set: Optional[pulumi.Input[Optional[str]]] = None,
@@ -213,4 +215,21 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
     :param str name: A filter to return only resources that match the given name exactly.
     :param str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['capacityType'] = capacity_type
+    __args__['compartmentId'] = compartment_id
+    __args__['featureSet'] = feature_set
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstances:getAnalyticsInstances', __args__, opts=opts, typ=GetAnalyticsInstancesResult)
+    return __ret__.apply(lambda __response__: GetAnalyticsInstancesResult(
+        analytics_instances=pulumi.get(__response__, 'analytics_instances'),
+        capacity_type=pulumi.get(__response__, 'capacity_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        feature_set=pulumi.get(__response__, 'feature_set'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

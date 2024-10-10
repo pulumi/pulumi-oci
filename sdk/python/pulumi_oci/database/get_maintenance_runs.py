@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -209,9 +214,6 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
-
-
-@_utilities.lift_output_func(get_maintenance_runs)
 def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceRunsFilterArgs', 'GetMaintenanceRunsFilterArgsDict']]]]] = None,
@@ -250,4 +252,25 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
     :param str target_resource_id: The target resource ID.
     :param str target_resource_type: The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['maintenanceSubtype'] = maintenance_subtype
+    __args__['maintenanceType'] = maintenance_type
+    __args__['state'] = state
+    __args__['targetResourceId'] = target_resource_id
+    __args__['targetResourceType'] = target_resource_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getMaintenanceRuns:getMaintenanceRuns', __args__, opts=opts, typ=GetMaintenanceRunsResult)
+    return __ret__.apply(lambda __response__: GetMaintenanceRunsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        maintenance_runs=pulumi.get(__response__, 'maintenance_runs'),
+        maintenance_subtype=pulumi.get(__response__, 'maintenance_subtype'),
+        maintenance_type=pulumi.get(__response__, 'maintenance_type'),
+        state=pulumi.get(__response__, 'state'),
+        target_resource_id=pulumi.get(__response__, 'target_resource_id'),
+        target_resource_type=pulumi.get(__response__, 'target_resource_type')))

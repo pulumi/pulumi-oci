@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -338,9 +343,6 @@ def get_secret(secret_id: Optional[str] = None,
         time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-
-
-@_utilities.lift_output_func(get_secret)
 def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretResult]:
     """
@@ -360,4 +362,30 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
 
     :param str secret_id: The OCID of the secret.
     """
-    ...
+    __args__ = dict()
+    __args__['secretId'] = secret_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Vault/getSecret:getSecret', __args__, opts=opts, typ=GetSecretResult)
+    return __ret__.apply(lambda __response__: GetSecretResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        current_version_number=pulumi.get(__response__, 'current_version_number'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        last_rotation_time=pulumi.get(__response__, 'last_rotation_time'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        next_rotation_time=pulumi.get(__response__, 'next_rotation_time'),
+        rotation_configs=pulumi.get(__response__, 'rotation_configs'),
+        rotation_status=pulumi.get(__response__, 'rotation_status'),
+        secret_contents=pulumi.get(__response__, 'secret_contents'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
+        secret_name=pulumi.get(__response__, 'secret_name'),
+        secret_rules=pulumi.get(__response__, 'secret_rules'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_current_version_expiry=pulumi.get(__response__, 'time_of_current_version_expiry'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        vault_id=pulumi.get(__response__, 'vault_id')))

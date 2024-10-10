@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -351,9 +356,6 @@ def get_deployment(deployment_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trigger_new_devops_deployment=pulumi.get(__ret__, 'trigger_new_devops_deployment'))
-
-
-@_utilities.lift_output_func(get_deployment)
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
     """
@@ -373,4 +375,31 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     :param str deployment_id: Unique deployment identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['deploymentId'] = deployment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
+    return __ret__.apply(lambda __response__: GetDeploymentResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_artifact_override_arguments=pulumi.get(__response__, 'deploy_artifact_override_arguments'),
+        deploy_pipeline_artifacts=pulumi.get(__response__, 'deploy_pipeline_artifacts'),
+        deploy_pipeline_environments=pulumi.get(__response__, 'deploy_pipeline_environments'),
+        deploy_pipeline_id=pulumi.get(__response__, 'deploy_pipeline_id'),
+        deploy_stage_id=pulumi.get(__response__, 'deploy_stage_id'),
+        deploy_stage_override_arguments=pulumi.get(__response__, 'deploy_stage_override_arguments'),
+        deployment_arguments=pulumi.get(__response__, 'deployment_arguments'),
+        deployment_execution_progresses=pulumi.get(__response__, 'deployment_execution_progresses'),
+        deployment_id=pulumi.get(__response__, 'deployment_id'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        previous_deployment_id=pulumi.get(__response__, 'previous_deployment_id'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trigger_new_devops_deployment=pulumi.get(__response__, 'trigger_new_devops_deployment')))

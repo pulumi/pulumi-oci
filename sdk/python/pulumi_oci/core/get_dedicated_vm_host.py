@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -249,9 +254,6 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         total_memory_in_gbs=pulumi.get(__ret__, 'total_memory_in_gbs'),
         total_ocpus=pulumi.get(__ret__, 'total_ocpus'))
-
-
-@_utilities.lift_output_func(get_dedicated_vm_host)
 def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostResult]:
     """
@@ -271,4 +273,23 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str
 
     :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
     """
-    ...
+    __args__ = dict()
+    __args__['dedicatedVmHostId'] = dedicated_vm_host_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getDedicatedVmHost:getDedicatedVmHost', __args__, opts=opts, typ=GetDedicatedVmHostResult)
+    return __ret__.apply(lambda __response__: GetDedicatedVmHostResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dedicated_vm_host_id=pulumi.get(__response__, 'dedicated_vm_host_id'),
+        dedicated_vm_host_shape=pulumi.get(__response__, 'dedicated_vm_host_shape'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fault_domain=pulumi.get(__response__, 'fault_domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        remaining_memory_in_gbs=pulumi.get(__response__, 'remaining_memory_in_gbs'),
+        remaining_ocpus=pulumi.get(__response__, 'remaining_ocpus'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        total_memory_in_gbs=pulumi.get(__response__, 'total_memory_in_gbs'),
+        total_ocpus=pulumi.get(__response__, 'total_ocpus')))

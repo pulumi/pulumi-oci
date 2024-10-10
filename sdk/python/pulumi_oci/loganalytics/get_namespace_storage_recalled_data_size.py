@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -140,9 +145,6 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
         recalled_data_in_bytes=pulumi.get(__ret__, 'recalled_data_in_bytes'),
         time_data_ended=pulumi.get(__ret__, 'time_data_ended'),
         time_data_started=pulumi.get(__ret__, 'time_data_started'))
-
-
-@_utilities.lift_output_func(get_namespace_storage_recalled_data_size)
 def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.Input[str]] = None,
                                                     time_data_ended: Optional[pulumi.Input[Optional[str]]] = None,
                                                     time_data_started: Optional[pulumi.Input[Optional[str]]] = None,
@@ -168,4 +170,16 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
     :param str time_data_ended: This is the end of the time range for recalled data
     :param str time_data_started: This is the start of the time range for recalled data
     """
-    ...
+    __args__ = dict()
+    __args__['namespace'] = namespace
+    __args__['timeDataEnded'] = time_data_ended
+    __args__['timeDataStarted'] = time_data_started
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getNamespaceStorageRecalledDataSize:getNamespaceStorageRecalledDataSize', __args__, opts=opts, typ=GetNamespaceStorageRecalledDataSizeResult)
+    return __ret__.apply(lambda __response__: GetNamespaceStorageRecalledDataSizeResult(
+        id=pulumi.get(__response__, 'id'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        not_recalled_data_in_bytes=pulumi.get(__response__, 'not_recalled_data_in_bytes'),
+        recalled_data_in_bytes=pulumi.get(__response__, 'recalled_data_in_bytes'),
+        time_data_ended=pulumi.get(__response__, 'time_data_ended'),
+        time_data_started=pulumi.get(__response__, 'time_data_started')))

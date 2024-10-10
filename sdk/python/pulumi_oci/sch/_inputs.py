@@ -4,26 +4,79 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ConnectorSourceArgs',
+    'ConnectorSourceArgsDict',
     'ConnectorSourceCursorArgs',
+    'ConnectorSourceCursorArgsDict',
     'ConnectorSourceLogSourceArgs',
+    'ConnectorSourceLogSourceArgsDict',
     'ConnectorSourceMonitoringSourceArgs',
+    'ConnectorSourceMonitoringSourceArgsDict',
     'ConnectorSourceMonitoringSourceNamespaceDetailsArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsArgsDict',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgsDict',
     'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgsDict',
     'ConnectorTargetArgs',
+    'ConnectorTargetArgsDict',
     'ConnectorTargetDimensionArgs',
+    'ConnectorTargetDimensionArgsDict',
     'ConnectorTargetDimensionDimensionValueArgs',
+    'ConnectorTargetDimensionDimensionValueArgsDict',
     'ConnectorTaskArgs',
+    'ConnectorTaskArgsDict',
     'GetConnectorPluginsFilterArgs',
+    'GetConnectorPluginsFilterArgsDict',
     'GetServiceConnectorsFilterArgs',
+    'GetServiceConnectorsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ConnectorSourceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type discriminator.
+        """
+        config_map: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        """
+        cursor: NotRequired[pulumi.Input['ConnectorSourceCursorArgsDict']]
+        """
+        (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
+        """
+        log_sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgsDict']]]]
+        """
+        (Updatable) The logs for this Logging source.
+        """
+        monitoring_sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgsDict']]]]
+        """
+        (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
+        """
+        plugin_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        """
+        stream_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+elif False:
+    ConnectorSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorSourceArgs:
@@ -143,6 +196,15 @@ class ConnectorSourceArgs:
         pulumi.set(self, "stream_id", value)
 
 
+if not MYPY:
+    class ConnectorSourceCursorArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The type discriminator.
+        """
+elif False:
+    ConnectorSourceCursorArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectorSourceCursorArgs:
     def __init__(__self__, *,
@@ -165,6 +227,23 @@ class ConnectorSourceCursorArgs:
     def kind(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kind", value)
 
+
+if not MYPY:
+    class ConnectorSourceLogSourceArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
+        """
+        log_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
+        """
+        log_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+elif False:
+    ConnectorSourceLogSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorSourceLogSourceArgs:
@@ -221,6 +300,19 @@ class ConnectorSourceLogSourceArgs:
         pulumi.set(self, "log_id", value)
 
 
+if not MYPY:
+    class ConnectorSourceMonitoringSourceArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
+        """
+        namespace_details: NotRequired[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgsDict']]
+        """
+        (Updatable) Discriminator for namespaces in the compartment-specific list.
+        """
+elif False:
+    ConnectorSourceMonitoringSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectorSourceMonitoringSourceArgs:
     def __init__(__self__, *,
@@ -260,6 +352,19 @@ class ConnectorSourceMonitoringSourceArgs:
         pulumi.set(self, "namespace_details", value)
 
 
+if not MYPY:
+    class ConnectorSourceMonitoringSourceNamespaceDetailsArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type discriminator.
+        """
+        namespaces: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgsDict']]]
+        """
+        (Updatable) The namespaces for the compartment-specific list.
+        """
+elif False:
+    ConnectorSourceMonitoringSourceNamespaceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
     def __init__(__self__, *,
@@ -296,6 +401,19 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
     def namespaces(self, value: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]):
         pulumi.set(self, "namespaces", value)
 
+
+if not MYPY:
+    class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgsDict(TypedDict):
+        metrics: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgsDict']
+        """
+        (Updatable) The metrics to query for the specified metric namespace.
+        """
+        namespace: pulumi.Input[str]
+        """
+        (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+        """
+elif False:
+    ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
@@ -334,6 +452,15 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
         pulumi.set(self, "namespace", value)
 
 
+if not MYPY:
+    class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type discriminator.
+        """
+elif False:
+    ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
     def __init__(__self__, *,
@@ -355,6 +482,87 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
     def kind(self, value: pulumi.Input[str]):
         pulumi.set(self, "kind", value)
 
+
+if not MYPY:
+    class ConnectorTargetArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type discriminator.
+        """
+        batch_rollover_size_in_mbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The batch rollover size in megabytes.
+        """
+        batch_rollover_time_in_ms: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The batch rollover time in milliseconds.
+        """
+        batch_size_in_kbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The batch rollover size in kilobytes.
+        """
+        batch_size_in_num: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The batch rollover size in number of messages.
+        """
+        batch_time_in_sec: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The batch rollover time in seconds.
+        """
+        bucket: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+        """
+        dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConnectorTargetDimensionArgsDict']]]]
+        """
+        (Updatable) List of dimension names and values.
+        """
+        enable_formatted_messaging: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
+        """
+        function_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+        """
+        log_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+        """
+        log_source_identifier: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        """
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the metric.  Example: `CpuUtilization`
+        """
+        metric_namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The namespace of the metric.  Example: `oci_computeagent`
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The namespace.
+        """
+        object_name_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The prefix of the objects. Avoid entering confidential information.
+        """
+        stream_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+        """
+        topic_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+        """
+elif False:
+    ConnectorTargetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorTargetArgs:
@@ -666,6 +874,19 @@ class ConnectorTargetArgs:
         pulumi.set(self, "topic_id", value)
 
 
+if not MYPY:
+    class ConnectorTargetDimensionArgsDict(TypedDict):
+        dimension_value: NotRequired[pulumi.Input['ConnectorTargetDimensionDimensionValueArgsDict']]
+        """
+        (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+        """
+elif False:
+    ConnectorTargetDimensionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ConnectorTargetDimensionArgs:
     def __init__(__self__, *,
@@ -704,6 +925,23 @@ class ConnectorTargetDimensionArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ConnectorTargetDimensionDimensionValueArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type of dimension value: static or evaluated.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
+        """
+elif False:
+    ConnectorTargetDimensionDimensionValueArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorTargetDimensionDimensionValueArgs:
@@ -758,6 +996,31 @@ class ConnectorTargetDimensionDimensionValueArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ConnectorTaskArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Updatable) The type descriminator.
+        """
+        batch_size_in_kbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+        """
+        batch_time_in_sec: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Time limit (seconds) for batch sent to invoke the function.
+        """
+        condition: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A filter or mask to limit the source used in the flow defined by the connector.
+        """
+        function_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+        """
+elif False:
+    ConnectorTaskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ConnectorTaskArgs:
@@ -845,6 +1108,17 @@ class ConnectorTaskArgs:
         pulumi.set(self, "function_id", value)
 
 
+if not MYPY:
+    class GetConnectorPluginsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the given connector plugin name ignoring case.  Example: `QueueSource`
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetConnectorPluginsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetConnectorPluginsFilterArgs:
     def __init__(__self__, *,
@@ -889,6 +1163,17 @@ class GetConnectorPluginsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetServiceConnectorsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetServiceConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetServiceConnectorsFilterArgs:

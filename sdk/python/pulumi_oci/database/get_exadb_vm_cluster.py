@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -589,9 +594,6 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[str] = None,
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-
-
-@_utilities.lift_output_func(get_exadb_vm_cluster)
 def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadbVmClusterResult]:
     """
@@ -611,4 +613,49 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[str]]
 
     :param str exadb_vm_cluster_id: The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.
     """
-    ...
+    __args__ = dict()
+    __args__['exadbVmClusterId'] = exadb_vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExadbVmCluster:getExadbVmCluster', __args__, opts=opts, typ=GetExadbVmClusterResult)
+    return __ret__.apply(lambda __response__: GetExadbVmClusterResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
+        backup_subnet_id=pulumi.get(__response__, 'backup_subnet_id'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_collection_options=pulumi.get(__response__, 'data_collection_options'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        exadb_vm_cluster_id=pulumi.get(__response__, 'exadb_vm_cluster_id'),
+        exascale_db_storage_vault_id=pulumi.get(__response__, 'exascale_db_storage_vault_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gi_version=pulumi.get(__response__, 'gi_version'),
+        grid_image_id=pulumi.get(__response__, 'grid_image_id'),
+        grid_image_type=pulumi.get(__response__, 'grid_image_type'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        iorm_config_caches=pulumi.get(__response__, 'iorm_config_caches'),
+        last_update_history_entry_id=pulumi.get(__response__, 'last_update_history_entry_id'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        listener_port=pulumi.get(__response__, 'listener_port'),
+        node_configs=pulumi.get(__response__, 'node_configs'),
+        node_resources=pulumi.get(__response__, 'node_resources'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_zone_id=pulumi.get(__response__, 'private_zone_id'),
+        scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
+        scan_dns_record_id=pulumi.get(__response__, 'scan_dns_record_id'),
+        scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
+        scan_listener_port_tcp=pulumi.get(__response__, 'scan_listener_port_tcp'),
+        scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
+        shape=pulumi.get(__response__, 'shape'),
+        ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        system_version=pulumi.get(__response__, 'system_version'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        vip_ids=pulumi.get(__response__, 'vip_ids'),
+        zone_id=pulumi.get(__response__, 'zone_id')))

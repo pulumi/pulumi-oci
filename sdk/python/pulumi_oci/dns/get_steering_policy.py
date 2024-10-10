@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
         template=pulumi.get(__ret__, 'template'),
         time_created=pulumi.get(__ret__, 'time_created'),
         ttl=pulumi.get(__ret__, 'ttl'))
-
-
-@_utilities.lift_output_func(get_steering_policy)
 def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyResult]:
     """
@@ -259,4 +261,22 @@ def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] =
 
     :param str steering_policy_id: The OCID of the target steering policy.
     """
-    ...
+    __args__ = dict()
+    __args__['steeringPolicyId'] = steering_policy_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Dns/getSteeringPolicy:getSteeringPolicy', __args__, opts=opts, typ=GetSteeringPolicyResult)
+    return __ret__.apply(lambda __response__: GetSteeringPolicyResult(
+        answers=pulumi.get(__response__, 'answers'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        health_check_monitor_id=pulumi.get(__response__, 'health_check_monitor_id'),
+        id=pulumi.get(__response__, 'id'),
+        rules=pulumi.get(__response__, 'rules'),
+        self=pulumi.get(__response__, 'self'),
+        state=pulumi.get(__response__, 'state'),
+        steering_policy_id=pulumi.get(__response__, 'steering_policy_id'),
+        template=pulumi.get(__response__, 'template'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        ttl=pulumi.get(__response__, 'ttl')))

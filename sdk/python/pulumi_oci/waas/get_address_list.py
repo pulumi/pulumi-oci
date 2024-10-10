@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -184,9 +189,6 @@ def get_address_list(address_list_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_address_list)
 def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressListResult]:
     """
@@ -206,4 +208,18 @@ def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
 
     :param str address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['addressListId'] = address_list_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getAddressList:getAddressList', __args__, opts=opts, typ=GetAddressListResult)
+    return __ret__.apply(lambda __response__: GetAddressListResult(
+        address_count=pulumi.get(__response__, 'address_count'),
+        address_list_id=pulumi.get(__response__, 'address_list_id'),
+        addresses=pulumi.get(__response__, 'addresses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

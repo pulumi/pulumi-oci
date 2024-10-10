@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_default_configuration)
 def get_default_configuration_output(default_configuration_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDefaultConfigurationResult]:
     """
@@ -246,4 +248,21 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
 
     :param str default_configuration_id: A unique identifier for the configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['defaultConfigurationId'] = default_configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDefaultConfiguration:getDefaultConfiguration', __args__, opts=opts, typ=GetDefaultConfigurationResult)
+    return __ret__.apply(lambda __response__: GetDefaultConfigurationResult(
+        configuration_details=pulumi.get(__response__, 'configuration_details'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        default_configuration_id=pulumi.get(__response__, 'default_configuration_id'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        instance_memory_size_in_gbs=pulumi.get(__response__, 'instance_memory_size_in_gbs'),
+        instance_ocpu_count=pulumi.get(__response__, 'instance_ocpu_count'),
+        is_flexible=pulumi.get(__response__, 'is_flexible'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created')))

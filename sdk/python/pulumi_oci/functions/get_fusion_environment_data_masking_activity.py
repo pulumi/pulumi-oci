@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -146,9 +151,6 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
         state=pulumi.get(__ret__, 'state'),
         time_masking_finish=pulumi.get(__ret__, 'time_masking_finish'),
         time_masking_start=pulumi.get(__ret__, 'time_masking_start'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_data_masking_activity)
 def get_fusion_environment_data_masking_activity_output(data_masking_activity_id: Optional[pulumi.Input[str]] = None,
                                                         fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivityResult]:
@@ -171,4 +173,16 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     :param str data_masking_activity_id: Unique DataMasking run identifier.
     :param str fusion_environment_id: unique FusionEnvironment identifier
     """
-    ...
+    __args__ = dict()
+    __args__['dataMaskingActivityId'] = data_masking_activity_id
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentDataMaskingActivity:getFusionEnvironmentDataMaskingActivity', __args__, opts=opts, typ=GetFusionEnvironmentDataMaskingActivityResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentDataMaskingActivityResult(
+        data_masking_activity_id=pulumi.get(__response__, 'data_masking_activity_id'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_resume_data_masking=pulumi.get(__response__, 'is_resume_data_masking'),
+        state=pulumi.get(__response__, 'state'),
+        time_masking_finish=pulumi.get(__response__, 'time_masking_finish'),
+        time_masking_start=pulumi.get(__response__, 'time_masking_start')))

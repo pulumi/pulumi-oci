@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -197,9 +202,6 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         template=pulumi.get(__ret__, 'template'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_custom_protection_rule)
 def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomProtectionRuleResult]:
     """
@@ -219,4 +221,19 @@ def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi
 
     :param str custom_protection_rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['customProtectionRuleId'] = custom_protection_rule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getCustomProtectionRule:getCustomProtectionRule', __args__, opts=opts, typ=GetCustomProtectionRuleResult)
+    return __ret__.apply(lambda __response__: GetCustomProtectionRuleResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_protection_rule_id=pulumi.get(__response__, 'custom_protection_rule_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        mod_security_rule_ids=pulumi.get(__response__, 'mod_security_rule_ids'),
+        state=pulumi.get(__response__, 'state'),
+        template=pulumi.get(__response__, 'template'),
+        time_created=pulumi.get(__response__, 'time_created')))

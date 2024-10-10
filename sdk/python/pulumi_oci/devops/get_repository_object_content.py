@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -108,9 +113,6 @@ def get_repository_object_content(file_path: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         sha=pulumi.get(__ret__, 'sha'))
-
-
-@_utilities.lift_output_func(get_repository_object_content)
 def get_repository_object_content_output(file_path: Optional[pulumi.Input[Optional[str]]] = None,
                                          repository_id: Optional[pulumi.Input[str]] = None,
                                          sha: Optional[pulumi.Input[str]] = None,
@@ -136,4 +138,14 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
     :param str repository_id: Unique repository identifier.
     :param str sha: The SHA of a blob or tree.
     """
-    ...
+    __args__ = dict()
+    __args__['filePath'] = file_path
+    __args__['repositoryId'] = repository_id
+    __args__['sha'] = sha
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent', __args__, opts=opts, typ=GetRepositoryObjectContentResult)
+    return __ret__.apply(lambda __response__: GetRepositoryObjectContentResult(
+        file_path=pulumi.get(__response__, 'file_path'),
+        id=pulumi.get(__response__, 'id'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        sha=pulumi.get(__response__, 'sha')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -169,9 +174,6 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
         name_contains=pulumi.get(__ret__, 'name_contains'),
         project_summary_collections=pulumi.get(__ret__, 'project_summary_collections'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_projects)
 def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceProjectsFilterArgs', 'GetWorkspaceProjectsFilterArgsDict']]]]] = None,
                                   identifiers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -204,4 +206,21 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     :param str name_contains: This parameter can be used to filter objects by the names that match partially or fully with the given value.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['identifiers'] = identifiers
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects', __args__, opts=opts, typ=GetWorkspaceProjectsResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceProjectsResult(
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        identifiers=pulumi.get(__response__, 'identifiers'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        project_summary_collections=pulumi.get(__response__, 'project_summary_collections'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

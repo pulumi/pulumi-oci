@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -289,9 +294,6 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_wallet_rotated=pulumi.get(__ret__, 'time_last_wallet_rotated'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_operations_insights_warehouse)
 def get_operations_insights_warehouse_output(operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResult]:
     """
@@ -312,4 +314,26 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
 
     :param str operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
     """
-    ...
+    __args__ = dict()
+    __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouse:getOperationsInsightsWarehouse', __args__, opts=opts, typ=GetOperationsInsightsWarehouseResult)
+    return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpu_allocated=pulumi.get(__response__, 'cpu_allocated'),
+        cpu_used=pulumi.get(__response__, 'cpu_used'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dynamic_group_id=pulumi.get(__response__, 'dynamic_group_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        operations_insights_tenancy_id=pulumi.get(__response__, 'operations_insights_tenancy_id'),
+        operations_insights_warehouse_id=pulumi.get(__response__, 'operations_insights_warehouse_id'),
+        state=pulumi.get(__response__, 'state'),
+        storage_allocated_in_gbs=pulumi.get(__response__, 'storage_allocated_in_gbs'),
+        storage_used_in_gbs=pulumi.get(__response__, 'storage_used_in_gbs'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_wallet_rotated=pulumi.get(__response__, 'time_last_wallet_rotated'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

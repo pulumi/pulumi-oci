@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -237,9 +242,6 @@ def get_container_images(compartment_id: Optional[str] = None,
         repository_name=pulumi.get(__ret__, 'repository_name'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_container_images)
 def get_container_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -284,4 +286,29 @@ def get_container_images_output(compartment_id: Optional[pulumi.Input[str]] = No
     :param str state: A filter to return only resources that match the given lifecycle state name exactly.
     :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['imageId'] = image_id
+    __args__['isVersioned'] = is_versioned
+    __args__['repositoryId'] = repository_id
+    __args__['repositoryName'] = repository_name
+    __args__['state'] = state
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerImages:getContainerImages', __args__, opts=opts, typ=GetContainerImagesResult)
+    return __ret__.apply(lambda __response__: GetContainerImagesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        container_image_collections=pulumi.get(__response__, 'container_image_collections'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        is_versioned=pulumi.get(__response__, 'is_versioned'),
+        repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_name=pulumi.get(__response__, 'repository_name'),
+        state=pulumi.get(__response__, 'state'),
+        version=pulumi.get(__response__, 'version')))

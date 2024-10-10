@@ -4,15 +4,52 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'OpaInstanceAttachmentArgs',
+    'OpaInstanceAttachmentArgsDict',
     'GetOpaInstancesFilterArgs',
+    'GetOpaInstancesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class OpaInstanceAttachmentArgsDict(TypedDict):
+        is_implicit: NotRequired[pulumi.Input[bool]]
+        """
+        * If role == `PARENT`, the attached instance was created by this service instance
+        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+        """
+        target_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+        """
+        target_instance_url: NotRequired[pulumi.Input[str]]
+        """
+        The dataplane instance URL of the attached instance
+        """
+        target_role: NotRequired[pulumi.Input[str]]
+        """
+        The role of the target attachment. 
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
+        """
+        target_service_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the target instance, such as "FUSION".
+        """
+elif False:
+    OpaInstanceAttachmentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class OpaInstanceAttachmentArgs:
@@ -106,6 +143,14 @@ class OpaInstanceAttachmentArgs:
     def target_service_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "target_service_type", value)
 
+
+if not MYPY:
+    class GetOpaInstancesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOpaInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOpaInstancesFilterArgs:

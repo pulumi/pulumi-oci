@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -314,9 +319,6 @@ def get_masking_report(masking_report_id: Optional[str] = None,
         total_masked_schemas=pulumi.get(__ret__, 'total_masked_schemas'),
         total_masked_sensitive_types=pulumi.get(__ret__, 'total_masked_sensitive_types'),
         total_masked_values=pulumi.get(__ret__, 'total_masked_values'))
-
-
-@_utilities.lift_output_func(get_masking_report)
 def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportResult]:
     """
@@ -336,4 +338,28 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
 
     :param str masking_report_id: The OCID of the masking report.
     """
-    ...
+    __args__ = dict()
+    __args__['maskingReportId'] = masking_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReport:getMaskingReport', __args__, opts=opts, typ=GetMaskingReportResult)
+    return __ret__.apply(lambda __response__: GetMaskingReportResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_drop_temp_tables_enabled=pulumi.get(__response__, 'is_drop_temp_tables_enabled'),
+        is_redo_logging_enabled=pulumi.get(__response__, 'is_redo_logging_enabled'),
+        is_refresh_stats_enabled=pulumi.get(__response__, 'is_refresh_stats_enabled'),
+        masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        masking_report_id=pulumi.get(__response__, 'masking_report_id'),
+        masking_work_request_id=pulumi.get(__response__, 'masking_work_request_id'),
+        parallel_degree=pulumi.get(__response__, 'parallel_degree'),
+        recompile=pulumi.get(__response__, 'recompile'),
+        state=pulumi.get(__response__, 'state'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_masking_finished=pulumi.get(__response__, 'time_masking_finished'),
+        time_masking_started=pulumi.get(__response__, 'time_masking_started'),
+        total_masked_columns=pulumi.get(__response__, 'total_masked_columns'),
+        total_masked_objects=pulumi.get(__response__, 'total_masked_objects'),
+        total_masked_schemas=pulumi.get(__response__, 'total_masked_schemas'),
+        total_masked_sensitive_types=pulumi.get(__response__, 'total_masked_sensitive_types'),
+        total_masked_values=pulumi.get(__response__, 'total_masked_values')))

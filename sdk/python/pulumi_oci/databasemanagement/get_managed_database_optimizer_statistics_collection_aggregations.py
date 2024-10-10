@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -180,9 +185,6 @@ def get_managed_database_optimizer_statistics_collection_aggregations(end_time_l
         optimizer_statistics_collection_aggregations_collections=pulumi.get(__ret__, 'optimizer_statistics_collection_aggregations_collections'),
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         task_type=pulumi.get(__ret__, 'task_type'))
-
-
-@_utilities.lift_output_func(get_managed_database_optimizer_statistics_collection_aggregations)
 def get_managed_database_optimizer_statistics_collection_aggregations_output(end_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict']]]]] = None,
                                                                              group_type: Optional[pulumi.Input[str]] = None,
@@ -221,4 +223,23 @@ def get_managed_database_optimizer_statistics_collection_aggregations_output(end
     :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
     :param str task_type: The filter types of the optimizer statistics tasks.
     """
-    ...
+    __args__ = dict()
+    __args__['endTimeLessThanOrEqualTo'] = end_time_less_than_or_equal_to
+    __args__['filters'] = filters
+    __args__['groupType'] = group_type
+    __args__['limit'] = limit
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['startTimeGreaterThanOrEqualTo'] = start_time_greater_than_or_equal_to
+    __args__['taskType'] = task_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations', __args__, opts=opts, typ=GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult(
+        end_time_less_than_or_equal_to=pulumi.get(__response__, 'end_time_less_than_or_equal_to'),
+        filters=pulumi.get(__response__, 'filters'),
+        group_type=pulumi.get(__response__, 'group_type'),
+        id=pulumi.get(__response__, 'id'),
+        limit=pulumi.get(__response__, 'limit'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        optimizer_statistics_collection_aggregations_collections=pulumi.get(__response__, 'optimizer_statistics_collection_aggregations_collections'),
+        start_time_greater_than_or_equal_to=pulumi.get(__response__, 'start_time_greater_than_or_equal_to'),
+        task_type=pulumi.get(__response__, 'task_type')))

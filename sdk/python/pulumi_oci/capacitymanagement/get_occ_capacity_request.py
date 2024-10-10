@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -338,9 +343,6 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_occ_capacity_request)
 def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOccCapacityRequestResult]:
     """
@@ -360,4 +362,30 @@ def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Inp
 
     :param str occ_capacity_request_id: The OCID of the capacity request.
     """
-    ...
+    __args__ = dict()
+    __args__['occCapacityRequestId'] = occ_capacity_request_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest', __args__, opts=opts, typ=GetOccCapacityRequestResult)
+    return __ret__.apply(lambda __response__: GetOccCapacityRequestResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        date_expected_capacity_handover=pulumi.get(__response__, 'date_expected_capacity_handover'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        details=pulumi.get(__response__, 'details'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        occ_availability_catalog_id=pulumi.get(__response__, 'occ_availability_catalog_id'),
+        occ_capacity_request_id=pulumi.get(__response__, 'occ_capacity_request_id'),
+        occ_customer_group_id=pulumi.get(__response__, 'occ_customer_group_id'),
+        patch_operations=pulumi.get(__response__, 'patch_operations'),
+        region=pulumi.get(__response__, 'region'),
+        request_state=pulumi.get(__response__, 'request_state'),
+        request_type=pulumi.get(__response__, 'request_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

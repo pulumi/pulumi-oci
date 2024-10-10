@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -393,9 +398,6 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         total_new_sensitive_columns=pulumi.get(__ret__, 'total_new_sensitive_columns'),
         total_objects_scanned=pulumi.get(__ret__, 'total_objects_scanned'),
         total_schemas_scanned=pulumi.get(__ret__, 'total_schemas_scanned'))
-
-
-@_utilities.lift_output_func(get_discovery_job)
 def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobResult]:
     """
@@ -415,4 +417,34 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
 
     :param str discovery_job_id: The OCID of the discovery job.
     """
-    ...
+    __args__ = dict()
+    __args__['discoveryJobId'] = discovery_job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJob:getDiscoveryJob', __args__, opts=opts, typ=GetDiscoveryJobResult)
+    return __ret__.apply(lambda __response__: GetDiscoveryJobResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),
+        discovery_type=pulumi.get(__response__, 'discovery_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_app_defined_relation_discovery_enabled=pulumi.get(__response__, 'is_app_defined_relation_discovery_enabled'),
+        is_include_all_schemas=pulumi.get(__response__, 'is_include_all_schemas'),
+        is_include_all_sensitive_types=pulumi.get(__response__, 'is_include_all_sensitive_types'),
+        is_sample_data_collection_enabled=pulumi.get(__response__, 'is_sample_data_collection_enabled'),
+        schemas_for_discoveries=pulumi.get(__response__, 'schemas_for_discoveries'),
+        sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
+        sensitive_type_ids_for_discoveries=pulumi.get(__response__, 'sensitive_type_ids_for_discoveries'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        tables_for_discoveries=pulumi.get(__response__, 'tables_for_discoveries'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        total_columns_scanned=pulumi.get(__response__, 'total_columns_scanned'),
+        total_deleted_sensitive_columns=pulumi.get(__response__, 'total_deleted_sensitive_columns'),
+        total_modified_sensitive_columns=pulumi.get(__response__, 'total_modified_sensitive_columns'),
+        total_new_sensitive_columns=pulumi.get(__response__, 'total_new_sensitive_columns'),
+        total_objects_scanned=pulumi.get(__response__, 'total_objects_scanned'),
+        total_schemas_scanned=pulumi.get(__response__, 'total_schemas_scanned')))

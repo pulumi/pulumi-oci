@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -161,9 +166,6 @@ def get_letter_of_authority(cross_connect_id: Optional[str] = None,
         port_name=pulumi.get(__ret__, 'port_name'),
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_issued=pulumi.get(__ret__, 'time_issued'))
-
-
-@_utilities.lift_output_func(get_letter_of_authority)
 def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLetterOfAuthorityResult]:
     """
@@ -183,4 +185,16 @@ def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]]
 
     :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
     """
-    ...
+    __args__ = dict()
+    __args__['crossConnectId'] = cross_connect_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getLetterOfAuthority:getLetterOfAuthority', __args__, opts=opts, typ=GetLetterOfAuthorityResult)
+    return __ret__.apply(lambda __response__: GetLetterOfAuthorityResult(
+        authorized_entity_name=pulumi.get(__response__, 'authorized_entity_name'),
+        circuit_type=pulumi.get(__response__, 'circuit_type'),
+        cross_connect_id=pulumi.get(__response__, 'cross_connect_id'),
+        facility_location=pulumi.get(__response__, 'facility_location'),
+        id=pulumi.get(__response__, 'id'),
+        port_name=pulumi.get(__response__, 'port_name'),
+        time_expires=pulumi.get(__response__, 'time_expires'),
+        time_issued=pulumi.get(__response__, 'time_issued')))

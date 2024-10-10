@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -211,9 +216,6 @@ def get_pbf_listing(pbf_listing_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         triggers=pulumi.get(__ret__, 'triggers'))
-
-
-@_utilities.lift_output_func(get_pbf_listing)
 def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingResult]:
     """
@@ -233,4 +235,20 @@ def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
 
     :param str pbf_listing_id: unique PbfListing identifier
     """
-    ...
+    __args__ = dict()
+    __args__['pbfListingId'] = pbf_listing_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListing:getPbfListing', __args__, opts=opts, typ=GetPbfListingResult)
+    return __ret__.apply(lambda __response__: GetPbfListingResult(
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        pbf_listing_id=pulumi.get(__response__, 'pbf_listing_id'),
+        publisher_details=pulumi.get(__response__, 'publisher_details'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        triggers=pulumi.get(__response__, 'triggers')))

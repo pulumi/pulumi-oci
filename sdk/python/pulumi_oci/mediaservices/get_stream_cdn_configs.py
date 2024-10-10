@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -148,9 +153,6 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         stream_cdn_config_collections=pulumi.get(__ret__, 'stream_cdn_config_collections'))
-
-
-@_utilities.lift_output_func(get_stream_cdn_configs)
 def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   distribution_channel_id: Optional[pulumi.Input[str]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]]]] = None,
@@ -180,4 +182,18 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
     :param str id: Unique StreamCdnConfig identifier.
     :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
     """
-    ...
+    __args__ = dict()
+    __args__['displayName'] = display_name
+    __args__['distributionChannelId'] = distribution_channel_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getStreamCdnConfigs:getStreamCdnConfigs', __args__, opts=opts, typ=GetStreamCdnConfigsResult)
+    return __ret__.apply(lambda __response__: GetStreamCdnConfigsResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        distribution_channel_id=pulumi.get(__response__, 'distribution_channel_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state'),
+        stream_cdn_config_collections=pulumi.get(__response__, 'stream_cdn_config_collections')))

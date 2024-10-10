@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_target_database_roles(authentication_type: Optional[str] = None,
         role_names=pulumi.get(__ret__, 'role_names'),
         roles=pulumi.get(__ret__, 'roles'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-
-
-@_utilities.lift_output_func(get_target_database_roles)
 def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabaseRolesFilterArgs', 'GetTargetDatabaseRolesFilterArgsDict']]]]] = None,
                                      is_oracle_maintained: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -207,4 +209,21 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
     :param Sequence[str] role_names: A filter to return only a specific role based on role name.
     :param str target_database_id: The OCID of the Data Safe target database.
     """
-    ...
+    __args__ = dict()
+    __args__['authenticationType'] = authentication_type
+    __args__['filters'] = filters
+    __args__['isOracleMaintained'] = is_oracle_maintained
+    __args__['roleNameContains'] = role_name_contains
+    __args__['roleNames'] = role_names
+    __args__['targetDatabaseId'] = target_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles', __args__, opts=opts, typ=GetTargetDatabaseRolesResult)
+    return __ret__.apply(lambda __response__: GetTargetDatabaseRolesResult(
+        authentication_type=pulumi.get(__response__, 'authentication_type'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_oracle_maintained=pulumi.get(__response__, 'is_oracle_maintained'),
+        role_name_contains=pulumi.get(__response__, 'role_name_contains'),
+        role_names=pulumi.get(__response__, 'role_names'),
+        roles=pulumi.get(__response__, 'roles'),
+        target_database_id=pulumi.get(__response__, 'target_database_id')))

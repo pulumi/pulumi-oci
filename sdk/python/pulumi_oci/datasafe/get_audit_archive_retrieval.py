@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -288,9 +293,6 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[str] = None
         time_completed=pulumi.get(__ret__, 'time_completed'),
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
         time_requested=pulumi.get(__ret__, 'time_requested'))
-
-
-@_utilities.lift_output_func(get_audit_archive_retrieval)
 def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditArchiveRetrievalResult]:
     """
@@ -310,4 +312,26 @@ def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulu
 
     :param str audit_archive_retrieval_id: OCID of the archive retrieval.
     """
-    ...
+    __args__ = dict()
+    __args__['auditArchiveRetrievalId'] = audit_archive_retrieval_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval', __args__, opts=opts, typ=GetAuditArchiveRetrievalResult)
+    return __ret__.apply(lambda __response__: GetAuditArchiveRetrievalResult(
+        audit_archive_retrieval_id=pulumi.get(__response__, 'audit_archive_retrieval_id'),
+        audit_event_count=pulumi.get(__response__, 'audit_event_count'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        end_date=pulumi.get(__response__, 'end_date'),
+        error_info=pulumi.get(__response__, 'error_info'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        start_date=pulumi.get(__response__, 'start_date'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_completed=pulumi.get(__response__, 'time_completed'),
+        time_of_expiry=pulumi.get(__response__, 'time_of_expiry'),
+        time_requested=pulumi.get(__response__, 'time_requested')))

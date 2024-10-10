@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -289,9 +294,6 @@ def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
         time_accepted=pulumi.get(__ret__, 'time_accepted'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'))
-
-
-@_utilities.lift_output_func(get_detect_anomaly_job)
 def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectAnomalyJobResult]:
     """
@@ -311,4 +313,26 @@ def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[s
 
     :param str detect_anomaly_job_id: Unique asynchronous job identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['detectAnomalyJobId'] = detect_anomaly_job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AiAnomalyDetection/getDetectAnomalyJob:getDetectAnomalyJob', __args__, opts=opts, typ=GetDetectAnomalyJobResult)
+    return __ret__.apply(lambda __response__: GetDetectAnomalyJobResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        detect_anomaly_job_id=pulumi.get(__response__, 'detect_anomaly_job_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        input_details=pulumi.get(__response__, 'input_details'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        model_id=pulumi.get(__response__, 'model_id'),
+        output_details=pulumi.get(__response__, 'output_details'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        sensitivity=pulumi.get(__response__, 'sensitivity'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started')))

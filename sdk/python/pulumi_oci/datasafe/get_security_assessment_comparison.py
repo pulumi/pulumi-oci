@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -147,9 +152,6 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
         state=pulumi.get(__ret__, 'state'),
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_security_assessment_comparison)
 def get_security_assessment_comparison_output(comparison_security_assessment_id: Optional[pulumi.Input[str]] = None,
                                               security_assessment_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
@@ -172,4 +174,16 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
     :param str security_assessment_id: The OCID of the security assessment.
     """
-    ...
+    __args__ = dict()
+    __args__['comparisonSecurityAssessmentId'] = comparison_security_assessment_id
+    __args__['securityAssessmentId'] = security_assessment_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison', __args__, opts=opts, typ=GetSecurityAssessmentComparisonResult)
+    return __ret__.apply(lambda __response__: GetSecurityAssessmentComparisonResult(
+        baseline_id=pulumi.get(__response__, 'baseline_id'),
+        comparison_security_assessment_id=pulumi.get(__response__, 'comparison_security_assessment_id'),
+        id=pulumi.get(__response__, 'id'),
+        security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
+        state=pulumi.get(__response__, 'state'),
+        targets=pulumi.get(__response__, 'targets'),
+        time_created=pulumi.get(__response__, 'time_created')))

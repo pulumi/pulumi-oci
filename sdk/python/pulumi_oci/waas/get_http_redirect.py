@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -198,9 +203,6 @@ def get_http_redirect(http_redirect_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         targets=pulumi.get(__ret__, 'targets'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_http_redirect)
 def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpRedirectResult]:
     """
@@ -220,4 +222,19 @@ def get_http_redirect_output(http_redirect_id: Optional[pulumi.Input[str]] = Non
 
     :param str http_redirect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
     """
-    ...
+    __args__ = dict()
+    __args__['httpRedirectId'] = http_redirect_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Waas/getHttpRedirect:getHttpRedirect', __args__, opts=opts, typ=GetHttpRedirectResult)
+    return __ret__.apply(lambda __response__: GetHttpRedirectResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        http_redirect_id=pulumi.get(__response__, 'http_redirect_id'),
+        id=pulumi.get(__response__, 'id'),
+        response_code=pulumi.get(__response__, 'response_code'),
+        state=pulumi.get(__response__, 'state'),
+        targets=pulumi.get(__response__, 'targets'),
+        time_created=pulumi.get(__response__, 'time_created')))

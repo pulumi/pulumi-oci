@@ -4,42 +4,107 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'CustomTableSavedCustomTableArgs',
+    'CustomTableSavedCustomTableArgsDict',
     'CustomTableSavedCustomTableGroupByTagArgs',
+    'CustomTableSavedCustomTableGroupByTagArgsDict',
     'QueryQueryDefinitionArgs',
+    'QueryQueryDefinitionArgsDict',
     'QueryQueryDefinitionCostAnalysisUiArgs',
+    'QueryQueryDefinitionCostAnalysisUiArgsDict',
     'QueryQueryDefinitionReportQueryArgs',
+    'QueryQueryDefinitionReportQueryArgsDict',
     'QueryQueryDefinitionReportQueryForecastArgs',
+    'QueryQueryDefinitionReportQueryForecastArgsDict',
     'QueryQueryDefinitionReportQueryGroupByTagArgs',
+    'QueryQueryDefinitionReportQueryGroupByTagArgsDict',
     'ScheduleQueryPropertiesArgs',
+    'ScheduleQueryPropertiesArgsDict',
     'ScheduleQueryPropertiesDateRangeArgs',
+    'ScheduleQueryPropertiesDateRangeArgsDict',
     'ScheduleQueryPropertiesGroupByTagArgs',
+    'ScheduleQueryPropertiesGroupByTagArgsDict',
     'ScheduleResultLocationArgs',
+    'ScheduleResultLocationArgsDict',
     'UsageCarbonEmissionGroupByTagArgs',
+    'UsageCarbonEmissionGroupByTagArgsDict',
     'UsageCarbonEmissionItemArgs',
+    'UsageCarbonEmissionItemArgsDict',
     'UsageCarbonEmissionItemTagArgs',
+    'UsageCarbonEmissionItemTagArgsDict',
     'UsageCarbonEmissionsQueryQueryDefinitionArgs',
+    'UsageCarbonEmissionsQueryQueryDefinitionArgsDict',
     'UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs',
+    'UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgsDict',
     'UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs',
+    'UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict',
     'UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs',
+    'UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgsDict',
     'UsageForecastArgs',
+    'UsageForecastArgsDict',
     'UsageGroupByTagArgs',
+    'UsageGroupByTagArgsDict',
     'UsageItemArgs',
+    'UsageItemArgsDict',
     'UsageItemTagArgs',
+    'UsageItemTagArgsDict',
     'UsageStatementEmailRecipientsGroupRecipientsListArgs',
+    'UsageStatementEmailRecipientsGroupRecipientsListArgsDict',
     'GetCustomTablesFilterArgs',
+    'GetCustomTablesFilterArgsDict',
     'GetQueriesFilterArgs',
+    'GetQueriesFilterArgsDict',
     'GetScheduledRunsFilterArgs',
+    'GetScheduledRunsFilterArgsDict',
     'GetSchedulesFilterArgs',
+    'GetSchedulesFilterArgsDict',
     'GetUsageCarbonEmissionsQueriesFilterArgs',
+    'GetUsageCarbonEmissionsQueriesFilterArgsDict',
     'GetUsageStatementEmailRecipientsGroupsFilterArgs',
+    'GetUsageStatementEmailRecipientsGroupsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class CustomTableSavedCustomTableArgsDict(TypedDict):
+        display_name: pulumi.Input[str]
+        """
+        (Updatable) The name of the custom table.
+        """
+        column_group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        compartment_depth: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The compartment depth level.
+        """
+        group_by_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgsDict']]]]
+        """
+        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        row_group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        version: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The version of the custom table.
+        """
+elif False:
+    CustomTableSavedCustomTableArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class CustomTableSavedCustomTableArgs:
@@ -143,6 +208,23 @@ class CustomTableSavedCustomTableArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class CustomTableSavedCustomTableGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag value.
+        """
+elif False:
+    CustomTableSavedCustomTableGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class CustomTableSavedCustomTableGroupByTagArgs:
     def __init__(__self__, *,
@@ -197,6 +279,31 @@ class CustomTableSavedCustomTableGroupByTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class QueryQueryDefinitionArgsDict(TypedDict):
+        cost_analysis_ui: pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgsDict']
+        """
+        (Updatable) The common fields for Cost Analysis UI rendering.
+        """
+        display_name: pulumi.Input[str]
+        """
+        (Updatable) The query display name. Avoid entering confidential information.
+        """
+        report_query: pulumi.Input['QueryQueryDefinitionReportQueryArgsDict']
+        """
+        (Updatable) The request of the generated Cost Analysis report.
+        """
+        version: pulumi.Input[float]
+        """
+        (Updatable) The saved query version.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    QueryQueryDefinitionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class QueryQueryDefinitionArgs:
@@ -273,6 +380,19 @@ class QueryQueryDefinitionArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class QueryQueryDefinitionCostAnalysisUiArgsDict(TypedDict):
+        graph: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The graph type.
+        """
+        is_cumulative_graph: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) A cumulative graph.
+        """
+elif False:
+    QueryQueryDefinitionCostAnalysisUiArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class QueryQueryDefinitionCostAnalysisUiArgs:
     def __init__(__self__, *,
@@ -311,6 +431,59 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
     def is_cumulative_graph(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cumulative_graph", value)
 
+
+if not MYPY:
+    class QueryQueryDefinitionReportQueryArgsDict(TypedDict):
+        granularity: pulumi.Input[str]
+        """
+        (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
+        """
+        tenant_id: pulumi.Input[str]
+        """
+        (Updatable) Tenant ID.
+        """
+        compartment_depth: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The compartment depth level.
+        """
+        date_range_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
+        """
+        filter: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The filter object for query usage.
+        """
+        forecast: NotRequired[pulumi.Input['QueryQueryDefinitionReportQueryForecastArgsDict']]
+        """
+        (Updatable) Forecast configuration of usage/cost.
+        """
+        group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        group_by_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgsDict']]]]
+        """
+        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        is_aggregate_by_time: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        """
+        query_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+        """
+        time_usage_ended: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The usage end time.
+        """
+        time_usage_started: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The usage start time.
+        """
+elif False:
+    QueryQueryDefinitionReportQueryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class QueryQueryDefinitionReportQueryArgs:
@@ -509,6 +682,23 @@ class QueryQueryDefinitionReportQueryArgs:
         pulumi.set(self, "time_usage_started", value)
 
 
+if not MYPY:
+    class QueryQueryDefinitionReportQueryForecastArgsDict(TypedDict):
+        time_forecast_ended: pulumi.Input[str]
+        """
+        (Updatable) The forecast end time.
+        """
+        forecast_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+        """
+        time_forecast_started: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
+        """
+elif False:
+    QueryQueryDefinitionReportQueryForecastArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class QueryQueryDefinitionReportQueryForecastArgs:
     def __init__(__self__, *,
@@ -562,6 +752,23 @@ class QueryQueryDefinitionReportQueryForecastArgs:
     def time_forecast_started(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_forecast_started", value)
 
+
+if not MYPY:
+    class QueryQueryDefinitionReportQueryGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag value.
+        """
+elif False:
+    QueryQueryDefinitionReportQueryGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class QueryQueryDefinitionReportQueryGroupByTagArgs:
@@ -617,6 +824,43 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ScheduleQueryPropertiesArgsDict(TypedDict):
+        date_range: pulumi.Input['ScheduleQueryPropertiesDateRangeArgsDict']
+        """
+        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+        """
+        granularity: pulumi.Input[str]
+        """
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
+        """
+        compartment_depth: NotRequired[pulumi.Input[float]]
+        """
+        The depth level of the compartment.
+        """
+        filter: NotRequired[pulumi.Input[str]]
+        """
+        The filter object for query usage.
+        """
+        group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+        """
+        group_by_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgsDict']]]]
+        """
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+        """
+        is_aggregate_by_time: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        """
+        query_type: NotRequired[pulumi.Input[str]]
+        """
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
+        """
+elif False:
+    ScheduleQueryPropertiesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduleQueryPropertiesArgs:
@@ -751,6 +995,24 @@ class ScheduleQueryPropertiesArgs:
         pulumi.set(self, "query_type", value)
 
 
+if not MYPY:
+    class ScheduleQueryPropertiesDateRangeArgsDict(TypedDict):
+        date_range_type: pulumi.Input[str]
+        """
+        Defines whether the schedule date range is STATIC or DYNAMIC.
+        """
+        dynamic_date_range_type: NotRequired[pulumi.Input[str]]
+        time_usage_ended: NotRequired[pulumi.Input[str]]
+        """
+        The usage end time.
+        """
+        time_usage_started: NotRequired[pulumi.Input[str]]
+        """
+        The usage start time.
+        """
+elif False:
+    ScheduleQueryPropertiesDateRangeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduleQueryPropertiesDateRangeArgs:
     def __init__(__self__, *,
@@ -817,6 +1079,23 @@ class ScheduleQueryPropertiesDateRangeArgs:
         pulumi.set(self, "time_usage_started", value)
 
 
+if not MYPY:
+    class ScheduleQueryPropertiesGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The tag value.
+        """
+elif False:
+    ScheduleQueryPropertiesGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ScheduleQueryPropertiesGroupByTagArgs:
     def __init__(__self__, *,
@@ -871,6 +1150,27 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ScheduleResultLocationArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        """
+        (Updatable) The bucket name where usage or cost CSVs will be uploaded.
+        """
+        location_type: pulumi.Input[str]
+        """
+        (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
+        """
+        namespace: pulumi.Input[str]
+        """
+        (Updatable) The namespace needed to determine the object storage bucket.
+        """
+        region: pulumi.Input[str]
+        """
+        (Updatable) The destination Object Store Region specified by the customer.
+        """
+elif False:
+    ScheduleResultLocationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ScheduleResultLocationArgs:
@@ -939,6 +1239,23 @@ class ScheduleResultLocationArgs:
         pulumi.set(self, "region", value)
 
 
+if not MYPY:
+    class UsageCarbonEmissionGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The tag value.
+        """
+elif False:
+    UsageCarbonEmissionGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageCarbonEmissionGroupByTagArgs:
     def __init__(__self__, *,
@@ -993,6 +1310,87 @@ class UsageCarbonEmissionGroupByTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UsageCarbonEmissionItemArgsDict(TypedDict):
+        ad: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the usage.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The compartment OCID.
+        """
+        compartment_name: NotRequired[pulumi.Input[str]]
+        """
+        The compartment name.
+        """
+        compartment_path: NotRequired[pulumi.Input[str]]
+        """
+        The compartment path, starting from root.
+        """
+        computed_carbon_emission: NotRequired[pulumi.Input[float]]
+        """
+        The carbon emission in MTCO2 unit.
+        """
+        emission_calculation_method: NotRequired[pulumi.Input[str]]
+        """
+        The method used to calculate carbon emission.
+        """
+        platform: NotRequired[pulumi.Input[str]]
+        """
+        Platform for the cost.
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        The region of the usage.
+        """
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The resource OCID that is incurring the cost.
+        """
+        resource_name: NotRequired[pulumi.Input[str]]
+        """
+        The resource name that is incurring the cost.
+        """
+        service: NotRequired[pulumi.Input[str]]
+        """
+        The service name that is incurring the cost.
+        """
+        sku_name: NotRequired[pulumi.Input[str]]
+        """
+        The SKU friendly name.
+        """
+        sku_part_number: NotRequired[pulumi.Input[str]]
+        """
+        The SKU part number.
+        """
+        subscription_id: NotRequired[pulumi.Input[str]]
+        """
+        The subscription ID.
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionItemTagArgsDict']]]]
+        """
+        For grouping, a tag definition. For filtering, a definition and key.
+        """
+        tenant_id: NotRequired[pulumi.Input[str]]
+        """
+        Tenant ID.
+        """
+        tenant_name: NotRequired[pulumi.Input[str]]
+        """
+        The tenancy name.
+        """
+        time_usage_ended: NotRequired[pulumi.Input[str]]
+        """
+        The usage end time.
+        """
+        time_usage_started: NotRequired[pulumi.Input[str]]
+        """
+        The usage start time.
+        """
+elif False:
+    UsageCarbonEmissionItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageCarbonEmissionItemArgs:
@@ -1305,6 +1703,23 @@ class UsageCarbonEmissionItemArgs:
         pulumi.set(self, "time_usage_started", value)
 
 
+if not MYPY:
+    class UsageCarbonEmissionItemTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The tag value.
+        """
+elif False:
+    UsageCarbonEmissionItemTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageCarbonEmissionItemTagArgs:
     def __init__(__self__, *,
@@ -1359,6 +1774,31 @@ class UsageCarbonEmissionItemTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UsageCarbonEmissionsQueryQueryDefinitionArgsDict(TypedDict):
+        cost_analysis_ui: pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgsDict']
+        """
+        (Updatable) The common fields for Cost Analysis UI rendering.
+        """
+        display_name: pulumi.Input[str]
+        """
+        (Updatable) The query display name. Avoid entering confidential information.
+        """
+        report_query: pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict']
+        """
+        (Updatable) The request of the generated usage carbon emissions report.
+        """
+        version: pulumi.Input[int]
+        """
+        (Updatable) The saved query version.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    UsageCarbonEmissionsQueryQueryDefinitionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageCarbonEmissionsQueryQueryDefinitionArgs:
@@ -1435,6 +1875,19 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
         pulumi.set(self, "version", value)
 
 
+if not MYPY:
+    class UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgsDict(TypedDict):
+        graph: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The graph type.
+        """
+        is_cumulative_graph: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) A cumulative graph.
+        """
+elif False:
+    UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs:
     def __init__(__self__, *,
@@ -1473,6 +1926,47 @@ class UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs:
     def is_cumulative_graph(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cumulative_graph", value)
 
+
+if not MYPY:
+    class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict(TypedDict):
+        tenant_id: pulumi.Input[str]
+        """
+        (Updatable) Tenant ID.
+        """
+        compartment_depth: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The compartment depth level.
+        """
+        date_range_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        """
+        group_bies: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        group_by_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgsDict']]]]
+        """
+        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        is_aggregate_by_time: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        """
+        time_usage_ended: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The usage end time.
+        """
+        time_usage_started: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The usage start time.
+        """
+        usage_carbon_emissions_query_filter: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The filter object for query usage.
+        """
+elif False:
+    UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
@@ -1624,6 +2118,23 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs:
         pulumi.set(self, "usage_carbon_emissions_query_filter", value)
 
 
+if not MYPY:
+    class UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The tag value.
+        """
+elif False:
+    UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs:
     def __init__(__self__, *,
@@ -1679,6 +2190,23 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class UsageForecastArgsDict(TypedDict):
+        time_forecast_ended: pulumi.Input[str]
+        """
+        The forecast end time.
+        """
+        forecast_type: NotRequired[pulumi.Input[str]]
+        """
+        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+        """
+        time_forecast_started: NotRequired[pulumi.Input[str]]
+        """
+        The forecast start time. Defaults to UTC-1 if not specified.
+        """
+elif False:
+    UsageForecastArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageForecastArgs:
     def __init__(__self__, *,
@@ -1732,6 +2260,23 @@ class UsageForecastArgs:
     def time_forecast_started(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_forecast_started", value)
 
+
+if not MYPY:
+    class UsageGroupByTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The tag value.
+        """
+elif False:
+    UsageGroupByTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageGroupByTagArgs:
@@ -1787,6 +2332,139 @@ class UsageGroupByTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UsageItemArgsDict(TypedDict):
+        ad: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the usage.
+        """
+        attributed_cost: NotRequired[pulumi.Input[str]]
+        """
+        The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        attributed_usage: NotRequired[pulumi.Input[str]]
+        """
+        The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The compartment OCID.
+        """
+        compartment_name: NotRequired[pulumi.Input[str]]
+        """
+        The compartment name.
+        """
+        compartment_path: NotRequired[pulumi.Input[str]]
+        """
+        The compartment path, starting from root.
+        """
+        computed_amount: NotRequired[pulumi.Input[float]]
+        """
+        The computed cost.
+        """
+        computed_quantity: NotRequired[pulumi.Input[float]]
+        """
+        The usage number.
+        """
+        currency: NotRequired[pulumi.Input[str]]
+        """
+        The price currency.
+        """
+        discount: NotRequired[pulumi.Input[float]]
+        """
+        The discretionary discount applied to the SKU.
+        """
+        is_forecast: NotRequired[pulumi.Input[bool]]
+        """
+        The forecasted data.
+        """
+        list_rate: NotRequired[pulumi.Input[float]]
+        """
+        The SKU list rate (not discount).
+        """
+        overage: NotRequired[pulumi.Input[str]]
+        """
+        The overage usage.
+        """
+        overages_flag: NotRequired[pulumi.Input[str]]
+        """
+        The SPM OverageFlag.
+        """
+        platform: NotRequired[pulumi.Input[str]]
+        """
+        Platform for the cost.
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        The region of the usage.
+        """
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The resource OCID that is incurring the cost.
+        """
+        resource_name: NotRequired[pulumi.Input[str]]
+        """
+        The resource name that is incurring the cost.
+        """
+        service: NotRequired[pulumi.Input[str]]
+        """
+        The service name that is incurring the cost.
+        """
+        shape: NotRequired[pulumi.Input[str]]
+        """
+        The resource shape.
+        """
+        sku_name: NotRequired[pulumi.Input[str]]
+        """
+        The SKU friendly name.
+        """
+        sku_part_number: NotRequired[pulumi.Input[str]]
+        """
+        The SKU part number.
+        """
+        subscription_id: NotRequired[pulumi.Input[str]]
+        """
+        The subscription ID.
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['UsageItemTagArgsDict']]]]
+        """
+        For grouping, a tag definition. For filtering, a definition and key.
+        """
+        tenant_id: NotRequired[pulumi.Input[str]]
+        """
+        Tenant ID.
+        """
+        tenant_name: NotRequired[pulumi.Input[str]]
+        """
+        The tenancy name.
+        """
+        time_usage_ended: NotRequired[pulumi.Input[str]]
+        """
+        The usage end time.
+        """
+        time_usage_started: NotRequired[pulumi.Input[str]]
+        """
+        The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        unit: NotRequired[pulumi.Input[str]]
+        """
+        The usage unit.
+        """
+        unit_price: NotRequired[pulumi.Input[float]]
+        """
+        The price per unit.
+        """
+        weight: NotRequired[pulumi.Input[float]]
+        """
+        The resource size being metered.
+        """
+elif False:
+    UsageItemArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageItemArgs:
@@ -2299,6 +2977,23 @@ class UsageItemArgs:
         pulumi.set(self, "weight", value)
 
 
+if not MYPY:
+    class UsageItemTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        The tag key.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The tag namespace.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The tag value.
+        """
+elif False:
+    UsageItemTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UsageItemTagArgs:
     def __init__(__self__, *,
@@ -2353,6 +3048,27 @@ class UsageItemTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UsageStatementEmailRecipientsGroupRecipientsListArgsDict(TypedDict):
+        email_id: pulumi.Input[str]
+        """
+        (Updatable) the email of the recipient.
+        """
+        state: pulumi.Input[str]
+        """
+        (Updatable) The email recipient lifecycle state.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) the first name of the recipient.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) the last name of the recipient.
+        """
+elif False:
+    UsageStatementEmailRecipientsGroupRecipientsListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UsageStatementEmailRecipientsGroupRecipientsListArgs:
@@ -2423,6 +3139,14 @@ class UsageStatementEmailRecipientsGroupRecipientsListArgs:
         pulumi.set(self, "last_name", value)
 
 
+if not MYPY:
+    class GetCustomTablesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetCustomTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetCustomTablesFilterArgs:
     def __init__(__self__, *,
@@ -2461,6 +3185,14 @@ class GetCustomTablesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetQueriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetQueriesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetQueriesFilterArgs:
@@ -2501,6 +3233,14 @@ class GetQueriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetScheduledRunsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetScheduledRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetScheduledRunsFilterArgs:
     def __init__(__self__, *,
@@ -2539,6 +3279,17 @@ class GetScheduledRunsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSchedulesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Query parameter for filtering by name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSchedulesFilterArgs:
@@ -2585,6 +3336,14 @@ class GetSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetUsageCarbonEmissionsQueriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetUsageCarbonEmissionsQueriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetUsageCarbonEmissionsQueriesFilterArgs:
     def __init__(__self__, *,
@@ -2623,6 +3382,14 @@ class GetUsageCarbonEmissionsQueriesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetUsageStatementEmailRecipientsGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetUsageStatementEmailRecipientsGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetUsageStatementEmailRecipientsGroupsFilterArgs:

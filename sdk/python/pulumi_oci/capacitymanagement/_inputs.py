@@ -4,30 +4,107 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'OccAvailabilityCatalogDetailArgs',
+    'OccAvailabilityCatalogDetailArgsDict',
     'OccAvailabilityCatalogMetadataDetailsArgs',
+    'OccAvailabilityCatalogMetadataDetailsArgsDict',
     'OccCapacityRequestDetailArgs',
+    'OccCapacityRequestDetailArgsDict',
     'OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs',
+    'OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict',
     'OccCapacityRequestPatchOperationArgs',
+    'OccCapacityRequestPatchOperationArgsDict',
     'OccCustomerGroupCustomersListArgs',
+    'OccCustomerGroupCustomersListArgsDict',
     'GetInternalNamespaceOccOverviewsFilterArgs',
+    'GetInternalNamespaceOccOverviewsFilterArgsDict',
     'GetInternalOccAvailabilityCatalogsFilterArgs',
+    'GetInternalOccAvailabilityCatalogsFilterArgsDict',
     'GetInternalOccHandoverResourceBlockDetailsFilterArgs',
+    'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict',
     'GetInternalOccHandoverResourceBlocksFilterArgs',
+    'GetInternalOccHandoverResourceBlocksFilterArgsDict',
     'GetNamespaceOccOverviewsFilterArgs',
+    'GetNamespaceOccOverviewsFilterArgsDict',
     'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs',
+    'GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict',
     'GetOccAvailabilityCatalogsFilterArgs',
+    'GetOccAvailabilityCatalogsFilterArgsDict',
     'GetOccCapacityRequestsFilterArgs',
+    'GetOccCapacityRequestsFilterArgsDict',
     'GetOccCustomerGroupsFilterArgs',
+    'GetOccCustomerGroupsFilterArgsDict',
     'GetOccHandoverResourceBlockDetailsFilterArgs',
+    'GetOccHandoverResourceBlockDetailsFilterArgsDict',
     'GetOccHandoverResourceBlocksFilterArgs',
+    'GetOccHandoverResourceBlocksFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class OccAvailabilityCatalogDetailArgsDict(TypedDict):
+        available_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The quantity of resource currently available that the customer can request.
+        """
+        catalog_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the availability catalog.
+        """
+        date_expected_capacity_handover: NotRequired[pulumi.Input[str]]
+        """
+        The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+        """
+        date_final_customer_order: NotRequired[pulumi.Input[str]]
+        """
+        The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+        """
+        demanded_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The quantity of resource currently demanded by the customer.
+        """
+        namespace: NotRequired[pulumi.Input[str]]
+        """
+        The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
+        """
+        resource_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the resource that the customer can request.
+        """
+        resource_type: NotRequired[pulumi.Input[str]]
+        """
+        The different types of resources against which customers can place capacity requests.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        total_available_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The total quantity of resource that the customer can request.
+        """
+        unit: NotRequired[pulumi.Input[str]]
+        """
+        The unit in which the resource available is measured.
+        """
+        workload_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of workload (Generic/ROW).
+        """
+elif False:
+    OccAvailabilityCatalogDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class OccAvailabilityCatalogDetailArgs:
@@ -228,6 +305,15 @@ class OccAvailabilityCatalogDetailArgs:
         pulumi.set(self, "workload_type", value)
 
 
+if not MYPY:
+    class OccAvailabilityCatalogMetadataDetailsArgsDict(TypedDict):
+        format_version: pulumi.Input[str]
+        """
+        The version for the format of the catalog file being uploaded.
+        """
+elif False:
+    OccAvailabilityCatalogMetadataDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class OccAvailabilityCatalogMetadataDetailsArgs:
     def __init__(__self__, *,
@@ -249,6 +335,55 @@ class OccAvailabilityCatalogMetadataDetailsArgs:
     def format_version(self, value: pulumi.Input[str]):
         pulumi.set(self, "format_version", value)
 
+
+if not MYPY:
+    class OccCapacityRequestDetailArgsDict(TypedDict):
+        demand_quantity: pulumi.Input[str]
+        """
+        The number of compute server's with name <resourceName> required by the user.
+        """
+        resource_name: pulumi.Input[str]
+        """
+        The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+        """
+        resource_type: pulumi.Input[str]
+        """
+        The type of the resource against which the user wants to place a capacity request.
+        """
+        workload_type: pulumi.Input[str]
+        """
+        The type of the workload (Generic/ROW).
+        """
+        actual_handover_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The actual handed over quantity of resources at the time of request resolution.
+        """
+        associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict']]]]
+        """
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+        """
+        date_actual_handover: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the actual handover quantity of resources is delivered.
+        """
+        date_expected_handover: NotRequired[pulumi.Input[str]]
+        """
+        The date on which the latest increment to supplied quantity of resources was delivered.
+        """
+        expected_handover_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The incremental quantity of resources supplied as the provisioning is underway.
+        """
+        source_workload_type: NotRequired[pulumi.Input[str]]
+        """
+        The WorkloadType from where capacity request are to be transferred.
+        """
+elif False:
+    OccCapacityRequestDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class OccCapacityRequestDetailArgs:
@@ -429,6 +564,19 @@ class OccCapacityRequestDetailArgs:
         pulumi.set(self, "source_workload_type", value)
 
 
+if not MYPY:
+    class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict(TypedDict):
+        handover_quantity: NotRequired[pulumi.Input[str]]
+        """
+        The total quantity of the resource that was made available to the customer as part of this resource block
+        """
+        occ_handover_resource_block_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the handed over resource block.
+        """
+elif False:
+    OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
     def __init__(__self__, *,
@@ -467,6 +615,35 @@ class OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs:
     def occ_handover_resource_block_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "occ_handover_resource_block_id", value)
 
+
+if not MYPY:
+    class OccCapacityRequestPatchOperationArgsDict(TypedDict):
+        from_: pulumi.Input[str]
+        """
+        (Updatable)
+        """
+        operation: pulumi.Input[str]
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
+        """
+        selection: pulumi.Input[str]
+        """
+        (Updatable)
+        """
+        value: pulumi.Input[Mapping[str, pulumi.Input[str]]]
+        """
+        (Updatable)
+        """
+        position: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable)
+        """
+        selected_item: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable)
+        """
+elif False:
+    OccCapacityRequestPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class OccCapacityRequestPatchOperationArgs:
@@ -567,6 +744,31 @@ class OccCapacityRequestPatchOperationArgs:
         pulumi.set(self, "selected_item", value)
 
 
+if not MYPY:
+    class OccCustomerGroupCustomersListArgsDict(TypedDict):
+        display_name: pulumi.Input[str]
+        """
+        The display name for the customer.
+        """
+        tenancy_id: pulumi.Input[str]
+        """
+        The OCID of the tenancy belonging to the customer.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        The description about the customer group.
+        """
+        occ_customer_group_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the customer group.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        To determine whether the customer is enabled/disabled.
+        """
+elif False:
+    OccCustomerGroupCustomersListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class OccCustomerGroupCustomersListArgs:
     def __init__(__self__, *,
@@ -652,6 +854,14 @@ class OccCustomerGroupCustomersListArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class GetInternalNamespaceOccOverviewsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInternalNamespaceOccOverviewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetInternalNamespaceOccOverviewsFilterArgs:
     def __init__(__self__, *,
@@ -690,6 +900,14 @@ class GetInternalNamespaceOccOverviewsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetInternalOccAvailabilityCatalogsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInternalOccAvailabilityCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetInternalOccAvailabilityCatalogsFilterArgs:
@@ -730,6 +948,14 @@ class GetInternalOccAvailabilityCatalogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetInternalOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInternalOccHandoverResourceBlockDetailsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetInternalOccHandoverResourceBlockDetailsFilterArgs:
     def __init__(__self__, *,
@@ -768,6 +994,14 @@ class GetInternalOccHandoverResourceBlockDetailsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetInternalOccHandoverResourceBlocksFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInternalOccHandoverResourceBlocksFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetInternalOccHandoverResourceBlocksFilterArgs:
@@ -808,6 +1042,14 @@ class GetInternalOccHandoverResourceBlocksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNamespaceOccOverviewsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNamespaceOccOverviewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNamespaceOccOverviewsFilterArgs:
     def __init__(__self__, *,
@@ -846,6 +1088,14 @@ class GetNamespaceOccOverviewsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccAvailabilityCatalogOccAvailabilitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs:
@@ -886,6 +1136,14 @@ class GetOccAvailabilityCatalogOccAvailabilitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetOccAvailabilityCatalogsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccAvailabilityCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetOccAvailabilityCatalogsFilterArgs:
     def __init__(__self__, *,
@@ -924,6 +1182,14 @@ class GetOccAvailabilityCatalogsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetOccCapacityRequestsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccCapacityRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOccCapacityRequestsFilterArgs:
@@ -964,6 +1230,14 @@ class GetOccCapacityRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetOccCustomerGroupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccCustomerGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetOccCustomerGroupsFilterArgs:
     def __init__(__self__, *,
@@ -1003,6 +1277,14 @@ class GetOccCustomerGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetOccHandoverResourceBlockDetailsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccHandoverResourceBlockDetailsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetOccHandoverResourceBlockDetailsFilterArgs:
     def __init__(__self__, *,
@@ -1041,6 +1323,14 @@ class GetOccHandoverResourceBlockDetailsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetOccHandoverResourceBlocksFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetOccHandoverResourceBlocksFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetOccHandoverResourceBlocksFilterArgs:

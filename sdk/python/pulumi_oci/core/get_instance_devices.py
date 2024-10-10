@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_instance_devices(filters: Optional[Sequence[Union['GetInstanceDevicesFil
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_available=pulumi.get(__ret__, 'is_available'),
         name=pulumi.get(__ret__, 'name'))
-
-
-@_utilities.lift_output_func(get_instance_devices)
 def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceDevicesFilterArgs', 'GetInstanceDevicesFilterArgsDict']]]]] = None,
                                 instance_id: Optional[pulumi.Input[str]] = None,
                                 is_available: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -170,4 +172,17 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
     :param bool is_available: A filter to return only available devices or only used devices.
     :param str name: A filter to return only devices that match the given name exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['instanceId'] = instance_id
+    __args__['isAvailable'] = is_available
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getInstanceDevices:getInstanceDevices', __args__, opts=opts, typ=GetInstanceDevicesResult)
+    return __ret__.apply(lambda __response__: GetInstanceDevicesResult(
+        devices=pulumi.get(__response__, 'devices'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        instance_id=pulumi.get(__response__, 'instance_id'),
+        is_available=pulumi.get(__response__, 'is_available'),
+        name=pulumi.get(__response__, 'name')))

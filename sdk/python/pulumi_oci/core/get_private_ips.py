@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -191,9 +196,6 @@ def get_private_ips(filters: Optional[Sequence[Union['GetPrivateIpsFilterArgs', 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-
-
-@_utilities.lift_output_func(get_private_ips)
 def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateIpsFilterArgs', 'GetPrivateIpsFilterArgsDict']]]]] = None,
                            ip_address: Optional[pulumi.Input[Optional[str]]] = None,
                            subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -253,4 +255,19 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[Unio
     :param str vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
     :param str vnic_id: The OCID of the VNIC.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['ipAddress'] = ip_address
+    __args__['subnetId'] = subnet_id
+    __args__['vlanId'] = vlan_id
+    __args__['vnicId'] = vnic_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPrivateIps:getPrivateIps', __args__, opts=opts, typ=GetPrivateIpsResult)
+    return __ret__.apply(lambda __response__: GetPrivateIpsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        private_ips=pulumi.get(__response__, 'private_ips'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        vlan_id=pulumi.get(__response__, 'vlan_id'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

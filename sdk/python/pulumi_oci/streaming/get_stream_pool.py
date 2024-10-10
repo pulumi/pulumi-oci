@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -237,9 +242,6 @@ def get_stream_pool(stream_pool_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_stream_pool)
 def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPoolResult]:
     """
@@ -259,4 +261,22 @@ def get_stream_pool_output(stream_pool_id: Optional[pulumi.Input[str]] = None,
 
     :param str stream_pool_id: The OCID of the stream pool.
     """
-    ...
+    __args__ = dict()
+    __args__['streamPoolId'] = stream_pool_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Streaming/getStreamPool:getStreamPool', __args__, opts=opts, typ=GetStreamPoolResult)
+    return __ret__.apply(lambda __response__: GetStreamPoolResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        custom_encryption_keys=pulumi.get(__response__, 'custom_encryption_keys'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        endpoint_fqdn=pulumi.get(__response__, 'endpoint_fqdn'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_private=pulumi.get(__response__, 'is_private'),
+        kafka_settings=pulumi.get(__response__, 'kafka_settings'),
+        lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
+        name=pulumi.get(__response__, 'name'),
+        private_endpoint_settings=pulumi.get(__response__, 'private_endpoint_settings'),
+        state=pulumi.get(__response__, 'state'),
+        stream_pool_id=pulumi.get(__response__, 'stream_pool_id'),
+        time_created=pulumi.get(__response__, 'time_created')))

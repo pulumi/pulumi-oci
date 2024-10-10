@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -139,9 +144,6 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
-
-
-@_utilities.lift_output_func(get_baselineable_metrics_evaluate)
 def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pulumi.Input[str]] = None,
                                              items: Optional[pulumi.Input[Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']]]] = None,
                                              resource_id: Optional[pulumi.Input[str]] = None,
@@ -177,4 +179,15 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     :param Sequence[Union['GetBaselineableMetricsEvaluateItemArgs', 'GetBaselineableMetricsEvaluateItemArgsDict']] items: List of Metric data
     :param str resource_id: OCID of the resource
     """
-    ...
+    __args__ = dict()
+    __args__['baselineableMetricId'] = baselineable_metric_id
+    __args__['items'] = items
+    __args__['resourceId'] = resource_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate', __args__, opts=opts, typ=GetBaselineableMetricsEvaluateResult)
+    return __ret__.apply(lambda __response__: GetBaselineableMetricsEvaluateResult(
+        baselineable_metric_id=pulumi.get(__response__, 'baselineable_metric_id'),
+        data_points=pulumi.get(__response__, 'data_points'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        resource_id=pulumi.get(__response__, 'resource_id')))

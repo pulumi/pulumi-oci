@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -140,9 +145,6 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
         media_workflow_job_id=pulumi.get(__ret__, 'media_workflow_job_id'),
         name=pulumi.get(__ret__, 'name'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_media_workflow_job_fact)
 def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
                                        media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobFactResult]:
@@ -166,4 +168,15 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
     :param str key: Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
     :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['key'] = key
+    __args__['mediaWorkflowJobId'] = media_workflow_job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MediaServices/getMediaWorkflowJobFact:getMediaWorkflowJobFact', __args__, opts=opts, typ=GetMediaWorkflowJobFactResult)
+    return __ret__.apply(lambda __response__: GetMediaWorkflowJobFactResult(
+        detail=pulumi.get(__response__, 'detail'),
+        id=pulumi.get(__response__, 'id'),
+        key=pulumi.get(__response__, 'key'),
+        media_workflow_job_id=pulumi.get(__response__, 'media_workflow_job_id'),
+        name=pulumi.get(__response__, 'name'),
+        type=pulumi.get(__response__, 'type')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -146,9 +151,6 @@ def get_license_metric(compartment_id: Optional[str] = None,
         total_byol_instance_count=pulumi.get(__ret__, 'total_byol_instance_count'),
         total_license_included_instance_count=pulumi.get(__ret__, 'total_license_included_instance_count'),
         total_product_license_count=pulumi.get(__ret__, 'total_product_license_count'))
-
-
-@_utilities.lift_output_func(get_license_metric)
 def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseMetricResult]:
@@ -171,4 +173,16 @@ def get_license_metric_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
     :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['isCompartmentIdInSubtree'] = is_compartment_id_in_subtree
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LicenseManager/getLicenseMetric:getLicenseMetric', __args__, opts=opts, typ=GetLicenseMetricResult)
+    return __ret__.apply(lambda __response__: GetLicenseMetricResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_compartment_id_in_subtree=pulumi.get(__response__, 'is_compartment_id_in_subtree'),
+        license_record_expiring_soon_count=pulumi.get(__response__, 'license_record_expiring_soon_count'),
+        total_byol_instance_count=pulumi.get(__response__, 'total_byol_instance_count'),
+        total_license_included_instance_count=pulumi.get(__response__, 'total_license_included_instance_count'),
+        total_product_license_count=pulumi.get(__response__, 'total_product_license_count')))

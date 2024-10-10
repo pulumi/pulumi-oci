@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -364,9 +369,6 @@ def get_pipeline_run(pipeline_run_id: Optional[str] = None,
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_pipeline_run)
 def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelineRunResult]:
     """
@@ -386,4 +388,32 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[str]] = None,
 
     :param str pipeline_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
     """
-    ...
+    __args__ = dict()
+    __args__['pipelineRunId'] = pipeline_run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataScience/getPipelineRun:getPipelineRun', __args__, opts=opts, typ=GetPipelineRunResult)
+    return __ret__.apply(lambda __response__: GetPipelineRunResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration_details=pulumi.get(__response__, 'configuration_details'),
+        configuration_override_details=pulumi.get(__response__, 'configuration_override_details'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        delete_related_job_runs=pulumi.get(__response__, 'delete_related_job_runs'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        log_configuration_override_details=pulumi.get(__response__, 'log_configuration_override_details'),
+        log_details=pulumi.get(__response__, 'log_details'),
+        opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
+        pipeline_id=pulumi.get(__response__, 'pipeline_id'),
+        pipeline_run_id=pulumi.get(__response__, 'pipeline_run_id'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        state=pulumi.get(__response__, 'state'),
+        step_override_details=pulumi.get(__response__, 'step_override_details'),
+        step_runs=pulumi.get(__response__, 'step_runs'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_started=pulumi.get(__response__, 'time_started'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -541,9 +546,6 @@ def get_domains_identity_propagation_trust(attribute_sets: Optional[Sequence[str
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_domains_identity_propagation_trust)
 def get_domains_identity_propagation_trust_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                   attributes: Optional[pulumi.Input[Optional[str]]] = None,
                                                   authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -578,4 +580,50 @@ def get_domains_identity_propagation_trust_output(attribute_sets: Optional[pulum
     :param str identity_propagation_trust_id: ID of the resource
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['identityPropagationTrustId'] = identity_propagation_trust_id
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust', __args__, opts=opts, typ=GetDomainsIdentityPropagationTrustResult)
+    return __ret__.apply(lambda __response__: GetDomainsIdentityPropagationTrustResult(
+        account_id=pulumi.get(__response__, 'account_id'),
+        active=pulumi.get(__response__, 'active'),
+        allow_impersonation=pulumi.get(__response__, 'allow_impersonation'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        client_claim_name=pulumi.get(__response__, 'client_claim_name'),
+        client_claim_values=pulumi.get(__response__, 'client_claim_values'),
+        clock_skew_seconds=pulumi.get(__response__, 'clock_skew_seconds'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        identity_propagation_trust_id=pulumi.get(__response__, 'identity_propagation_trust_id'),
+        impersonation_service_users=pulumi.get(__response__, 'impersonation_service_users'),
+        issuer=pulumi.get(__response__, 'issuer'),
+        keytabs=pulumi.get(__response__, 'keytabs'),
+        metas=pulumi.get(__response__, 'metas'),
+        name=pulumi.get(__response__, 'name'),
+        oauth_clients=pulumi.get(__response__, 'oauth_clients'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        public_certificate=pulumi.get(__response__, 'public_certificate'),
+        public_key_endpoint=pulumi.get(__response__, 'public_key_endpoint'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        subject_claim_name=pulumi.get(__response__, 'subject_claim_name'),
+        subject_mapping_attribute=pulumi.get(__response__, 'subject_mapping_attribute'),
+        subject_type=pulumi.get(__response__, 'subject_type'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        type=pulumi.get(__response__, 'type')))

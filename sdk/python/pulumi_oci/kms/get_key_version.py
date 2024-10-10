@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -286,9 +291,6 @@ def get_key_version(key_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-
-
-@_utilities.lift_output_func(get_key_version)
 def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
                            key_version_id: Optional[pulumi.Input[str]] = None,
                            management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -319,4 +321,27 @@ def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
     :param str key_version_id: The OCID of the key version.
     :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
     """
-    ...
+    __args__ = dict()
+    __args__['keyId'] = key_id
+    __args__['keyVersionId'] = key_version_id
+    __args__['managementEndpoint'] = management_endpoint
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Kms/getKeyVersion:getKeyVersion', __args__, opts=opts, typ=GetKeyVersionResult)
+    return __ret__.apply(lambda __response__: GetKeyVersionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        external_key_reference_details=pulumi.get(__response__, 'external_key_reference_details'),
+        external_key_version_id=pulumi.get(__response__, 'external_key_version_id'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_rotated=pulumi.get(__response__, 'is_auto_rotated'),
+        is_primary=pulumi.get(__response__, 'is_primary'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        key_version_id=pulumi.get(__response__, 'key_version_id'),
+        management_endpoint=pulumi.get(__response__, 'management_endpoint'),
+        public_key=pulumi.get(__response__, 'public_key'),
+        replica_details=pulumi.get(__response__, 'replica_details'),
+        restored_from_key_id=pulumi.get(__response__, 'restored_from_key_id'),
+        restored_from_key_version_id=pulumi.get(__response__, 'restored_from_key_version_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_of_deletion=pulumi.get(__response__, 'time_of_deletion'),
+        vault_id=pulumi.get(__response__, 'vault_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_application(application_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trace_configs=pulumi.get(__ret__, 'trace_configs'))
-
-
-@_utilities.lift_output_func(get_application)
 def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationResult]:
     """
@@ -285,4 +287,24 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
 
     :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
     """
-    ...
+    __args__ = dict()
+    __args__['applicationId'] = application_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getApplication:getApplication', __args__, opts=opts, typ=GetApplicationResult)
+    return __ret__.apply(lambda __response__: GetApplicationResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config=pulumi.get(__response__, 'config'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_policy_configs=pulumi.get(__response__, 'image_policy_configs'),
+        network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_ids=pulumi.get(__response__, 'subnet_ids'),
+        syslog_url=pulumi.get(__response__, 'syslog_url'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        trace_configs=pulumi.get(__response__, 'trace_configs')))

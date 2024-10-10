@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -580,9 +585,6 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[str] = None,
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         uid=pulumi.get(__ret__, 'uid'),
         user_wallet_artifacts=pulumi.get(__ret__, 'user_wallet_artifacts'))
-
-
-@_utilities.lift_output_func(get_domains_account_mgmt_info)
 def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.Input[str]] = None,
                                          attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                          attributes: Optional[pulumi.Input[Optional[str]]] = None,
@@ -617,4 +619,53 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
     :param str idcs_endpoint: The basic endpoint for the identity domain
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     """
-    ...
+    __args__ = dict()
+    __args__['accountMgmtInfoId'] = account_mgmt_info_id
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsAccountMgmtInfo:getDomainsAccountMgmtInfo', __args__, opts=opts, typ=GetDomainsAccountMgmtInfoResult)
+    return __ret__.apply(lambda __response__: GetDomainsAccountMgmtInfoResult(
+        account_mgmt_info_id=pulumi.get(__response__, 'account_mgmt_info_id'),
+        account_type=pulumi.get(__response__, 'account_type'),
+        active=pulumi.get(__response__, 'active'),
+        apps=pulumi.get(__response__, 'apps'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        composite_key=pulumi.get(__response__, 'composite_key'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        do_not_back_fill_grants=pulumi.get(__response__, 'do_not_back_fill_grants'),
+        do_not_perform_action_on_target=pulumi.get(__response__, 'do_not_perform_action_on_target'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        favorite=pulumi.get(__response__, 'favorite'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        is_account=pulumi.get(__response__, 'is_account'),
+        last_accessed=pulumi.get(__response__, 'last_accessed'),
+        matching_owners=pulumi.get(__response__, 'matching_owners'),
+        metas=pulumi.get(__response__, 'metas'),
+        name=pulumi.get(__response__, 'name'),
+        object_classes=pulumi.get(__response__, 'object_classes'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        operation_context=pulumi.get(__response__, 'operation_context'),
+        owners=pulumi.get(__response__, 'owners'),
+        preview_only=pulumi.get(__response__, 'preview_only'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        resource_types=pulumi.get(__response__, 'resource_types'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        sync_response=pulumi.get(__response__, 'sync_response'),
+        sync_situation=pulumi.get(__response__, 'sync_situation'),
+        sync_timestamp=pulumi.get(__response__, 'sync_timestamp'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        uid=pulumi.get(__response__, 'uid'),
+        user_wallet_artifacts=pulumi.get(__response__, 'user_wallet_artifacts')))

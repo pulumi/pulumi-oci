@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTrig
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         triggers_collections=pulumi.get(__ret__, 'triggers_collections'))
-
-
-@_utilities.lift_output_func(get_pbf_listing_triggers)
 def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
@@ -133,4 +135,13 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     :param str name: A filter to return only resources that match the service trigger source of a PBF.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getPbfListingTriggers:getPbfListingTriggers', __args__, opts=opts, typ=GetPbfListingTriggersResult)
+    return __ret__.apply(lambda __response__: GetPbfListingTriggersResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        triggers_collections=pulumi.get(__response__, 'triggers_collections')))

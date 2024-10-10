@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -125,9 +130,6 @@ def get_software_source_vendors(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         software_source_vendor_collections=pulumi.get(__ret__, 'software_source_vendor_collections'))
-
-
-@_utilities.lift_output_func(get_software_source_vendors)
 def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict']]]]] = None,
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -152,4 +154,15 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str name: The name of the entity to be queried.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceVendors:getSoftwareSourceVendors', __args__, opts=opts, typ=GetSoftwareSourceVendorsResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceVendorsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        software_source_vendor_collections=pulumi.get(__response__, 'software_source_vendor_collections')))

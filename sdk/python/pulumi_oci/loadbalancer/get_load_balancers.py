@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -162,9 +167,6 @@ def get_load_balancers(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_load_balancers)
 def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               detail: Optional[pulumi.Input[Optional[str]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -198,4 +200,19 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
     :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['detail'] = detail
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getLoadBalancers:getLoadBalancers', __args__, opts=opts, typ=GetLoadBalancersResult)
+    return __ret__.apply(lambda __response__: GetLoadBalancersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        detail=pulumi.get(__response__, 'detail'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancers=pulumi.get(__response__, 'load_balancers'),
+        state=pulumi.get(__response__, 'state')))

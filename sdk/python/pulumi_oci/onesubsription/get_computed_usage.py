@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -421,9 +426,6 @@ def get_computed_usage(compartment_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'),
         unit_of_measure=pulumi.get(__ret__, 'unit_of_measure'),
         usage_number=pulumi.get(__ret__, 'usage_number'))
-
-
-@_utilities.lift_output_func(get_computed_usage)
 def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               computed_usage_id: Optional[pulumi.Input[str]] = None,
                               fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -449,4 +451,38 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
     :param str computed_usage_id: The Computed Usage Id
     :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['computedUsageId'] = computed_usage_id
+    __args__['fields'] = fields
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OneSubsription/getComputedUsage:getComputedUsage', __args__, opts=opts, typ=GetComputedUsageResult)
+    return __ret__.apply(lambda __response__: GetComputedUsageResult(
+        commitment_service_id=pulumi.get(__response__, 'commitment_service_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_source=pulumi.get(__response__, 'compute_source'),
+        computed_usage_id=pulumi.get(__response__, 'computed_usage_id'),
+        cost=pulumi.get(__response__, 'cost'),
+        cost_rounded=pulumi.get(__response__, 'cost_rounded'),
+        currency_code=pulumi.get(__response__, 'currency_code'),
+        data_center=pulumi.get(__response__, 'data_center'),
+        fields=pulumi.get(__response__, 'fields'),
+        id=pulumi.get(__response__, 'id'),
+        is_invoiced=pulumi.get(__response__, 'is_invoiced'),
+        mqs_message_id=pulumi.get(__response__, 'mqs_message_id'),
+        net_unit_price=pulumi.get(__response__, 'net_unit_price'),
+        original_usage_number=pulumi.get(__response__, 'original_usage_number'),
+        parent_products=pulumi.get(__response__, 'parent_products'),
+        parent_subscribed_service_id=pulumi.get(__response__, 'parent_subscribed_service_id'),
+        plan_number=pulumi.get(__response__, 'plan_number'),
+        products=pulumi.get(__response__, 'products'),
+        quantity=pulumi.get(__response__, 'quantity'),
+        rate_card_id=pulumi.get(__response__, 'rate_card_id'),
+        rate_card_tierd_id=pulumi.get(__response__, 'rate_card_tierd_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_metered_on=pulumi.get(__response__, 'time_metered_on'),
+        time_of_arrival=pulumi.get(__response__, 'time_of_arrival'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type'),
+        unit_of_measure=pulumi.get(__response__, 'unit_of_measure'),
+        usage_number=pulumi.get(__response__, 'usage_number')))

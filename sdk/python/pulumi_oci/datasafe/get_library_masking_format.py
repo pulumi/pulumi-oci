@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -227,9 +232,6 @@ def get_library_masking_format(library_masking_format_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_library_masking_format)
 def get_library_masking_format_output(library_masking_format_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLibraryMaskingFormatResult]:
     """
@@ -249,4 +251,21 @@ def get_library_masking_format_output(library_masking_format_id: Optional[pulumi
 
     :param str library_masking_format_id: The OCID of the library masking format.
     """
-    ...
+    __args__ = dict()
+    __args__['libraryMaskingFormatId'] = library_masking_format_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat', __args__, opts=opts, typ=GetLibraryMaskingFormatResult)
+    return __ret__.apply(lambda __response__: GetLibraryMaskingFormatResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        format_entries=pulumi.get(__response__, 'format_entries'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        library_masking_format_id=pulumi.get(__response__, 'library_masking_format_id'),
+        sensitive_type_ids=pulumi.get(__response__, 'sensitive_type_ids'),
+        source=pulumi.get(__response__, 'source'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

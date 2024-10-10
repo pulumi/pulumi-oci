@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_replication_schedules(compartment_id: Optional[str] = None,
         replication_schedule_collections=pulumi.get(__ret__, 'replication_schedule_collections'),
         replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_replication_schedules)
 def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSchedulesFilterArgs', 'GetReplicationSchedulesFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
     :param str replication_schedule_id: Unique replication schedule identifier in query
     :param str state: The current state of the replication schedule.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['replicationScheduleId'] = replication_schedule_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudMigrations/getReplicationSchedules:getReplicationSchedules', __args__, opts=opts, typ=GetReplicationSchedulesResult)
+    return __ret__.apply(lambda __response__: GetReplicationSchedulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        replication_schedule_collections=pulumi.get(__response__, 'replication_schedule_collections'),
+        replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
+        state=pulumi.get(__response__, 'state')))

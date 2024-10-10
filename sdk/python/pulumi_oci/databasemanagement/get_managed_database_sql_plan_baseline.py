@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -306,9 +311,6 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_executed=pulumi.get(__ret__, 'time_last_executed'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_plan_baseline)
 def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                   opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                   plan_name: Optional[pulumi.Input[str]] = None,
@@ -334,4 +336,29 @@ def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[
     :param str opc_named_credential_id: The OCID of the Named Credential.
     :param str plan_name: The plan name of the SQL plan baseline.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    __args__['planName'] = plan_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaseline:getManagedDatabaseSqlPlanBaseline', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlPlanBaselineResult(
+        accepted=pulumi.get(__response__, 'accepted'),
+        action=pulumi.get(__response__, 'action'),
+        adaptive=pulumi.get(__response__, 'adaptive'),
+        auto_purge=pulumi.get(__response__, 'auto_purge'),
+        enabled=pulumi.get(__response__, 'enabled'),
+        execution_plan=pulumi.get(__response__, 'execution_plan'),
+        fixed=pulumi.get(__response__, 'fixed'),
+        id=pulumi.get(__response__, 'id'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        module=pulumi.get(__response__, 'module'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        origin=pulumi.get(__response__, 'origin'),
+        plan_name=pulumi.get(__response__, 'plan_name'),
+        reproduced=pulumi.get(__response__, 'reproduced'),
+        sql_handle=pulumi.get(__response__, 'sql_handle'),
+        sql_text=pulumi.get(__response__, 'sql_text'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_executed=pulumi.get(__response__, 'time_last_executed'),
+        time_last_modified=pulumi.get(__response__, 'time_last_modified')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -437,9 +442,6 @@ def get_domains_rule(attribute_sets: Optional[Sequence[str]] = None,
         schemas=pulumi.get(__ret__, 'schemas'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-
-
-@_utilities.lift_output_func(get_domains_rule)
 def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             attributes: Optional[pulumi.Input[Optional[str]]] = None,
                             authorization: Optional[pulumi.Input[Optional[str]]] = None,
@@ -474,4 +476,42 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
     :param str rule_id: ID of the resource
     """
-    ...
+    __args__ = dict()
+    __args__['attributeSets'] = attribute_sets
+    __args__['attributes'] = attributes
+    __args__['authorization'] = authorization
+    __args__['idcsEndpoint'] = idcs_endpoint
+    __args__['resourceTypeSchemaVersion'] = resource_type_schema_version
+    __args__['ruleId'] = rule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getDomainsRule:getDomainsRule', __args__, opts=opts, typ=GetDomainsRuleResult)
+    return __ret__.apply(lambda __response__: GetDomainsRuleResult(
+        active=pulumi.get(__response__, 'active'),
+        attribute_sets=pulumi.get(__response__, 'attribute_sets'),
+        attributes=pulumi.get(__response__, 'attributes'),
+        authorization=pulumi.get(__response__, 'authorization'),
+        compartment_ocid=pulumi.get(__response__, 'compartment_ocid'),
+        condition=pulumi.get(__response__, 'condition'),
+        condition_groups=pulumi.get(__response__, 'condition_groups'),
+        delete_in_progress=pulumi.get(__response__, 'delete_in_progress'),
+        description=pulumi.get(__response__, 'description'),
+        domain_ocid=pulumi.get(__response__, 'domain_ocid'),
+        external_id=pulumi.get(__response__, 'external_id'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_created_bies=pulumi.get(__response__, 'idcs_created_bies'),
+        idcs_endpoint=pulumi.get(__response__, 'idcs_endpoint'),
+        idcs_last_modified_bies=pulumi.get(__response__, 'idcs_last_modified_bies'),
+        idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
+        idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
+        locked=pulumi.get(__response__, 'locked'),
+        metas=pulumi.get(__response__, 'metas'),
+        name=pulumi.get(__response__, 'name'),
+        ocid=pulumi.get(__response__, 'ocid'),
+        policy_types=pulumi.get(__response__, 'policy_types'),
+        resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
+        returns=pulumi.get(__response__, 'returns'),
+        rule_groovy=pulumi.get(__response__, 'rule_groovy'),
+        rule_id=pulumi.get(__response__, 'rule_id'),
+        schemas=pulumi.get(__response__, 'schemas'),
+        tags=pulumi.get(__response__, 'tags'),
+        tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid')))

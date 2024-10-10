@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -263,9 +268,6 @@ def get_external_database_connector(external_database_connector_id: Optional[str
         state=pulumi.get(__ret__, 'state'),
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_external_database_connector)
 def get_external_database_connector_output(external_database_connector_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabaseConnectorResult]:
     """
@@ -285,4 +287,24 @@ def get_external_database_connector_output(external_database_connector_id: Optio
 
     :param str external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
     """
-    ...
+    __args__ = dict()
+    __args__['externalDatabaseConnectorId'] = external_database_connector_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getExternalDatabaseConnector:getExternalDatabaseConnector', __args__, opts=opts, typ=GetExternalDatabaseConnectorResult)
+    return __ret__.apply(lambda __response__: GetExternalDatabaseConnectorResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_credentials=pulumi.get(__response__, 'connection_credentials'),
+        connection_status=pulumi.get(__response__, 'connection_status'),
+        connection_strings=pulumi.get(__response__, 'connection_strings'),
+        connector_agent_id=pulumi.get(__response__, 'connector_agent_id'),
+        connector_type=pulumi.get(__response__, 'connector_type'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        external_database_connector_id=pulumi.get(__response__, 'external_database_connector_id'),
+        external_database_id=pulumi.get(__response__, 'external_database_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        state=pulumi.get(__response__, 'state'),
+        time_connection_status_last_updated=pulumi.get(__response__, 'time_connection_status_last_updated'),
+        time_created=pulumi.get(__response__, 'time_created')))

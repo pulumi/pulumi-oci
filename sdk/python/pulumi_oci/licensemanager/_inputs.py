@@ -4,16 +4,51 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ProductLicenseImageArgs',
+    'ProductLicenseImageArgsDict',
     'GetLicenseRecordsFilterArgs',
+    'GetLicenseRecordsFilterArgsDict',
     'GetProductLicensesFilterArgs',
+    'GetProductLicensesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ProductLicenseImageArgsDict(TypedDict):
+        listing_id: pulumi.Input[str]
+        """
+        (Updatable) Marketplace image listing ID.
+        """
+        package_version: pulumi.Input[str]
+        """
+        (Updatable) Image package version.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The image ID associated with the product license.
+        """
+        listing_name: NotRequired[pulumi.Input[str]]
+        """
+        The listing name associated with the product license.
+        """
+        publisher: NotRequired[pulumi.Input[str]]
+        """
+        The image publisher.
+        """
+elif False:
+    ProductLicenseImageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProductLicenseImageArgs:
@@ -100,6 +135,14 @@ class ProductLicenseImageArgs:
         pulumi.set(self, "publisher", value)
 
 
+if not MYPY:
+    class GetLicenseRecordsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetLicenseRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetLicenseRecordsFilterArgs:
     def __init__(__self__, *,
@@ -138,6 +181,14 @@ class GetLicenseRecordsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetProductLicensesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetProductLicensesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProductLicensesFilterArgs:

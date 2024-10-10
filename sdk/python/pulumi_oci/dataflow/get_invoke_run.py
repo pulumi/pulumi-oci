@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -660,9 +665,6 @@ def get_invoke_run(run_id: Optional[str] = None,
         total_ocpu=pulumi.get(__ret__, 'total_ocpu'),
         type=pulumi.get(__ret__, 'type'),
         warehouse_bucket_uri=pulumi.get(__ret__, 'warehouse_bucket_uri'))
-
-
-@_utilities.lift_output_func(get_invoke_run)
 def get_invoke_run_output(run_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvokeRunResult]:
     """
@@ -682,4 +684,55 @@ def get_invoke_run_output(run_id: Optional[pulumi.Input[str]] = None,
 
     :param str run_id: The unique ID for the run
     """
-    ...
+    __args__ = dict()
+    __args__['runId'] = run_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataFlow/getInvokeRun:getInvokeRun', __args__, opts=opts, typ=GetInvokeRunResult)
+    return __ret__.apply(lambda __response__: GetInvokeRunResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        application_log_configs=pulumi.get(__response__, 'application_log_configs'),
+        archive_uri=pulumi.get(__response__, 'archive_uri'),
+        arguments=pulumi.get(__response__, 'arguments'),
+        asynchronous=pulumi.get(__response__, 'asynchronous'),
+        class_name=pulumi.get(__response__, 'class_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        configuration=pulumi.get(__response__, 'configuration'),
+        data_read_in_bytes=pulumi.get(__response__, 'data_read_in_bytes'),
+        data_written_in_bytes=pulumi.get(__response__, 'data_written_in_bytes'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        driver_shape=pulumi.get(__response__, 'driver_shape'),
+        driver_shape_configs=pulumi.get(__response__, 'driver_shape_configs'),
+        execute=pulumi.get(__response__, 'execute'),
+        executor_shape=pulumi.get(__response__, 'executor_shape'),
+        executor_shape_configs=pulumi.get(__response__, 'executor_shape_configs'),
+        file_uri=pulumi.get(__response__, 'file_uri'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idle_timeout_in_minutes=pulumi.get(__response__, 'idle_timeout_in_minutes'),
+        language=pulumi.get(__response__, 'language'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        logs_bucket_uri=pulumi.get(__response__, 'logs_bucket_uri'),
+        max_duration_in_minutes=pulumi.get(__response__, 'max_duration_in_minutes'),
+        metastore_id=pulumi.get(__response__, 'metastore_id'),
+        num_executors=pulumi.get(__response__, 'num_executors'),
+        opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
+        opc_request_id=pulumi.get(__response__, 'opc_request_id'),
+        owner_principal_id=pulumi.get(__response__, 'owner_principal_id'),
+        owner_user_name=pulumi.get(__response__, 'owner_user_name'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        pool_id=pulumi.get(__response__, 'pool_id'),
+        private_endpoint_dns_zones=pulumi.get(__response__, 'private_endpoint_dns_zones'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        private_endpoint_max_host_count=pulumi.get(__response__, 'private_endpoint_max_host_count'),
+        private_endpoint_nsg_ids=pulumi.get(__response__, 'private_endpoint_nsg_ids'),
+        private_endpoint_subnet_id=pulumi.get(__response__, 'private_endpoint_subnet_id'),
+        run_duration_in_milliseconds=pulumi.get(__response__, 'run_duration_in_milliseconds'),
+        run_id=pulumi.get(__response__, 'run_id'),
+        spark_version=pulumi.get(__response__, 'spark_version'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        total_ocpu=pulumi.get(__response__, 'total_ocpu'),
+        type=pulumi.get(__response__, 'type'),
+        warehouse_bucket_uri=pulumi.get(__response__, 'warehouse_bucket_uri')))

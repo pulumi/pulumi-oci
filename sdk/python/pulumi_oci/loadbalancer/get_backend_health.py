@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -139,9 +144,6 @@ def get_backend_health(backend_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         status=pulumi.get(__ret__, 'status'))
-
-
-@_utilities.lift_output_func(get_backend_health)
 def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
                               backend_set_name: Optional[pulumi.Input[str]] = None,
                               load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -167,4 +169,16 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
     :param str backend_set_name: The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend server health status to be retrieved.
     """
-    ...
+    __args__ = dict()
+    __args__['backendName'] = backend_name
+    __args__['backendSetName'] = backend_set_name
+    __args__['loadBalancerId'] = load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getBackendHealth:getBackendHealth', __args__, opts=opts, typ=GetBackendHealthResult)
+    return __ret__.apply(lambda __response__: GetBackendHealthResult(
+        backend_name=pulumi.get(__response__, 'backend_name'),
+        backend_set_name=pulumi.get(__response__, 'backend_set_name'),
+        health_check_results=pulumi.get(__response__, 'health_check_results'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        status=pulumi.get(__response__, 'status')))

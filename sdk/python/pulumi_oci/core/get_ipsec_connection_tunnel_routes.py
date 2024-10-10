@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -138,9 +143,6 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
         tunnel_routes=pulumi.get(__ret__, 'tunnel_routes'))
-
-
-@_utilities.lift_output_func(get_ipsec_connection_tunnel_routes)
 def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionTunnelRoutesFilterArgs', 'GetIpsecConnectionTunnelRoutesFilterArgsDict']]]]] = None,
                                               ipsec_id: Optional[pulumi.Input[str]] = None,
@@ -167,4 +169,17 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
     :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
     """
-    ...
+    __args__ = dict()
+    __args__['advertiser'] = advertiser
+    __args__['filters'] = filters
+    __args__['ipsecId'] = ipsec_id
+    __args__['tunnelId'] = tunnel_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes', __args__, opts=opts, typ=GetIpsecConnectionTunnelRoutesResult)
+    return __ret__.apply(lambda __response__: GetIpsecConnectionTunnelRoutesResult(
+        advertiser=pulumi.get(__response__, 'advertiser'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ipsec_id=pulumi.get(__response__, 'ipsec_id'),
+        tunnel_id=pulumi.get(__response__, 'tunnel_id'),
+        tunnel_routes=pulumi.get(__response__, 'tunnel_routes')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -107,9 +112,6 @@ def get_rule_sets(filters: Optional[Sequence[Union['GetRuleSetsFilterArgs', 'Get
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         rule_sets=pulumi.get(__ret__, 'rule_sets'))
-
-
-@_utilities.lift_output_func(get_rule_sets)
 def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRuleSetsFilterArgs', 'GetRuleSetsFilterArgsDict']]]]] = None,
                          load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleSetsResult]:
@@ -130,4 +132,13 @@ def get_rule_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union[
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['loadBalancerId'] = load_balancer_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LoadBalancer/getRuleSets:getRuleSets', __args__, opts=opts, typ=GetRuleSetsResult)
+    return __ret__.apply(lambda __response__: GetRuleSetsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        load_balancer_id=pulumi.get(__response__, 'load_balancer_id'),
+        rule_sets=pulumi.get(__response__, 'rule_sets')))

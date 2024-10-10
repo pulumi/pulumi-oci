@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -161,9 +166,6 @@ def get_ping_probe_results(filters: Optional[Sequence[Union['GetPingProbeResults
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'),
         start_time_less_than_or_equal_to=pulumi.get(__ret__, 'start_time_less_than_or_equal_to'),
         target=pulumi.get(__ret__, 'target'))
-
-
-@_utilities.lift_output_func(get_ping_probe_results)
 def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPingProbeResultsFilterArgs', 'GetPingProbeResultsFilterArgsDict']]]]] = None,
                                   probe_configuration_id: Optional[pulumi.Input[str]] = None,
                                   start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[float]]] = None,
@@ -199,4 +201,19 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
     :param float start_time_less_than_or_equal_to: Returns results with a `startTime` equal to or less than the specified value.
     :param str target: Filters results that match the `target`.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['probeConfigurationId'] = probe_configuration_id
+    __args__['startTimeGreaterThanOrEqualTo'] = start_time_greater_than_or_equal_to
+    __args__['startTimeLessThanOrEqualTo'] = start_time_less_than_or_equal_to
+    __args__['target'] = target
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:HealthChecks/getPingProbeResults:getPingProbeResults', __args__, opts=opts, typ=GetPingProbeResultsResult)
+    return __ret__.apply(lambda __response__: GetPingProbeResultsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        ping_probe_results=pulumi.get(__response__, 'ping_probe_results'),
+        probe_configuration_id=pulumi.get(__response__, 'probe_configuration_id'),
+        start_time_greater_than_or_equal_to=pulumi.get(__response__, 'start_time_greater_than_or_equal_to'),
+        start_time_less_than_or_equal_to=pulumi.get(__response__, 'start_time_less_than_or_equal_to'),
+        target=pulumi.get(__response__, 'target')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -143,9 +148,6 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[Union
         id=pulumi.get(__ret__, 'id'),
         role_grant_path_collections=pulumi.get(__ret__, 'role_grant_path_collections'),
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'))
-
-
-@_utilities.lift_output_func(get_security_policy_report_role_grant_paths)
 def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportRoleGrantPathsFilterArgs', 'GetSecurityPolicyReportRoleGrantPathsFilterArgsDict']]]]] = None,
                                                        granted_role: Optional[pulumi.Input[str]] = None,
                                                        grantee: Optional[pulumi.Input[str]] = None,
@@ -174,4 +176,17 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
     :param str grantee: A filter to return only items that match the specified grantee.
     :param str security_policy_report_id: The OCID of the security policy report resource.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['grantedRole'] = granted_role
+    __args__['grantee'] = grantee
+    __args__['securityPolicyReportId'] = security_policy_report_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyReportRoleGrantPaths:getSecurityPolicyReportRoleGrantPaths', __args__, opts=opts, typ=GetSecurityPolicyReportRoleGrantPathsResult)
+    return __ret__.apply(lambda __response__: GetSecurityPolicyReportRoleGrantPathsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        granted_role=pulumi.get(__response__, 'granted_role'),
+        grantee=pulumi.get(__response__, 'grantee'),
+        id=pulumi.get(__response__, 'id'),
+        role_grant_path_collections=pulumi.get(__response__, 'role_grant_path_collections'),
+        security_policy_report_id=pulumi.get(__response__, 'security_policy_report_id')))

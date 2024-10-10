@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -88,9 +93,6 @@ def get_stack_tf_state(local_path: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         local_path=pulumi.get(__ret__, 'local_path'),
         stack_id=pulumi.get(__ret__, 'stack_id'))
-
-
-@_utilities.lift_output_func(get_stack_tf_state)
 def get_stack_tf_state_output(local_path: Optional[pulumi.Input[str]] = None,
                               stack_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStackTfStateResult]:
@@ -107,4 +109,12 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[str]] = None,
 
     :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
     """
-    ...
+    __args__ = dict()
+    __args__['localPath'] = local_path
+    __args__['stackId'] = stack_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ResourceManager/getStackTfState:getStackTfState', __args__, opts=opts, typ=GetStackTfStateResult)
+    return __ret__.apply(lambda __response__: GetStackTfStateResult(
+        id=pulumi.get(__response__, 'id'),
+        local_path=pulumi.get(__response__, 'local_path'),
+        stack_id=pulumi.get(__response__, 'stack_id')))

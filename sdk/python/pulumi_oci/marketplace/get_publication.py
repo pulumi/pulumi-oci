@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -283,9 +288,6 @@ def get_publication(publication_id: Optional[str] = None,
         supported_operating_systems=pulumi.get(__ret__, 'supported_operating_systems'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_publication)
 def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationResult]:
     """
@@ -305,4 +307,26 @@ def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
 
     :param str publication_id: The unique identifier for the publication.
     """
-    ...
+    __args__ = dict()
+    __args__['publicationId'] = publication_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getPublication:getPublication', __args__, opts=opts, typ=GetPublicationResult)
+    return __ret__.apply(lambda __response__: GetPublicationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        icons=pulumi.get(__response__, 'icons'),
+        id=pulumi.get(__response__, 'id'),
+        is_agreement_acknowledged=pulumi.get(__response__, 'is_agreement_acknowledged'),
+        listing_type=pulumi.get(__response__, 'listing_type'),
+        long_description=pulumi.get(__response__, 'long_description'),
+        name=pulumi.get(__response__, 'name'),
+        package_details=pulumi.get(__response__, 'package_details'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        publication_id=pulumi.get(__response__, 'publication_id'),
+        short_description=pulumi.get(__response__, 'short_description'),
+        state=pulumi.get(__response__, 'state'),
+        support_contacts=pulumi.get(__response__, 'support_contacts'),
+        supported_operating_systems=pulumi.get(__response__, 'supported_operating_systems'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

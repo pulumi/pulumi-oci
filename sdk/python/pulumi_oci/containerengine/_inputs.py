@@ -4,68 +4,147 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AddonAddonErrorArgs',
+    'AddonAddonErrorArgsDict',
     'AddonConfigurationArgs',
+    'AddonConfigurationArgsDict',
     'ClusterClusterPodNetworkOptionArgs',
+    'ClusterClusterPodNetworkOptionArgsDict',
     'ClusterEndpointArgs',
+    'ClusterEndpointArgsDict',
     'ClusterEndpointConfigArgs',
+    'ClusterEndpointConfigArgsDict',
     'ClusterImagePolicyConfigArgs',
+    'ClusterImagePolicyConfigArgsDict',
     'ClusterImagePolicyConfigKeyDetailArgs',
+    'ClusterImagePolicyConfigKeyDetailArgsDict',
     'ClusterMetadataArgs',
+    'ClusterMetadataArgsDict',
     'ClusterOptionsArgs',
+    'ClusterOptionsArgsDict',
     'ClusterOptionsAddOnsArgs',
+    'ClusterOptionsAddOnsArgsDict',
     'ClusterOptionsAdmissionControllerOptionsArgs',
+    'ClusterOptionsAdmissionControllerOptionsArgsDict',
     'ClusterOptionsKubernetesNetworkConfigArgs',
+    'ClusterOptionsKubernetesNetworkConfigArgsDict',
     'ClusterOptionsPersistentVolumeConfigArgs',
+    'ClusterOptionsPersistentVolumeConfigArgsDict',
     'ClusterOptionsServiceLbConfigArgs',
+    'ClusterOptionsServiceLbConfigArgsDict',
     'ContainerInstanceContainerArgs',
+    'ContainerInstanceContainerArgsDict',
     'ContainerInstanceContainerHealthCheckArgs',
+    'ContainerInstanceContainerHealthCheckArgsDict',
     'ContainerInstanceContainerHealthCheckHeaderArgs',
+    'ContainerInstanceContainerHealthCheckHeaderArgsDict',
     'ContainerInstanceContainerResourceConfigArgs',
+    'ContainerInstanceContainerResourceConfigArgsDict',
     'ContainerInstanceContainerSecurityContextArgs',
+    'ContainerInstanceContainerSecurityContextArgsDict',
     'ContainerInstanceContainerSecurityContextCapabilitiesArgs',
+    'ContainerInstanceContainerSecurityContextCapabilitiesArgsDict',
     'ContainerInstanceContainerVolumeMountArgs',
+    'ContainerInstanceContainerVolumeMountArgsDict',
     'ContainerInstanceDnsConfigArgs',
+    'ContainerInstanceDnsConfigArgsDict',
     'ContainerInstanceImagePullSecretArgs',
+    'ContainerInstanceImagePullSecretArgsDict',
     'ContainerInstanceShapeConfigArgs',
+    'ContainerInstanceShapeConfigArgsDict',
     'ContainerInstanceVnicArgs',
+    'ContainerInstanceVnicArgsDict',
     'ContainerInstanceVolumeArgs',
+    'ContainerInstanceVolumeArgsDict',
     'ContainerInstanceVolumeConfigArgs',
+    'ContainerInstanceVolumeConfigArgsDict',
     'NodePoolInitialNodeLabelArgs',
+    'NodePoolInitialNodeLabelArgsDict',
     'NodePoolNodeArgs',
+    'NodePoolNodeArgsDict',
     'NodePoolNodeConfigDetailsArgs',
+    'NodePoolNodeConfigDetailsArgsDict',
     'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs',
+    'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict',
     'NodePoolNodeConfigDetailsPlacementConfigArgs',
+    'NodePoolNodeConfigDetailsPlacementConfigArgsDict',
     'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict',
     'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs',
+    'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgsDict',
     'NodePoolNodeErrorArgs',
+    'NodePoolNodeErrorArgsDict',
     'NodePoolNodeEvictionNodePoolSettingsArgs',
+    'NodePoolNodeEvictionNodePoolSettingsArgsDict',
     'NodePoolNodePoolCyclingDetailsArgs',
+    'NodePoolNodePoolCyclingDetailsArgsDict',
     'NodePoolNodeShapeConfigArgs',
+    'NodePoolNodeShapeConfigArgsDict',
     'NodePoolNodeSourceArgs',
+    'NodePoolNodeSourceArgsDict',
     'NodePoolNodeSourceDetailsArgs',
+    'NodePoolNodeSourceDetailsArgsDict',
     'VirtualNodePoolInitialVirtualNodeLabelArgs',
+    'VirtualNodePoolInitialVirtualNodeLabelArgsDict',
     'VirtualNodePoolPlacementConfigurationArgs',
+    'VirtualNodePoolPlacementConfigurationArgsDict',
     'VirtualNodePoolPodConfigurationArgs',
+    'VirtualNodePoolPodConfigurationArgsDict',
     'VirtualNodePoolTaintArgs',
+    'VirtualNodePoolTaintArgsDict',
     'VirtualNodePoolVirtualNodeTagsArgs',
+    'VirtualNodePoolVirtualNodeTagsArgsDict',
     'GetAddonOptionsFilterArgs',
+    'GetAddonOptionsFilterArgsDict',
     'GetAddonsFilterArgs',
+    'GetAddonsFilterArgsDict',
     'GetClusterWorkloadMappingsFilterArgs',
+    'GetClusterWorkloadMappingsFilterArgsDict',
     'GetClustersFilterArgs',
+    'GetClustersFilterArgsDict',
     'GetNodePoolsFilterArgs',
+    'GetNodePoolsFilterArgsDict',
     'GetPodShapesFilterArgs',
+    'GetPodShapesFilterArgsDict',
     'GetVirtualNodePoolsFilterArgs',
+    'GetVirtualNodePoolsFilterArgsDict',
     'GetWorkRequestErrorsFilterArgs',
+    'GetWorkRequestErrorsFilterArgsDict',
     'GetWorkRequestLogEntriesFilterArgs',
+    'GetWorkRequestLogEntriesFilterArgsDict',
     'GetWorkRequestsFilterArgs',
+    'GetWorkRequestsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AddonAddonErrorArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        """
+        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A human-readable error string of the upstream error.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The status of the HTTP response encountered in the upstream error.
+        """
+elif False:
+    AddonAddonErrorArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AddonAddonErrorArgs:
@@ -122,6 +201,19 @@ class AddonAddonErrorArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class AddonConfigurationArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) configuration key name
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) configuration value name
+        """
+elif False:
+    AddonConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AddonConfigurationArgs:
     def __init__(__self__, *,
@@ -161,6 +253,15 @@ class AddonConfigurationArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ClusterClusterPodNetworkOptionArgsDict(TypedDict):
+        cni_type: pulumi.Input[str]
+        """
+        The CNI used by the node pools of this cluster
+        """
+elif False:
+    ClusterClusterPodNetworkOptionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterClusterPodNetworkOptionArgs:
     def __init__(__self__, *,
@@ -182,6 +283,27 @@ class ClusterClusterPodNetworkOptionArgs:
     def cni_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "cni_type", value)
 
+
+if not MYPY:
+    class ClusterEndpointArgsDict(TypedDict):
+        kubernetes: NotRequired[pulumi.Input[str]]
+        """
+        The non-native networking Kubernetes API server endpoint.
+        """
+        private_endpoint: NotRequired[pulumi.Input[str]]
+        """
+        The private native networking Kubernetes API server endpoint.
+        """
+        public_endpoint: NotRequired[pulumi.Input[str]]
+        """
+        The public native networking Kubernetes API server endpoint, if one was requested.
+        """
+        vcn_hostname_endpoint: NotRequired[pulumi.Input[str]]
+        """
+        The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
+        """
+elif False:
+    ClusterEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ClusterEndpointArgs:
@@ -254,6 +376,23 @@ class ClusterEndpointArgs:
         pulumi.set(self, "vcn_hostname_endpoint", value)
 
 
+if not MYPY:
+    class ClusterEndpointConfigArgsDict(TypedDict):
+        subnet_id: pulumi.Input[str]
+        """
+        The OCID of the regional subnet in which to place the Cluster endpoint.
+        """
+        is_public_ip_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+elif False:
+    ClusterEndpointConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterEndpointConfigArgs:
     def __init__(__self__, *,
@@ -308,6 +447,19 @@ class ClusterEndpointConfigArgs:
         pulumi.set(self, "nsg_ids", value)
 
 
+if not MYPY:
+    class ClusterImagePolicyConfigArgsDict(TypedDict):
+        is_policy_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
+        """
+        key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgsDict']]]]
+        """
+        (Updatable) A list of KMS key details.
+        """
+elif False:
+    ClusterImagePolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterImagePolicyConfigArgs:
     def __init__(__self__, *,
@@ -347,6 +499,15 @@ class ClusterImagePolicyConfigArgs:
         pulumi.set(self, "key_details", value)
 
 
+if not MYPY:
+    class ClusterImagePolicyConfigKeyDetailArgsDict(TypedDict):
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
+        """
+elif False:
+    ClusterImagePolicyConfigKeyDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
@@ -369,6 +530,51 @@ class ClusterImagePolicyConfigKeyDetailArgs:
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
 
+
+if not MYPY:
+    class ClusterMetadataArgsDict(TypedDict):
+        created_by_user_id: NotRequired[pulumi.Input[str]]
+        """
+        The user who created the cluster.
+        """
+        created_by_work_request_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the work request which created the cluster.
+        """
+        deleted_by_user_id: NotRequired[pulumi.Input[str]]
+        """
+        The user who deleted the cluster.
+        """
+        deleted_by_work_request_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the work request which deleted the cluster.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the cluster was created.
+        """
+        time_credential_expiration: NotRequired[pulumi.Input[str]]
+        """
+        The time until which the cluster credential is valid.
+        """
+        time_deleted: NotRequired[pulumi.Input[str]]
+        """
+        The time the cluster was deleted.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the cluster was updated.
+        """
+        updated_by_user_id: NotRequired[pulumi.Input[str]]
+        """
+        The user who updated the cluster.
+        """
+        updated_by_work_request_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the work request which updated the cluster.
+        """
+elif False:
+    ClusterMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ClusterMetadataArgs:
@@ -537,6 +743,35 @@ class ClusterMetadataArgs:
         pulumi.set(self, "updated_by_work_request_id", value)
 
 
+if not MYPY:
+    class ClusterOptionsArgsDict(TypedDict):
+        add_ons: NotRequired[pulumi.Input['ClusterOptionsAddOnsArgsDict']]
+        """
+        Configurable cluster add-ons
+        """
+        admission_controller_options: NotRequired[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgsDict']]
+        """
+        (Updatable) Configurable cluster admission controllers
+        """
+        kubernetes_network_config: NotRequired[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgsDict']]
+        """
+        Network configuration for Kubernetes.
+        """
+        persistent_volume_config: NotRequired[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgsDict']]
+        """
+        (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
+        """
+        service_lb_config: NotRequired[pulumi.Input['ClusterOptionsServiceLbConfigArgsDict']]
+        """
+        (Updatable) Configuration to be applied to load balancers created by Kubernetes services
+        """
+        service_lb_subnet_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The OCIDs of the subnets used for Kubernetes services load balancers.
+        """
+elif False:
+    ClusterOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterOptionsArgs:
     def __init__(__self__, *,
@@ -640,6 +875,19 @@ class ClusterOptionsArgs:
         pulumi.set(self, "service_lb_subnet_ids", value)
 
 
+if not MYPY:
+    class ClusterOptionsAddOnsArgsDict(TypedDict):
+        is_kubernetes_dashboard_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether or not to enable the Kubernetes Dashboard add-on.
+        """
+        is_tiller_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether or not to enable the Tiller add-on.
+        """
+elif False:
+    ClusterOptionsAddOnsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterOptionsAddOnsArgs:
     def __init__(__self__, *,
@@ -679,6 +927,15 @@ class ClusterOptionsAddOnsArgs:
         pulumi.set(self, "is_tiller_enabled", value)
 
 
+if not MYPY:
+    class ClusterOptionsAdmissionControllerOptionsArgsDict(TypedDict):
+        is_pod_security_policy_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether or not to enable the Pod Security Policy admission controller.
+        """
+elif False:
+    ClusterOptionsAdmissionControllerOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterOptionsAdmissionControllerOptionsArgs:
     def __init__(__self__, *,
@@ -701,6 +958,19 @@ class ClusterOptionsAdmissionControllerOptionsArgs:
     def is_pod_security_policy_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_pod_security_policy_enabled", value)
 
+
+if not MYPY:
+    class ClusterOptionsKubernetesNetworkConfigArgsDict(TypedDict):
+        pods_cidr: NotRequired[pulumi.Input[str]]
+        """
+        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
+        """
+        services_cidr: NotRequired[pulumi.Input[str]]
+        """
+        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
+        """
+elif False:
+    ClusterOptionsKubernetesNetworkConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ClusterOptionsKubernetesNetworkConfigArgs:
@@ -741,6 +1011,19 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
         pulumi.set(self, "services_cidr", value)
 
 
+if not MYPY:
+    class ClusterOptionsPersistentVolumeConfigArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+elif False:
+    ClusterOptionsPersistentVolumeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterOptionsPersistentVolumeConfigArgs:
     def __init__(__self__, *,
@@ -780,6 +1063,19 @@ class ClusterOptionsPersistentVolumeConfigArgs:
         pulumi.set(self, "freeform_tags", value)
 
 
+if not MYPY:
+    class ClusterOptionsServiceLbConfigArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+elif False:
+    ClusterOptionsServiceLbConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ClusterOptionsServiceLbConfigArgs:
     def __init__(__self__, *,
@@ -818,6 +1114,118 @@ class ClusterOptionsServiceLbConfigArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+
+if not MYPY:
+    class ContainerInstanceContainerArgsDict(TypedDict):
+        image_url: pulumi.Input[str]
+        """
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
+        If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+
+        The registry used for container image must be reachable over the Container Instance's VNIC.
+        """
+        arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of string arguments for a container's ENTRYPOINT process.
+
+        Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
+
+        The total size of all arguments combined must be 64 KB or smaller.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain where the container instance runs.
+        """
+        commands: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The compartment OCID.
+        """
+        container_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the container.
+        """
+        container_instance_id: NotRequired[pulumi.Input[str]]
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
+        """
+        environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
+
+        The total size of all environment variables combined, name and values, must be 64 KB or smaller.
+        """
+        exit_code: NotRequired[pulumi.Input[int]]
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        The fault domain where the container instance runs.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        health_checks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgsDict']]]]
+        """
+        list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
+        """
+        is_resource_principal_disabled: NotRequired[pulumi.Input[bool]]
+        """
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        """
+        resource_config: NotRequired[pulumi.Input['ContainerInstanceContainerResourceConfigArgsDict']]
+        """
+        The size and amount of resources available to the container.
+        """
+        security_context: NotRequired[pulumi.Input['ContainerInstanceContainerSecurityContextArgsDict']]
+        """
+        Security context for container.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        time_terminated: NotRequired[pulumi.Input[str]]
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        volume_mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgsDict']]]]
+        """
+        List of the volume mounts.
+        """
+        working_directory: NotRequired[pulumi.Input[str]]
+        """
+        The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
+        """
+elif False:
+    ContainerInstanceContainerArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceContainerArgs:
@@ -1245,6 +1653,61 @@ class ContainerInstanceContainerArgs:
         pulumi.set(self, "working_directory", value)
 
 
+if not MYPY:
+    class ContainerInstanceContainerHealthCheckArgsDict(TypedDict):
+        health_check_type: pulumi.Input[str]
+        """
+        Container health check type.
+        """
+        commands: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The list of strings that will be simplified to a single command for checking the status of the container.
+        """
+        failure_action: NotRequired[pulumi.Input[str]]
+        """
+        The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
+        """
+        failure_threshold: NotRequired[pulumi.Input[int]]
+        """
+        Number of consecutive failures at which we consider the check failed.
+        """
+        headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgsDict']]]]
+        """
+        Container health check HTTP headers.
+        """
+        initial_delay_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        The initial delay in seconds before start checking container health status.
+        """
+        interval_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        Number of seconds between two consecutive runs for checking container health.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Health check name.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        Container health check HTTP path.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        Container health check HTTP port.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        status_details: NotRequired[pulumi.Input[str]]
+        success_threshold: NotRequired[pulumi.Input[int]]
+        """
+        Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
+        """
+        timeout_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        Length of waiting time in seconds before marking health check failed.
+        """
+elif False:
+    ContainerInstanceContainerHealthCheckArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceContainerHealthCheckArgs:
     def __init__(__self__, *,
@@ -1467,6 +1930,19 @@ class ContainerInstanceContainerHealthCheckArgs:
         pulumi.set(self, "timeout_in_seconds", value)
 
 
+if not MYPY:
+    class ContainerInstanceContainerHealthCheckHeaderArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Container HTTP header Key.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        Container HTTP header value.
+        """
+elif False:
+    ContainerInstanceContainerHealthCheckHeaderArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceContainerHealthCheckHeaderArgs:
     def __init__(__self__, *,
@@ -1505,6 +1981,27 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ContainerInstanceContainerResourceConfigArgsDict(TypedDict):
+        memory_limit_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        The maximum amount of memory that can be consumed by the container's process.
+
+        If you do not set a value, then the process may use all available memory on the instance.
+        """
+        vcpus_limit: NotRequired[pulumi.Input[float]]
+        """
+        The maximum amount of CPUs that can be consumed by the container's process.
+
+        If you do not set a value, then the process can use all available CPU resources on the instance.
+
+        CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
+
+        A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
+        """
+elif False:
+    ContainerInstanceContainerResourceConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceContainerResourceConfigArgs:
@@ -1560,6 +2057,35 @@ class ContainerInstanceContainerResourceConfigArgs:
     def vcpus_limit(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "vcpus_limit", value)
 
+
+if not MYPY:
+    class ContainerInstanceContainerSecurityContextArgsDict(TypedDict):
+        capabilities: NotRequired[pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgsDict']]
+        """
+        Linux Container capabilities to configure capabilities of container.
+        """
+        is_non_root_user_check_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+        """
+        is_root_file_system_readonly: NotRequired[pulumi.Input[bool]]
+        """
+        Determines if the container will have a read-only root file system. Default value is false.
+        """
+        run_as_group: NotRequired[pulumi.Input[int]]
+        """
+        The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+        """
+        run_as_user: NotRequired[pulumi.Input[int]]
+        """
+        The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+        """
+        security_context_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of security context
+        """
+elif False:
+    ContainerInstanceContainerSecurityContextArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceContainerSecurityContextArgs:
@@ -1664,6 +2190,19 @@ class ContainerInstanceContainerSecurityContextArgs:
         pulumi.set(self, "security_context_type", value)
 
 
+if not MYPY:
+    class ContainerInstanceContainerSecurityContextCapabilitiesArgsDict(TypedDict):
+        add_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of additional configurable container capabilities.
+        """
+        drop_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of container capabilities that can be dropped.
+        """
+elif False:
+    ContainerInstanceContainerSecurityContextCapabilitiesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceContainerSecurityContextCapabilitiesArgs:
     def __init__(__self__, *,
@@ -1702,6 +2241,31 @@ class ContainerInstanceContainerSecurityContextCapabilitiesArgs:
     def drop_capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "drop_capabilities", value)
 
+
+if not MYPY:
+    class ContainerInstanceContainerVolumeMountArgsDict(TypedDict):
+        mount_path: pulumi.Input[str]
+        """
+        The volume access path.
+        """
+        volume_name: pulumi.Input[str]
+        """
+        The name of the volume. Avoid entering confidential information.
+        """
+        is_read_only: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
+        """
+        partition: NotRequired[pulumi.Input[int]]
+        """
+        If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
+        """
+        sub_path: NotRequired[pulumi.Input[str]]
+        """
+        A subpath inside the referenced volume.
+        """
+elif False:
+    ContainerInstanceContainerVolumeMountArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceContainerVolumeMountArgs:
@@ -1788,6 +2352,23 @@ class ContainerInstanceContainerVolumeMountArgs:
         pulumi.set(self, "sub_path", value)
 
 
+if not MYPY:
+    class ContainerInstanceDnsConfigArgsDict(TypedDict):
+        nameservers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
+        """
+        options: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
+        """
+        searches: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
+        """
+elif False:
+    ContainerInstanceDnsConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceDnsConfigArgs:
     def __init__(__self__, *,
@@ -1842,6 +2423,31 @@ class ContainerInstanceDnsConfigArgs:
     def searches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "searches", value)
 
+
+if not MYPY:
+    class ContainerInstanceImagePullSecretArgsDict(TypedDict):
+        registry_endpoint: pulumi.Input[str]
+        """
+        The registry endpoint of the container image.
+        """
+        secret_type: pulumi.Input[str]
+        """
+        The type of ImagePullSecret.
+        """
+        password: NotRequired[pulumi.Input[str]]
+        """
+        The password which should be used with the registry for authentication. The value is expected in base64 format.
+        """
+        secret_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the secret for registry credentials.
+        """
+        username: NotRequired[pulumi.Input[str]]
+        """
+        The username which should be used with the registry for authentication. The value is expected in base64 format.
+        """
+elif False:
+    ContainerInstanceImagePullSecretArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceImagePullSecretArgs:
@@ -1928,6 +2534,27 @@ class ContainerInstanceImagePullSecretArgs:
         pulumi.set(self, "username", value)
 
 
+if not MYPY:
+    class ContainerInstanceShapeConfigArgsDict(TypedDict):
+        ocpus: pulumi.Input[float]
+        """
+        The total number of OCPUs available to the container instance.
+        """
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        The total amount of memory available to the container instance (GB).
+        """
+        networking_bandwidth_in_gbps: NotRequired[pulumi.Input[float]]
+        """
+        The networking bandwidth available to the container instance, in gigabits per second.
+        """
+        processor_description: NotRequired[pulumi.Input[str]]
+        """
+        A short description of the container instance's processor (CPU).
+        """
+elif False:
+    ContainerInstanceShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceShapeConfigArgs:
     def __init__(__self__, *,
@@ -1997,6 +2624,51 @@ class ContainerInstanceShapeConfigArgs:
     def processor_description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "processor_description", value)
 
+
+if not MYPY:
+    class ContainerInstanceVnicArgsDict(TypedDict):
+        subnet_id: pulumi.Input[str]
+        """
+        The OCID of the subnet to create the VNIC in.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        The hostname for the VNIC's primary private IP. Used for DNS.
+        """
+        is_public_ip_assigned: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the VNIC should be assigned a public IP address.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
+        """
+        skip_source_dest_check: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the source/destination check is disabled on the VNIC.
+        """
+        vnic_id: NotRequired[pulumi.Input[str]]
+        """
+        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
+        """
+elif False:
+    ContainerInstanceVnicArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ContainerInstanceVnicArgs:
@@ -2164,6 +2836,27 @@ class ContainerInstanceVnicArgs:
         pulumi.set(self, "vnic_id", value)
 
 
+if not MYPY:
+    class ContainerInstanceVolumeArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        The name of the volume. This must be unique within a single container instance.
+        """
+        volume_type: pulumi.Input[str]
+        """
+        The type of volume.
+        """
+        backing_store: NotRequired[pulumi.Input[str]]
+        """
+        The volume type of the empty directory, can be either File Storage or Memory.
+        """
+        configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgsDict']]]]
+        """
+        Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+        """
+elif False:
+    ContainerInstanceVolumeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceVolumeArgs:
     def __init__(__self__, *,
@@ -2233,6 +2926,23 @@ class ContainerInstanceVolumeArgs:
         pulumi.set(self, "configs", value)
 
 
+if not MYPY:
+    class ContainerInstanceVolumeConfigArgsDict(TypedDict):
+        data: NotRequired[pulumi.Input[str]]
+        """
+        The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
+        """
+        file_name: NotRequired[pulumi.Input[str]]
+        """
+        The name of the file. The fileName should be unique across the volume.
+        """
+        path: NotRequired[pulumi.Input[str]]
+        """
+        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+        """
+elif False:
+    ContainerInstanceVolumeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ContainerInstanceVolumeConfigArgs:
     def __init__(__self__, *,
@@ -2288,6 +2998,19 @@ class ContainerInstanceVolumeConfigArgs:
         pulumi.set(self, "path", value)
 
 
+if not MYPY:
+    class NodePoolInitialNodeLabelArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The key of the pair.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the pair.
+        """
+elif False:
+    NodePoolInitialNodeLabelArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolInitialNodeLabelArgs:
     def __init__(__self__, *,
@@ -2326,6 +3049,67 @@ class NodePoolInitialNodeLabelArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NodePoolNodeArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The name of the availability domain in which this node is placed.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        errors: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgsDict']]]]
+        """
+        An error that may be associated with the node.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        The fault domain of this node.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compute instance backing this node.
+        """
+        kubernetes_version: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        Details about the state of the node.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the node pool. Avoid entering confidential information.
+        """
+        node_pool_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the node pool to which this node belongs.
+        """
+        private_ip: NotRequired[pulumi.Input[str]]
+        """
+        The private IP address of this node.
+        """
+        public_ip: NotRequired[pulumi.Input[str]]
+        """
+        The public IP address of this node.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        The state of the nodepool.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the subnet in which this node is placed.
+        """
+elif False:
+    NodePoolNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodeArgs:
@@ -2558,6 +3342,45 @@ class NodePoolNodeArgs:
         pulumi.set(self, "subnet_id", value)
 
 
+if not MYPY:
+    class NodePoolNodeConfigDetailsArgsDict(TypedDict):
+        placement_configs: pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgsDict']]]
+        """
+        (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+
+        To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        """
+        size: pulumi.Input[int]
+        """
+        (Updatable) The number of nodes that should be in the node pool.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
+        """
+        node_pool_pod_network_option_details: NotRequired[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict']]
+        """
+        (Updatable) The CNI related configuration of pods in the node pool.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+elif False:
+    NodePoolNodeConfigDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeConfigDetailsArgs:
     def __init__(__self__, *,
@@ -2695,6 +3518,27 @@ class NodePoolNodeConfigDetailsArgs:
         pulumi.set(self, "nsg_ids", value)
 
 
+if not MYPY:
+    class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict(TypedDict):
+        cni_type: pulumi.Input[str]
+        """
+        (Updatable) The CNI plugin used by this node pool
+        """
+        max_pods_per_node: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        """
+        pod_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        pod_subnet_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+elif False:
+    NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     def __init__(__self__, *,
@@ -2764,6 +3608,31 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     def pod_subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "pod_subnet_ids", value)
 
+
+if not MYPY:
+    class NodePoolNodeConfigDetailsPlacementConfigArgsDict(TypedDict):
+        availability_domain: pulumi.Input[str]
+        """
+        (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the subnet in which to place nodes.
+        """
+        capacity_reservation_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
+        """
+        fault_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of fault domains in which to place nodes.
+        """
+        preemptible_node_config: NotRequired[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict']]
+        """
+        (Updatable) Configuration options for preemptible nodes.
+        """
+elif False:
+    NodePoolNodeConfigDetailsPlacementConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodeConfigDetailsPlacementConfigArgs:
@@ -2850,6 +3719,15 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
         pulumi.set(self, "preemptible_node_config", value)
 
 
+if not MYPY:
+    class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict(TypedDict):
+        preemption_action: pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgsDict']
+        """
+        (Updatable) The action to run when the preemptible node is interrupted for eviction.
+        """
+elif False:
+    NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs:
     def __init__(__self__, *,
@@ -2871,6 +3749,19 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs:
     def preemption_action(self, value: pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']):
         pulumi.set(self, "preemption_action", value)
 
+
+if not MYPY:
+    class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        """
+        is_preserve_boot_volume: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        """
+elif False:
+    NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs:
@@ -2909,6 +3800,23 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     def is_preserve_boot_volume(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_preserve_boot_volume", value)
 
+
+if not MYPY:
+    class NodePoolNodeErrorArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        """
+        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A human-readable error string of the upstream error.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The status of the HTTP response encountered in the upstream error.
+        """
+elif False:
+    NodePoolNodeErrorArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodeErrorArgs:
@@ -2965,6 +3873,19 @@ class NodePoolNodeErrorArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class NodePoolNodeEvictionNodePoolSettingsArgsDict(TypedDict):
+        eviction_grace_duration: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        """
+        is_force_delete_after_grace_duration: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+elif False:
+    NodePoolNodeEvictionNodePoolSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeEvictionNodePoolSettingsArgs:
     def __init__(__self__, *,
@@ -3003,6 +3924,23 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
     def is_force_delete_after_grace_duration(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_force_delete_after_grace_duration", value)
 
+
+if not MYPY:
+    class NodePoolNodePoolCyclingDetailsArgsDict(TypedDict):
+        is_node_cycling_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) If nodes in the nodepool will be cycled to have new changes.
+        """
+        maximum_surge: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+        maximum_unavailable: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
+        """
+elif False:
+    NodePoolNodePoolCyclingDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodePoolCyclingDetailsArgs:
@@ -3059,6 +3997,19 @@ class NodePoolNodePoolCyclingDetailsArgs:
         pulumi.set(self, "maximum_unavailable", value)
 
 
+if not MYPY:
+    class NodePoolNodeShapeConfigArgsDict(TypedDict):
+        memory_in_gbs: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The total amount of memory available to each node, in gigabytes.
+        """
+        ocpus: NotRequired[pulumi.Input[float]]
+        """
+        (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+elif False:
+    NodePoolNodeShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeShapeConfigArgs:
     def __init__(__self__, *,
@@ -3097,6 +4048,23 @@ class NodePoolNodeShapeConfigArgs:
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
 
+
+if not MYPY:
+    class NodePoolNodeSourceArgsDict(TypedDict):
+        image_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the image used to boot the node.
+        """
+        source_name: NotRequired[pulumi.Input[str]]
+        """
+        The user-friendly name of the entity corresponding to the OCID.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        """
+elif False:
+    NodePoolNodeSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NodePoolNodeSourceArgs:
@@ -3153,6 +4121,23 @@ class NodePoolNodeSourceArgs:
         pulumi.set(self, "source_type", value)
 
 
+if not MYPY:
+    class NodePoolNodeSourceDetailsArgsDict(TypedDict):
+        image_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the image used to boot the node.
+        """
+        source_type: pulumi.Input[str]
+        """
+        (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        """
+        boot_volume_size_in_gbs: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
+        """
+elif False:
+    NodePoolNodeSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NodePoolNodeSourceDetailsArgs:
     def __init__(__self__, *,
@@ -3206,6 +4191,19 @@ class NodePoolNodeSourceDetailsArgs:
         pulumi.set(self, "boot_volume_size_in_gbs", value)
 
 
+if not MYPY:
+    class VirtualNodePoolInitialVirtualNodeLabelArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The key of the pair.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the pair.
+        """
+elif False:
+    VirtualNodePoolInitialVirtualNodeLabelArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualNodePoolInitialVirtualNodeLabelArgs:
     def __init__(__self__, *,
@@ -3244,6 +4242,23 @@ class VirtualNodePoolInitialVirtualNodeLabelArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class VirtualNodePoolPlacementConfigurationArgsDict(TypedDict):
+        availability_domain: pulumi.Input[str]
+        """
+        (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
+        """
+        fault_domains: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        (Updatable) The fault domain of this virtual node.
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the subnet in which to place virtual nodes.
+        """
+elif False:
+    VirtualNodePoolPlacementConfigurationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualNodePoolPlacementConfigurationArgs:
@@ -3297,6 +4312,23 @@ class VirtualNodePoolPlacementConfigurationArgs:
         pulumi.set(self, "subnet_id", value)
 
 
+if not MYPY:
+    class VirtualNodePoolPodConfigurationArgsDict(TypedDict):
+        shape: pulumi.Input[str]
+        """
+        (Updatable) Shape of the pods.
+        """
+        subnet_id: pulumi.Input[str]
+        """
+        (Updatable) The regional subnet where pods' VNIC will be placed.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) List of network security group IDs applied to the Pod VNIC.
+        """
+elif False:
+    VirtualNodePoolPodConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualNodePoolPodConfigurationArgs:
     def __init__(__self__, *,
@@ -3349,6 +4381,23 @@ class VirtualNodePoolPodConfigurationArgs:
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
+
+if not MYPY:
+    class VirtualNodePoolTaintArgsDict(TypedDict):
+        effect: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The effect of the pair.
+        """
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The key of the pair.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the pair.
+        """
+elif False:
+    VirtualNodePoolTaintArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualNodePoolTaintArgs:
@@ -3405,6 +4454,23 @@ class VirtualNodePoolTaintArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class VirtualNodePoolVirtualNodeTagsArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    VirtualNodePoolVirtualNodeTagsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualNodePoolVirtualNodeTagsArgs:
     def __init__(__self__, *,
@@ -3452,6 +4518,17 @@ class VirtualNodePoolVirtualNodeTagsArgs:
         pulumi.set(self, "freeform_tags", value)
 
 
+if not MYPY:
+    class GetAddonOptionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the addon and it would be unique.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAddonOptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAddonOptionsFilterArgs:
     def __init__(__self__, *,
@@ -3497,6 +4574,14 @@ class GetAddonOptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetAddonsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAddonsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAddonsFilterArgs:
     def __init__(__self__, *,
@@ -3536,6 +4621,14 @@ class GetAddonsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetClusterWorkloadMappingsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetClusterWorkloadMappingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetClusterWorkloadMappingsFilterArgs:
     def __init__(__self__, *,
@@ -3574,6 +4667,17 @@ class GetClusterWorkloadMappingsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetClustersFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name to filter on.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetClustersFilterArgs:
@@ -3620,6 +4724,17 @@ class GetClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetNodePoolsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name to filter on.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetNodePoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNodePoolsFilterArgs:
     def __init__(__self__, *,
@@ -3664,6 +4779,17 @@ class GetNodePoolsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetPodShapesFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name to filter on.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPodShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPodShapesFilterArgs:
@@ -3710,6 +4836,17 @@ class GetPodShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetVirtualNodePoolsFilterArgsDict(TypedDict):
+        name: str
+        """
+        The name to filter on.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetVirtualNodePoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetVirtualNodePoolsFilterArgs:
     def __init__(__self__, *,
@@ -3755,6 +4892,14 @@ class GetVirtualNodePoolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetWorkRequestErrorsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetWorkRequestErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetWorkRequestErrorsFilterArgs:
     def __init__(__self__, *,
@@ -3794,6 +4939,14 @@ class GetWorkRequestErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetWorkRequestLogEntriesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetWorkRequestLogEntriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetWorkRequestLogEntriesFilterArgs:
     def __init__(__self__, *,
@@ -3832,6 +4985,14 @@ class GetWorkRequestLogEntriesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetWorkRequestsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetWorkRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetWorkRequestsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -243,9 +248,6 @@ def get_catalog_types(catalog_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         type_category=pulumi.get(__ret__, 'type_category'),
         type_collections=pulumi.get(__ret__, 'type_collections'))
-
-
-@_utilities.lift_output_func(get_catalog_types)
 def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
                              external_type_name: Optional[pulumi.Input[Optional[str]]] = None,
                              fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -290,4 +292,29 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[str]] = None,
     :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
     :param str type_category: Indicates the category of this type . For example, data assets or connections.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogId'] = catalog_id
+    __args__['externalTypeName'] = external_type_name
+    __args__['fields'] = fields
+    __args__['filters'] = filters
+    __args__['isApproved'] = is_approved
+    __args__['isInternal'] = is_internal
+    __args__['isTag'] = is_tag
+    __args__['name'] = name
+    __args__['state'] = state
+    __args__['typeCategory'] = type_category
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalogTypes:getCatalogTypes', __args__, opts=opts, typ=GetCatalogTypesResult)
+    return __ret__.apply(lambda __response__: GetCatalogTypesResult(
+        catalog_id=pulumi.get(__response__, 'catalog_id'),
+        external_type_name=pulumi.get(__response__, 'external_type_name'),
+        fields=pulumi.get(__response__, 'fields'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_approved=pulumi.get(__response__, 'is_approved'),
+        is_internal=pulumi.get(__response__, 'is_internal'),
+        is_tag=pulumi.get(__response__, 'is_tag'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state'),
+        type_category=pulumi.get(__response__, 'type_category'),
+        type_collections=pulumi.get(__response__, 'type_collections')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -302,9 +307,6 @@ def get_backup(backup_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_backup)
 def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupResult]:
     """
@@ -324,4 +326,27 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
 
     :param str backup_id: A unique identifier for the backup.
     """
-    ...
+    __args__ = dict()
+    __args__['backupId'] = backup_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getBackup:getBackup', __args__, opts=opts, typ=GetBackupResult)
+    return __ret__.apply(lambda __response__: GetBackupResult(
+        backup_id=pulumi.get(__response__, 'backup_id'),
+        backup_size=pulumi.get(__response__, 'backup_size'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_system_details=pulumi.get(__response__, 'db_system_details'),
+        db_system_id=pulumi.get(__response__, 'db_system_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        last_accepted_request_token=pulumi.get(__response__, 'last_accepted_request_token'),
+        last_completed_request_token=pulumi.get(__response__, 'last_completed_request_token'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        retention_period=pulumi.get(__response__, 'retention_period'),
+        source_type=pulumi.get(__response__, 'source_type'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

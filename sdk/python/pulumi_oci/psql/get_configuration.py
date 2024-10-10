@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -299,9 +304,6 @@ def get_configuration(configuration_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_configuration)
 def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
     """
@@ -321,4 +323,27 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = Non
 
     :param str configuration_id: A unique identifier for the configuration.
     """
-    ...
+    __args__ = dict()
+    __args__['configurationId'] = configuration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult)
+    return __ret__.apply(lambda __response__: GetConfigurationResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        config_type=pulumi.get(__response__, 'config_type'),
+        configuration_details=pulumi.get(__response__, 'configuration_details'),
+        configuration_id=pulumi.get(__response__, 'configuration_id'),
+        db_configuration_overrides=pulumi.get(__response__, 'db_configuration_overrides'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        instance_memory_size_in_gbs=pulumi.get(__response__, 'instance_memory_size_in_gbs'),
+        instance_ocpu_count=pulumi.get(__response__, 'instance_ocpu_count'),
+        is_flexible=pulumi.get(__response__, 'is_flexible'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

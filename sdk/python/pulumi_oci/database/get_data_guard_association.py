@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -560,9 +565,6 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         transport_type=pulumi.get(__ret__, 'transport_type'))
-
-
-@_utilities.lift_output_func(get_data_guard_association)
 def get_data_guard_association_output(data_guard_association_id: Optional[pulumi.Input[str]] = None,
                                       database_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationResult]:
@@ -585,4 +587,54 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
     :param str data_guard_association_id: The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['dataGuardAssociationId'] = data_guard_association_id
+    __args__['databaseId'] = database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDataGuardAssociation:getDataGuardAssociation', __args__, opts=opts, typ=GetDataGuardAssociationResult)
+    return __ret__.apply(lambda __response__: GetDataGuardAssociationResult(
+        apply_lag=pulumi.get(__response__, 'apply_lag'),
+        apply_rate=pulumi.get(__response__, 'apply_rate'),
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        create_async=pulumi.get(__response__, 'create_async'),
+        creation_type=pulumi.get(__response__, 'creation_type'),
+        data_collection_options=pulumi.get(__response__, 'data_collection_options'),
+        data_guard_association_id=pulumi.get(__response__, 'data_guard_association_id'),
+        database_admin_password=pulumi.get(__response__, 'database_admin_password'),
+        database_defined_tags=pulumi.get(__response__, 'database_defined_tags'),
+        database_freeform_tags=pulumi.get(__response__, 'database_freeform_tags'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
+        db_system_defined_tags=pulumi.get(__response__, 'db_system_defined_tags'),
+        db_system_freeform_tags=pulumi.get(__response__, 'db_system_freeform_tags'),
+        delete_standby_db_home_on_delete=pulumi.get(__response__, 'delete_standby_db_home_on_delete'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        fault_domains=pulumi.get(__response__, 'fault_domains'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        is_active_data_guard_enabled=pulumi.get(__response__, 'is_active_data_guard_enabled'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        node_count=pulumi.get(__response__, 'node_count'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        peer_data_guard_association_id=pulumi.get(__response__, 'peer_data_guard_association_id'),
+        peer_database_id=pulumi.get(__response__, 'peer_database_id'),
+        peer_db_home_id=pulumi.get(__response__, 'peer_db_home_id'),
+        peer_db_system_id=pulumi.get(__response__, 'peer_db_system_id'),
+        peer_db_unique_name=pulumi.get(__response__, 'peer_db_unique_name'),
+        peer_role=pulumi.get(__response__, 'peer_role'),
+        peer_sid_prefix=pulumi.get(__response__, 'peer_sid_prefix'),
+        peer_vm_cluster_id=pulumi.get(__response__, 'peer_vm_cluster_id'),
+        private_ip=pulumi.get(__response__, 'private_ip'),
+        protection_mode=pulumi.get(__response__, 'protection_mode'),
+        role=pulumi.get(__response__, 'role'),
+        shape=pulumi.get(__response__, 'shape'),
+        state=pulumi.get(__response__, 'state'),
+        storage_volume_performance_mode=pulumi.get(__response__, 'storage_volume_performance_mode'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        transport_type=pulumi.get(__response__, 'transport_type')))

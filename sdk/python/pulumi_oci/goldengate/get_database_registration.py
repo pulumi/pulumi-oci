@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -400,9 +405,6 @@ def get_database_registration(database_registration_id: Optional[str] = None,
         username=pulumi.get(__ret__, 'username'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'))
-
-
-@_utilities.lift_output_func(get_database_registration)
 def get_database_registration_output(database_registration_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseRegistrationResult]:
     """
@@ -423,4 +425,35 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
 
     :param str database_registration_id: A unique DatabaseRegistration identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['databaseRegistrationId'] = database_registration_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration', __args__, opts=opts, typ=GetDatabaseRegistrationResult)
+    return __ret__.apply(lambda __response__: GetDatabaseRegistrationResult(
+        alias_name=pulumi.get(__response__, 'alias_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        connection_string=pulumi.get(__response__, 'connection_string'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_registration_id=pulumi.get(__response__, 'database_registration_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        fqdn=pulumi.get(__response__, 'fqdn'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address=pulumi.get(__response__, 'ip_address'),
+        key_id=pulumi.get(__response__, 'key_id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        password=pulumi.get(__response__, 'password'),
+        rce_private_ip=pulumi.get(__response__, 'rce_private_ip'),
+        secret_compartment_id=pulumi.get(__response__, 'secret_compartment_id'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
+        session_mode=pulumi.get(__response__, 'session_mode'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        username=pulumi.get(__response__, 'username'),
+        vault_id=pulumi.get(__response__, 'vault_id'),
+        wallet=pulumi.get(__response__, 'wallet')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_managed_instance_group_modules(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
-
-
-@_utilities.lift_output_func(get_managed_instance_group_modules)
 def get_managed_instance_group_modules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupModulesFilterArgs', 'GetManagedInstanceGroupModulesFilterArgsDict']]]]] = None,
                                               managed_instance_group_id: Optional[pulumi.Input[str]] = None,
@@ -241,4 +243,21 @@ def get_managed_instance_group_modules_output(compartment_id: Optional[pulumi.In
     :param str name_contains: A filter to return resources that may partially match the name given.
     :param str stream_name: The name of the module stream. This parameter is required if a profile name is specified.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['managedInstanceGroupId'] = managed_instance_group_id
+    __args__['name'] = name
+    __args__['nameContains'] = name_contains
+    __args__['streamName'] = stream_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceGroupModules:getManagedInstanceGroupModules', __args__, opts=opts, typ=GetManagedInstanceGroupModulesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceGroupModulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        managed_instance_group_id=pulumi.get(__response__, 'managed_instance_group_id'),
+        managed_instance_group_module_collections=pulumi.get(__response__, 'managed_instance_group_module_collections'),
+        name=pulumi.get(__response__, 'name'),
+        name_contains=pulumi.get(__response__, 'name_contains'),
+        stream_name=pulumi.get(__response__, 'stream_name')))

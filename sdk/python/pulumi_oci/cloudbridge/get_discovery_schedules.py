@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_discovery_schedules(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_discovery_schedules)
 def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                    discovery_schedule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -190,4 +192,19 @@ def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param str state: The current state of the discovery schedule.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['discoveryScheduleId'] = discovery_schedule_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getDiscoverySchedules:getDiscoverySchedules', __args__, opts=opts, typ=GetDiscoverySchedulesResult)
+    return __ret__.apply(lambda __response__: GetDiscoverySchedulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        discovery_schedule_collections=pulumi.get(__response__, 'discovery_schedule_collections'),
+        discovery_schedule_id=pulumi.get(__response__, 'discovery_schedule_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

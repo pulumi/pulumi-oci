@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -176,9 +181,6 @@ def get_cluster_placement_groups(ad: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_cluster_placement_groups)
 def get_cluster_placement_groups_output(ad: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
@@ -214,4 +216,22 @@ def get_cluster_placement_groups_output(ad: Optional[pulumi.Input[Optional[str]]
     :param str name: A filter to return only the resources that match the entire display name specified.
     :param str state: A filter to return only the resources that match the specified lifecycle state.
     """
-    ...
+    __args__ = dict()
+    __args__['ad'] = ad
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['name'] = name
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ClusterPlacementGroups/getClusterPlacementGroups:getClusterPlacementGroups', __args__, opts=opts, typ=GetClusterPlacementGroupsResult)
+    return __ret__.apply(lambda __response__: GetClusterPlacementGroupsResult(
+        ad=pulumi.get(__response__, 'ad'),
+        cluster_placement_group_collections=pulumi.get(__response__, 'cluster_placement_group_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        state=pulumi.get(__response__, 'state')))

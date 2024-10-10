@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,9 +146,6 @@ def get_private_applications(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         private_application_collections=pulumi.get(__ret__, 'private_application_collections'),
         private_application_id=pulumi.get(__ret__, 'private_application_id'))
-
-
-@_utilities.lift_output_func(get_private_applications)
 def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                     display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationsFilterArgs', 'GetPrivateApplicationsFilterArgsDict']]]]] = None,
@@ -170,4 +172,17 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] 
     :param str display_name: Exact match name filter.
     :param str private_application_id: The unique identifier for the private application.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['privateApplicationId'] = private_application_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getPrivateApplications:getPrivateApplications', __args__, opts=opts, typ=GetPrivateApplicationsResult)
+    return __ret__.apply(lambda __response__: GetPrivateApplicationsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        private_application_collections=pulumi.get(__response__, 'private_application_collections'),
+        private_application_id=pulumi.get(__response__, 'private_application_id')))

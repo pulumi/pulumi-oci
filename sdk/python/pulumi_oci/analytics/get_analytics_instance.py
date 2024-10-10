@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -335,9 +340,6 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_analytics_instance)
 def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
     """
@@ -357,4 +359,30 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[s
 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.
     """
-    ...
+    __args__ = dict()
+    __args__['analyticsInstanceId'] = analytics_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Analytics/getAnalyticsInstance:getAnalyticsInstance', __args__, opts=opts, typ=GetAnalyticsInstanceResult)
+    return __ret__.apply(lambda __response__: GetAnalyticsInstanceResult(
+        admin_user=pulumi.get(__response__, 'admin_user'),
+        analytics_instance_id=pulumi.get(__response__, 'analytics_instance_id'),
+        capacities=pulumi.get(__response__, 'capacities'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        domain_id=pulumi.get(__response__, 'domain_id'),
+        email_notification=pulumi.get(__response__, 'email_notification'),
+        feature_bundle=pulumi.get(__response__, 'feature_bundle'),
+        feature_set=pulumi.get(__response__, 'feature_set'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        idcs_access_token=pulumi.get(__response__, 'idcs_access_token'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        license_type=pulumi.get(__response__, 'license_type'),
+        name=pulumi.get(__response__, 'name'),
+        network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
+        service_url=pulumi.get(__response__, 'service_url'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

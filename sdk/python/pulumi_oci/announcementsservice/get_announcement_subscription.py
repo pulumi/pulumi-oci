@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -265,9 +270,6 @@ def get_announcement_subscription(announcement_subscription_id: Optional[str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_announcement_subscription)
 def get_announcement_subscription_output(announcement_subscription_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnouncementSubscriptionResult]:
     """
@@ -289,4 +291,24 @@ def get_announcement_subscription_output(announcement_subscription_id: Optional[
 
     :param str announcement_subscription_id: The OCID of the announcement subscription.
     """
-    ...
+    __args__ = dict()
+    __args__['announcementSubscriptionId'] = announcement_subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription', __args__, opts=opts, typ=GetAnnouncementSubscriptionResult)
+    return __ret__.apply(lambda __response__: GetAnnouncementSubscriptionResult(
+        announcement_subscription_id=pulumi.get(__response__, 'announcement_subscription_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filter_groups=pulumi.get(__response__, 'filter_groups'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        ons_topic_id=pulumi.get(__response__, 'ons_topic_id'),
+        preferred_language=pulumi.get(__response__, 'preferred_language'),
+        preferred_time_zone=pulumi.get(__response__, 'preferred_time_zone'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

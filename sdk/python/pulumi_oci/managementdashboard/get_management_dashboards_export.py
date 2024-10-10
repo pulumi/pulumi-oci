@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -95,9 +100,6 @@ def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
         export_dashboard_id=pulumi.get(__ret__, 'export_dashboard_id'),
         export_details=pulumi.get(__ret__, 'export_details'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_management_dashboards_export)
 def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementDashboardsExportResult]:
     """
@@ -119,4 +121,11 @@ def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi
 
     :param str export_dashboard_id: List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
     """
-    ...
+    __args__ = dict()
+    __args__['exportDashboardId'] = export_dashboard_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport', __args__, opts=opts, typ=GetManagementDashboardsExportResult)
+    return __ret__.apply(lambda __response__: GetManagementDashboardsExportResult(
+        export_dashboard_id=pulumi.get(__response__, 'export_dashboard_id'),
+        export_details=pulumi.get(__response__, 'export_details'),
+        id=pulumi.get(__response__, 'id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -158,9 +163,6 @@ def get_schedules(compartment_id: Optional[str] = None,
         schedule_collections=pulumi.get(__ret__, 'schedule_collections'),
         schedule_id=pulumi.get(__ret__, 'schedule_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_schedules)
 def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                          display_name: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulesFilterArgs', 'GetSchedulesFilterArgsDict']]]]] = None,
@@ -190,4 +192,19 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
     :param str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['scheduleId'] = schedule_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ResourceScheduler/getSchedules:getSchedules', __args__, opts=opts, typ=GetSchedulesResult)
+    return __ret__.apply(lambda __response__: GetSchedulesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        schedule_collections=pulumi.get(__response__, 'schedule_collections'),
+        schedule_id=pulumi.get(__response__, 'schedule_id'),
+        state=pulumi.get(__response__, 'state')))

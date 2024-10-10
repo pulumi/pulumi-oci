@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -279,9 +284,6 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
         scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'scan_listener_port_tcp_ssl'),
         scans=pulumi.get(__ret__, 'scans'),
         vm_networks=pulumi.get(__ret__, 'vm_networks'))
-
-
-@_utilities.lift_output_func(get_vm_cluster_recommended_network)
 def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               defined_tags: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
@@ -314,4 +316,35 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
     :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
     :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['dbServers'] = db_servers
+    __args__['definedTags'] = defined_tags
+    __args__['displayName'] = display_name
+    __args__['dns'] = dns
+    __args__['drScanListenerPortTcp'] = dr_scan_listener_port_tcp
+    __args__['exadataInfrastructureId'] = exadata_infrastructure_id
+    __args__['freeformTags'] = freeform_tags
+    __args__['networks'] = networks
+    __args__['ntps'] = ntps
+    __args__['scanListenerPortTcp'] = scan_listener_port_tcp
+    __args__['scanListenerPortTcpSsl'] = scan_listener_port_tcp_ssl
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork', __args__, opts=opts, typ=GetVmClusterRecommendedNetworkResult)
+    return __ret__.apply(lambda __response__: GetVmClusterRecommendedNetworkResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_servers=pulumi.get(__response__, 'db_servers'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        dns=pulumi.get(__response__, 'dns'),
+        dr_scan_listener_port_tcp=pulumi.get(__response__, 'dr_scan_listener_port_tcp'),
+        dr_scans=pulumi.get(__response__, 'dr_scans'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        networks=pulumi.get(__response__, 'networks'),
+        ntps=pulumi.get(__response__, 'ntps'),
+        scan_listener_port_tcp=pulumi.get(__response__, 'scan_listener_port_tcp'),
+        scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
+        scans=pulumi.get(__response__, 'scans'),
+        vm_networks=pulumi.get(__response__, 'vm_networks')))

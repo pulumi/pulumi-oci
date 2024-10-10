@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -162,9 +167,6 @@ def get_operations_insights_warehouse_users(compartment_id: Optional[str] = None
         operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
         operations_insights_warehouse_user_summary_collections=pulumi.get(__ret__, 'operations_insights_warehouse_user_summary_collections'),
         states=pulumi.get(__ret__, 'states'))
-
-
-@_utilities.lift_output_func(get_operations_insights_warehouse_users)
 def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                    display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOperationsInsightsWarehouseUsersFilterArgs', 'GetOperationsInsightsWarehouseUsersFilterArgsDict']]]]] = None,
@@ -197,4 +199,20 @@ def get_operations_insights_warehouse_users_output(compartment_id: Optional[pulu
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
     :param Sequence[str] states: Lifecycle states
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
+    __args__['states'] = states
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getOperationsInsightsWarehouseUsers:getOperationsInsightsWarehouseUsers', __args__, opts=opts, typ=GetOperationsInsightsWarehouseUsersResult)
+    return __ret__.apply(lambda __response__: GetOperationsInsightsWarehouseUsersResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        operations_insights_warehouse_id=pulumi.get(__response__, 'operations_insights_warehouse_id'),
+        operations_insights_warehouse_user_summary_collections=pulumi.get(__response__, 'operations_insights_warehouse_user_summary_collections'),
+        states=pulumi.get(__response__, 'states')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -111,9 +116,6 @@ def get_problem_entities(filters: Optional[Sequence[Union['GetProblemEntitiesFil
         id=pulumi.get(__ret__, 'id'),
         problem_entity_collections=pulumi.get(__ret__, 'problem_entity_collections'),
         problem_id=pulumi.get(__ret__, 'problem_id'))
-
-
-@_utilities.lift_output_func(get_problem_entities)
 def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProblemEntitiesFilterArgs', 'GetProblemEntitiesFilterArgsDict']]]]] = None,
                                 problem_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProblemEntitiesResult]:
@@ -135,4 +137,13 @@ def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence
 
     :param str problem_id: OCID of the problem.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['problemId'] = problem_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CloudGuard/getProblemEntities:getProblemEntities', __args__, opts=opts, typ=GetProblemEntitiesResult)
+    return __ret__.apply(lambda __response__: GetProblemEntitiesResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        problem_entity_collections=pulumi.get(__response__, 'problem_entity_collections'),
+        problem_id=pulumi.get(__response__, 'problem_id')))

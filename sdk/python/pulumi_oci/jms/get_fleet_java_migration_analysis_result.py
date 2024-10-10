@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -292,9 +297,6 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[str] = None,
         target_jdk_version=pulumi.get(__ret__, 'target_jdk_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-
-
-@_utilities.lift_output_func(get_fleet_java_migration_analysis_result)
 def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                                     java_migration_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultResult]:
@@ -317,4 +319,27 @@ def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.In
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
     :param str java_migration_analysis_result_id: The OCID of the analysis result.
     """
-    ...
+    __args__ = dict()
+    __args__['fleetId'] = fleet_id
+    __args__['javaMigrationAnalysisResultId'] = java_migration_analysis_result_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetJavaMigrationAnalysisResult:getFleetJavaMigrationAnalysisResult', __args__, opts=opts, typ=GetFleetJavaMigrationAnalysisResultResult)
+    return __ret__.apply(lambda __response__: GetFleetJavaMigrationAnalysisResultResult(
+        application_execution_type=pulumi.get(__response__, 'application_execution_type'),
+        application_key=pulumi.get(__response__, 'application_key'),
+        application_name=pulumi.get(__response__, 'application_name'),
+        application_path=pulumi.get(__response__, 'application_path'),
+        bucket=pulumi.get(__response__, 'bucket'),
+        fleet_id=pulumi.get(__response__, 'fleet_id'),
+        host_name=pulumi.get(__response__, 'host_name'),
+        id=pulumi.get(__response__, 'id'),
+        java_migration_analysis_result_id=pulumi.get(__response__, 'java_migration_analysis_result_id'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        object_lists=pulumi.get(__response__, 'object_lists'),
+        object_storage_upload_dir_path=pulumi.get(__response__, 'object_storage_upload_dir_path'),
+        source_jdk_version=pulumi.get(__response__, 'source_jdk_version'),
+        target_jdk_version=pulumi.get(__response__, 'target_jdk_version'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        work_request_id=pulumi.get(__response__, 'work_request_id')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -266,9 +271,6 @@ def get_events(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         types=pulumi.get(__ret__, 'types'))
-
-
-@_utilities.lift_output_func(get_events)
 def get_events_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                       event_fingerprint: Optional[pulumi.Input[Optional[str]]] = None,
                       event_summary: Optional[pulumi.Input[Optional[str]]] = None,
@@ -319,4 +321,32 @@ def get_events_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     :param str time_created_less_than: A filter that returns events that occurred on or before the date provided.       Example: `2016-08-25T21:10:29.600Z`
     :param Sequence[str] types: A filter to return only resources whose type matches the given value.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['eventFingerprint'] = event_fingerprint
+    __args__['eventSummary'] = event_summary
+    __args__['eventSummaryContains'] = event_summary_contains
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
+    __args__['resourceId'] = resource_id
+    __args__['state'] = state
+    __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
+    __args__['timeCreatedLessThan'] = time_created_less_than
+    __args__['types'] = types
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getEvents:getEvents', __args__, opts=opts, typ=GetEventsResult)
+    return __ret__.apply(lambda __response__: GetEventsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        event_collections=pulumi.get(__response__, 'event_collections'),
+        event_fingerprint=pulumi.get(__response__, 'event_fingerprint'),
+        event_summary=pulumi.get(__response__, 'event_summary'),
+        event_summary_contains=pulumi.get(__response__, 'event_summary_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),
+        resource_id=pulumi.get(__response__, 'resource_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
+        time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
+        types=pulumi.get(__response__, 'types')))

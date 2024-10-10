@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -142,9 +147,6 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         public_ip_pool_collections=pulumi.get(__ret__, 'public_ip_pool_collections'))
-
-
-@_utilities.lift_output_func(get_public_ip_pools)
 def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[str]]] = None,
                                compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -172,4 +174,17 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[st
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['byoipRangeId'] = byoip_range_id
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Core/getPublicIpPools:getPublicIpPools', __args__, opts=opts, typ=GetPublicIpPoolsResult)
+    return __ret__.apply(lambda __response__: GetPublicIpPoolsResult(
+        byoip_range_id=pulumi.get(__response__, 'byoip_range_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        public_ip_pool_collections=pulumi.get(__response__, 'public_ip_pool_collections')))

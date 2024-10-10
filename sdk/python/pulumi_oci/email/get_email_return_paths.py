@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -165,9 +170,6 @@ def get_email_return_paths(compartment_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_email_return_paths)
 def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict']]]]] = None,
                                   id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -200,4 +202,20 @@ def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional
     :param str parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
     :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['id'] = id
+    __args__['name'] = name
+    __args__['parentResourceId'] = parent_resource_id
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Email/getEmailReturnPaths:getEmailReturnPaths', __args__, opts=opts, typ=GetEmailReturnPathsResult)
+    return __ret__.apply(lambda __response__: GetEmailReturnPathsResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        email_return_path_collections=pulumi.get(__response__, 'email_return_path_collections'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
+        state=pulumi.get(__response__, 'state')))

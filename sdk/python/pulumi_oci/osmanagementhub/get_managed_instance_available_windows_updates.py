@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -194,9 +199,6 @@ def get_managed_instance_available_windows_updates(classification_types: Optiona
         is_installable=pulumi.get(__ret__, 'is_installable'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         names=pulumi.get(__ret__, 'names'))
-
-
-@_utilities.lift_output_func(get_managed_instance_available_windows_updates)
 def get_managed_instance_available_windows_updates_output(classification_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                           compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -235,4 +237,25 @@ def get_managed_instance_available_windows_updates_output(classification_types: 
     :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
     :param Sequence[str] names: A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
     """
-    ...
+    __args__ = dict()
+    __args__['classificationTypes'] = classification_types
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['displayNameContains'] = display_name_contains
+    __args__['filters'] = filters
+    __args__['isInstallable'] = is_installable
+    __args__['managedInstanceId'] = managed_instance_id
+    __args__['names'] = names
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceAvailableWindowsUpdates:getManagedInstanceAvailableWindowsUpdates', __args__, opts=opts, typ=GetManagedInstanceAvailableWindowsUpdatesResult)
+    return __ret__.apply(lambda __response__: GetManagedInstanceAvailableWindowsUpdatesResult(
+        available_windows_update_collections=pulumi.get(__response__, 'available_windows_update_collections'),
+        classification_types=pulumi.get(__response__, 'classification_types'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        is_installable=pulumi.get(__response__, 'is_installable'),
+        managed_instance_id=pulumi.get(__response__, 'managed_instance_id'),
+        names=pulumi.get(__response__, 'names')))

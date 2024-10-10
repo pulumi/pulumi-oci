@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -104,9 +109,6 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         log_group_count=pulumi.get(__ret__, 'log_group_count'),
         namespace=pulumi.get(__ret__, 'namespace'))
-
-
-@_utilities.lift_output_func(get_log_analytics_log_groups_summary)
 def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                                 namespace: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsSummaryResult]:
@@ -129,4 +131,13 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary', __args__, opts=opts, typ=GetLogAnalyticsLogGroupsSummaryResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsLogGroupsSummaryResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        log_group_count=pulumi.get(__response__, 'log_group_count'),
+        namespace=pulumi.get(__response__, 'namespace')))

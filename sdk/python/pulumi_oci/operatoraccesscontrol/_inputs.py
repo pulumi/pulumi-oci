@@ -4,17 +4,36 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'GetAccessRequestsFilterArgs',
+    'GetAccessRequestsFilterArgsDict',
     'GetActionsFilterArgs',
+    'GetActionsFilterArgsDict',
     'GetControlAssignmentsFilterArgs',
+    'GetControlAssignmentsFilterArgsDict',
     'GetControlsFilterArgs',
+    'GetControlsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class GetAccessRequestsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetAccessRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAccessRequestsFilterArgs:
@@ -54,6 +73,17 @@ class GetAccessRequestsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetActionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetActionsFilterArgs:
@@ -100,6 +130,14 @@ class GetActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetControlAssignmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetControlAssignmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetControlAssignmentsFilterArgs:
     def __init__(__self__, *,
@@ -138,6 +176,14 @@ class GetControlAssignmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetControlsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetControlsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetControlsFilterArgs:

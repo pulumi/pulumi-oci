@@ -4,27 +4,65 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'DatabaseToolsConnectionKeyStoreArgs',
+    'DatabaseToolsConnectionKeyStoreArgsDict',
     'DatabaseToolsConnectionKeyStoreKeyStoreContentArgs',
+    'DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict',
     'DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs',
+    'DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict',
     'DatabaseToolsConnectionLockArgs',
+    'DatabaseToolsConnectionLockArgsDict',
     'DatabaseToolsConnectionProxyClientArgs',
+    'DatabaseToolsConnectionProxyClientArgsDict',
     'DatabaseToolsConnectionProxyClientUserPasswordArgs',
+    'DatabaseToolsConnectionProxyClientUserPasswordArgsDict',
     'DatabaseToolsConnectionRelatedResourceArgs',
+    'DatabaseToolsConnectionRelatedResourceArgsDict',
     'DatabaseToolsConnectionUserPasswordArgs',
+    'DatabaseToolsConnectionUserPasswordArgsDict',
     'DatabaseToolsPrivateEndpointLockArgs',
+    'DatabaseToolsPrivateEndpointLockArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs',
+    'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs',
+    'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict',
     'GetDatabaseToolsConnectionsFilterArgs',
+    'GetDatabaseToolsConnectionsFilterArgsDict',
     'GetDatabaseToolsEndpointServicesFilterArgs',
+    'GetDatabaseToolsEndpointServicesFilterArgsDict',
     'GetDatabaseToolsPrivateEndpointsFilterArgs',
+    'GetDatabaseToolsPrivateEndpointsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class DatabaseToolsConnectionKeyStoreArgsDict(TypedDict):
+        key_store_content: NotRequired[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict']]
+        """
+        (Updatable) The key store content.
+        """
+        key_store_password: NotRequired[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict']]
+        """
+        (Updatable) The key store password.
+        """
+        key_store_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The key store type.
+        """
+elif False:
+    DatabaseToolsConnectionKeyStoreArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseToolsConnectionKeyStoreArgs:
@@ -81,6 +119,19 @@ class DatabaseToolsConnectionKeyStoreArgs:
         pulumi.set(self, "key_store_type", value)
 
 
+if not MYPY:
+    class DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict(TypedDict):
+        value_type: pulumi.Input[str]
+        """
+        (Updatable) The value type of the key store content.
+        """
+        secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
+        """
+elif False:
+    DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     def __init__(__self__, *,
@@ -119,6 +170,19 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
         pulumi.set(self, "secret_id", value)
 
 
+if not MYPY:
+    class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict(TypedDict):
+        value_type: pulumi.Input[str]
+        """
+        (Updatable) The value type of the key store password.
+        """
+        secret_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
+        """
+elif False:
+    DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     def __init__(__self__, *,
@@ -156,6 +220,27 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     def secret_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "secret_id", value)
 
+
+if not MYPY:
+    class DatabaseToolsConnectionLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    DatabaseToolsConnectionLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseToolsConnectionLockArgs:
@@ -227,6 +312,27 @@ class DatabaseToolsConnectionLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class DatabaseToolsConnectionProxyClientArgsDict(TypedDict):
+        proxy_authentication_type: pulumi.Input[str]
+        """
+        (Updatable) The proxy authentication type.
+        """
+        roles: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        """
+        user_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The user name.
+        """
+        user_password: NotRequired[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgsDict']]
+        """
+        (Updatable) The user password.
+        """
+elif False:
+    DatabaseToolsConnectionProxyClientArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsConnectionProxyClientArgs:
     def __init__(__self__, *,
@@ -297,6 +403,19 @@ class DatabaseToolsConnectionProxyClientArgs:
         pulumi.set(self, "user_password", value)
 
 
+if not MYPY:
+    class DatabaseToolsConnectionProxyClientUserPasswordArgsDict(TypedDict):
+        secret_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        value_type: pulumi.Input[str]
+        """
+        (Updatable) The value type of the user password.
+        """
+elif False:
+    DatabaseToolsConnectionProxyClientUserPasswordArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsConnectionProxyClientUserPasswordArgs:
     def __init__(__self__, *,
@@ -333,6 +452,19 @@ class DatabaseToolsConnectionProxyClientUserPasswordArgs:
     def value_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "value_type", value)
 
+
+if not MYPY:
+    class DatabaseToolsConnectionRelatedResourceArgsDict(TypedDict):
+        entity_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The resource entity type.
+        """
+        identifier: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+elif False:
+    DatabaseToolsConnectionRelatedResourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseToolsConnectionRelatedResourceArgs:
@@ -372,6 +504,23 @@ class DatabaseToolsConnectionRelatedResourceArgs:
     def identifier(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "identifier", value)
 
+
+if not MYPY:
+    class DatabaseToolsConnectionUserPasswordArgsDict(TypedDict):
+        secret_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        value_type: pulumi.Input[str]
+        """
+        (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    DatabaseToolsConnectionUserPasswordArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseToolsConnectionUserPasswordArgs:
@@ -417,6 +566,27 @@ class DatabaseToolsConnectionUserPasswordArgs:
     def value_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "value_type", value)
 
+
+if not MYPY:
+    class DatabaseToolsPrivateEndpointLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    DatabaseToolsPrivateEndpointLockArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseToolsPrivateEndpointLockArgs:
@@ -488,6 +658,15 @@ class DatabaseToolsPrivateEndpointLockArgs:
         pulumi.set(self, "time_created", value)
 
 
+if not MYPY:
+    class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict(TypedDict):
+        reverse_connections_source_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict']]]]
+        """
+        A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
+        """
+elif False:
+    DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
     def __init__(__self__, *,
@@ -511,6 +690,15 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
         pulumi.set(self, "reverse_connections_source_ips", value)
 
 
+if not MYPY:
+    class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict(TypedDict):
+        source_ip: NotRequired[pulumi.Input[str]]
+        """
+        The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
+        """
+elif False:
+    DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs:
     def __init__(__self__, *,
@@ -533,6 +721,14 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
     def source_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_ip", value)
 
+
+if not MYPY:
+    class GetDatabaseToolsConnectionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDatabaseToolsConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDatabaseToolsConnectionsFilterArgs:
@@ -572,6 +768,17 @@ class GetDatabaseToolsConnectionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDatabaseToolsEndpointServicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire specified name.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDatabaseToolsEndpointServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDatabaseToolsEndpointServicesFilterArgs:
@@ -617,6 +824,14 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetDatabaseToolsPrivateEndpointsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDatabaseToolsPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetDatabaseToolsPrivateEndpointsFilterArgs:

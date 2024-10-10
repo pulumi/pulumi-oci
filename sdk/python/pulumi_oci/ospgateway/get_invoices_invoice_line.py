@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -122,9 +127,6 @@ def get_invoices_invoice_line(compartment_id: Optional[str] = None,
         internal_invoice_id=pulumi.get(__ret__, 'internal_invoice_id'),
         items=pulumi.get(__ret__, 'items'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'))
-
-
-@_utilities.lift_output_func(get_invoices_invoice_line)
 def get_invoices_invoice_line_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      internal_invoice_id: Optional[pulumi.Input[str]] = None,
                                      osp_home_region: Optional[pulumi.Input[str]] = None,
@@ -150,4 +152,15 @@ def get_invoices_invoice_line_output(compartment_id: Optional[pulumi.Input[str]]
     :param str internal_invoice_id: The identifier of the invoice.
     :param str osp_home_region: The home region's public name of the logged in user.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['internalInvoiceId'] = internal_invoice_id
+    __args__['ospHomeRegion'] = osp_home_region
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getInvoicesInvoiceLine:getInvoicesInvoiceLine', __args__, opts=opts, typ=GetInvoicesInvoiceLineResult)
+    return __ret__.apply(lambda __response__: GetInvoicesInvoiceLineResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        id=pulumi.get(__response__, 'id'),
+        internal_invoice_id=pulumi.get(__response__, 'internal_invoice_id'),
+        items=pulumi.get(__response__, 'items'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region')))

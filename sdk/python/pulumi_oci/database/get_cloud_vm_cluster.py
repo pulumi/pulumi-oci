@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -726,9 +731,6 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         time_zone=pulumi.get(__ret__, 'time_zone'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-
-
-@_utilities.lift_output_func(get_cloud_vm_cluster)
 def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClusterResult]:
     """
@@ -748,4 +750,60 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
 
     :param str cloud_vm_cluster_id: The cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['cloudVmClusterId'] = cloud_vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getCloudVmCluster:getCloudVmCluster', __args__, opts=opts, typ=GetCloudVmClusterResult)
+    return __ret__.apply(lambda __response__: GetCloudVmClusterResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
+        backup_subnet_id=pulumi.get(__response__, 'backup_subnet_id'),
+        cloud_exadata_infrastructure_id=pulumi.get(__response__, 'cloud_exadata_infrastructure_id'),
+        cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
+        create_async=pulumi.get(__response__, 'create_async'),
+        data_collection_options=pulumi.get(__response__, 'data_collection_options'),
+        data_storage_percentage=pulumi.get(__response__, 'data_storage_percentage'),
+        data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_servers=pulumi.get(__response__, 'db_servers'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        disk_redundancy=pulumi.get(__response__, 'disk_redundancy'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        domain=pulumi.get(__response__, 'domain'),
+        file_system_configuration_details=pulumi.get(__response__, 'file_system_configuration_details'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gi_version=pulumi.get(__response__, 'gi_version'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        iorm_config_caches=pulumi.get(__response__, 'iorm_config_caches'),
+        is_local_backup_enabled=pulumi.get(__response__, 'is_local_backup_enabled'),
+        is_sparse_diskgroup_enabled=pulumi.get(__response__, 'is_sparse_diskgroup_enabled'),
+        last_update_history_entry_id=pulumi.get(__response__, 'last_update_history_entry_id'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        listener_port=pulumi.get(__response__, 'listener_port'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        node_count=pulumi.get(__response__, 'node_count'),
+        nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        ocpu_count=pulumi.get(__response__, 'ocpu_count'),
+        private_zone_id=pulumi.get(__response__, 'private_zone_id'),
+        scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
+        scan_dns_record_id=pulumi.get(__response__, 'scan_dns_record_id'),
+        scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
+        scan_listener_port_tcp=pulumi.get(__response__, 'scan_listener_port_tcp'),
+        scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
+        shape=pulumi.get(__response__, 'shape'),
+        ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
+        state=pulumi.get(__response__, 'state'),
+        storage_size_in_gbs=pulumi.get(__response__, 'storage_size_in_gbs'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        system_version=pulumi.get(__response__, 'system_version'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        vip_ids=pulumi.get(__response__, 'vip_ids'),
+        zone_id=pulumi.get(__response__, 'zone_id')))

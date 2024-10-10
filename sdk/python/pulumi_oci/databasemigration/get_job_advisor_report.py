@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -155,9 +160,6 @@ def get_job_advisor_report(job_id: Optional[str] = None,
         number_of_warnings=pulumi.get(__ret__, 'number_of_warnings'),
         report_location_details=pulumi.get(__ret__, 'report_location_details'),
         result=pulumi.get(__ret__, 'result'))
-
-
-@_utilities.lift_output_func(get_job_advisor_report)
 def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobAdvisorReportResult]:
     """
@@ -173,4 +175,16 @@ def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
 
     :param str job_id: The OCID of the job
     """
-    ...
+    __args__ = dict()
+    __args__['jobId'] = job_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport', __args__, opts=opts, typ=GetJobAdvisorReportResult)
+    return __ret__.apply(lambda __response__: GetJobAdvisorReportResult(
+        id=pulumi.get(__response__, 'id'),
+        job_id=pulumi.get(__response__, 'job_id'),
+        number_of_fatal=pulumi.get(__response__, 'number_of_fatal'),
+        number_of_fatal_blockers=pulumi.get(__response__, 'number_of_fatal_blockers'),
+        number_of_informational_results=pulumi.get(__response__, 'number_of_informational_results'),
+        number_of_warnings=pulumi.get(__response__, 'number_of_warnings'),
+        report_location_details=pulumi.get(__response__, 'report_location_details'),
+        result=pulumi.get(__response__, 'result')))

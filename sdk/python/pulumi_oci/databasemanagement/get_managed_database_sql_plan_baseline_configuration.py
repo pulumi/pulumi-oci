@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -227,9 +232,6 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
         space_budget_mb=pulumi.get(__ret__, 'space_budget_mb'),
         space_budget_percent=pulumi.get(__ret__, 'space_budget_percent'),
         space_used_mb=pulumi.get(__ret__, 'space_used_mb'))
-
-
-@_utilities.lift_output_func(get_managed_database_sql_plan_baseline_configuration)
 def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                 opc_named_credential_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
@@ -254,4 +256,22 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param str opc_named_credential_id: The OCID of the Named Credential.
     """
-    ...
+    __args__ = dict()
+    __args__['managedDatabaseId'] = managed_database_id
+    __args__['opcNamedCredentialId'] = opc_named_credential_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselineConfiguration:getManagedDatabaseSqlPlanBaselineConfiguration', __args__, opts=opts, typ=GetManagedDatabaseSqlPlanBaselineConfigurationResult)
+    return __ret__.apply(lambda __response__: GetManagedDatabaseSqlPlanBaselineConfigurationResult(
+        auto_capture_filters=pulumi.get(__response__, 'auto_capture_filters'),
+        auto_spm_evolve_task_parameters=pulumi.get(__response__, 'auto_spm_evolve_task_parameters'),
+        id=pulumi.get(__response__, 'id'),
+        is_auto_spm_evolve_task_enabled=pulumi.get(__response__, 'is_auto_spm_evolve_task_enabled'),
+        is_automatic_initial_plan_capture_enabled=pulumi.get(__response__, 'is_automatic_initial_plan_capture_enabled'),
+        is_high_frequency_auto_spm_evolve_task_enabled=pulumi.get(__response__, 'is_high_frequency_auto_spm_evolve_task_enabled'),
+        is_sql_plan_baselines_usage_enabled=pulumi.get(__response__, 'is_sql_plan_baselines_usage_enabled'),
+        managed_database_id=pulumi.get(__response__, 'managed_database_id'),
+        opc_named_credential_id=pulumi.get(__response__, 'opc_named_credential_id'),
+        plan_retention_weeks=pulumi.get(__response__, 'plan_retention_weeks'),
+        space_budget_mb=pulumi.get(__response__, 'space_budget_mb'),
+        space_budget_percent=pulumi.get(__response__, 'space_budget_percent'),
+        space_used_mb=pulumi.get(__response__, 'space_used_mb')))

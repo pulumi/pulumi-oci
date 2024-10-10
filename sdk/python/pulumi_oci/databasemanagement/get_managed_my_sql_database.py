@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -250,9 +255,6 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
         name=pulumi.get(__ret__, 'name'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_created_heat_wave=pulumi.get(__ret__, 'time_created_heat_wave'))
-
-
-@_utilities.lift_output_func(get_managed_my_sql_database)
 def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseResult]:
     """
@@ -272,4 +274,23 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulu
 
     :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
     """
-    ...
+    __args__ = dict()
+    __args__['managedMySqlDatabaseId'] = managed_my_sql_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase', __args__, opts=opts, typ=GetManagedMySqlDatabaseResult)
+    return __ret__.apply(lambda __response__: GetManagedMySqlDatabaseResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_name=pulumi.get(__response__, 'db_name'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        heat_wave_cluster_display_name=pulumi.get(__response__, 'heat_wave_cluster_display_name'),
+        heat_wave_memory_size=pulumi.get(__response__, 'heat_wave_memory_size'),
+        heat_wave_node_shape=pulumi.get(__response__, 'heat_wave_node_shape'),
+        heat_wave_nodes=pulumi.get(__response__, 'heat_wave_nodes'),
+        id=pulumi.get(__response__, 'id'),
+        is_heat_wave_active=pulumi.get(__response__, 'is_heat_wave_active'),
+        is_heat_wave_enabled=pulumi.get(__response__, 'is_heat_wave_enabled'),
+        is_lakehouse_enabled=pulumi.get(__response__, 'is_lakehouse_enabled'),
+        managed_my_sql_database_id=pulumi.get(__response__, 'managed_my_sql_database_id'),
+        name=pulumi.get(__response__, 'name'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_created_heat_wave=pulumi.get(__response__, 'time_created_heat_wave')))

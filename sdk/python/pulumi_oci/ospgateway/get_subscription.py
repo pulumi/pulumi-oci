@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -389,9 +394,6 @@ def get_subscription(compartment_id: Optional[str] = None,
         time_start=pulumi.get(__ret__, 'time_start'),
         upgrade_state=pulumi.get(__ret__, 'upgrade_state'),
         upgrade_state_details=pulumi.get(__ret__, 'upgrade_state_details'))
-
-
-@_utilities.lift_output_func(get_subscription)
 def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             osp_home_region: Optional[pulumi.Input[str]] = None,
                             subscription_id: Optional[pulumi.Input[str]] = None,
@@ -417,4 +419,36 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str osp_home_region: The home region's public name of the logged in user.
     :param str subscription_id: Subscription id(OCID).
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['ospHomeRegion'] = osp_home_region
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OspGateway/getSubscription:getSubscription', __args__, opts=opts, typ=GetSubscriptionResult)
+    return __ret__.apply(lambda __response__: GetSubscriptionResult(
+        account_type=pulumi.get(__response__, 'account_type'),
+        bill_to_cust_account_id=pulumi.get(__response__, 'bill_to_cust_account_id'),
+        billing_addresses=pulumi.get(__response__, 'billing_addresses'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        currency_code=pulumi.get(__response__, 'currency_code'),
+        email=pulumi.get(__response__, 'email'),
+        gsi_org_code=pulumi.get(__response__, 'gsi_org_code'),
+        id=pulumi.get(__response__, 'id'),
+        is_intent_to_pay=pulumi.get(__response__, 'is_intent_to_pay'),
+        language_code=pulumi.get(__response__, 'language_code'),
+        organization_id=pulumi.get(__response__, 'organization_id'),
+        osp_home_region=pulumi.get(__response__, 'osp_home_region'),
+        payment_gateways=pulumi.get(__response__, 'payment_gateways'),
+        payment_options=pulumi.get(__response__, 'payment_options'),
+        plan_type=pulumi.get(__response__, 'plan_type'),
+        ship_to_cust_acct_role_id=pulumi.get(__response__, 'ship_to_cust_acct_role_id'),
+        ship_to_cust_acct_site_id=pulumi.get(__response__, 'ship_to_cust_acct_site_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
+        subscription_plan_number=pulumi.get(__response__, 'subscription_plan_number'),
+        subscriptions=pulumi.get(__response__, 'subscriptions'),
+        tax_infos=pulumi.get(__response__, 'tax_infos'),
+        time_personal_to_corporate_conv=pulumi.get(__response__, 'time_personal_to_corporate_conv'),
+        time_plan_upgrade=pulumi.get(__response__, 'time_plan_upgrade'),
+        time_start=pulumi.get(__response__, 'time_start'),
+        upgrade_state=pulumi.get(__response__, 'upgrade_state'),
+        upgrade_state_details=pulumi.get(__response__, 'upgrade_state_details')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -185,9 +190,6 @@ def get_service_provider_action(service_provider_action_id: Optional[str] = None
         service_provider_action_id=pulumi.get(__ret__, 'service_provider_action_id'),
         service_provider_service_types=pulumi.get(__ret__, 'service_provider_service_types'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_service_provider_action)
 def get_service_provider_action_output(service_provider_action_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceProviderActionResult]:
     """
@@ -207,4 +209,18 @@ def get_service_provider_action_output(service_provider_action_id: Optional[pulu
 
     :param str service_provider_action_id: Unique Oracle supplied identifier associated with the Service Provider Action.
     """
-    ...
+    __args__ = dict()
+    __args__['serviceProviderActionId'] = service_provider_action_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction', __args__, opts=opts, typ=GetServiceProviderActionResult)
+    return __ret__.apply(lambda __response__: GetServiceProviderActionResult(
+        component=pulumi.get(__response__, 'component'),
+        customer_display_name=pulumi.get(__response__, 'customer_display_name'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
+        service_provider_action_id=pulumi.get(__response__, 'service_provider_action_id'),
+        service_provider_service_types=pulumi.get(__response__, 'service_provider_service_types'),
+        state=pulumi.get(__response__, 'state')))

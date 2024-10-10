@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -127,9 +132,6 @@ def get_ui_password(user_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_ui_password)
 def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUiPasswordResult]:
     """
@@ -150,4 +152,14 @@ def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
 
     :param str user_id: The OCID of the user.
     """
-    ...
+    __args__ = dict()
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getUiPassword:getUiPassword', __args__, opts=opts, typ=GetUiPasswordResult)
+    return __ret__.apply(lambda __response__: GetUiPasswordResult(
+        id=pulumi.get(__response__, 'id'),
+        inactive_status=pulumi.get(__response__, 'inactive_status'),
+        password=pulumi.get(__response__, 'password'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        user_id=pulumi.get(__response__, 'user_id')))

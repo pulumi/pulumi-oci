@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -262,9 +267,6 @@ def get_container_image_signature(image_signature_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-
-
-@_utilities.lift_output_func(get_container_image_signature)
 def get_container_image_signature_output(image_signature_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerImageSignatureResult]:
     """
@@ -284,4 +286,24 @@ def get_container_image_signature_output(image_signature_id: Optional[pulumi.Inp
 
     :param str image_signature_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containersignature.oc1..exampleuniqueID`
     """
-    ...
+    __args__ = dict()
+    __args__['imageSignatureId'] = image_signature_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerImageSignature:getContainerImageSignature', __args__, opts=opts, typ=GetContainerImageSignatureResult)
+    return __ret__.apply(lambda __response__: GetContainerImageSignatureResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        created_by=pulumi.get(__response__, 'created_by'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        image_signature_id=pulumi.get(__response__, 'image_signature_id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
+        kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
+        message=pulumi.get(__response__, 'message'),
+        signature=pulumi.get(__response__, 'signature'),
+        signing_algorithm=pulumi.get(__response__, 'signing_algorithm'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created')))

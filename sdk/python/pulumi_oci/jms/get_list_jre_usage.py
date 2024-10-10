@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -170,9 +175,6 @@ def get_list_jre_usage(application_id: Optional[str] = None,
         items=pulumi.get(__ret__, 'items'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-
-
-@_utilities.lift_output_func(get_list_jre_usage)
 def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str]]] = None,
                               application_name: Optional[pulumi.Input[Optional[str]]] = None,
                               compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -207,4 +209,21 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
     :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
     """
-    ...
+    __args__ = dict()
+    __args__['applicationId'] = application_id
+    __args__['applicationName'] = application_name
+    __args__['compartmentId'] = compartment_id
+    __args__['hostId'] = host_id
+    __args__['timeEnd'] = time_end
+    __args__['timeStart'] = time_start
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Jms/getListJreUsage:getListJreUsage', __args__, opts=opts, typ=GetListJreUsageResult)
+    return __ret__.apply(lambda __response__: GetListJreUsageResult(
+        application_id=pulumi.get(__response__, 'application_id'),
+        application_name=pulumi.get(__response__, 'application_name'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        id=pulumi.get(__response__, 'id'),
+        items=pulumi.get(__response__, 'items'),
+        time_end=pulumi.get(__response__, 'time_end'),
+        time_start=pulumi.get(__response__, 'time_start')))

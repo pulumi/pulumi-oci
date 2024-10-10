@@ -4,32 +4,71 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ApplicationImagePolicyConfigArgs',
+    'ApplicationImagePolicyConfigArgsDict',
     'ApplicationImagePolicyConfigKeyDetailArgs',
+    'ApplicationImagePolicyConfigKeyDetailArgsDict',
     'ApplicationTraceConfigArgs',
+    'ApplicationTraceConfigArgsDict',
     'FunctionProvisionedConcurrencyConfigArgs',
+    'FunctionProvisionedConcurrencyConfigArgsDict',
     'FunctionSourceDetailsArgs',
+    'FunctionSourceDetailsArgsDict',
     'FunctionTraceConfigArgs',
+    'FunctionTraceConfigArgsDict',
     'GetApplicationsFilterArgs',
+    'GetApplicationsFilterArgsDict',
     'GetFunctionsFilterArgs',
+    'GetFunctionsFilterArgsDict',
     'GetFusionEnvironmentAdminUsersFilterArgs',
+    'GetFusionEnvironmentAdminUsersFilterArgsDict',
     'GetFusionEnvironmentDataMaskingActivitiesFilterArgs',
+    'GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict',
     'GetFusionEnvironmentFamiliesFilterArgs',
+    'GetFusionEnvironmentFamiliesFilterArgsDict',
     'GetFusionEnvironmentRefreshActivitiesFilterArgs',
+    'GetFusionEnvironmentRefreshActivitiesFilterArgsDict',
     'GetFusionEnvironmentScheduledActivitiesFilterArgs',
+    'GetFusionEnvironmentScheduledActivitiesFilterArgsDict',
     'GetFusionEnvironmentServiceAttachmentsFilterArgs',
+    'GetFusionEnvironmentServiceAttachmentsFilterArgsDict',
     'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs',
+    'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict',
     'GetFusionEnvironmentsFilterArgs',
+    'GetFusionEnvironmentsFilterArgsDict',
     'GetPbfListingTriggersFilterArgs',
+    'GetPbfListingTriggersFilterArgsDict',
     'GetPbfListingVersionsFilterArgs',
+    'GetPbfListingVersionsFilterArgsDict',
     'GetPbfListingsFilterArgs',
+    'GetPbfListingsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ApplicationImagePolicyConfigArgsDict(TypedDict):
+        is_policy_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Define if image signature verification policy is enabled for the application.
+        """
+        key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgsDict']]]]
+        """
+        (Updatable) A list of KMS key details.
+        """
+elif False:
+    ApplicationImagePolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ApplicationImagePolicyConfigArgs:
@@ -69,6 +108,15 @@ class ApplicationImagePolicyConfigArgs:
         pulumi.set(self, "key_details", value)
 
 
+if not MYPY:
+    class ApplicationImagePolicyConfigKeyDetailArgsDict(TypedDict):
+        kms_key_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+        """
+elif False:
+    ApplicationImagePolicyConfigKeyDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ApplicationImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
@@ -90,6 +138,23 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
     def kms_key_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "kms_key_id", value)
 
+
+if not MYPY:
+    class ApplicationTraceConfigArgsDict(TypedDict):
+        domain_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Define if tracing is enabled for the resource. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ApplicationTraceConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ApplicationTraceConfigArgs:
@@ -138,6 +203,19 @@ class ApplicationTraceConfigArgs:
         pulumi.set(self, "is_enabled", value)
 
 
+if not MYPY:
+    class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
+        strategy: pulumi.Input[str]
+        """
+        (Updatable) The strategy for provisioned concurrency to be used.
+        """
+        count: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Configuration specifying a constant amount of provisioned concurrency.
+        """
+elif False:
+    FunctionProvisionedConcurrencyConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FunctionProvisionedConcurrencyConfigArgs:
     def __init__(__self__, *,
@@ -176,6 +254,19 @@ class FunctionProvisionedConcurrencyConfigArgs:
         pulumi.set(self, "count", value)
 
 
+if not MYPY:
+    class FunctionSourceDetailsArgsDict(TypedDict):
+        pbf_listing_id: pulumi.Input[str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+        """
+        source_type: pulumi.Input[str]
+        """
+        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        """
+elif False:
+    FunctionSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FunctionSourceDetailsArgs:
     def __init__(__self__, *,
@@ -213,6 +304,19 @@ class FunctionSourceDetailsArgs:
         pulumi.set(self, "source_type", value)
 
 
+if not MYPY:
+    class FunctionTraceConfigArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Define if tracing is enabled for the resource. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    FunctionTraceConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FunctionTraceConfigArgs:
     def __init__(__self__, *,
@@ -243,6 +347,14 @@ class FunctionTraceConfigArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class GetApplicationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetApplicationsFilterArgs:
@@ -283,6 +395,14 @@ class GetApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFunctionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFunctionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFunctionsFilterArgs:
     def __init__(__self__, *,
@@ -321,6 +441,14 @@ class GetFunctionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFusionEnvironmentAdminUsersFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentAdminUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFusionEnvironmentAdminUsersFilterArgs:
@@ -361,6 +489,14 @@ class GetFusionEnvironmentAdminUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
     def __init__(__self__, *,
@@ -399,6 +535,14 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFusionEnvironmentFamiliesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentFamiliesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFusionEnvironmentFamiliesFilterArgs:
@@ -439,6 +583,14 @@ class GetFusionEnvironmentFamiliesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFusionEnvironmentRefreshActivitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentRefreshActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFusionEnvironmentRefreshActivitiesFilterArgs:
     def __init__(__self__, *,
@@ -477,6 +629,14 @@ class GetFusionEnvironmentRefreshActivitiesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFusionEnvironmentScheduledActivitiesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentScheduledActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFusionEnvironmentScheduledActivitiesFilterArgs:
@@ -517,6 +677,14 @@ class GetFusionEnvironmentScheduledActivitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFusionEnvironmentServiceAttachmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentServiceAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFusionEnvironmentServiceAttachmentsFilterArgs:
     def __init__(__self__, *,
@@ -555,6 +723,14 @@ class GetFusionEnvironmentServiceAttachmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
@@ -595,6 +771,14 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetFusionEnvironmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetFusionEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFusionEnvironmentsFilterArgs:
     def __init__(__self__, *,
@@ -633,6 +817,17 @@ class GetFusionEnvironmentsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetPbfListingTriggersFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the service trigger source of a PBF.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPbfListingTriggersFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPbfListingTriggersFilterArgs:
@@ -679,6 +874,17 @@ class GetPbfListingTriggersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetPbfListingVersionsFilterArgsDict(TypedDict):
+        name: str
+        """
+        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPbfListingVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPbfListingVersionsFilterArgs:
     def __init__(__self__, *,
@@ -723,6 +929,17 @@ class GetPbfListingVersionsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetPbfListingsFilterArgsDict(TypedDict):
+        name: str
+        """
+        A filter to return only resources that match the entire PBF name given.
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPbfListingsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPbfListingsFilterArgs:

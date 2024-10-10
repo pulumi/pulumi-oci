@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
         time_ended_in_millis=pulumi.get(__ret__, 'time_ended_in_millis'),
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-
-
-@_utilities.lift_output_func(get_workspace_export_requests)
 def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceExportRequestsFilterArgs', 'GetWorkspaceExportRequestsFilterArgsDict']]]]] = None,
                                          name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -224,4 +226,23 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
     :param str time_started_in_millis: Specifies start time of a copy object request.
     :param str workspace_id: The workspace ID.
     """
-    ...
+    __args__ = dict()
+    __args__['exportStatus'] = export_status
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['projection'] = projection
+    __args__['timeEndedInMillis'] = time_ended_in_millis
+    __args__['timeStartedInMillis'] = time_started_in_millis
+    __args__['workspaceId'] = workspace_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataIntegration/getWorkspaceExportRequests:getWorkspaceExportRequests', __args__, opts=opts, typ=GetWorkspaceExportRequestsResult)
+    return __ret__.apply(lambda __response__: GetWorkspaceExportRequestsResult(
+        export_request_summary_collections=pulumi.get(__response__, 'export_request_summary_collections'),
+        export_status=pulumi.get(__response__, 'export_status'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        projection=pulumi.get(__response__, 'projection'),
+        time_ended_in_millis=pulumi.get(__response__, 'time_ended_in_millis'),
+        time_started_in_millis=pulumi.get(__response__, 'time_started_in_millis'),
+        workspace_id=pulumi.get(__response__, 'workspace_id')))

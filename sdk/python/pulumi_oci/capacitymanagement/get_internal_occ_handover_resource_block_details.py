@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,9 +126,6 @@ def get_internal_occ_handover_resource_block_details(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         occ_handover_resource_block_detail_collections=pulumi.get(__ret__, 'occ_handover_resource_block_detail_collections'),
         occ_handover_resource_block_id=pulumi.get(__ret__, 'occ_handover_resource_block_id'))
-
-
-@_utilities.lift_output_func(get_internal_occ_handover_resource_block_details)
 def get_internal_occ_handover_resource_block_details_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalOccHandoverResourceBlockDetailsFilterArgs', 'GetInternalOccHandoverResourceBlockDetailsFilterArgsDict']]]]] = None,
                                                             host_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                             occ_handover_resource_block_id: Optional[pulumi.Input[str]] = None,
@@ -147,4 +149,15 @@ def get_internal_occ_handover_resource_block_details_output(filters: Optional[pu
     :param str host_id: This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
     :param str occ_handover_resource_block_id: The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['hostId'] = host_id
+    __args__['occHandoverResourceBlockId'] = occ_handover_resource_block_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:CapacityManagement/getInternalOccHandoverResourceBlockDetails:getInternalOccHandoverResourceBlockDetails', __args__, opts=opts, typ=GetInternalOccHandoverResourceBlockDetailsResult)
+    return __ret__.apply(lambda __response__: GetInternalOccHandoverResourceBlockDetailsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        id=pulumi.get(__response__, 'id'),
+        occ_handover_resource_block_detail_collections=pulumi.get(__response__, 'occ_handover_resource_block_detail_collections'),
+        occ_handover_resource_block_id=pulumi.get(__response__, 'occ_handover_resource_block_id')))

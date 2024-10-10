@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -186,9 +191,6 @@ def get_limit_values(availability_domain: Optional[str] = None,
         scope_type=pulumi.get(__ret__, 'scope_type'),
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-
-
-@_utilities.lift_output_func(get_limit_values)
 def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                             compartment_id: Optional[pulumi.Input[str]] = None,
                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]]]] = None,
@@ -224,4 +226,23 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     :param str service_name: The target service name.
     :param str subscription_id: The OCID of the subscription assigned to tenant
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['name'] = name
+    __args__['scopeType'] = scope_type
+    __args__['serviceName'] = service_name
+    __args__['subscriptionId'] = subscription_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Limits/getLimitValues:getLimitValues', __args__, opts=opts, typ=GetLimitValuesResult)
+    return __ret__.apply(lambda __response__: GetLimitValuesResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        limit_values=pulumi.get(__response__, 'limit_values'),
+        name=pulumi.get(__response__, 'name'),
+        scope_type=pulumi.get(__response__, 'scope_type'),
+        service_name=pulumi.get(__response__, 'service_name'),
+        subscription_id=pulumi.get(__response__, 'subscription_id')))

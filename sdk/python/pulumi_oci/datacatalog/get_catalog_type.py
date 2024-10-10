@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -254,9 +259,6 @@ def get_catalog_type(catalog_id: Optional[str] = None,
         type_category=pulumi.get(__ret__, 'type_category'),
         type_key=pulumi.get(__ret__, 'type_key'),
         uri=pulumi.get(__ret__, 'uri'))
-
-
-@_utilities.lift_output_func(get_catalog_type)
 def get_catalog_type_output(catalog_id: Optional[pulumi.Input[str]] = None,
                             fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             type_key: Optional[pulumi.Input[str]] = None,
@@ -282,4 +284,25 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[str]] = None,
     :param Sequence[str] fields: Specifies the fields to return in a type response.
     :param str type_key: Unique type key.
     """
-    ...
+    __args__ = dict()
+    __args__['catalogId'] = catalog_id
+    __args__['fields'] = fields
+    __args__['typeKey'] = type_key
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataCatalog/getCatalogType:getCatalogType', __args__, opts=opts, typ=GetCatalogTypeResult)
+    return __ret__.apply(lambda __response__: GetCatalogTypeResult(
+        catalog_id=pulumi.get(__response__, 'catalog_id'),
+        description=pulumi.get(__response__, 'description'),
+        external_type_name=pulumi.get(__response__, 'external_type_name'),
+        fields=pulumi.get(__response__, 'fields'),
+        id=pulumi.get(__response__, 'id'),
+        is_approved=pulumi.get(__response__, 'is_approved'),
+        is_internal=pulumi.get(__response__, 'is_internal'),
+        is_tag=pulumi.get(__response__, 'is_tag'),
+        key=pulumi.get(__response__, 'key'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        state=pulumi.get(__response__, 'state'),
+        type_category=pulumi.get(__response__, 'type_category'),
+        type_key=pulumi.get(__response__, 'type_key'),
+        uri=pulumi.get(__response__, 'uri')))

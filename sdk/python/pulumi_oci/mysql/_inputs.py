@@ -4,58 +4,147 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'ChannelSourceArgs',
+    'ChannelSourceArgsDict',
     'ChannelSourceAnonymousTransactionsHandlingArgs',
+    'ChannelSourceAnonymousTransactionsHandlingArgsDict',
     'ChannelSourceSslCaCertificateArgs',
+    'ChannelSourceSslCaCertificateArgsDict',
     'ChannelTargetArgs',
+    'ChannelTargetArgsDict',
     'ChannelTargetFilterArgs',
+    'ChannelTargetFilterArgsDict',
     'HeatWaveClusterClusterNodeArgs',
+    'HeatWaveClusterClusterNodeArgsDict',
     'MysqlBackupDbSystemSnapshotArgs',
+    'MysqlBackupDbSystemSnapshotArgsDict',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgs',
+    'MysqlBackupDbSystemSnapshotBackupPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs',
+    'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotDataStorageArgs',
+    'MysqlBackupDbSystemSnapshotDataStorageArgsDict',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
+    'MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
+    'MysqlBackupDbSystemSnapshotEndpointArgsDict',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
+    'MysqlBackupDbSystemSnapshotMaintenanceArgsDict',
     'MysqlBackupDbSystemSnapshotSecureConnectionArgs',
+    'MysqlBackupDbSystemSnapshotSecureConnectionArgsDict',
     'MysqlBackupDbSystemSnapshotSummaryArgs',
+    'MysqlBackupDbSystemSnapshotSummaryArgsDict',
     'MysqlBackupSourceDetailsArgs',
+    'MysqlBackupSourceDetailsArgsDict',
     'MysqlConfigurationInitVariablesArgs',
+    'MysqlConfigurationInitVariablesArgsDict',
     'MysqlConfigurationVariablesArgs',
+    'MysqlConfigurationVariablesArgsDict',
     'MysqlDbSystemBackupPolicyArgs',
+    'MysqlDbSystemBackupPolicyArgsDict',
     'MysqlDbSystemBackupPolicyPitrPolicyArgs',
+    'MysqlDbSystemBackupPolicyPitrPolicyArgsDict',
     'MysqlDbSystemChannelArgs',
+    'MysqlDbSystemChannelArgsDict',
     'MysqlDbSystemChannelSourceArgs',
+    'MysqlDbSystemChannelSourceArgsDict',
     'MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs',
+    'MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgsDict',
     'MysqlDbSystemChannelSourceSslCaCertificateArgs',
+    'MysqlDbSystemChannelSourceSslCaCertificateArgsDict',
     'MysqlDbSystemChannelTargetArgs',
+    'MysqlDbSystemChannelTargetArgsDict',
     'MysqlDbSystemChannelTargetFilterArgs',
+    'MysqlDbSystemChannelTargetFilterArgsDict',
     'MysqlDbSystemCurrentPlacementArgs',
+    'MysqlDbSystemCurrentPlacementArgsDict',
     'MysqlDbSystemCustomerContactArgs',
+    'MysqlDbSystemCustomerContactArgsDict',
     'MysqlDbSystemDataStorageArgs',
+    'MysqlDbSystemDataStorageArgsDict',
     'MysqlDbSystemDeletionPolicyArgs',
+    'MysqlDbSystemDeletionPolicyArgsDict',
     'MysqlDbSystemEndpointArgs',
+    'MysqlDbSystemEndpointArgsDict',
     'MysqlDbSystemHeatWaveClusterArgs',
+    'MysqlDbSystemHeatWaveClusterArgsDict',
     'MysqlDbSystemMaintenanceArgs',
+    'MysqlDbSystemMaintenanceArgsDict',
     'MysqlDbSystemPointInTimeRecoveryDetailArgs',
+    'MysqlDbSystemPointInTimeRecoveryDetailArgsDict',
     'MysqlDbSystemSecureConnectionsArgs',
+    'MysqlDbSystemSecureConnectionsArgsDict',
     'MysqlDbSystemSourceArgs',
+    'MysqlDbSystemSourceArgsDict',
     'ReplicaReplicaOverridesArgs',
+    'ReplicaReplicaOverridesArgsDict',
     'ReplicaSecureConnectionArgs',
+    'ReplicaSecureConnectionArgsDict',
     'GetChannelsFilterArgs',
+    'GetChannelsFilterArgsDict',
     'GetMysqlBackupsFilterArgs',
+    'GetMysqlBackupsFilterArgsDict',
     'GetMysqlConfigurationsFilterArgs',
+    'GetMysqlConfigurationsFilterArgsDict',
     'GetMysqlDbSystemsFilterArgs',
+    'GetMysqlDbSystemsFilterArgsDict',
     'GetMysqlVersionFilterArgs',
+    'GetMysqlVersionFilterArgsDict',
     'GetReplicasFilterArgs',
+    'GetReplicasFilterArgsDict',
     'GetShapesFilterArgs',
+    'GetShapesFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class ChannelSourceArgsDict(TypedDict):
+        hostname: pulumi.Input[str]
+        """
+        (Updatable) The network address of the MySQL instance.
+        """
+        password: pulumi.Input[str]
+        """
+        (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        """
+        source_type: pulumi.Input[str]
+        """
+        (Updatable) The specific source identifier.
+        """
+        ssl_mode: pulumi.Input[str]
+        """
+        (Updatable) The SSL mode of the Channel.
+        """
+        username: pulumi.Input[str]
+        """
+        (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        """
+        anonymous_transactions_handling: NotRequired[pulumi.Input['ChannelSourceAnonymousTransactionsHandlingArgsDict']]
+        """
+        (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The port the source MySQL instance listens on.
+        """
+        ssl_ca_certificate: NotRequired[pulumi.Input['ChannelSourceSslCaCertificateArgsDict']]
+        """
+        (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+elif False:
+    ChannelSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ChannelSourceArgs:
@@ -187,6 +276,27 @@ class ChannelSourceArgs:
         pulumi.set(self, "ssl_ca_certificate", value)
 
 
+if not MYPY:
+    class ChannelSourceAnonymousTransactionsHandlingArgsDict(TypedDict):
+        policy: pulumi.Input[str]
+        """
+        (Updatable) Specifies how the replication channel handles anonymous transactions.
+        """
+        last_configured_log_filename: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        last_configured_log_offset: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+elif False:
+    ChannelSourceAnonymousTransactionsHandlingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ChannelSourceAnonymousTransactionsHandlingArgs:
     def __init__(__self__, *,
@@ -257,6 +367,19 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class ChannelSourceSslCaCertificateArgsDict(TypedDict):
+        certificate_type: pulumi.Input[str]
+        """
+        (Updatable) The type of CA certificate.
+        """
+        contents: pulumi.Input[str]
+        """
+        (Updatable) The string containing the CA certificate in PEM format.
+        """
+elif False:
+    ChannelSourceSslCaCertificateArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ChannelSourceSslCaCertificateArgs:
     def __init__(__self__, *,
@@ -293,6 +416,43 @@ class ChannelSourceSslCaCertificateArgs:
     def contents(self, value: pulumi.Input[str]):
         pulumi.set(self, "contents", value)
 
+
+if not MYPY:
+    class ChannelTargetArgsDict(TypedDict):
+        db_system_id: pulumi.Input[str]
+        """
+        The OCID of the target DB System.
+        """
+        target_type: pulumi.Input[str]
+        """
+        (Updatable) The specific target identifier.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        applier_username: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The username for the replication applier of the target MySQL DB System.
+        """
+        channel_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
+        """
+        delay_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        """
+        filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgsDict']]]]
+        """
+        (Updatable) Replication filter rules to be applied at the DB System Channel target.
+        """
+        tables_without_primary_key_handling: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
+        """
+elif False:
+    ChannelTargetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ChannelTargetArgs:
@@ -419,6 +579,21 @@ class ChannelTargetArgs:
         pulumi.set(self, "tables_without_primary_key_handling", value)
 
 
+if not MYPY:
+    class ChannelTargetFilterArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        (Updatable) The type of the filter rule.
+
+        For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+        """
+        value: pulumi.Input[str]
+        """
+        (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+elif False:
+    ChannelTargetFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ChannelTargetFilterArgs:
     def __init__(__self__, *,
@@ -459,6 +634,30 @@ class ChannelTargetFilterArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class HeatWaveClusterClusterNodeArgsDict(TypedDict):
+        node_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the node within MySQL HeatWave cluster.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+elif False:
+    HeatWaveClusterClusterNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class HeatWaveClusterClusterNodeArgs:
@@ -536,6 +735,123 @@ class HeatWaveClusterClusterNodeArgs:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
+        admin_username: NotRequired[pulumi.Input[str]]
+        """
+        The username for the administrative user.
+        """
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The Availability Domain where the primary DB System should be located.
+        """
+        backup_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyArgsDict']]]]
+        """
+        The Backup policy for the DB System.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the compartment the backup exists in.
+        """
+        configuration_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Configuration to be used for Instances in this DB System.
+        """
+        crash_recovery: NotRequired[pulumi.Input[str]]
+        """
+        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
+        """
+        data_storage_size_in_gb: NotRequired[pulumi.Input[int]]
+        """
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        """
+        data_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgsDict']]]]
+        """
+        Data Storage information.
+        """
+        database_management: NotRequired[pulumi.Input[str]]
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        deletion_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict']]]]
+        """
+        The Deletion policy for the DB System.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-supplied description for the backup.
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-supplied display name for the backup.
+        """
+        endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgsDict']]]]
+        """
+        The network endpoints available for this DB System.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        The name of the Fault Domain the DB System is located in.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        hostname_label: NotRequired[pulumi.Input[str]]
+        """
+        The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the backup itself
+        """
+        ip_address: NotRequired[pulumi.Input[str]]
+        """
+        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        """
+        is_highly_available: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies if the DB System is highly available.
+        """
+        maintenances: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgsDict']]]]
+        """
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
+        """
+        mysql_version: NotRequired[pulumi.Input[str]]
+        """
+        The MySQL server version of the DB System used for backup.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The port for primary endpoint of the DB System to listen on.
+        """
+        port_x: NotRequired[pulumi.Input[int]]
+        """
+        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        secure_connections: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgsDict']]]]
+        """
+        Secure connection configuration details.
+        """
+        shape_name: NotRequired[pulumi.Input[str]]
+        """
+        The shape of the DB System instance used for backup.
+        """
+        subnet_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the subnet the DB System is associated with.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotArgs:
@@ -992,6 +1308,35 @@ class MysqlBackupDbSystemSnapshotArgs:
         pulumi.set(self, "subnet_id", value)
 
 
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotBackupPolicyArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies if PITR is enabled or disabled.
+        """
+        pitr_policies: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict']]]]
+        """
+        The PITR policy for the DB System.
+        """
+        retention_in_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Number of days to retain this backup.
+        """
+        window_start_time: NotRequired[pulumi.Input[str]]
+        """
+        The start time of the maintenance window.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotBackupPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     def __init__(__self__, *,
@@ -1095,6 +1440,15 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
         pulumi.set(self, "window_start_time", value)
 
 
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies if PITR is enabled or disabled.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
     def __init__(__self__, *,
@@ -1117,6 +1471,31 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotDataStorageArgsDict(TypedDict):
+        allocated_storage_size_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        """
+        data_storage_size_in_gb: NotRequired[pulumi.Input[int]]
+        """
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
+        """
+        data_storage_size_limit_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        """
+        is_auto_expand_storage_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        """
+        max_storage_size_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotDataStorageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotDataStorageArgs:
@@ -1205,6 +1584,23 @@ class MysqlBackupDbSystemSnapshotDataStorageArgs:
         pulumi.set(self, "max_storage_size_in_gbs", value)
 
 
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict(TypedDict):
+        automatic_backup_retention: NotRequired[pulumi.Input[str]]
+        """
+        Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+        """
+        final_backup: NotRequired[pulumi.Input[str]]
+        """
+        Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+        """
+        is_delete_protected: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
     def __init__(__self__, *,
@@ -1259,6 +1655,47 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
     def is_delete_protected(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_delete_protected", value)
 
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotEndpointArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        The network address of the DB System.
+        """
+        ip_address: NotRequired[pulumi.Input[str]]
+        """
+        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        """
+        modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The access modes from the client that this endpoint supports.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The port for primary endpoint of the DB System to listen on.
+        """
+        port_x: NotRequired[pulumi.Input[int]]
+        """
+        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        """
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        resource_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        status_details: NotRequired[pulumi.Input[str]]
+        """
+        Additional information about the current endpoint status.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotEndpointArgs:
@@ -1411,6 +1848,15 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
         pulumi.set(self, "status_details", value)
 
 
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotMaintenanceArgsDict(TypedDict):
+        window_start_time: NotRequired[pulumi.Input[str]]
+        """
+        The start time of the maintenance window.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotMaintenanceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     def __init__(__self__, *,
@@ -1433,6 +1879,19 @@ class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     def window_start_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "window_start_time", value)
 
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotSecureConnectionArgsDict(TypedDict):
+        certificate_generation_type: NotRequired[pulumi.Input[str]]
+        """
+        Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the certificate to use.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotSecureConnectionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotSecureConnectionArgs:
@@ -1472,6 +1931,23 @@ class MysqlBackupDbSystemSnapshotSecureConnectionArgs:
     def certificate_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "certificate_id", value)
 
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotSummaryArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A user-supplied display name for the backup.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        OCID of the backup itself
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotSummaryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlBackupDbSystemSnapshotSummaryArgs:
@@ -1528,6 +2004,23 @@ class MysqlBackupDbSystemSnapshotSummaryArgs:
         pulumi.set(self, "region", value)
 
 
+if not MYPY:
+    class MysqlBackupSourceDetailsArgsDict(TypedDict):
+        backup_id: pulumi.Input[str]
+        """
+        The OCID of the source backup.
+        """
+        compartment_id: pulumi.Input[str]
+        """
+        (Updatable) The OCID of the compartment the backup exists in.
+        """
+        region: pulumi.Input[str]
+        """
+        The region of the backup source.
+        """
+elif False:
+    MysqlBackupSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlBackupSourceDetailsArgs:
     def __init__(__self__, *,
@@ -1580,6 +2073,21 @@ class MysqlBackupSourceDetailsArgs:
         pulumi.set(self, "region", value)
 
 
+if not MYPY:
+    class MysqlConfigurationInitVariablesArgsDict(TypedDict):
+        lower_case_table_names: NotRequired[pulumi.Input[str]]
+        """
+        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+
+        lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+
+        Valid values are:
+        * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+        * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
+        """
+elif False:
+    MysqlConfigurationInitVariablesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlConfigurationInitVariablesArgs:
     def __init__(__self__, *,
@@ -1614,6 +2122,419 @@ class MysqlConfigurationInitVariablesArgs:
     def lower_case_table_names(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lower_case_table_names", value)
 
+
+if not MYPY:
+    class MysqlConfigurationVariablesArgsDict(TypedDict):
+        autocommit: NotRequired[pulumi.Input[bool]]
+        """
+        ("autocommit")
+        """
+        big_tables: NotRequired[pulumi.Input[bool]]
+        """
+        If enabled, the server stores all temporary tables on disk rather than in memory.
+
+        bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+        """
+        binlog_expire_logs_seconds: NotRequired[pulumi.Input[int]]
+        """
+        Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        """
+        binlog_row_metadata: NotRequired[pulumi.Input[str]]
+        """
+        Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+        """
+        binlog_row_value_options: NotRequired[pulumi.Input[str]]
+        """
+        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+        """
+        binlog_transaction_compression: NotRequired[pulumi.Input[bool]]
+        """
+        Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        """
+        completion_type: NotRequired[pulumi.Input[str]]
+        """
+        ("completion_type")
+        """
+        connect_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+
+        connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+
+        Increasing the connect_timeout value might help if clients frequently encounter errors of the form "Lost connection to MySQL server at 'XXX', system error: errno".
+        """
+        connection_memory_chunk_size: NotRequired[pulumi.Input[int]]
+        """
+        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+
+        connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+        """
+        connection_memory_limit: NotRequired[pulumi.Input[str]]
+        """
+        Set the maximum amount of memory that can be used by a single user connection.
+
+        connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+        """
+        cte_max_recursion_depth: NotRequired[pulumi.Input[str]]
+        """
+        ("cte_max_recursion_depth")
+        """
+        default_authentication_plugin: NotRequired[pulumi.Input[str]]
+        """
+        ("default_authentication_plugin")
+        """
+        foreign_key_checks: NotRequired[pulumi.Input[bool]]
+        """
+        ("foreign_key_checks")
+        """
+        generated_random_password_length: NotRequired[pulumi.Input[int]]
+        """
+        ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        global_connection_memory_limit: NotRequired[pulumi.Input[str]]
+        """
+        Set the total amount of memory that can be used by all user connections.
+
+        globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+        """
+        global_connection_memory_tracking: NotRequired[pulumi.Input[bool]]
+        """
+        Determines whether the MySQL server calculates Global_connection_memory.
+
+        globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+        """
+        group_replication_consistency: NotRequired[pulumi.Input[str]]
+        """
+        * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+        * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+        * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        """
+        information_schema_stats_expiry: NotRequired[pulumi.Input[int]]
+        """
+        ("information_schema_stats_expiry")
+        """
+        innodb_buffer_pool_dump_pct: NotRequired[pulumi.Input[int]]
+        """
+        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+
+        innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+
+        The range is 1 to 100. The default value is 25.
+
+        For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
+        """
+        innodb_buffer_pool_instances: NotRequired[pulumi.Input[int]]
+        """
+        ("innodb_buffer_pool_instances")
+        """
+        innodb_buffer_pool_size: NotRequired[pulumi.Input[str]]
+        """
+        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+
+        innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+
+        The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+        """
+        innodb_ddl_buffer_size: NotRequired[pulumi.Input[str]]
+        """
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        """
+        innodb_ddl_threads: NotRequired[pulumi.Input[int]]
+        """
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        """
+        innodb_ft_enable_stopword: NotRequired[pulumi.Input[bool]]
+        """
+        ("innodb_ft_enable_stopword")
+        """
+        innodb_ft_max_token_size: NotRequired[pulumi.Input[int]]
+        """
+        ("innodb_ft_max_token_size")
+        """
+        innodb_ft_min_token_size: NotRequired[pulumi.Input[int]]
+        """
+        ("innodb_ft_min_token_size")
+        """
+        innodb_ft_num_word_optimize: NotRequired[pulumi.Input[int]]
+        """
+        ("innodb_ft_num_word_optimize")
+        """
+        innodb_ft_result_cache_limit: NotRequired[pulumi.Input[str]]
+        """
+        ("innodb_ft_result_cache_limit")
+        """
+        innodb_ft_server_stopword_table: NotRequired[pulumi.Input[str]]
+        """
+        ("innodb_ft_server_stopword_table")
+        """
+        innodb_lock_wait_timeout: NotRequired[pulumi.Input[int]]
+        """
+        ("innodb_lock_wait_timeout")
+        """
+        innodb_log_writer_threads: NotRequired[pulumi.Input[bool]]
+        """
+        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+
+        This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+        """
+        innodb_max_purge_lag: NotRequired[pulumi.Input[str]]
+        """
+        The desired maximum purge lag in terms of transactions.
+
+        InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+
+        If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+
+        The default value is 0, which means there is no maximum purge lag and no delay.
+
+        innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
+        """
+        innodb_max_purge_lag_delay: NotRequired[pulumi.Input[int]]
+        """
+        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+
+        The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+
+        innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+        """
+        innodb_stats_persistent_sample_pages: NotRequired[pulumi.Input[str]]
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+
+        innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+
+        innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+        """
+        innodb_stats_transient_sample_pages: NotRequired[pulumi.Input[str]]
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+
+        innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+
+        innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+
+        innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+        """
+        interactive_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds the server waits for activity on an interactive connection before closing it.
+
+        interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+        """
+        local_infile: NotRequired[pulumi.Input[bool]]
+        """
+        ("local_infile")
+        """
+        mandatory_roles: NotRequired[pulumi.Input[str]]
+        """
+        ("mandatory_roles")
+        """
+        max_allowed_packet: NotRequired[pulumi.Input[int]]
+        """
+        The maximum size of one packet or any generated/intermediate string.
+
+        This is the mysql variable "max_allowed_packet".
+        """
+        max_binlog_cache_size: NotRequired[pulumi.Input[str]]
+        """
+        Sets the size of the transaction cache.
+
+        maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+        """
+        max_connect_errors: NotRequired[pulumi.Input[str]]
+        """
+        ("max_connect_errors")
+        """
+        max_connections: NotRequired[pulumi.Input[int]]
+        """
+        ("max_connections")
+        """
+        max_execution_time: NotRequired[pulumi.Input[str]]
+        """
+        ("max_execution_time")
+        """
+        max_heap_table_size: NotRequired[pulumi.Input[str]]
+        """
+        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+
+        maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+        """
+        max_prepared_stmt_count: NotRequired[pulumi.Input[int]]
+        """
+        ("max_prepared_stmt_count")
+        """
+        mysql_firewall_mode: NotRequired[pulumi.Input[bool]]
+        """
+        ("mysql_firewall_mode")
+        """
+        mysql_zstd_default_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+        """
+        mysqlx_connect_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+
+        mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+        """
+        mysqlx_deflate_default_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+        """
+        mysqlx_deflate_max_client_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+        """
+        mysqlx_document_id_unique_prefix: NotRequired[pulumi.Input[int]]
+        """
+        ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        mysqlx_enable_hello_notice: NotRequired[pulumi.Input[bool]]
+        """
+        ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        mysqlx_idle_worker_thread_timeout: NotRequired[pulumi.Input[int]]
+        """
+        ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        mysqlx_interactive_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds to wait for interactive clients to timeout.
+
+        mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+        """
+        mysqlx_lz4default_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+        """
+        mysqlx_lz4max_client_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+        """
+        mysqlx_max_allowed_packet: NotRequired[pulumi.Input[int]]
+        """
+        The maximum size of network packets that can be received by X Plugin.
+
+        This is the mysql variable "mysqlx_max_allowed_packet".
+        """
+        mysqlx_min_worker_threads: NotRequired[pulumi.Input[int]]
+        """
+        ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        mysqlx_read_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+
+        mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+        """
+        mysqlx_wait_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds that X Plugin waits for activity on a connection.
+
+        mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+        """
+        mysqlx_write_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+
+        mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+        """
+        mysqlx_zstd_default_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+        """
+        mysqlx_zstd_max_client_compression_level: NotRequired[pulumi.Input[int]]
+        """
+        Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+        """
+        net_read_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds to wait for more data from a connection before aborting the read.
+
+        netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+        """
+        net_write_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds to wait for a block to be written to a connection before aborting the write.
+
+        netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+        """
+        parser_max_mem_size: NotRequired[pulumi.Input[str]]
+        """
+        ("parser_max_mem_size")
+        """
+        query_alloc_block_size: NotRequired[pulumi.Input[str]]
+        """
+        ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        query_prealloc_size: NotRequired[pulumi.Input[str]]
+        """
+        ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        regexp_time_limit: NotRequired[pulumi.Input[int]]
+        """
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        sort_buffer_size: NotRequired[pulumi.Input[str]]
+        """
+        Each session that must perform a sort allocates a buffer of this size.
+
+        sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+        """
+        sql_mode: NotRequired[pulumi.Input[str]]
+        """
+        ("sql_mode")
+        """
+        sql_require_primary_key: NotRequired[pulumi.Input[bool]]
+        """
+        ("sql_require_primary_key")
+        """
+        sql_warnings: NotRequired[pulumi.Input[bool]]
+        """
+        ("sql_warnings")
+        """
+        thread_pool_dedicated_listeners: NotRequired[pulumi.Input[bool]]
+        """
+        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        """
+        thread_pool_max_transactions_limit: NotRequired[pulumi.Input[int]]
+        """
+        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        Initializes the time zone for each client that connects.
+
+        This corresponds to the MySQL System Variable "time_zone".
+
+        The values can be given in one of the following formats, none of which are case-sensitive:
+        * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
+        * As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+        """
+        tmp_table_size: NotRequired[pulumi.Input[str]]
+        """
+        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+
+        tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+        """
+        transaction_isolation: NotRequired[pulumi.Input[str]]
+        """
+        ("transaction_isolation")
+        """
+        wait_timeout: NotRequired[pulumi.Input[int]]
+        """
+        The number of seconds the server waits for activity on a noninteractive connection before closing it.
+
+        waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    MysqlConfigurationVariablesArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlConfigurationVariablesArgs:
@@ -3098,6 +4019,47 @@ class MysqlConfigurationVariablesArgs:
         pulumi.set(self, "wait_timeout", value)
 
 
+if not MYPY:
+    class MysqlDbSystemBackupPolicyArgsDict(TypedDict):
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
+        Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
+        Example: `{"bar-key": "value"}`
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies if automatic backups are enabled.
+        """
+        pitr_policy: NotRequired[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgsDict']]
+        """
+        (Updatable) The PITR policy for the DB System.
+        """
+        retention_in_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Number of days to retain an automatic backup.
+        """
+        window_start_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
+
+        This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+
+        At some point in the window, the system may incur a brief service disruption as the backup is performed.
+        """
+elif False:
+    MysqlDbSystemBackupPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemBackupPolicyArgs:
     def __init__(__self__, *,
@@ -3225,6 +4187,15 @@ class MysqlDbSystemBackupPolicyArgs:
         pulumi.set(self, "window_start_time", value)
 
 
+if not MYPY:
+    class MysqlDbSystemBackupPolicyPitrPolicyArgsDict(TypedDict):
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies if PITR is enabled or disabled.
+        """
+elif False:
+    MysqlDbSystemBackupPolicyPitrPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemBackupPolicyPitrPolicyArgs:
     def __init__(__self__, *,
@@ -3247,6 +4218,59 @@ class MysqlDbSystemBackupPolicyPitrPolicyArgs:
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
 
+
+if not MYPY:
+    class MysqlDbSystemChannelArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the compartment.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        display_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The user-friendly name for the DB System. It does not have to be unique.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the DB System.
+        """
+        is_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Whether the Channel has been enabled by the user.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[str]]
+        """
+        Additional information about the current lifecycleState.
+        """
+        sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgsDict']]]]
+        """
+        Parameters detailing how to provision the initial data of the system.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
+        """
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgsDict']]]]
+        """
+        Details about the Channel target.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the DB System was created.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the DB System was last updated.
+        """
+elif False:
+    MysqlDbSystemChannelArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemChannelArgs:
@@ -3447,6 +4471,39 @@ class MysqlDbSystemChannelArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class MysqlDbSystemChannelSourceArgsDict(TypedDict):
+        anonymous_transactions_handlings: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgsDict']]]]
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        The network address of the DB System.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The port for primary endpoint of the DB System to listen on.
+        """
+        source_type: NotRequired[pulumi.Input[str]]
+        """
+        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
+        """
+        ssl_ca_certificates: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgsDict']]]]
+        """
+        The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        ssl_mode: NotRequired[pulumi.Input[str]]
+        """
+        The SSL mode of the Channel.
+        """
+        username: NotRequired[pulumi.Input[str]]
+        """
+        The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        """
+elif False:
+    MysqlDbSystemChannelSourceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemChannelSourceArgs:
     def __init__(__self__, *,
@@ -3566,6 +4623,27 @@ class MysqlDbSystemChannelSourceArgs:
         pulumi.set(self, "username", value)
 
 
+if not MYPY:
+    class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgsDict(TypedDict):
+        last_configured_log_filename: NotRequired[pulumi.Input[str]]
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        last_configured_log_offset: NotRequired[pulumi.Input[str]]
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        policy: NotRequired[pulumi.Input[str]]
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+elif False:
+    MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
     def __init__(__self__, *,
@@ -3637,6 +4715,19 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class MysqlDbSystemChannelSourceSslCaCertificateArgsDict(TypedDict):
+        certificate_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of CA certificate.
+        """
+        contents: NotRequired[pulumi.Input[str]]
+        """
+        The string containing the CA certificate in PEM format.
+        """
+elif False:
+    MysqlDbSystemChannelSourceSslCaCertificateArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemChannelSourceSslCaCertificateArgs:
     def __init__(__self__, *,
@@ -3675,6 +4766,39 @@ class MysqlDbSystemChannelSourceSslCaCertificateArgs:
     def contents(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "contents", value)
 
+
+if not MYPY:
+    class MysqlDbSystemChannelTargetArgsDict(TypedDict):
+        applier_username: NotRequired[pulumi.Input[str]]
+        """
+        The username for the replication applier of the target MySQL DB System.
+        """
+        channel_name: NotRequired[pulumi.Input[str]]
+        """
+        The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
+        """
+        db_system_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        """
+        delay_in_seconds: NotRequired[pulumi.Input[int]]
+        """
+        Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
+        """
+        filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgsDict']]]]
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        tables_without_primary_key_handling: NotRequired[pulumi.Input[str]]
+        """
+        Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
+        """
+        target_type: NotRequired[pulumi.Input[str]]
+        """
+        The specific target identifier.
+        """
+elif False:
+    MysqlDbSystemChannelTargetArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemChannelTargetArgs:
@@ -3795,6 +4919,19 @@ class MysqlDbSystemChannelTargetArgs:
         pulumi.set(self, "target_type", value)
 
 
+if not MYPY:
+    class MysqlDbSystemChannelTargetFilterArgsDict(TypedDict):
+        type: NotRequired[pulumi.Input[str]]
+        """
+        The type of the filter rule.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+elif False:
+    MysqlDbSystemChannelTargetFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemChannelTargetFilterArgs:
     def __init__(__self__, *,
@@ -3833,6 +4970,27 @@ class MysqlDbSystemChannelTargetFilterArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class MysqlDbSystemCurrentPlacementArgsDict(TypedDict):
+        availability_domain: NotRequired[pulumi.Input[str]]
+        """
+        The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
+        """
+        fault_domain: NotRequired[pulumi.Input[str]]
+        """
+        The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
+        """
+elif False:
+    MysqlDbSystemCurrentPlacementArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemCurrentPlacementArgs:
@@ -3889,6 +5047,15 @@ class MysqlDbSystemCurrentPlacementArgs:
         pulumi.set(self, "fault_domain", value)
 
 
+if not MYPY:
+    class MysqlDbSystemCustomerContactArgsDict(TypedDict):
+        email: pulumi.Input[str]
+        """
+        (Updatable) The email address used by Oracle to send notifications regarding the DB System.
+        """
+elif False:
+    MysqlDbSystemCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemCustomerContactArgs:
     def __init__(__self__, *,
@@ -3910,6 +5077,35 @@ class MysqlDbSystemCustomerContactArgs:
     def email(self, value: pulumi.Input[str]):
         pulumi.set(self, "email", value)
 
+
+if not MYPY:
+    class MysqlDbSystemDataStorageArgsDict(TypedDict):
+        allocated_storage_size_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
+        """
+        data_storage_size_in_gb: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        """
+        data_storage_size_limit_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
+        """
+        is_auto_expand_storage_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+        """
+        max_storage_size_in_gbs: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
+
+        DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+
+        It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+        """
+elif False:
+    MysqlDbSystemDataStorageArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemDataStorageArgs:
@@ -4006,6 +5202,23 @@ class MysqlDbSystemDataStorageArgs:
         pulumi.set(self, "max_storage_size_in_gbs", value)
 
 
+if not MYPY:
+    class MysqlDbSystemDeletionPolicyArgsDict(TypedDict):
+        automatic_backup_retention: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
+        """
+        final_backup: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
+        """
+        is_delete_protected: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
+        """
+elif False:
+    MysqlDbSystemDeletionPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemDeletionPolicyArgs:
     def __init__(__self__, *,
@@ -4060,6 +5273,47 @@ class MysqlDbSystemDeletionPolicyArgs:
     def is_delete_protected(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_delete_protected", value)
 
+
+if not MYPY:
+    class MysqlDbSystemEndpointArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        The network address of the DB System.
+        """
+        ip_address: NotRequired[pulumi.Input[str]]
+        """
+        The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        """
+        modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        The access modes from the client that this endpoint supports.
+        """
+        port: NotRequired[pulumi.Input[int]]
+        """
+        The port for primary endpoint of the DB System to listen on.
+        """
+        port_x: NotRequired[pulumi.Input[int]]
+        """
+        The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        """
+        resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        resource_type: NotRequired[pulumi.Input[str]]
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        status_details: NotRequired[pulumi.Input[str]]
+        """
+        Additional information about the current endpoint status.
+        """
+elif False:
+    MysqlDbSystemEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemEndpointArgs:
@@ -4212,6 +5466,36 @@ class MysqlDbSystemEndpointArgs:
         pulumi.set(self, "status_details", value)
 
 
+if not MYPY:
+    class MysqlDbSystemHeatWaveClusterArgsDict(TypedDict):
+        cluster_size: NotRequired[pulumi.Input[int]]
+        """
+        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
+        """
+        is_lakehouse_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Lakehouse enabled status for the HeatWave cluster.
+        """
+        shape_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The name of the shape. The shape determines the resources allocated
+        * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the DB System was created.
+        """
+        time_updated: NotRequired[pulumi.Input[str]]
+        """
+        The time the DB System was last updated.
+        """
+elif False:
+    MysqlDbSystemHeatWaveClusterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemHeatWaveClusterArgs:
     def __init__(__self__, *,
@@ -4317,6 +5601,23 @@ class MysqlDbSystemHeatWaveClusterArgs:
         pulumi.set(self, "time_updated", value)
 
 
+if not MYPY:
+    class MysqlDbSystemMaintenanceArgsDict(TypedDict):
+        window_start_time: pulumi.Input[str]
+        """
+        (Updatable) The start of the 2 hour maintenance window.
+
+        This string is of the format: "{day-of-week} {time-of-day}".
+
+        "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+
+        "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+
+        If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+        """
+elif False:
+    MysqlDbSystemMaintenanceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemMaintenanceArgs:
     def __init__(__self__, *,
@@ -4354,6 +5655,19 @@ class MysqlDbSystemMaintenanceArgs:
     def window_start_time(self, value: pulumi.Input[str]):
         pulumi.set(self, "window_start_time", value)
 
+
+if not MYPY:
+    class MysqlDbSystemPointInTimeRecoveryDetailArgsDict(TypedDict):
+        time_earliest_recovery_point: NotRequired[pulumi.Input[str]]
+        """
+        Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        time_latest_recovery_point: NotRequired[pulumi.Input[str]]
+        """
+        Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+elif False:
+    MysqlDbSystemPointInTimeRecoveryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemPointInTimeRecoveryDetailArgs:
@@ -4394,6 +5708,19 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
         pulumi.set(self, "time_latest_recovery_point", value)
 
 
+if not MYPY:
+    class MysqlDbSystemSecureConnectionsArgsDict(TypedDict):
+        certificate_generation_type: pulumi.Input[str]
+        """
+        (Updatable) Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the certificate to use.
+        """
+elif False:
+    MysqlDbSystemSecureConnectionsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class MysqlDbSystemSecureConnectionsArgs:
     def __init__(__self__, *,
@@ -4431,6 +5758,31 @@ class MysqlDbSystemSecureConnectionsArgs:
     def certificate_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "certificate_id", value)
 
+
+if not MYPY:
+    class MysqlDbSystemSourceArgsDict(TypedDict):
+        source_type: pulumi.Input[str]
+        """
+        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
+        """
+        backup_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the backup to be used as the source for the new DB System.
+        """
+        db_system_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        """
+        recovery_point: NotRequired[pulumi.Input[str]]
+        """
+        The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+        """
+        source_url: NotRequired[pulumi.Input[str]]
+        """
+        The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+        """
+elif False:
+    MysqlDbSystemSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class MysqlDbSystemSourceArgs:
@@ -4518,6 +5870,27 @@ class MysqlDbSystemSourceArgs:
         pulumi.set(self, "source_url", value)
 
 
+if not MYPY:
+    class ReplicaReplicaOverridesArgsDict(TypedDict):
+        configuration_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Configuration to be used by the read replica.
+        """
+        mysql_version: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The MySQL version to be used by the read replica.
+        """
+        shape_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ReplicaReplicaOverridesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ReplicaReplicaOverridesArgs:
     def __init__(__self__, *,
@@ -4581,6 +5954,19 @@ class ReplicaReplicaOverridesArgs:
         pulumi.set(self, "shape_name", value)
 
 
+if not MYPY:
+    class ReplicaSecureConnectionArgsDict(TypedDict):
+        certificate_generation_type: NotRequired[pulumi.Input[str]]
+        """
+        Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the certificate to use.
+        """
+elif False:
+    ReplicaSecureConnectionArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ReplicaSecureConnectionArgs:
     def __init__(__self__, *,
@@ -4619,6 +6005,14 @@ class ReplicaSecureConnectionArgs:
     def certificate_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "certificate_id", value)
 
+
+if not MYPY:
+    class GetChannelsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetChannelsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetChannelsFilterArgs:
@@ -4659,6 +6053,14 @@ class GetChannelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMysqlBackupsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMysqlBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMysqlBackupsFilterArgs:
     def __init__(__self__, *,
@@ -4697,6 +6099,14 @@ class GetMysqlBackupsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMysqlConfigurationsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMysqlConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMysqlConfigurationsFilterArgs:
@@ -4737,6 +6147,14 @@ class GetMysqlConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetMysqlDbSystemsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMysqlDbSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetMysqlDbSystemsFilterArgs:
     def __init__(__self__, *,
@@ -4775,6 +6193,14 @@ class GetMysqlDbSystemsFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetMysqlVersionFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetMysqlVersionFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetMysqlVersionFilterArgs:
@@ -4815,6 +6241,14 @@ class GetMysqlVersionFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetReplicasFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetReplicasFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetReplicasFilterArgs:
     def __init__(__self__, *,
@@ -4853,6 +6287,17 @@ class GetReplicasFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetShapesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetShapesFilterArgs:

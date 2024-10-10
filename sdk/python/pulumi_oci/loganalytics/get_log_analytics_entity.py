@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -368,9 +373,6 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
         time_last_discovered=pulumi.get(__ret__, 'time_last_discovered'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timezone_region=pulumi.get(__ret__, 'timezone_region'))
-
-
-@_utilities.lift_output_func(get_log_analytics_entity)
 def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Input[str]] = None,
                                     namespace: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntityResult]:
@@ -393,4 +395,33 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     :param str log_analytics_entity_id: The log analytics entity OCID.
     :param str namespace: The Logging Analytics namespace used for the request.
     """
-    ...
+    __args__ = dict()
+    __args__['logAnalyticsEntityId'] = log_analytics_entity_id
+    __args__['namespace'] = namespace
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity', __args__, opts=opts, typ=GetLogAnalyticsEntityResult)
+    return __ret__.apply(lambda __response__: GetLogAnalyticsEntityResult(
+        are_logs_collected=pulumi.get(__response__, 'are_logs_collected'),
+        cloud_resource_id=pulumi.get(__response__, 'cloud_resource_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        entity_type_internal_name=pulumi.get(__response__, 'entity_type_internal_name'),
+        entity_type_name=pulumi.get(__response__, 'entity_type_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname=pulumi.get(__response__, 'hostname'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        log_analytics_entity_id=pulumi.get(__response__, 'log_analytics_entity_id'),
+        management_agent_compartment_id=pulumi.get(__response__, 'management_agent_compartment_id'),
+        management_agent_display_name=pulumi.get(__response__, 'management_agent_display_name'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        name=pulumi.get(__response__, 'name'),
+        namespace=pulumi.get(__response__, 'namespace'),
+        properties=pulumi.get(__response__, 'properties'),
+        source_id=pulumi.get(__response__, 'source_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_last_discovered=pulumi.get(__response__, 'time_last_discovered'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        timezone_region=pulumi.get(__response__, 'timezone_region')))

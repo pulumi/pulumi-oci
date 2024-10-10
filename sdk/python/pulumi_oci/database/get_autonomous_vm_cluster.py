@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -718,9 +723,6 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         total_autonomous_data_storage_in_tbs=pulumi.get(__ret__, 'total_autonomous_data_storage_in_tbs'),
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
-
-
-@_utilities.lift_output_func(get_autonomous_vm_cluster)
 def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVmClusterResult]:
     """
@@ -740,4 +742,60 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.I
 
     :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousVmCluster:getAutonomousVmCluster', __args__, opts=opts, typ=GetAutonomousVmClusterResult)
+    return __ret__.apply(lambda __response__: GetAutonomousVmClusterResult(
+        autonomous_data_storage_percentage=pulumi.get(__response__, 'autonomous_data_storage_percentage'),
+        autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'autonomous_data_storage_size_in_tbs'),
+        autonomous_vm_cluster_id=pulumi.get(__response__, 'autonomous_vm_cluster_id'),
+        available_autonomous_data_storage_size_in_tbs=pulumi.get(__response__, 'available_autonomous_data_storage_size_in_tbs'),
+        available_container_databases=pulumi.get(__response__, 'available_container_databases'),
+        available_cpus=pulumi.get(__response__, 'available_cpus'),
+        available_data_storage_size_in_tbs=pulumi.get(__response__, 'available_data_storage_size_in_tbs'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
+        cpu_core_count_per_node=pulumi.get(__response__, 'cpu_core_count_per_node'),
+        cpu_percentage=pulumi.get(__response__, 'cpu_percentage'),
+        cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),
+        cpus_lowest_scaled_value=pulumi.get(__response__, 'cpus_lowest_scaled_value'),
+        data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
+        data_storage_size_in_tbs=pulumi.get(__response__, 'data_storage_size_in_tbs'),
+        db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),
+        db_servers=pulumi.get(__response__, 'db_servers'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
+        exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__response__, 'exadata_storage_in_tbs_lowest_scaled_value'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_local_backup_enabled=pulumi.get(__response__, 'is_local_backup_enabled'),
+        is_mtls_enabled=pulumi.get(__response__, 'is_mtls_enabled'),
+        last_maintenance_run_id=pulumi.get(__response__, 'last_maintenance_run_id'),
+        license_model=pulumi.get(__response__, 'license_model'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        max_acds_lowest_scaled_value=pulumi.get(__response__, 'max_acds_lowest_scaled_value'),
+        memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
+        memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),
+        node_count=pulumi.get(__response__, 'node_count'),
+        non_provisionable_autonomous_container_databases=pulumi.get(__response__, 'non_provisionable_autonomous_container_databases'),
+        ocpus_enabled=pulumi.get(__response__, 'ocpus_enabled'),
+        provisionable_autonomous_container_databases=pulumi.get(__response__, 'provisionable_autonomous_container_databases'),
+        provisioned_autonomous_container_databases=pulumi.get(__response__, 'provisioned_autonomous_container_databases'),
+        provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
+        reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
+        scan_listener_port_non_tls=pulumi.get(__response__, 'scan_listener_port_non_tls'),
+        scan_listener_port_tls=pulumi.get(__response__, 'scan_listener_port_tls'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_database_ssl_certificate_expires=pulumi.get(__response__, 'time_database_ssl_certificate_expires'),
+        time_ords_certificate_expires=pulumi.get(__response__, 'time_ords_certificate_expires'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        total_autonomous_data_storage_in_tbs=pulumi.get(__response__, 'total_autonomous_data_storage_in_tbs'),
+        total_container_databases=pulumi.get(__response__, 'total_container_databases'),
+        vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id')))

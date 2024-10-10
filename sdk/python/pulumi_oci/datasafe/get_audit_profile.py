@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -315,9 +320,6 @@ def get_audit_profile(audit_profile_id: Optional[str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_audit_profile)
 def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileResult]:
     """
@@ -337,4 +339,28 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = Non
 
     :param str audit_profile_id: The OCID of the audit.
     """
-    ...
+    __args__ = dict()
+    __args__['auditProfileId'] = audit_profile_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfile:getAuditProfile', __args__, opts=opts, typ=GetAuditProfileResult)
+    return __ret__.apply(lambda __response__: GetAuditProfileResult(
+        audit_collected_volume=pulumi.get(__response__, 'audit_collected_volume'),
+        audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
+        audit_trails=pulumi.get(__response__, 'audit_trails'),
+        change_retention_trigger=pulumi.get(__response__, 'change_retention_trigger'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        is_override_global_retention_setting=pulumi.get(__response__, 'is_override_global_retention_setting'),
+        is_paid_usage_enabled=pulumi.get(__response__, 'is_paid_usage_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        offline_months=pulumi.get(__response__, 'offline_months'),
+        online_months=pulumi.get(__response__, 'online_months'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

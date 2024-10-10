@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -290,9 +295,6 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
         software_sources=pulumi.get(__ret__, 'software_sources'),
         type=pulumi.get(__ret__, 'type'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_software_source_software_package)
 def get_software_source_software_package_output(software_package_name: Optional[pulumi.Input[str]] = None,
                                                 software_source_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackageResult]:
@@ -315,4 +317,27 @@ def get_software_source_software_package_output(software_package_name: Optional[
     :param str software_package_name: The name of the software package.
     :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['softwarePackageName'] = software_package_name
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getSoftwareSourceSoftwarePackage:getSoftwareSourceSoftwarePackage', __args__, opts=opts, typ=GetSoftwareSourceSoftwarePackageResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceSoftwarePackageResult(
+        architecture=pulumi.get(__response__, 'architecture'),
+        checksum=pulumi.get(__response__, 'checksum'),
+        checksum_type=pulumi.get(__response__, 'checksum_type'),
+        dependencies=pulumi.get(__response__, 'dependencies'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        files=pulumi.get(__response__, 'files'),
+        id=pulumi.get(__response__, 'id'),
+        is_latest=pulumi.get(__response__, 'is_latest'),
+        last_modified_date=pulumi.get(__response__, 'last_modified_date'),
+        name=pulumi.get(__response__, 'name'),
+        os_families=pulumi.get(__response__, 'os_families'),
+        size_in_bytes=pulumi.get(__response__, 'size_in_bytes'),
+        software_package_name=pulumi.get(__response__, 'software_package_name'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        software_sources=pulumi.get(__response__, 'software_sources'),
+        type=pulumi.get(__response__, 'type'),
+        version=pulumi.get(__response__, 'version')))

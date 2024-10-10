@@ -4,28 +4,163 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
     'AddressActionVerificationAddressArgs',
+    'AddressActionVerificationAddressArgsDict',
     'SubscriptionBillingAddressArgs',
+    'SubscriptionBillingAddressArgsDict',
     'SubscriptionPaymentGatewayArgs',
+    'SubscriptionPaymentGatewayArgsDict',
     'SubscriptionPaymentGatewayMerchantDefinedDataArgs',
+    'SubscriptionPaymentGatewayMerchantDefinedDataArgsDict',
     'SubscriptionPaymentOptionArgs',
+    'SubscriptionPaymentOptionArgsDict',
     'SubscriptionSubscriptionArgs',
+    'SubscriptionSubscriptionArgsDict',
     'SubscriptionSubscriptionBillingAddressArgs',
+    'SubscriptionSubscriptionBillingAddressArgsDict',
     'SubscriptionSubscriptionPaymentGatewayArgs',
+    'SubscriptionSubscriptionPaymentGatewayArgsDict',
     'SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs',
+    'SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict',
     'SubscriptionSubscriptionPaymentOptionArgs',
+    'SubscriptionSubscriptionPaymentOptionArgsDict',
     'SubscriptionSubscriptionTaxInfoArgs',
+    'SubscriptionSubscriptionTaxInfoArgsDict',
     'SubscriptionTaxInfoArgs',
+    'SubscriptionTaxInfoArgsDict',
     'GetInvoicesFilterArgs',
+    'GetInvoicesFilterArgsDict',
     'GetInvoicesInvoiceLinesFilterArgs',
+    'GetInvoicesInvoiceLinesFilterArgsDict',
     'GetSubscriptionsFilterArgs',
+    'GetSubscriptionsFilterArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AddressActionVerificationAddressArgsDict(TypedDict):
+        address_key: NotRequired[pulumi.Input[str]]
+        """
+        Address identifier.
+        """
+        city: NotRequired[pulumi.Input[str]]
+        """
+        Name of the city.
+        """
+        company_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the customer company.
+        """
+        contributor_class: NotRequired[pulumi.Input[str]]
+        """
+        Contributor class of the customer company.
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country of the address.
+        """
+        county: NotRequired[pulumi.Input[str]]
+        """
+        County of the address.
+        """
+        department_name: NotRequired[pulumi.Input[str]]
+        """
+        Department name of the customer company.
+        """
+        email_address: NotRequired[pulumi.Input[str]]
+        """
+        Contact person email address.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        First name of the contact person.
+        """
+        internal_number: NotRequired[pulumi.Input[str]]
+        """
+        Internal number of the customer company.
+        """
+        job_title: NotRequired[pulumi.Input[str]]
+        """
+        Job title of the contact person.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        Last name of the contact person.
+        """
+        line1: NotRequired[pulumi.Input[str]]
+        """
+        Address line 1.
+        """
+        line2: NotRequired[pulumi.Input[str]]
+        """
+        Address line 2.
+        """
+        line3: NotRequired[pulumi.Input[str]]
+        """
+        Address line 3.
+        """
+        line4: NotRequired[pulumi.Input[str]]
+        """
+        Address line 4.
+        """
+        middle_name: NotRequired[pulumi.Input[str]]
+        """
+        Middle name of the contact person.
+        """
+        municipal_inscription: NotRequired[pulumi.Input[str]]
+        """
+        Municipal Inscription.
+        """
+        phone_country_code: NotRequired[pulumi.Input[str]]
+        """
+        Phone country code of the contact person.
+        """
+        phone_number: NotRequired[pulumi.Input[str]]
+        """
+        Phone number of the contact person.
+        """
+        postal_code: NotRequired[pulumi.Input[str]]
+        """
+        Post code of the address.
+        """
+        province: NotRequired[pulumi.Input[str]]
+        """
+        Province of the address.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        State of the address.
+        """
+        state_inscription: NotRequired[pulumi.Input[str]]
+        """
+        State Inscription.
+        """
+        street_name: NotRequired[pulumi.Input[str]]
+        """
+        Street name of the address.
+        """
+        street_number: NotRequired[pulumi.Input[str]]
+        """
+        Street number of the address.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    AddressActionVerificationAddressArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AddressActionVerificationAddressArgs:
@@ -458,6 +593,115 @@ class AddressActionVerificationAddressArgs:
         pulumi.set(self, "street_number", value)
 
 
+if not MYPY:
+    class SubscriptionBillingAddressArgsDict(TypedDict):
+        address_key: NotRequired[pulumi.Input[str]]
+        """
+        Address identifier.
+        """
+        city: NotRequired[pulumi.Input[str]]
+        """
+        Name of the city.
+        """
+        company_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the customer company.
+        """
+        contributor_class: NotRequired[pulumi.Input[str]]
+        """
+        Contributor class of the customer company.
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        Country of the address.
+        """
+        county: NotRequired[pulumi.Input[str]]
+        """
+        County of the address.
+        """
+        department_name: NotRequired[pulumi.Input[str]]
+        """
+        Department name of the customer company.
+        """
+        email_address: NotRequired[pulumi.Input[str]]
+        """
+        The email address of the paypal user.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        First name of the paypal user.
+        """
+        internal_number: NotRequired[pulumi.Input[str]]
+        """
+        Internal number of the customer company.
+        """
+        job_title: NotRequired[pulumi.Input[str]]
+        """
+        Job title of the contact person.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        Last name of the paypal user.
+        """
+        line1: NotRequired[pulumi.Input[str]]
+        """
+        Address line 1.
+        """
+        line2: NotRequired[pulumi.Input[str]]
+        """
+        Address line 2.
+        """
+        line3: NotRequired[pulumi.Input[str]]
+        """
+        Address line 3.
+        """
+        line4: NotRequired[pulumi.Input[str]]
+        """
+        Address line 4.
+        """
+        middle_name: NotRequired[pulumi.Input[str]]
+        """
+        Middle name of the contact person.
+        """
+        municipal_inscription: NotRequired[pulumi.Input[str]]
+        """
+        Municipal Inscription.
+        """
+        phone_country_code: NotRequired[pulumi.Input[str]]
+        """
+        Phone country code of the contact person.
+        """
+        phone_number: NotRequired[pulumi.Input[str]]
+        """
+        Phone number of the contact person.
+        """
+        postal_code: NotRequired[pulumi.Input[str]]
+        """
+        Post code of the address.
+        """
+        province: NotRequired[pulumi.Input[str]]
+        """
+        Province of the address.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        State of the address.
+        """
+        state_inscription: NotRequired[pulumi.Input[str]]
+        """
+        State Inscription.
+        """
+        street_name: NotRequired[pulumi.Input[str]]
+        """
+        Street name of the address.
+        """
+        street_number: NotRequired[pulumi.Input[str]]
+        """
+        Street number of the address.
+        """
+elif False:
+    SubscriptionBillingAddressArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SubscriptionBillingAddressArgs:
     def __init__(__self__, *,
@@ -881,6 +1125,15 @@ class SubscriptionBillingAddressArgs:
         pulumi.set(self, "street_number", value)
 
 
+if not MYPY:
+    class SubscriptionPaymentGatewayArgsDict(TypedDict):
+        merchant_defined_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]]]
+        """
+        Merchant details.
+        """
+elif False:
+    SubscriptionPaymentGatewayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SubscriptionPaymentGatewayArgs:
     def __init__(__self__, *,
@@ -903,6 +1156,19 @@ class SubscriptionPaymentGatewayArgs:
     def merchant_defined_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]):
         pulumi.set(self, "merchant_defined_datas", value)
 
+
+if not MYPY:
+    class SubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDict):
+        cloud_account_name: NotRequired[pulumi.Input[str]]
+        """
+        Cloud account name.
+        """
+        promo_type: NotRequired[pulumi.Input[str]]
+        """
+        Promotion type code.
+        """
+elif False:
+    SubscriptionPaymentGatewayMerchantDefinedDataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
@@ -942,6 +1208,55 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
     def promo_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "promo_type", value)
 
+
+if not MYPY:
+    class SubscriptionPaymentOptionArgsDict(TypedDict):
+        credit_card_type: NotRequired[pulumi.Input[str]]
+        """
+        Credit card type.
+        """
+        email_address: NotRequired[pulumi.Input[str]]
+        """
+        The email address of the paypal user.
+        """
+        ext_billing_agreement_id: NotRequired[pulumi.Input[str]]
+        """
+        Agreement id for the paypal account.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        First name of the paypal user.
+        """
+        last_digits: NotRequired[pulumi.Input[str]]
+        """
+        Last four digits of the card.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        Last name of the paypal user.
+        """
+        name_on_card: NotRequired[pulumi.Input[str]]
+        """
+        Name on the credit card.
+        """
+        payment_method: NotRequired[pulumi.Input[str]]
+        """
+        Payment method
+        """
+        time_expiration: NotRequired[pulumi.Input[str]]
+        """
+        Expired date of the credit card.
+        """
+        wallet_instrument_id: NotRequired[pulumi.Input[str]]
+        """
+        Wallet instrument internal id.
+        """
+        wallet_transaction_id: NotRequired[pulumi.Input[str]]
+        """
+        Wallet transaction id.
+        """
+elif False:
+    SubscriptionPaymentOptionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionPaymentOptionArgs:
@@ -1125,6 +1440,95 @@ class SubscriptionPaymentOptionArgs:
     def wallet_transaction_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "wallet_transaction_id", value)
 
+
+if not MYPY:
+    class SubscriptionSubscriptionArgsDict(TypedDict):
+        subscription_plan_number: pulumi.Input[str]
+        """
+        (Updatable) Subscription plan number.
+        """
+        account_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Account type.
+        """
+        bill_to_cust_account_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Bill to customer Account id.
+        """
+        billing_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgsDict']]]]
+        """
+        (Updatable) Address details model.
+        """
+        currency_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Currency code
+        """
+        gsi_org_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) GSI Subscription external code.
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Subscription id identifier (OCID).
+        """
+        is_intent_to_pay: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Payment intension.
+        """
+        language_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Language short code (en, de, hu, etc)
+        """
+        organization_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) GSI organization external identifier.
+        """
+        payment_gateway: NotRequired[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgsDict']]
+        """
+        (Updatable) Payment gateway details.
+        """
+        payment_options: NotRequired[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgsDict']]]]
+        """
+        (Updatable) Payment option list of a subscription.
+        """
+        plan_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Subscription plan type.
+        """
+        ship_to_cust_acct_role_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Ship to customer account role.
+        """
+        ship_to_cust_acct_site_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Ship to customer account site address id.
+        """
+        tax_info: NotRequired[pulumi.Input['SubscriptionSubscriptionTaxInfoArgsDict']]
+        """
+        (Updatable) Tax details.
+        """
+        time_personal_to_corporate_conv: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        """
+        time_plan_upgrade: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+        """
+        time_start: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Start date of the subscription.
+        """
+        upgrade_state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Status of the upgrade.
+        """
+        upgrade_state_details: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+        """
+elif False:
+    SubscriptionSubscriptionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionSubscriptionArgs:
@@ -1467,6 +1871,115 @@ class SubscriptionSubscriptionArgs:
     def upgrade_state_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "upgrade_state_details", value)
 
+
+if not MYPY:
+    class SubscriptionSubscriptionBillingAddressArgsDict(TypedDict):
+        address_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Address identifier.
+        """
+        city: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the city.
+        """
+        company_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name of the customer company.
+        """
+        contributor_class: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Contributor class of the customer company.
+        """
+        country: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Country of the address.
+        """
+        county: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) County of the address.
+        """
+        department_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Department name of the customer company.
+        """
+        email_address: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Contact person email address.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) First name of the contact person.
+        """
+        internal_number: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Internal number of the customer company.
+        """
+        job_title: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Job title of the contact person.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Last name of the contact person.
+        """
+        line1: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Address line 1.
+        """
+        line2: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Address line 2.
+        """
+        line3: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Address line 3.
+        """
+        line4: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Address line 4.
+        """
+        middle_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Middle name of the contact person.
+        """
+        municipal_inscription: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Municipal Inscription.
+        """
+        phone_country_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Phone country code of the contact person.
+        """
+        phone_number: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Phone number of the contact person.
+        """
+        postal_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Post code of the address.
+        """
+        province: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Province of the address.
+        """
+        state: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) State of the address.
+        """
+        state_inscription: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) State Inscription.
+        """
+        street_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Street name of the address.
+        """
+        street_number: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Street number of the address.
+        """
+elif False:
+    SubscriptionSubscriptionBillingAddressArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionSubscriptionBillingAddressArgs:
@@ -1891,6 +2404,15 @@ class SubscriptionSubscriptionBillingAddressArgs:
         pulumi.set(self, "street_number", value)
 
 
+if not MYPY:
+    class SubscriptionSubscriptionPaymentGatewayArgsDict(TypedDict):
+        merchant_defined_data: NotRequired[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]
+        """
+        (Updatable) Merchant details.
+        """
+elif False:
+    SubscriptionSubscriptionPaymentGatewayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SubscriptionSubscriptionPaymentGatewayArgs:
     def __init__(__self__, *,
@@ -1913,6 +2435,19 @@ class SubscriptionSubscriptionPaymentGatewayArgs:
     def merchant_defined_data(self, value: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]):
         pulumi.set(self, "merchant_defined_data", value)
 
+
+if not MYPY:
+    class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict(TypedDict):
+        cloud_account_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Cloud account name.
+        """
+        promo_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Promotion type code.
+        """
+elif False:
+    SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
@@ -1952,6 +2487,55 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
     def promo_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "promo_type", value)
 
+
+if not MYPY:
+    class SubscriptionSubscriptionPaymentOptionArgsDict(TypedDict):
+        payment_method: pulumi.Input[str]
+        """
+        (Updatable) Payment method
+        """
+        credit_card_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Credit card type.
+        """
+        email_address: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The email address of the paypal user.
+        """
+        ext_billing_agreement_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Agreement id for the paypal account.
+        """
+        first_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) First name of the paypal user.
+        """
+        last_digits: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Last four digits of the card.
+        """
+        last_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Last name of the paypal user.
+        """
+        name_on_card: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Name on the credit card.
+        """
+        time_expiration: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Expired date of the credit card.
+        """
+        wallet_instrument_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Wallet instrument internal id.
+        """
+        wallet_transaction_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Wallet transaction id.
+        """
+elif False:
+    SubscriptionSubscriptionPaymentOptionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionSubscriptionPaymentOptionArgs:
@@ -2135,6 +2719,31 @@ class SubscriptionSubscriptionPaymentOptionArgs:
         pulumi.set(self, "wallet_transaction_id", value)
 
 
+if not MYPY:
+    class SubscriptionSubscriptionTaxInfoArgsDict(TypedDict):
+        no_tax_reason_code: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Tax exemption reason code.
+        """
+        no_tax_reason_code_details: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Tax exemption reason description.
+        """
+        tax_cnpj: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Brazilian companies' CNPJ number.
+        """
+        tax_payer_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Tay payer identifier.
+        """
+        tax_reg_number: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Tax registration number.
+        """
+elif False:
+    SubscriptionSubscriptionTaxInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SubscriptionSubscriptionTaxInfoArgs:
     def __init__(__self__, *,
@@ -2221,6 +2830,35 @@ class SubscriptionSubscriptionTaxInfoArgs:
     def tax_reg_number(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "tax_reg_number", value)
 
+
+if not MYPY:
+    class SubscriptionTaxInfoArgsDict(TypedDict):
+        giro: NotRequired[pulumi.Input[str]]
+        """
+        Companies' GIRO code
+        """
+        no_tax_reason_code: NotRequired[pulumi.Input[str]]
+        """
+        Tax exemption reason code.
+        """
+        no_tax_reason_code_details: NotRequired[pulumi.Input[str]]
+        """
+        Tax exemption reason description.
+        """
+        tax_cnpj: NotRequired[pulumi.Input[str]]
+        """
+        Brazilian companies' CNPJ number.
+        """
+        tax_payer_id: NotRequired[pulumi.Input[str]]
+        """
+        Tay payer identifier.
+        """
+        tax_reg_number: NotRequired[pulumi.Input[str]]
+        """
+        Tax registration number.
+        """
+elif False:
+    SubscriptionTaxInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class SubscriptionTaxInfoArgs:
@@ -2325,6 +2963,17 @@ class SubscriptionTaxInfoArgs:
         pulumi.set(self, "tax_reg_number", value)
 
 
+if not MYPY:
+    class GetInvoicesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the currency
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInvoicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetInvoicesFilterArgs:
     def __init__(__self__, *,
@@ -2370,6 +3019,17 @@ class GetInvoicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+if not MYPY:
+    class GetInvoicesInvoiceLinesFilterArgsDict(TypedDict):
+        name: str
+        """
+        Name of the currency
+        """
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetInvoicesInvoiceLinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetInvoicesInvoiceLinesFilterArgs:
     def __init__(__self__, *,
@@ -2414,6 +3074,14 @@ class GetInvoicesInvoiceLinesFilterArgs:
     def regex(self, value: Optional[bool]):
         pulumi.set(self, "regex", value)
 
+
+if not MYPY:
+    class GetSubscriptionsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -273,9 +278,6 @@ def get_cluster_placement_group(cluster_placement_group_id: Optional[str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_cluster_placement_group)
 def get_cluster_placement_group_output(cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterPlacementGroupResult]:
     """
@@ -295,4 +297,25 @@ def get_cluster_placement_group_output(cluster_placement_group_id: Optional[pulu
 
     :param str cluster_placement_group_id: A unique cluster placement group identifier.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:ClusterPlacementGroups/getClusterPlacementGroup:getClusterPlacementGroup', __args__, opts=opts, typ=GetClusterPlacementGroupResult)
+    return __ret__.apply(lambda __response__: GetClusterPlacementGroupResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        capabilities=pulumi.get(__response__, 'capabilities'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
+        cluster_placement_group_type=pulumi.get(__response__, 'cluster_placement_group_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        name=pulumi.get(__response__, 'name'),
+        opc_dry_run=pulumi.get(__response__, 'opc_dry_run'),
+        placement_instructions=pulumi.get(__response__, 'placement_instructions'),
+        state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

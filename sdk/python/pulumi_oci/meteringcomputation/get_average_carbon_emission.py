@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -96,9 +101,6 @@ def get_average_carbon_emission(sku_part_number: Optional[str] = None,
         average_carbon_emission=pulumi.get(__ret__, 'average_carbon_emission'),
         id=pulumi.get(__ret__, 'id'),
         sku_part_number=pulumi.get(__ret__, 'sku_part_number'))
-
-
-@_utilities.lift_output_func(get_average_carbon_emission)
 def get_average_carbon_emission_output(sku_part_number: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAverageCarbonEmissionResult]:
     """
@@ -118,4 +120,11 @@ def get_average_carbon_emission_output(sku_part_number: Optional[pulumi.Input[st
 
     :param str sku_part_number: The SKU part number.
     """
-    ...
+    __args__ = dict()
+    __args__['skuPartNumber'] = sku_part_number
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission', __args__, opts=opts, typ=GetAverageCarbonEmissionResult)
+    return __ret__.apply(lambda __response__: GetAverageCarbonEmissionResult(
+        average_carbon_emission=pulumi.get(__response__, 'average_carbon_emission'),
+        id=pulumi.get(__response__, 'id'),
+        sku_part_number=pulumi.get(__response__, 'sku_part_number')))

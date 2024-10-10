@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,9 +115,6 @@ def get_data_guard_associations(database_id: Optional[str] = None,
         database_id=pulumi.get(__ret__, 'database_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_data_guard_associations)
 def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataGuardAssociationsFilterArgs', 'GetDataGuardAssociationsFilterArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationsResult]:
@@ -133,4 +135,13 @@ def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getDataGuardAssociations:getDataGuardAssociations', __args__, opts=opts, typ=GetDataGuardAssociationsResult)
+    return __ret__.apply(lambda __response__: GetDataGuardAssociationsResult(
+        data_guard_associations=pulumi.get(__response__, 'data_guard_associations'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

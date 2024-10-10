@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -180,9 +185,6 @@ def get_gi_version_minor_versions(availability_domain: Optional[str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         shape_family=pulumi.get(__ret__, 'shape_family'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_gi_version_minor_versions)
 def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
                                          compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGiVersionMinorVersionsFilterArgs', 'GetGiVersionMinorVersionsFilterArgsDict']]]]] = None,
@@ -218,4 +220,23 @@ def get_gi_version_minor_versions_output(availability_domain: Optional[pulumi.In
     :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
     :param str version: The Oracle Grid Infrastructure major version.
     """
-    ...
+    __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['isGiVersionForProvisioning'] = is_gi_version_for_provisioning
+    __args__['shape'] = shape
+    __args__['shapeFamily'] = shape_family
+    __args__['version'] = version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions', __args__, opts=opts, typ=GetGiVersionMinorVersionsResult)
+    return __ret__.apply(lambda __response__: GetGiVersionMinorVersionsResult(
+        availability_domain=pulumi.get(__response__, 'availability_domain'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        gi_minor_versions=pulumi.get(__response__, 'gi_minor_versions'),
+        id=pulumi.get(__response__, 'id'),
+        is_gi_version_for_provisioning=pulumi.get(__response__, 'is_gi_version_for_provisioning'),
+        shape=pulumi.get(__response__, 'shape'),
+        shape_family=pulumi.get(__response__, 'shape_family'),
+        version=pulumi.get(__response__, 'version')))

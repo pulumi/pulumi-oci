@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -292,9 +297,6 @@ def get_user(user_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_user)
 def get_user_output(user_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
     """
@@ -314,4 +316,26 @@ def get_user_output(user_id: Optional[pulumi.Input[str]] = None,
 
     :param str user_id: The OCID of the user.
     """
-    ...
+    __args__ = dict()
+    __args__['userId'] = user_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getUser:getUser', __args__, opts=opts, typ=GetUserResult)
+    return __ret__.apply(lambda __response__: GetUserResult(
+        capabilities=pulumi.get(__response__, 'capabilities'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        db_user_name=pulumi.get(__response__, 'db_user_name'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        email=pulumi.get(__response__, 'email'),
+        email_verified=pulumi.get(__response__, 'email_verified'),
+        external_identifier=pulumi.get(__response__, 'external_identifier'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        identity_provider_id=pulumi.get(__response__, 'identity_provider_id'),
+        inactive_state=pulumi.get(__response__, 'inactive_state'),
+        last_successful_login_time=pulumi.get(__response__, 'last_successful_login_time'),
+        name=pulumi.get(__response__, 'name'),
+        previous_successful_login_time=pulumi.get(__response__, 'previous_successful_login_time'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        user_id=pulumi.get(__response__, 'user_id')))

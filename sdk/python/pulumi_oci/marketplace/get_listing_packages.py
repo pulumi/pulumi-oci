@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -168,9 +173,6 @@ def get_listing_packages(compartment_id: Optional[str] = None,
         listing_packages=pulumi.get(__ret__, 'listing_packages'),
         package_type=pulumi.get(__ret__, 'package_type'),
         package_version=pulumi.get(__ret__, 'package_version'))
-
-
-@_utilities.lift_output_func(get_listing_packages)
 def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingPackagesFilterArgs', 'GetListingPackagesFilterArgsDict']]]]] = None,
                                 listing_id: Optional[pulumi.Input[str]] = None,
@@ -213,4 +215,19 @@ def get_listing_packages_output(compartment_id: Optional[pulumi.Input[Optional[s
     :param str package_type: A filter to return only packages that match the given package type exactly.
     :param str package_version: The version of the package. Package versions are unique within a listing.
     """
-    ...
+    __args__ = dict()
+    __args__['compartmentId'] = compartment_id
+    __args__['filters'] = filters
+    __args__['listingId'] = listing_id
+    __args__['packageType'] = package_type
+    __args__['packageVersion'] = package_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Marketplace/getListingPackages:getListingPackages', __args__, opts=opts, typ=GetListingPackagesResult)
+    return __ret__.apply(lambda __response__: GetListingPackagesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        listing_id=pulumi.get(__response__, 'listing_id'),
+        listing_packages=pulumi.get(__response__, 'listing_packages'),
+        package_type=pulumi.get(__response__, 'package_type'),
+        package_version=pulumi.get(__response__, 'package_version')))

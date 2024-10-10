@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -238,9 +243,6 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_of_restoration_point=pulumi.get(__ret__, 'time_of_restoration_point'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-
-
-@_utilities.lift_output_func(get_fusion_environment_refresh_activity)
 def get_fusion_environment_refresh_activity_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                    refresh_activity_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivityResult]:
@@ -263,4 +265,23 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
     :param str fusion_environment_id: unique FusionEnvironment identifier
     :param str refresh_activity_id: The unique identifier (OCID) of the Refresh activity.
     """
-    ...
+    __args__ = dict()
+    __args__['fusionEnvironmentId'] = fusion_environment_id
+    __args__['refreshActivityId'] = refresh_activity_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity', __args__, opts=opts, typ=GetFusionEnvironmentRefreshActivityResult)
+    return __ret__.apply(lambda __response__: GetFusionEnvironmentRefreshActivityResult(
+        display_name=pulumi.get(__response__, 'display_name'),
+        fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
+        id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        refresh_activity_id=pulumi.get(__response__, 'refresh_activity_id'),
+        refresh_issue_details_lists=pulumi.get(__response__, 'refresh_issue_details_lists'),
+        service_availability=pulumi.get(__response__, 'service_availability'),
+        source_fusion_environment_id=pulumi.get(__response__, 'source_fusion_environment_id'),
+        state=pulumi.get(__response__, 'state'),
+        time_accepted=pulumi.get(__response__, 'time_accepted'),
+        time_expected_finish=pulumi.get(__response__, 'time_expected_finish'),
+        time_finished=pulumi.get(__response__, 'time_finished'),
+        time_of_restoration_point=pulumi.get(__response__, 'time_of_restoration_point'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

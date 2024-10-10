@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -224,9 +229,6 @@ def get_network_source(network_source_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         virtual_source_lists=pulumi.get(__ret__, 'virtual_source_lists'))
-
-
-@_utilities.lift_output_func(get_network_source)
 def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSourceResult]:
     """
@@ -246,4 +248,21 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = N
 
     :param str network_source_id: The OCID of the network source.
     """
-    ...
+    __args__ = dict()
+    __args__['networkSourceId'] = network_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Identity/getNetworkSource:getNetworkSource', __args__, opts=opts, typ=GetNetworkSourceResult)
+    return __ret__.apply(lambda __response__: GetNetworkSourceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        id=pulumi.get(__response__, 'id'),
+        inactive_state=pulumi.get(__response__, 'inactive_state'),
+        name=pulumi.get(__response__, 'name'),
+        network_source_id=pulumi.get(__response__, 'network_source_id'),
+        public_source_lists=pulumi.get(__response__, 'public_source_lists'),
+        services=pulumi.get(__response__, 'services'),
+        state=pulumi.get(__response__, 'state'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        virtual_source_lists=pulumi.get(__response__, 'virtual_source_lists')))

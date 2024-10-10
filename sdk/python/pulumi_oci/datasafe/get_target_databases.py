@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -234,9 +239,6 @@ def get_target_databases(access_level: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'),
         target_databases=pulumi.get(__ret__, 'target_databases'))
-
-
-@_utilities.lift_output_func(get_target_databases)
 def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
                                 associated_resource_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 compartment_id: Optional[pulumi.Input[str]] = None,
@@ -281,4 +283,29 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
     :param str state: A filter to return only target databases that match the specified lifecycle state.
     :param str target_database_id: A filter to return the target database that matches the specified OCID.
     """
-    ...
+    __args__ = dict()
+    __args__['accessLevel'] = access_level
+    __args__['associatedResourceId'] = associated_resource_id
+    __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['databaseType'] = database_type
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['infrastructureType'] = infrastructure_type
+    __args__['state'] = state
+    __args__['targetDatabaseId'] = target_database_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getTargetDatabases:getTargetDatabases', __args__, opts=opts, typ=GetTargetDatabasesResult)
+    return __ret__.apply(lambda __response__: GetTargetDatabasesResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        associated_resource_id=pulumi.get(__response__, 'associated_resource_id'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
+        state=pulumi.get(__response__, 'state'),
+        target_database_id=pulumi.get(__response__, 'target_database_id'),
+        target_databases=pulumi.get(__response__, 'target_databases')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
 __all__ = [
@@ -208,9 +213,6 @@ def get_bds_instance_api_key(api_key_id: Optional[str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_id=pulumi.get(__ret__, 'user_id'))
-
-
-@_utilities.lift_output_func(get_bds_instance_api_key)
 def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = None,
                                     bds_instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceApiKeyResult]:
@@ -233,4 +235,21 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[str]] = No
     :param str api_key_id: The API key identifier.
     :param str bds_instance_id: The OCID of the cluster.
     """
-    ...
+    __args__ = dict()
+    __args__['apiKeyId'] = api_key_id
+    __args__['bdsInstanceId'] = bds_instance_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey', __args__, opts=opts, typ=GetBdsInstanceApiKeyResult)
+    return __ret__.apply(lambda __response__: GetBdsInstanceApiKeyResult(
+        api_key_id=pulumi.get(__response__, 'api_key_id'),
+        bds_instance_id=pulumi.get(__response__, 'bds_instance_id'),
+        default_region=pulumi.get(__response__, 'default_region'),
+        fingerprint=pulumi.get(__response__, 'fingerprint'),
+        id=pulumi.get(__response__, 'id'),
+        key_alias=pulumi.get(__response__, 'key_alias'),
+        passphrase=pulumi.get(__response__, 'passphrase'),
+        pemfilepath=pulumi.get(__response__, 'pemfilepath'),
+        state=pulumi.get(__response__, 'state'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
+        time_created=pulumi.get(__response__, 'time_created'),
+        user_id=pulumi.get(__response__, 'user_id')))

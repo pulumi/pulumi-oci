@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -172,9 +177,6 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_autonomous_databases_clones)
 def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                            clone_type: Optional[pulumi.Input[Optional[str]]] = None,
                                            compartment_id: Optional[pulumi.Input[str]] = None,
@@ -207,4 +209,21 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
     :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
-    ...
+    __args__ = dict()
+    __args__['autonomousDatabaseId'] = autonomous_database_id
+    __args__['cloneType'] = clone_type
+    __args__['compartmentId'] = compartment_id
+    __args__['displayName'] = display_name
+    __args__['filters'] = filters
+    __args__['state'] = state
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones', __args__, opts=opts, typ=GetAutonomousDatabasesClonesResult)
+    return __ret__.apply(lambda __response__: GetAutonomousDatabasesClonesResult(
+        autonomous_database_id=pulumi.get(__response__, 'autonomous_database_id'),
+        autonomous_databases=pulumi.get(__response__, 'autonomous_databases'),
+        clone_type=pulumi.get(__response__, 'clone_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        state=pulumi.get(__response__, 'state')))

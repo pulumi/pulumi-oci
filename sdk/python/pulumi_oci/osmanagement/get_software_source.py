@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 from . import outputs
 
@@ -354,9 +359,6 @@ def get_software_source(software_source_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
         url=pulumi.get(__ret__, 'url'))
-
-
-@_utilities.lift_output_func(get_software_source)
 def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
@@ -376,4 +378,31 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
 
     :param str software_source_id: The OCID of the software source.
     """
-    ...
+    __args__ = dict()
+    __args__['softwareSourceId'] = software_source_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('oci:OsManagement/getSoftwareSource:getSoftwareSource', __args__, opts=opts, typ=GetSoftwareSourceResult)
+    return __ret__.apply(lambda __response__: GetSoftwareSourceResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
+        associated_managed_instances=pulumi.get(__response__, 'associated_managed_instances'),
+        checksum_type=pulumi.get(__response__, 'checksum_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
+        description=pulumi.get(__response__, 'description'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gpg_key_fingerprint=pulumi.get(__response__, 'gpg_key_fingerprint'),
+        gpg_key_id=pulumi.get(__response__, 'gpg_key_id'),
+        gpg_key_url=pulumi.get(__response__, 'gpg_key_url'),
+        id=pulumi.get(__response__, 'id'),
+        maintainer_email=pulumi.get(__response__, 'maintainer_email'),
+        maintainer_name=pulumi.get(__response__, 'maintainer_name'),
+        maintainer_phone=pulumi.get(__response__, 'maintainer_phone'),
+        packages=pulumi.get(__response__, 'packages'),
+        parent_id=pulumi.get(__response__, 'parent_id'),
+        parent_name=pulumi.get(__response__, 'parent_name'),
+        repo_type=pulumi.get(__response__, 'repo_type'),
+        software_source_id=pulumi.get(__response__, 'software_source_id'),
+        state=pulumi.get(__response__, 'state'),
+        status=pulumi.get(__response__, 'status'),
+        url=pulumi.get(__response__, 'url')))

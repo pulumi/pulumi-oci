@@ -12,9 +12,15 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        /// </summary>
         [Input("ipv6address")]
         public Input<string>? Ipv6address { get; set; }
 
+        /// <summary>
+        /// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        /// </summary>
         [Input("ipv6subnetCidr")]
         public Input<string>? Ipv6subnetCidr { get; set; }
 

@@ -75,6 +75,9 @@ namespace Pulumi.Oci.Database
         [Output("isRestricted")]
         public Output<bool> IsRestricted { get; private set; } = null!;
 
+        [Output("kmsKeyVersionId")]
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
+
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
@@ -275,6 +278,9 @@ namespace Pulumi.Oci.Database
             set => _freeformTags = value;
         }
 
+        [Input("kmsKeyVersionId")]
+        public Input<string>? KmsKeyVersionId { get; set; }
+
         [Input("pdbAdminPassword")]
         private Input<string>? _pdbAdminPassword;
 
@@ -432,6 +438,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isRestricted")]
         public Input<bool>? IsRestricted { get; set; }
+
+        [Input("kmsKeyVersionId")]
+        public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
         /// Detailed message for the lifecycle state.

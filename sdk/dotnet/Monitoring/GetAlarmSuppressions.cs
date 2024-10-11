@@ -14,8 +14,8 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
         /// 
-        /// Lists alarm suppressions for the specified alarm.
-        /// Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+        /// Lists alarm suppressions for the specified alarm. For more information, see
+        /// [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
         /// 
         /// For important limits information, see
         /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -38,21 +38,26 @@ namespace Pulumi.Oci.Monitoring
         ///     var testAlarmSuppressions = Oci.Monitoring.GetAlarmSuppressions.Invoke(new()
         ///     {
         ///         AlarmId = testAlarm.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmSuppressionCompartmentIdInSubtree,
         ///         DisplayName = alarmSuppressionDisplayName,
+        ///         IsAllSuppressions = alarmSuppressionIsAllSuppressions,
+        ///         Level = alarmSuppressionLevel,
         ///         State = alarmSuppressionState,
+        ///         TargetType = alarmSuppressionTargetType,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Task<GetAlarmSuppressionsResult> InvokeAsync(GetAlarmSuppressionsArgs args, InvokeOptions? options = null)
+        public static Task<GetAlarmSuppressionsResult> InvokeAsync(GetAlarmSuppressionsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
         /// 
-        /// Lists alarm suppressions for the specified alarm.
-        /// Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+        /// Lists alarm suppressions for the specified alarm. For more information, see
+        /// [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
         /// 
         /// For important limits information, see
         /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -75,14 +80,19 @@ namespace Pulumi.Oci.Monitoring
         ///     var testAlarmSuppressions = Oci.Monitoring.GetAlarmSuppressions.Invoke(new()
         ///     {
         ///         AlarmId = testAlarm.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmSuppressionCompartmentIdInSubtree,
         ///         DisplayName = alarmSuppressionDisplayName,
+        ///         IsAllSuppressions = alarmSuppressionIsAllSuppressions,
+        ///         Level = alarmSuppressionLevel,
         ///         State = alarmSuppressionState,
+        ///         TargetType = alarmSuppressionTargetType,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Output<GetAlarmSuppressionsResult> Invoke(GetAlarmSuppressionsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetAlarmSuppressionsResult> Invoke(GetAlarmSuppressionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmSuppressionsResult>("oci:Monitoring/getAlarmSuppressions:getAlarmSuppressions", args ?? new GetAlarmSuppressionsInvokeArgs(), options.WithDefaults());
     }
 
@@ -92,11 +102,27 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
         /// </summary>
-        [Input("alarmId", required: true)]
-        public string AlarmId { get; set; } = null!;
+        [Input("alarmId")]
+        public string? AlarmId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+        /// 
+        /// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+        /// 
+        /// Example: `ocid1.compartment.oc1..exampleuniqueID`
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
+        /// <summary>
+        /// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public bool? CompartmentIdInSubtree { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -110,10 +136,32 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
+        /// Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+        /// 
+        /// When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+        /// 
+        /// Default is false.
+        /// </summary>
+        [Input("isAllSuppressions")]
+        public bool? IsAllSuppressions { get; set; }
+
+        /// <summary>
+        /// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+        /// </summary>
+        [Input("level")]
+        public string? Level { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
 
         public GetAlarmSuppressionsArgs()
         {
@@ -126,11 +174,27 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
         /// </summary>
-        [Input("alarmId", required: true)]
-        public Input<string> AlarmId { get; set; } = null!;
+        [Input("alarmId")]
+        public Input<string>? AlarmId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+        /// 
+        /// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+        /// 
+        /// Example: `ocid1.compartment.oc1..exampleuniqueID`
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -144,10 +208,32 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
+        /// Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+        /// 
+        /// When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+        /// 
+        /// Default is false.
+        /// </summary>
+        [Input("isAllSuppressions")]
+        public Input<bool>? IsAllSuppressions { get; set; }
+
+        /// <summary>
+        /// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+        /// </summary>
+        [Input("level")]
+        public Input<string>? Level { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         public GetAlarmSuppressionsInvokeArgs()
         {
@@ -162,11 +248,19 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
         /// </summary>
-        public readonly string AlarmId;
+        public readonly string? AlarmId;
         /// <summary>
         /// The list of alarm_suppression_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAlarmSuppressionsAlarmSuppressionCollectionResult> AlarmSuppressionCollections;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
+        /// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+        /// </summary>
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -176,16 +270,29 @@ namespace Pulumi.Oci.Monitoring
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsAllSuppressions;
+        /// <summary>
+        /// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+        /// </summary>
+        public readonly string? Level;
         /// <summary>
         /// The current lifecycle state of the alarm suppression.  Example: `DELETED`
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The type of the alarm suppression target.
+        /// </summary>
+        public readonly string? TargetType;
 
         [OutputConstructor]
         private GetAlarmSuppressionsResult(
-            string alarmId,
+            string? alarmId,
 
             ImmutableArray<Outputs.GetAlarmSuppressionsAlarmSuppressionCollectionResult> alarmSuppressionCollections,
+
+            string? compartmentId,
+
+            bool? compartmentIdInSubtree,
 
             string? displayName,
 
@@ -193,14 +300,25 @@ namespace Pulumi.Oci.Monitoring
 
             string id,
 
-            string? state)
+            bool? isAllSuppressions,
+
+            string? level,
+
+            string? state,
+
+            string? targetType)
         {
             AlarmId = alarmId;
             AlarmSuppressionCollections = alarmSuppressionCollections;
+            CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            IsAllSuppressions = isAllSuppressions;
+            Level = level;
             State = state;
+            TargetType = targetType;
         }
     }
 }

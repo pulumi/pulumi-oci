@@ -62,6 +62,7 @@ import (
 //						},
 //						PatchingMode:  pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsPatchingMode),
 //						Preference:    pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsPreference),
+//						SkipRus:       pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsSkipRu),
 //						WeeksOfMonths: pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth),
 //					},
 //				},

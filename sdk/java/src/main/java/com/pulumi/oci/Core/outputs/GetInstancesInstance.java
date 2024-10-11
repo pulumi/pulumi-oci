@@ -185,6 +185,16 @@ public final class GetInstancesInstance {
      */
     private String region;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
+     * @return The lifecycle state of the `securityAttributes`
+     * 
+     */
+    private String securityAttributesState;
+    /**
      * @return The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
@@ -457,6 +467,20 @@ public final class GetInstancesInstance {
         return this.region;
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
+     * @return The lifecycle state of the `securityAttributes`
+     * 
+     */
+    public String securityAttributesState() {
+        return this.securityAttributesState;
+    }
+    /**
      * @return The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
@@ -558,6 +582,8 @@ public final class GetInstancesInstance {
         private String privateIp;
         private String publicIp;
         private String region;
+        private Map<String,String> securityAttributes;
+        private String securityAttributesState;
         private String shape;
         private List<GetInstancesInstanceShapeConfig> shapeConfigs;
         private List<GetInstancesInstanceSourceDetail> sourceDetails;
@@ -605,6 +631,8 @@ public final class GetInstancesInstance {
     	      this.privateIp = defaults.privateIp;
     	      this.publicIp = defaults.publicIp;
     	      this.region = defaults.region;
+    	      this.securityAttributes = defaults.securityAttributes;
+    	      this.securityAttributesState = defaults.securityAttributesState;
     	      this.shape = defaults.shape;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -921,6 +949,22 @@ public final class GetInstancesInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstance", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityAttributesState(String securityAttributesState) {
+            if (securityAttributesState == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstance", "securityAttributesState");
+            }
+            this.securityAttributesState = securityAttributesState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstance", "shape");
@@ -1035,6 +1079,8 @@ public final class GetInstancesInstance {
             _resultValue.privateIp = privateIp;
             _resultValue.publicIp = publicIp;
             _resultValue.region = region;
+            _resultValue.securityAttributes = securityAttributes;
+            _resultValue.securityAttributesState = securityAttributesState;
             _resultValue.shape = shape;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.sourceDetails = sourceDetails;

@@ -135,9 +135,9 @@ type DbSystem struct {
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches DbSystemIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
@@ -337,7 +337,7 @@ type dbSystemState struct {
 	IormConfigCaches []DbSystemIormConfigCach `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
@@ -488,7 +488,7 @@ type DbSystemState struct {
 	IormConfigCaches DbSystemIormConfigCachArrayInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
@@ -641,7 +641,7 @@ type dbSystemArgs struct {
 	Hostname string `pulumi:"hostname"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -757,7 +757,7 @@ type DbSystemArgs struct {
 	Hostname pulumi.StringInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 	LicenseModel pulumi.StringPtrInput
@@ -1019,13 +1019,13 @@ func (o DbSystemOutput) IormConfigCaches() DbSystemIormConfigCachArrayOutput {
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o DbSystemOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o DbSystemOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o DbSystemOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+func (o DbSystemOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.

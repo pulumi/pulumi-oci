@@ -1448,6 +1448,8 @@ func (o BackendSetSslConfigurationPtrOutput) VerifyPeerCertificate() pulumi.Bool
 }
 
 type ListenerConnectionConfiguration struct {
+	// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+	BackendTcpProxyProtocolOptions []string `pulumi:"backendTcpProxyProtocolOptions"`
 	// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
 	BackendTcpProxyProtocolVersion *int `pulumi:"backendTcpProxyProtocolVersion"`
 	// (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
@@ -1470,6 +1472,8 @@ type ListenerConnectionConfigurationInput interface {
 }
 
 type ListenerConnectionConfigurationArgs struct {
+	// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+	BackendTcpProxyProtocolOptions pulumi.StringArrayInput `pulumi:"backendTcpProxyProtocolOptions"`
 	// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
 	BackendTcpProxyProtocolVersion pulumi.IntPtrInput `pulumi:"backendTcpProxyProtocolVersion"`
 	// (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
@@ -1557,6 +1561,11 @@ func (o ListenerConnectionConfigurationOutput) ToListenerConnectionConfiguration
 	}).(ListenerConnectionConfigurationPtrOutput)
 }
 
+// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+func (o ListenerConnectionConfigurationOutput) BackendTcpProxyProtocolOptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ListenerConnectionConfiguration) []string { return v.BackendTcpProxyProtocolOptions }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
 func (o ListenerConnectionConfigurationOutput) BackendTcpProxyProtocolVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerConnectionConfiguration) *int { return v.BackendTcpProxyProtocolVersion }).(pulumi.IntPtrOutput)
@@ -1593,6 +1602,16 @@ func (o ListenerConnectionConfigurationPtrOutput) Elem() ListenerConnectionConfi
 		var ret ListenerConnectionConfiguration
 		return ret
 	}).(ListenerConnectionConfigurationOutput)
+}
+
+// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+func (o ListenerConnectionConfigurationPtrOutput) BackendTcpProxyProtocolOptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ListenerConnectionConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.BackendTcpProxyProtocolOptions
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
@@ -8215,7 +8234,7 @@ func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInp
 type GetLoadBalancersLoadBalancerShapeDetail struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
 	MaximumBandwidthInMbps int `pulumi:"maximumBandwidthInMbps"`
-	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
 	MinimumBandwidthInMbps int `pulumi:"minimumBandwidthInMbps"`
 }
 
@@ -8233,7 +8252,7 @@ type GetLoadBalancersLoadBalancerShapeDetailInput interface {
 type GetLoadBalancersLoadBalancerShapeDetailArgs struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
 	MaximumBandwidthInMbps pulumi.IntInput `pulumi:"maximumBandwidthInMbps"`
-	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
 	MinimumBandwidthInMbps pulumi.IntInput `pulumi:"minimumBandwidthInMbps"`
 }
 
@@ -8293,7 +8312,7 @@ func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MaximumBandwidthInMbps() 
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MaximumBandwidthInMbps }).(pulumi.IntOutput)
 }
 
-// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
 func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MinimumBandwidthInMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MinimumBandwidthInMbps }).(pulumi.IntOutput)
 }

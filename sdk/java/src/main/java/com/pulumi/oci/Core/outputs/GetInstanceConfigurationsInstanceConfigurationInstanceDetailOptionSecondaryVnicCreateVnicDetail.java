@@ -65,6 +65,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      */
     private String privateIp;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -147,6 +152,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         return this.privateIp;
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -180,6 +192,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
+        private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetId;
         public Builder() {}
@@ -195,6 +208,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
         }
@@ -286,6 +300,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             if (skipSourceDestCheck == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail", "skipSourceDestCheck");
@@ -313,6 +335,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;
             return _resultValue;

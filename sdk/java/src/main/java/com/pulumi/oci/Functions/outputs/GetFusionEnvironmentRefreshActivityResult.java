@@ -6,6 +6,7 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +24,11 @@ public final class GetFusionEnvironmentRefreshActivityResult {
      * 
      */
     private String id;
+    /**
+     * @return Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    private Boolean isDataMaskingOpted;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -92,6 +98,13 @@ public final class GetFusionEnvironmentRefreshActivityResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    public Boolean isDataMaskingOpted() {
+        return this.isDataMaskingOpted;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -179,6 +192,7 @@ public final class GetFusionEnvironmentRefreshActivityResult {
         private String displayName;
         private String fusionEnvironmentId;
         private String id;
+        private Boolean isDataMaskingOpted;
         private String lifecycleDetails;
         private String refreshActivityId;
         private List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists;
@@ -196,6 +210,7 @@ public final class GetFusionEnvironmentRefreshActivityResult {
     	      this.displayName = defaults.displayName;
     	      this.fusionEnvironmentId = defaults.fusionEnvironmentId;
     	      this.id = defaults.id;
+    	      this.isDataMaskingOpted = defaults.isDataMaskingOpted;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.refreshActivityId = defaults.refreshActivityId;
     	      this.refreshIssueDetailsLists = defaults.refreshIssueDetailsLists;
@@ -231,6 +246,14 @@ public final class GetFusionEnvironmentRefreshActivityResult {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            if (isDataMaskingOpted == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentRefreshActivityResult", "isDataMaskingOpted");
+            }
+            this.isDataMaskingOpted = isDataMaskingOpted;
             return this;
         }
         @CustomType.Setter
@@ -329,6 +352,7 @@ public final class GetFusionEnvironmentRefreshActivityResult {
             _resultValue.displayName = displayName;
             _resultValue.fusionEnvironmentId = fusionEnvironmentId;
             _resultValue.id = id;
+            _resultValue.isDataMaskingOpted = isDataMaskingOpted;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.refreshActivityId = refreshActivityId;
             _resultValue.refreshIssueDetailsLists = refreshIssueDetailsLists;

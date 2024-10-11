@@ -580,6 +580,66 @@ export const getSensitiveTypes: typeof import("./getSensitiveTypes").getSensitiv
 export const getSensitiveTypesOutput: typeof import("./getSensitiveTypes").getSensitiveTypesOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveTypes","getSensitiveTypesOutput"], () => require("./getSensitiveTypes"));
 
+export { GetSqlCollectionArgs, GetSqlCollectionResult, GetSqlCollectionOutputArgs } from "./getSqlCollection";
+export const getSqlCollection: typeof import("./getSqlCollection").getSqlCollection = null as any;
+export const getSqlCollectionOutput: typeof import("./getSqlCollection").getSqlCollectionOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlCollection","getSqlCollectionOutput"], () => require("./getSqlCollection"));
+
+export { GetSqlCollectionAnalyticsArgs, GetSqlCollectionAnalyticsResult, GetSqlCollectionAnalyticsOutputArgs } from "./getSqlCollectionAnalytics";
+export const getSqlCollectionAnalytics: typeof import("./getSqlCollectionAnalytics").getSqlCollectionAnalytics = null as any;
+export const getSqlCollectionAnalyticsOutput: typeof import("./getSqlCollectionAnalytics").getSqlCollectionAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlCollectionAnalytics","getSqlCollectionAnalyticsOutput"], () => require("./getSqlCollectionAnalytics"));
+
+export { GetSqlCollectionLogInsightsArgs, GetSqlCollectionLogInsightsResult, GetSqlCollectionLogInsightsOutputArgs } from "./getSqlCollectionLogInsights";
+export const getSqlCollectionLogInsights: typeof import("./getSqlCollectionLogInsights").getSqlCollectionLogInsights = null as any;
+export const getSqlCollectionLogInsightsOutput: typeof import("./getSqlCollectionLogInsights").getSqlCollectionLogInsightsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlCollectionLogInsights","getSqlCollectionLogInsightsOutput"], () => require("./getSqlCollectionLogInsights"));
+
+export { GetSqlCollectionsArgs, GetSqlCollectionsResult, GetSqlCollectionsOutputArgs } from "./getSqlCollections";
+export const getSqlCollections: typeof import("./getSqlCollections").getSqlCollections = null as any;
+export const getSqlCollectionsOutput: typeof import("./getSqlCollections").getSqlCollectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlCollections","getSqlCollectionsOutput"], () => require("./getSqlCollections"));
+
+export { GetSqlFirewallAllowedSqlArgs, GetSqlFirewallAllowedSqlResult, GetSqlFirewallAllowedSqlOutputArgs } from "./getSqlFirewallAllowedSql";
+export const getSqlFirewallAllowedSql: typeof import("./getSqlFirewallAllowedSql").getSqlFirewallAllowedSql = null as any;
+export const getSqlFirewallAllowedSqlOutput: typeof import("./getSqlFirewallAllowedSql").getSqlFirewallAllowedSqlOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallAllowedSql","getSqlFirewallAllowedSqlOutput"], () => require("./getSqlFirewallAllowedSql"));
+
+export { GetSqlFirewallAllowedSqlAnalyticsArgs, GetSqlFirewallAllowedSqlAnalyticsResult, GetSqlFirewallAllowedSqlAnalyticsOutputArgs } from "./getSqlFirewallAllowedSqlAnalytics";
+export const getSqlFirewallAllowedSqlAnalytics: typeof import("./getSqlFirewallAllowedSqlAnalytics").getSqlFirewallAllowedSqlAnalytics = null as any;
+export const getSqlFirewallAllowedSqlAnalyticsOutput: typeof import("./getSqlFirewallAllowedSqlAnalytics").getSqlFirewallAllowedSqlAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallAllowedSqlAnalytics","getSqlFirewallAllowedSqlAnalyticsOutput"], () => require("./getSqlFirewallAllowedSqlAnalytics"));
+
+export { GetSqlFirewallAllowedSqlsArgs, GetSqlFirewallAllowedSqlsResult, GetSqlFirewallAllowedSqlsOutputArgs } from "./getSqlFirewallAllowedSqls";
+export const getSqlFirewallAllowedSqls: typeof import("./getSqlFirewallAllowedSqls").getSqlFirewallAllowedSqls = null as any;
+export const getSqlFirewallAllowedSqlsOutput: typeof import("./getSqlFirewallAllowedSqls").getSqlFirewallAllowedSqlsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallAllowedSqls","getSqlFirewallAllowedSqlsOutput"], () => require("./getSqlFirewallAllowedSqls"));
+
+export { GetSqlFirewallPoliciesArgs, GetSqlFirewallPoliciesResult, GetSqlFirewallPoliciesOutputArgs } from "./getSqlFirewallPolicies";
+export const getSqlFirewallPolicies: typeof import("./getSqlFirewallPolicies").getSqlFirewallPolicies = null as any;
+export const getSqlFirewallPoliciesOutput: typeof import("./getSqlFirewallPolicies").getSqlFirewallPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallPolicies","getSqlFirewallPoliciesOutput"], () => require("./getSqlFirewallPolicies"));
+
+export { GetSqlFirewallPolicyArgs, GetSqlFirewallPolicyResult, GetSqlFirewallPolicyOutputArgs } from "./getSqlFirewallPolicy";
+export const getSqlFirewallPolicy: typeof import("./getSqlFirewallPolicy").getSqlFirewallPolicy = null as any;
+export const getSqlFirewallPolicyOutput: typeof import("./getSqlFirewallPolicy").getSqlFirewallPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallPolicy","getSqlFirewallPolicyOutput"], () => require("./getSqlFirewallPolicy"));
+
+export { GetSqlFirewallPolicyAnalyticsArgs, GetSqlFirewallPolicyAnalyticsResult, GetSqlFirewallPolicyAnalyticsOutputArgs } from "./getSqlFirewallPolicyAnalytics";
+export const getSqlFirewallPolicyAnalytics: typeof import("./getSqlFirewallPolicyAnalytics").getSqlFirewallPolicyAnalytics = null as any;
+export const getSqlFirewallPolicyAnalyticsOutput: typeof import("./getSqlFirewallPolicyAnalytics").getSqlFirewallPolicyAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallPolicyAnalytics","getSqlFirewallPolicyAnalyticsOutput"], () => require("./getSqlFirewallPolicyAnalytics"));
+
+export { GetSqlFirewallViolationAnalyticsArgs, GetSqlFirewallViolationAnalyticsResult, GetSqlFirewallViolationAnalyticsOutputArgs } from "./getSqlFirewallViolationAnalytics";
+export const getSqlFirewallViolationAnalytics: typeof import("./getSqlFirewallViolationAnalytics").getSqlFirewallViolationAnalytics = null as any;
+export const getSqlFirewallViolationAnalyticsOutput: typeof import("./getSqlFirewallViolationAnalytics").getSqlFirewallViolationAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallViolationAnalytics","getSqlFirewallViolationAnalyticsOutput"], () => require("./getSqlFirewallViolationAnalytics"));
+
+export { GetSqlFirewallViolationsArgs, GetSqlFirewallViolationsResult, GetSqlFirewallViolationsOutputArgs } from "./getSqlFirewallViolations";
+export const getSqlFirewallViolations: typeof import("./getSqlFirewallViolations").getSqlFirewallViolations = null as any;
+export const getSqlFirewallViolationsOutput: typeof import("./getSqlFirewallViolations").getSqlFirewallViolationsOutput = null as any;
+utilities.lazyLoad(exports, ["getSqlFirewallViolations","getSqlFirewallViolationsOutput"], () => require("./getSqlFirewallViolations"));
+
 export { GetTargetAlertPolicyAssociationArgs, GetTargetAlertPolicyAssociationResult, GetTargetAlertPolicyAssociationOutputArgs } from "./getTargetAlertPolicyAssociation";
 export const getTargetAlertPolicyAssociation: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociation = null as any;
 export const getTargetAlertPolicyAssociationOutput: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociationOutput = null as any;

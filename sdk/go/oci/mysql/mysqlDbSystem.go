@@ -166,7 +166,7 @@ type MysqlDbSystem struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayOutput `pulumi:"heatWaveClusters"`
-	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
@@ -313,7 +313,7 @@ type mysqlDbSystemState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []MysqlDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
-	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
@@ -412,7 +412,7 @@ type MysqlDbSystemState struct {
 	FreeformTags pulumi.StringMapInput
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayInput
-	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
@@ -507,7 +507,7 @@ type mysqlDbSystemArgs struct {
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
@@ -589,7 +589,7 @@ type MysqlDbSystemArgs struct {
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
@@ -827,7 +827,7 @@ func (o MysqlDbSystemOutput) HeatWaveClusters() MysqlDbSystemHeatWaveClusterArra
 	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemHeatWaveClusterArrayOutput { return v.HeatWaveClusters }).(MysqlDbSystemHeatWaveClusterArrayOutput)
 }
 
-// The hostname for the primary endpoint of the DB System. Used for DNS.
+// (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 //
 // The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 //

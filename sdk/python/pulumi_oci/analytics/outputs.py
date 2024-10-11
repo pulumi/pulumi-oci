@@ -589,7 +589,8 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
                  state: str,
                  system_tags: Mapping[str, str],
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 update_channel: str):
         """
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceCapacityArgs'] capacities: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param str compartment_id: The OCID of the compartment.
@@ -610,6 +611,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         :param Mapping[str, str] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        :param str update_channel: Analytics instance update channel.
         """
         pulumi.set(__self__, "admin_user", admin_user)
         pulumi.set(__self__, "capacities", capacities)
@@ -632,6 +634,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "update_channel", update_channel)
 
     @property
     @pulumi.getter(name="adminUser")
@@ -794,6 +797,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updateChannel")
+    def update_channel(self) -> str:
+        """
+        Analytics instance update channel.
+        """
+        return pulumi.get(self, "update_channel")
 
 
 @pulumi.output_type

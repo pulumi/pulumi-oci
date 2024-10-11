@@ -48,6 +48,10 @@ export interface GetVmClusterResult {
      */
     readonly availabilityDomain: string;
     /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    readonly cloudAutomationUpdateDetails: outputs.Database.GetVmClusterCloudAutomationUpdateDetail[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;

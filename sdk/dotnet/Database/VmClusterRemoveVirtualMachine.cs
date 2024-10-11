@@ -57,6 +57,12 @@ namespace Pulumi.Oci.Database
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Output("cloudAutomationUpdateDetails")]
+        public Output<ImmutableArray<Outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail>> CloudAutomationUpdateDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
@@ -297,6 +303,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
+
+        [Input("cloudAutomationUpdateDetails")]
+        private InputList<Inputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailGetArgs>? _cloudAutomationUpdateDetails;
+
+        /// <summary>
+        /// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        public InputList<Inputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailGetArgs> CloudAutomationUpdateDetails
+        {
+            get => _cloudAutomationUpdateDetails ?? (_cloudAutomationUpdateDetails = new InputList<Inputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailGetArgs>());
+            set => _cloudAutomationUpdateDetails = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

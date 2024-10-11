@@ -169,9 +169,17 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.exadataDisplayName);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
     @Import(name="exadataInfraId")
     private @Nullable Output<String> exadataInfraId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
     public Optional<Output<String>> exadataInfraId() {
         return Optional.ofNullable(this.exadataInfraId);
     }
@@ -642,11 +650,23 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
             return exadataDisplayName(Output.of(exadataDisplayName));
         }
 
+        /**
+         * @param exadataInfraId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder exadataInfraId(@Nullable Output<String> exadataInfraId) {
             $.exadataInfraId = exadataInfraId;
             return this;
         }
 
+        /**
+         * @param exadataInfraId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder exadataInfraId(String exadataInfraId) {
             return exadataInfraId(Output.of(exadataInfraId));
         }

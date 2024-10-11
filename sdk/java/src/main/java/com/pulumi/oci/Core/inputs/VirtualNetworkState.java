@@ -131,6 +131,13 @@ public final class VirtualNetworkState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
     }
 
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
     @Import(name="state")
     private @Nullable Output<String> state;
 
@@ -171,6 +178,7 @@ public final class VirtualNetworkState extends com.pulumi.resources.ResourceArgs
         this.ipv6privateCidrBlocks = $.ipv6privateCidrBlocks;
         this.isIpv6enabled = $.isIpv6enabled;
         this.isOracleGuaAllocationEnabled = $.isOracleGuaAllocationEnabled;
+        this.securityAttributes = $.securityAttributes;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.vcnDomainName = $.vcnDomainName;
@@ -356,6 +364,15 @@ public final class VirtualNetworkState extends com.pulumi.resources.ResourceArgs
 
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
             return isOracleGuaAllocationEnabled(Output.of(isOracleGuaAllocationEnabled));
+        }
+
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         public Builder state(@Nullable Output<String> state) {

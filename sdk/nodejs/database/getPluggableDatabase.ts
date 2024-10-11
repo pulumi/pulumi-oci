@@ -73,6 +73,7 @@ export interface GetPluggableDatabaseResult {
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
     readonly isRestricted: boolean;
+    readonly kmsKeyVersionId: string;
     /**
      * Detailed message for the lifecycle state.
      */

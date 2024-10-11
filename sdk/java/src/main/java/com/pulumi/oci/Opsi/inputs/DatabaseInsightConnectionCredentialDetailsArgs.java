@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,15 +35,15 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
      * Credential type.
      * 
      */
-    @Import(name="credentialType")
-    private @Nullable Output<String> credentialType;
+    @Import(name="credentialType", required=true)
+    private Output<String> credentialType;
 
     /**
      * @return Credential type.
      * 
      */
-    public Optional<Output<String>> credentialType() {
-        return Optional.ofNullable(this.credentialType);
+    public Output<String> credentialType() {
+        return this.credentialType;
     }
 
     /**
@@ -90,21 +91,6 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         return Optional.ofNullable(this.userName);
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-     * 
-     */
-    @Import(name="walletSecretId")
-    private @Nullable Output<String> walletSecretId;
-
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-     * 
-     */
-    public Optional<Output<String>> walletSecretId() {
-        return Optional.ofNullable(this.walletSecretId);
-    }
-
     private DatabaseInsightConnectionCredentialDetailsArgs() {}
 
     private DatabaseInsightConnectionCredentialDetailsArgs(DatabaseInsightConnectionCredentialDetailsArgs $) {
@@ -113,7 +99,6 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         this.passwordSecretId = $.passwordSecretId;
         this.role = $.role;
         this.userName = $.userName;
-        this.walletSecretId = $.walletSecretId;
     }
 
     public static Builder builder() {
@@ -161,7 +146,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder credentialType(@Nullable Output<String> credentialType) {
+        public Builder credentialType(Output<String> credentialType) {
             $.credentialType = credentialType;
             return this;
         }
@@ -239,28 +224,10 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
             return userName(Output.of(userName));
         }
 
-        /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder walletSecretId(@Nullable Output<String> walletSecretId) {
-            $.walletSecretId = walletSecretId;
-            return this;
-        }
-
-        /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder walletSecretId(String walletSecretId) {
-            return walletSecretId(Output.of(walletSecretId));
-        }
-
         public DatabaseInsightConnectionCredentialDetailsArgs build() {
+            if ($.credentialType == null) {
+                throw new MissingRequiredPropertyException("DatabaseInsightConnectionCredentialDetailsArgs", "credentialType");
+            }
             return $;
         }
     }

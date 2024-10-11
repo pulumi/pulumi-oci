@@ -56,6 +56,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
      * 
      */
     private Boolean isRestricted;
+    private String kmsKeyVersionId;
     /**
      * @return Detailed message for the lifecycle state.
      * 
@@ -160,6 +161,9 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public Boolean isRestricted() {
         return this.isRestricted;
     }
+    public String kmsKeyVersionId() {
+        return this.kmsKeyVersionId;
+    }
     /**
      * @return Detailed message for the lifecycle state.
      * 
@@ -256,6 +260,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isRestricted;
+        private String kmsKeyVersionId;
         private String lifecycleDetails;
         private String openMode;
         private String pdbAdminPassword;
@@ -283,6 +288,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isRestricted = defaults.isRestricted;
+    	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.openMode = defaults.openMode;
     	      this.pdbAdminPassword = defaults.pdbAdminPassword;
@@ -373,6 +379,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
               throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "isRestricted");
             }
             this.isRestricted = isRestricted;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
@@ -518,6 +532,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isRestricted = isRestricted;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.openMode = openMode;
             _resultValue.pdbAdminPassword = pdbAdminPassword;

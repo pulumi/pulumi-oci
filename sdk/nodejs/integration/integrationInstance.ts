@@ -40,6 +40,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAt: integrationInstanceIdcsAt,
+ *     isDisasterRecoveryEnabled: integrationInstanceIsDisasterRecoveryEnabled,
  *     isFileServerEnabled: integrationInstanceIsFileServerEnabled,
  *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled,
  *     networkEndpointDetails: {
@@ -121,6 +122,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * Disaster recovery details for the integration instance created in the region.
+     */
+    public /*out*/ readonly disasterRecoveryDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceDisasterRecoveryDetail[]>;
+    /**
      * (Updatable) Integration Instance Identifier.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -137,6 +142,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly extendDataRetentionTrigger!: pulumi.Output<number | undefined>;
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    public readonly failoverTrigger!: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
@@ -148,6 +157,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * Information for IDCS access
      */
     public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[]>;
+    public /*out*/ readonly instanceDesignTimeUrl!: pulumi.Output<string>;
     /**
      * The Integration Instance URL.
      */
@@ -161,6 +171,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     public readonly isByol!: pulumi.Output<boolean>;
     /**
+     * Is Disaster Recovery enabled or not.
+     */
+    public readonly isDisasterRecoveryEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) The file server is enabled or not.
      */
     public readonly isFileServerEnabled!: pulumi.Output<boolean>;
@@ -168,6 +182,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * (Updatable) Visual Builder is enabled or not.
      */
     public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
+    /**
+     * Additional details of lifecycleState or substates
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -229,18 +247,23 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
             resourceInputs["dataRetentionPeriod"] = state ? state.dataRetentionPeriod : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["disasterRecoveryDetails"] = state ? state.disasterRecoveryDetails : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domainId"] = state ? state.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = state ? state.enableProcessAutomationTrigger : undefined;
             resourceInputs["extendDataRetentionTrigger"] = state ? state.extendDataRetentionTrigger : undefined;
+            resourceInputs["failoverTrigger"] = state ? state.failoverTrigger : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
             resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
+            resourceInputs["instanceDesignTimeUrl"] = state ? state.instanceDesignTimeUrl : undefined;
             resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
             resourceInputs["integrationInstanceType"] = state ? state.integrationInstanceType : undefined;
             resourceInputs["isByol"] = state ? state.isByol : undefined;
+            resourceInputs["isDisasterRecoveryEnabled"] = state ? state.isDisasterRecoveryEnabled : undefined;
             resourceInputs["isFileServerEnabled"] = state ? state.isFileServerEnabled : undefined;
             resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["messagePacks"] = state ? state.messagePacks : undefined;
             resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
             resourceInputs["privateEndpointOutboundConnections"] = state ? state.privateEndpointOutboundConnections : undefined;
@@ -276,10 +299,12 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["domainId"] = args ? args.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = args ? args.enableProcessAutomationTrigger : undefined;
             resourceInputs["extendDataRetentionTrigger"] = args ? args.extendDataRetentionTrigger : undefined;
+            resourceInputs["failoverTrigger"] = args ? args.failoverTrigger : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAt"] = args?.idcsAt ? pulumi.secret(args.idcsAt) : undefined;
             resourceInputs["integrationInstanceType"] = args ? args.integrationInstanceType : undefined;
             resourceInputs["isByol"] = args ? args.isByol : undefined;
+            resourceInputs["isDisasterRecoveryEnabled"] = args ? args.isDisasterRecoveryEnabled : undefined;
             resourceInputs["isFileServerEnabled"] = args ? args.isFileServerEnabled : undefined;
             resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
             resourceInputs["messagePacks"] = args ? args.messagePacks : undefined;
@@ -288,8 +313,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["dataRetentionPeriod"] = undefined /*out*/;
+            resourceInputs["disasterRecoveryDetails"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
+            resourceInputs["instanceDesignTimeUrl"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -336,6 +364,10 @@ export interface IntegrationInstanceState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Disaster recovery details for the integration instance created in the region.
+     */
+    disasterRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceDisasterRecoveryDetail>[]>;
+    /**
      * (Updatable) Integration Instance Identifier.
      */
     displayName?: pulumi.Input<string>;
@@ -352,6 +384,10 @@ export interface IntegrationInstanceState {
      */
     extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    failoverTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -363,6 +399,7 @@ export interface IntegrationInstanceState {
      * Information for IDCS access
      */
     idcsInfos?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceIdcsInfo>[]>;
+    instanceDesignTimeUrl?: pulumi.Input<string>;
     /**
      * The Integration Instance URL.
      */
@@ -376,6 +413,10 @@ export interface IntegrationInstanceState {
      */
     isByol?: pulumi.Input<boolean>;
     /**
+     * Is Disaster Recovery enabled or not.
+     */
+    isDisasterRecoveryEnabled?: pulumi.Input<boolean>;
+    /**
      * (Updatable) The file server is enabled or not.
      */
     isFileServerEnabled?: pulumi.Input<boolean>;
@@ -383,6 +424,10 @@ export interface IntegrationInstanceState {
      * (Updatable) Visual Builder is enabled or not.
      */
     isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    /**
+     * Additional details of lifecycleState or substates
+     */
+    lifecycleDetails?: pulumi.Input<string>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -466,6 +511,10 @@ export interface IntegrationInstanceArgs {
      */
     extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     */
+    failoverTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -481,6 +530,10 @@ export interface IntegrationInstanceArgs {
      * (Updatable) Bring your own license.
      */
     isByol: pulumi.Input<boolean>;
+    /**
+     * Is Disaster Recovery enabled or not.
+     */
+    isDisasterRecoveryEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The file server is enabled or not.
      */

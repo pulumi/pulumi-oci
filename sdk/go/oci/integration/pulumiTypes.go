@@ -20,8 +20,14 @@ type IntegrationInstanceAlternateCustomEndpoint struct {
 	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
 	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
+	// Type of DNS.
+	DnsType *string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName *string `pulumi:"dnsZoneName"`
 	// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType *string `pulumi:"managedType"`
 }
 
 // IntegrationInstanceAlternateCustomEndpointInput is an input type that accepts IntegrationInstanceAlternateCustomEndpointArgs and IntegrationInstanceAlternateCustomEndpointOutput values.
@@ -42,8 +48,14 @@ type IntegrationInstanceAlternateCustomEndpointArgs struct {
 	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
 	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
+	// Type of DNS.
+	DnsType pulumi.StringPtrInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringPtrInput `pulumi:"dnsZoneName"`
 	// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringPtrInput `pulumi:"managedType"`
 }
 
 func (IntegrationInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -112,9 +124,24 @@ func (o IntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersi
 	return o.ApplyT(func(v IntegrationInstanceAlternateCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
+// Type of DNS.
+func (o IntegrationInstanceAlternateCustomEndpointOutput) DnsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceAlternateCustomEndpoint) *string { return v.DnsType }).(pulumi.StringPtrOutput)
+}
+
+// DNS Zone name
+func (o IntegrationInstanceAlternateCustomEndpointOutput) DnsZoneName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceAlternateCustomEndpoint) *string { return v.DnsZoneName }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o IntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v IntegrationInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o IntegrationInstanceAlternateCustomEndpointOutput) ManagedType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceAlternateCustomEndpoint) *string { return v.ManagedType }).(pulumi.StringPtrOutput)
 }
 
 type IntegrationInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -286,8 +313,14 @@ type IntegrationInstanceCustomEndpoint struct {
 	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
 	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
+	// Type of DNS.
+	DnsType *string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName string `pulumi:"dnsZoneName"`
 	// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType *string `pulumi:"managedType"`
 }
 
 // IntegrationInstanceCustomEndpointInput is an input type that accepts IntegrationInstanceCustomEndpointArgs and IntegrationInstanceCustomEndpointOutput values.
@@ -308,8 +341,14 @@ type IntegrationInstanceCustomEndpointArgs struct {
 	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
 	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
+	// Type of DNS.
+	DnsType pulumi.StringPtrInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringInput `pulumi:"dnsZoneName"`
 	// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringPtrInput `pulumi:"managedType"`
 }
 
 func (IntegrationInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -404,9 +443,24 @@ func (o IntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulu
 	return o.ApplyT(func(v IntegrationInstanceCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
+// Type of DNS.
+func (o IntegrationInstanceCustomEndpointOutput) DnsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceCustomEndpoint) *string { return v.DnsType }).(pulumi.StringPtrOutput)
+}
+
+// DNS Zone name
+func (o IntegrationInstanceCustomEndpointOutput) DnsZoneName() pulumi.StringOutput {
+	return o.ApplyT(func(v IntegrationInstanceCustomEndpoint) string { return v.DnsZoneName }).(pulumi.StringOutput)
+}
+
 // (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o IntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v IntegrationInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o IntegrationInstanceCustomEndpointOutput) ManagedType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceCustomEndpoint) *string { return v.ManagedType }).(pulumi.StringPtrOutput)
 }
 
 type IntegrationInstanceCustomEndpointPtrOutput struct{ *pulumi.OutputState }
@@ -463,6 +517,26 @@ func (o IntegrationInstanceCustomEndpointPtrOutput) CertificateSecretVersion() p
 	}).(pulumi.IntPtrOutput)
 }
 
+// Type of DNS.
+func (o IntegrationInstanceCustomEndpointPtrOutput) DnsType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstanceCustomEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DnsType
+	}).(pulumi.StringPtrOutput)
+}
+
+// DNS Zone name
+func (o IntegrationInstanceCustomEndpointPtrOutput) DnsZoneName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstanceCustomEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DnsZoneName
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o IntegrationInstanceCustomEndpointPtrOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstanceCustomEndpoint) *string {
@@ -471,6 +545,265 @@ func (o IntegrationInstanceCustomEndpointPtrOutput) Hostname() pulumi.StringPtrO
 		}
 		return &v.Hostname
 	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o IntegrationInstanceCustomEndpointPtrOutput) ManagedType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstanceCustomEndpoint) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedType
+	}).(pulumi.StringPtrOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetail struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails []IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl *string `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role *string `pulumi:"role"`
+}
+
+// IntegrationInstanceDisasterRecoveryDetailInput is an input type that accepts IntegrationInstanceDisasterRecoveryDetailArgs and IntegrationInstanceDisasterRecoveryDetailOutput values.
+// You can construct a concrete instance of `IntegrationInstanceDisasterRecoveryDetailInput` via:
+//
+//	IntegrationInstanceDisasterRecoveryDetailArgs{...}
+type IntegrationInstanceDisasterRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceDisasterRecoveryDetailOutput() IntegrationInstanceDisasterRecoveryDetailOutput
+	ToIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Context) IntegrationInstanceDisasterRecoveryDetailOutput
+}
+
+type IntegrationInstanceDisasterRecoveryDetailArgs struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl pulumi.StringPtrInput `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role pulumi.StringPtrInput `pulumi:"role"`
+}
+
+func (IntegrationInstanceDisasterRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailArgs) ToIntegrationInstanceDisasterRecoveryDetailOutput() IntegrationInstanceDisasterRecoveryDetailOutput {
+	return i.ToIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailArgs) ToIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+// IntegrationInstanceDisasterRecoveryDetailArrayInput is an input type that accepts IntegrationInstanceDisasterRecoveryDetailArray and IntegrationInstanceDisasterRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `IntegrationInstanceDisasterRecoveryDetailArrayInput` via:
+//
+//	IntegrationInstanceDisasterRecoveryDetailArray{ IntegrationInstanceDisasterRecoveryDetailArgs{...} }
+type IntegrationInstanceDisasterRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceDisasterRecoveryDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailArrayOutput
+	ToIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Context) IntegrationInstanceDisasterRecoveryDetailArrayOutput
+}
+
+type IntegrationInstanceDisasterRecoveryDetailArray []IntegrationInstanceDisasterRecoveryDetailInput
+
+func (IntegrationInstanceDisasterRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailArray) ToIntegrationInstanceDisasterRecoveryDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return i.ToIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailArray) ToIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceDisasterRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailOutput) ToIntegrationInstanceDisasterRecoveryDetailOutput() IntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailOutput) ToIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+// Details of integration instance created in cross region for disaster recovery.
+func (o IntegrationInstanceDisasterRecoveryDetailOutput) CrossRegionIntegrationInstanceDetails() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetail) []IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return v.CrossRegionIntegrationInstanceDetails
+	}).(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+// Region specific instance url for the integration instance in the region
+func (o IntegrationInstanceDisasterRecoveryDetailOutput) RegionalInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetail) *string { return v.RegionalInstanceUrl }).(pulumi.StringPtrOutput)
+}
+
+// Role of the integration instance in the region
+func (o IntegrationInstanceDisasterRecoveryDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetail) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceDisasterRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailArrayOutput) ToIntegrationInstanceDisasterRecoveryDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailArrayOutput) ToIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceDisasterRecoveryDetail {
+		return vs[0].([]IntegrationInstanceDisasterRecoveryDetail)[vs[1].(int)]
+	}).(IntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail struct {
+	// The Virtual Cloud Network OCID.
+	Id *string `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region *string `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role *string `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged *string `pulumi:"timeRoleChanged"`
+}
+
+// IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput is an input type that accepts IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs and IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput values.
+// You can construct a concrete instance of `IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput` via:
+//
+//	IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...}
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+	ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+}
+
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs struct {
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged pulumi.StringPtrInput `pulumi:"timeRoleChanged"`
+}
+
+func (IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return i.ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
+}
+
+// IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput is an input type that accepts IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray and IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput values.
+// You can construct a concrete instance of `IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput` via:
+//
+//	IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{ IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...} }
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+	ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+}
+
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray []IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput
+
+func (IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return i.ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+// The Virtual Cloud Network OCID.
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) *string {
+		return v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// Cross region where integration instance is created
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) *string {
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// Role of the integration instance in the region
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time when cross region integration instance role was changed
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) TimeRoleChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) *string {
+		return v.TimeRoleChanged
+	}).(pulumi.StringPtrOutput)
+}
+
+type IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return vs[0].([]IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)[vs[1].(int)]
+	}).(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
 }
 
 type IntegrationInstanceIdcsInfo struct {
@@ -1028,10 +1361,15 @@ type GetIntegrationInstanceAlternateCustomEndpoint struct {
 	Alias string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion int    `pulumi:"certificateSecretVersion"`
+	DnsType                  string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName string `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType string `pulumi:"managedType"`
 }
 
 // GetIntegrationInstanceAlternateCustomEndpointInput is an input type that accepts GetIntegrationInstanceAlternateCustomEndpointArgs and GetIntegrationInstanceAlternateCustomEndpointOutput values.
@@ -1050,10 +1388,15 @@ type GetIntegrationInstanceAlternateCustomEndpointArgs struct {
 	Alias pulumi.StringInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion pulumi.IntInput    `pulumi:"certificateSecretVersion"`
+	DnsType                  pulumi.StringInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringInput `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringInput `pulumi:"managedType"`
 }
 
 func (GetIntegrationInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -1117,14 +1460,28 @@ func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretId
 	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
 }
 
-// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
 func (o GetIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+}
+
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) DnsType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.DnsType }).(pulumi.StringOutput)
+}
+
+// DNS Zone name
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) DnsZoneName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.DnsZoneName }).(pulumi.StringOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o GetIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ManagedType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceAlternateCustomEndpoint) string { return v.ManagedType }).(pulumi.StringOutput)
 }
 
 type GetIntegrationInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1294,10 +1651,15 @@ type GetIntegrationInstanceCustomEndpoint struct {
 	Alias string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion int    `pulumi:"certificateSecretVersion"`
+	DnsType                  string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName string `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType string `pulumi:"managedType"`
 }
 
 // GetIntegrationInstanceCustomEndpointInput is an input type that accepts GetIntegrationInstanceCustomEndpointArgs and GetIntegrationInstanceCustomEndpointOutput values.
@@ -1316,10 +1678,15 @@ type GetIntegrationInstanceCustomEndpointArgs struct {
 	Alias pulumi.StringInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion pulumi.IntInput    `pulumi:"certificateSecretVersion"`
+	DnsType                  pulumi.StringInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringInput `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringInput `pulumi:"managedType"`
 }
 
 func (GetIntegrationInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -1383,14 +1750,28 @@ func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretId() pulumi
 	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
 }
 
-// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
 func (o GetIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+}
+
+func (o GetIntegrationInstanceCustomEndpointOutput) DnsType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.DnsType }).(pulumi.StringOutput)
+}
+
+// DNS Zone name
+func (o GetIntegrationInstanceCustomEndpointOutput) DnsZoneName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.DnsZoneName }).(pulumi.StringOutput)
 }
 
 // A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o GetIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o GetIntegrationInstanceCustomEndpointOutput) ManagedType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceCustomEndpoint) string { return v.ManagedType }).(pulumi.StringOutput)
 }
 
 type GetIntegrationInstanceCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1413,6 +1794,255 @@ func (o GetIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput
 	}).(GetIntegrationInstanceCustomEndpointOutput)
 }
 
+type GetIntegrationInstanceDisasterRecoveryDetail struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails []GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl string `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role string `pulumi:"role"`
+}
+
+// GetIntegrationInstanceDisasterRecoveryDetailInput is an input type that accepts GetIntegrationInstanceDisasterRecoveryDetailArgs and GetIntegrationInstanceDisasterRecoveryDetailOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceDisasterRecoveryDetailInput` via:
+//
+//	GetIntegrationInstanceDisasterRecoveryDetailArgs{...}
+type GetIntegrationInstanceDisasterRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailOutput
+	ToGetIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Context) GetIntegrationInstanceDisasterRecoveryDetailOutput
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailArgs struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl pulumi.StringInput `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role pulumi.StringInput `pulumi:"role"`
+}
+
+func (GetIntegrationInstanceDisasterRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailArgs) ToGetIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailOutput {
+	return i.ToGetIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailArgs) ToGetIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+// GetIntegrationInstanceDisasterRecoveryDetailArrayInput is an input type that accepts GetIntegrationInstanceDisasterRecoveryDetailArray and GetIntegrationInstanceDisasterRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceDisasterRecoveryDetailArrayInput` via:
+//
+//	GetIntegrationInstanceDisasterRecoveryDetailArray{ GetIntegrationInstanceDisasterRecoveryDetailArgs{...} }
+type GetIntegrationInstanceDisasterRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailArrayOutput
+	ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Context) GetIntegrationInstanceDisasterRecoveryDetailArrayOutput
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailArray []GetIntegrationInstanceDisasterRecoveryDetailInput
+
+func (GetIntegrationInstanceDisasterRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailArray) ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return i.ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailArray) ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceDisasterRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailOutput) ToGetIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailOutput) ToGetIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+// Details of integration instance created in cross region for disaster recovery.
+func (o GetIntegrationInstanceDisasterRecoveryDetailOutput) CrossRegionIntegrationInstanceDetails() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetail) []GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return v.CrossRegionIntegrationInstanceDetails
+	}).(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+// Region specific instance url for the integration instance in the region
+func (o GetIntegrationInstanceDisasterRecoveryDetailOutput) RegionalInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetail) string { return v.RegionalInstanceUrl }).(pulumi.StringOutput)
+}
+
+// Role of the integration instance in the region
+func (o GetIntegrationInstanceDisasterRecoveryDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetail) string { return v.Role }).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceDisasterRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailArrayOutput) ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailArrayOutput) ToGetIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceDisasterRecoveryDetail {
+		return vs[0].([]GetIntegrationInstanceDisasterRecoveryDetail)[vs[1].(int)]
+	}).(GetIntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail struct {
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region string `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role string `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged string `pulumi:"timeRoleChanged"`
+}
+
+// GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput is an input type that accepts GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs and GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput` via:
+//
+//	GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...}
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+	ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs struct {
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region pulumi.StringInput `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role pulumi.StringInput `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged pulumi.StringInput `pulumi:"timeRoleChanged"`
+}
+
+func (GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return i.ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
+}
+
+// GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput is an input type that accepts GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray and GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput` via:
+//
+//	GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{ GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...} }
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+	ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray []GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput
+
+func (GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return i.ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Cross region where integration instance is created
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// Role of the integration instance in the region
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// Time when cross region integration instance role was changed
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.TimeRoleChanged
+	}).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToGetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return vs[0].([]GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)[vs[1].(int)]
+	}).(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
+}
+
 type GetIntegrationInstanceIdcsInfo struct {
 	// The IDCS application display name associated with the instance
 	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
@@ -1422,7 +2052,7 @@ type GetIntegrationInstanceIdcsInfo struct {
 	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
 	IdcsAppName string `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for integration flows in this instance type: string
+	// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
@@ -1446,7 +2076,7 @@ type GetIntegrationInstanceIdcsInfoArgs struct {
 	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
 	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for integration flows in this instance type: string
+	// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
@@ -1521,7 +2151,7 @@ func (o GetIntegrationInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
 }
 
-// The URL used as the primary audience for integration flows in this instance type: string
+// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 func (o GetIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
 }
@@ -2018,28 +2648,36 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	DataRetentionPeriod string `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    string `pulumi:"displayName"`
 	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	ExtendDataRetentionTrigger     int    `pulumi:"extendDataRetentionTrigger"`
+	FailoverTrigger                int    `pulumi:"failoverTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id     string `pulumi:"id"`
 	IdcsAt string `pulumi:"idcsAt"`
 	// Information for IDCS access
-	IdcsInfos []GetIntegrationInstancesIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	IdcsInfos             []GetIntegrationInstancesIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	InstanceDesignTimeUrl string                                               `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
 	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
+	// Is Disaster Recovery enabled for the integrationInstance
+	IsDisasterRecoveryEnabled bool `pulumi:"isDisasterRecoveryEnabled"`
 	// The file server is enabled or not.
 	IsFileServerEnabled bool `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
 	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	// Additional details of lifecycleState or substates
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The number of configured message packs (if any)
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -2086,28 +2724,36 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	DataRetentionPeriod pulumi.StringInput `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput `pulumi:"disasterRecoveryDetails"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    pulumi.StringInput `pulumi:"displayName"`
 	DomainId                       pulumi.StringInput `pulumi:"domainId"`
 	EnableProcessAutomationTrigger pulumi.IntInput    `pulumi:"enableProcessAutomationTrigger"`
 	ExtendDataRetentionTrigger     pulumi.IntInput    `pulumi:"extendDataRetentionTrigger"`
+	FailoverTrigger                pulumi.IntInput    `pulumi:"failoverTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id     pulumi.StringInput `pulumi:"id"`
 	IdcsAt pulumi.StringInput `pulumi:"idcsAt"`
 	// Information for IDCS access
-	IdcsInfos GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput `pulumi:"idcsInfos"`
+	IdcsInfos             GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput `pulumi:"idcsInfos"`
+	InstanceDesignTimeUrl pulumi.StringInput                                           `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
 	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringInput `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol pulumi.BoolInput `pulumi:"isByol"`
+	// Is Disaster Recovery enabled for the integrationInstance
+	IsDisasterRecoveryEnabled pulumi.BoolInput `pulumi:"isDisasterRecoveryEnabled"`
 	// The file server is enabled or not.
 	IsFileServerEnabled pulumi.BoolInput `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolInput `pulumi:"isVisualBuilderEnabled"`
+	// Additional details of lifecycleState or substates
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The number of configured message packs (if any)
 	MessagePacks pulumi.IntInput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -2220,6 +2866,13 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DefinedTags() pulumi.S
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Disaster recovery details for the integration instance created in the region.
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DisasterRecoveryDetails() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail {
+		return v.DisasterRecoveryDetails
+	}).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 func (o GetIntegrationInstancesIntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -2235,6 +2888,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomatio
 
 func (o GetIntegrationInstancesIntegrationInstanceOutput) ExtendDataRetentionTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.ExtendDataRetentionTrigger }).(pulumi.IntOutput)
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceOutput) FailoverTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.FailoverTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2258,6 +2915,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) IdcsInfos() GetIntegra
 	}).(GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput)
 }
 
+func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceDesignTimeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceDesignTimeUrl }).(pulumi.StringOutput)
+}
+
 // The Integration Instance URL.
 func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceUrl }).(pulumi.StringOutput)
@@ -2273,6 +2934,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) IsByol() pulumi.BoolOu
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsByol }).(pulumi.BoolOutput)
 }
 
+// Is Disaster Recovery enabled for the integrationInstance
+func (o GetIntegrationInstancesIntegrationInstanceOutput) IsDisasterRecoveryEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsDisasterRecoveryEnabled }).(pulumi.BoolOutput)
+}
+
 // The file server is enabled or not.
 func (o GetIntegrationInstancesIntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
@@ -2281,6 +2947,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) IsFileServerEnabled() 
 // Visual Builder is enabled or not.
 func (o GetIntegrationInstancesIntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+}
+
+// Additional details of lifecycleState or substates
+func (o GetIntegrationInstancesIntegrationInstanceOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The number of configured message packs (if any)
@@ -2357,10 +3028,15 @@ type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint struct {
 	Alias string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion int    `pulumi:"certificateSecretVersion"`
+	DnsType                  string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName string `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType string `pulumi:"managedType"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs and GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput values.
@@ -2379,10 +3055,15 @@ type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs struc
 	Alias pulumi.StringInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion pulumi.IntInput    `pulumi:"certificateSecretVersion"`
+	DnsType                  pulumi.StringInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringInput `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringInput `pulumi:"managedType"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -2448,16 +3129,30 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput)
 	}).(pulumi.StringOutput)
 }
 
-// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) int {
 		return v.CertificateSecretVersion
 	}).(pulumi.IntOutput)
 }
 
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) DnsType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.DnsType }).(pulumi.StringOutput)
+}
+
+// DNS Zone name
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) DnsZoneName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.DnsZoneName }).(pulumi.StringOutput)
+}
+
 // A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ManagedType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint) string { return v.ManagedType }).(pulumi.StringOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2627,10 +3322,15 @@ type GetIntegrationInstancesIntegrationInstanceCustomEndpoint struct {
 	Alias string `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId string `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion int    `pulumi:"certificateSecretVersion"`
+	DnsType                  string `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName string `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname string `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType string `pulumi:"managedType"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceCustomEndpointInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs and GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput values.
@@ -2649,10 +3349,15 @@ type GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs struct {
 	Alias pulumi.StringInput `pulumi:"alias"`
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
 	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
-	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
+	CertificateSecretVersion pulumi.IntInput    `pulumi:"certificateSecretVersion"`
+	DnsType                  pulumi.StringInput `pulumi:"dnsType"`
+	// DNS Zone name
+	DnsZoneName pulumi.StringInput `pulumi:"dnsZoneName"`
 	// A custom hostname to be used for the integration instance URL, in FQDN format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Indicates if custom endpoint is managed by oracle or customer.
+	ManagedType pulumi.StringInput `pulumi:"managedType"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -2716,16 +3421,30 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Certific
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
 }
 
-// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) int {
 		return v.CertificateSecretVersion
 	}).(pulumi.IntOutput)
 }
 
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) DnsType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.DnsType }).(pulumi.StringOutput)
+}
+
+// DNS Zone name
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) DnsZoneName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.DnsZoneName }).(pulumi.StringOutput)
+}
+
 // A custom hostname to be used for the integration instance URL, in FQDN format.
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates if custom endpoint is managed by oracle or customer.
+func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ManagedType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceCustomEndpoint) string { return v.ManagedType }).(pulumi.StringOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2748,6 +3467,257 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) Ind
 	}).(GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput)
 }
 
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl string `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role string `pulumi:"role"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs and GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs{...}
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs struct {
+	// Details of integration instance created in cross region for disaster recovery.
+	CrossRegionIntegrationInstanceDetails GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput `pulumi:"crossRegionIntegrationInstanceDetails"`
+	// Region specific instance url for the integration instance in the region
+	RegionalInstanceUrl pulumi.StringInput `pulumi:"regionalInstanceUrl"`
+	// Role of the integration instance in the region
+	Role pulumi.StringInput `pulumi:"role"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray and GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray{ GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailInput
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput {
+	return o
+}
+
+// Details of integration instance created in cross region for disaster recovery.
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) CrossRegionIntegrationInstanceDetails() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail) []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return v.CrossRegionIntegrationInstanceDetails
+	}).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+// Region specific instance url for the integration instance in the region
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) RegionalInstanceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail) string {
+		return v.RegionalInstanceUrl
+	}).(pulumi.StringOutput)
+}
+
+// Role of the integration instance in the region
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail) string { return v.Role }).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail struct {
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region string `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role string `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged string `pulumi:"timeRoleChanged"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs and GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...}
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs struct {
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Cross region where integration instance is created
+	Region pulumi.StringInput `pulumi:"region"`
+	// Role of the integration instance in the region
+	Role pulumi.StringInput `pulumi:"role"`
+	// Time when cross region integration instance role was changed
+	TimeRoleChanged pulumi.StringInput `pulumi:"timeRoleChanged"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray and GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{ GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return o
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Cross region where integration instance is created
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// Role of the integration instance in the region
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// Time when cross region integration instance role was changed
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput) TimeRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail) string {
+		return v.TimeRoleChanged
+	}).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput() GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) ToGetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput)
+}
+
 type GetIntegrationInstancesIntegrationInstanceIdcsInfo struct {
 	// The IDCS application display name associated with the instance
 	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
@@ -2757,7 +3727,7 @@ type GetIntegrationInstancesIntegrationInstanceIdcsInfo struct {
 	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
 	IdcsAppName string `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for integration flows in this instance type: string
+	// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
@@ -2781,7 +3751,7 @@ type GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs struct {
 	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
 	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
-	// The URL used as the primary audience for integration flows in this instance type: string
+	// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
@@ -2856,7 +3826,7 @@ func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) IdcsAppName() 
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
 }
 
-// The URL used as the primary audience for integration flows in this instance type: string
+// The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
 func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
 }
@@ -3251,6 +4221,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceAttachmentArrayInput)(nil)).Elem(), IntegrationInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceCustomEndpointInput)(nil)).Elem(), IntegrationInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceCustomEndpointPtrInput)(nil)).Elem(), IntegrationInstanceCustomEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailInput)(nil)).Elem(), IntegrationInstanceDisasterRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailArrayInput)(nil)).Elem(), IntegrationInstanceDisasterRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput)(nil)).Elem(), IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput)(nil)).Elem(), IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceIdcsInfoInput)(nil)).Elem(), IntegrationInstanceIdcsInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceIdcsInfoArrayInput)(nil)).Elem(), IntegrationInstanceIdcsInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsArgs{})
@@ -3265,6 +4239,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceAttachmentArrayInput)(nil)).Elem(), GetIntegrationInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceCustomEndpointInput)(nil)).Elem(), GetIntegrationInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceCustomEndpointArrayInput)(nil)).Elem(), GetIntegrationInstanceCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailInput)(nil)).Elem(), GetIntegrationInstanceDisasterRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailArrayInput)(nil)).Elem(), GetIntegrationInstanceDisasterRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput)(nil)).Elem(), GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput)(nil)).Elem(), GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceIdcsInfoInput)(nil)).Elem(), GetIntegrationInstanceIdcsInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceIdcsInfoArrayInput)(nil)).Elem(), GetIntegrationInstanceIdcsInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailArgs{})
@@ -3283,6 +4261,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceCustomEndpointInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceCustomEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceIdcsInfoInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceIdcsInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs{})
@@ -3297,6 +4279,10 @@ func init() {
 	pulumi.RegisterOutputType(IntegrationInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceCustomEndpointPtrOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceDisasterRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceDisasterRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceIdcsInfoOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceIdcsInfoArrayOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsOutput{})
@@ -3311,6 +4297,10 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceDisasterRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceDisasterRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceIdcsInfoOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceIdcsInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailOutput{})
@@ -3329,6 +4319,10 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput{})

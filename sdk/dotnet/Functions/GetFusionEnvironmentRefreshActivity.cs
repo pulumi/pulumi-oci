@@ -121,6 +121,10 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Represents if the customer opted for Data Masking or not during refreshActivity.
+        /// </summary>
+        public readonly bool IsDataMaskingOpted;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -170,6 +174,8 @@ namespace Pulumi.Oci.Functions
 
             string id,
 
+            bool isDataMaskingOpted,
+
             string lifecycleDetails,
 
             string refreshActivityId,
@@ -195,6 +201,7 @@ namespace Pulumi.Oci.Functions
             DisplayName = displayName;
             FusionEnvironmentId = fusionEnvironmentId;
             Id = id;
+            IsDataMaskingOpted = isDataMaskingOpted;
             LifecycleDetails = lifecycleDetails;
             RefreshActivityId = refreshActivityId;
             RefreshIssueDetailsLists = refreshIssueDetailsLists;

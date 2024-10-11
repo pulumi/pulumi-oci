@@ -69,7 +69,7 @@ type GetHostInsightsArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId *string                 `pulumi:"exadataInsightId"`
 	Filters          []GetHostInsightsFilter `pulumi:"filters"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
 	HostTypes []string `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
@@ -131,7 +131,7 @@ type GetHostInsightsOutputArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId pulumi.StringPtrInput           `pulumi:"exadataInsightId"`
 	Filters          GetHostInsightsFilterArrayInput `pulumi:"filters"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
 	HostTypes pulumi.StringArrayInput `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`

@@ -158,6 +158,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string PublicIpAddress;
         /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
         /// </summary>
         public readonly bool SkipSourceDestCheck;
@@ -207,6 +211,8 @@ namespace Pulumi.Oci.Core
 
             string publicIpAddress,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             bool skipSourceDestCheck,
 
             string state,
@@ -232,6 +238,7 @@ namespace Pulumi.Oci.Core
             NsgIds = nsgIds;
             PrivateIpAddress = privateIpAddress;
             PublicIpAddress = publicIpAddress;
+            SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             State = state;
             SubnetId = subnetId;

@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.ResourceArgs {
@@ -78,15 +80,15 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
      * The password for the administrator.
      * 
      */
-    @Import(name="password", required=true)
-    private Output<String> password;
+    @Import(name="password")
+    private @Nullable Output<String> password;
 
     /**
      * @return The password for the administrator.
      * 
      */
-    public Output<String> password() {
-        return this.password;
+    public Optional<Output<String>> password() {
+        return Optional.ofNullable(this.password);
     }
 
     /**
@@ -229,7 +231,7 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder password(Output<String> password) {
+        public Builder password(@Nullable Output<String> password) {
             $.password = password;
             return this;
         }
@@ -283,9 +285,6 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
             }
             if ($.lastName == null) {
                 throw new MissingRequiredPropertyException("FusionEnvironmentAdminUserArgs", "lastName");
-            }
-            if ($.password == null) {
-                throw new MissingRequiredPropertyException("FusionEnvironmentAdminUserArgs", "password");
             }
             if ($.username == null) {
                 throw new MissingRequiredPropertyException("FusionEnvironmentAdminUserArgs", "username");

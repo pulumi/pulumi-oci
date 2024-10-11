@@ -52,6 +52,12 @@ namespace Pulumi.Oci.Core
     /// with the signature. To get the image ID for the LaunchInstance operation, call
     /// [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
     /// 
+    /// When launching an instance, you may provide the `securityAttributes` parameter in
+    /// [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+    /// or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+    /// via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+    /// 400 Bad Request response.
+    /// 
     /// To determine whether capacity is available for a specific shape before you create an instance,
     /// use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
     /// operation.
@@ -327,6 +333,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// The lifecycle state of the `securityAttributes`
+        /// </summary>
+        [Output("securityAttributesState")]
+        public Output<string> SecurityAttributesState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -684,6 +702,18 @@ namespace Pulumi.Oci.Core
         [Input("preserveDataVolumesCreatedAtLaunch")]
         public Input<bool>? PreserveDataVolumesCreatedAtLaunch { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// 
@@ -1023,6 +1053,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
+        /// <summary>
+        /// The lifecycle state of the `securityAttributes`
+        /// </summary>
+        [Input("securityAttributesState")]
+        public Input<string>? SecurityAttributesState { get; set; }
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.

@@ -13,6 +13,8 @@ import com.pulumi.oci.Desktops.outputs.DesktopPoolAvailabilityPolicy;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolDevicePolicy;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolImage;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolNetworkConfiguration;
+import com.pulumi.oci.Desktops.outputs.DesktopPoolPrivateAccessDetails;
+import com.pulumi.oci.Desktops.outputs.DesktopPoolShapeConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -45,6 +47,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolDevicePolicyArgs;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolImageArgs;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolNetworkConfigurationArgs;
+ * import com.pulumi.oci.Desktops.inputs.DesktopPoolShapeConfigArgs;
+ * import com.pulumi.oci.Desktops.inputs.DesktopPoolPrivateAccessDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -86,6 +90,7 @@ import javax.annotation.Nullable;
  *             .image(DesktopPoolImageArgs.builder()
  *                 .imageId(testImage.id())
  *                 .imageName(desktopPoolImageImageName)
+ *                 .operatingSystem(desktopPoolImageOperatingSystem)
  *                 .build())
  *             .isStorageEnabled(desktopPoolIsStorageEnabled)
  *             .maximumSize(desktopPoolMaximumSize)
@@ -101,8 +106,19 @@ import javax.annotation.Nullable;
  *             .description(desktopPoolDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .nsgIds(desktopPoolNsgIds)
+ *             .shapeConfig(DesktopPoolShapeConfigArgs.builder()
+ *                 .baselineOcpuUtilization(desktopPoolShapeConfigBaselineOcpuUtilization)
+ *                 .memoryInGbs(desktopPoolShapeConfigMemoryInGbs)
+ *                 .ocpus(desktopPoolShapeConfigOcpus)
+ *                 .build())
+ *             .privateAccessDetails(DesktopPoolPrivateAccessDetailsArgs.builder()
+ *                 .subnetId(testSubnet.id())
+ *                 .nsgIds(desktopPoolPrivateAccessDetailsNsgIds)
+ *                 .privateIp(desktopPoolPrivateAccessDetailsPrivateIp)
+ *                 .build())
  *             .timeStartScheduled(desktopPoolTimeStartScheduled)
  *             .timeStopScheduled(desktopPoolTimeStopScheduled)
+ *             .useDedicatedVmHost(desktopPoolUseDedicatedVmHost)
  *             .build());
  * 
  *     }
@@ -333,18 +349,46 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.networkConfiguration;
     }
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
-     * @return A list of network security groups for the desktop pool.
+     * @return A list of network security groups for the private access.
      * 
      */
     public Output<Optional<List<String>>> nsgIds() {
         return Codegen.optional(this.nsgIds);
+    }
+    /**
+     * The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * 
+     */
+    @Export(name="privateAccessDetails", refs={DesktopPoolPrivateAccessDetails.class}, tree="[0]")
+    private Output<DesktopPoolPrivateAccessDetails> privateAccessDetails;
+
+    /**
+     * @return The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * 
+     */
+    public Output<DesktopPoolPrivateAccessDetails> privateAccessDetails() {
+        return this.privateAccessDetails;
+    }
+    /**
+     * The compute instance shape configuration requested for each desktop in the desktop pool.
+     * 
+     */
+    @Export(name="shapeConfig", refs={DesktopPoolShapeConfig.class}, tree="[0]")
+    private Output<DesktopPoolShapeConfig> shapeConfig;
+
+    /**
+     * @return The compute instance shape configuration requested for each desktop in the desktop pool.
+     * 
+     */
+    public Output<DesktopPoolShapeConfig> shapeConfig() {
+        return this.shapeConfig;
     }
     /**
      * The shape of the desktop pool.
@@ -447,9 +491,6 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The stop time of the desktop pool.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeStopScheduled", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeStopScheduled;
@@ -457,12 +498,29 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The stop time of the desktop pool.
      * 
+     */
+    public Output<Optional<String>> timeStopScheduled() {
+        return Codegen.optional(this.timeStopScheduled);
+    }
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Optional<String>> timeStopScheduled() {
-        return Codegen.optional(this.timeStopScheduled);
+    @Export(name="useDedicatedVmHost", refs={String.class}, tree="[0]")
+    private Output<String> useDedicatedVmHost;
+
+    /**
+     * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> useDedicatedVmHost() {
+        return this.useDedicatedVmHost;
     }
 
     /**

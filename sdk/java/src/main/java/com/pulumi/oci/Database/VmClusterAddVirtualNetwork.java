@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterAddVirtualNetworkArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkState;
+import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDbServer;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetail;
@@ -91,6 +92,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Export(name="cloudAutomationUpdateDetails", refs={List.class,VmClusterAddVirtualNetworkCloudAutomationUpdateDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetail>> cloudAutomationUpdateDetails;
+
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Output<List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetail>> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

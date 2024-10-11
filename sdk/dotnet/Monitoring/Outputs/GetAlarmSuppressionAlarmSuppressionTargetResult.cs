@@ -18,6 +18,14 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string AlarmId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
+        /// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+        /// </summary>
+        public readonly bool CompartmentIdInSubtree;
+        /// <summary>
         /// The type of the alarm suppression target.
         /// </summary>
         public readonly string TargetType;
@@ -26,9 +34,15 @@ namespace Pulumi.Oci.Monitoring.Outputs
         private GetAlarmSuppressionAlarmSuppressionTargetResult(
             string alarmId,
 
+            string compartmentId,
+
+            bool compartmentIdInSubtree,
+
             string targetType)
         {
             AlarmId = alarmId;
+            CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             TargetType = targetType;
         }
     }

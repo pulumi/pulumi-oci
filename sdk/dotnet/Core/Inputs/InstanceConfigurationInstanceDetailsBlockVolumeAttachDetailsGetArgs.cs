@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsShareable { get; set; }
 
         /// <summary>
-        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume. The only supported values are "iscsi" and "paravirtualized"
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
  *
- * Gets the specified alarm suppression.
+ * Gets the specified alarm suppression. For more information, see
+ * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
  *
  * For important limits information, see
  * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -84,9 +85,17 @@ export interface GetAlarmSuppressionResult {
      */
     readonly id: string;
     /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     */
+    readonly level: string;
+    /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
     readonly state: string;
+    /**
+     * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+     */
+    readonly suppressionConditions: outputs.Monitoring.GetAlarmSuppressionSuppressionCondition[];
     /**
      * The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      */
@@ -107,7 +116,8 @@ export interface GetAlarmSuppressionResult {
 /**
  * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
  *
- * Gets the specified alarm suppression.
+ * Gets the specified alarm suppression. For more information, see
+ * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
  *
  * For important limits information, see
  * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).

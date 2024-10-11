@@ -45,6 +45,7 @@ import * as utilities from "../utilities";
  *     image: {
  *         imageId: testImage.id,
  *         imageName: desktopPoolImageImageName,
+ *         operatingSystem: desktopPoolImageOperatingSystem,
  *     },
  *     isStorageEnabled: desktopPoolIsStorageEnabled,
  *     maximumSize: desktopPoolMaximumSize,
@@ -64,8 +65,19 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     nsgIds: desktopPoolNsgIds,
+ *     shapeConfig: {
+ *         baselineOcpuUtilization: desktopPoolShapeConfigBaselineOcpuUtilization,
+ *         memoryInGbs: desktopPoolShapeConfigMemoryInGbs,
+ *         ocpus: desktopPoolShapeConfigOcpus,
+ *     },
+ *     privateAccessDetails: {
+ *         subnetId: testSubnet.id,
+ *         nsgIds: desktopPoolPrivateAccessDetailsNsgIds,
+ *         privateIp: desktopPoolPrivateAccessDetailsPrivateIp,
+ *     },
  *     timeStartScheduled: desktopPoolTimeStartScheduled,
  *     timeStopScheduled: desktopPoolTimeStopScheduled,
+ *     useDedicatedVmHost: desktopPoolUseDedicatedVmHost,
  * });
  * ```
  *
@@ -166,9 +178,17 @@ export class DesktopPool extends pulumi.CustomResource {
      */
     public readonly networkConfiguration!: pulumi.Output<outputs.Desktops.DesktopPoolNetworkConfiguration>;
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      */
     public readonly nsgIds!: pulumi.Output<string[] | undefined>;
+    /**
+     * The details of the desktop's private access network connectivity to be set up for the desktop pool.
+     */
+    public readonly privateAccessDetails!: pulumi.Output<outputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    /**
+     * The compute instance shape configuration requested for each desktop in the desktop pool.
+     */
+    public readonly shapeConfig!: pulumi.Output<outputs.Desktops.DesktopPoolShapeConfig>;
     /**
      * The shape of the desktop pool.
      */
@@ -199,12 +219,16 @@ export class DesktopPool extends pulumi.CustomResource {
     public readonly timeStartScheduled!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The stop time of the desktop pool.
+     */
+    public readonly timeStopScheduled!: pulumi.Output<string | undefined>;
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStopScheduled!: pulumi.Output<string | undefined>;
+    public readonly useDedicatedVmHost!: pulumi.Output<string>;
 
     /**
      * Create a DesktopPool resource with the given unique name, arguments, and options.
@@ -235,6 +259,8 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["maximumSize"] = state ? state.maximumSize : undefined;
             resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
+            resourceInputs["privateAccessDetails"] = state ? state.privateAccessDetails : undefined;
+            resourceInputs["shapeConfig"] = state ? state.shapeConfig : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["standbySize"] = state ? state.standbySize : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -243,6 +269,7 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeStartScheduled"] = state ? state.timeStartScheduled : undefined;
             resourceInputs["timeStopScheduled"] = state ? state.timeStopScheduled : undefined;
+            resourceInputs["useDedicatedVmHost"] = state ? state.useDedicatedVmHost : undefined;
         } else {
             const args = argsOrState as DesktopPoolArgs | undefined;
             if ((!args || args.arePrivilegedUsers === undefined) && !opts.urn) {
@@ -305,12 +332,15 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["maximumSize"] = args ? args.maximumSize : undefined;
             resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["privateAccessDetails"] = args ? args.privateAccessDetails : undefined;
+            resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["standbySize"] = args ? args.standbySize : undefined;
             resourceInputs["storageBackupPolicyId"] = args ? args.storageBackupPolicyId : undefined;
             resourceInputs["storageSizeInGbs"] = args ? args.storageSizeInGbs : undefined;
             resourceInputs["timeStartScheduled"] = args ? args.timeStartScheduled : undefined;
             resourceInputs["timeStopScheduled"] = args ? args.timeStopScheduled : undefined;
+            resourceInputs["useDedicatedVmHost"] = args ? args.useDedicatedVmHost : undefined;
             resourceInputs["activeDesktops"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -385,9 +415,17 @@ export interface DesktopPoolState {
      */
     networkConfiguration?: pulumi.Input<inputs.Desktops.DesktopPoolNetworkConfiguration>;
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The details of the desktop's private access network connectivity to be set up for the desktop pool.
+     */
+    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    /**
+     * The compute instance shape configuration requested for each desktop in the desktop pool.
+     */
+    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig>;
     /**
      * The shape of the desktop pool.
      */
@@ -418,12 +456,16 @@ export interface DesktopPoolState {
     timeStartScheduled?: pulumi.Input<string>;
     /**
      * (Updatable) The stop time of the desktop pool.
+     */
+    timeStopScheduled?: pulumi.Input<string>;
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStopScheduled?: pulumi.Input<string>;
+    useDedicatedVmHost?: pulumi.Input<string>;
 }
 
 /**
@@ -487,9 +529,17 @@ export interface DesktopPoolArgs {
      */
     networkConfiguration: pulumi.Input<inputs.Desktops.DesktopPoolNetworkConfiguration>;
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The details of the desktop's private access network connectivity to be set up for the desktop pool.
+     */
+    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    /**
+     * The compute instance shape configuration requested for each desktop in the desktop pool.
+     */
+    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig>;
     /**
      * The shape of the desktop pool.
      */
@@ -512,10 +562,14 @@ export interface DesktopPoolArgs {
     timeStartScheduled?: pulumi.Input<string>;
     /**
      * (Updatable) The stop time of the desktop pool.
+     */
+    timeStopScheduled?: pulumi.Input<string>;
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStopScheduled?: pulumi.Input<string>;
+    useDedicatedVmHost?: pulumi.Input<string>;
 }

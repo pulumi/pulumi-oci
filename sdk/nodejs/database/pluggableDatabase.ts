@@ -81,6 +81,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
     public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    public readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
@@ -169,6 +170,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isRestricted"] = state ? state.isRestricted : undefined;
+            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["openMode"] = state ? state.openMode : undefined;
             resourceInputs["pdbAdminPassword"] = state ? state.pdbAdminPassword : undefined;
@@ -197,6 +199,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["convertToRegularTrigger"] = args ? args.convertToRegularTrigger : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
             resourceInputs["pdbAdminPassword"] = args?.pdbAdminPassword ? pulumi.secret(args.pdbAdminPassword) : undefined;
             resourceInputs["pdbCreationTypeDetails"] = args ? args.pdbCreationTypeDetails : undefined;
             resourceInputs["pdbName"] = args ? args.pdbName : undefined;
@@ -259,6 +262,7 @@ export interface PluggableDatabaseState {
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
     isRestricted?: pulumi.Input<boolean>;
+    kmsKeyVersionId?: pulumi.Input<string>;
     /**
      * Detailed message for the lifecycle state.
      */
@@ -351,6 +355,7 @@ export interface PluggableDatabaseArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    kmsKeyVersionId?: pulumi.Input<string>;
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */

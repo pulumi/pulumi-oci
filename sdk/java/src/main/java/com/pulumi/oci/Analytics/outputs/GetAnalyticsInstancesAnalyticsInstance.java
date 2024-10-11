@@ -111,6 +111,11 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Analytics instance update channel.
+     * 
+     */
+    private String updateChannel;
 
     private GetAnalyticsInstancesAnalyticsInstance() {}
     public String adminUser() {
@@ -252,6 +257,13 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Analytics instance update channel.
+     * 
+     */
+    public String updateChannel() {
+        return this.updateChannel;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -283,6 +295,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String updateChannel;
         public Builder() {}
         public Builder(GetAnalyticsInstancesAnalyticsInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -307,6 +320,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.updateChannel = defaults.updateChannel;
         }
 
         @CustomType.Setter
@@ -483,6 +497,14 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder updateChannel(String updateChannel) {
+            if (updateChannel == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstance", "updateChannel");
+            }
+            this.updateChannel = updateChannel;
+            return this;
+        }
         public GetAnalyticsInstancesAnalyticsInstance build() {
             final var _resultValue = new GetAnalyticsInstancesAnalyticsInstance();
             _resultValue.adminUser = adminUser;
@@ -506,6 +528,7 @@ public final class GetAnalyticsInstancesAnalyticsInstance {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updateChannel = updateChannel;
             return _resultValue;
         }
     }

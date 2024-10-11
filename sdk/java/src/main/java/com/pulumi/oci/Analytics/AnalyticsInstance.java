@@ -81,6 +81,7 @@ import javax.annotation.Nullable;
  *                     .whitelistedIps(analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsWhitelistedIps)
  *                     .build())
  *                 .build())
+ *             .updateChannel(analyticsInstanceUpdateChannel)
  *             .build());
  * 
  *     }
@@ -385,6 +386,20 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) Analytics instance update channel.
+     * 
+     */
+    @Export(name="updateChannel", refs={String.class}, tree="[0]")
+    private Output<String> updateChannel;
+
+    /**
+     * @return (Updatable) Analytics instance update channel.
+     * 
+     */
+    public Output<String> updateChannel() {
+        return this.updateChannel;
     }
 
     /**

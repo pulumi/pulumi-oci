@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailResult> CloudAutomationUpdateDetails;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
@@ -133,6 +137,8 @@ namespace Pulumi.Oci.Database.Outputs
         private GetVmClustersVmClusterResult(
             string availabilityDomain,
 
+            ImmutableArray<Outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailResult> cloudAutomationUpdateDetails,
+
             string compartmentId,
 
             int cpuCoreCount,
@@ -194,6 +200,7 @@ namespace Pulumi.Oci.Database.Outputs
             string vmClusterNetworkId)
         {
             AvailabilityDomain = availabilityDomain;
+            CloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             CpusEnabled = cpusEnabled;

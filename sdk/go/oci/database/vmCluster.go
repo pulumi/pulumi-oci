@@ -38,6 +38,18 @@ import (
 //				GiVersion:               pulumi.Any(vmClusterGiVersion),
 //				SshPublicKeys:           pulumi.Any(vmClusterSshPublicKeys),
 //				VmClusterNetworkId:      pulumi.Any(testVmClusterNetwork.Id),
+//				CloudAutomationUpdateDetails: &database.VmClusterCloudAutomationUpdateDetailsArgs{
+//					ApplyUpdateTimePreference: &database.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs{
+//						ApplyUpdatePreferredEndTime:   pulumi.Any(vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime),
+//						ApplyUpdatePreferredStartTime: pulumi.Any(vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime),
+//					},
+//					FreezePeriod: &database.VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs{
+//						FreezePeriodEndTime:   pulumi.Any(vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime),
+//						FreezePeriodStartTime: pulumi.Any(vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime),
+//					},
+//					IsEarlyAdoptionEnabled: pulumi.Any(vmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled),
+//					IsFreezePeriodEnabled:  pulumi.Any(vmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled),
+//				},
 //				DataCollectionOptions: &database.VmClusterDataCollectionOptionsArgs{
 //					IsDiagnosticsEventsEnabled: pulumi.Any(vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled),
 //					IsHealthMonitoringEnabled:  pulumi.Any(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
@@ -84,6 +96,8 @@ type VmCluster struct {
 
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsOutput `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	CpuCoreCount  pulumi.IntOutput    `pulumi:"cpuCoreCount"`
@@ -197,6 +211,8 @@ func GetVmCluster(ctx *pulumi.Context,
 type vmClusterState struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails *VmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	CpuCoreCount  *int    `pulumi:"cpuCoreCount"`
@@ -260,6 +276,8 @@ type vmClusterState struct {
 type VmClusterState struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain pulumi.StringPtrInput
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	CpuCoreCount  pulumi.IntPtrInput
@@ -325,6 +343,8 @@ func (VmClusterState) ElementType() reflect.Type {
 }
 
 type vmClusterArgs struct {
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails *VmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
@@ -374,6 +394,8 @@ type vmClusterArgs struct {
 
 // The set of arguments for constructing a VmCluster resource.
 type VmClusterArgs struct {
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	CpuCoreCount  pulumi.IntInput
@@ -511,6 +533,11 @@ func (o VmClusterOutput) ToVmClusterOutputWithContext(ctx context.Context) VmClu
 // The name of the availability domain that the VM cluster is located in.
 func (o VmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o VmClusterOutput) CloudAutomationUpdateDetails() VmClusterCloudAutomationUpdateDetailsOutput {
+	return o.ApplyT(func(v *VmCluster) VmClusterCloudAutomationUpdateDetailsOutput { return v.CloudAutomationUpdateDetails }).(VmClusterCloudAutomationUpdateDetailsOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

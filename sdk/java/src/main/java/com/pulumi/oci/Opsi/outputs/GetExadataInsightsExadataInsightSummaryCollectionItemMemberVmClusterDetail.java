@@ -20,6 +20,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     private String dbmPrivateEndpointId;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
     private String opsiPrivateEndpointId;
+    private String vmClusterType;
     private String vmclusterId;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail() {}
@@ -39,6 +40,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     public String opsiPrivateEndpointId() {
         return this.opsiPrivateEndpointId;
     }
+    public String vmClusterType() {
+        return this.vmClusterType;
+    }
     public String vmclusterId() {
         return this.vmclusterId;
     }
@@ -56,6 +60,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         private String dbmPrivateEndpointId;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private String opsiPrivateEndpointId;
+        private String vmClusterType;
         private String vmclusterId;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail defaults) {
@@ -64,6 +69,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
+    	      this.vmClusterType = defaults.vmClusterType;
     	      this.vmclusterId = defaults.vmclusterId;
         }
 
@@ -103,6 +109,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             return this;
         }
         @CustomType.Setter
+        public Builder vmClusterType(String vmClusterType) {
+            if (vmClusterType == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail", "vmClusterType");
+            }
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vmclusterId(String vmclusterId) {
             if (vmclusterId == null) {
               throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail", "vmclusterId");
@@ -116,6 +130,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
             _resultValue.memberDatabaseDetails = memberDatabaseDetails;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.vmClusterType = vmClusterType;
             _resultValue.vmclusterId = vmclusterId;
             return _resultValue;
         }

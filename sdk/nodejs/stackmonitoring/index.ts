@@ -60,6 +60,16 @@ export const getDiscoveryJobs: typeof import("./getDiscoveryJobs").getDiscoveryJ
 export const getDiscoveryJobsOutput: typeof import("./getDiscoveryJobs").getDiscoveryJobsOutput = null as any;
 utilities.lazyLoad(exports, ["getDiscoveryJobs","getDiscoveryJobsOutput"], () => require("./getDiscoveryJobs"));
 
+export { GetMaintenanceWindowArgs, GetMaintenanceWindowResult, GetMaintenanceWindowOutputArgs } from "./getMaintenanceWindow";
+export const getMaintenanceWindow: typeof import("./getMaintenanceWindow").getMaintenanceWindow = null as any;
+export const getMaintenanceWindowOutput: typeof import("./getMaintenanceWindow").getMaintenanceWindowOutput = null as any;
+utilities.lazyLoad(exports, ["getMaintenanceWindow","getMaintenanceWindowOutput"], () => require("./getMaintenanceWindow"));
+
+export { GetMaintenanceWindowsArgs, GetMaintenanceWindowsResult, GetMaintenanceWindowsOutputArgs } from "./getMaintenanceWindows";
+export const getMaintenanceWindows: typeof import("./getMaintenanceWindows").getMaintenanceWindows = null as any;
+export const getMaintenanceWindowsOutput: typeof import("./getMaintenanceWindows").getMaintenanceWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaintenanceWindows","getMaintenanceWindowsOutput"], () => require("./getMaintenanceWindows"));
+
 export { GetMetricExtensionArgs, GetMetricExtensionResult, GetMetricExtensionOutputArgs } from "./getMetricExtension";
 export const getMetricExtension: typeof import("./getMetricExtension").getMetricExtension = null as any;
 export const getMetricExtensionOutput: typeof import("./getMetricExtension").getMetricExtensionOutput = null as any;
@@ -109,6 +119,21 @@ export { GetProcessSetsArgs, GetProcessSetsResult, GetProcessSetsOutputArgs } fr
 export const getProcessSets: typeof import("./getProcessSets").getProcessSets = null as any;
 export const getProcessSetsOutput: typeof import("./getProcessSets").getProcessSetsOutput = null as any;
 utilities.lazyLoad(exports, ["getProcessSets","getProcessSetsOutput"], () => require("./getProcessSets"));
+
+export { MaintenanceWindowArgs, MaintenanceWindowState } from "./maintenanceWindow";
+export type MaintenanceWindow = import("./maintenanceWindow").MaintenanceWindow;
+export const MaintenanceWindow: typeof import("./maintenanceWindow").MaintenanceWindow = null as any;
+utilities.lazyLoad(exports, ["MaintenanceWindow"], () => require("./maintenanceWindow"));
+
+export { MaintenanceWindowsRetryFailedOperationArgs, MaintenanceWindowsRetryFailedOperationState } from "./maintenanceWindowsRetryFailedOperation";
+export type MaintenanceWindowsRetryFailedOperation = import("./maintenanceWindowsRetryFailedOperation").MaintenanceWindowsRetryFailedOperation;
+export const MaintenanceWindowsRetryFailedOperation: typeof import("./maintenanceWindowsRetryFailedOperation").MaintenanceWindowsRetryFailedOperation = null as any;
+utilities.lazyLoad(exports, ["MaintenanceWindowsRetryFailedOperation"], () => require("./maintenanceWindowsRetryFailedOperation"));
+
+export { MaintenanceWindowsStopArgs, MaintenanceWindowsStopState } from "./maintenanceWindowsStop";
+export type MaintenanceWindowsStop = import("./maintenanceWindowsStop").MaintenanceWindowsStop;
+export const MaintenanceWindowsStop: typeof import("./maintenanceWindowsStop").MaintenanceWindowsStop = null as any;
+utilities.lazyLoad(exports, ["MaintenanceWindowsStop"], () => require("./maintenanceWindowsStop"));
 
 export { MetricExtensionArgs, MetricExtensionState } from "./metricExtension";
 export type MetricExtension = import("./metricExtension").MetricExtension;
@@ -176,6 +201,12 @@ const _module = {
                 return new Config(name, <any>undefined, { urn })
             case "oci:StackMonitoring/discoveryJob:DiscoveryJob":
                 return new DiscoveryJob(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/maintenanceWindow:MaintenanceWindow":
+                return new MaintenanceWindow(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation":
+                return new MaintenanceWindowsRetryFailedOperation(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop":
+                return new MaintenanceWindowsStop(name, <any>undefined, { urn })
             case "oci:StackMonitoring/metricExtension:MetricExtension":
                 return new MetricExtension(name, <any>undefined, { urn })
             case "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement":
@@ -206,6 +237,9 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/baselineableMetric", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/config", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/discoveryJob", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/maintenanceWindow", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/maintenanceWindowsRetryFailedOperation", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/maintenanceWindowsStop", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtension", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtensionsTestManagement", _module)

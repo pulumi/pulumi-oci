@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         public readonly string DbmPrivateEndpointId;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult> MemberDatabaseDetails;
         public readonly string OpsiPrivateEndpointId;
+        public readonly string VmClusterType;
         public readonly string VmclusterId;
 
         [OutputConstructor]
@@ -32,12 +33,15 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string opsiPrivateEndpointId,
 
+            string vmClusterType,
+
             string vmclusterId)
         {
             CompartmentId = compartmentId;
             DbmPrivateEndpointId = dbmPrivateEndpointId;
             MemberDatabaseDetails = memberDatabaseDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
+            VmClusterType = vmClusterType;
             VmclusterId = vmclusterId;
         }
     }

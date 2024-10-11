@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Compartment identifier of the Exadata insight resource
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailResult> ConnectionCredentialDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> ConnectionDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> CredentialDetails;
         public readonly string DatabaseId;
@@ -35,6 +36,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
+        public readonly string ManagementAgentId;
         public readonly string OpsiPrivateEndpointId;
         public readonly string ServiceName;
         /// <summary>
@@ -45,6 +47,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(
             string compartmentId,
+
+            ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailResult> connectionCredentialDetails,
 
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> connectionDetails,
 
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            string managementAgentId,
+
             string opsiPrivateEndpointId,
 
             string serviceName,
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             ImmutableDictionary<string, string> systemTags)
         {
             CompartmentId = compartmentId;
+            ConnectionCredentialDetails = connectionCredentialDetails;
             ConnectionDetails = connectionDetails;
             CredentialDetails = credentialDetails;
             DatabaseId = databaseId;
@@ -80,6 +87,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             DeploymentType = deploymentType;
             EntitySource = entitySource;
             FreeformTags = freeformTags;
+            ManagementAgentId = managementAgentId;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             ServiceName = serviceName;
             SystemTags = systemTags;

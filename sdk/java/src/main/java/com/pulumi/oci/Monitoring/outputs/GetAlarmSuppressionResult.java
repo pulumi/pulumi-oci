@@ -6,6 +6,7 @@ package com.pulumi.oci.Monitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionAlarmSuppressionTarget;
+import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionSuppressionCondition;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,10 +56,20 @@ public final class GetAlarmSuppressionResult {
      */
     private String id;
     /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    private String level;
+    /**
      * @return The current lifecycle state of the alarm suppression.  Example: `DELETED`
      * 
      */
     private String state;
+    /**
+     * @return Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+     * 
+     */
+    private List<GetAlarmSuppressionSuppressionCondition> suppressionConditions;
     /**
      * @return The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      * 
@@ -141,11 +152,25 @@ public final class GetAlarmSuppressionResult {
         return this.id;
     }
     /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    public String level() {
+        return this.level;
+    }
+    /**
      * @return The current lifecycle state of the alarm suppression.  Example: `DELETED`
      * 
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+     * 
+     */
+    public List<GetAlarmSuppressionSuppressionCondition> suppressionConditions() {
+        return this.suppressionConditions;
     }
     /**
      * @return The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -194,7 +219,9 @@ public final class GetAlarmSuppressionResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String level;
         private String state;
+        private List<GetAlarmSuppressionSuppressionCondition> suppressionConditions;
         private String timeCreated;
         private String timeSuppressFrom;
         private String timeSuppressUntil;
@@ -211,7 +238,9 @@ public final class GetAlarmSuppressionResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.level = defaults.level;
     	      this.state = defaults.state;
+    	      this.suppressionConditions = defaults.suppressionConditions;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeSuppressFrom = defaults.timeSuppressFrom;
     	      this.timeSuppressUntil = defaults.timeSuppressUntil;
@@ -294,12 +323,31 @@ public final class GetAlarmSuppressionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder level(String level) {
+            if (level == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionResult", "level");
+            }
+            this.level = level;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAlarmSuppressionResult", "state");
             }
             this.state = state;
             return this;
+        }
+        @CustomType.Setter
+        public Builder suppressionConditions(List<GetAlarmSuppressionSuppressionCondition> suppressionConditions) {
+            if (suppressionConditions == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionResult", "suppressionConditions");
+            }
+            this.suppressionConditions = suppressionConditions;
+            return this;
+        }
+        public Builder suppressionConditions(GetAlarmSuppressionSuppressionCondition... suppressionConditions) {
+            return suppressionConditions(List.of(suppressionConditions));
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
@@ -344,7 +392,9 @@ public final class GetAlarmSuppressionResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.level = level;
             _resultValue.state = state;
+            _resultValue.suppressionConditions = suppressionConditions;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeSuppressFrom = timeSuppressFrom;
             _resultValue.timeSuppressUntil = timeSuppressUntil;

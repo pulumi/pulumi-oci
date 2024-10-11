@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the boot volume used to boot the instance.
+        /// (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
         /// </summary>
         [Input("sourceId")]
         public Input<string>? SourceId { get; set; }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterFileSystemConfigurationDetail;
 import java.lang.Boolean;
@@ -22,6 +23,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    private List<GetVmClustersVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -168,6 +174,13 @@ public final class GetVmClustersVmCluster {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public List<GetVmClustersVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -378,6 +391,7 @@ public final class GetVmClustersVmCluster {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private List<GetVmClustersVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
         private String compartmentId;
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
@@ -412,6 +426,7 @@ public final class GetVmClustersVmCluster {
         public Builder(GetVmClustersVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.cloudAutomationUpdateDetails = defaults.cloudAutomationUpdateDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
@@ -451,6 +466,17 @@ public final class GetVmClustersVmCluster {
             }
             this.availabilityDomain = availabilityDomain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder cloudAutomationUpdateDetails(List<GetVmClustersVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails) {
+            if (cloudAutomationUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "cloudAutomationUpdateDetails");
+            }
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+        public Builder cloudAutomationUpdateDetails(GetVmClustersVmClusterCloudAutomationUpdateDetail... cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(List.of(cloudAutomationUpdateDetails));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -707,6 +733,7 @@ public final class GetVmClustersVmCluster {
         public GetVmClustersVmCluster build() {
             final var _resultValue = new GetVmClustersVmCluster();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.cpusEnabled = cpusEnabled;

@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -37,6 +37,9 @@ class GetCloudVmClusterResult:
         if backup_subnet_id and not isinstance(backup_subnet_id, str):
             raise TypeError("Expected argument 'backup_subnet_id' to be a str")
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if cloud_automation_update_details and not isinstance(cloud_automation_update_details, list):
+            raise TypeError("Expected argument 'cloud_automation_update_details' to be a list")
+        pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if cloud_exadata_infrastructure_id and not isinstance(cloud_exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'cloud_exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
@@ -208,6 +211,14 @@ class GetCloudVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "backup_subnet_id")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Sequence['outputs.GetCloudVmClusterCloudAutomationUpdateDetailResult']:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -603,6 +614,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             availability_domain=self.availability_domain,
             backup_network_nsg_ids=self.backup_network_nsg_ids,
             backup_subnet_id=self.backup_subnet_id,
+            cloud_automation_update_details=self.cloud_automation_update_details,
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
             cloud_vm_cluster_id=self.cloud_vm_cluster_id,
             cluster_name=self.cluster_name,
@@ -682,6 +694,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         backup_network_nsg_ids=pulumi.get(__ret__, 'backup_network_nsg_ids'),
         backup_subnet_id=pulumi.get(__ret__, 'backup_subnet_id'),
+        cloud_automation_update_details=pulumi.get(__ret__, 'cloud_automation_update_details'),
         cloud_exadata_infrastructure_id=pulumi.get(__ret__, 'cloud_exadata_infrastructure_id'),
         cloud_vm_cluster_id=pulumi.get(__ret__, 'cloud_vm_cluster_id'),
         cluster_name=pulumi.get(__ret__, 'cluster_name'),
@@ -758,6 +771,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
         backup_subnet_id=pulumi.get(__response__, 'backup_subnet_id'),
+        cloud_automation_update_details=pulumi.get(__response__, 'cloud_automation_update_details'),
         cloud_exadata_infrastructure_id=pulumi.get(__response__, 'cloud_exadata_infrastructure_id'),
         cloud_vm_cluster_id=pulumi.get(__response__, 'cloud_vm_cluster_id'),
         cluster_name=pulumi.get(__response__, 'cluster_name'),

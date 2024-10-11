@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

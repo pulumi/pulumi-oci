@@ -87,6 +87,8 @@ type GetVnicResult struct {
 	PrivateIpAddress string `pulumi:"privateIpAddress"`
 	// The public IP address of the VNIC, if one is assigned.
 	PublicIpAddress string `pulumi:"publicIpAddress"`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
 	// The current state of the VNIC.
@@ -207,6 +209,11 @@ func (o GetVnicResultOutput) PrivateIpAddress() pulumi.StringOutput {
 // The public IP address of the VNIC, if one is assigned.
 func (o GetVnicResultOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicResult) string { return v.PublicIpAddress }).(pulumi.StringOutput)
+}
+
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+func (o GetVnicResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVnicResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).

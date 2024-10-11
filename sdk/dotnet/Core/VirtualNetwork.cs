@@ -60,6 +60,9 @@ namespace Pulumi.Oci.Core
         [Output("isOracleGuaAllocationEnabled")]
         public Output<bool> IsOracleGuaAllocationEnabled { get; private set; } = null!;
 
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -173,6 +176,14 @@ namespace Pulumi.Oci.Core
         [Input("isOracleGuaAllocationEnabled")]
         public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         public VirtualNetworkArgs()
         {
         }
@@ -263,6 +274,14 @@ namespace Pulumi.Oci.Core
 
         [Input("isOracleGuaAllocationEnabled")]
         public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -44,6 +44,7 @@ import (
 //					Ipv6addressIpv6subnetCidrPairDetails: pulumi.Any(vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails),
 //					NsgIds:                               pulumi.Any(vnicAttachmentCreateVnicDetailsNsgIds),
 //					PrivateIp:                            pulumi.Any(vnicAttachmentCreateVnicDetailsPrivateIp),
+//					SecurityAttributes:                   pulumi.Any(vnicAttachmentCreateVnicDetailsSecurityAttributes),
 //					SkipSourceDestCheck:                  pulumi.Any(vnicAttachmentCreateVnicDetailsSkipSourceDestCheck),
 //					SubnetId:                             pulumi.Any(testSubnet.Id),
 //					VlanId:                               pulumi.Any(testVlan.Id),

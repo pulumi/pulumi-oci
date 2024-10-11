@@ -17,12 +17,15 @@ from .get_object_versions import *
 from .get_objects import *
 from .get_preauthrequest import *
 from .get_preauthrequests import *
+from .get_private_endpoint import *
+from .get_private_endpoint_summaries import *
 from .get_replication_policies import *
 from .get_replication_policy import *
 from .get_replication_sources import *
 from .namespace_metadata import *
 from .object_lifecycle_policy import *
 from .preauthrequest import *
+from .private_endpoint import *
 from .replication_policy import *
 from .storage_object import *
 from ._inputs import *

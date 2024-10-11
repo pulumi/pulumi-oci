@@ -111,6 +111,8 @@ if typing.TYPE_CHECKING:
     events = __events
     import pulumi_oci.filestorage as __filestorage
     filestorage = __filestorage
+    import pulumi_oci.fleetappsmanagement as __fleetappsmanagement
+    fleetappsmanagement = __fleetappsmanagement
     import pulumi_oci.fleetsoftwareupdate as __fleetsoftwareupdate
     fleetsoftwareupdate = __fleetsoftwareupdate
     import pulumi_oci.functions as __functions
@@ -219,6 +221,8 @@ if typing.TYPE_CHECKING:
     sch = __sch
     import pulumi_oci.secrets as __secrets
     secrets = __secrets
+    import pulumi_oci.securityattribute as __securityattribute
+    securityattribute = __securityattribute
     import pulumi_oci.servicecatalog as __servicecatalog
     servicecatalog = __servicecatalog
     import pulumi_oci.servicemanagerproxy as __servicemanagerproxy
@@ -247,6 +251,8 @@ if typing.TYPE_CHECKING:
     waas = __waas
     import pulumi_oci.waf as __waf
     waf = __waf
+    import pulumi_oci.zpr as __zpr
+    zpr = __zpr
 else:
     adm = _utilities.lazy_import('pulumi_oci.adm')
     aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
@@ -299,6 +305,7 @@ else:
     email = _utilities.lazy_import('pulumi_oci.email')
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
+    fleetappsmanagement = _utilities.lazy_import('pulumi_oci.fleetappsmanagement')
     fleetsoftwareupdate = _utilities.lazy_import('pulumi_oci.fleetsoftwareupdate')
     functions = _utilities.lazy_import('pulumi_oci.functions')
     fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
@@ -353,6 +360,7 @@ else:
     resourcescheduler = _utilities.lazy_import('pulumi_oci.resourcescheduler')
     sch = _utilities.lazy_import('pulumi_oci.sch')
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
+    securityattribute = _utilities.lazy_import('pulumi_oci.securityattribute')
     servicecatalog = _utilities.lazy_import('pulumi_oci.servicecatalog')
     servicemanagerproxy = _utilities.lazy_import('pulumi_oci.servicemanagerproxy')
     servicemesh = _utilities.lazy_import('pulumi_oci.servicemesh')
@@ -367,6 +375,7 @@ else:
     waa = _utilities.lazy_import('pulumi_oci.waa')
     waas = _utilities.lazy_import('pulumi_oci.waas')
     waf = _utilities.lazy_import('pulumi_oci.waf')
+    zpr = _utilities.lazy_import('pulumi_oci.zpr')
 
 _utilities.register(
     resource_modules="""
@@ -3621,6 +3630,70 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FleetAppsManagement/fleet",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleet:Fleet": "Fleet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetCredential",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetCredential:FleetCredential": "FleetCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetProperty",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetProperty:FleetProperty": "FleetProperty"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/fleetResource",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/fleetResource:FleetResource": "FleetResource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/maintenanceWindow",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/onboarding",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/onboarding:Onboarding": "Onboarding"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/property",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/property:Property": "Property"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FleetAppsManagement/schedulerDefinition",
+  "fqn": "pulumi_oci.fleetappsmanagement",
+  "classes": {
+   "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition": "SchedulerDefinition"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "FleetSoftwareUpdate/fsuCollection",
   "fqn": "pulumi_oci.fleetsoftwareupdate",
   "classes": {
@@ -4393,6 +4466,14 @@ _utilities.register(
   "fqn": "pulumi_oci.integration",
   "classes": {
    "oci:Integration/integrationInstance:IntegrationInstance": "IntegrationInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Integration/oracleManagedCustomEndpoint",
+  "fqn": "pulumi_oci.integration",
+  "classes": {
+   "oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint": "OracleManagedCustomEndpoint"
   }
  },
  {
@@ -5189,6 +5270,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ObjectStorage/privateEndpoint",
+  "fqn": "pulumi_oci.objectstorage",
+  "classes": {
+   "oci:ObjectStorage/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ObjectStorage/replicationPolicy",
   "fqn": "pulumi_oci.objectstorage",
   "classes": {
@@ -5829,6 +5918,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "SecurityAttribute/securityAttribute",
+  "fqn": "pulumi_oci.securityattribute",
+  "classes": {
+   "oci:SecurityAttribute/securityAttribute:SecurityAttribute": "SecurityAttribute"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "SecurityAttribute/securityAttributeNamespace",
+  "fqn": "pulumi_oci.securityattribute",
+  "classes": {
+   "oci:SecurityAttribute/securityAttributeNamespace:SecurityAttributeNamespace": "SecurityAttributeNamespace"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ServiceCatalog/catalog",
   "fqn": "pulumi_oci.servicecatalog",
   "classes": {
@@ -5929,6 +6034,30 @@ _utilities.register(
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {
    "oci:StackMonitoring/discoveryJob:DiscoveryJob": "DiscoveryJob"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/maintenanceWindow",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/maintenanceWindowsRetryFailedOperation",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation": "MaintenanceWindowsRetryFailedOperation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/maintenanceWindowsStop",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop": "MaintenanceWindowsStop"
   }
  },
  {
@@ -6217,6 +6346,22 @@ _utilities.register(
   "fqn": "pulumi_oci.waf",
   "classes": {
    "oci:Waf/networkAddressList:NetworkAddressList": "NetworkAddressList"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Zpr/configuration",
+  "fqn": "pulumi_oci.zpr",
+  "classes": {
+   "oci:Zpr/configuration:Configuration": "Configuration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Zpr/zprPolicy",
+  "fqn": "pulumi_oci.zpr",
+  "classes": {
+   "oci:Zpr/zprPolicy:ZprPolicy": "ZprPolicy"
   }
  }
 ]

@@ -30,6 +30,9 @@ import javax.annotation.Nullable;
  * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
+ * Use the [ListServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/ListServices) operation to find service CIDR labels
+ * available in the region.
+ * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
@@ -100,14 +103,14 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
         return this.blockTraffic;
     }
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      * 
      */
     public Output<String> compartmentId() {

@@ -75,6 +75,7 @@ import * as utilities from "../utilities";
  *     ipv6privateCidrBlocks: vcnIpv6privateCidrBlocks,
  *     isIpv6enabled: vcnIsIpv6enabled,
  *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled,
+ *     securityAttributes: vcnSecurityAttributes,
  * });
  * ```
  *
@@ -189,13 +190,16 @@ export class Vcn extends pulumi.CustomResource {
      */
     public readonly isIpv6enabled!: pulumi.Output<boolean>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-     *
+     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     */
+    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
     /**
      * The VCN's current state.
      */
@@ -238,6 +242,7 @@ export class Vcn extends pulumi.CustomResource {
             resourceInputs["ipv6privateCidrBlocks"] = state ? state.ipv6privateCidrBlocks : undefined;
             resourceInputs["isIpv6enabled"] = state ? state.isIpv6enabled : undefined;
             resourceInputs["isOracleGuaAllocationEnabled"] = state ? state.isOracleGuaAllocationEnabled : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vcnDomainName"] = state ? state.vcnDomainName : undefined;
@@ -257,6 +262,7 @@ export class Vcn extends pulumi.CustomResource {
             resourceInputs["ipv6privateCidrBlocks"] = args ? args.ipv6privateCidrBlocks : undefined;
             resourceInputs["isIpv6enabled"] = args ? args.isIpv6enabled : undefined;
             resourceInputs["isOracleGuaAllocationEnabled"] = args ? args.isOracleGuaAllocationEnabled : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["byoipv6cidrBlocks"] = undefined /*out*/;
             resourceInputs["defaultDhcpOptionsId"] = undefined /*out*/;
             resourceInputs["defaultRouteTableId"] = undefined /*out*/;
@@ -350,13 +356,16 @@ export interface VcnState {
      */
     isIpv6enabled?: pulumi.Input<boolean>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-     *
+     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     */
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The VCN's current state.
      */
@@ -430,11 +439,14 @@ export interface VcnArgs {
      */
     isIpv6enabled?: pulumi.Input<boolean>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-     *
+     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     */
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

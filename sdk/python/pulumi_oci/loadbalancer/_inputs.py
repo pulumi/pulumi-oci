@@ -1066,6 +1066,10 @@ if not MYPY:
 
         Example: `1200`
         """
+        backend_tcp_proxy_protocol_options: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+        """
         backend_tcp_proxy_protocol_version: NotRequired[pulumi.Input[int]]
         """
         (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
@@ -1077,6 +1081,7 @@ elif False:
 class ListenerConnectionConfigurationArgs:
     def __init__(__self__, *,
                  idle_timeout_in_seconds: pulumi.Input[str],
+                 backend_tcp_proxy_protocol_options: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backend_tcp_proxy_protocol_version: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] idle_timeout_in_seconds: (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
@@ -1084,9 +1089,12 @@ class ListenerConnectionConfigurationArgs:
                For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
                
                Example: `1200`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] backend_tcp_proxy_protocol_options: (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
         :param pulumi.Input[int] backend_tcp_proxy_protocol_version: (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         """
         pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+        if backend_tcp_proxy_protocol_options is not None:
+            pulumi.set(__self__, "backend_tcp_proxy_protocol_options", backend_tcp_proxy_protocol_options)
         if backend_tcp_proxy_protocol_version is not None:
             pulumi.set(__self__, "backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
 
@@ -1105,6 +1113,18 @@ class ListenerConnectionConfigurationArgs:
     @idle_timeout_in_seconds.setter
     def idle_timeout_in_seconds(self, value: pulumi.Input[str]):
         pulumi.set(self, "idle_timeout_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="backendTcpProxyProtocolOptions")
+    def backend_tcp_proxy_protocol_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+        """
+        return pulumi.get(self, "backend_tcp_proxy_protocol_options")
+
+    @backend_tcp_proxy_protocol_options.setter
+    def backend_tcp_proxy_protocol_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "backend_tcp_proxy_protocol_options", value)
 
     @property
     @pulumi.getter(name="backendTcpProxyProtocolVersion")

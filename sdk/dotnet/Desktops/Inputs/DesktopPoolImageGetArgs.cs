@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Desktops.Inputs
         [Input("imageName", required: true)]
         public Input<string> ImageName { get; set; } = null!;
 
+        /// <summary>
+        /// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        /// </summary>
+        [Input("operatingSystem")]
+        public Input<string>? OperatingSystem { get; set; }
+
         public DesktopPoolImageGetArgs()
         {
         }

@@ -97,6 +97,13 @@ public final class VirtualNetworkArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
     }
 
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
     private VirtualNetworkArgs() {}
 
     private VirtualNetworkArgs(VirtualNetworkArgs $) {
@@ -111,6 +118,7 @@ public final class VirtualNetworkArgs extends com.pulumi.resources.ResourceArgs 
         this.ipv6privateCidrBlocks = $.ipv6privateCidrBlocks;
         this.isIpv6enabled = $.isIpv6enabled;
         this.isOracleGuaAllocationEnabled = $.isOracleGuaAllocationEnabled;
+        this.securityAttributes = $.securityAttributes;
     }
 
     public static Builder builder() {
@@ -240,6 +248,15 @@ public final class VirtualNetworkArgs extends com.pulumi.resources.ResourceArgs 
 
         public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
             return isOracleGuaAllocationEnabled(Output.of(isOracleGuaAllocationEnabled));
+        }
+
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         public VirtualNetworkArgs build() {

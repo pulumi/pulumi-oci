@@ -38,55 +38,56 @@ const (
 	// registries for nodejs and python:
 	mainPkg = "oci"
 	// modules:
-	admMod                          = "Adm"                          // ADM
-	aiAnomalyDetectionMod           = "AiAnomalyDetection"           // AI Anomaly Detection
-	aiDocumentMod                   = "AiDocument"                   // AI Document
-	aiLanguageMod                   = "AiLanguage"                   // AI Language
-	aiVisionMod                     = "AiVision"                     // AI Vision
-	analyticsMod                    = "Analytics"                    // Analytics
-	announcementsServiceMod         = "AnnouncementsService"         // Announcements Service
-	apiGatewayMod                   = "ApiGateway"                   // API Gateway
-	apmConfigMod                    = "ApmConfig"                    // APM Config
-	apmMod                          = "Apm"                          // APM
-	apmSyntheticsMod                = "ApmSynthetics"                // APM Synthetics
-	apmTracesMod                    = "ApmTraces"                    // APM Traces
-	appMgmtControlMod               = "AppMgmtControl"               // AppMgmt Control
-	artifactsMod                    = "Artifacts"                    // Artifacts
-	auditMod                        = "Audit"                        // Audit
-	autoscalingMod                  = "Autoscaling"                  // Autoscaling
-	bastionMod                      = "Bastion"                      // Autoscaling
-	bigDataServiceMod               = "BigDataService"               // Big Data Service
-	blockchainMod                   = "Blockchain"                   // Blockchain
-	budgetMod                       = "Budget"                       // Budget
-	capacityManagementMod           = "CapacityManagement"           // Capacity Management
-	certificatesManagementMod       = "CertificatesManagement"       // Certificates Management
-	cloudBridgeMod                  = "CloudBridge"                  // Cloud Bridge
-	cloudGuardMod                   = "CloudGuard"                   // Cloud Guard
-	cloudMigrationsMod              = "CloudMigrations"              // Cloud Migrations
-	clusterPlacementGroups          = "ClusterPlacementGroups"       // Cluster Placement Groups
-	computeCloudMod                 = "ComputeCloud"                 // Compute Cloud
-	computeInstanceAgent            = "ComputeInstanceAgent"         // Compute Instance Agent
-	containerEngineMod              = "ContainerEngine"              // Container Engine
-	containerInstancesMod           = "ContainerInstances"           // Container Instances
-	coreMod                         = "Core"                         // Core
-	dataCatalogMod                  = "DataCatalog"                  // Data Catalog
-	dataFlowMod                     = "DataFlow"                     // Data Flow
-	dataIntegrationMod              = "DataIntegration"              // Data Integration
-	dataLabellingServiceMod         = "DataLabellingService"         // Data Labelling Service
-	dataSafeMod                     = "DataSafe"                     // Data Safe
-	dataScienceMod                  = "DataScience"                  // Data Science
-	databaseManagementMod           = "DatabaseManagement"           // Database Management
-	databaseMigrationMod            = "DatabaseMigration"            // Database Migration
-	databaseMod                     = "Database"                     // Database
-	databaseToolsMod                = "DatabaseTools"                // Database Tools
-	demandSignalMod                 = "DemandSignal"                 // Demand Signal
-	devopsMod                       = "DevOps"                       // DevOps
-	disasterRecoveryMod             = "DisasterRecovery"             // Disaster Recovery
-	dnsMod                          = "Dns"                          // DNS
-	emWarehouseMod                  = "EmWarehouse"                  // EM Warehouse
-	emailMod                        = "Email"                        // Email
-	eventsMod                       = "Events"                       // Events
-	fileStorageMod                  = "FileStorage"                  // File Storage
+	admMod                          = "Adm"                    // ADM
+	aiAnomalyDetectionMod           = "AiAnomalyDetection"     // AI Anomaly Detection
+	aiDocumentMod                   = "AiDocument"             // AI Document
+	aiLanguageMod                   = "AiLanguage"             // AI Language
+	aiVisionMod                     = "AiVision"               // AI Vision
+	analyticsMod                    = "Analytics"              // Analytics
+	announcementsServiceMod         = "AnnouncementsService"   // Announcements Service
+	apiGatewayMod                   = "ApiGateway"             // API Gateway
+	apmConfigMod                    = "ApmConfig"              // APM Config
+	apmMod                          = "Apm"                    // APM
+	apmSyntheticsMod                = "ApmSynthetics"          // APM Synthetics
+	apmTracesMod                    = "ApmTraces"              // APM Traces
+	appMgmtControlMod               = "AppMgmtControl"         // AppMgmt Control
+	artifactsMod                    = "Artifacts"              // Artifacts
+	auditMod                        = "Audit"                  // Audit
+	autoscalingMod                  = "Autoscaling"            // Autoscaling
+	bastionMod                      = "Bastion"                // Autoscaling
+	bigDataServiceMod               = "BigDataService"         // Big Data Service
+	blockchainMod                   = "Blockchain"             // Blockchain
+	budgetMod                       = "Budget"                 // Budget
+	capacityManagementMod           = "CapacityManagement"     // Capacity Management
+	certificatesManagementMod       = "CertificatesManagement" // Certificates Management
+	cloudBridgeMod                  = "CloudBridge"            // Cloud Bridge
+	cloudGuardMod                   = "CloudGuard"             // Cloud Guard
+	cloudMigrationsMod              = "CloudMigrations"        // Cloud Migrations
+	clusterPlacementGroups          = "ClusterPlacementGroups" // Cluster Placement Groups
+	computeCloudMod                 = "ComputeCloud"           // Compute Cloud
+	computeInstanceAgent            = "ComputeInstanceAgent"   // Compute Instance Agent
+	containerEngineMod              = "ContainerEngine"        // Container Engine
+	containerInstancesMod           = "ContainerInstances"     // Container Instances
+	coreMod                         = "Core"                   // Core
+	dataCatalogMod                  = "DataCatalog"            // Data Catalog
+	dataFlowMod                     = "DataFlow"               // Data Flow
+	dataIntegrationMod              = "DataIntegration"        // Data Integration
+	dataLabellingServiceMod         = "DataLabellingService"   // Data Labelling Service
+	dataSafeMod                     = "DataSafe"               // Data Safe
+	dataScienceMod                  = "DataScience"            // Data Science
+	databaseManagementMod           = "DatabaseManagement"     // Database Management
+	databaseMigrationMod            = "DatabaseMigration"      // Database Migration
+	databaseMod                     = "Database"               // Database
+	databaseToolsMod                = "DatabaseTools"          // Database Tools
+	demandSignalMod                 = "DemandSignal"           // Demand Signal
+	devopsMod                       = "DevOps"                 // DevOps
+	disasterRecoveryMod             = "DisasterRecovery"       // Disaster Recovery
+	dnsMod                          = "Dns"                    // DNS
+	emWarehouseMod                  = "EmWarehouse"            // EM Warehouse
+	emailMod                        = "Email"                  // Email
+	eventsMod                       = "Events"                 // Events
+	fileStorageMod                  = "FileStorage"            // File Storage
+	fleetAppsManagementMod          = "FleetAppsManagement"
 	fleetSoftwareUpdateMod          = "FleetSoftwareUpdate"          // Fleet Software Update
 	functionsMod                    = "Functions"                    // Functions
 	fusionAppsMod                   = "FusionApps"                   // Fusion Apps
@@ -138,20 +139,22 @@ const (
 	resourceManagerMod              = "ResourceManager"              // Resource Manager
 	schMod                          = "Sch"                          // Sch
 	secretsMod                      = "Secrets"                      // Secrets
-	serviceCatalogMod               = "ServiceCatalog"               // Service Catalog
-	serviceManagerProxyMod          = "ServiceManagerProxy"          // Service Manager Proxy
-	serviceMeshMod                  = "ServiceMesh"                  // Service Mesh
-	stackMonitoringMod              = "StackMonitoring"              // Stack Monitoring
-	streamingMod                    = "Streaming"                    // Streaming
-	usageProxyMod                   = "UsageProxy"                   // Usage Proxy
-	vaultMod                        = "Vault"                        // Vault
-	vbsMod                          = "Vbs"                          // VBS
-	visualBuilderMod                = "VisualBuilder"                // Visual Builder
-	vnMonitoringMod                 = "VnMonitoring"                 // Vn Monitoring
-	vulnerabilityScanningMod        = "VulnerabilityScanning"        // VulnerabilityScanning
+	securityAttributeMod            = "SecurityAttribute"
+	serviceCatalogMod               = "ServiceCatalog"        // Service Catalog
+	serviceManagerProxyMod          = "ServiceManagerProxy"   // Service Manager Proxy
+	serviceMeshMod                  = "ServiceMesh"           // Service Mesh
+	stackMonitoringMod              = "StackMonitoring"       // Stack Monitoring
+	streamingMod                    = "Streaming"             // Streaming
+	usageProxyMod                   = "UsageProxy"            // Usage Proxy
+	vaultMod                        = "Vault"                 // Vault
+	vbsMod                          = "Vbs"                   // VBS
+	visualBuilderMod                = "VisualBuilder"         // Visual Builder
+	vnMonitoringMod                 = "VnMonitoring"          // Vn Monitoring
+	vulnerabilityScanningMod        = "VulnerabilityScanning" // VulnerabilityScanning
 	waaMod                          = "Waa"
 	waasMod                         = "Waas"
 	wafMod                          = "Waf"
+	zprMod                          = "Zpr"
 )
 
 // A mapping between the terraform prefix and the pulumi module name.
@@ -209,13 +212,14 @@ var mappedMods = map[string]string{
 	"email":                          emailMod,
 	"events":                         eventsMod,
 	"file_storage":                   fileStorageMod,
+	"fleet_apps_management":          fleetAppsManagementMod,
 	"fleet_software_update":          fleetSoftwareUpdateMod,
 	"functions":                      functionsMod,
 	"fusion_apps":                    fusionAppsMod,
 	"generative_ai":                  "GenerativeAi",
 	"generic_artifacts_content":      genericArtifactsContentMod,
-	"golden_gate":                    goldenGateMod,
 	"globally_distributed_database":  "GloballyDistributedDatabase",
+	"golden_gate":                    goldenGateMod,
 	"health_checks":                  healthChecksMod,
 	"identity":                       identityMod,
 	"identity_data_plane":            identityDataPlaneMod,
@@ -261,6 +265,7 @@ var mappedMods = map[string]string{
 	"redis":                          redisMod,
 	"resourcemanager":                resourceManagerMod,
 	"resource_scheduler":             "ResourceScheduler",
+	"security_attribute":             securityAttributeMod,
 	"sch":                            schMod,
 	"secrets":                        secretsMod,
 	"service_catalog":                serviceCatalogMod,
@@ -277,6 +282,7 @@ var mappedMods = map[string]string{
 	"waa":                            waaMod,
 	"waas":                           waasMod,
 	"waf":                            wafMod,
+	"zpr":                            zprMod,
 }
 
 // Provider returns additional overlaid schema and metadata associated with the provider
@@ -1708,25 +1714,27 @@ func Provider() tfbridge.ProviderInfo {
 
 	// These are not preset upstream
 	resourcesMissingDocs := []string{
+		"oci_bds_bds_instance_os_patch_action",
 		"oci_core_default_dhcp_options",
 		"oci_core_default_route_table",
 		"oci_core_default_security_list",
 		"oci_core_virtual_network",
 		"oci_data_safe_add_sdm_columns",
+		"oci_data_safe_database_security_config_management",
 		"oci_data_safe_mask_data",
 		"oci_data_safe_masking_policies_apply_difference_to_masking_columns",
+		"oci_data_safe_security_policy_deployment_management",
+		"oci_data_safe_security_policy_management",
 		"oci_data_safe_sensitive_data_models_apply_discovery_job_results",
+		"oci_data_safe_sql_firewall_policy_management",
 		"oci_database_autonomous_container_database_dataguard_role_change",
 		"oci_database_exadata_infrastructure_storage",
 		"oci_datascience_model_artifact_export",
 		"oci_datascience_model_artifact_import",
-		"oci_objectstorage_namespace_metadata",
-		"oci_data_safe_database_security_config_management",
-		"oci_data_safe_security_policy_deployment_management",
-		"oci_data_safe_security_policy_management",
-		"oci_data_safe_sql_firewall_policy_management",
+		"oci_integration_oracle_managed_custom_endpoint",
 		"oci_integration_private_endpoint_outbound_connection",
-		"oci_bds_bds_instance_os_patch_action",
+		"oci_objectstorage_namespace_metadata",
+		"oci_objectstorage_private_endpoint",
 	}
 	for _, tk := range resourcesMissingDocs {
 		r, ok := prov.Resources[tk]
@@ -1735,16 +1743,18 @@ func Provider() tfbridge.ProviderInfo {
 	}
 
 	datasourcesMissingDocs := []string{
-		"oci_core_listing_resource_version",
-		"oci_core_listing_resource_versions",
 		"oci_bds_auto_scaling_configurations",
 		"oci_containerengine_migrate_to_native_vcn_status",
+		"oci_core_listing_resource_version",
+		"oci_core_listing_resource_versions",
 		"oci_core_shape",
 		"oci_core_virtual_networks",
+		"oci_data_safe_security_assessment_finding",
 		"oci_data_safe_target_database_role",
 		"oci_network_load_balancer_backend_set_health",
 		"oci_objectstorage_namespace_metadata",
-		"oci_data_safe_security_assessment_finding",
+		"oci_objectstorage_private_endpoint",
+		"oci_objectstorage_private_endpoint_summaries",
 	}
 	for _, tk := range datasourcesMissingDocs {
 		d, ok := prov.DataSources[tk]

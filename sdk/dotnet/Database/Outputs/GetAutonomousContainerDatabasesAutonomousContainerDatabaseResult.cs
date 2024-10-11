@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult> KeyHistoryEntries;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         public readonly string KeyStoreId;
         /// <summary>

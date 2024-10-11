@@ -11,9 +11,62 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+// ##
 //
-// Gets the details of the specified Autonomous Database.
+// ***
+// ## subcategory: "Database"
+//
+// layout: "oci"
+// page_title: "Oracle Cloud Infrastructure: Database.getAutonomousDatabases"
+// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+// description: |-
+//
+//	Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+//
+// ---
+//
+// # Data Source: Database.getAutonomousDatabases
+// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+//
+// Gets a list of Autonomous Databases based on the query parameters specified.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
+//				CompartmentId:                 compartmentId,
+//				AutonomousContainerDatabaseId: pulumi.StringRef(testAutonomousContainerDatabase.Id),
+//				DbVersion:                     pulumi.StringRef(autonomousDatabaseDbVersion),
+//				DbWorkload:                    pulumi.StringRef(autonomousDatabaseDbWorkload),
+//				DisplayName:                   pulumi.StringRef(autonomousDatabaseDisplayName),
+//				InfrastructureType:            pulumi.StringRef(autonomousDatabaseInfrastructureType),
+//				IsDataGuardEnabled:            pulumi.BoolRef(autonomousDatabaseIsDataGuardEnabled),
+//				IsFreeTier:                    pulumi.BoolRef(autonomousDatabaseIsFreeTier),
+//				IsRefreshableClone:            pulumi.BoolRef(autonomousDatabaseIsRefreshableClone),
+//				IsResourcePoolLeader:          pulumi.BoolRef(autonomousDatabaseIsResourcePoolLeader),
+//				LifecycleStateNotEqualTo:      pulumi.StringRef(autonomousDatabaseLifecycleStateNotEqualTo),
+//				ResourcePoolLeaderId:          pulumi.StringRef(testResourcePoolLeader.Id),
+//				State:                         pulumi.StringRef(autonomousDatabaseState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetAutonomousDatabases(ctx *pulumi.Context, args *GetAutonomousDatabasesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabasesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDatabasesResult
@@ -48,8 +101,9 @@ type GetAutonomousDatabasesArgs struct {
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// Indicates if the Autonomous Database is a refreshable clone.
-	IsRefreshableClone   *bool `pulumi:"isRefreshableClone"`
-	IsResourcePoolLeader *bool `pulumi:"isResourcePoolLeader"`
+	IsRefreshableClone       *bool   `pulumi:"isRefreshableClone"`
+	IsResourcePoolLeader     *bool   `pulumi:"isResourcePoolLeader"`
+	LifecycleStateNotEqualTo *string `pulumi:"lifecycleStateNotEqualTo"`
 	// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourcePoolLeaderId *string `pulumi:"resourcePoolLeaderId"`
 	// The current state of the Autonomous Database.
@@ -83,8 +137,9 @@ type GetAutonomousDatabasesResult struct {
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// Indicates if the Autonomous Database is a refreshable clone.
-	IsRefreshableClone   *bool `pulumi:"isRefreshableClone"`
-	IsResourcePoolLeader *bool `pulumi:"isResourcePoolLeader"`
+	IsRefreshableClone       *bool   `pulumi:"isRefreshableClone"`
+	IsResourcePoolLeader     *bool   `pulumi:"isResourcePoolLeader"`
+	LifecycleStateNotEqualTo *string `pulumi:"lifecycleStateNotEqualTo"`
 	// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourcePoolLeaderId *string `pulumi:"resourcePoolLeaderId"`
 	// The current state of the Autonomous Database.
@@ -134,8 +189,9 @@ type GetAutonomousDatabasesOutputArgs struct {
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier pulumi.BoolPtrInput `pulumi:"isFreeTier"`
 	// Indicates if the Autonomous Database is a refreshable clone.
-	IsRefreshableClone   pulumi.BoolPtrInput `pulumi:"isRefreshableClone"`
-	IsResourcePoolLeader pulumi.BoolPtrInput `pulumi:"isResourcePoolLeader"`
+	IsRefreshableClone       pulumi.BoolPtrInput   `pulumi:"isRefreshableClone"`
+	IsResourcePoolLeader     pulumi.BoolPtrInput   `pulumi:"isResourcePoolLeader"`
+	LifecycleStateNotEqualTo pulumi.StringPtrInput `pulumi:"lifecycleStateNotEqualTo"`
 	// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourcePoolLeaderId pulumi.StringPtrInput `pulumi:"resourcePoolLeaderId"`
 	// The current state of the Autonomous Database.
@@ -227,6 +283,10 @@ func (o GetAutonomousDatabasesResultOutput) IsRefreshableClone() pulumi.BoolPtrO
 
 func (o GetAutonomousDatabasesResultOutput) IsResourcePoolLeader() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *bool { return v.IsResourcePoolLeader }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAutonomousDatabasesResultOutput) LifecycleStateNotEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.LifecycleStateNotEqualTo }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

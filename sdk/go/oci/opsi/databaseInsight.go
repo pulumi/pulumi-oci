@@ -26,10 +26,12 @@ type DatabaseInsight struct {
 
 	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsOutput `pulumi:"connectionCredentialDetails"`
-	// Connection details of the private endpoints.
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails DatabaseInsightConnectionDetailsOutput `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId pulumi.StringOutput `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrOutput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -50,7 +52,7 @@ type DatabaseInsight struct {
 	DbmPrivateEndpointId pulumi.StringOutput `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringOutput `pulumi:"enterpriseManagerBridgeId"`
@@ -70,12 +72,16 @@ type DatabaseInsight struct {
 	ExadataInsightId pulumi.StringOutput `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled pulumi.BoolOutput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable pulumi.BoolOutput `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringOutput `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -139,10 +145,12 @@ func GetDatabaseInsight(ctx *pulumi.Context,
 type databaseInsightState struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId *string `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
-	// Connection details of the private endpoints.
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId *string `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -163,7 +171,7 @@ type databaseInsightState struct {
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType *string `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
@@ -183,12 +191,16 @@ type databaseInsightState struct {
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -217,10 +229,12 @@ type databaseInsightState struct {
 type DatabaseInsightState struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringPtrInput
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
-	// Connection details of the private endpoints.
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId pulumi.StringPtrInput
 	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -241,7 +255,7 @@ type DatabaseInsightState struct {
 	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType pulumi.StringPtrInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
@@ -261,12 +275,16 @@ type DatabaseInsightState struct {
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolPtrInput
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -299,10 +317,12 @@ func (DatabaseInsightState) ElementType() reflect.Type {
 type databaseInsightArgs struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId string `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
-	// Connection details of the private endpoints.
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId *string `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -315,7 +335,7 @@ type databaseInsightArgs struct {
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType *string `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
@@ -329,6 +349,10 @@ type databaseInsightArgs struct {
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// Database service name used for connection requests.
@@ -344,10 +368,12 @@ type databaseInsightArgs struct {
 type DatabaseInsightArgs struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringInput
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
-	// Connection details of the private endpoints.
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId pulumi.StringPtrInput
 	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -360,7 +386,7 @@ type DatabaseInsightArgs struct {
 	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType pulumi.StringPtrInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
@@ -374,6 +400,10 @@ type DatabaseInsightArgs struct {
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput
 	// Database service name used for connection requests.
@@ -477,16 +507,21 @@ func (o DatabaseInsightOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o DatabaseInsightOutput) ConnectionCredentialDetails() DatabaseInsightConnectionCredentialDetailsOutput {
 	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightConnectionCredentialDetailsOutput {
 		return v.ConnectionCredentialDetails
 	}).(DatabaseInsightConnectionCredentialDetailsOutput)
 }
 
-// Connection details of the private endpoints.
+// Connection details to connect to the database. HostName, protocol, and port should be specified.
 func (o DatabaseInsightOutput) ConnectionDetails() DatabaseInsightConnectionDetailsOutput {
 	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightConnectionDetailsOutput { return v.ConnectionDetails }).(DatabaseInsightConnectionDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+func (o DatabaseInsightOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.ConnectorId }).(pulumi.StringOutput)
 }
 
 // User credential details to connect to the database.
@@ -539,7 +574,7 @@ func (o DatabaseInsightOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Database Deployment Type
+// Database Deployment Type (EXACS will be supported in the future)
 func (o DatabaseInsightOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -589,6 +624,11 @@ func (o DatabaseInsightOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// Flag is to identify if advanced features for autonomous database is enabled or not
+func (o DatabaseInsightOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.BoolOutput { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
 // Specifies if MYSQL DB System has heatwave cluster attached.
 func (o DatabaseInsightOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.BoolOutput { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -602,6 +642,11 @@ func (o DatabaseInsightOutput) IsHighlyAvailable() pulumi.BoolOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DatabaseInsightOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+func (o DatabaseInsightOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringPtrOutput { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint

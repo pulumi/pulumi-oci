@@ -22,18 +22,18 @@ __all__ = ['FusionEnvironmentRefreshActivityArgs', 'FusionEnvironmentRefreshActi
 class FusionEnvironmentRefreshActivityArgs:
     def __init__(__self__, *,
                  fusion_environment_id: pulumi.Input[str],
-                 source_fusion_environment_id: pulumi.Input[str]):
+                 source_fusion_environment_id: pulumi.Input[str],
+                 is_data_masking_opted: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentRefreshActivity resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         """
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+        if is_data_masking_opted is not None:
+            pulumi.set(__self__, "is_data_masking_opted", is_data_masking_opted)
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
@@ -52,10 +52,6 @@ class FusionEnvironmentRefreshActivityArgs:
     def source_fusion_environment_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
@@ -63,12 +59,25 @@ class FusionEnvironmentRefreshActivityArgs:
     def source_fusion_environment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "source_fusion_environment_id", value)
 
+    @property
+    @pulumi.getter(name="isDataMaskingOpted")
+    def is_data_masking_opted(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+        """
+        return pulumi.get(self, "is_data_masking_opted")
+
+    @is_data_masking_opted.setter
+    def is_data_masking_opted(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_data_masking_opted", value)
+
 
 @pulumi.input_type
 class _FusionEnvironmentRefreshActivityState:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fusion_environment_id: Optional[pulumi.Input[str]] = None,
+                 is_data_masking_opted: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  refresh_activity_id: Optional[pulumi.Input[str]] = None,
                  refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] = None,
@@ -84,14 +93,11 @@ class _FusionEnvironmentRefreshActivityState:
         Input properties used for looking up and filtering FusionEnvironmentRefreshActivity resources.
         :param pulumi.Input[str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
+        :param pulumi.Input[bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the refreshActivity.
         :param pulumi.Input[str] time_accepted: The time the refresh activity record was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
@@ -103,6 +109,8 @@ class _FusionEnvironmentRefreshActivityState:
             pulumi.set(__self__, "display_name", display_name)
         if fusion_environment_id is not None:
             pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        if is_data_masking_opted is not None:
+            pulumi.set(__self__, "is_data_masking_opted", is_data_masking_opted)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if refresh_activity_id is not None:
@@ -149,6 +157,18 @@ class _FusionEnvironmentRefreshActivityState:
     @fusion_environment_id.setter
     def fusion_environment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "fusion_environment_id", value)
+
+    @property
+    @pulumi.getter(name="isDataMaskingOpted")
+    def is_data_masking_opted(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+        """
+        return pulumi.get(self, "is_data_masking_opted")
+
+    @is_data_masking_opted.setter
+    def is_data_masking_opted(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_data_masking_opted", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -200,10 +220,6 @@ class _FusionEnvironmentRefreshActivityState:
     def source_fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
@@ -290,23 +306,13 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  fusion_environment_id: Optional[pulumi.Input[str]] = None,
+                 is_data_masking_opted: Optional[pulumi.Input[bool]] = None,
                  source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
         Creates a new RefreshActivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
-            fusion_environment_id=test_fusion_environment["id"],
-            source_fusion_environment_id=test_fusion_environment["id"])
-        ```
 
         ## Import
 
@@ -319,11 +325,8 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
+        :param pulumi.Input[bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -335,17 +338,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
         Creates a new RefreshActivity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
-            fusion_environment_id=test_fusion_environment["id"],
-            source_fusion_environment_id=test_fusion_environment["id"])
-        ```
 
         ## Import
 
@@ -371,6 +363,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  fusion_environment_id: Optional[pulumi.Input[str]] = None,
+                 is_data_masking_opted: Optional[pulumi.Input[bool]] = None,
                  source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -384,6 +377,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             if fusion_environment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'fusion_environment_id'")
             __props__.__dict__["fusion_environment_id"] = fusion_environment_id
+            __props__.__dict__["is_data_masking_opted"] = is_data_masking_opted
             if source_fusion_environment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'source_fusion_environment_id'")
             __props__.__dict__["source_fusion_environment_id"] = source_fusion_environment_id
@@ -410,6 +404,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+            is_data_masking_opted: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             refresh_activity_id: Optional[pulumi.Input[str]] = None,
             refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]]] = None,
@@ -430,14 +425,11 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
+        :param pulumi.Input[bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the refreshActivity.
         :param pulumi.Input[str] time_accepted: The time the refresh activity record was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
@@ -451,6 +443,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fusion_environment_id"] = fusion_environment_id
+        __props__.__dict__["is_data_masking_opted"] = is_data_masking_opted
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["refresh_activity_id"] = refresh_activity_id
         __props__.__dict__["refresh_issue_details_lists"] = refresh_issue_details_lists
@@ -479,6 +472,14 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         unique FusionEnvironment identifier
         """
         return pulumi.get(self, "fusion_environment_id")
+
+    @property
+    @pulumi.getter(name="isDataMaskingOpted")
+    def is_data_masking_opted(self) -> pulumi.Output[bool]:
+        """
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+        """
+        return pulumi.get(self, "is_data_masking_opted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -514,10 +515,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def source_fusion_environment_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 

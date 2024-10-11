@@ -27,7 +27,7 @@ class GetVcnResult:
     """
     A collection of values returned by getVcn.
     """
-    def __init__(__self__, byoipv6cidr_blocks=None, byoipv6cidr_details=None, cidr_block=None, cidr_blocks=None, compartment_id=None, default_dhcp_options_id=None, default_route_table_id=None, default_security_list_id=None, defined_tags=None, display_name=None, dns_label=None, freeform_tags=None, id=None, ipv6cidr_blocks=None, ipv6private_cidr_blocks=None, is_ipv6enabled=None, is_oracle_gua_allocation_enabled=None, state=None, time_created=None, vcn_domain_name=None, vcn_id=None):
+    def __init__(__self__, byoipv6cidr_blocks=None, byoipv6cidr_details=None, cidr_block=None, cidr_blocks=None, compartment_id=None, default_dhcp_options_id=None, default_route_table_id=None, default_security_list_id=None, defined_tags=None, display_name=None, dns_label=None, freeform_tags=None, id=None, ipv6cidr_blocks=None, ipv6private_cidr_blocks=None, is_ipv6enabled=None, is_oracle_gua_allocation_enabled=None, security_attributes=None, state=None, time_created=None, vcn_domain_name=None, vcn_id=None):
         if byoipv6cidr_blocks and not isinstance(byoipv6cidr_blocks, list):
             raise TypeError("Expected argument 'byoipv6cidr_blocks' to be a list")
         pulumi.set(__self__, "byoipv6cidr_blocks", byoipv6cidr_blocks)
@@ -79,6 +79,9 @@ class GetVcnResult:
         if is_oracle_gua_allocation_enabled and not isinstance(is_oracle_gua_allocation_enabled, bool):
             raise TypeError("Expected argument 'is_oracle_gua_allocation_enabled' to be a bool")
         pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -220,6 +223,14 @@ class GetVcnResult:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -272,6 +283,7 @@ class AwaitableGetVcnResult(GetVcnResult):
             ipv6private_cidr_blocks=self.ipv6private_cidr_blocks,
             is_ipv6enabled=self.is_ipv6enabled,
             is_oracle_gua_allocation_enabled=self.is_oracle_gua_allocation_enabled,
+            security_attributes=self.security_attributes,
             state=self.state,
             time_created=self.time_created,
             vcn_domain_name=self.vcn_domain_name,
@@ -320,6 +332,7 @@ def get_vcn(vcn_id: Optional[str] = None,
         ipv6private_cidr_blocks=pulumi.get(__ret__, 'ipv6private_cidr_blocks'),
         is_ipv6enabled=pulumi.get(__ret__, 'is_ipv6enabled'),
         is_oracle_gua_allocation_enabled=pulumi.get(__ret__, 'is_oracle_gua_allocation_enabled'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_domain_name=pulumi.get(__ret__, 'vcn_domain_name'),
@@ -365,6 +378,7 @@ def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
         ipv6private_cidr_blocks=pulumi.get(__response__, 'ipv6private_cidr_blocks'),
         is_ipv6enabled=pulumi.get(__response__, 'is_ipv6enabled'),
         is_oracle_gua_allocation_enabled=pulumi.get(__response__, 'is_oracle_gua_allocation_enabled'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         vcn_domain_name=pulumi.get(__response__, 'vcn_domain_name'),

@@ -14,7 +14,8 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
         /// 
-        /// Gets the specified alarm suppression.
+        /// Gets the specified alarm suppression. For more information, see
+        /// [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
         /// 
         /// For important limits information, see
         /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -48,7 +49,8 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
         /// 
-        /// Gets the specified alarm suppression.
+        /// Gets the specified alarm suppression. For more information, see
+        /// [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
         /// 
         /// For important limits information, see
         /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -147,9 +149,17 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+        /// </summary>
+        public readonly string Level;
+        /// <summary>
         /// The current lifecycle state of the alarm suppression.  Example: `DELETED`
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAlarmSuppressionSuppressionConditionResult> SuppressionConditions;
         /// <summary>
         /// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         /// </summary>
@@ -187,7 +197,11 @@ namespace Pulumi.Oci.Monitoring
 
             string id,
 
+            string level,
+
             string state,
+
+            ImmutableArray<Outputs.GetAlarmSuppressionSuppressionConditionResult> suppressionConditions,
 
             string timeCreated,
 
@@ -206,7 +220,9 @@ namespace Pulumi.Oci.Monitoring
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            Level = level;
             State = state;
+            SuppressionConditions = suppressionConditions;
             TimeCreated = timeCreated;
             TimeSuppressFrom = timeSuppressFrom;
             TimeSuppressUntil = timeSuppressUntil;

@@ -66,6 +66,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
     /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    public /*out*/ readonly cloudAutomationUpdateDetails!: pulumi.Output<outputs.Database.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
@@ -188,6 +192,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VmClusterRemoveVirtualMachineState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
@@ -225,6 +230,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["vmClusterId"] = args ? args.vmClusterId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["cloudAutomationUpdateDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["dataCollectionOptions"] = undefined /*out*/;
@@ -263,6 +269,10 @@ export interface VmClusterRemoveVirtualMachineState {
      * The name of the availability domain that the VM cluster is located in.
      */
     availabilityDomain?: pulumi.Input<string>;
+    /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    cloudAutomationUpdateDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

@@ -56,6 +56,10 @@ export interface GetDatabaseInsightResult {
      */
     readonly connectionDetails: outputs.Opsi.GetDatabaseInsightConnectionDetail[];
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     */
+    readonly connectorId: string;
+    /**
      * User credential details to connect to the database.
      */
     readonly credentialDetails: outputs.Opsi.GetDatabaseInsightCredentialDetail[];
@@ -135,6 +139,10 @@ export interface GetDatabaseInsightResult {
      */
     readonly id: string;
     /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     */
+    readonly isAdvancedFeaturesEnabled: boolean;
+    /**
      * Specifies if MYSQL DB System has heatwave cluster attached.
      */
     readonly isHeatWaveClusterAttached: boolean;
@@ -146,6 +154,7 @@ export interface GetDatabaseInsightResult {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly managementAgentId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */

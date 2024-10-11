@@ -42,7 +42,7 @@ public final class InstanceSourceDetails {
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
      * 
      */
     private @Nullable String sourceId;
@@ -91,7 +91,7 @@ public final class InstanceSourceDetails {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
      * 
      */
     public Optional<String> sourceId() {

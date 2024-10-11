@@ -12,24 +12,14 @@ namespace Pulumi.Oci.Opsi.Inputs
 
     public sealed class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        /// </summary>
         [Input("credentialSourceName")]
         public Input<string>? CredentialSourceName { get; set; }
 
-        /// <summary>
-        /// Credential type.
-        /// </summary>
         [Input("credentialType", required: true)]
         public Input<string> CredentialType { get; set; } = null!;
 
         [Input("passwordSecretId")]
         private Input<string>? _passwordSecretId;
-
-        /// <summary>
-        /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        /// </summary>
         public Input<string>? PasswordSecretId
         {
             get => _passwordSecretId;
@@ -40,21 +30,12 @@ namespace Pulumi.Oci.Opsi.Inputs
             }
         }
 
-        /// <summary>
-        /// database user role.
-        /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
 
-        /// <summary>
-        /// database user name.
-        /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        /// </summary>
         [Input("walletSecretId")]
         public Input<string>? WalletSecretId { get; set; }
 

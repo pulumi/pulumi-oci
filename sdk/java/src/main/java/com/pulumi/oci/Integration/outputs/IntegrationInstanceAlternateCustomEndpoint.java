@@ -29,10 +29,25 @@ public final class IntegrationInstanceAlternateCustomEndpoint {
      */
     private @Nullable Integer certificateSecretVersion;
     /**
+     * @return Type of DNS.
+     * 
+     */
+    private @Nullable String dnsType;
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    private @Nullable String dnsZoneName;
+    /**
      * @return (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
     private String hostname;
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    private @Nullable String managedType;
 
     private IntegrationInstanceAlternateCustomEndpoint() {}
     /**
@@ -57,11 +72,32 @@ public final class IntegrationInstanceAlternateCustomEndpoint {
         return Optional.ofNullable(this.certificateSecretVersion);
     }
     /**
+     * @return Type of DNS.
+     * 
+     */
+    public Optional<String> dnsType() {
+        return Optional.ofNullable(this.dnsType);
+    }
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    public Optional<String> dnsZoneName() {
+        return Optional.ofNullable(this.dnsZoneName);
+    }
+    /**
      * @return (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
     public String hostname() {
         return this.hostname;
+    }
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    public Optional<String> managedType() {
+        return Optional.ofNullable(this.managedType);
     }
 
     public static Builder builder() {
@@ -76,14 +112,20 @@ public final class IntegrationInstanceAlternateCustomEndpoint {
         private @Nullable String alias;
         private @Nullable String certificateSecretId;
         private @Nullable Integer certificateSecretVersion;
+        private @Nullable String dnsType;
+        private @Nullable String dnsZoneName;
         private String hostname;
+        private @Nullable String managedType;
         public Builder() {}
         public Builder(IntegrationInstanceAlternateCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alias = defaults.alias;
     	      this.certificateSecretId = defaults.certificateSecretId;
     	      this.certificateSecretVersion = defaults.certificateSecretVersion;
+    	      this.dnsType = defaults.dnsType;
+    	      this.dnsZoneName = defaults.dnsZoneName;
     	      this.hostname = defaults.hostname;
+    	      this.managedType = defaults.managedType;
         }
 
         @CustomType.Setter
@@ -105,6 +147,18 @@ public final class IntegrationInstanceAlternateCustomEndpoint {
             return this;
         }
         @CustomType.Setter
+        public Builder dnsType(@Nullable String dnsType) {
+
+            this.dnsType = dnsType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dnsZoneName(@Nullable String dnsZoneName) {
+
+            this.dnsZoneName = dnsZoneName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             if (hostname == null) {
               throw new MissingRequiredPropertyException("IntegrationInstanceAlternateCustomEndpoint", "hostname");
@@ -112,12 +166,21 @@ public final class IntegrationInstanceAlternateCustomEndpoint {
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
+        public Builder managedType(@Nullable String managedType) {
+
+            this.managedType = managedType;
+            return this;
+        }
         public IntegrationInstanceAlternateCustomEndpoint build() {
             final var _resultValue = new IntegrationInstanceAlternateCustomEndpoint();
             _resultValue.alias = alias;
             _resultValue.certificateSecretId = certificateSecretId;
             _resultValue.certificateSecretVersion = certificateSecretVersion;
+            _resultValue.dnsType = dnsType;
+            _resultValue.dnsZoneName = dnsZoneName;
             _resultValue.hostname = hostname;
+            _resultValue.managedType = managedType;
             return _resultValue;
         }
     }

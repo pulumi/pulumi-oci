@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -14,10 +15,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
     /**
+     * @return Name of the listener host that will be used to create the connect string to the database.
+     * 
+     */
+    private @Nullable String hostName;
+    /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
     private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts;
+    /**
+     * @return Listener port number used for connection requests.
+     * 
+     */
+    private @Nullable Integer port;
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
      * 
@@ -31,11 +42,25 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails() {}
     /**
+     * @return Name of the listener host that will be used to create the connect string to the database.
+     * 
+     */
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
+    }
+    /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
     public List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts() {
         return this.hosts == null ? List.of() : this.hosts;
+    }
+    /**
+     * @return Listener port number used for connection requests.
+     * 
+     */
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
@@ -61,17 +86,27 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String hostName;
         private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts;
+        private @Nullable Integer port;
         private @Nullable String protocol;
         private @Nullable String serviceName;
         public Builder() {}
         public Builder(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.hostName = defaults.hostName;
     	      this.hosts = defaults.hosts;
+    	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
+        public Builder hostName(@Nullable String hostName) {
+
+            this.hostName = hostName;
+            return this;
+        }
         @CustomType.Setter
         public Builder hosts(@Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts) {
 
@@ -80,6 +115,12 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
         }
         public Builder hosts(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost... hosts) {
             return hosts(List.of(hosts));
+        }
+        @CustomType.Setter
+        public Builder port(@Nullable Integer port) {
+
+            this.port = port;
+            return this;
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
@@ -95,7 +136,9 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
         }
         public ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails build() {
             final var _resultValue = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails();
+            _resultValue.hostName = hostName;
             _resultValue.hosts = hosts;
+            _resultValue.port = port;
             _resultValue.protocol = protocol;
             _resultValue.serviceName = serviceName;
             return _resultValue;

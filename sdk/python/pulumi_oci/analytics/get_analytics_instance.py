@@ -27,7 +27,7 @@ class GetAnalyticsInstanceResult:
     """
     A collection of values returned by getAnalyticsInstance.
     """
-    def __init__(__self__, admin_user=None, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, domain_id=None, email_notification=None, feature_bundle=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_user=None, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, domain_id=None, email_notification=None, feature_bundle=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, system_tags=None, time_created=None, time_updated=None, update_channel=None):
         if admin_user and not isinstance(admin_user, str):
             raise TypeError("Expected argument 'admin_user' to be a str")
         pulumi.set(__self__, "admin_user", admin_user)
@@ -94,6 +94,9 @@ class GetAnalyticsInstanceResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if update_channel and not isinstance(update_channel, str):
+            raise TypeError("Expected argument 'update_channel' to be a str")
+        pulumi.set(__self__, "update_channel", update_channel)
 
     @property
     @pulumi.getter(name="adminUser")
@@ -262,6 +265,14 @@ class GetAnalyticsInstanceResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="updateChannel")
+    def update_channel(self) -> str:
+        """
+        Analytics instance update channel.
+        """
+        return pulumi.get(self, "update_channel")
+
 
 class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
     # pylint: disable=using-constant-test
@@ -290,7 +301,8 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            update_channel=self.update_channel)
 
 
 def get_analytics_instance(analytics_instance_id: Optional[str] = None,
@@ -339,7 +351,8 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        update_channel=pulumi.get(__ret__, 'update_channel'))
 def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
     """
@@ -385,4 +398,5 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[s
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        update_channel=pulumi.get(__response__, 'update_channel')))

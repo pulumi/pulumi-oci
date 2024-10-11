@@ -109,9 +109,17 @@ export interface GetDesktopPoolResult {
      */
     readonly networkConfigurations: outputs.Desktops.GetDesktopPoolNetworkConfiguration[];
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      */
     readonly nsgIds: string[];
+    /**
+     * The details of the desktop's private access network connectivity that were used to create the pool.
+     */
+    readonly privateAccessDetails: outputs.Desktops.GetDesktopPoolPrivateAccessDetail[];
+    /**
+     * The shape configuration used for each desktop compute instance in the desktop pool.
+     */
+    readonly shapeConfigs: outputs.Desktops.GetDesktopPoolShapeConfig[];
     /**
      * The shape of the desktop pool.
      */
@@ -144,6 +152,10 @@ export interface GetDesktopPoolResult {
      * The stop time of the desktop pool.
      */
     readonly timeStopScheduled: string;
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     */
+    readonly useDedicatedVmHost: string;
 }
 /**
  * This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.

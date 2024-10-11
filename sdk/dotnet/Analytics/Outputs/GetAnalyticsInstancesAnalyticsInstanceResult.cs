@@ -91,6 +91,10 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Analytics instance update channel.
+        /// </summary>
+        public readonly string UpdateChannel;
 
         [OutputConstructor]
         private GetAnalyticsInstancesAnalyticsInstanceResult(
@@ -134,7 +138,9 @@ namespace Pulumi.Oci.Analytics.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string updateChannel)
         {
             AdminUser = adminUser;
             Capacities = capacities;
@@ -157,6 +163,7 @@ namespace Pulumi.Oci.Analytics.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UpdateChannel = updateChannel;
         }
     }
 }

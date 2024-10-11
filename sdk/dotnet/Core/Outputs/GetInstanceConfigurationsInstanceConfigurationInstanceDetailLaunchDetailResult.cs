@@ -108,6 +108,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string PreferredMaintenanceAction;
         /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         public readonly string Shape;
@@ -163,6 +167,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string preferredMaintenanceAction,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult> shapeConfigs,
@@ -191,6 +197,7 @@ namespace Pulumi.Oci.Core.Outputs
             PlatformConfigs = platformConfigs;
             PreemptibleInstanceConfigs = preemptibleInstanceConfigs;
             PreferredMaintenanceAction = preferredMaintenanceAction;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             ShapeConfigs = shapeConfigs;
             SourceDetails = sourceDetails;

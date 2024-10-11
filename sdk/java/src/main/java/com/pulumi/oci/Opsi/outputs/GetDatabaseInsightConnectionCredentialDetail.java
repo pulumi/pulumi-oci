@@ -16,7 +16,7 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
      */
     private String credentialSourceName;
     /**
-     * @return Credential type.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
      * 
      */
     private String credentialType;
@@ -35,11 +35,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
      * 
      */
     private String userName;
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
-    private String walletSecretId;
 
     private GetDatabaseInsightConnectionCredentialDetail() {}
     /**
@@ -50,7 +45,7 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
         return this.credentialSourceName;
     }
     /**
-     * @return Credential type.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
      * 
      */
     public String credentialType() {
@@ -77,13 +72,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
     public String userName() {
         return this.userName;
     }
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
-    public String walletSecretId() {
-        return this.walletSecretId;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -99,7 +87,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
         private String passwordSecretId;
         private String role;
         private String userName;
-        private String walletSecretId;
         public Builder() {}
         public Builder(GetDatabaseInsightConnectionCredentialDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -108,7 +95,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
-    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -151,14 +137,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
             this.userName = userName;
             return this;
         }
-        @CustomType.Setter
-        public Builder walletSecretId(String walletSecretId) {
-            if (walletSecretId == null) {
-              throw new MissingRequiredPropertyException("GetDatabaseInsightConnectionCredentialDetail", "walletSecretId");
-            }
-            this.walletSecretId = walletSecretId;
-            return this;
-        }
         public GetDatabaseInsightConnectionCredentialDetail build() {
             final var _resultValue = new GetDatabaseInsightConnectionCredentialDetail();
             _resultValue.credentialSourceName = credentialSourceName;
@@ -166,7 +144,6 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;
-            _resultValue.walletSecretId = walletSecretId;
             return _resultValue;
         }
     }

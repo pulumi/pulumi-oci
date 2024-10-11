@@ -73,13 +73,13 @@ type AutonomousDatabaseBackup struct {
 	IsLongTermBackup pulumi.BoolOutput `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable pulumi.BoolOutput `pulumi:"isRestorable"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -100,7 +100,7 @@ type AutonomousDatabaseBackup struct {
 	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
 	// The type of backup.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 }
 
@@ -155,13 +155,13 @@ type autonomousDatabaseBackupState struct {
 	IsLongTermBackup *bool `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable *bool `pulumi:"isRestorable"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -182,7 +182,7 @@ type autonomousDatabaseBackupState struct {
 	TimeStarted *string `pulumi:"timeStarted"`
 	// The type of backup.
 	Type *string `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId *string `pulumi:"vaultId"`
 }
 
@@ -205,13 +205,13 @@ type AutonomousDatabaseBackupState struct {
 	IsLongTermBackup pulumi.BoolPtrInput
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
 	IsRestorable pulumi.BoolPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId pulumi.StringPtrInput
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -232,7 +232,7 @@ type AutonomousDatabaseBackupState struct {
 	TimeStarted pulumi.StringPtrInput
 	// The type of backup.
 	Type pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringPtrInput
 }
 
@@ -407,7 +407,7 @@ func (o AutonomousDatabaseBackupOutput) IsRestorable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.BoolOutput { return v.IsRestorable }).(pulumi.BoolOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 func (o AutonomousDatabaseBackupOutput) KeyStoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
 }
@@ -422,7 +422,7 @@ func (o AutonomousDatabaseBackupOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 func (o AutonomousDatabaseBackupOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -470,7 +470,7 @@ func (o AutonomousDatabaseBackupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o AutonomousDatabaseBackupOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
 }

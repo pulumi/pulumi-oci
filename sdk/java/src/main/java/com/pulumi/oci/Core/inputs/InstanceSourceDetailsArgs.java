@@ -98,14 +98,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) The OCID of the boot volume used to boot the instance.
+     * (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
      * 
      */
     @Import(name="sourceId")
     private @Nullable Output<String> sourceId;
 
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
      * 
      */
     public Optional<Output<String>> sourceId() {
@@ -267,7 +267,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance.
+         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance.
+         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
          * 
          * @return builder
          * 

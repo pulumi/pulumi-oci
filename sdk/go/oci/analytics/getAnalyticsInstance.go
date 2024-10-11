@@ -99,6 +99,8 @@ type LookupAnalyticsInstanceResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Analytics instance update channel.
+	UpdateChannel string `pulumi:"updateChannel"`
 }
 
 func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResultOutput {
@@ -252,6 +254,11 @@ func (o LookupAnalyticsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 func (o LookupAnalyticsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Analytics instance update channel.
+func (o LookupAnalyticsInstanceResultOutput) UpdateChannel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.UpdateChannel }).(pulumi.StringOutput)
 }
 
 func init() {

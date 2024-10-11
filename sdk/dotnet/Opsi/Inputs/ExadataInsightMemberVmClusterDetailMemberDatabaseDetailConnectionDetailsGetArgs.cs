@@ -12,6 +12,12 @@ namespace Pulumi.Oci.Opsi.Inputs
 
     public sealed class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the listener host that will be used to create the connect string to the database.
+        /// </summary>
+        [Input("hostName")]
+        public Input<string>? HostName { get; set; }
+
         [Input("hosts")]
         private InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostGetArgs>? _hosts;
 
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.Opsi.Inputs
             get => _hosts ?? (_hosts = new InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostGetArgs>());
             set => _hosts = value;
         }
+
+        /// <summary>
+        /// Listener port number used for connection requests.
+        /// </summary>
+        [Input("port")]
+        public Input<int>? Port { get; set; }
 
         /// <summary>
         /// Protocol used for connection requests for private endpoint accssed database resource.

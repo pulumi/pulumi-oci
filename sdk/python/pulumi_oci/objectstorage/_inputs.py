@@ -23,6 +23,8 @@ __all__ = [
     'ObjectLifecyclePolicyRuleArgsDict',
     'ObjectLifecyclePolicyRuleObjectNameFilterArgs',
     'ObjectLifecyclePolicyRuleObjectNameFilterArgsDict',
+    'PrivateEndpointAccessTargetArgs',
+    'PrivateEndpointAccessTargetArgsDict',
     'StorageObjectSourceUriDetailsArgs',
     'StorageObjectSourceUriDetailsArgsDict',
     'GetBucketSummariesFilterArgs',
@@ -33,6 +35,8 @@ __all__ = [
     'GetObjectsFilterArgsDict',
     'GetPreauthrequestsFilterArgs',
     'GetPreauthrequestsFilterArgsDict',
+    'GetPrivateEndpointSummariesFilterArgs',
+    'GetPrivateEndpointSummariesFilterArgsDict',
     'GetReplicationPoliciesFilterArgs',
     'GetReplicationPoliciesFilterArgsDict',
     'GetReplicationSourcesFilterArgs',
@@ -484,6 +488,52 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
 
 
 if not MYPY:
+    class PrivateEndpointAccessTargetArgsDict(TypedDict):
+        bucket: pulumi.Input[str]
+        compartment_id: pulumi.Input[str]
+        namespace: pulumi.Input[str]
+elif False:
+    PrivateEndpointAccessTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrivateEndpointAccessTargetArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[str],
+                 compartment_id: pulumi.Input[str],
+                 namespace: pulumi.Input[str]):
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+
+if not MYPY:
     class StorageObjectSourceUriDetailsArgsDict(TypedDict):
         bucket: pulumi.Input[str]
         """
@@ -862,6 +912,53 @@ class GetPreauthrequestsFilterArgs:
         """
         The user-provided name of the pre-authenticated request.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPrivateEndpointSummariesFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetPrivateEndpointSummariesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPrivateEndpointSummariesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

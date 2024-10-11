@@ -139,20 +139,21 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails(dict):
                  email_address: str,
                  first_name: str,
                  last_name: str,
-                 password: str,
-                 username: str):
+                 username: str,
+                 password: Optional[str] = None):
         """
         :param str email_address: The email address for the administrator.
         :param str first_name: The administrator's first name.
         :param str last_name: The administrator's last name.
-        :param str password: The password for the administrator.
         :param str username: The username for the administrator.
+        :param str password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -180,19 +181,19 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails(dict):
 
     @property
     @pulumi.getter
-    def password(self) -> str:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @property
-    @pulumi.getter
     def username(self) -> str:
         """
         The username for the administrator.
         """
         return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[str]:
+        """
+        The password for the administrator.
+        """
+        return pulumi.get(self, "password")
 
 
 @pulumi.output_type

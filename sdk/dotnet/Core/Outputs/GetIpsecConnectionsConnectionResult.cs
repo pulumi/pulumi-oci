@@ -65,6 +65,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The transport type used for the IPSec connection.
         /// </summary>
         public readonly string TransportType;
+        public readonly ImmutableArray<Outputs.GetIpsecConnectionsConnectionTunnelConfigurationResult> TunnelConfigurations;
 
         [OutputConstructor]
         private GetIpsecConnectionsConnectionResult(
@@ -92,7 +93,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             string timeCreated,
 
-            string transportType)
+            string transportType,
+
+            ImmutableArray<Outputs.GetIpsecConnectionsConnectionTunnelConfigurationResult> tunnelConfigurations)
         {
             CompartmentId = compartmentId;
             CpeId = cpeId;
@@ -107,6 +110,7 @@ namespace Pulumi.Oci.Core.Outputs
             StaticRoutes = staticRoutes;
             TimeCreated = timeCreated;
             TransportType = transportType;
+            TunnelConfigurations = tunnelConfigurations;
         }
     }
 }

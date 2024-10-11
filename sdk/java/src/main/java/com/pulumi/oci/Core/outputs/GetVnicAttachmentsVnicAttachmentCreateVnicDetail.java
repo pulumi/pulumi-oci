@@ -28,6 +28,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     private List<String> nsgIds;
     private String privateIp;
+    private Map<String,String> securityAttributes;
     private Boolean skipSourceDestCheck;
     /**
      * @return The OCID of the subnet to create the VNIC in.
@@ -75,6 +76,9 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     public String privateIp() {
         return this.privateIp;
     }
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
     public Boolean skipSourceDestCheck() {
         return this.skipSourceDestCheck;
     }
@@ -112,6 +116,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
         private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
+        private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetId;
         private String vlanId;
@@ -128,6 +133,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
     	      this.vlanId = defaults.vlanId;
@@ -220,6 +226,14 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             if (skipSourceDestCheck == null) {
               throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetail", "skipSourceDestCheck");
@@ -255,6 +269,7 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;
             _resultValue.vlanId = vlanId;

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        /// (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -173,6 +173,18 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("preferredMaintenanceAction")]
         public Input<string>? PreferredMaintenanceAction { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.

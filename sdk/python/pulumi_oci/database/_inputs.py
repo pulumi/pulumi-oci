@@ -127,6 +127,12 @@ __all__ = [
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict',
     'CloudExadataInfrastructureMaintenanceWindowMonthArgs',
     'CloudExadataInfrastructureMaintenanceWindowMonthArgsDict',
+    'CloudVmClusterCloudAutomationUpdateDetailsArgs',
+    'CloudVmClusterCloudAutomationUpdateDetailsArgsDict',
+    'CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs',
+    'CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict',
+    'CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs',
+    'CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict',
     'CloudVmClusterDataCollectionOptionsArgs',
     'CloudVmClusterDataCollectionOptionsArgsDict',
     'CloudVmClusterFileSystemConfigurationDetailArgs',
@@ -313,12 +319,24 @@ __all__ = [
     'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgsDict',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfigArgsDict',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict',
     'VmClusterAddVirtualNetworkDataCollectionOptionArgs',
     'VmClusterAddVirtualNetworkDataCollectionOptionArgsDict',
     'VmClusterAddVirtualNetworkDbServerArgs',
     'VmClusterAddVirtualNetworkDbServerArgsDict',
     'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs',
     'VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgsDict',
+    'VmClusterCloudAutomationUpdateDetailsArgs',
+    'VmClusterCloudAutomationUpdateDetailsArgsDict',
+    'VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs',
+    'VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict',
+    'VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs',
+    'VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict',
     'VmClusterDataCollectionOptionsArgs',
     'VmClusterDataCollectionOptionsArgsDict',
     'VmClusterFileSystemConfigurationDetailArgs',
@@ -331,6 +349,12 @@ __all__ = [
     'VmClusterNetworkVmNetworkArgsDict',
     'VmClusterNetworkVmNetworkNodeArgs',
     'VmClusterNetworkVmNetworkNodeArgsDict',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict',
     'VmClusterRemoveVirtualMachineDataCollectionOptionArgs',
     'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict',
     'VmClusterRemoveVirtualMachineDbServerArgs',
@@ -839,7 +863,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         time_activated: NotRequired[pulumi.Input[str]]
         """
@@ -861,7 +885,7 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
@@ -890,7 +914,7 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -964,7 +988,7 @@ if not MYPY:
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
@@ -998,7 +1022,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -1137,7 +1161,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         return pulumi.get(self, "skip_rus")
 
@@ -3428,6 +3452,9 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -3460,6 +3487,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3597,6 +3625,9 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -3690,6 +3721,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -3724,6 +3758,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3863,6 +3898,9 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4009,6 +4047,9 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4040,6 +4081,7 @@ class AutonomousVmClusterMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4170,6 +4212,9 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4254,6 +4299,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4285,6 +4333,7 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4415,6 +4464,9 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4711,6 +4763,9 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4743,6 +4798,7 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4880,6 +4936,9 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -4973,6 +5032,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -5007,6 +5069,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -5146,6 +5209,9 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -5475,6 +5541,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -5509,6 +5578,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -5648,6 +5718,9 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -5727,6 +5800,202 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
     @name.setter
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
+
+
+if not MYPY:
+    class CloudVmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
+        apply_update_time_preference: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        freeze_period: NotRequired[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        is_early_adoption_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        is_freeze_period_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+elif False:
+    CloudVmClusterCloudAutomationUpdateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CloudVmClusterCloudAutomationUpdateDetailsArgs:
+    def __init__(__self__, *,
+                 apply_update_time_preference: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']] = None,
+                 freeze_period: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']] = None,
+                 is_early_adoption_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_freeze_period_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs'] apply_update_time_preference: (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs'] freeze_period: (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param pulumi.Input[bool] is_early_adoption_enabled: (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param pulumi.Input[bool] is_freeze_period_enabled: (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preference is not None:
+            pulumi.set(__self__, "apply_update_time_preference", apply_update_time_preference)
+        if freeze_period is not None:
+            pulumi.set(__self__, "freeze_period", freeze_period)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreference")
+    def apply_update_time_preference(self) -> Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]:
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preference")
+
+    @apply_update_time_preference.setter
+    def apply_update_time_preference(self, value: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]):
+        pulumi.set(self, "apply_update_time_preference", value)
+
+    @property
+    @pulumi.getter(name="freezePeriod")
+    def freeze_period(self) -> Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]:
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_period")
+
+    @freeze_period.setter
+    def freeze_period(self, value: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]):
+        pulumi.set(self, "freeze_period", value)
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @is_early_adoption_enabled.setter
+    def is_early_adoption_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_early_adoption_enabled", value)
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+    @is_freeze_period_enabled.setter
+    def is_freeze_period_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_freeze_period_enabled", value)
+
+
+if not MYPY:
+    class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
+        apply_update_preferred_end_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        apply_update_preferred_start_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+elif False:
+    CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[pulumi.Input[str]] = None,
+                 apply_update_preferred_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_update_preferred_end_time: (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param pulumi.Input[str] apply_update_preferred_start_time: (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @apply_update_preferred_end_time.setter
+    def apply_update_preferred_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_end_time", value)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+    @apply_update_preferred_start_time.setter
+    def apply_update_preferred_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_start_time", value)
+
+
+if not MYPY:
+    class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
+        freeze_period_end_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        freeze_period_start_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+elif False:
+    CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[pulumi.Input[str]] = None,
+                 freeze_period_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] freeze_period_end_time: (Updatable) End time of the freeze period cycle.
+        :param pulumi.Input[str] freeze_period_start_time: (Updatable) Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @freeze_period_end_time.setter
+    def freeze_period_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_end_time", value)
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
+
+    @freeze_period_start_time.setter
+    def freeze_period_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_start_time", value)
 
 
 if not MYPY:
@@ -6287,7 +6556,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         ncharacter_set: NotRequired[pulumi.Input[str]]
         """
@@ -6311,7 +6580,7 @@ if not MYPY:
         """
         vault_id: NotRequired[pulumi.Input[str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
 elif False:
     DatabaseDatabaseArgsDict: TypeAlias = Mapping[str, Any]
@@ -6355,13 +6624,13 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "db_name", db_name)
@@ -6552,7 +6821,7 @@ class DatabaseDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -6624,7 +6893,7 @@ class DatabaseDatabaseArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -7757,7 +8026,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         lifecycle_details: NotRequired[pulumi.Input[str]]
         """
@@ -7801,7 +8070,7 @@ if not MYPY:
         """
         vault_id: NotRequired[pulumi.Input[str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
 elif False:
     DbHomeDatabaseArgsDict: TypeAlias = Mapping[str, Any]
@@ -7856,7 +8125,7 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] one_off_patches: List of one-off patches for Database Homes.
@@ -7867,7 +8136,7 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -8119,7 +8388,7 @@ class DbHomeDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -8251,7 +8520,7 @@ class DbHomeDatabaseArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -8963,7 +9232,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         lifecycle_details: NotRequired[pulumi.Input[str]]
         """
@@ -8999,7 +9268,7 @@ if not MYPY:
         """
         vault_id: NotRequired[pulumi.Input[str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
 elif False:
     DbSystemDbHomeDatabaseArgsDict: TypeAlias = Mapping[str, Any]
@@ -9053,7 +9322,7 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -9062,7 +9331,7 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] time_created: The date and time the DB system was created.
         :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -9313,7 +9582,7 @@ class DbSystemDbHomeDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -9421,7 +9690,7 @@ class DbSystemDbHomeDatabaseArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -9972,6 +10241,9 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -10004,6 +10276,7 @@ class DbSystemMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -10141,6 +10414,9 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -10234,6 +10510,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -10268,6 +10547,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -10407,6 +10687,9 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -11551,6 +11834,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -11585,6 +11871,7 @@ class ExadataInfrastructureMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -11724,6 +12011,9 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -13424,7 +13714,7 @@ if not MYPY:
         """
         vault_id: pulumi.Input[str]
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 
 
         ** IMPORTANT **
@@ -13446,7 +13736,7 @@ class KeyStoreTypeDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] connection_ips: (Updatable) The list of Oracle Key Vault connection IP addresses.
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] type: (Updatable) The type of key store.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
                
                
                ** IMPORTANT **
@@ -13510,7 +13800,7 @@ class KeyStoreTypeDetailsArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 
 
         ** IMPORTANT **
@@ -14578,6 +14868,202 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
 
 
 if not MYPY:
+    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict(TypedDict):
+        apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        is_early_adoption_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        is_freeze_period_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+elif False:
+    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs:
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]] = None,
+                 freeze_periods: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs']]]] = None,
+                 is_early_adoption_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_freeze_period_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs']]] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param pulumi.Input[bool] is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param pulumi.Input[bool] is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preferences is not None:
+            pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        if freeze_periods is not None:
+            pulumi.set(__self__, "freeze_periods", freeze_periods)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @apply_update_time_preferences.setter
+    def apply_update_time_preferences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]):
+        pulumi.set(self, "apply_update_time_preferences", value)
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs']]]]:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @freeze_periods.setter
+    def freeze_periods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs']]]]):
+        pulumi.set(self, "freeze_periods", value)
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @is_early_adoption_enabled.setter
+    def is_early_adoption_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_early_adoption_enabled", value)
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+    @is_freeze_period_enabled.setter
+    def is_freeze_period_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_freeze_period_enabled", value)
+
+
+if not MYPY:
+    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
+        apply_update_preferred_end_time: NotRequired[pulumi.Input[str]]
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        apply_update_preferred_start_time: NotRequired[pulumi.Input[str]]
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+elif False:
+    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs:
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[pulumi.Input[str]] = None,
+                 apply_update_preferred_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param pulumi.Input[str] apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @apply_update_preferred_end_time.setter
+    def apply_update_preferred_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_end_time", value)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+    @apply_update_preferred_start_time.setter
+    def apply_update_preferred_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_start_time", value)
+
+
+if not MYPY:
+    class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
+        freeze_period_end_time: NotRequired[pulumi.Input[str]]
+        """
+        End time of the freeze period cycle.
+        """
+        freeze_period_start_time: NotRequired[pulumi.Input[str]]
+        """
+        Start time of the freeze period cycle.
+        """
+elif False:
+    VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs:
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[pulumi.Input[str]] = None,
+                 freeze_period_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] freeze_period_end_time: End time of the freeze period cycle.
+        :param pulumi.Input[str] freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @freeze_period_end_time.setter
+    def freeze_period_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_end_time", value)
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
+
+    @freeze_period_start_time.setter
+    def freeze_period_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_start_time", value)
+
+
+if not MYPY:
     class VmClusterAddVirtualNetworkDataCollectionOptionArgsDict(TypedDict):
         is_diagnostics_events_enabled: NotRequired[pulumi.Input[bool]]
         """
@@ -14730,6 +15216,202 @@ class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs:
     @mount_point.setter
     def mount_point(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "mount_point", value)
+
+
+if not MYPY:
+    class VmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
+        apply_update_time_preference: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        freeze_period: NotRequired[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        is_early_adoption_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        is_freeze_period_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+elif False:
+    VmClusterCloudAutomationUpdateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterCloudAutomationUpdateDetailsArgs:
+    def __init__(__self__, *,
+                 apply_update_time_preference: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']] = None,
+                 freeze_period: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']] = None,
+                 is_early_adoption_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_freeze_period_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs'] apply_update_time_preference: (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs'] freeze_period: (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param pulumi.Input[bool] is_early_adoption_enabled: (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param pulumi.Input[bool] is_freeze_period_enabled: (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preference is not None:
+            pulumi.set(__self__, "apply_update_time_preference", apply_update_time_preference)
+        if freeze_period is not None:
+            pulumi.set(__self__, "freeze_period", freeze_period)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreference")
+    def apply_update_time_preference(self) -> Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]:
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preference")
+
+    @apply_update_time_preference.setter
+    def apply_update_time_preference(self, value: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]):
+        pulumi.set(self, "apply_update_time_preference", value)
+
+    @property
+    @pulumi.getter(name="freezePeriod")
+    def freeze_period(self) -> Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]:
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_period")
+
+    @freeze_period.setter
+    def freeze_period(self, value: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]):
+        pulumi.set(self, "freeze_period", value)
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @is_early_adoption_enabled.setter
+    def is_early_adoption_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_early_adoption_enabled", value)
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+    @is_freeze_period_enabled.setter
+    def is_freeze_period_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_freeze_period_enabled", value)
+
+
+if not MYPY:
+    class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict(TypedDict):
+        apply_update_preferred_end_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        apply_update_preferred_start_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+elif False:
+    VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs:
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[pulumi.Input[str]] = None,
+                 apply_update_preferred_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_update_preferred_end_time: (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param pulumi.Input[str] apply_update_preferred_start_time: (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @apply_update_preferred_end_time.setter
+    def apply_update_preferred_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_end_time", value)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+    @apply_update_preferred_start_time.setter
+    def apply_update_preferred_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_start_time", value)
+
+
+if not MYPY:
+    class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict(TypedDict):
+        freeze_period_end_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        freeze_period_start_time: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+elif False:
+    VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs:
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[pulumi.Input[str]] = None,
+                 freeze_period_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] freeze_period_end_time: (Updatable) End time of the freeze period cycle.
+        :param pulumi.Input[str] freeze_period_start_time: (Updatable) Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @freeze_period_end_time.setter
+    def freeze_period_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_end_time", value)
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
+
+    @freeze_period_start_time.setter
+    def freeze_period_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_start_time", value)
 
 
 if not MYPY:
@@ -15305,6 +15987,202 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @vip_hostname.setter
     def vip_hostname(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vip_hostname", value)
+
+
+if not MYPY:
+    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict(TypedDict):
+        apply_update_time_preferences: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        freeze_periods: NotRequired[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        is_early_adoption_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        is_freeze_period_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+elif False:
+    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs:
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]] = None,
+                 freeze_periods: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs']]]] = None,
+                 is_early_adoption_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_freeze_period_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs']]] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param pulumi.Input[bool] is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param pulumi.Input[bool] is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preferences is not None:
+            pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        if freeze_periods is not None:
+            pulumi.set(__self__, "freeze_periods", freeze_periods)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @apply_update_time_preferences.setter
+    def apply_update_time_preferences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]):
+        pulumi.set(self, "apply_update_time_preferences", value)
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs']]]]:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @freeze_periods.setter
+    def freeze_periods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs']]]]):
+        pulumi.set(self, "freeze_periods", value)
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @is_early_adoption_enabled.setter
+    def is_early_adoption_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_early_adoption_enabled", value)
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+    @is_freeze_period_enabled.setter
+    def is_freeze_period_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_freeze_period_enabled", value)
+
+
+if not MYPY:
+    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict(TypedDict):
+        apply_update_preferred_end_time: NotRequired[pulumi.Input[str]]
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        apply_update_preferred_start_time: NotRequired[pulumi.Input[str]]
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+elif False:
+    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs:
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[pulumi.Input[str]] = None,
+                 apply_update_preferred_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param pulumi.Input[str] apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @apply_update_preferred_end_time.setter
+    def apply_update_preferred_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_end_time", value)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+    @apply_update_preferred_start_time.setter
+    def apply_update_preferred_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apply_update_preferred_start_time", value)
+
+
+if not MYPY:
+    class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict(TypedDict):
+        freeze_period_end_time: NotRequired[pulumi.Input[str]]
+        """
+        End time of the freeze period cycle.
+        """
+        freeze_period_start_time: NotRequired[pulumi.Input[str]]
+        """
+        Start time of the freeze period cycle.
+        """
+elif False:
+    VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs:
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[pulumi.Input[str]] = None,
+                 freeze_period_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] freeze_period_end_time: End time of the freeze period cycle.
+        :param pulumi.Input[str] freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @freeze_period_end_time.setter
+    def freeze_period_end_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_end_time", value)
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
+
+    @freeze_period_start_time.setter
+    def freeze_period_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "freeze_period_start_time", value)
 
 
 if not MYPY:

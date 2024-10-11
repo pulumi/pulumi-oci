@@ -68,6 +68,7 @@ class VmClusterRemoveVirtualMachineArgs:
 class _VmClusterRemoveVirtualMachineState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpus_enabled: Optional[pulumi.Input[int]] = None,
                  data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]]] = None,
@@ -97,6 +98,7 @@ class _VmClusterRemoveVirtualMachineState:
         """
         Input properties used for looking up and filtering VmClusterRemoveVirtualMachine resources.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -130,6 +132,8 @@ class _VmClusterRemoveVirtualMachineState:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cloud_automation_update_details is not None:
+            pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpus_enabled is not None:
@@ -194,6 +198,18 @@ class _VmClusterRemoveVirtualMachineState:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]]]):
+        pulumi.set(self, "cloud_automation_update_details", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -620,6 +636,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
                 raise TypeError("Missing required property 'vm_cluster_id'")
             __props__.__dict__["vm_cluster_id"] = vm_cluster_id
             __props__.__dict__["availability_domain"] = None
+            __props__.__dict__["cloud_automation_update_details"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["data_collection_options"] = None
@@ -655,6 +672,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
+            cloud_automation_update_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
             data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]]] = None,
@@ -689,6 +707,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict']]]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -725,6 +744,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         __props__ = _VmClusterRemoveVirtualMachineState.__new__(_VmClusterRemoveVirtualMachineState)
 
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpus_enabled"] = cpus_enabled
         __props__.__dict__["data_collection_options"] = data_collection_options
@@ -760,6 +780,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         The name of the availability domain that the VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> pulumi.Output[Sequence['outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail']]:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="compartmentId")

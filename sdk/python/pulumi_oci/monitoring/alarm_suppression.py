@@ -22,19 +22,18 @@ __all__ = ['AlarmSuppressionInitArgs', 'AlarmSuppression']
 class AlarmSuppressionInitArgs:
     def __init__(__self__, *,
                  alarm_suppression_target: pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'],
-                 dimensions: pulumi.Input[Mapping[str, pulumi.Input[str]]],
                  display_name: pulumi.Input[str],
                  time_suppress_from: pulumi.Input[str],
                  time_suppress_until: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 level: Optional[pulumi.Input[str]] = None,
+                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None):
         """
         The set of arguments for constructing a AlarmSuppression resource.
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
-               
-               The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
@@ -48,10 +47,16 @@ class AlarmSuppressionInitArgs:
                Oracle recommends including tracking information for the event or associated work, such as a ticket number.
                
                Example: `Planned outage due to change IT-1234.`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+               
+               This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] level: The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+               
+               Defaut: `DIMENSION`
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         """
         pulumi.set(__self__, "alarm_suppression_target", alarm_suppression_target)
-        pulumi.set(__self__, "dimensions", dimensions)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "time_suppress_from", time_suppress_from)
         pulumi.set(__self__, "time_suppress_until", time_suppress_until)
@@ -59,8 +64,14 @@ class AlarmSuppressionInitArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if suppression_conditions is not None:
+            pulumi.set(__self__, "suppression_conditions", suppression_conditions)
 
     @property
     @pulumi.getter(name="alarmSuppressionTarget")
@@ -73,20 +84,6 @@ class AlarmSuppressionInitArgs:
     @alarm_suppression_target.setter
     def alarm_suppression_target(self, value: pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs']):
         pulumi.set(self, "alarm_suppression_target", value)
-
-    @property
-    @pulumi.getter
-    def dimensions(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
-        """
-        A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
-
-        The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-        """
-        return pulumi.get(self, "dimensions")
-
-    @dimensions.setter
-    def dimensions(self, value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
-        pulumi.set(self, "dimensions", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -157,6 +154,20 @@ class AlarmSuppressionInitArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+
+        This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+        """
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "dimensions", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -167,6 +178,32 @@ class AlarmSuppressionInitArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def level(self) -> Optional[pulumi.Input[str]]:
+        """
+        The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Defaut: `DIMENSION`
+        """
+        return pulumi.get(self, "level")
+
+    @level.setter
+    def level(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "level", value)
+
+    @property
+    @pulumi.getter(name="suppressionConditions")
+    def suppression_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
+        """
+        Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        """
+        return pulumi.get(self, "suppression_conditions")
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
+        pulumi.set(self, "suppression_conditions", value)
 
 
 @pulumi.input_type
@@ -179,7 +216,9 @@ class _AlarmSuppressionState:
                  dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 level: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
                  time_suppress_until: Optional[pulumi.Input[str]] = None,
@@ -196,10 +235,14 @@ class _AlarmSuppressionState:
                Example: `Planned outage due to change IT-1234.`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
-               The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+               This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] level: The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+               
+               Defaut: `DIMENSION`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
@@ -223,8 +266,12 @@ class _AlarmSuppressionState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if suppression_conditions is not None:
+            pulumi.set(__self__, "suppression_conditions", suppression_conditions)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_suppress_from is not None:
@@ -292,7 +339,7 @@ class _AlarmSuppressionState:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
-        The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+        This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         """
         return pulumi.get(self, "dimensions")
 
@@ -326,6 +373,20 @@ class _AlarmSuppressionState:
 
     @property
     @pulumi.getter
+    def level(self) -> Optional[pulumi.Input[str]]:
+        """
+        The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Defaut: `DIMENSION`
+        """
+        return pulumi.get(self, "level")
+
+    @level.setter
+    def level(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "level", value)
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         The current lifecycle state of the alarm suppression.  Example: `DELETED`
@@ -335,6 +396,18 @@ class _AlarmSuppressionState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="suppressionConditions")
+    def suppression_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]:
+        """
+        Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        """
+        return pulumi.get(self, "suppression_conditions")
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]]):
+        pulumi.set(self, "suppression_conditions", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -400,13 +473,18 @@ class AlarmSuppression(pulumi.CustomResource):
                  dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 level: Optional[pulumi.Input[str]] = None,
+                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
                  time_suppress_until: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 
-        Creates a dimension-specific suppression for an alarm.
+        Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+        For more information, see
+        [Adding an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm) and
+        [Adding a Dimension-Specific Alarm Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
 
         For important limits information, see
         [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -423,10 +501,11 @@ class AlarmSuppression(pulumi.CustomResource):
 
         test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
             alarm_suppression_target={
-                "alarm_id": test_alarm["id"],
                 "target_type": alarm_suppression_alarm_suppression_target_target_type,
+                "alarm_id": test_alarm["id"],
+                "compartment_id": compartment_id,
+                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree,
             },
-            dimensions=alarm_suppression_dimensions,
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
             time_suppress_until=alarm_suppression_time_suppress_until,
@@ -434,9 +513,16 @@ class AlarmSuppression(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=alarm_suppression_description,
+            dimensions=alarm_suppression_dimensions,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            level=alarm_suppression_level,
+            suppression_conditions=[{
+                "condition_type": alarm_suppression_suppression_conditions_condition_type,
+                "suppression_duration": alarm_suppression_suppression_conditions_suppression_duration,
+                "suppression_recurrence": alarm_suppression_suppression_conditions_suppression_recurrence,
+            }])
         ```
 
         ## Import
@@ -458,9 +544,13 @@ class AlarmSuppression(pulumi.CustomResource):
                Example: `Planned outage due to change IT-1234.`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
-               The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+               This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] level: The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+               
+               Defaut: `DIMENSION`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
                
@@ -477,7 +567,10 @@ class AlarmSuppression(pulumi.CustomResource):
         """
         This resource provides the Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 
-        Creates a dimension-specific suppression for an alarm.
+        Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+        For more information, see
+        [Adding an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm) and
+        [Adding a Dimension-Specific Alarm Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
 
         For important limits information, see
         [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -494,10 +587,11 @@ class AlarmSuppression(pulumi.CustomResource):
 
         test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
             alarm_suppression_target={
-                "alarm_id": test_alarm["id"],
                 "target_type": alarm_suppression_alarm_suppression_target_target_type,
+                "alarm_id": test_alarm["id"],
+                "compartment_id": compartment_id,
+                "compartment_id_in_subtree": alarm_suppression_alarm_suppression_target_compartment_id_in_subtree,
             },
-            dimensions=alarm_suppression_dimensions,
             display_name=alarm_suppression_display_name,
             time_suppress_from=alarm_suppression_time_suppress_from,
             time_suppress_until=alarm_suppression_time_suppress_until,
@@ -505,9 +599,16 @@ class AlarmSuppression(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=alarm_suppression_description,
+            dimensions=alarm_suppression_dimensions,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            level=alarm_suppression_level,
+            suppression_conditions=[{
+                "condition_type": alarm_suppression_suppression_conditions_condition_type,
+                "suppression_duration": alarm_suppression_suppression_conditions_suppression_duration,
+                "suppression_recurrence": alarm_suppression_suppression_conditions_suppression_recurrence,
+            }])
         ```
 
         ## Import
@@ -539,6 +640,8 @@ class AlarmSuppression(pulumi.CustomResource):
                  dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 level: Optional[pulumi.Input[str]] = None,
+                 suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
                  time_suppress_until: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -555,13 +658,13 @@ class AlarmSuppression(pulumi.CustomResource):
             __props__.__dict__["alarm_suppression_target"] = alarm_suppression_target
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
-            if dimensions is None and not opts.urn:
-                raise TypeError("Missing required property 'dimensions'")
             __props__.__dict__["dimensions"] = dimensions
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["level"] = level
+            __props__.__dict__["suppression_conditions"] = suppression_conditions
             if time_suppress_from is None and not opts.urn:
                 raise TypeError("Missing required property 'time_suppress_from'")
             __props__.__dict__["time_suppress_from"] = time_suppress_from
@@ -589,7 +692,9 @@ class AlarmSuppression(pulumi.CustomResource):
             dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            level: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_suppress_from: Optional[pulumi.Input[str]] = None,
             time_suppress_until: Optional[pulumi.Input[str]] = None,
@@ -611,10 +716,14 @@ class AlarmSuppression(pulumi.CustomResource):
                Example: `Planned outage due to change IT-1234.`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
-               The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+               This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] level: The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+               
+               Defaut: `DIMENSION`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
@@ -635,7 +744,9 @@ class AlarmSuppression(pulumi.CustomResource):
         __props__.__dict__["dimensions"] = dimensions
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["level"] = level
         __props__.__dict__["state"] = state
+        __props__.__dict__["suppression_conditions"] = suppression_conditions
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_suppress_from"] = time_suppress_from
         __props__.__dict__["time_suppress_until"] = time_suppress_until
@@ -684,7 +795,7 @@ class AlarmSuppression(pulumi.CustomResource):
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
-        The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+        This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         """
         return pulumi.get(self, "dimensions")
 
@@ -706,11 +817,29 @@ class AlarmSuppression(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    def level(self) -> pulumi.Output[str]:
+        """
+        The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Defaut: `DIMENSION`
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
         The current lifecycle state of the alarm suppression.  Example: `DELETED`
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="suppressionConditions")
+    def suppression_conditions(self) -> pulumi.Output[Sequence['outputs.AlarmSuppressionSuppressionCondition']]:
+        """
+        Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        """
+        return pulumi.get(self, "suppression_conditions")
 
     @property
     @pulumi.getter(name="timeCreated")

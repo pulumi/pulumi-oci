@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DatabaseManagementStatus;
         /// <summary>
-        /// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        /// **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         /// </summary>
         public readonly string DataguardRegionType;
         /// <summary>
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        /// **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         /// </summary>
         public readonly string DisasterRecoveryRegionType;
         /// <summary>
@@ -232,7 +232,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult> KeyHistoryEntries;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
         public readonly string KeyStoreId;
         /// <summary>
@@ -321,7 +321,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PrivateEndpointIp;
         /// <summary>
-        /// The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        /// The resource's private endpoint label.
+        /// * Setting the endpoint label to a non-empty string creates a private endpoint database.
+        /// * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        /// * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
         /// </summary>
         public readonly string PrivateEndpointLabel;
         /// <summary>
@@ -457,6 +460,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         /// </summary>
         public readonly string TimeReclamationOfFreeAutonomousDatabase;
+        /// <summary>
+        /// The date and time the Autonomous Database was most recently undeleted.
+        /// </summary>
+        public readonly string TimeUndeleted;
         /// <summary>
         /// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         /// </summary>
@@ -708,6 +715,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeReclamationOfFreeAutonomousDatabase,
 
+            string timeUndeleted,
+
             string timeUntilReconnectCloneEnabled,
 
             double totalBackupStorageSizeInGbs,
@@ -832,6 +841,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeOfLastSwitchover = timeOfLastSwitchover;
             TimeOfNextRefresh = timeOfNextRefresh;
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             UsedDataStorageSizeInGbs = usedDataStorageSizeInGbs;

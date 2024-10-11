@@ -13,7 +13,8 @@ import (
 
 // This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 //
-// Gets the specified alarm suppression.
+// Gets the specified alarm suppression. For more information, see
+// [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
 //
 // For important limits information, see
 // [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -82,8 +83,12 @@ type LookupAlarmSuppressionResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id string `pulumi:"id"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level string `pulumi:"level"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State string `pulumi:"state"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions []GetAlarmSuppressionSuppressionCondition `pulumi:"suppressionConditions"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -184,9 +189,21 @@ func (o LookupAlarmSuppressionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmSuppressionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+func (o LookupAlarmSuppressionResultOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlarmSuppressionResult) string { return v.Level }).(pulumi.StringOutput)
+}
+
 // The current lifecycle state of the alarm suppression.  Example: `DELETED`
 func (o LookupAlarmSuppressionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmSuppressionResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+func (o LookupAlarmSuppressionResultOutput) SuppressionConditions() GetAlarmSuppressionSuppressionConditionArrayOutput {
+	return o.ApplyT(func(v LookupAlarmSuppressionResult) []GetAlarmSuppressionSuppressionCondition {
+		return v.SuppressionConditions
+	}).(GetAlarmSuppressionSuppressionConditionArrayOutput)
 }
 
 // The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`

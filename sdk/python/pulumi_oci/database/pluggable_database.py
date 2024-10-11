@@ -27,6 +27,7 @@ class PluggableDatabaseArgs:
                  convert_to_regular_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_creation_type_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
                  refresh_trigger: Optional[pulumi.Input[int]] = None,
@@ -66,6 +67,8 @@ class PluggableDatabaseArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if pdb_admin_password is not None:
             pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
         if pdb_creation_type_details is not None:
@@ -152,6 +155,15 @@ class PluggableDatabaseArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_version_id", value)
 
     @property
     @pulumi.getter(name="pdbAdminPassword")
@@ -255,6 +267,7 @@ class _PluggableDatabaseState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_restricted: Optional[pulumi.Input[bool]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
@@ -318,6 +331,8 @@ class _PluggableDatabaseState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_restricted is not None:
             pulumi.set(__self__, "is_restricted", is_restricted)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if open_mode is not None:
@@ -444,6 +459,15 @@ class _PluggableDatabaseState:
     @is_restricted.setter
     def is_restricted(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_restricted", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_version_id", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -642,6 +666,7 @@ class PluggableDatabase(pulumi.CustomResource):
                  convert_to_regular_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
@@ -729,6 +754,7 @@ class PluggableDatabase(pulumi.CustomResource):
                  convert_to_regular_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[str]] = None,
                  pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
                  pdb_name: Optional[pulumi.Input[str]] = None,
@@ -753,6 +779,7 @@ class PluggableDatabase(pulumi.CustomResource):
             __props__.__dict__["convert_to_regular_trigger"] = convert_to_regular_trigger
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["kms_key_version_id"] = kms_key_version_id
             __props__.__dict__["pdb_admin_password"] = None if pdb_admin_password is None else pulumi.Output.secret(pdb_admin_password)
             __props__.__dict__["pdb_creation_type_details"] = pdb_creation_type_details
             if pdb_name is None and not opts.urn:
@@ -793,6 +820,7 @@ class PluggableDatabase(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_restricted: Optional[pulumi.Input[bool]] = None,
+            kms_key_version_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             open_mode: Optional[pulumi.Input[str]] = None,
             pdb_admin_password: Optional[pulumi.Input[str]] = None,
@@ -857,6 +885,7 @@ class PluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_restricted"] = is_restricted
+        __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["open_mode"] = open_mode
         __props__.__dict__["pdb_admin_password"] = pdb_admin_password
@@ -937,6 +966,11 @@ class PluggableDatabase(pulumi.CustomResource):
         The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         """
         return pulumi.get(self, "is_restricted")
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

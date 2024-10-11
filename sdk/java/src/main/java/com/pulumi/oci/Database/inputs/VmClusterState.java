@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
 import java.lang.Boolean;
@@ -35,6 +36,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Import(name="cloudAutomationUpdateDetails")
+    private @Nullable Output<VmClusterCloudAutomationUpdateDetailsArgs> cloudAutomationUpdateDetails;
+
+    /**
+     * @return (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Optional<Output<VmClusterCloudAutomationUpdateDetailsArgs>> cloudAutomationUpdateDetails() {
+        return Optional.ofNullable(this.cloudAutomationUpdateDetails);
     }
 
     /**
@@ -458,6 +474,7 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
 
     private VmClusterState(VmClusterState $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.cloudAutomationUpdateDetails = $.cloudAutomationUpdateDetails;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.cpusEnabled = $.cpusEnabled;
@@ -526,6 +543,27 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(@Nullable Output<VmClusterCloudAutomationUpdateDetailsArgs> cloudAutomationUpdateDetails) {
+            $.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(VmClusterCloudAutomationUpdateDetailsArgs cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(Output.of(cloudAutomationUpdateDetails));
         }
 
         /**

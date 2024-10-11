@@ -739,6 +739,8 @@ type DesktopPoolImage struct {
 	ImageId string `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName string `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem *string `pulumi:"operatingSystem"`
 }
 
 // DesktopPoolImageInput is an input type that accepts DesktopPoolImageArgs and DesktopPoolImageOutput values.
@@ -757,6 +759,8 @@ type DesktopPoolImageArgs struct {
 	ImageId pulumi.StringInput `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem pulumi.StringPtrInput `pulumi:"operatingSystem"`
 }
 
 func (DesktopPoolImageArgs) ElementType() reflect.Type {
@@ -846,6 +850,11 @@ func (o DesktopPoolImageOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolImage) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o DesktopPoolImageOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolImage) *string { return v.OperatingSystem }).(pulumi.StringPtrOutput)
+}
+
 type DesktopPoolImagePtrOutput struct{ *pulumi.OutputState }
 
 func (DesktopPoolImagePtrOutput) ElementType() reflect.Type {
@@ -890,10 +899,20 @@ func (o DesktopPoolImagePtrOutput) ImageName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o DesktopPoolImagePtrOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolImage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OperatingSystem
+	}).(pulumi.StringPtrOutput)
+}
+
 type DesktopPoolNetworkConfiguration struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -909,9 +928,9 @@ type DesktopPoolNetworkConfigurationInput interface {
 }
 
 type DesktopPoolNetworkConfigurationArgs struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
 
@@ -992,12 +1011,12 @@ func (o DesktopPoolNetworkConfigurationOutput) ToDesktopPoolNetworkConfiguration
 	}).(DesktopPoolNetworkConfigurationPtrOutput)
 }
 
-// The OCID of the subnet to use for the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The OCID of the VCN used by the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 func (o DesktopPoolNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
 }
@@ -1026,7 +1045,7 @@ func (o DesktopPoolNetworkConfigurationPtrOutput) Elem() DesktopPoolNetworkConfi
 	}).(DesktopPoolNetworkConfigurationOutput)
 }
 
-// The OCID of the subnet to use for the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolNetworkConfiguration) *string {
 		if v == nil {
@@ -1036,13 +1055,413 @@ func (o DesktopPoolNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the VCN used by the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 func (o DesktopPoolNetworkConfigurationPtrOutput) VcnId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolNetworkConfiguration) *string {
 		if v == nil {
 			return nil
 		}
 		return &v.VcnId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DesktopPoolPrivateAccessDetails struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn *string `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp *string `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId *string `pulumi:"vcnId"`
+}
+
+// DesktopPoolPrivateAccessDetailsInput is an input type that accepts DesktopPoolPrivateAccessDetailsArgs and DesktopPoolPrivateAccessDetailsOutput values.
+// You can construct a concrete instance of `DesktopPoolPrivateAccessDetailsInput` via:
+//
+//	DesktopPoolPrivateAccessDetailsArgs{...}
+type DesktopPoolPrivateAccessDetailsInput interface {
+	pulumi.Input
+
+	ToDesktopPoolPrivateAccessDetailsOutput() DesktopPoolPrivateAccessDetailsOutput
+	ToDesktopPoolPrivateAccessDetailsOutputWithContext(context.Context) DesktopPoolPrivateAccessDetailsOutput
+}
+
+type DesktopPoolPrivateAccessDetailsArgs struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn pulumi.StringPtrInput `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
+}
+
+func (DesktopPoolPrivateAccessDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolPrivateAccessDetails)(nil)).Elem()
+}
+
+func (i DesktopPoolPrivateAccessDetailsArgs) ToDesktopPoolPrivateAccessDetailsOutput() DesktopPoolPrivateAccessDetailsOutput {
+	return i.ToDesktopPoolPrivateAccessDetailsOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolPrivateAccessDetailsArgs) ToDesktopPoolPrivateAccessDetailsOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolPrivateAccessDetailsOutput)
+}
+
+func (i DesktopPoolPrivateAccessDetailsArgs) ToDesktopPoolPrivateAccessDetailsPtrOutput() DesktopPoolPrivateAccessDetailsPtrOutput {
+	return i.ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolPrivateAccessDetailsArgs) ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolPrivateAccessDetailsOutput).ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(ctx)
+}
+
+// DesktopPoolPrivateAccessDetailsPtrInput is an input type that accepts DesktopPoolPrivateAccessDetailsArgs, DesktopPoolPrivateAccessDetailsPtr and DesktopPoolPrivateAccessDetailsPtrOutput values.
+// You can construct a concrete instance of `DesktopPoolPrivateAccessDetailsPtrInput` via:
+//
+//	        DesktopPoolPrivateAccessDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DesktopPoolPrivateAccessDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDesktopPoolPrivateAccessDetailsPtrOutput() DesktopPoolPrivateAccessDetailsPtrOutput
+	ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(context.Context) DesktopPoolPrivateAccessDetailsPtrOutput
+}
+
+type desktopPoolPrivateAccessDetailsPtrType DesktopPoolPrivateAccessDetailsArgs
+
+func DesktopPoolPrivateAccessDetailsPtr(v *DesktopPoolPrivateAccessDetailsArgs) DesktopPoolPrivateAccessDetailsPtrInput {
+	return (*desktopPoolPrivateAccessDetailsPtrType)(v)
+}
+
+func (*desktopPoolPrivateAccessDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolPrivateAccessDetails)(nil)).Elem()
+}
+
+func (i *desktopPoolPrivateAccessDetailsPtrType) ToDesktopPoolPrivateAccessDetailsPtrOutput() DesktopPoolPrivateAccessDetailsPtrOutput {
+	return i.ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *desktopPoolPrivateAccessDetailsPtrType) ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolPrivateAccessDetailsPtrOutput)
+}
+
+type DesktopPoolPrivateAccessDetailsOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolPrivateAccessDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolPrivateAccessDetails)(nil)).Elem()
+}
+
+func (o DesktopPoolPrivateAccessDetailsOutput) ToDesktopPoolPrivateAccessDetailsOutput() DesktopPoolPrivateAccessDetailsOutput {
+	return o
+}
+
+func (o DesktopPoolPrivateAccessDetailsOutput) ToDesktopPoolPrivateAccessDetailsOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsOutput {
+	return o
+}
+
+func (o DesktopPoolPrivateAccessDetailsOutput) ToDesktopPoolPrivateAccessDetailsPtrOutput() DesktopPoolPrivateAccessDetailsPtrOutput {
+	return o.ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DesktopPoolPrivateAccessDetailsOutput) ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DesktopPoolPrivateAccessDetails) *DesktopPoolPrivateAccessDetails {
+		return &v
+	}).(DesktopPoolPrivateAccessDetailsPtrOutput)
+}
+
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+func (o DesktopPoolPrivateAccessDetailsOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) *string { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
+}
+
+// A list of network security groups for the private access.
+func (o DesktopPoolPrivateAccessDetailsOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+func (o DesktopPoolPrivateAccessDetailsOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+func (o DesktopPoolPrivateAccessDetailsOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+func (o DesktopPoolPrivateAccessDetailsOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) *string { return v.VcnId }).(pulumi.StringPtrOutput)
+}
+
+type DesktopPoolPrivateAccessDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolPrivateAccessDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolPrivateAccessDetails)(nil)).Elem()
+}
+
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) ToDesktopPoolPrivateAccessDetailsPtrOutput() DesktopPoolPrivateAccessDetailsPtrOutput {
+	return o
+}
+
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) ToDesktopPoolPrivateAccessDetailsPtrOutputWithContext(ctx context.Context) DesktopPoolPrivateAccessDetailsPtrOutput {
+	return o
+}
+
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) Elem() DesktopPoolPrivateAccessDetailsOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) DesktopPoolPrivateAccessDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DesktopPoolPrivateAccessDetails
+		return ret
+	}).(DesktopPoolPrivateAccessDetailsOutput)
+}
+
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EndpointFqdn
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of network security groups for the private access.
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VcnId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DesktopPoolShapeConfig struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs *string `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus *string `pulumi:"ocpus"`
+}
+
+// DesktopPoolShapeConfigInput is an input type that accepts DesktopPoolShapeConfigArgs and DesktopPoolShapeConfigOutput values.
+// You can construct a concrete instance of `DesktopPoolShapeConfigInput` via:
+//
+//	DesktopPoolShapeConfigArgs{...}
+type DesktopPoolShapeConfigInput interface {
+	pulumi.Input
+
+	ToDesktopPoolShapeConfigOutput() DesktopPoolShapeConfigOutput
+	ToDesktopPoolShapeConfigOutputWithContext(context.Context) DesktopPoolShapeConfigOutput
+}
+
+type DesktopPoolShapeConfigArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs pulumi.StringPtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus pulumi.StringPtrInput `pulumi:"ocpus"`
+}
+
+func (DesktopPoolShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (i DesktopPoolShapeConfigArgs) ToDesktopPoolShapeConfigOutput() DesktopPoolShapeConfigOutput {
+	return i.ToDesktopPoolShapeConfigOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolShapeConfigArgs) ToDesktopPoolShapeConfigOutputWithContext(ctx context.Context) DesktopPoolShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolShapeConfigOutput)
+}
+
+func (i DesktopPoolShapeConfigArgs) ToDesktopPoolShapeConfigPtrOutput() DesktopPoolShapeConfigPtrOutput {
+	return i.ToDesktopPoolShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolShapeConfigArgs) ToDesktopPoolShapeConfigPtrOutputWithContext(ctx context.Context) DesktopPoolShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolShapeConfigOutput).ToDesktopPoolShapeConfigPtrOutputWithContext(ctx)
+}
+
+// DesktopPoolShapeConfigPtrInput is an input type that accepts DesktopPoolShapeConfigArgs, DesktopPoolShapeConfigPtr and DesktopPoolShapeConfigPtrOutput values.
+// You can construct a concrete instance of `DesktopPoolShapeConfigPtrInput` via:
+//
+//	        DesktopPoolShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DesktopPoolShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToDesktopPoolShapeConfigPtrOutput() DesktopPoolShapeConfigPtrOutput
+	ToDesktopPoolShapeConfigPtrOutputWithContext(context.Context) DesktopPoolShapeConfigPtrOutput
+}
+
+type desktopPoolShapeConfigPtrType DesktopPoolShapeConfigArgs
+
+func DesktopPoolShapeConfigPtr(v *DesktopPoolShapeConfigArgs) DesktopPoolShapeConfigPtrInput {
+	return (*desktopPoolShapeConfigPtrType)(v)
+}
+
+func (*desktopPoolShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (i *desktopPoolShapeConfigPtrType) ToDesktopPoolShapeConfigPtrOutput() DesktopPoolShapeConfigPtrOutput {
+	return i.ToDesktopPoolShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *desktopPoolShapeConfigPtrType) ToDesktopPoolShapeConfigPtrOutputWithContext(ctx context.Context) DesktopPoolShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolShapeConfigPtrOutput)
+}
+
+type DesktopPoolShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (o DesktopPoolShapeConfigOutput) ToDesktopPoolShapeConfigOutput() DesktopPoolShapeConfigOutput {
+	return o
+}
+
+func (o DesktopPoolShapeConfigOutput) ToDesktopPoolShapeConfigOutputWithContext(ctx context.Context) DesktopPoolShapeConfigOutput {
+	return o
+}
+
+func (o DesktopPoolShapeConfigOutput) ToDesktopPoolShapeConfigPtrOutput() DesktopPoolShapeConfigPtrOutput {
+	return o.ToDesktopPoolShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DesktopPoolShapeConfigOutput) ToDesktopPoolShapeConfigPtrOutputWithContext(ctx context.Context) DesktopPoolShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DesktopPoolShapeConfig) *DesktopPoolShapeConfig {
+		return &v
+	}).(DesktopPoolShapeConfigPtrOutput)
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+func (o DesktopPoolShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolShapeConfig) *string { return v.BaselineOcpuUtilization }).(pulumi.StringPtrOutput)
+}
+
+// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+func (o DesktopPoolShapeConfigOutput) MemoryInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolShapeConfig) *string { return v.MemoryInGbs }).(pulumi.StringPtrOutput)
+}
+
+// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+func (o DesktopPoolShapeConfigOutput) Ocpus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DesktopPoolShapeConfig) *string { return v.Ocpus }).(pulumi.StringPtrOutput)
+}
+
+type DesktopPoolShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (o DesktopPoolShapeConfigPtrOutput) ToDesktopPoolShapeConfigPtrOutput() DesktopPoolShapeConfigPtrOutput {
+	return o
+}
+
+func (o DesktopPoolShapeConfigPtrOutput) ToDesktopPoolShapeConfigPtrOutputWithContext(ctx context.Context) DesktopPoolShapeConfigPtrOutput {
+	return o
+}
+
+func (o DesktopPoolShapeConfigPtrOutput) Elem() DesktopPoolShapeConfigOutput {
+	return o.ApplyT(func(v *DesktopPoolShapeConfig) DesktopPoolShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DesktopPoolShapeConfig
+		return ret
+	}).(DesktopPoolShapeConfigOutput)
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+func (o DesktopPoolShapeConfigPtrOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolShapeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringPtrOutput)
+}
+
+// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+func (o DesktopPoolShapeConfigPtrOutput) MemoryInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolShapeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.StringPtrOutput)
+}
+
+// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+func (o DesktopPoolShapeConfigPtrOutput) Ocpus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolShapeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1308,6 +1727,8 @@ type GetDesktopHostingOptionImage struct {
 	ImageId string `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName string `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem string `pulumi:"operatingSystem"`
 }
 
 // GetDesktopHostingOptionImageInput is an input type that accepts GetDesktopHostingOptionImageArgs and GetDesktopHostingOptionImageOutput values.
@@ -1326,6 +1747,8 @@ type GetDesktopHostingOptionImageArgs struct {
 	ImageId pulumi.StringInput `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
 }
 
 func (GetDesktopHostingOptionImageArgs) ElementType() reflect.Type {
@@ -1387,6 +1810,11 @@ func (o GetDesktopHostingOptionImageOutput) ImageId() pulumi.StringOutput {
 // The name of the desktop image.
 func (o GetDesktopHostingOptionImageOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopHostingOptionImage) string { return v.ImageName }).(pulumi.StringOutput)
+}
+
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o GetDesktopHostingOptionImageOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopHostingOptionImage) string { return v.OperatingSystem }).(pulumi.StringOutput)
 }
 
 type GetDesktopHostingOptionImageArrayOutput struct{ *pulumi.OutputState }
@@ -2254,6 +2682,8 @@ type GetDesktopPoolImage struct {
 	ImageId string `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName string `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem string `pulumi:"operatingSystem"`
 }
 
 // GetDesktopPoolImageInput is an input type that accepts GetDesktopPoolImageArgs and GetDesktopPoolImageOutput values.
@@ -2272,6 +2702,8 @@ type GetDesktopPoolImageArgs struct {
 	ImageId pulumi.StringInput `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
 }
 
 func (GetDesktopPoolImageArgs) ElementType() reflect.Type {
@@ -2335,6 +2767,11 @@ func (o GetDesktopPoolImageOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolImage) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o GetDesktopPoolImageOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolImage) string { return v.OperatingSystem }).(pulumi.StringOutput)
+}
+
 type GetDesktopPoolImageArrayOutput struct{ *pulumi.OutputState }
 
 func (GetDesktopPoolImageArrayOutput) ElementType() reflect.Type {
@@ -2356,9 +2793,9 @@ func (o GetDesktopPoolImageArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolI
 }
 
 type GetDesktopPoolNetworkConfiguration struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -2374,9 +2811,9 @@ type GetDesktopPoolNetworkConfigurationInput interface {
 }
 
 type GetDesktopPoolNetworkConfigurationArgs struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
 
@@ -2431,12 +2868,12 @@ func (o GetDesktopPoolNetworkConfigurationOutput) ToGetDesktopPoolNetworkConfigu
 	return o
 }
 
-// The OCID of the subnet to use for the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The OCID of the VCN used by the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 func (o GetDesktopPoolNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
 }
@@ -2459,6 +2896,263 @@ func (o GetDesktopPoolNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolNetworkConfiguration {
 		return vs[0].([]GetDesktopPoolNetworkConfiguration)[vs[1].(int)]
 	}).(GetDesktopPoolNetworkConfigurationOutput)
+}
+
+type GetDesktopPoolPrivateAccessDetail struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn string `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp string `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetDesktopPoolPrivateAccessDetailInput is an input type that accepts GetDesktopPoolPrivateAccessDetailArgs and GetDesktopPoolPrivateAccessDetailOutput values.
+// You can construct a concrete instance of `GetDesktopPoolPrivateAccessDetailInput` via:
+//
+//	GetDesktopPoolPrivateAccessDetailArgs{...}
+type GetDesktopPoolPrivateAccessDetailInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolPrivateAccessDetailOutput() GetDesktopPoolPrivateAccessDetailOutput
+	ToGetDesktopPoolPrivateAccessDetailOutputWithContext(context.Context) GetDesktopPoolPrivateAccessDetailOutput
+}
+
+type GetDesktopPoolPrivateAccessDetailArgs struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetDesktopPoolPrivateAccessDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolPrivateAccessDetail)(nil)).Elem()
+}
+
+func (i GetDesktopPoolPrivateAccessDetailArgs) ToGetDesktopPoolPrivateAccessDetailOutput() GetDesktopPoolPrivateAccessDetailOutput {
+	return i.ToGetDesktopPoolPrivateAccessDetailOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolPrivateAccessDetailArgs) ToGetDesktopPoolPrivateAccessDetailOutputWithContext(ctx context.Context) GetDesktopPoolPrivateAccessDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolPrivateAccessDetailOutput)
+}
+
+// GetDesktopPoolPrivateAccessDetailArrayInput is an input type that accepts GetDesktopPoolPrivateAccessDetailArray and GetDesktopPoolPrivateAccessDetailArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolPrivateAccessDetailArrayInput` via:
+//
+//	GetDesktopPoolPrivateAccessDetailArray{ GetDesktopPoolPrivateAccessDetailArgs{...} }
+type GetDesktopPoolPrivateAccessDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolPrivateAccessDetailArrayOutput() GetDesktopPoolPrivateAccessDetailArrayOutput
+	ToGetDesktopPoolPrivateAccessDetailArrayOutputWithContext(context.Context) GetDesktopPoolPrivateAccessDetailArrayOutput
+}
+
+type GetDesktopPoolPrivateAccessDetailArray []GetDesktopPoolPrivateAccessDetailInput
+
+func (GetDesktopPoolPrivateAccessDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolPrivateAccessDetail)(nil)).Elem()
+}
+
+func (i GetDesktopPoolPrivateAccessDetailArray) ToGetDesktopPoolPrivateAccessDetailArrayOutput() GetDesktopPoolPrivateAccessDetailArrayOutput {
+	return i.ToGetDesktopPoolPrivateAccessDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolPrivateAccessDetailArray) ToGetDesktopPoolPrivateAccessDetailArrayOutputWithContext(ctx context.Context) GetDesktopPoolPrivateAccessDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolPrivateAccessDetailArrayOutput)
+}
+
+type GetDesktopPoolPrivateAccessDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolPrivateAccessDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolPrivateAccessDetail)(nil)).Elem()
+}
+
+func (o GetDesktopPoolPrivateAccessDetailOutput) ToGetDesktopPoolPrivateAccessDetailOutput() GetDesktopPoolPrivateAccessDetailOutput {
+	return o
+}
+
+func (o GetDesktopPoolPrivateAccessDetailOutput) ToGetDesktopPoolPrivateAccessDetailOutputWithContext(ctx context.Context) GetDesktopPoolPrivateAccessDetailOutput {
+	return o
+}
+
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+func (o GetDesktopPoolPrivateAccessDetailOutput) EndpointFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.EndpointFqdn }).(pulumi.StringOutput)
+}
+
+// A list of network security groups for the private access.
+func (o GetDesktopPoolPrivateAccessDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+func (o GetDesktopPoolPrivateAccessDetailOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+func (o GetDesktopPoolPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+func (o GetDesktopPoolPrivateAccessDetailOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolPrivateAccessDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolPrivateAccessDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolPrivateAccessDetail)(nil)).Elem()
+}
+
+func (o GetDesktopPoolPrivateAccessDetailArrayOutput) ToGetDesktopPoolPrivateAccessDetailArrayOutput() GetDesktopPoolPrivateAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolPrivateAccessDetailArrayOutput) ToGetDesktopPoolPrivateAccessDetailArrayOutputWithContext(ctx context.Context) GetDesktopPoolPrivateAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolPrivateAccessDetailArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolPrivateAccessDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolPrivateAccessDetail {
+		return vs[0].([]GetDesktopPoolPrivateAccessDetail)[vs[1].(int)]
+	}).(GetDesktopPoolPrivateAccessDetailOutput)
+}
+
+type GetDesktopPoolShapeConfig struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs string `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus string `pulumi:"ocpus"`
+}
+
+// GetDesktopPoolShapeConfigInput is an input type that accepts GetDesktopPoolShapeConfigArgs and GetDesktopPoolShapeConfigOutput values.
+// You can construct a concrete instance of `GetDesktopPoolShapeConfigInput` via:
+//
+//	GetDesktopPoolShapeConfigArgs{...}
+type GetDesktopPoolShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolShapeConfigOutput() GetDesktopPoolShapeConfigOutput
+	ToGetDesktopPoolShapeConfigOutputWithContext(context.Context) GetDesktopPoolShapeConfigOutput
+}
+
+type GetDesktopPoolShapeConfigArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs pulumi.StringInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus pulumi.StringInput `pulumi:"ocpus"`
+}
+
+func (GetDesktopPoolShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (i GetDesktopPoolShapeConfigArgs) ToGetDesktopPoolShapeConfigOutput() GetDesktopPoolShapeConfigOutput {
+	return i.ToGetDesktopPoolShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolShapeConfigArgs) ToGetDesktopPoolShapeConfigOutputWithContext(ctx context.Context) GetDesktopPoolShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolShapeConfigOutput)
+}
+
+// GetDesktopPoolShapeConfigArrayInput is an input type that accepts GetDesktopPoolShapeConfigArray and GetDesktopPoolShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolShapeConfigArrayInput` via:
+//
+//	GetDesktopPoolShapeConfigArray{ GetDesktopPoolShapeConfigArgs{...} }
+type GetDesktopPoolShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolShapeConfigArrayOutput() GetDesktopPoolShapeConfigArrayOutput
+	ToGetDesktopPoolShapeConfigArrayOutputWithContext(context.Context) GetDesktopPoolShapeConfigArrayOutput
+}
+
+type GetDesktopPoolShapeConfigArray []GetDesktopPoolShapeConfigInput
+
+func (GetDesktopPoolShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (i GetDesktopPoolShapeConfigArray) ToGetDesktopPoolShapeConfigArrayOutput() GetDesktopPoolShapeConfigArrayOutput {
+	return i.ToGetDesktopPoolShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolShapeConfigArray) ToGetDesktopPoolShapeConfigArrayOutputWithContext(ctx context.Context) GetDesktopPoolShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolShapeConfigArrayOutput)
+}
+
+type GetDesktopPoolShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (o GetDesktopPoolShapeConfigOutput) ToGetDesktopPoolShapeConfigOutput() GetDesktopPoolShapeConfigOutput {
+	return o
+}
+
+func (o GetDesktopPoolShapeConfigOutput) ToGetDesktopPoolShapeConfigOutputWithContext(ctx context.Context) GetDesktopPoolShapeConfigOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+func (o GetDesktopPoolShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolShapeConfig) string { return v.BaselineOcpuUtilization }).(pulumi.StringOutput)
+}
+
+// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+func (o GetDesktopPoolShapeConfigOutput) MemoryInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolShapeConfig) string { return v.MemoryInGbs }).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+func (o GetDesktopPoolShapeConfigOutput) Ocpus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolShapeConfig) string { return v.Ocpus }).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolShapeConfig)(nil)).Elem()
+}
+
+func (o GetDesktopPoolShapeConfigArrayOutput) ToGetDesktopPoolShapeConfigArrayOutput() GetDesktopPoolShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolShapeConfigArrayOutput) ToGetDesktopPoolShapeConfigArrayOutputWithContext(ctx context.Context) GetDesktopPoolShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolShapeConfig {
+		return vs[0].([]GetDesktopPoolShapeConfig)[vs[1].(int)]
+	}).(GetDesktopPoolShapeConfigOutput)
 }
 
 type GetDesktopPoolVolumesDesktopPoolVolumeCollection struct {
@@ -2958,8 +3652,12 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	MaximumSize int `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfigurations []GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity that were used to create the pool.
+	PrivateAccessDetails []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// The shape configuration used for each desktop compute instance in the desktop pool.
+	ShapeConfigs []GetDesktopPoolsDesktopPoolCollectionItemShapeConfig `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
 	ShapeName string `pulumi:"shapeName"`
 	// The maximum number of standby desktops available in the desktop pool.
@@ -2976,6 +3674,8 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	TimeStartScheduled string `pulumi:"timeStartScheduled"`
 	// The stop time of the desktop pool.
 	TimeStopScheduled string `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+	UseDedicatedVmHost string `pulumi:"useDedicatedVmHost"`
 }
 
 // GetDesktopPoolsDesktopPoolCollectionItemInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemArgs and GetDesktopPoolsDesktopPoolCollectionItemOutput values.
@@ -3022,8 +3722,12 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	MaximumSize pulumi.IntInput `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfigurations GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity that were used to create the pool.
+	PrivateAccessDetails GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput `pulumi:"privateAccessDetails"`
+	// The shape configuration used for each desktop compute instance in the desktop pool.
+	ShapeConfigs GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The maximum number of standby desktops available in the desktop pool.
@@ -3040,6 +3744,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	TimeStartScheduled pulumi.StringInput `pulumi:"timeStartScheduled"`
 	// The stop time of the desktop pool.
 	TimeStopScheduled pulumi.StringInput `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+	UseDedicatedVmHost pulumi.StringInput `pulumi:"useDedicatedVmHost"`
 }
 
 func (GetDesktopPoolsDesktopPoolCollectionItemArgs) ElementType() reflect.Type {
@@ -3181,9 +3887,23 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) NetworkConfigurations() 
 	}).(GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayOutput)
 }
 
-// A list of network security groups for the desktop pool.
+// A list of network security groups for the private access.
 func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The details of the desktop's private access network connectivity that were used to create the pool.
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) PrivateAccessDetails() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
+		return v.PrivateAccessDetails
+	}).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput)
+}
+
+// The shape configuration used for each desktop compute instance in the desktop pool.
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) ShapeConfigs() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemShapeConfig {
+		return v.ShapeConfigs
+	}).(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput)
 }
 
 // The shape of the desktop pool.
@@ -3224,6 +3944,11 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) TimeStartScheduled() pul
 // The stop time of the desktop pool.
 func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) TimeStopScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) string { return v.TimeStopScheduled }).(pulumi.StringOutput)
+}
+
+// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) UseDedicatedVmHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) string { return v.UseDedicatedVmHost }).(pulumi.StringOutput)
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3732,6 +4457,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemImage struct {
 	ImageId string `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName string `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem string `pulumi:"operatingSystem"`
 }
 
 // GetDesktopPoolsDesktopPoolCollectionItemImageInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemImageArgs and GetDesktopPoolsDesktopPoolCollectionItemImageOutput values.
@@ -3750,6 +4477,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemImageArgs struct {
 	ImageId pulumi.StringInput `pulumi:"imageId"`
 	// The name of the desktop image.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
 }
 
 func (GetDesktopPoolsDesktopPoolCollectionItemImageArgs) ElementType() reflect.Type {
@@ -3813,6 +4542,11 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemImageOutput) ImageName() pulumi.
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemImage) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
+// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+func (o GetDesktopPoolsDesktopPoolCollectionItemImageOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemImage) string { return v.OperatingSystem }).(pulumi.StringOutput)
+}
+
 type GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput struct{ *pulumi.OutputState }
 
 func (GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput) ElementType() reflect.Type {
@@ -3834,9 +4568,9 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput) Index(i pulumi
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -3852,9 +4586,9 @@ type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationInput interface
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs struct {
-	// The OCID of the subnet to use for the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The OCID of the VCN used by the desktop pool.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
 
@@ -3909,12 +4643,12 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) ToGe
 	return o
 }
 
-// The OCID of the subnet to use for the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The OCID of the VCN used by the desktop pool.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
 }
@@ -3937,6 +4671,263 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration {
 		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration)[vs[1].(int)]
 	}).(GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn string `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp string `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs and GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs{...}
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs struct {
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
+	// A list of network security groups for the private access.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput)
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray and GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray{ GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs{...} }
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput
+
+func (GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput {
+	return o
+}
+
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) EndpointFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.EndpointFqdn }).(pulumi.StringOutput)
+}
+
+// A list of network security groups for the private access.
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
+		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)[vs[1].(int)]
+	}).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfig struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs string `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus string `pulumi:"ocpus"`
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs and GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs{...}
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+	MemoryInGbs pulumi.StringInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+	Ocpus pulumi.StringInput `pulumi:"ocpus"`
+}
+
+func (GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfig)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput)
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray and GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray{ GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs{...} }
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray []GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput
+
+func (GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemShapeConfig)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfig)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemShapeConfig) string { return v.BaselineOcpuUtilization }).(pulumi.StringOutput)
+}
+
+// The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) MemoryInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemShapeConfig) string { return v.MemoryInGbs }).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available for each desktop compute instance in the desktop pool.
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput) Ocpus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemShapeConfig) string { return v.Ocpus }).(pulumi.StringOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemShapeConfig)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemShapeConfig {
+		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemShapeConfig)[vs[1].(int)]
+	}).(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput)
 }
 
 type GetDesktopPoolsFilter struct {
@@ -4418,6 +5409,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolImagePtrInput)(nil)).Elem(), DesktopPoolImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolNetworkConfigurationInput)(nil)).Elem(), DesktopPoolNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolNetworkConfigurationPtrInput)(nil)).Elem(), DesktopPoolNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolPrivateAccessDetailsInput)(nil)).Elem(), DesktopPoolPrivateAccessDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolPrivateAccessDetailsPtrInput)(nil)).Elem(), DesktopPoolPrivateAccessDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigPtrInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDevicePolicyInput)(nil)).Elem(), GetDesktopDevicePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDevicePolicyArrayInput)(nil)).Elem(), GetDesktopDevicePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopHostingOptionInput)(nil)).Elem(), GetDesktopHostingOptionArgs{})
@@ -4442,6 +5437,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolImageArrayInput)(nil)).Elem(), GetDesktopPoolImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolNetworkConfigurationInput)(nil)).Elem(), GetDesktopPoolNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolNetworkConfigurationArrayInput)(nil)).Elem(), GetDesktopPoolNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolPrivateAccessDetailInput)(nil)).Elem(), GetDesktopPoolPrivateAccessDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolPrivateAccessDetailArrayInput)(nil)).Elem(), GetDesktopPoolPrivateAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolShapeConfigInput)(nil)).Elem(), GetDesktopPoolShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolShapeConfigArrayInput)(nil)).Elem(), GetDesktopPoolShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolVolumesDesktopPoolVolumeCollectionInput)(nil)).Elem(), GetDesktopPoolVolumesDesktopPoolVolumeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolVolumesDesktopPoolVolumeCollectionArrayInput)(nil)).Elem(), GetDesktopPoolVolumesDesktopPoolVolumeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolVolumesDesktopPoolVolumeCollectionItemInput)(nil)).Elem(), GetDesktopPoolVolumesDesktopPoolVolumeCollectionItemArgs{})
@@ -4464,6 +5463,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemImageArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsFilterInput)(nil)).Elem(), GetDesktopPoolsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsFilterArrayInput)(nil)).Elem(), GetDesktopPoolsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionInput)(nil)).Elem(), GetDesktopsDesktopCollectionArgs{})
@@ -4484,6 +5487,10 @@ func init() {
 	pulumi.RegisterOutputType(DesktopPoolImagePtrOutput{})
 	pulumi.RegisterOutputType(DesktopPoolNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(DesktopPoolNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(DesktopPoolPrivateAccessDetailsOutput{})
+	pulumi.RegisterOutputType(DesktopPoolPrivateAccessDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DesktopPoolShapeConfigOutput{})
+	pulumi.RegisterOutputType(DesktopPoolShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetDesktopDevicePolicyOutput{})
 	pulumi.RegisterOutputType(GetDesktopDevicePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopHostingOptionOutput{})
@@ -4508,6 +5515,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopPoolImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolPrivateAccessDetailOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolPrivateAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolVolumesDesktopPoolVolumeCollectionOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolVolumesDesktopPoolVolumeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolVolumesDesktopPoolVolumeCollectionItemOutput{})
@@ -4530,6 +5541,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsFilterOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionOutput{})

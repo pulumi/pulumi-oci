@@ -31,10 +31,28 @@ namespace Pulumi.Oci.Integration.Inputs
         public Input<int>? CertificateSecretVersion { get; set; }
 
         /// <summary>
+        /// Type of DNS.
+        /// </summary>
+        [Input("dnsType")]
+        public Input<string>? DnsType { get; set; }
+
+        /// <summary>
+        /// DNS Zone name
+        /// </summary>
+        [Input("dnsZoneName", required: true)]
+        public Input<string> DnsZoneName { get; set; } = null!;
+
+        /// <summary>
         /// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
+
+        /// <summary>
+        /// Indicates if custom endpoint is managed by oracle or customer.
+        /// </summary>
+        [Input("managedType")]
+        public Input<string>? ManagedType { get; set; }
 
         public IntegrationInstanceCustomEndpointArgs()
         {

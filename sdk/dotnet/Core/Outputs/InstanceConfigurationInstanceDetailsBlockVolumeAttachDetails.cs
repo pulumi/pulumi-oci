@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsShareable;
         /// <summary>
-        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        /// The type of volume. The only supported values are "iscsi" and "paravirtualized"
         /// </summary>
         public readonly string Type;
         /// <summary>

@@ -28,7 +28,7 @@ class GetAutonomousDatabasesResult:
     """
     A collection of values returned by getAutonomousDatabases.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_databases=None, compartment_id=None, db_version=None, db_workload=None, display_name=None, filters=None, id=None, infrastructure_type=None, is_data_guard_enabled=None, is_free_tier=None, is_refreshable_clone=None, is_resource_pool_leader=None, resource_pool_leader_id=None, state=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_databases=None, compartment_id=None, db_version=None, db_workload=None, display_name=None, filters=None, id=None, infrastructure_type=None, is_data_guard_enabled=None, is_free_tier=None, is_refreshable_clone=None, is_resource_pool_leader=None, lifecycle_state_not_equal_to=None, resource_pool_leader_id=None, state=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -68,6 +68,9 @@ class GetAutonomousDatabasesResult:
         if is_resource_pool_leader and not isinstance(is_resource_pool_leader, bool):
             raise TypeError("Expected argument 'is_resource_pool_leader' to be a bool")
         pulumi.set(__self__, "is_resource_pool_leader", is_resource_pool_leader)
+        if lifecycle_state_not_equal_to and not isinstance(lifecycle_state_not_equal_to, str):
+            raise TypeError("Expected argument 'lifecycle_state_not_equal_to' to be a str")
+        pulumi.set(__self__, "lifecycle_state_not_equal_to", lifecycle_state_not_equal_to)
         if resource_pool_leader_id and not isinstance(resource_pool_leader_id, str):
             raise TypeError("Expected argument 'resource_pool_leader_id' to be a str")
         pulumi.set(__self__, "resource_pool_leader_id", resource_pool_leader_id)
@@ -175,6 +178,11 @@ class GetAutonomousDatabasesResult:
         return pulumi.get(self, "is_resource_pool_leader")
 
     @property
+    @pulumi.getter(name="lifecycleStateNotEqualTo")
+    def lifecycle_state_not_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "lifecycle_state_not_equal_to")
+
+    @property
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> Optional[str]:
         """
@@ -210,6 +218,7 @@ class AwaitableGetAutonomousDatabasesResult(GetAutonomousDatabasesResult):
             is_free_tier=self.is_free_tier,
             is_refreshable_clone=self.is_refreshable_clone,
             is_resource_pool_leader=self.is_resource_pool_leader,
+            lifecycle_state_not_equal_to=self.lifecycle_state_not_equal_to,
             resource_pool_leader_id=self.resource_pool_leader_id,
             state=self.state)
 
@@ -225,13 +234,48 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              is_free_tier: Optional[bool] = None,
                              is_refreshable_clone: Optional[bool] = None,
                              is_resource_pool_leader: Optional[bool] = None,
+                             lifecycle_state_not_equal_to: Optional[str] = None,
                              resource_pool_leader_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
-    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+    ## 
 
-    Gets the details of the specified Autonomous Database.
+    ***
+    ## subcategory: "Database"
+
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
+    This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+
+    Gets a list of Autonomous Databases based on the query parameters specified.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+        autonomous_container_database_id=test_autonomous_container_database["id"],
+        db_version=autonomous_database_db_version,
+        db_workload=autonomous_database_db_workload,
+        display_name=autonomous_database_display_name,
+        infrastructure_type=autonomous_database_infrastructure_type,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
+        is_free_tier=autonomous_database_is_free_tier,
+        is_refreshable_clone=autonomous_database_is_refreshable_clone,
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
+        resource_pool_leader_id=test_resource_pool_leader["id"],
+        state=autonomous_database_state)
+    ```
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -262,6 +306,7 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     __args__['isFreeTier'] = is_free_tier
     __args__['isRefreshableClone'] = is_refreshable_clone
     __args__['isResourcePoolLeader'] = is_resource_pool_leader
+    __args__['lifecycleStateNotEqualTo'] = lifecycle_state_not_equal_to
     __args__['resourcePoolLeaderId'] = resource_pool_leader_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -281,6 +326,7 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
         is_refreshable_clone=pulumi.get(__ret__, 'is_refreshable_clone'),
         is_resource_pool_leader=pulumi.get(__ret__, 'is_resource_pool_leader'),
+        lifecycle_state_not_equal_to=pulumi.get(__ret__, 'lifecycle_state_not_equal_to'),
         resource_pool_leader_id=pulumi.get(__ret__, 'resource_pool_leader_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_autonomous_databases_output(autonomous_container_database_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -294,13 +340,48 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     is_free_tier: Optional[pulumi.Input[Optional[bool]]] = None,
                                     is_refreshable_clone: Optional[pulumi.Input[Optional[bool]]] = None,
                                     is_resource_pool_leader: Optional[pulumi.Input[Optional[bool]]] = None,
+                                    lifecycle_state_not_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                     resource_pool_leader_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
-    This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+    ## 
 
-    Gets the details of the specified Autonomous Database.
+    ***
+    ## subcategory: "Database"
+
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
+    This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+
+    Gets a list of Autonomous Databases based on the query parameters specified.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+        autonomous_container_database_id=test_autonomous_container_database["id"],
+        db_version=autonomous_database_db_version,
+        db_workload=autonomous_database_db_workload,
+        display_name=autonomous_database_display_name,
+        infrastructure_type=autonomous_database_infrastructure_type,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
+        is_free_tier=autonomous_database_is_free_tier,
+        is_refreshable_clone=autonomous_database_is_refreshable_clone,
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
+        resource_pool_leader_id=test_resource_pool_leader["id"],
+        state=autonomous_database_state)
+    ```
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -331,6 +412,7 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     __args__['isFreeTier'] = is_free_tier
     __args__['isRefreshableClone'] = is_refreshable_clone
     __args__['isResourcePoolLeader'] = is_resource_pool_leader
+    __args__['lifecycleStateNotEqualTo'] = lifecycle_state_not_equal_to
     __args__['resourcePoolLeaderId'] = resource_pool_leader_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -349,5 +431,6 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
         is_free_tier=pulumi.get(__response__, 'is_free_tier'),
         is_refreshable_clone=pulumi.get(__response__, 'is_refreshable_clone'),
         is_resource_pool_leader=pulumi.get(__response__, 'is_resource_pool_leader'),
+        lifecycle_state_not_equal_to=pulumi.get(__response__, 'lifecycle_state_not_equal_to'),
         resource_pool_leader_id=pulumi.get(__response__, 'resource_pool_leader_id'),
         state=pulumi.get(__response__, 'state')))

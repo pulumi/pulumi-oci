@@ -5816,6 +5816,8 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem struct {
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
 	Id string `pulumi:"id"`
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted bool `pulumi:"isDataMaskingOpted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails  string `pulumi:"lifecycleDetails"`
 	RefreshActivityId string `pulumi:"refreshActivityId"`
@@ -5857,6 +5859,8 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs stru
 	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted pulumi.BoolInput `pulumi:"isDataMaskingOpted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails  pulumi.StringInput `pulumi:"lifecycleDetails"`
 	RefreshActivityId pulumi.StringInput `pulumi:"refreshActivityId"`
@@ -5948,6 +5952,13 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
 // The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Represents if the customer opted for Data Masking or not during refreshActivity.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) IsDataMaskingOpted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) bool {
+		return v.IsDataMaskingOpted
+	}).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

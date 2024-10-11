@@ -25,27 +25,28 @@ class FusionEnvironmentAdminUserArgs:
                  first_name: pulumi.Input[str],
                  fusion_environment_id: pulumi.Input[str],
                  last_name: pulumi.Input[str],
-                 password: pulumi.Input[str],
-                 username: pulumi.Input[str]):
+                 username: pulumi.Input[str],
+                 password: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentAdminUser resource.
         :param pulumi.Input[str] email_address: The email address for the administrator.
         :param pulumi.Input[str] first_name: The administrator's first name.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -97,18 +98,6 @@ class FusionEnvironmentAdminUserArgs:
 
     @property
     @pulumi.getter
-    def password(self) -> pulumi.Input[str]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: pulumi.Input[str]):
-        pulumi.set(self, "password", value)
-
-    @property
-    @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
         The username for the administrator.
@@ -122,6 +111,18 @@ class FusionEnvironmentAdminUserArgs:
     @username.setter
     def username(self, value: pulumi.Input[str]):
         pulumi.set(self, "username", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The password for the administrator.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
 
 
 @pulumi.input_type
@@ -280,8 +281,8 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             first_name=fusion_environment_admin_user_first_name,
             fusion_environment_id=test_fusion_environment["id"],
             last_name=fusion_environment_admin_user_last_name,
-            password=fusion_environment_admin_user_password,
-            username=fusion_environment_admin_user_username)
+            username=fusion_environment_admin_user_username,
+            password=fusion_environment_admin_user_password)
         ```
 
         ## Import
@@ -327,8 +328,8 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             first_name=fusion_environment_admin_user_first_name,
             fusion_environment_id=test_fusion_environment["id"],
             last_name=fusion_environment_admin_user_last_name,
-            password=fusion_environment_admin_user_password,
-            username=fusion_environment_admin_user_username)
+            username=fusion_environment_admin_user_username,
+            password=fusion_environment_admin_user_password)
         ```
 
         ## Import
@@ -381,8 +382,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             if last_name is None and not opts.urn:
                 raise TypeError("Missing required property 'last_name'")
             __props__.__dict__["last_name"] = last_name
-            if password is None and not opts.urn:
-                raise TypeError("Missing required property 'password'")
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             if username is None and not opts.urn:
                 raise TypeError("Missing required property 'username'")

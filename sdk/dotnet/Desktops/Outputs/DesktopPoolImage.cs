@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// The name of the desktop image.
         /// </summary>
         public readonly string ImageName;
+        /// <summary>
+        /// The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        /// </summary>
+        public readonly string? OperatingSystem;
 
         [OutputConstructor]
         private DesktopPoolImage(
             string imageId,
 
-            string imageName)
+            string imageName,
+
+            string? operatingSystem)
         {
             ImageId = imageId;
             ImageName = imageName;
+            OperatingSystem = operatingSystem;
         }
     }
 }

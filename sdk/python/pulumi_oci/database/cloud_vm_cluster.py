@@ -31,6 +31,7 @@ class CloudVmClusterArgs:
                  ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[str]]],
                  subnet_id: pulumi.Input[str],
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
@@ -77,6 +78,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input['CloudVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -116,6 +118,8 @@ class CloudVmClusterArgs:
         pulumi.set(__self__, "subnet_id", subnet_id)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cloud_automation_update_details is not None:
+            pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if create_async is not None:
@@ -293,6 +297,18 @@ class CloudVmClusterArgs:
     @backup_network_nsg_ids.setter
     def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']]:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, value: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']]):
+        pulumi.set(self, "cloud_automation_update_details", value)
 
     @property
     @pulumi.getter(name="clusterName")
@@ -579,6 +595,7 @@ class _CloudVmClusterState:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']] = None,
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -631,6 +648,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+        :param pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -700,6 +718,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
         if backup_subnet_id is not None:
             pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        if cloud_automation_update_details is not None:
+            pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if cloud_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         if cluster_name is not None:
@@ -830,6 +850,18 @@ class _CloudVmClusterState:
     @backup_subnet_id.setter
     def backup_subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_subnet_id", value)
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']]:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, value: Optional[pulumi.Input['CloudVmClusterCloudAutomationUpdateDetailsArgs']]):
+        pulumi.set(self, "cloud_automation_update_details", value)
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -1416,6 +1448,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input[Union['CloudVmClusterCloudAutomationUpdateDetailsArgs', 'CloudVmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1470,6 +1503,18 @@ class CloudVmCluster(pulumi.CustomResource):
             ssh_public_keys=cloud_vm_cluster_ssh_public_keys,
             subnet_id=test_subnet["id"],
             backup_network_nsg_ids=cloud_vm_cluster_backup_network_nsg_ids,
+            cloud_automation_update_details={
+                "apply_update_time_preference": {
+                    "apply_update_preferred_end_time": cloud_vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_end_time,
+                    "apply_update_preferred_start_time": cloud_vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_start_time,
+                },
+                "freeze_period": {
+                    "freeze_period_end_time": cloud_vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_end_time,
+                    "freeze_period_start_time": cloud_vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_start_time,
+                },
+                "is_early_adoption_enabled": cloud_vm_cluster_cloud_automation_update_details_is_early_adoption_enabled,
+                "is_freeze_period_enabled": cloud_vm_cluster_cloud_automation_update_details_is_freeze_period_enabled,
+            },
             cluster_name=cloud_vm_cluster_cluster_name,
             data_collection_options={
                 "is_diagnostics_events_enabled": cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
@@ -1515,6 +1560,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+        :param pulumi.Input[Union['CloudVmClusterCloudAutomationUpdateDetailsArgs', 'CloudVmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1590,6 +1636,18 @@ class CloudVmCluster(pulumi.CustomResource):
             ssh_public_keys=cloud_vm_cluster_ssh_public_keys,
             subnet_id=test_subnet["id"],
             backup_network_nsg_ids=cloud_vm_cluster_backup_network_nsg_ids,
+            cloud_automation_update_details={
+                "apply_update_time_preference": {
+                    "apply_update_preferred_end_time": cloud_vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_end_time,
+                    "apply_update_preferred_start_time": cloud_vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_start_time,
+                },
+                "freeze_period": {
+                    "freeze_period_end_time": cloud_vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_end_time,
+                    "freeze_period_start_time": cloud_vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_start_time,
+                },
+                "is_early_adoption_enabled": cloud_vm_cluster_cloud_automation_update_details_is_early_adoption_enabled,
+                "is_freeze_period_enabled": cloud_vm_cluster_cloud_automation_update_details_is_freeze_period_enabled,
+            },
             cluster_name=cloud_vm_cluster_cluster_name,
             data_collection_options={
                 "is_diagnostics_events_enabled": cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
@@ -1648,6 +1706,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input[Union['CloudVmClusterCloudAutomationUpdateDetailsArgs', 'CloudVmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
                  cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1692,6 +1751,7 @@ class CloudVmCluster(pulumi.CustomResource):
             if backup_subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'backup_subnet_id'")
             __props__.__dict__["backup_subnet_id"] = backup_subnet_id
+            __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
             if cloud_exadata_infrastructure_id is None and not opts.urn:
                 raise TypeError("Missing required property 'cloud_exadata_infrastructure_id'")
             __props__.__dict__["cloud_exadata_infrastructure_id"] = cloud_exadata_infrastructure_id
@@ -1769,6 +1829,7 @@ class CloudVmCluster(pulumi.CustomResource):
             availability_domain: Optional[pulumi.Input[str]] = None,
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             backup_subnet_id: Optional[pulumi.Input[str]] = None,
+            cloud_automation_update_details: Optional[pulumi.Input[Union['CloudVmClusterCloudAutomationUpdateDetailsArgs', 'CloudVmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
             cluster_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1826,6 +1887,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+        :param pulumi.Input[Union['CloudVmClusterCloudAutomationUpdateDetailsArgs', 'CloudVmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1896,6 +1958,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
         __props__.__dict__["backup_subnet_id"] = backup_subnet_id
+        __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
         __props__.__dict__["cloud_exadata_infrastructure_id"] = cloud_exadata_infrastructure_id
         __props__.__dict__["cluster_name"] = cluster_name
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1968,6 +2031,14 @@ class CloudVmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "backup_subnet_id")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> pulumi.Output['outputs.CloudVmClusterCloudAutomationUpdateDetails']:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDataCollectionOptionArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDbServerArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs;
@@ -36,6 +37,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
      */
     public Optional<Output<String>> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Import(name="cloudAutomationUpdateDetails")
+    private @Nullable Output<List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs>> cloudAutomationUpdateDetails;
+
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Optional<Output<List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs>>> cloudAutomationUpdateDetails() {
+        return Optional.ofNullable(this.cloudAutomationUpdateDetails);
     }
 
     /**
@@ -460,6 +476,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
 
     private VmClusterAddVirtualNetworkState(VmClusterAddVirtualNetworkState $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.cloudAutomationUpdateDetails = $.cloudAutomationUpdateDetails;
         this.compartmentId = $.compartmentId;
         this.cpusEnabled = $.cpusEnabled;
         this.dataCollectionOptions = $.dataCollectionOptions;
@@ -527,6 +544,37 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(@Nullable Output<List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs>> cloudAutomationUpdateDetails) {
+            $.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(List<VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs> cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(Output.of(cloudAutomationUpdateDetails));
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgs... cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(List.of(cloudAutomationUpdateDetails));
         }
 
         /**

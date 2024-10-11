@@ -21,6 +21,10 @@ __all__ = [
     'IntegrationInstanceAttachmentArgsDict',
     'IntegrationInstanceCustomEndpointArgs',
     'IntegrationInstanceCustomEndpointArgsDict',
+    'IntegrationInstanceDisasterRecoveryDetailArgs',
+    'IntegrationInstanceDisasterRecoveryDetailArgsDict',
+    'IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs',
+    'IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgsDict',
     'IntegrationInstanceIdcsInfoArgs',
     'IntegrationInstanceIdcsInfoArgsDict',
     'IntegrationInstanceNetworkEndpointDetailsArgs',
@@ -53,6 +57,18 @@ if not MYPY:
         """
         The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
+        dns_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of DNS.
+        """
+        dns_zone_name: NotRequired[pulumi.Input[str]]
+        """
+        DNS Zone name
+        """
+        managed_type: NotRequired[pulumi.Input[str]]
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
 elif False:
     IntegrationInstanceAlternateCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -62,12 +78,18 @@ class IntegrationInstanceAlternateCustomEndpointArgs:
                  hostname: pulumi.Input[str],
                  alias: Optional[pulumi.Input[str]] = None,
                  certificate_secret_id: Optional[pulumi.Input[str]] = None,
-                 certificate_secret_version: Optional[pulumi.Input[int]] = None):
+                 certificate_secret_version: Optional[pulumi.Input[int]] = None,
+                 dns_type: Optional[pulumi.Input[str]] = None,
+                 dns_zone_name: Optional[pulumi.Input[str]] = None,
+                 managed_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] hostname: (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         :param pulumi.Input[str] alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param pulumi.Input[str] certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param pulumi.Input[int] certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param pulumi.Input[str] dns_type: Type of DNS.
+        :param pulumi.Input[str] dns_zone_name: DNS Zone name
+        :param pulumi.Input[str] managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
@@ -76,6 +98,12 @@ class IntegrationInstanceAlternateCustomEndpointArgs:
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
             pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if dns_type is not None:
+            pulumi.set(__self__, "dns_type", dns_type)
+        if dns_zone_name is not None:
+            pulumi.set(__self__, "dns_zone_name", dns_zone_name)
+        if managed_type is not None:
+            pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -124,6 +152,42 @@ class IntegrationInstanceAlternateCustomEndpointArgs:
     @certificate_secret_version.setter
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of DNS.
+        """
+        return pulumi.get(self, "dns_type")
+
+    @dns_type.setter
+    def dns_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_type", value)
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
+
+    @dns_zone_name.setter
+    def dns_zone_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_zone_name", value)
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
+
+    @managed_type.setter
+    def managed_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "managed_type", value)
 
 
 if not MYPY:
@@ -249,6 +313,10 @@ class IntegrationInstanceAttachmentArgs:
 
 if not MYPY:
     class IntegrationInstanceCustomEndpointArgsDict(TypedDict):
+        dns_zone_name: pulumi.Input[str]
+        """
+        DNS Zone name
+        """
         hostname: pulumi.Input[str]
         """
         (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
@@ -265,22 +333,37 @@ if not MYPY:
         """
         The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
+        dns_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of DNS.
+        """
+        managed_type: NotRequired[pulumi.Input[str]]
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
 elif False:
     IntegrationInstanceCustomEndpointArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class IntegrationInstanceCustomEndpointArgs:
     def __init__(__self__, *,
+                 dns_zone_name: pulumi.Input[str],
                  hostname: pulumi.Input[str],
                  alias: Optional[pulumi.Input[str]] = None,
                  certificate_secret_id: Optional[pulumi.Input[str]] = None,
-                 certificate_secret_version: Optional[pulumi.Input[int]] = None):
+                 certificate_secret_version: Optional[pulumi.Input[int]] = None,
+                 dns_type: Optional[pulumi.Input[str]] = None,
+                 managed_type: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] dns_zone_name: DNS Zone name
         :param pulumi.Input[str] hostname: (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         :param pulumi.Input[str] alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param pulumi.Input[str] certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param pulumi.Input[int] certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param pulumi.Input[str] dns_type: Type of DNS.
+        :param pulumi.Input[str] managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
             pulumi.set(__self__, "alias", alias)
@@ -288,6 +371,22 @@ class IntegrationInstanceCustomEndpointArgs:
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
             pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if dns_type is not None:
+            pulumi.set(__self__, "dns_type", dns_type)
+        if managed_type is not None:
+            pulumi.set(__self__, "managed_type", managed_type)
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> pulumi.Input[str]:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
+
+    @dns_zone_name.setter
+    def dns_zone_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dns_zone_name", value)
 
     @property
     @pulumi.getter
@@ -336,6 +435,194 @@ class IntegrationInstanceCustomEndpointArgs:
     @certificate_secret_version.setter
     def certificate_secret_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate_secret_version", value)
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of DNS.
+        """
+        return pulumi.get(self, "dns_type")
+
+    @dns_type.setter
+    def dns_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dns_type", value)
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
+
+    @managed_type.setter
+    def managed_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "managed_type", value)
+
+
+if not MYPY:
+    class IntegrationInstanceDisasterRecoveryDetailArgsDict(TypedDict):
+        cross_region_integration_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgsDict']]]]
+        """
+        Details of integration instance created in cross region for disaster recovery.
+        """
+        regional_instance_url: NotRequired[pulumi.Input[str]]
+        """
+        Region specific instance url for the integration instance in the region
+        """
+        role: NotRequired[pulumi.Input[str]]
+        """
+        Role of the integration instance in the region
+        """
+elif False:
+    IntegrationInstanceDisasterRecoveryDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceDisasterRecoveryDetailArgs:
+    def __init__(__self__, *,
+                 cross_region_integration_instance_details: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs']]]] = None,
+                 regional_instance_url: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs']]] cross_region_integration_instance_details: Details of integration instance created in cross region for disaster recovery.
+        :param pulumi.Input[str] regional_instance_url: Region specific instance url for the integration instance in the region
+        :param pulumi.Input[str] role: Role of the integration instance in the region
+        """
+        if cross_region_integration_instance_details is not None:
+            pulumi.set(__self__, "cross_region_integration_instance_details", cross_region_integration_instance_details)
+        if regional_instance_url is not None:
+            pulumi.set(__self__, "regional_instance_url", regional_instance_url)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="crossRegionIntegrationInstanceDetails")
+    def cross_region_integration_instance_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs']]]]:
+        """
+        Details of integration instance created in cross region for disaster recovery.
+        """
+        return pulumi.get(self, "cross_region_integration_instance_details")
+
+    @cross_region_integration_instance_details.setter
+    def cross_region_integration_instance_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs']]]]):
+        pulumi.set(self, "cross_region_integration_instance_details", value)
+
+    @property
+    @pulumi.getter(name="regionalInstanceUrl")
+    def regional_instance_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Region specific instance url for the integration instance in the region
+        """
+        return pulumi.get(self, "regional_instance_url")
+
+    @regional_instance_url.setter
+    def regional_instance_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "regional_instance_url", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+
+if not MYPY:
+    class IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[str]]
+        """
+        The Virtual Cloud Network OCID.
+        """
+        region: NotRequired[pulumi.Input[str]]
+        """
+        Cross region where integration instance is created
+        """
+        role: NotRequired[pulumi.Input[str]]
+        """
+        Role of the integration instance in the region
+        """
+        time_role_changed: NotRequired[pulumi.Input[str]]
+        """
+        Time when cross region integration instance role was changed
+        """
+elif False:
+    IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 time_role_changed: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] id: The Virtual Cloud Network OCID.
+        :param pulumi.Input[str] region: Cross region where integration instance is created
+        :param pulumi.Input[str] role: Role of the integration instance in the region
+        :param pulumi.Input[str] time_role_changed: Time when cross region integration instance role was changed
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if time_role_changed is not None:
+            pulumi.set(__self__, "time_role_changed", time_role_changed)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        Cross region where integration instance is created
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when cross region integration instance role was changed
+        """
+        return pulumi.get(self, "time_role_changed")
+
+    @time_role_changed.setter
+    def time_role_changed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_role_changed", value)
 
 
 if not MYPY:

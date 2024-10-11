@@ -9,7 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
  *
- * Creates a dimension-specific suppression for an alarm.
+ * Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+ * For more information, see
+ * [Adding an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm) and
+ * [Adding a Dimension-Specific Alarm Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
  *
  * For important limits information, see
  * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -26,10 +29,11 @@ import * as utilities from "../utilities";
  *
  * const testAlarmSuppression = new oci.monitoring.AlarmSuppression("test_alarm_suppression", {
  *     alarmSuppressionTarget: {
- *         alarmId: testAlarm.id,
  *         targetType: alarmSuppressionAlarmSuppressionTargetTargetType,
+ *         alarmId: testAlarm.id,
+ *         compartmentId: compartmentId,
+ *         compartmentIdInSubtree: alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree,
  *     },
- *     dimensions: alarmSuppressionDimensions,
  *     displayName: alarmSuppressionDisplayName,
  *     timeSuppressFrom: alarmSuppressionTimeSuppressFrom,
  *     timeSuppressUntil: alarmSuppressionTimeSuppressUntil,
@@ -37,9 +41,16 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     description: alarmSuppressionDescription,
+ *     dimensions: alarmSuppressionDimensions,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     level: alarmSuppressionLevel,
+ *     suppressionConditions: [{
+ *         conditionType: alarmSuppressionSuppressionConditionsConditionType,
+ *         suppressionDuration: alarmSuppressionSuppressionConditionsSuppressionDuration,
+ *         suppressionRecurrence: alarmSuppressionSuppressionConditionsSuppressionRecurrence,
+ *     }],
  * });
  * ```
  *
@@ -102,7 +113,7 @@ export class AlarmSuppression extends pulumi.CustomResource {
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
-     * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+     * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
     public readonly dimensions!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -114,9 +125,19 @@ export class AlarmSuppression extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     *
+     * Defaut: `DIMENSION`
+     */
+    public readonly level!: pulumi.Output<string>;
+    /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+     */
+    public readonly suppressionConditions!: pulumi.Output<outputs.Monitoring.AlarmSuppressionSuppressionCondition[]>;
     /**
      * The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      */
@@ -158,7 +179,9 @@ export class AlarmSuppression extends pulumi.CustomResource {
             resourceInputs["dimensions"] = state ? state.dimensions : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["level"] = state ? state.level : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["suppressionConditions"] = state ? state.suppressionConditions : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeSuppressFrom"] = state ? state.timeSuppressFrom : undefined;
             resourceInputs["timeSuppressUntil"] = state ? state.timeSuppressUntil : undefined;
@@ -167,9 +190,6 @@ export class AlarmSuppression extends pulumi.CustomResource {
             const args = argsOrState as AlarmSuppressionArgs | undefined;
             if ((!args || args.alarmSuppressionTarget === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'alarmSuppressionTarget'");
-            }
-            if ((!args || args.dimensions === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'dimensions'");
             }
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
@@ -186,6 +206,8 @@ export class AlarmSuppression extends pulumi.CustomResource {
             resourceInputs["dimensions"] = args ? args.dimensions : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["level"] = args ? args.level : undefined;
+            resourceInputs["suppressionConditions"] = args ? args.suppressionConditions : undefined;
             resourceInputs["timeSuppressFrom"] = args ? args.timeSuppressFrom : undefined;
             resourceInputs["timeSuppressUntil"] = args ? args.timeSuppressUntil : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -225,7 +247,7 @@ export interface AlarmSuppressionState {
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
-     * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+     * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
     dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -237,9 +259,19 @@ export interface AlarmSuppressionState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     *
+     * Defaut: `DIMENSION`
+     */
+    level?: pulumi.Input<string>;
+    /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
     state?: pulumi.Input<string>;
+    /**
+     * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+     */
+    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[]>;
     /**
      * The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      */
@@ -285,9 +317,9 @@ export interface AlarmSuppressionArgs {
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
-     * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+     * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    dimensions: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -296,6 +328,16 @@ export interface AlarmSuppressionArgs {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     *
+     * Defaut: `DIMENSION`
+     */
+    level?: pulumi.Input<string>;
+    /**
+     * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+     */
+    suppressionConditions?: pulumi.Input<pulumi.Input<inputs.Monitoring.AlarmSuppressionSuppressionCondition>[]>;
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */

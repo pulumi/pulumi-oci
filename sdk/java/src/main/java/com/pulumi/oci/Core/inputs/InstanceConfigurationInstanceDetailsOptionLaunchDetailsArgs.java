@@ -102,14 +102,14 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -369,6 +369,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
@@ -430,6 +445,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
         this.preferredMaintenanceAction = $.preferredMaintenanceAction;
+        this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
         this.shapeConfig = $.shapeConfig;
         this.sourceDetails = $.sourceDetails;
@@ -559,7 +575,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          * 
          * @return builder
          * 
@@ -570,7 +586,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          * 
          * @return builder
          * 
@@ -925,6 +941,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          */
         public Builder preferredMaintenanceAction(String preferredMaintenanceAction) {
             return preferredMaintenanceAction(Output.of(preferredMaintenanceAction));
+        }
+
+        /**
+         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

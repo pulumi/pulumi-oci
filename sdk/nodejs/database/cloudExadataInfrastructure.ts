@@ -45,6 +45,7 @@ import * as utilities from "../utilities";
  *         }],
  *         patchingMode: cloudExadataInfrastructureMaintenanceWindowPatchingMode,
  *         preference: cloudExadataInfrastructureMaintenanceWindowPreference,
+ *         skipRus: cloudExadataInfrastructureMaintenanceWindowSkipRu,
  *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
  *     storageCount: cloudExadataInfrastructureStorageCount,

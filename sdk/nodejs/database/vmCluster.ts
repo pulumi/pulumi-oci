@@ -25,6 +25,18 @@ import * as utilities from "../utilities";
  *     giVersion: vmClusterGiVersion,
  *     sshPublicKeys: vmClusterSshPublicKeys,
  *     vmClusterNetworkId: testVmClusterNetwork.id,
+ *     cloudAutomationUpdateDetails: {
+ *         applyUpdateTimePreference: {
+ *             applyUpdatePreferredEndTime: vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime,
+ *             applyUpdatePreferredStartTime: vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime,
+ *         },
+ *         freezePeriod: {
+ *             freezePeriodEndTime: vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime,
+ *             freezePeriodStartTime: vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime,
+ *         },
+ *         isEarlyAdoptionEnabled: vmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled,
+ *         isFreezePeriodEnabled: vmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled,
+ *     },
  *     dataCollectionOptions: {
  *         isDiagnosticsEventsEnabled: vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
  *         isHealthMonitoringEnabled: vmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
@@ -90,6 +102,10 @@ export class VmCluster extends pulumi.CustomResource {
      * The name of the availability domain that the VM cluster is located in.
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    public readonly cloudAutomationUpdateDetails!: pulumi.Output<outputs.Database.VmClusterCloudAutomationUpdateDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -216,6 +232,7 @@ export class VmCluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as VmClusterState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
@@ -268,6 +285,7 @@ export class VmCluster extends pulumi.CustomResource {
             if ((!args || args.vmClusterNetworkId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vmClusterNetworkId'");
             }
+            resourceInputs["cloudAutomationUpdateDetails"] = args ? args.cloudAutomationUpdateDetails : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
@@ -312,6 +330,10 @@ export interface VmClusterState {
      * The name of the availability domain that the VM cluster is located in.
      */
     availabilityDomain?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    cloudAutomationUpdateDetails?: pulumi.Input<inputs.Database.VmClusterCloudAutomationUpdateDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -429,6 +451,10 @@ export interface VmClusterState {
  * The set of arguments for constructing a VmCluster resource.
  */
 export interface VmClusterArgs {
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    cloudAutomationUpdateDetails?: pulumi.Input<inputs.Database.VmClusterCloudAutomationUpdateDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

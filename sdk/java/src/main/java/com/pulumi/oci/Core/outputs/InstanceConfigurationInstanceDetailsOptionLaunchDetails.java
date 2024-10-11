@@ -48,7 +48,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      */
     private @Nullable String clusterPlacementGroupId;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
     private @Nullable String compartmentId;
@@ -139,6 +139,11 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      */
     private @Nullable String preferredMaintenanceAction;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
+    /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
@@ -187,7 +192,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * @return (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
     public Optional<String> compartmentId() {
@@ -312,6 +317,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         return Optional.ofNullable(this.preferredMaintenanceAction);
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
+    }
+    /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
@@ -360,6 +372,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig platformConfig;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
         private @Nullable String preferredMaintenanceAction;
+        private @Nullable Map<String,String> securityAttributes;
         private @Nullable String shape;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig shapeConfig;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails sourceDetails;
@@ -388,6 +401,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     	      this.platformConfig = defaults.platformConfig;
     	      this.preemptibleInstanceConfig = defaults.preemptibleInstanceConfig;
     	      this.preferredMaintenanceAction = defaults.preferredMaintenanceAction;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.shapeConfig = defaults.shapeConfig;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -526,6 +540,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(@Nullable String shape) {
 
             this.shape = shape;
@@ -567,6 +587,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             _resultValue.platformConfig = platformConfig;
             _resultValue.preemptibleInstanceConfig = preemptibleInstanceConfig;
             _resultValue.preferredMaintenanceAction = preferredMaintenanceAction;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.shapeConfig = shapeConfig;
             _resultValue.sourceDetails = sourceDetails;

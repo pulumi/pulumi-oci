@@ -153,6 +153,12 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isRestricted() {
         return this.isRestricted;
     }
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> kmsKeyVersionId;
+
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
+    }
     /**
      * Detailed message for the lifecycle state.
      * 

@@ -170,11 +170,11 @@ def get_objects(bucket: Optional[str] = None,
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
+    :param str end: Returns object names which are lexicographically strictly less than this parameter.
     :param str namespace: The Object Storage namespace used for the request.
     :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    :param str start: Returns object names which are lexicographically greater than or equal to this parameter.
+    :param str start_after: Returns object names which are lexicographically strictly greater than this parameter.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -226,11 +226,11 @@ def get_objects_output(bucket: Optional[pulumi.Input[str]] = None,
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
+    :param str end: Returns object names which are lexicographically strictly less than this parameter.
     :param str namespace: The Object Storage namespace used for the request.
     :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    :param str start: Returns object names which are lexicographically greater than or equal to this parameter.
+    :param str start_after: Returns object names which are lexicographically strictly greater than this parameter.
     """
     __args__ = dict()
     __args__['bucket'] = bucket

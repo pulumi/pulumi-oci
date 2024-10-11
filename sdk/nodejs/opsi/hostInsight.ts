@@ -9,31 +9,6 @@ import * as utilities from "../utilities";
  *
  * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testHostInsight = new oci.opsi.HostInsight("test_host_insight", {
- *     compartmentId: compartmentId,
- *     entitySource: hostInsightEntitySource,
- *     computeId: testCompute.id,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
- *     enterpriseManagerEntityIdentifier: hostInsightEnterpriseManagerEntityIdentifier,
- *     enterpriseManagerIdentifier: hostInsightEnterpriseManagerIdentifier,
- *     exadataInsightId: testExadataInsight.id,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     managementAgentId: testManagementAgent.id,
- *     status: "DISABLED",
- * });
- * ```
- *
  * ## Import
  *
  * HostInsights can be imported using the `id`, e.g.

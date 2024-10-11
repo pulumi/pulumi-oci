@@ -89,6 +89,7 @@ namespace Pulumi.Oci.Core
     ///         Ipv6privateCidrBlocks = vcnIpv6privateCidrBlocks,
     ///         IsIpv6enabled = vcnIsIpv6enabled,
     ///         IsOracleGuaAllocationEnabled = vcnIsOracleGuaAllocationEnabled,
+    ///         SecurityAttributes = vcnSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -210,14 +211,19 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsIpv6enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        /// </summary>
+        [Output("isOracleGuaAllocationEnabled")]
+        public Output<bool> IsOracleGuaAllocationEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("isOracleGuaAllocationEnabled")]
-        public Output<bool> IsOracleGuaAllocationEnabled { get; private set; } = null!;
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The VCN's current state.
@@ -388,14 +394,25 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        /// </summary>
+        [Input("isOracleGuaAllocationEnabled")]
+        public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("isOracleGuaAllocationEnabled")]
-        public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         public VcnArgs()
         {
@@ -552,14 +569,25 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
-        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-        /// 
+        /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        /// </summary>
+        [Input("isOracleGuaAllocationEnabled")]
+        public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("isOracleGuaAllocationEnabled")]
-        public Input<bool>? IsOracleGuaAllocationEnabled { get; set; }
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The VCN's current state.

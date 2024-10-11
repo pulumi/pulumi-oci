@@ -16,7 +16,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDe
      */
     private String credentialSourceName;
     /**
-     * @return Credential type.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
      * 
      */
     private String credentialType;
@@ -50,7 +50,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDe
         return this.credentialSourceName;
     }
     /**
-     * @return Credential type.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
      * 
      */
     public String credentialType() {

@@ -33,8 +33,10 @@ class IntegrationInstanceArgs:
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
+                 failover_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
+                 is_disaster_recovery_enabled: Optional[pulumi.Input[bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
@@ -54,8 +56,10 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        :param pulumi.Input[int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
+        :param pulumi.Input[bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
@@ -85,10 +89,14 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if extend_data_retention_trigger is not None:
             pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
+        if failover_trigger is not None:
+            pulumi.set(__self__, "failover_trigger", failover_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
             pulumi.set(__self__, "idcs_at", idcs_at)
+        if is_disaster_recovery_enabled is not None:
+            pulumi.set(__self__, "is_disaster_recovery_enabled", is_disaster_recovery_enabled)
         if is_file_server_enabled is not None:
             pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled is not None:
@@ -245,6 +253,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "extend_data_retention_trigger", value)
 
     @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        """
+        return pulumi.get(self, "failover_trigger")
+
+    @failover_trigger.setter
+    def failover_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failover_trigger", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -267,6 +287,18 @@ class IntegrationInstanceArgs:
     @idcs_at.setter
     def idcs_at(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "idcs_at", value)
+
+    @property
+    @pulumi.getter(name="isDisasterRecoveryEnabled")
+    def is_disaster_recovery_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Is Disaster Recovery enabled or not.
+        """
+        return pulumi.get(self, "is_disaster_recovery_enabled")
+
+    @is_disaster_recovery_enabled.setter
+    def is_disaster_recovery_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_disaster_recovery_enabled", value)
 
     @property
     @pulumi.getter(name="isFileServerEnabled")
@@ -343,18 +375,23 @@ class _IntegrationInstanceState:
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  data_retention_period: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 disaster_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
+                 failover_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]] = None,
+                 instance_design_time_url: Optional[pulumi.Input[str]] = None,
                  instance_url: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
                  is_byol: Optional[pulumi.Input[bool]] = None,
+                 is_disaster_recovery_enabled: Optional[pulumi.Input[bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
                  private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] = None,
@@ -373,18 +410,22 @@ class _IntegrationInstanceState:
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        :param pulumi.Input[int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
+        :param pulumi.Input[bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[str] lifecycle_details: Additional details of lifecycleState or substates
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -413,6 +454,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "data_retention_period", data_retention_period)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if disaster_recovery_details is not None:
+            pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if domain_id is not None:
@@ -421,22 +464,30 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if extend_data_retention_trigger is not None:
             pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
+        if failover_trigger is not None:
+            pulumi.set(__self__, "failover_trigger", failover_trigger)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_at is not None:
             pulumi.set(__self__, "idcs_at", idcs_at)
         if idcs_infos is not None:
             pulumi.set(__self__, "idcs_infos", idcs_infos)
+        if instance_design_time_url is not None:
+            pulumi.set(__self__, "instance_design_time_url", instance_design_time_url)
         if instance_url is not None:
             pulumi.set(__self__, "instance_url", instance_url)
         if integration_instance_type is not None:
             pulumi.set(__self__, "integration_instance_type", integration_instance_type)
         if is_byol is not None:
             pulumi.set(__self__, "is_byol", is_byol)
+        if is_disaster_recovery_enabled is not None:
+            pulumi.set(__self__, "is_disaster_recovery_enabled", is_disaster_recovery_enabled)
         if is_file_server_enabled is not None:
             pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled is not None:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if message_packs is not None:
             pulumi.set(__self__, "message_packs", message_packs)
         if network_endpoint_details is not None:
@@ -541,6 +592,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="disasterRecoveryDetails")
+    def disaster_recovery_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]]]:
+        """
+        Disaster recovery details for the integration instance created in the region.
+        """
+        return pulumi.get(self, "disaster_recovery_details")
+
+    @disaster_recovery_details.setter
+    def disaster_recovery_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]]]):
+        pulumi.set(self, "disaster_recovery_details", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -589,6 +652,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "extend_data_retention_trigger", value)
 
     @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        """
+        return pulumi.get(self, "failover_trigger")
+
+    @failover_trigger.setter
+    def failover_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "failover_trigger", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
@@ -623,6 +698,15 @@ class _IntegrationInstanceState:
     @idcs_infos.setter
     def idcs_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]]):
         pulumi.set(self, "idcs_infos", value)
+
+    @property
+    @pulumi.getter(name="instanceDesignTimeUrl")
+    def instance_design_time_url(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance_design_time_url")
+
+    @instance_design_time_url.setter
+    def instance_design_time_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_design_time_url", value)
 
     @property
     @pulumi.getter(name="instanceUrl")
@@ -661,6 +745,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "is_byol", value)
 
     @property
+    @pulumi.getter(name="isDisasterRecoveryEnabled")
+    def is_disaster_recovery_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Is Disaster Recovery enabled or not.
+        """
+        return pulumi.get(self, "is_disaster_recovery_enabled")
+
+    @is_disaster_recovery_enabled.setter
+    def is_disaster_recovery_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_disaster_recovery_enabled", value)
+
+    @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -683,6 +779,18 @@ class _IntegrationInstanceState:
     @is_visual_builder_enabled.setter
     def is_visual_builder_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_visual_builder_enabled", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Additional details of lifecycleState or substates
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
 
     @property
     @pulumi.getter(name="messagePacks")
@@ -811,10 +919,12 @@ class IntegrationInstance(pulumi.CustomResource):
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
+                 failover_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
                  is_byol: Optional[pulumi.Input[bool]] = None,
+                 is_disaster_recovery_enabled: Optional[pulumi.Input[bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
@@ -856,6 +966,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=integration_instance_idcs_at,
+            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled,
             is_file_server_enabled=integration_instance_is_file_server_enabled,
             is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details={
@@ -890,10 +1001,12 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        :param pulumi.Input[int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
+        :param pulumi.Input[bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
@@ -945,6 +1058,7 @@ class IntegrationInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=integration_instance_idcs_at,
+            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled,
             is_file_server_enabled=integration_instance_is_file_server_enabled,
             is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details={
@@ -992,10 +1106,12 @@ class IntegrationInstance(pulumi.CustomResource):
                  domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
+                 failover_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  integration_instance_type: Optional[pulumi.Input[str]] = None,
                  is_byol: Optional[pulumi.Input[bool]] = None,
+                 is_disaster_recovery_enabled: Optional[pulumi.Input[bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
                  message_packs: Optional[pulumi.Input[int]] = None,
@@ -1024,6 +1140,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["domain_id"] = domain_id
             __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
             __props__.__dict__["extend_data_retention_trigger"] = extend_data_retention_trigger
+            __props__.__dict__["failover_trigger"] = failover_trigger
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_at"] = None if idcs_at is None else pulumi.Output.secret(idcs_at)
             if integration_instance_type is None and not opts.urn:
@@ -1032,6 +1149,7 @@ class IntegrationInstance(pulumi.CustomResource):
             if is_byol is None and not opts.urn:
                 raise TypeError("Missing required property 'is_byol'")
             __props__.__dict__["is_byol"] = is_byol
+            __props__.__dict__["is_disaster_recovery_enabled"] = is_disaster_recovery_enabled
             __props__.__dict__["is_file_server_enabled"] = is_file_server_enabled
             __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
             if message_packs is None and not opts.urn:
@@ -1042,8 +1160,11 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
             __props__.__dict__["data_retention_period"] = None
+            __props__.__dict__["disaster_recovery_details"] = None
             __props__.__dict__["idcs_infos"] = None
+            __props__.__dict__["instance_design_time_url"] = None
             __props__.__dict__["instance_url"] = None
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["private_endpoint_outbound_connections"] = None
             __props__.__dict__["state_message"] = None
             __props__.__dict__["system_tags"] = None
@@ -1068,18 +1189,23 @@ class IntegrationInstance(pulumi.CustomResource):
             custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
             data_retention_period: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            disaster_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain_id: Optional[pulumi.Input[str]] = None,
             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
             extend_data_retention_trigger: Optional[pulumi.Input[int]] = None,
+            failover_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
             idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]]] = None,
+            instance_design_time_url: Optional[pulumi.Input[str]] = None,
             instance_url: Optional[pulumi.Input[str]] = None,
             integration_instance_type: Optional[pulumi.Input[str]] = None,
             is_byol: Optional[pulumi.Input[bool]] = None,
+            is_disaster_recovery_enabled: Optional[pulumi.Input[bool]] = None,
             is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             message_packs: Optional[pulumi.Input[int]] = None,
             network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
             private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
@@ -1103,18 +1229,22 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
+        :param pulumi.Input[int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict']]]] idcs_infos: Information for IDCS access
         :param pulumi.Input[str] instance_url: The Integration Instance URL.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param pulumi.Input[bool] is_byol: (Updatable) Bring your own license.
+        :param pulumi.Input[bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[str] lifecycle_details: Additional details of lifecycleState or substates
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -1140,18 +1270,23 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["data_retention_period"] = data_retention_period
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["disaster_recovery_details"] = disaster_recovery_details
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain_id"] = domain_id
         __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
         __props__.__dict__["extend_data_retention_trigger"] = extend_data_retention_trigger
+        __props__.__dict__["failover_trigger"] = failover_trigger
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_at"] = idcs_at
         __props__.__dict__["idcs_infos"] = idcs_infos
+        __props__.__dict__["instance_design_time_url"] = instance_design_time_url
         __props__.__dict__["instance_url"] = instance_url
         __props__.__dict__["integration_instance_type"] = integration_instance_type
         __props__.__dict__["is_byol"] = is_byol
+        __props__.__dict__["is_disaster_recovery_enabled"] = is_disaster_recovery_enabled
         __props__.__dict__["is_file_server_enabled"] = is_file_server_enabled
         __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["message_packs"] = message_packs
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["private_endpoint_outbound_connections"] = private_endpoint_outbound_connections
@@ -1220,6 +1355,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryDetails")
+    def disaster_recovery_details(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceDisasterRecoveryDetail']]:
+        """
+        Disaster recovery details for the integration instance created in the region.
+        """
+        return pulumi.get(self, "disaster_recovery_details")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -1252,6 +1395,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "extend_data_retention_trigger")
 
     @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        """
+        return pulumi.get(self, "failover_trigger")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
@@ -1274,6 +1425,11 @@ class IntegrationInstance(pulumi.CustomResource):
         Information for IDCS access
         """
         return pulumi.get(self, "idcs_infos")
+
+    @property
+    @pulumi.getter(name="instanceDesignTimeUrl")
+    def instance_design_time_url(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "instance_design_time_url")
 
     @property
     @pulumi.getter(name="instanceUrl")
@@ -1300,6 +1456,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "is_byol")
 
     @property
+    @pulumi.getter(name="isDisasterRecoveryEnabled")
+    def is_disaster_recovery_enabled(self) -> pulumi.Output[bool]:
+        """
+        Is Disaster Recovery enabled or not.
+        """
+        return pulumi.get(self, "is_disaster_recovery_enabled")
+
+    @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> pulumi.Output[bool]:
         """
@@ -1314,6 +1478,14 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) Visual Builder is enabled or not.
         """
         return pulumi.get(self, "is_visual_builder_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Additional details of lifecycleState or substates
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="messagePacks")

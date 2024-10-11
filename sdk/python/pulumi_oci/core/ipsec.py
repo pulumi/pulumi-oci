@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['IpsecArgs', 'Ipsec']
 
@@ -27,7 +29,8 @@ class IpsecArgs:
                  cpe_local_identifier_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         The set of arguments for constructing a Ipsec resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -38,10 +41,6 @@ class IpsecArgs:
                Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
                
                If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
@@ -55,6 +54,18 @@ class IpsecArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+               
+               Example: `
+               tunnel_configuration {
+               oracle_tunnel_ip = "10.1.5.5"
+               associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+               drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+               }`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpe_id", cpe_id)
@@ -70,6 +81,8 @@ class IpsecArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if tunnel_configurations is not None:
+            pulumi.set(__self__, "tunnel_configurations", tunnel_configurations)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -116,10 +129,6 @@ class IpsecArgs:
         Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "static_routes")
 
@@ -195,6 +204,29 @@ class IpsecArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="tunnelConfigurations")
+    def tunnel_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
+        """
+        (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+
+        Example: `
+        tunnel_configuration {
+        oracle_tunnel_ip = "10.1.5.5"
+        associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        }`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tunnel_configurations")
+
+    @tunnel_configurations.setter
+    def tunnel_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
+        pulumi.set(self, "tunnel_configurations", value)
+
 
 @pulumi.input_type
 class _IpsecState:
@@ -210,7 +242,8 @@ class _IpsecState:
                  state: Optional[pulumi.Input[str]] = None,
                  static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 transport_type: Optional[pulumi.Input[str]] = None):
+                 transport_type: Optional[pulumi.Input[str]] = None,
+                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         Input properties used for looking up and filtering Ipsec resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -235,12 +268,20 @@ class _IpsecState:
                Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
+        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+               
+               Example: `
+               tunnel_configuration {
+               oracle_tunnel_ip = "10.1.5.5"
+               associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+               drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+               }`
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -266,6 +307,8 @@ class _IpsecState:
             pulumi.set(__self__, "time_created", time_created)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
+        if tunnel_configurations is not None:
+            pulumi.set(__self__, "tunnel_configurations", tunnel_configurations)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -392,10 +435,6 @@ class _IpsecState:
         Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "static_routes")
 
@@ -427,6 +466,29 @@ class _IpsecState:
     def transport_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "transport_type", value)
 
+    @property
+    @pulumi.getter(name="tunnelConfigurations")
+    def tunnel_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
+        """
+        (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+
+        Example: `
+        tunnel_configuration {
+        oracle_tunnel_ip = "10.1.5.5"
+        associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        }`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tunnel_configurations")
+
+    @tunnel_configurations.setter
+    def tunnel_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
+        pulumi.set(self, "tunnel_configurations", value)
+
 
 class Ipsec(pulumi.CustomResource):
     @overload
@@ -442,6 +504,7 @@ class Ipsec(pulumi.CustomResource):
                  drg_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
@@ -476,6 +539,11 @@ class Ipsec(pulumi.CustomResource):
         (that is, the pre-shared key). For more information, see
         [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
 
+        To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnel_configuration`.
+        You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracle_tunnel_ip`,
+        `associated_virtual_circuits` and `drg_route_table_id` at time of creation. These attributes cannot be updated using IPSec
+        connection APIs. To update drg route table id, use `Core.DrgAttachmentManagement` resource to update.
+
         ## Example Usage
 
         ```python
@@ -496,6 +564,32 @@ class Ipsec(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             })
+        test_ip_sec_connection_over_fc = oci.core.Ipsec("test_ip_sec_connection_over_fc",
+            compartment_id=compartment_id,
+            cpe_id=test_cpe["id"],
+            drg_id=test_drg["id"],
+            static_routes=ip_sec_connection_static_routes,
+            cpe_local_identifier=ip_sec_connection_cpe_local_identifier,
+            cpe_local_identifier_type=ip_sec_connection_cpe_local_identifier_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=ip_sec_connection_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            tunnel_configurations=[
+                {
+                    "oracle_tunnel_ip": "10.1.5.5",
+                    "associated_virtual_circuits": [test_ipsec_over_fc_virtual_circuit["id"]],
+                    "drg_route_table_id": test_drg_ipsec_over_fc_route_table["id"],
+                },
+                {
+                    "oracle_tunnel_ip": "10.1.7.7",
+                    "associated_virtual_circuits": [test_ipsec_over_fc_virtual_circuit["id"]],
+                    "drg_route_table_id": test_drg_ipsec_over_fc_route_table["id"],
+                },
+            ])
         ```
 
         ## Import
@@ -529,6 +623,14 @@ class Ipsec(pulumi.CustomResource):
                Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+               
+               Example: `
+               tunnel_configuration {
+               oracle_tunnel_ip = "10.1.5.5"
+               associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+               drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+               }`
                
                
                ** IMPORTANT **
@@ -573,6 +675,11 @@ class Ipsec(pulumi.CustomResource):
         (that is, the pre-shared key). For more information, see
         [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
 
+        To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnel_configuration`.
+        You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracle_tunnel_ip`,
+        `associated_virtual_circuits` and `drg_route_table_id` at time of creation. These attributes cannot be updated using IPSec
+        connection APIs. To update drg route table id, use `Core.DrgAttachmentManagement` resource to update.
+
         ## Example Usage
 
         ```python
@@ -593,6 +700,32 @@ class Ipsec(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             })
+        test_ip_sec_connection_over_fc = oci.core.Ipsec("test_ip_sec_connection_over_fc",
+            compartment_id=compartment_id,
+            cpe_id=test_cpe["id"],
+            drg_id=test_drg["id"],
+            static_routes=ip_sec_connection_static_routes,
+            cpe_local_identifier=ip_sec_connection_cpe_local_identifier,
+            cpe_local_identifier_type=ip_sec_connection_cpe_local_identifier_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=ip_sec_connection_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            tunnel_configurations=[
+                {
+                    "oracle_tunnel_ip": "10.1.5.5",
+                    "associated_virtual_circuits": [test_ipsec_over_fc_virtual_circuit["id"]],
+                    "drg_route_table_id": test_drg_ipsec_over_fc_route_table["id"],
+                },
+                {
+                    "oracle_tunnel_ip": "10.1.7.7",
+                    "associated_virtual_circuits": [test_ipsec_over_fc_virtual_circuit["id"]],
+                    "drg_route_table_id": test_drg_ipsec_over_fc_route_table["id"],
+                },
+            ])
         ```
 
         ## Import
@@ -627,6 +760,7 @@ class Ipsec(pulumi.CustomResource):
                  drg_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -653,6 +787,7 @@ class Ipsec(pulumi.CustomResource):
             if static_routes is None and not opts.urn:
                 raise TypeError("Missing required property 'static_routes'")
             __props__.__dict__["static_routes"] = static_routes
+            __props__.__dict__["tunnel_configurations"] = tunnel_configurations
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["transport_type"] = None
@@ -677,7 +812,8 @@ class Ipsec(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            transport_type: Optional[pulumi.Input[str]] = None) -> 'Ipsec':
+            transport_type: Optional[pulumi.Input[str]] = None,
+            tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None) -> 'Ipsec':
         """
         Get an existing Ipsec resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -707,12 +843,20 @@ class Ipsec(pulumi.CustomResource):
                Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
+        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+               
+               Example: `
+               tunnel_configuration {
+               oracle_tunnel_ip = "10.1.5.5"
+               associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+               drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+               }`
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -730,6 +874,7 @@ class Ipsec(pulumi.CustomResource):
         __props__.__dict__["static_routes"] = static_routes
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["transport_type"] = transport_type
+        __props__.__dict__["tunnel_configurations"] = tunnel_configurations
         return Ipsec(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -821,10 +966,6 @@ class Ipsec(pulumi.CustomResource):
         Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "static_routes")
 
@@ -843,4 +984,23 @@ class Ipsec(pulumi.CustomResource):
         The transport type used for the IPSec connection.
         """
         return pulumi.get(self, "transport_type")
+
+    @property
+    @pulumi.getter(name="tunnelConfigurations")
+    def tunnel_configurations(self) -> pulumi.Output[Sequence['outputs.IpsecTunnelConfiguration']]:
+        """
+        (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+
+        Example: `
+        tunnel_configuration {
+        oracle_tunnel_ip = "10.1.5.5"
+        associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        }`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tunnel_configurations")
 

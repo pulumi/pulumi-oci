@@ -19,6 +19,8 @@ __all__ = [
     'IntegrationInstanceAlternateCustomEndpoint',
     'IntegrationInstanceAttachment',
     'IntegrationInstanceCustomEndpoint',
+    'IntegrationInstanceDisasterRecoveryDetail',
+    'IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail',
     'IntegrationInstanceIdcsInfo',
     'IntegrationInstanceNetworkEndpointDetails',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn',
@@ -26,6 +28,8 @@ __all__ = [
     'GetIntegrationInstanceAlternateCustomEndpointResult',
     'GetIntegrationInstanceAttachmentResult',
     'GetIntegrationInstanceCustomEndpointResult',
+    'GetIntegrationInstanceDisasterRecoveryDetailResult',
+    'GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult',
     'GetIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
@@ -35,6 +39,8 @@ __all__ = [
     'GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult',
     'GetIntegrationInstancesIntegrationInstanceAttachmentResult',
     'GetIntegrationInstancesIntegrationInstanceCustomEndpointResult',
+    'GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult',
+    'GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult',
     'GetIntegrationInstancesIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
@@ -50,6 +56,12 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
             suggest = "certificate_secret_id"
         elif key == "certificateSecretVersion":
             suggest = "certificate_secret_version"
+        elif key == "dnsType":
+            suggest = "dns_type"
+        elif key == "dnsZoneName":
+            suggest = "dns_zone_name"
+        elif key == "managedType":
+            suggest = "managed_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceAlternateCustomEndpoint. Access the value via the '{suggest}' property getter instead.")
@@ -66,12 +78,18 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
                  hostname: str,
                  alias: Optional[str] = None,
                  certificate_secret_id: Optional[str] = None,
-                 certificate_secret_version: Optional[int] = None):
+                 certificate_secret_version: Optional[int] = None,
+                 dns_type: Optional[str] = None,
+                 dns_zone_name: Optional[str] = None,
+                 managed_type: Optional[str] = None):
         """
         :param str hostname: (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param str dns_type: Type of DNS.
+        :param str dns_zone_name: DNS Zone name
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
@@ -80,6 +98,12 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
             pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if dns_type is not None:
+            pulumi.set(__self__, "dns_type", dns_type)
+        if dns_zone_name is not None:
+            pulumi.set(__self__, "dns_zone_name", dns_zone_name)
+        if managed_type is not None:
+            pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -112,6 +136,30 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
         The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> Optional[str]:
+        """
+        Type of DNS.
+        """
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> Optional[str]:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> Optional[str]:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
 
 
 @pulumi.output_type
@@ -217,10 +265,16 @@ class IntegrationInstanceCustomEndpoint(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "certificateSecretId":
+        if key == "dnsZoneName":
+            suggest = "dns_zone_name"
+        elif key == "certificateSecretId":
             suggest = "certificate_secret_id"
         elif key == "certificateSecretVersion":
             suggest = "certificate_secret_version"
+        elif key == "dnsType":
+            suggest = "dns_type"
+        elif key == "managedType":
+            suggest = "managed_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceCustomEndpoint. Access the value via the '{suggest}' property getter instead.")
@@ -234,16 +288,23 @@ class IntegrationInstanceCustomEndpoint(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 dns_zone_name: str,
                  hostname: str,
                  alias: Optional[str] = None,
                  certificate_secret_id: Optional[str] = None,
-                 certificate_secret_version: Optional[int] = None):
+                 certificate_secret_version: Optional[int] = None,
+                 dns_type: Optional[str] = None,
+                 managed_type: Optional[str] = None):
         """
+        :param str dns_zone_name: DNS Zone name
         :param str hostname: (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param str dns_type: Type of DNS.
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
             pulumi.set(__self__, "alias", alias)
@@ -251,6 +312,18 @@ class IntegrationInstanceCustomEndpoint(dict):
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
             pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if dns_type is not None:
+            pulumi.set(__self__, "dns_type", dns_type)
+        if managed_type is not None:
+            pulumi.set(__self__, "managed_type", managed_type)
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> str:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
 
     @property
     @pulumi.getter
@@ -283,6 +356,156 @@ class IntegrationInstanceCustomEndpoint(dict):
         The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> Optional[str]:
+        """
+        Type of DNS.
+        """
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> Optional[str]:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
+
+
+@pulumi.output_type
+class IntegrationInstanceDisasterRecoveryDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crossRegionIntegrationInstanceDetails":
+            suggest = "cross_region_integration_instance_details"
+        elif key == "regionalInstanceUrl":
+            suggest = "regional_instance_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceDisasterRecoveryDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceDisasterRecoveryDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceDisasterRecoveryDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cross_region_integration_instance_details: Optional[Sequence['outputs.IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail']] = None,
+                 regional_instance_url: Optional[str] = None,
+                 role: Optional[str] = None):
+        """
+        :param Sequence['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs'] cross_region_integration_instance_details: Details of integration instance created in cross region for disaster recovery.
+        :param str regional_instance_url: Region specific instance url for the integration instance in the region
+        :param str role: Role of the integration instance in the region
+        """
+        if cross_region_integration_instance_details is not None:
+            pulumi.set(__self__, "cross_region_integration_instance_details", cross_region_integration_instance_details)
+        if regional_instance_url is not None:
+            pulumi.set(__self__, "regional_instance_url", regional_instance_url)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="crossRegionIntegrationInstanceDetails")
+    def cross_region_integration_instance_details(self) -> Optional[Sequence['outputs.IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail']]:
+        """
+        Details of integration instance created in cross region for disaster recovery.
+        """
+        return pulumi.get(self, "cross_region_integration_instance_details")
+
+    @property
+    @pulumi.getter(name="regionalInstanceUrl")
+    def regional_instance_url(self) -> Optional[str]:
+        """
+        Region specific instance url for the integration instance in the region
+        """
+        return pulumi.get(self, "regional_instance_url")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+
+@pulumi.output_type
+class IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeRoleChanged":
+            suggest = "time_role_changed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[str] = None,
+                 region: Optional[str] = None,
+                 role: Optional[str] = None,
+                 time_role_changed: Optional[str] = None):
+        """
+        :param str id: The Virtual Cloud Network OCID.
+        :param str region: Cross region where integration instance is created
+        :param str role: Role of the integration instance in the region
+        :param str time_role_changed: Time when cross region integration instance role was changed
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if time_role_changed is not None:
+            pulumi.set(__self__, "time_role_changed", time_role_changed)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        Cross region where integration instance is created
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> Optional[str]:
+        """
+        Time when cross region integration instance role was changed
+        """
+        return pulumi.get(self, "time_role_changed")
 
 
 @pulumi.output_type
@@ -571,17 +794,25 @@ class GetIntegrationInstanceAlternateCustomEndpointResult(dict):
                  alias: str,
                  certificate_secret_id: str,
                  certificate_secret_version: int,
-                 hostname: str):
+                 dns_type: str,
+                 dns_zone_name: str,
+                 hostname: str,
+                 managed_type: str):
         """
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+        :param str dns_zone_name: DNS Zone name
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "dns_type", dns_type)
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -603,9 +834,22 @@ class GetIntegrationInstanceAlternateCustomEndpointResult(dict):
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> int:
         """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> str:
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> str:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
 
     @property
     @pulumi.getter
@@ -614,6 +858,14 @@ class GetIntegrationInstanceAlternateCustomEndpointResult(dict):
         A custom hostname to be used for the integration instance URL, in FQDN format.
         """
         return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> str:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
 
 
 @pulumi.output_type
@@ -690,17 +942,25 @@ class GetIntegrationInstanceCustomEndpointResult(dict):
                  alias: str,
                  certificate_secret_id: str,
                  certificate_secret_version: int,
-                 hostname: str):
+                 dns_type: str,
+                 dns_zone_name: str,
+                 hostname: str,
+                 managed_type: str):
         """
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+        :param str dns_zone_name: DNS Zone name
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "dns_type", dns_type)
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -722,9 +982,22 @@ class GetIntegrationInstanceCustomEndpointResult(dict):
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> int:
         """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> str:
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> str:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
 
     @property
     @pulumi.getter
@@ -733,6 +1006,105 @@ class GetIntegrationInstanceCustomEndpointResult(dict):
         A custom hostname to be used for the integration instance URL, in FQDN format.
         """
         return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> str:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
+
+
+@pulumi.output_type
+class GetIntegrationInstanceDisasterRecoveryDetailResult(dict):
+    def __init__(__self__, *,
+                 cross_region_integration_instance_details: Sequence['outputs.GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult'],
+                 regional_instance_url: str,
+                 role: str):
+        """
+        :param Sequence['GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs'] cross_region_integration_instance_details: Details of integration instance created in cross region for disaster recovery.
+        :param str regional_instance_url: Region specific instance url for the integration instance in the region
+        :param str role: Role of the integration instance in the region
+        """
+        pulumi.set(__self__, "cross_region_integration_instance_details", cross_region_integration_instance_details)
+        pulumi.set(__self__, "regional_instance_url", regional_instance_url)
+        pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="crossRegionIntegrationInstanceDetails")
+    def cross_region_integration_instance_details(self) -> Sequence['outputs.GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult']:
+        """
+        Details of integration instance created in cross region for disaster recovery.
+        """
+        return pulumi.get(self, "cross_region_integration_instance_details")
+
+    @property
+    @pulumi.getter(name="regionalInstanceUrl")
+    def regional_instance_url(self) -> str:
+        """
+        Region specific instance url for the integration instance in the region
+        """
+        return pulumi.get(self, "regional_instance_url")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+
+@pulumi.output_type
+class GetIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 region: str,
+                 role: str,
+                 time_role_changed: str):
+        """
+        :param str id: The Virtual Cloud Network OCID.
+        :param str region: Cross region where integration instance is created
+        :param str role: Role of the integration instance in the region
+        :param str time_role_changed: Time when cross region integration instance role was changed
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "time_role_changed", time_role_changed)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        Cross region where integration instance is created
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> str:
+        """
+        Time when cross region integration instance role was changed
+        """
+        return pulumi.get(self, "time_role_changed")
 
 
 @pulumi.output_type
@@ -748,7 +1120,7 @@ class GetIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_id: The IDCS application ID associated with the instance
         :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
         :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
+        :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
         """
         pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
         pulumi.set(__self__, "idcs_app_id", idcs_app_id)
@@ -792,7 +1164,7 @@ class GetIntegrationInstanceIdcsInfoResult(dict):
     @pulumi.getter(name="instancePrimaryAudienceUrl")
     def instance_primary_audience_url(self) -> str:
         """
-        The URL used as the primary audience for integration flows in this instance type: string
+        The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
         """
         return pulumi.get(self, "instance_primary_audience_url")
 
@@ -954,19 +1326,24 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
                  data_retention_period: str,
                  defined_tags: Mapping[str, str],
+                 disaster_recovery_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult'],
                  display_name: str,
                  domain_id: str,
                  enable_process_automation_trigger: int,
                  extend_data_retention_trigger: int,
+                 failover_trigger: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
                  idcs_at: str,
                  idcs_infos: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult'],
+                 instance_design_time_url: str,
                  instance_url: str,
                  integration_instance_type: str,
                  is_byol: bool,
+                 is_disaster_recovery_enabled: bool,
                  is_file_server_enabled: bool,
                  is_visual_builder_enabled: bool,
+                 lifecycle_details: str,
                  message_packs: int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
                  private_endpoint_outbound_connections: Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult'],
@@ -984,6 +1361,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param Sequence['GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs'] custom_endpoints: Details for a custom endpoint for the integration instance.
         :param str data_retention_period: Data retention period set for given integration instance
         :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArgs'] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The Virtual Cloud Network OCID.
@@ -991,8 +1369,10 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str instance_url: The Integration Instance URL.
         :param str integration_instance_type: Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
         :param bool is_byol: Bring your own license.
+        :param bool is_disaster_recovery_enabled: Is Disaster Recovery enabled for the integrationInstance
         :param bool is_file_server_enabled: The file server is enabled or not.
         :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
+        :param str lifecycle_details: Additional details of lifecycleState or substates
         :param int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -1010,19 +1390,24 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
         pulumi.set(__self__, "data_retention_period", data_retention_period)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain_id", domain_id)
         pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
+        pulumi.set(__self__, "failover_trigger", failover_trigger)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idcs_at", idcs_at)
         pulumi.set(__self__, "idcs_infos", idcs_infos)
+        pulumi.set(__self__, "instance_design_time_url", instance_design_time_url)
         pulumi.set(__self__, "instance_url", instance_url)
         pulumi.set(__self__, "integration_instance_type", integration_instance_type)
         pulumi.set(__self__, "is_byol", is_byol)
+        pulumi.set(__self__, "is_disaster_recovery_enabled", is_disaster_recovery_enabled)
         pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
@@ -1090,6 +1475,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryDetails")
+    def disaster_recovery_details(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult']:
+        """
+        Disaster recovery details for the integration instance created in the region.
+        """
+        return pulumi.get(self, "disaster_recovery_details")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -1111,6 +1504,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     @pulumi.getter(name="extendDataRetentionTrigger")
     def extend_data_retention_trigger(self) -> int:
         return pulumi.get(self, "extend_data_retention_trigger")
+
+    @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> int:
+        return pulumi.get(self, "failover_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1142,6 +1540,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "idcs_infos")
 
     @property
+    @pulumi.getter(name="instanceDesignTimeUrl")
+    def instance_design_time_url(self) -> str:
+        return pulumi.get(self, "instance_design_time_url")
+
+    @property
     @pulumi.getter(name="instanceUrl")
     def instance_url(self) -> str:
         """
@@ -1166,6 +1569,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "is_byol")
 
     @property
+    @pulumi.getter(name="isDisasterRecoveryEnabled")
+    def is_disaster_recovery_enabled(self) -> bool:
+        """
+        Is Disaster Recovery enabled for the integrationInstance
+        """
+        return pulumi.get(self, "is_disaster_recovery_enabled")
+
+    @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> bool:
         """
@@ -1180,6 +1591,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Visual Builder is enabled or not.
         """
         return pulumi.get(self, "is_visual_builder_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional details of lifecycleState or substates
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="messagePacks")
@@ -1260,17 +1679,25 @@ class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult(di
                  alias: str,
                  certificate_secret_id: str,
                  certificate_secret_version: int,
-                 hostname: str):
+                 dns_type: str,
+                 dns_zone_name: str,
+                 hostname: str,
+                 managed_type: str):
         """
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+        :param str dns_zone_name: DNS Zone name
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "dns_type", dns_type)
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -1292,9 +1719,22 @@ class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult(di
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> int:
         """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> str:
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> str:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
 
     @property
     @pulumi.getter
@@ -1303,6 +1743,14 @@ class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult(di
         A custom hostname to be used for the integration instance URL, in FQDN format.
         """
         return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> str:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
 
 
 @pulumi.output_type
@@ -1379,17 +1827,25 @@ class GetIntegrationInstancesIntegrationInstanceCustomEndpointResult(dict):
                  alias: str,
                  certificate_secret_id: str,
                  certificate_secret_version: int,
-                 hostname: str):
+                 dns_type: str,
+                 dns_zone_name: str,
+                 hostname: str,
+                 managed_type: str):
         """
         :param str alias: When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
         :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+        :param str dns_zone_name: DNS Zone name
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
+        :param str managed_type: Indicates if custom endpoint is managed by oracle or customer.
         """
         pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "dns_type", dns_type)
+        pulumi.set(__self__, "dns_zone_name", dns_zone_name)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "managed_type", managed_type)
 
     @property
     @pulumi.getter
@@ -1411,9 +1867,22 @@ class GetIntegrationInstancesIntegrationInstanceCustomEndpointResult(dict):
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> int:
         """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
         """
         return pulumi.get(self, "certificate_secret_version")
+
+    @property
+    @pulumi.getter(name="dnsType")
+    def dns_type(self) -> str:
+        return pulumi.get(self, "dns_type")
+
+    @property
+    @pulumi.getter(name="dnsZoneName")
+    def dns_zone_name(self) -> str:
+        """
+        DNS Zone name
+        """
+        return pulumi.get(self, "dns_zone_name")
 
     @property
     @pulumi.getter
@@ -1422,6 +1891,105 @@ class GetIntegrationInstancesIntegrationInstanceCustomEndpointResult(dict):
         A custom hostname to be used for the integration instance URL, in FQDN format.
         """
         return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter(name="managedType")
+    def managed_type(self) -> str:
+        """
+        Indicates if custom endpoint is managed by oracle or customer.
+        """
+        return pulumi.get(self, "managed_type")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult(dict):
+    def __init__(__self__, *,
+                 cross_region_integration_instance_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult'],
+                 regional_instance_url: str,
+                 role: str):
+        """
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs'] cross_region_integration_instance_details: Details of integration instance created in cross region for disaster recovery.
+        :param str regional_instance_url: Region specific instance url for the integration instance in the region
+        :param str role: Role of the integration instance in the region
+        """
+        pulumi.set(__self__, "cross_region_integration_instance_details", cross_region_integration_instance_details)
+        pulumi.set(__self__, "regional_instance_url", regional_instance_url)
+        pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="crossRegionIntegrationInstanceDetails")
+    def cross_region_integration_instance_details(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult']:
+        """
+        Details of integration instance created in cross region for disaster recovery.
+        """
+        return pulumi.get(self, "cross_region_integration_instance_details")
+
+    @property
+    @pulumi.getter(name="regionalInstanceUrl")
+    def regional_instance_url(self) -> str:
+        """
+        Region specific instance url for the integration instance in the region
+        """
+        return pulumi.get(self, "regional_instance_url")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 region: str,
+                 role: str,
+                 time_role_changed: str):
+        """
+        :param str id: The Virtual Cloud Network OCID.
+        :param str region: Cross region where integration instance is created
+        :param str role: Role of the integration instance in the region
+        :param str time_role_changed: Time when cross region integration instance role was changed
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "time_role_changed", time_role_changed)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        Cross region where integration instance is created
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        """
+        Role of the integration instance in the region
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="timeRoleChanged")
+    def time_role_changed(self) -> str:
+        """
+        Time when cross region integration instance role was changed
+        """
+        return pulumi.get(self, "time_role_changed")
 
 
 @pulumi.output_type
@@ -1437,7 +2005,7 @@ class GetIntegrationInstancesIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_id: The IDCS application ID associated with the instance
         :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
         :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
+        :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
         """
         pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
         pulumi.set(__self__, "idcs_app_id", idcs_app_id)
@@ -1481,7 +2049,7 @@ class GetIntegrationInstancesIntegrationInstanceIdcsInfoResult(dict):
     @pulumi.getter(name="instancePrimaryAudienceUrl")
     def instance_primary_audience_url(self) -> str:
         """
-        The URL used as the primary audience for integration flows in this instance type: string
+        The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
         """
         return pulumi.get(self, "instance_primary_audience_url")
 

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.IpsecTunnelConfigurationArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -175,9 +176,6 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
      * 
      * Example: `10.0.1.0/24`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="staticRoutes")
     private @Nullable Output<List<String>> staticRoutes;
@@ -188,9 +186,6 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
      * Used for routing a given IPSec tunnel&#39;s traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
      * 
      * Example: `10.0.1.0/24`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> staticRoutes() {
@@ -227,6 +222,39 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.transportType);
     }
 
+    /**
+     * (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+     * 
+     * Example: `tunnel_configuration {
+     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
+     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * }`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="tunnelConfigurations")
+    private @Nullable Output<List<IpsecTunnelConfigurationArgs>> tunnelConfigurations;
+
+    /**
+     * @return (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+     * 
+     * Example: `tunnel_configuration {
+     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
+     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * }`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<List<IpsecTunnelConfigurationArgs>>> tunnelConfigurations() {
+        return Optional.ofNullable(this.tunnelConfigurations);
+    }
+
     private IpsecState() {}
 
     private IpsecState(IpsecState $) {
@@ -242,6 +270,7 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
         this.staticRoutes = $.staticRoutes;
         this.timeCreated = $.timeCreated;
         this.transportType = $.transportType;
+        this.tunnelConfigurations = $.tunnelConfigurations;
     }
 
     public static Builder builder() {
@@ -474,9 +503,6 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `10.0.1.0/24`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -492,9 +518,6 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
          * 
          * Example: `10.0.1.0/24`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -508,9 +531,6 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
          * Used for routing a given IPSec tunnel&#39;s traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
          * 
          * Example: `10.0.1.0/24`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -559,6 +579,64 @@ public final class IpsecState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder transportType(String transportType) {
             return transportType(Output.of(transportType));
+        }
+
+        /**
+         * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+         * 
+         * Example: `tunnel_configuration {
+         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
+         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * }`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tunnelConfigurations(@Nullable Output<List<IpsecTunnelConfigurationArgs>> tunnelConfigurations) {
+            $.tunnelConfigurations = tunnelConfigurations;
+            return this;
+        }
+
+        /**
+         * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+         * 
+         * Example: `tunnel_configuration {
+         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
+         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * }`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tunnelConfigurations(List<IpsecTunnelConfigurationArgs> tunnelConfigurations) {
+            return tunnelConfigurations(Output.of(tunnelConfigurations));
+        }
+
+        /**
+         * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+         * 
+         * Example: `tunnel_configuration {
+         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
+         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * }`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tunnelConfigurations(IpsecTunnelConfigurationArgs... tunnelConfigurations) {
+            return tunnelConfigurations(List.of(tunnelConfigurations));
         }
 
         public IpsecState build() {

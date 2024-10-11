@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     protocol: listenerProtocol,
  *     connectionConfiguration: {
  *         idleTimeoutInSeconds: listenerConnectionConfigurationIdleTimeoutInSeconds,
+ *         backendTcpProxyProtocolOptions: listenerConnectionConfigurationBackendTcpProxyProtocolOptions,
  *         backendTcpProxyProtocolVersion: listenerConnectionConfigurationBackendTcpProxyProtocolVersion,
  *     },
  *     hostnameNames: [testHostname.name],
@@ -108,7 +109,7 @@ export class Listener extends pulumi.CustomResource {
      *
      * Example: `examplePathRouteSet`
      */
-    public readonly pathRouteSetName!: pulumi.Output<string>;
+    public readonly pathRouteSetName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
@@ -120,7 +121,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
      */
-    public readonly routingPolicyName!: pulumi.Output<string>;
+    public readonly routingPolicyName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
      */

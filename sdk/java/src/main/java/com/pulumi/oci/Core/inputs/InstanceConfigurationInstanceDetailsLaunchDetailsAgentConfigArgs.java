@@ -39,24 +39,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
     /**
      * Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
      * 
-     * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-     * 
-     * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-     * 
      */
     @Import(name="isManagementDisabled")
     private @Nullable Output<Boolean> isManagementDisabled;
 
     /**
      * @return Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-     * 
-     * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-     * 
-     * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
      * 
      */
     public Optional<Output<Boolean>> isManagementDisabled() {
@@ -66,24 +54,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
     /**
      * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
      * 
-     * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
-     * 
      */
     @Import(name="isMonitoringDisabled")
     private @Nullable Output<Boolean> isMonitoringDisabled;
 
     /**
      * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-     * 
-     * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
      * 
      */
     public Optional<Output<Boolean>> isMonitoringDisabled() {
@@ -160,12 +136,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
         /**
          * @param isManagementDisabled Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
          * 
-         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-         * 
-         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-         * 
          * @return builder
          * 
          */
@@ -177,12 +147,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
         /**
          * @param isManagementDisabled Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
          * 
-         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-         * 
-         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
-         * 
          * @return builder
          * 
          */
@@ -192,12 +156,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
 
         /**
          * @param isMonitoringDisabled Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-         * 
-         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-         * 
-         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          * 
          * @return builder
          * 
@@ -209,12 +167,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigA
 
         /**
          * @param isMonitoringDisabled Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-         * 
-         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-         * 
-         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          * 
          * @return builder
          * 

@@ -14,9 +14,17 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
     {
         /// <summary>
+        /// Name of the listener host that will be used to create the connect string to the database.
+        /// </summary>
+        public readonly string? HostName;
+        /// <summary>
         /// List of hosts and port for private endpoint accessed database resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> Hosts;
+        /// <summary>
+        /// Listener port number used for connection requests.
+        /// </summary>
+        public readonly int? Port;
         /// <summary>
         /// Protocol used for connection requests for private endpoint accssed database resource.
         /// </summary>
@@ -28,13 +36,19 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails(
+            string? hostName,
+
             ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts,
+
+            int? port,
 
             string? protocol,
 
             string? serviceName)
         {
+            HostName = hostName;
             Hosts = hosts;
+            Port = port;
             Protocol = protocol;
             ServiceName = serviceName;
         }

@@ -20,6 +20,11 @@ public final class GetDesktopPoolImage {
      * 
      */
     private String imageName;
+    /**
+     * @return The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    private String operatingSystem;
 
     private GetDesktopPoolImage() {}
     /**
@@ -36,6 +41,13 @@ public final class GetDesktopPoolImage {
     public String imageName() {
         return this.imageName;
     }
+    /**
+     * @return The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    public String operatingSystem() {
+        return this.operatingSystem;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +60,13 @@ public final class GetDesktopPoolImage {
     public static final class Builder {
         private String imageId;
         private String imageName;
+        private String operatingSystem;
         public Builder() {}
         public Builder(GetDesktopPoolImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageId = defaults.imageId;
     	      this.imageName = defaults.imageName;
+    	      this.operatingSystem = defaults.operatingSystem;
         }
 
         @CustomType.Setter
@@ -71,10 +85,19 @@ public final class GetDesktopPoolImage {
             this.imageName = imageName;
             return this;
         }
+        @CustomType.Setter
+        public Builder operatingSystem(String operatingSystem) {
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolImage", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
+            return this;
+        }
         public GetDesktopPoolImage build() {
             final var _resultValue = new GetDesktopPoolImage();
             _resultValue.imageId = imageId;
             _resultValue.imageName = imageName;
+            _resultValue.operatingSystem = operatingSystem;
             return _resultValue;
         }
     }

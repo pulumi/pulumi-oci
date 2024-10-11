@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Specifies the format of report to be .xls or .pdf or .json
+        /// An optional filter to return only resources that match the specified mime type.
         /// </summary>
         public readonly string MimeType;
         /// <summary>

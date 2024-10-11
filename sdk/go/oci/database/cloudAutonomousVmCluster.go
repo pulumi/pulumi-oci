@@ -65,6 +65,7 @@ import (
 //					},
 //					PatchingMode:  pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsPatchingMode),
 //					Preference:    pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsPreference),
+//					SkipRus:       pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsSkipRu),
 //					WeeksOfMonths: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth),
 //				},
 //				MemoryPerOracleComputeUnitInGbs: pulumi.Any(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs),

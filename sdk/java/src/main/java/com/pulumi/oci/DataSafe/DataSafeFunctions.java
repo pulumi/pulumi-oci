@@ -193,6 +193,30 @@ import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
@@ -325,6 +349,18 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnResu
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypeResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionLogInsightsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallAllowedSqlAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallAllowedSqlResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallAllowedSqlsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabaseResult;
@@ -11938,6 +11974,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
      *             .displayName(reportDisplayName)
+     *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
@@ -11990,6 +12027,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
      *             .displayName(reportDisplayName)
+     *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
@@ -12042,6 +12080,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
      *             .displayName(reportDisplayName)
+     *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
@@ -12094,6 +12133,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
      *             .displayName(reportDisplayName)
+     *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
      *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
@@ -18790,6 +18830,2638 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", TypeShape.of(GetSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL collection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionResult> getSqlCollection(GetSqlCollectionArgs args) {
+        return getSqlCollection(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL collection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionResult> getSqlCollectionPlain(GetSqlCollectionPlainArgs args) {
+        return getSqlCollectionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL collection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionResult> getSqlCollection(GetSqlCollectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlCollection:getSqlCollection", TypeShape.of(GetSqlCollectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL collection by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollection = DataSafeFunctions.getSqlCollection(GetSqlCollectionArgs.builder()
+     *             .sqlCollectionId(testSqlCollectionOciDataSafeSqlCollection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionResult> getSqlCollectionPlain(GetSqlCollectionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlCollection:getSqlCollection", TypeShape.of(GetSqlCollectionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collection analytics in Data Safe.
+     * 
+     * The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionAnalytics = DataSafeFunctions.getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlCollectionAnalyticGroupBy)
+     *             .state(sqlCollectionAnalyticState)
+     *             .targetId(testTarget.id())
+     *             .timeEnded(sqlCollectionAnalyticTimeEnded)
+     *             .timeStarted(sqlCollectionAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionAnalyticsResult> getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs args) {
+        return getSqlCollectionAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collection analytics in Data Safe.
+     * 
+     * The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionAnalytics = DataSafeFunctions.getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlCollectionAnalyticGroupBy)
+     *             .state(sqlCollectionAnalyticState)
+     *             .targetId(testTarget.id())
+     *             .timeEnded(sqlCollectionAnalyticTimeEnded)
+     *             .timeStarted(sqlCollectionAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionAnalyticsResult> getSqlCollectionAnalyticsPlain(GetSqlCollectionAnalyticsPlainArgs args) {
+        return getSqlCollectionAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collection analytics in Data Safe.
+     * 
+     * The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionAnalytics = DataSafeFunctions.getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlCollectionAnalyticGroupBy)
+     *             .state(sqlCollectionAnalyticState)
+     *             .targetId(testTarget.id())
+     *             .timeEnded(sqlCollectionAnalyticTimeEnded)
+     *             .timeStarted(sqlCollectionAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionAnalyticsResult> getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlCollectionAnalytics:getSqlCollectionAnalytics", TypeShape.of(GetSqlCollectionAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collection analytics in Data Safe.
+     * 
+     * The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionAnalytics = DataSafeFunctions.getSqlCollectionAnalytics(GetSqlCollectionAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlCollectionAnalyticGroupBy)
+     *             .state(sqlCollectionAnalyticState)
+     *             .targetId(testTarget.id())
+     *             .timeEnded(sqlCollectionAnalyticTimeEnded)
+     *             .timeStarted(sqlCollectionAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionAnalyticsResult> getSqlCollectionAnalyticsPlain(GetSqlCollectionAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlCollectionAnalytics:getSqlCollectionAnalytics", TypeShape.of(GetSqlCollectionAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of the SQL collection log analytics.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .timeEnded(sqlCollectionLogInsightTimeEnded)
+     *             .timeStarted(sqlCollectionLogInsightTimeStarted)
+     *             .groupBy(sqlCollectionLogInsightGroupBy)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionLogInsightsResult> getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs args) {
+        return getSqlCollectionLogInsights(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of the SQL collection log analytics.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .timeEnded(sqlCollectionLogInsightTimeEnded)
+     *             .timeStarted(sqlCollectionLogInsightTimeStarted)
+     *             .groupBy(sqlCollectionLogInsightGroupBy)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionLogInsightsResult> getSqlCollectionLogInsightsPlain(GetSqlCollectionLogInsightsPlainArgs args) {
+        return getSqlCollectionLogInsightsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of the SQL collection log analytics.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .timeEnded(sqlCollectionLogInsightTimeEnded)
+     *             .timeStarted(sqlCollectionLogInsightTimeStarted)
+     *             .groupBy(sqlCollectionLogInsightGroupBy)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionLogInsightsResult> getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", TypeShape.of(GetSqlCollectionLogInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of the SQL collection log analytics.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionLogInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollectionLogInsights = DataSafeFunctions.getSqlCollectionLogInsights(GetSqlCollectionLogInsightsArgs.builder()
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .timeEnded(sqlCollectionLogInsightTimeEnded)
+     *             .timeStarted(sqlCollectionLogInsightTimeStarted)
+     *             .groupBy(sqlCollectionLogInsightGroupBy)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionLogInsightsResult> getSqlCollectionLogInsightsPlain(GetSqlCollectionLogInsightsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlCollectionLogInsights:getSqlCollectionLogInsights", TypeShape.of(GetSqlCollectionLogInsightsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collections in Data Safe.
+     * 
+     * The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollections = DataSafeFunctions.getSqlCollections(GetSqlCollectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlCollectionDisplayName)
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .state(sqlCollectionState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionsResult> getSqlCollections(GetSqlCollectionsArgs args) {
+        return getSqlCollections(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collections in Data Safe.
+     * 
+     * The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollections = DataSafeFunctions.getSqlCollections(GetSqlCollectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlCollectionDisplayName)
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .state(sqlCollectionState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionsResult> getSqlCollectionsPlain(GetSqlCollectionsPlainArgs args) {
+        return getSqlCollectionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collections in Data Safe.
+     * 
+     * The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollections = DataSafeFunctions.getSqlCollections(GetSqlCollectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlCollectionDisplayName)
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .state(sqlCollectionState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlCollectionsResult> getSqlCollections(GetSqlCollectionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlCollections:getSqlCollections", TypeShape.of(GetSqlCollectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL collections in Data Safe.
+     * 
+     * The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlCollectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlCollections = DataSafeFunctions.getSqlCollections(GetSqlCollectionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlCollectionAccessLevel)
+     *             .compartmentIdInSubtree(sqlCollectionCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlCollectionDisplayName)
+     *             .sqlCollectionId(testSqlCollection.id())
+     *             .state(sqlCollectionState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlCollectionsResult> getSqlCollectionsPlain(GetSqlCollectionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlCollections:getSqlCollections", TypeShape.of(GetSqlCollectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL firewall allowed SQL by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlResult> getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs args) {
+        return getSqlFirewallAllowedSql(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL firewall allowed SQL by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlResult> getSqlFirewallAllowedSqlPlain(GetSqlFirewallAllowedSqlPlainArgs args) {
+        return getSqlFirewallAllowedSqlPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL firewall allowed SQL by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlResult> getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql", TypeShape.of(GetSqlFirewallAllowedSqlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Allowed Sql resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL firewall allowed SQL by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSql = DataSafeFunctions.getSqlFirewallAllowedSql(GetSqlFirewallAllowedSqlArgs.builder()
+     *             .sqlFirewallAllowedSqlId(testSqlFirewallAllowedSqlOciDataSafeSqlFirewallAllowedSql.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlResult> getSqlFirewallAllowedSqlPlain(GetSqlFirewallAllowedSqlPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallAllowedSql:getSqlFirewallAllowedSql", TypeShape.of(GetSqlFirewallAllowedSqlResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqlAnalytics = DataSafeFunctions.getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallAllowedSqlAnalyticGroupBy)
+     *             .scimQuery(sqlFirewallAllowedSqlAnalyticScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlAnalyticsResult> getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs args) {
+        return getSqlFirewallAllowedSqlAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqlAnalytics = DataSafeFunctions.getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallAllowedSqlAnalyticGroupBy)
+     *             .scimQuery(sqlFirewallAllowedSqlAnalyticScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlAnalyticsResult> getSqlFirewallAllowedSqlAnalyticsPlain(GetSqlFirewallAllowedSqlAnalyticsPlainArgs args) {
+        return getSqlFirewallAllowedSqlAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqlAnalytics = DataSafeFunctions.getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallAllowedSqlAnalyticGroupBy)
+     *             .scimQuery(sqlFirewallAllowedSqlAnalyticScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlAnalyticsResult> getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallAllowedSqlAnalytics:getSqlFirewallAllowedSqlAnalytics", TypeShape.of(GetSqlFirewallAllowedSqlAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqlAnalytics = DataSafeFunctions.getSqlFirewallAllowedSqlAnalytics(GetSqlFirewallAllowedSqlAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallAllowedSqlAnalyticGroupBy)
+     *             .scimQuery(sqlFirewallAllowedSqlAnalyticScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlAnalyticsResult> getSqlFirewallAllowedSqlAnalyticsPlain(GetSqlFirewallAllowedSqlAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallAllowedSqlAnalytics:getSqlFirewallAllowedSqlAnalytics", TypeShape.of(GetSqlFirewallAllowedSqlAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqls = DataSafeFunctions.getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallAllowedSqlScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlsResult> getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs args) {
+        return getSqlFirewallAllowedSqls(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqls = DataSafeFunctions.getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallAllowedSqlScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlsResult> getSqlFirewallAllowedSqlsPlain(GetSqlFirewallAllowedSqlsPlainArgs args) {
+        return getSqlFirewallAllowedSqlsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqls = DataSafeFunctions.getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallAllowedSqlScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallAllowedSqlsResult> getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallAllowedSqls:getSqlFirewallAllowedSqls", TypeShape.of(GetSqlFirewallAllowedSqlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall allowed SQL statements.
+     * 
+     * The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL statements in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallAllowedSqlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallAllowedSqls = DataSafeFunctions.getSqlFirewallAllowedSqls(GetSqlFirewallAllowedSqlsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallAllowedSqlAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallAllowedSqlCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallAllowedSqlScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallAllowedSqlsResult> getSqlFirewallAllowedSqlsPlain(GetSqlFirewallAllowedSqlsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallAllowedSqls:getSqlFirewallAllowedSqls", TypeShape.of(GetSqlFirewallAllowedSqlsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall policies.
+     * 
+     * The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicies = DataSafeFunctions.getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlFirewallPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .state(sqlFirewallPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
+     *             .violationAction(sqlFirewallPolicyViolationAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPoliciesResult> getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs args) {
+        return getSqlFirewallPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall policies.
+     * 
+     * The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicies = DataSafeFunctions.getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlFirewallPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .state(sqlFirewallPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
+     *             .violationAction(sqlFirewallPolicyViolationAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPoliciesResult> getSqlFirewallPoliciesPlain(GetSqlFirewallPoliciesPlainArgs args) {
+        return getSqlFirewallPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall policies.
+     * 
+     * The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicies = DataSafeFunctions.getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlFirewallPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .state(sqlFirewallPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
+     *             .violationAction(sqlFirewallPolicyViolationAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPoliciesResult> getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies", TypeShape.of(GetSqlFirewallPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all SQL Firewall policies.
+     * 
+     * The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicies = DataSafeFunctions.getSqlFirewallPolicies(GetSqlFirewallPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyCompartmentIdInSubtree)
+     *             .dbUserName(testUser.name())
+     *             .displayName(sqlFirewallPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicy.id())
+     *             .state(sqlFirewallPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(sqlFirewallPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sqlFirewallPolicyTimeCreatedLessThan)
+     *             .violationAction(sqlFirewallPolicyViolationAction)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPoliciesResult> getSqlFirewallPoliciesPlain(GetSqlFirewallPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallPolicies:getSqlFirewallPolicies", TypeShape.of(GetSqlFirewallPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL Firewall policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPolicyResult> getSqlFirewallPolicy(GetSqlFirewallPolicyArgs args) {
+        return getSqlFirewallPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL Firewall policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPolicyResult> getSqlFirewallPolicyPlain(GetSqlFirewallPolicyPlainArgs args) {
+        return getSqlFirewallPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL Firewall policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPolicyResult> getSqlFirewallPolicy(GetSqlFirewallPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", TypeShape.of(GetSqlFirewallPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a SQL Firewall policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicy = DataSafeFunctions.getSqlFirewallPolicy(GetSqlFirewallPolicyArgs.builder()
+     *             .sqlFirewallPolicyId(testSqlFirewallPolicyOciDataSafeSqlFirewallPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPolicyResult> getSqlFirewallPolicyPlain(GetSqlFirewallPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallPolicy:getSqlFirewallPolicy", TypeShape.of(GetSqlFirewallPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated SQL Firewall policy details.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
+     * `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicyAnalytics = DataSafeFunctions.getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(sqlFirewallPolicyAnalyticState)
+     *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPolicyAnalyticsResult> getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs args) {
+        return getSqlFirewallPolicyAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated SQL Firewall policy details.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
+     * `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicyAnalytics = DataSafeFunctions.getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(sqlFirewallPolicyAnalyticState)
+     *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPolicyAnalyticsResult> getSqlFirewallPolicyAnalyticsPlain(GetSqlFirewallPolicyAnalyticsPlainArgs args) {
+        return getSqlFirewallPolicyAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated SQL Firewall policy details.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
+     * `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicyAnalytics = DataSafeFunctions.getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(sqlFirewallPolicyAnalyticState)
+     *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallPolicyAnalyticsResult> getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", TypeShape.of(GetSqlFirewallPolicyAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of aggregated SQL Firewall policy details.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform SummarizedSqlFirewallPolicyInfo on the specified
+     * `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallPolicyAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallPolicyAnalytics = DataSafeFunctions.getSqlFirewallPolicyAnalytics(GetSqlFirewallPolicyAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallPolicyAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallPolicyAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallPolicyAnalyticGroupBy)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(sqlFirewallPolicyAnalyticState)
+     *             .timeEnded(sqlFirewallPolicyAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallPolicyAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallPolicyAnalyticsResult> getSqlFirewallPolicyAnalyticsPlain(GetSqlFirewallPolicyAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallPolicyAnalytics:getSqlFirewallPolicyAnalytics", TypeShape.of(GetSqlFirewallPolicyAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of the SQL Firewall violations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolationAnalytics = DataSafeFunctions.getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallViolationAnalyticGroupBy)
+     *             .queryTimeZone(sqlFirewallViolationAnalyticQueryTimeZone)
+     *             .scimQuery(sqlFirewallViolationAnalyticScimQuery)
+     *             .summaryFields(sqlFirewallViolationAnalyticSummaryField)
+     *             .timeEnded(sqlFirewallViolationAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallViolationAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallViolationAnalyticsResult> getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs args) {
+        return getSqlFirewallViolationAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of the SQL Firewall violations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolationAnalytics = DataSafeFunctions.getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallViolationAnalyticGroupBy)
+     *             .queryTimeZone(sqlFirewallViolationAnalyticQueryTimeZone)
+     *             .scimQuery(sqlFirewallViolationAnalyticScimQuery)
+     *             .summaryFields(sqlFirewallViolationAnalyticSummaryField)
+     *             .timeEnded(sqlFirewallViolationAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallViolationAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallViolationAnalyticsResult> getSqlFirewallViolationAnalyticsPlain(GetSqlFirewallViolationAnalyticsPlainArgs args) {
+        return getSqlFirewallViolationAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of the SQL Firewall violations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolationAnalytics = DataSafeFunctions.getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallViolationAnalyticGroupBy)
+     *             .queryTimeZone(sqlFirewallViolationAnalyticQueryTimeZone)
+     *             .scimQuery(sqlFirewallViolationAnalyticScimQuery)
+     *             .summaryFields(sqlFirewallViolationAnalyticSummaryField)
+     *             .timeEnded(sqlFirewallViolationAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallViolationAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallViolationAnalyticsResult> getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", TypeShape.of(GetSqlFirewallViolationAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violation Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the aggregation details of the SQL Firewall violations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolationAnalytics = DataSafeFunctions.getSqlFirewallViolationAnalytics(GetSqlFirewallViolationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationAnalyticCompartmentIdInSubtree)
+     *             .groupBies(sqlFirewallViolationAnalyticGroupBy)
+     *             .queryTimeZone(sqlFirewallViolationAnalyticQueryTimeZone)
+     *             .scimQuery(sqlFirewallViolationAnalyticScimQuery)
+     *             .summaryFields(sqlFirewallViolationAnalyticSummaryField)
+     *             .timeEnded(sqlFirewallViolationAnalyticTimeEnded)
+     *             .timeStarted(sqlFirewallViolationAnalyticTimeStarted)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallViolationAnalyticsResult> getSqlFirewallViolationAnalyticsPlain(GetSqlFirewallViolationAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallViolationAnalytics:getSqlFirewallViolationAnalytics", TypeShape.of(GetSqlFirewallViolationAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolations = DataSafeFunctions.getSqlFirewallViolations(GetSqlFirewallViolationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallViolationScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallViolationsResult> getSqlFirewallViolations(GetSqlFirewallViolationsArgs args) {
+        return getSqlFirewallViolations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolations = DataSafeFunctions.getSqlFirewallViolations(GetSqlFirewallViolationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallViolationScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallViolationsResult> getSqlFirewallViolationsPlain(GetSqlFirewallViolationsPlainArgs args) {
+        return getSqlFirewallViolationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolations = DataSafeFunctions.getSqlFirewallViolations(GetSqlFirewallViolationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallViolationScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSqlFirewallViolationsResult> getSqlFirewallViolations(GetSqlFirewallViolationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSqlFirewallViolations:getSqlFirewallViolations", TypeShape.of(GetSqlFirewallViolationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all the SQL Firewall violations captured by the firewall.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSqlFirewallViolations = DataSafeFunctions.getSqlFirewallViolations(GetSqlFirewallViolationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sqlFirewallViolationAccessLevel)
+     *             .compartmentIdInSubtree(sqlFirewallViolationCompartmentIdInSubtree)
+     *             .scimQuery(sqlFirewallViolationScimQuery)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSqlFirewallViolationsResult> getSqlFirewallViolationsPlain(GetSqlFirewallViolationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSqlFirewallViolations:getSqlFirewallViolations", TypeShape.of(GetSqlFirewallViolationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.

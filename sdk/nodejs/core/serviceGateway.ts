@@ -19,6 +19,9 @@ import * as utilities from "../utilities";
  * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  *
+ * Use the [ListServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/ListServices) operation to find service CIDR labels
+ * available in the region.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -83,7 +86,7 @@ export class ServiceGateway extends pulumi.CustomResource {
      */
     public /*out*/ readonly blockTraffic!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -188,7 +191,7 @@ export interface ServiceGatewayState {
      */
     blockTraffic?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -240,7 +243,7 @@ export interface ServiceGatewayState {
  */
 export interface ServiceGatewayArgs {
     /**
-     * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      */
     compartmentId: pulumi.Input<string>;
     /**

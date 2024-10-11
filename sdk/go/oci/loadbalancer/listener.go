@@ -38,6 +38,7 @@ import (
 //				Protocol:              pulumi.Any(listenerProtocol),
 //				ConnectionConfiguration: &loadbalancer.ListenerConnectionConfigurationArgs{
 //					IdleTimeoutInSeconds:           pulumi.Any(listenerConnectionConfigurationIdleTimeoutInSeconds),
+//					BackendTcpProxyProtocolOptions: pulumi.Any(listenerConnectionConfigurationBackendTcpProxyProtocolOptions),
 //					BackendTcpProxyProtocolVersion: pulumi.Any(listenerConnectionConfigurationBackendTcpProxyProtocolVersion),
 //				},
 //				HostnameNames: pulumi.StringArray{
@@ -94,13 +95,13 @@ type Listener struct {
 	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
 	//
 	// Example: `examplePathRouteSet`
-	PathRouteSetName pulumi.StringOutput `pulumi:"pathRouteSetName"`
+	PathRouteSetName pulumi.StringPtrOutput `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntOutput `pulumi:"port"`
 	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
-	RoutingPolicyName pulumi.StringOutput `pulumi:"routingPolicyName"`
+	RoutingPolicyName pulumi.StringPtrOutput `pulumi:"routingPolicyName"`
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames pulumi.StringArrayOutput `pulumi:"ruleSetNames"`
 	// (Updatable) The load balancer's SSL handling configuration details.
@@ -399,8 +400,8 @@ func (o ListenerOutput) Name() pulumi.StringOutput {
 // The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
 //
 // Example: `examplePathRouteSet`
-func (o ListenerOutput) PathRouteSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PathRouteSetName }).(pulumi.StringOutput)
+func (o ListenerOutput) PathRouteSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringPtrOutput { return v.PathRouteSetName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The communication port for the listener.  Example: `80`
@@ -414,8 +415,8 @@ func (o ListenerOutput) Protocol() pulumi.StringOutput {
 }
 
 // (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
-func (o ListenerOutput) RoutingPolicyName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.RoutingPolicyName }).(pulumi.StringOutput)
+func (o ListenerOutput) RoutingPolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringPtrOutput { return v.RoutingPolicyName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]

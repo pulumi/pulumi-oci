@@ -21,22 +21,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool? AreAllPluginsDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-        /// 
-        /// These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-        /// 
-        /// The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        /// * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        /// * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         /// </summary>
         public readonly bool? IsManagementDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-        /// 
-        /// These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-        /// 
-        /// The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        /// * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        /// * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         /// </summary>
         public readonly bool? IsMonitoringDisabled;
         /// <summary>

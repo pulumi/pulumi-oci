@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection;
@@ -56,6 +57,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private Map<String,String> definedTags;
     /**
+     * @return Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    private List<GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail> disasterRecoveryDetails;
+    /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
@@ -63,6 +69,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     private String domainId;
     private Integer enableProcessAutomationTrigger;
     private Integer extendDataRetentionTrigger;
+    private Integer failoverTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -79,6 +86,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
+    private String instanceDesignTimeUrl;
     /**
      * @return The Integration Instance URL.
      * 
@@ -95,6 +103,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private Boolean isByol;
     /**
+     * @return Is Disaster Recovery enabled for the integrationInstance
+     * 
+     */
+    private Boolean isDisasterRecoveryEnabled;
+    /**
      * @return The file server is enabled or not.
      * 
      */
@@ -104,6 +117,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private Boolean isVisualBuilderEnabled;
+    /**
+     * @return Additional details of lifecycleState or substates
+     * 
+     */
+    private String lifecycleDetails;
     /**
      * @return The number of configured message packs (if any)
      * 
@@ -201,6 +219,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.definedTags;
     }
     /**
+     * @return Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    public List<GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail> disasterRecoveryDetails() {
+        return this.disasterRecoveryDetails;
+    }
+    /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
@@ -215,6 +240,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
     }
     public Integer extendDataRetentionTrigger() {
         return this.extendDataRetentionTrigger;
+    }
+    public Integer failoverTrigger() {
+        return this.failoverTrigger;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -240,6 +268,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
     public List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos() {
         return this.idcsInfos;
     }
+    public String instanceDesignTimeUrl() {
+        return this.instanceDesignTimeUrl;
+    }
     /**
      * @return The Integration Instance URL.
      * 
@@ -262,6 +293,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.isByol;
     }
     /**
+     * @return Is Disaster Recovery enabled for the integrationInstance
+     * 
+     */
+    public Boolean isDisasterRecoveryEnabled() {
+        return this.isDisasterRecoveryEnabled;
+    }
+    /**
      * @return The file server is enabled or not.
      * 
      */
@@ -274,6 +312,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     public Boolean isVisualBuilderEnabled() {
         return this.isVisualBuilderEnabled;
+    }
+    /**
+     * @return Additional details of lifecycleState or substates
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * @return The number of configured message packs (if any)
@@ -355,19 +400,24 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
         private String dataRetentionPeriod;
         private Map<String,String> definedTags;
+        private List<GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail> disasterRecoveryDetails;
         private String displayName;
         private String domainId;
         private Integer enableProcessAutomationTrigger;
         private Integer extendDataRetentionTrigger;
+        private Integer failoverTrigger;
         private Map<String,String> freeformTags;
         private String id;
         private String idcsAt;
         private List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
+        private String instanceDesignTimeUrl;
         private String instanceUrl;
         private String integrationInstanceType;
         private Boolean isByol;
+        private Boolean isDisasterRecoveryEnabled;
         private Boolean isFileServerEnabled;
         private Boolean isVisualBuilderEnabled;
+        private String lifecycleDetails;
         private Integer messagePacks;
         private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
         private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
@@ -387,19 +437,24 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.customEndpoints = defaults.customEndpoints;
     	      this.dataRetentionPeriod = defaults.dataRetentionPeriod;
     	      this.definedTags = defaults.definedTags;
+    	      this.disasterRecoveryDetails = defaults.disasterRecoveryDetails;
     	      this.displayName = defaults.displayName;
     	      this.domainId = defaults.domainId;
     	      this.enableProcessAutomationTrigger = defaults.enableProcessAutomationTrigger;
     	      this.extendDataRetentionTrigger = defaults.extendDataRetentionTrigger;
+    	      this.failoverTrigger = defaults.failoverTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.idcsAt = defaults.idcsAt;
     	      this.idcsInfos = defaults.idcsInfos;
+    	      this.instanceDesignTimeUrl = defaults.instanceDesignTimeUrl;
     	      this.instanceUrl = defaults.instanceUrl;
     	      this.integrationInstanceType = defaults.integrationInstanceType;
     	      this.isByol = defaults.isByol;
+    	      this.isDisasterRecoveryEnabled = defaults.isDisasterRecoveryEnabled;
     	      this.isFileServerEnabled = defaults.isFileServerEnabled;
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.privateEndpointOutboundConnections = defaults.privateEndpointOutboundConnections;
@@ -477,6 +532,17 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder disasterRecoveryDetails(List<GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail> disasterRecoveryDetails) {
+            if (disasterRecoveryDetails == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "disasterRecoveryDetails");
+            }
+            this.disasterRecoveryDetails = disasterRecoveryDetails;
+            return this;
+        }
+        public Builder disasterRecoveryDetails(GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail... disasterRecoveryDetails) {
+            return disasterRecoveryDetails(List.of(disasterRecoveryDetails));
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "displayName");
@@ -506,6 +572,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "extendDataRetentionTrigger");
             }
             this.extendDataRetentionTrigger = extendDataRetentionTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder failoverTrigger(Integer failoverTrigger) {
+            if (failoverTrigger == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "failoverTrigger");
+            }
+            this.failoverTrigger = failoverTrigger;
             return this;
         }
         @CustomType.Setter
@@ -544,6 +618,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return idcsInfos(List.of(idcsInfos));
         }
         @CustomType.Setter
+        public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
+            if (instanceDesignTimeUrl == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "instanceDesignTimeUrl");
+            }
+            this.instanceDesignTimeUrl = instanceDesignTimeUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
             if (instanceUrl == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "instanceUrl");
@@ -568,6 +650,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            if (isDisasterRecoveryEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "isDisasterRecoveryEnabled");
+            }
+            this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
             if (isFileServerEnabled == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "isFileServerEnabled");
@@ -581,6 +671,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "isVisualBuilderEnabled");
             }
             this.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -670,19 +768,24 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.customEndpoints = customEndpoints;
             _resultValue.dataRetentionPeriod = dataRetentionPeriod;
             _resultValue.definedTags = definedTags;
+            _resultValue.disasterRecoveryDetails = disasterRecoveryDetails;
             _resultValue.displayName = displayName;
             _resultValue.domainId = domainId;
             _resultValue.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             _resultValue.extendDataRetentionTrigger = extendDataRetentionTrigger;
+            _resultValue.failoverTrigger = failoverTrigger;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.idcsAt = idcsAt;
             _resultValue.idcsInfos = idcsInfos;
+            _resultValue.instanceDesignTimeUrl = instanceDesignTimeUrl;
             _resultValue.instanceUrl = instanceUrl;
             _resultValue.integrationInstanceType = integrationInstanceType;
             _resultValue.isByol = isByol;
+            _resultValue.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
             _resultValue.isFileServerEnabled = isFileServerEnabled;
             _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.messagePacks = messagePacks;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.privateEndpointOutboundConnections = privateEndpointOutboundConnections;

@@ -26,6 +26,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         public readonly string PrivateIp;
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly bool SkipSourceDestCheck;
         /// <summary>
         /// The OCID of the subnet to create the VNIC in.
@@ -58,6 +59,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string privateIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             bool skipSourceDestCheck,
 
             string subnetId,
@@ -74,6 +77,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetId = subnetId;
             VlanId = vlanId;

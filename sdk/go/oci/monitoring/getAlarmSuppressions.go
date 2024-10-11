@@ -13,8 +13,8 @@ import (
 
 // This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
 //
-// Lists alarm suppressions for the specified alarm.
-// Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+// Lists alarm suppressions for the specified alarm. For more information, see
+// [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
 //
 // For important limits information, see
 // [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -38,9 +38,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarmSuppressions(ctx, &monitoring.GetAlarmSuppressionsArgs{
-//				AlarmId:     testAlarm.Id,
-//				DisplayName: pulumi.StringRef(alarmSuppressionDisplayName),
-//				State:       pulumi.StringRef(alarmSuppressionState),
+//				AlarmId:                pulumi.StringRef(testAlarm.Id),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(alarmSuppressionCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(alarmSuppressionDisplayName),
+//				IsAllSuppressions:      pulumi.BoolRef(alarmSuppressionIsAllSuppressions),
+//				Level:                  pulumi.StringRef(alarmSuppressionLevel),
+//				State:                  pulumi.StringRef(alarmSuppressionState),
+//				TargetType:             pulumi.StringRef(alarmSuppressionTargetType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -63,27 +68,54 @@ func GetAlarmSuppressions(ctx *pulumi.Context, args *GetAlarmSuppressionsArgs, o
 // A collection of arguments for invoking getAlarmSuppressions.
 type GetAlarmSuppressionsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-	AlarmId string `pulumi:"alarmId"`
-	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+	AlarmId *string `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId *string `pulumi:"compartmentId"`
+	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetAlarmSuppressionsFilter `pulumi:"filters"`
+	// Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+	//
+	// When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+	//
+	// Default is false.
+	IsAllSuppressions *bool `pulumi:"isAllSuppressions"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level *string `pulumi:"level"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 	State *string `pulumi:"state"`
+	// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+	TargetType *string `pulumi:"targetType"`
 }
 
 // A collection of values returned by getAlarmSuppressions.
 type GetAlarmSuppressionsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-	AlarmId string `pulumi:"alarmId"`
+	AlarmId *string `pulumi:"alarmId"`
 	// The list of alarm_suppression_collection.
 	AlarmSuppressionCollections []GetAlarmSuppressionsAlarmSuppressionCollection `pulumi:"alarmSuppressionCollections"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetAlarmSuppressionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                string `pulumi:"id"`
+	IsAllSuppressions *bool  `pulumi:"isAllSuppressions"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level *string `pulumi:"level"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State *string `pulumi:"state"`
+	// The type of the alarm suppression target.
+	TargetType *string `pulumi:"targetType"`
 }
 
 func GetAlarmSuppressionsOutput(ctx *pulumi.Context, args GetAlarmSuppressionsOutputArgs, opts ...pulumi.InvokeOption) GetAlarmSuppressionsResultOutput {
@@ -108,12 +140,30 @@ func GetAlarmSuppressionsOutput(ctx *pulumi.Context, args GetAlarmSuppressionsOu
 // A collection of arguments for invoking getAlarmSuppressions.
 type GetAlarmSuppressionsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-	AlarmId pulumi.StringInput `pulumi:"alarmId"`
-	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+	AlarmId pulumi.StringPtrInput `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName pulumi.StringPtrInput                `pulumi:"displayName"`
 	Filters     GetAlarmSuppressionsFilterArrayInput `pulumi:"filters"`
+	// Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+	//
+	// When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+	//
+	// Default is false.
+	IsAllSuppressions pulumi.BoolPtrInput `pulumi:"isAllSuppressions"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level pulumi.StringPtrInput `pulumi:"level"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetAlarmSuppressionsOutputArgs) ElementType() reflect.Type {
@@ -136,8 +186,8 @@ func (o GetAlarmSuppressionsResultOutput) ToGetAlarmSuppressionsResultOutputWith
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-func (o GetAlarmSuppressionsResultOutput) AlarmId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmSuppressionsResult) string { return v.AlarmId }).(pulumi.StringOutput)
+func (o GetAlarmSuppressionsResultOutput) AlarmId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *string { return v.AlarmId }).(pulumi.StringPtrOutput)
 }
 
 // The list of alarm_suppression_collection.
@@ -145,6 +195,16 @@ func (o GetAlarmSuppressionsResultOutput) AlarmSuppressionCollections() GetAlarm
 	return o.ApplyT(func(v GetAlarmSuppressionsResult) []GetAlarmSuppressionsAlarmSuppressionCollection {
 		return v.AlarmSuppressionCollections
 	}).(GetAlarmSuppressionsAlarmSuppressionCollectionArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+func (o GetAlarmSuppressionsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+func (o GetAlarmSuppressionsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -161,9 +221,23 @@ func (o GetAlarmSuppressionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetAlarmSuppressionsResultOutput) IsAllSuppressions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *bool { return v.IsAllSuppressions }).(pulumi.BoolPtrOutput)
+}
+
+// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+func (o GetAlarmSuppressionsResultOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
 // The current lifecycle state of the alarm suppression.  Example: `DELETED`
 func (o GetAlarmSuppressionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The type of the alarm suppression target.
+func (o GetAlarmSuppressionsResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

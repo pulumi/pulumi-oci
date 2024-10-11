@@ -35,6 +35,11 @@ public final class InstanceLaunchVolumeAttachment {
      */
     private @Nullable Boolean isAgentAutoIscsiLoginEnabled;
     /**
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+     * 
+     */
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
+    /**
      * @return Whether the attachment was created in read-only mode.
      * 
      */
@@ -95,6 +100,13 @@ public final class InstanceLaunchVolumeAttachment {
         return Optional.ofNullable(this.isAgentAutoIscsiLoginEnabled);
     }
     /**
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+     * 
+     */
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
+    }
+    /**
      * @return Whether the attachment was created in read-only mode.
      * 
      */
@@ -150,6 +162,7 @@ public final class InstanceLaunchVolumeAttachment {
         private @Nullable String displayName;
         private @Nullable String encryptionInTransitType;
         private @Nullable Boolean isAgentAutoIscsiLoginEnabled;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable Boolean isReadOnly;
         private @Nullable Boolean isShareable;
         private @Nullable InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails launchCreateVolumeDetails;
@@ -163,6 +176,7 @@ public final class InstanceLaunchVolumeAttachment {
     	      this.displayName = defaults.displayName;
     	      this.encryptionInTransitType = defaults.encryptionInTransitType;
     	      this.isAgentAutoIscsiLoginEnabled = defaults.isAgentAutoIscsiLoginEnabled;
+    	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
     	      this.isShareable = defaults.isShareable;
     	      this.launchCreateVolumeDetails = defaults.launchCreateVolumeDetails;
@@ -193,6 +207,12 @@ public final class InstanceLaunchVolumeAttachment {
         public Builder isAgentAutoIscsiLoginEnabled(@Nullable Boolean isAgentAutoIscsiLoginEnabled) {
 
             this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -239,6 +259,7 @@ public final class InstanceLaunchVolumeAttachment {
             _resultValue.displayName = displayName;
             _resultValue.encryptionInTransitType = encryptionInTransitType;
             _resultValue.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.isReadOnly = isReadOnly;
             _resultValue.isShareable = isShareable;
             _resultValue.launchCreateVolumeDetails = launchCreateVolumeDetails;

@@ -28,7 +28,7 @@ class GetReportsResult:
     """
     A collection of values returned by getReports.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, report_collections=None, report_definition_id=None, state=None, time_generated_greater_than_or_equal_to=None, time_generated_less_than=None, type=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, mime_type=None, report_collections=None, report_definition_id=None, state=None, time_generated_greater_than_or_equal_to=None, time_generated_less_than=None, type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -47,6 +47,9 @@ class GetReportsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if mime_type and not isinstance(mime_type, str):
+            raise TypeError("Expected argument 'mime_type' to be a str")
+        pulumi.set(__self__, "mime_type", mime_type)
         if report_collections and not isinstance(report_collections, list):
             raise TypeError("Expected argument 'report_collections' to be a list")
         pulumi.set(__self__, "report_collections", report_collections)
@@ -106,6 +109,14 @@ class GetReportsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="mimeType")
+    def mime_type(self) -> Optional[str]:
+        """
+        Specifies the format of report to be .xls or .pdf or .json
+        """
+        return pulumi.get(self, "mime_type")
+
+    @property
     @pulumi.getter(name="reportCollections")
     def report_collections(self) -> Sequence['outputs.GetReportsReportCollectionResult']:
         """
@@ -160,6 +171,7 @@ class AwaitableGetReportsResult(GetReportsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            mime_type=self.mime_type,
             report_collections=self.report_collections,
             report_definition_id=self.report_definition_id,
             state=self.state,
@@ -173,6 +185,7 @@ def get_reports(access_level: Optional[str] = None,
                 compartment_id_in_subtree: Optional[bool] = None,
                 display_name: Optional[str] = None,
                 filters: Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]] = None,
+                mime_type: Optional[str] = None,
                 report_definition_id: Optional[str] = None,
                 state: Optional[str] = None,
                 time_generated_greater_than_or_equal_to: Optional[str] = None,
@@ -194,6 +207,7 @@ def get_reports(access_level: Optional[str] = None,
         access_level=report_access_level,
         compartment_id_in_subtree=report_compartment_id_in_subtree,
         display_name=report_display_name,
+        mime_type=report_mime_type,
         report_definition_id=test_report_definition["id"],
         state=report_state,
         time_generated_greater_than_or_equal_to=report_time_generated_greater_than_or_equal_to,
@@ -206,6 +220,7 @@ def get_reports(access_level: Optional[str] = None,
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str display_name: The name of the report definition to query.
+    :param str mime_type: An optional filter to return only resources that match the specified mime type.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
     :param str time_generated_greater_than_or_equal_to: A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
@@ -222,6 +237,7 @@ def get_reports(access_level: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['mimeType'] = mime_type
     __args__['reportDefinitionId'] = report_definition_id
     __args__['state'] = state
     __args__['timeGeneratedGreaterThanOrEqualTo'] = time_generated_greater_than_or_equal_to
@@ -237,6 +253,7 @@ def get_reports(access_level: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        mime_type=pulumi.get(__ret__, 'mime_type'),
         report_collections=pulumi.get(__ret__, 'report_collections'),
         report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -248,6 +265,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]]]] = None,
+                       mime_type: Optional[pulumi.Input[Optional[str]]] = None,
                        report_definition_id: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        time_generated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
@@ -269,6 +287,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
         access_level=report_access_level,
         compartment_id_in_subtree=report_compartment_id_in_subtree,
         display_name=report_display_name,
+        mime_type=report_mime_type,
         report_definition_id=test_report_definition["id"],
         state=report_state,
         time_generated_greater_than_or_equal_to=report_time_generated_greater_than_or_equal_to,
@@ -281,6 +300,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str display_name: The name of the report definition to query.
+    :param str mime_type: An optional filter to return only resources that match the specified mime type.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
     :param str time_generated_greater_than_or_equal_to: A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
@@ -297,6 +317,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['mimeType'] = mime_type
     __args__['reportDefinitionId'] = report_definition_id
     __args__['state'] = state
     __args__['timeGeneratedGreaterThanOrEqualTo'] = time_generated_greater_than_or_equal_to
@@ -311,6 +332,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        mime_type=pulumi.get(__response__, 'mime_type'),
         report_collections=pulumi.get(__response__, 'report_collections'),
         report_definition_id=pulumi.get(__response__, 'report_definition_id'),
         state=pulumi.get(__response__, 'state'),

@@ -54,6 +54,12 @@ import (
 // with the signature. To get the image ID for the LaunchInstance operation, call
 // [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
 //
+// When launching an instance, you may provide the `securityAttributes` parameter in
+// [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+// or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+// via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+// 400 Bad Request response.
+//
 // To determine whether capacity is available for a specific shape before you create an instance,
 // use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
 // operation.
@@ -193,6 +199,10 @@ type Instance struct {
 	PublicIp pulumi.StringOutput `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region pulumi.StringOutput `pulumi:"region"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
+	// The lifecycle state of the `securityAttributes`
+	SecurityAttributesState pulumi.StringOutput `pulumi:"securityAttributesState"`
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -384,6 +394,10 @@ type instanceState struct {
 	PublicIp *string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region *string `pulumi:"region"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the `securityAttributes`
+	SecurityAttributesState *string `pulumi:"securityAttributesState"`
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -540,6 +554,10 @@ type InstanceState struct {
 	PublicIp pulumi.StringPtrInput
 	// The region that contains the availability domain the instance is running in.
 	Region pulumi.StringPtrInput
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
+	// The lifecycle state of the `securityAttributes`
+	SecurityAttributesState pulumi.StringPtrInput
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -684,6 +702,8 @@ type instanceArgs struct {
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
 	PreserveBootVolume                 *bool `pulumi:"preserveBootVolume"`
 	PreserveDataVolumesCreatedAtLaunch *bool `pulumi:"preserveDataVolumesCreatedAtLaunch"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -819,6 +839,8 @@ type InstanceArgs struct {
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
 	PreserveBootVolume                 pulumi.BoolPtrInput
 	PreserveDataVolumesCreatedAtLaunch pulumi.BoolPtrInput
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	//
 	// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1155,6 +1177,16 @@ func (o InstanceOutput) PublicIp() pulumi.StringOutput {
 // The region that contains the availability domain the instance is running in.
 func (o InstanceOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o InstanceOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The lifecycle state of the `securityAttributes`
+func (o InstanceOutput) SecurityAttributesState() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SecurityAttributesState }).(pulumi.StringOutput)
 }
 
 // (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.

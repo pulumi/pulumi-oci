@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *     firstName: fusionEnvironmentAdminUserFirstName,
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     lastName: fusionEnvironmentAdminUserLastName,
- *     password: fusionEnvironmentAdminUserPassword,
  *     username: fusionEnvironmentAdminUserUsername,
+ *     password: fusionEnvironmentAdminUserPassword,
  * });
  * ```
  *
@@ -130,9 +130,6 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
             if ((!args || args.lastName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'lastName'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'password'");
-            }
             if ((!args || args.username === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
@@ -212,7 +209,7 @@ export interface FusionEnvironmentAdminUserArgs {
     /**
      * The password for the administrator.
      */
-    password: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * The username for the administrator.
      *

@@ -454,6 +454,7 @@ class Listener(pulumi.CustomResource):
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
+                "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
                 "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
             },
             hostname_names=[test_hostname["name"]],
@@ -526,6 +527,7 @@ class Listener(pulumi.CustomResource):
             protocol=listener_protocol,
             connection_configuration={
                 "idle_timeout_in_seconds": listener_connection_configuration_idle_timeout_in_seconds,
+                "backend_tcp_proxy_protocol_options": listener_connection_configuration_backend_tcp_proxy_protocol_options,
                 "backend_tcp_proxy_protocol_version": listener_connection_configuration_backend_tcp_proxy_protocol_version,
             },
             hostname_names=[test_hostname["name"]],
@@ -715,7 +717,7 @@ class Listener(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="pathRouteSetName")
-    def path_route_set_name(self) -> pulumi.Output[str]:
+    def path_route_set_name(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) Deprecated. Please use `routingPolicies` instead.
 
@@ -743,7 +745,7 @@ class Listener(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="routingPolicyName")
-    def routing_policy_name(self) -> pulumi.Output[str]:
+    def routing_policy_name(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         """

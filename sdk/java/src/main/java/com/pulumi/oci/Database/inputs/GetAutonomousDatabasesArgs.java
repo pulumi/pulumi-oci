@@ -176,6 +176,13 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
 
+    @Import(name="lifecycleStateNotEqualTo")
+    private @Nullable Output<String> lifecycleStateNotEqualTo;
+
+    public Optional<Output<String>> lifecycleStateNotEqualTo() {
+        return Optional.ofNullable(this.lifecycleStateNotEqualTo);
+    }
+
     /**
      * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -220,6 +227,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         this.isFreeTier = $.isFreeTier;
         this.isRefreshableClone = $.isRefreshableClone;
         this.isResourcePoolLeader = $.isResourcePoolLeader;
+        this.lifecycleStateNotEqualTo = $.lifecycleStateNotEqualTo;
         this.resourcePoolLeaderId = $.resourcePoolLeaderId;
         this.state = $.state;
     }
@@ -459,6 +467,15 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
 
         public Builder isResourcePoolLeader(Boolean isResourcePoolLeader) {
             return isResourcePoolLeader(Output.of(isResourcePoolLeader));
+        }
+
+        public Builder lifecycleStateNotEqualTo(@Nullable Output<String> lifecycleStateNotEqualTo) {
+            $.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
+            return this;
+        }
+
+        public Builder lifecycleStateNotEqualTo(String lifecycleStateNotEqualTo) {
+            return lifecycleStateNotEqualTo(Output.of(lifecycleStateNotEqualTo));
         }
 
         /**

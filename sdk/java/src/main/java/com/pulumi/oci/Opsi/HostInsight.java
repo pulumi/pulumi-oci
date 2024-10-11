@@ -20,51 +20,6 @@ import javax.annotation.Nullable;
  * 
  * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Opsi.HostInsight;
- * import com.pulumi.oci.Opsi.HostInsightArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testHostInsight = new HostInsight("testHostInsight", HostInsightArgs.builder()
- *             .compartmentId(compartmentId)
- *             .entitySource(hostInsightEntitySource)
- *             .computeId(testCompute.id())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
- *             .enterpriseManagerEntityIdentifier(hostInsightEnterpriseManagerEntityIdentifier)
- *             .enterpriseManagerIdentifier(hostInsightEnterpriseManagerIdentifier)
- *             .exadataInsightId(testExadataInsight.id())
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .managementAgentId(testManagementAgent.id())
- *             .status("DISABLED")
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * HostInsights can be imported using the `id`, e.g.

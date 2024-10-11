@@ -63,6 +63,36 @@ public final class IntegrationInstanceAlternateCustomEndpointArgs extends com.pu
     }
 
     /**
+     * Type of DNS.
+     * 
+     */
+    @Import(name="dnsType")
+    private @Nullable Output<String> dnsType;
+
+    /**
+     * @return Type of DNS.
+     * 
+     */
+    public Optional<Output<String>> dnsType() {
+        return Optional.ofNullable(this.dnsType);
+    }
+
+    /**
+     * DNS Zone name
+     * 
+     */
+    @Import(name="dnsZoneName")
+    private @Nullable Output<String> dnsZoneName;
+
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    public Optional<Output<String>> dnsZoneName() {
+        return Optional.ofNullable(this.dnsZoneName);
+    }
+
+    /**
      * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
@@ -77,13 +107,31 @@ public final class IntegrationInstanceAlternateCustomEndpointArgs extends com.pu
         return this.hostname;
     }
 
+    /**
+     * Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    @Import(name="managedType")
+    private @Nullable Output<String> managedType;
+
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    public Optional<Output<String>> managedType() {
+        return Optional.ofNullable(this.managedType);
+    }
+
     private IntegrationInstanceAlternateCustomEndpointArgs() {}
 
     private IntegrationInstanceAlternateCustomEndpointArgs(IntegrationInstanceAlternateCustomEndpointArgs $) {
         this.alias = $.alias;
         this.certificateSecretId = $.certificateSecretId;
         this.certificateSecretVersion = $.certificateSecretVersion;
+        this.dnsType = $.dnsType;
+        this.dnsZoneName = $.dnsZoneName;
         this.hostname = $.hostname;
+        this.managedType = $.managedType;
     }
 
     public static Builder builder() {
@@ -168,6 +216,48 @@ public final class IntegrationInstanceAlternateCustomEndpointArgs extends com.pu
         }
 
         /**
+         * @param dnsType Type of DNS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsType(@Nullable Output<String> dnsType) {
+            $.dnsType = dnsType;
+            return this;
+        }
+
+        /**
+         * @param dnsType Type of DNS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsType(String dnsType) {
+            return dnsType(Output.of(dnsType));
+        }
+
+        /**
+         * @param dnsZoneName DNS Zone name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsZoneName(@Nullable Output<String> dnsZoneName) {
+            $.dnsZoneName = dnsZoneName;
+            return this;
+        }
+
+        /**
+         * @param dnsZoneName DNS Zone name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsZoneName(String dnsZoneName) {
+            return dnsZoneName(Output.of(dnsZoneName));
+        }
+
+        /**
          * @param hostname (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          * 
          * @return builder
@@ -186,6 +276,27 @@ public final class IntegrationInstanceAlternateCustomEndpointArgs extends com.pu
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
+        }
+
+        /**
+         * @param managedType Indicates if custom endpoint is managed by oracle or customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedType(@Nullable Output<String> managedType) {
+            $.managedType = managedType;
+            return this;
+        }
+
+        /**
+         * @param managedType Indicates if custom endpoint is managed by oracle or customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedType(String managedType) {
+            return managedType(Output.of(managedType));
         }
 
         public IntegrationInstanceAlternateCustomEndpointArgs build() {

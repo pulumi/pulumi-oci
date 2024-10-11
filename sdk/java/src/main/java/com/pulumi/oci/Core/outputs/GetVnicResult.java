@@ -79,6 +79,11 @@ public final class GetVnicResult {
      */
     private String publicIpAddress;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
@@ -198,6 +203,13 @@ public final class GetVnicResult {
         return this.publicIpAddress;
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
@@ -258,6 +270,7 @@ public final class GetVnicResult {
         private List<String> nsgIds;
         private String privateIpAddress;
         private String publicIpAddress;
+        private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String state;
         private String subnetId;
@@ -280,6 +293,7 @@ public final class GetVnicResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.publicIpAddress = defaults.publicIpAddress;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -399,6 +413,14 @@ public final class GetVnicResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetVnicResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             if (skipSourceDestCheck == null) {
               throw new MissingRequiredPropertyException("GetVnicResult", "skipSourceDestCheck");
@@ -461,6 +483,7 @@ public final class GetVnicResult {
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.publicIpAddress = publicIpAddress;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

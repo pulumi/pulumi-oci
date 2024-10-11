@@ -91,8 +91,12 @@ type LookupDesktopPoolResult struct {
 	MaximumSize int `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfigurations []GetDesktopPoolNetworkConfiguration `pulumi:"networkConfigurations"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity that were used to create the pool.
+	PrivateAccessDetails []GetDesktopPoolPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// The shape configuration used for each desktop compute instance in the desktop pool.
+	ShapeConfigs []GetDesktopPoolShapeConfig `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
 	ShapeName string `pulumi:"shapeName"`
 	// The maximum number of standby desktops available in the desktop pool.
@@ -109,6 +113,8 @@ type LookupDesktopPoolResult struct {
 	TimeStartScheduled string `pulumi:"timeStartScheduled"`
 	// The stop time of the desktop pool.
 	TimeStopScheduled string `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+	UseDedicatedVmHost string `pulumi:"useDedicatedVmHost"`
 }
 
 func LookupDesktopPoolOutput(ctx *pulumi.Context, args LookupDesktopPoolOutputArgs, opts ...pulumi.InvokeOption) LookupDesktopPoolResultOutput {
@@ -239,9 +245,19 @@ func (o LookupDesktopPoolResultOutput) NetworkConfigurations() GetDesktopPoolNet
 	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolNetworkConfiguration { return v.NetworkConfigurations }).(GetDesktopPoolNetworkConfigurationArrayOutput)
 }
 
-// A list of network security groups for the desktop pool.
+// A list of network security groups for the private access.
 func (o LookupDesktopPoolResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The details of the desktop's private access network connectivity that were used to create the pool.
+func (o LookupDesktopPoolResultOutput) PrivateAccessDetails() GetDesktopPoolPrivateAccessDetailArrayOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolPrivateAccessDetail { return v.PrivateAccessDetails }).(GetDesktopPoolPrivateAccessDetailArrayOutput)
+}
+
+// The shape configuration used for each desktop compute instance in the desktop pool.
+func (o LookupDesktopPoolResultOutput) ShapeConfigs() GetDesktopPoolShapeConfigArrayOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolShapeConfig { return v.ShapeConfigs }).(GetDesktopPoolShapeConfigArrayOutput)
 }
 
 // The shape of the desktop pool.
@@ -282,6 +298,11 @@ func (o LookupDesktopPoolResultOutput) TimeStartScheduled() pulumi.StringOutput 
 // The stop time of the desktop pool.
 func (o LookupDesktopPoolResultOutput) TimeStopScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) string { return v.TimeStopScheduled }).(pulumi.StringOutput)
+}
+
+// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+func (o LookupDesktopPoolResultOutput) UseDedicatedVmHost() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) string { return v.UseDedicatedVmHost }).(pulumi.StringOutput)
 }
 
 func init() {

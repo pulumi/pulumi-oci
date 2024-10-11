@@ -27,7 +27,7 @@ class GetPluggableDatabaseResult:
     """
     A collection of values returned by getPluggableDatabase.
     """
-    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_admin_password=None, container_database_id=None, convert_to_regular_trigger=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_creation_type_details=None, pdb_name=None, pdb_node_level_details=None, pluggable_database_id=None, pluggable_database_management_configs=None, refresh_trigger=None, refreshable_clone_configs=None, rotate_key_trigger=None, should_create_pdb_backup=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
+    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_admin_password=None, container_database_id=None, convert_to_regular_trigger=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, kms_key_version_id=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_creation_type_details=None, pdb_name=None, pdb_node_level_details=None, pluggable_database_id=None, pluggable_database_management_configs=None, refresh_trigger=None, refreshable_clone_configs=None, rotate_key_trigger=None, should_create_pdb_backup=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,6 +55,9 @@ class GetPluggableDatabaseResult:
         if is_restricted and not isinstance(is_restricted, bool):
             raise TypeError("Expected argument 'is_restricted' to be a bool")
         pulumi.set(__self__, "is_restricted", is_restricted)
+        if kms_key_version_id and not isinstance(kms_key_version_id, str):
+            raise TypeError("Expected argument 'kms_key_version_id' to be a str")
+        pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -169,6 +172,11 @@ class GetPluggableDatabaseResult:
         The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         """
         return pulumi.get(self, "is_restricted")
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> str:
+        return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -290,6 +298,7 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_restricted=self.is_restricted,
+            kms_key_version_id=self.kms_key_version_id,
             lifecycle_details=self.lifecycle_details,
             open_mode=self.open_mode,
             pdb_admin_password=self.pdb_admin_password,
@@ -342,6 +351,7 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_restricted=pulumi.get(__ret__, 'is_restricted'),
+        kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         open_mode=pulumi.get(__ret__, 'open_mode'),
         pdb_admin_password=pulumi.get(__ret__, 'pdb_admin_password'),
@@ -391,6 +401,7 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[s
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_restricted=pulumi.get(__response__, 'is_restricted'),
+        kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         open_mode=pulumi.get(__response__, 'open_mode'),
         pdb_admin_password=pulumi.get(__response__, 'pdb_admin_password'),

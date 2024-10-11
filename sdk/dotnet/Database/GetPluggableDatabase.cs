@@ -127,6 +127,7 @@ namespace Pulumi.Oci.Database
         /// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         /// </summary>
         public readonly bool IsRestricted;
+        public readonly string KmsKeyVersionId;
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
@@ -188,6 +189,8 @@ namespace Pulumi.Oci.Database
 
             bool isRestricted,
 
+            string kmsKeyVersionId,
+
             string lifecycleDetails,
 
             string openMode,
@@ -229,6 +232,7 @@ namespace Pulumi.Oci.Database
             FreeformTags = freeformTags;
             Id = id;
             IsRestricted = isRestricted;
+            KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
             OpenMode = openMode;
             PdbAdminPassword = pdbAdminPassword;

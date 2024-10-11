@@ -42,6 +42,11 @@ namespace Pulumi.Oci.Core
     /// (that is, the pre-shared key). For more information, see
     /// [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
     /// 
+    /// To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnel_configuration`.
+    /// You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracle_tunnel_ip`,
+    /// `associated_virtual_circuits` and `drg_route_table_id` at time of creation. These attributes cannot be updated using IPSec
+    /// connection APIs. To update drg route table id, use `oci.Core.DrgAttachmentManagement` resource to update.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -68,6 +73,46 @@ namespace Pulumi.Oci.Core
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
+    ///         },
+    ///     });
+    /// 
+    ///     var testIpSecConnectionOverFc = new Oci.Core.Ipsec("test_ip_sec_connection_over_fc", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         CpeId = testCpe.Id,
+    ///         DrgId = testDrg.Id,
+    ///         StaticRoutes = ipSecConnectionStaticRoutes,
+    ///         CpeLocalIdentifier = ipSecConnectionCpeLocalIdentifier,
+    ///         CpeLocalIdentifierType = ipSecConnectionCpeLocalIdentifierType,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = ipSecConnectionDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         TunnelConfigurations = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.IpsecTunnelConfigurationArgs
+    ///             {
+    ///                 OracleTunnelIp = "10.1.5.5",
+    ///                 AssociatedVirtualCircuits = new[]
+    ///                 {
+    ///                     testIpsecOverFcVirtualCircuit.Id,
+    ///                 },
+    ///                 DrgRouteTableId = testDrgIpsecOverFcRouteTable.Id,
+    ///             },
+    ///             new Oci.Core.Inputs.IpsecTunnelConfigurationArgs
+    ///             {
+    ///                 OracleTunnelIp = "10.1.7.7",
+    ///                 AssociatedVirtualCircuits = new[]
+    ///                 {
+    ///                     testIpsecOverFcVirtualCircuit.Id,
+    ///                 },
+    ///                 DrgRouteTableId = testDrgIpsecOverFcRouteTable.Id,
+    ///             },
     ///         },
     ///     });
     /// 
@@ -153,10 +198,6 @@ namespace Pulumi.Oci.Core
         /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
         /// 
         /// Example: `10.0.1.0/24`
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("staticRoutes")]
         public Output<ImmutableArray<string>> StaticRoutes { get; private set; } = null!;
@@ -172,6 +213,23 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("transportType")]
         public Output<string> TransportType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+        /// 
+        /// Example: `
+        /// tunnel_configuration {
+        /// oracle_tunnel_ip = "10.1.5.5"
+        /// associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        /// drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        /// }`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("tunnelConfigurations")]
+        public Output<ImmutableArray<Outputs.IpsecTunnelConfiguration>> TunnelConfigurations { get; private set; } = null!;
 
 
         /// <summary>
@@ -296,15 +354,34 @@ namespace Pulumi.Oci.Core
         /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
         /// 
         /// Example: `10.0.1.0/24`
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> StaticRoutes
         {
             get => _staticRoutes ?? (_staticRoutes = new InputList<string>());
             set => _staticRoutes = value;
+        }
+
+        [Input("tunnelConfigurations")]
+        private InputList<Inputs.IpsecTunnelConfigurationArgs>? _tunnelConfigurations;
+
+        /// <summary>
+        /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+        /// 
+        /// Example: `
+        /// tunnel_configuration {
+        /// oracle_tunnel_ip = "10.1.5.5"
+        /// associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        /// drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        /// }`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputList<Inputs.IpsecTunnelConfigurationArgs> TunnelConfigurations
+        {
+            get => _tunnelConfigurations ?? (_tunnelConfigurations = new InputList<Inputs.IpsecTunnelConfigurationArgs>());
+            set => _tunnelConfigurations = value;
         }
 
         public IpsecArgs()
@@ -398,10 +475,6 @@ namespace Pulumi.Oci.Core
         /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
         /// 
         /// Example: `10.0.1.0/24`
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> StaticRoutes
         {
@@ -420,6 +493,29 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("transportType")]
         public Input<string>? TransportType { get; set; }
+
+        [Input("tunnelConfigurations")]
+        private InputList<Inputs.IpsecTunnelConfigurationGetArgs>? _tunnelConfigurations;
+
+        /// <summary>
+        /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+        /// 
+        /// Example: `
+        /// tunnel_configuration {
+        /// oracle_tunnel_ip = "10.1.5.5"
+        /// associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+        /// drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+        /// }`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputList<Inputs.IpsecTunnelConfigurationGetArgs> TunnelConfigurations
+        {
+            get => _tunnelConfigurations ?? (_tunnelConfigurations = new InputList<Inputs.IpsecTunnelConfigurationGetArgs>());
+            set => _tunnelConfigurations = value;
+        }
 
         public IpsecState()
         {

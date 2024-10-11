@@ -34,6 +34,11 @@ public final class ExadataInsightMemberVmClusterDetail {
      */
     private @Nullable String opsiPrivateEndpointId;
     /**
+     * @return Exadata VMCluster type
+     * 
+     */
+    private @Nullable String vmClusterType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
      * 
      */
@@ -69,6 +74,13 @@ public final class ExadataInsightMemberVmClusterDetail {
         return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
     /**
+     * @return Exadata VMCluster type
+     * 
+     */
+    public Optional<String> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
      * 
      */
@@ -89,6 +101,7 @@ public final class ExadataInsightMemberVmClusterDetail {
         private @Nullable String dbmPrivateEndpointId;
         private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private @Nullable String opsiPrivateEndpointId;
+        private @Nullable String vmClusterType;
         private @Nullable String vmclusterId;
         public Builder() {}
         public Builder(ExadataInsightMemberVmClusterDetail defaults) {
@@ -97,6 +110,7 @@ public final class ExadataInsightMemberVmClusterDetail {
     	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
+    	      this.vmClusterType = defaults.vmClusterType;
     	      this.vmclusterId = defaults.vmclusterId;
         }
 
@@ -128,6 +142,12 @@ public final class ExadataInsightMemberVmClusterDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder vmClusterType(@Nullable String vmClusterType) {
+
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vmclusterId(@Nullable String vmclusterId) {
 
             this.vmclusterId = vmclusterId;
@@ -139,6 +159,7 @@ public final class ExadataInsightMemberVmClusterDetail {
             _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
             _resultValue.memberDatabaseDetails = memberDatabaseDetails;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.vmClusterType = vmClusterType;
             _resultValue.vmclusterId = vmclusterId;
             return _resultValue;
         }

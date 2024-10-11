@@ -29,6 +29,10 @@ import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestPlainArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetPreauthrequestsPlainArgs;
+import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointPlainArgs;
+import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesPlainArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPoliciesPlainArgs;
 import com.pulumi.oci.ObjectStorage.inputs.GetReplicationPolicyArgs;
@@ -46,6 +50,8 @@ import com.pulumi.oci.ObjectStorage.outputs.GetObjectVersionsResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetObjectsResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetPreauthrequestResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetPreauthrequestsResult;
+import com.pulumi.oci.ObjectStorage.outputs.GetPrivateEndpointResult;
+import com.pulumi.oci.ObjectStorage.outputs.GetPrivateEndpointSummariesResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationPoliciesResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationPolicyResult;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationSourcesResult;
@@ -2172,6 +2178,30 @@ public final class ObjectStorageFunctions {
      */
     public static CompletableFuture<GetPreauthrequestsResult> getPreauthrequestsPlain(GetPreauthrequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", TypeShape.of(GetPreauthrequestsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
+        return getPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
+        return getPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args) {
+        return getPrivateEndpointSummaries(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPrivateEndpointSummariesResult> getPrivateEndpointSummariesPlain(GetPrivateEndpointSummariesPlainArgs args) {
+        return getPrivateEndpointSummariesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPrivateEndpointSummariesResult> getPrivateEndpointSummariesPlain(GetPrivateEndpointSummariesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.

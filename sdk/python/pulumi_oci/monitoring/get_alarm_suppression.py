@@ -27,7 +27,7 @@ class GetAlarmSuppressionResult:
     """
     A collection of values returned by getAlarmSuppression.
     """
-    def __init__(__self__, alarm_suppression_id=None, alarm_suppression_targets=None, compartment_id=None, defined_tags=None, description=None, dimensions=None, display_name=None, freeform_tags=None, id=None, state=None, time_created=None, time_suppress_from=None, time_suppress_until=None, time_updated=None):
+    def __init__(__self__, alarm_suppression_id=None, alarm_suppression_targets=None, compartment_id=None, defined_tags=None, description=None, dimensions=None, display_name=None, freeform_tags=None, id=None, level=None, state=None, suppression_conditions=None, time_created=None, time_suppress_from=None, time_suppress_until=None, time_updated=None):
         if alarm_suppression_id and not isinstance(alarm_suppression_id, str):
             raise TypeError("Expected argument 'alarm_suppression_id' to be a str")
         pulumi.set(__self__, "alarm_suppression_id", alarm_suppression_id)
@@ -55,9 +55,15 @@ class GetAlarmSuppressionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if level and not isinstance(level, str):
+            raise TypeError("Expected argument 'level' to be a str")
+        pulumi.set(__self__, "level", level)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if suppression_conditions and not isinstance(suppression_conditions, list):
+            raise TypeError("Expected argument 'suppression_conditions' to be a list")
+        pulumi.set(__self__, "suppression_conditions", suppression_conditions)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -142,11 +148,27 @@ class GetAlarmSuppressionResult:
 
     @property
     @pulumi.getter
+    def level(self) -> str:
+        """
+        The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+        """
+        return pulumi.get(self, "level")
+
+    @property
+    @pulumi.getter
     def state(self) -> str:
         """
         The current lifecycle state of the alarm suppression.  Example: `DELETED`
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="suppressionConditions")
+    def suppression_conditions(self) -> Sequence['outputs.GetAlarmSuppressionSuppressionConditionResult']:
+        """
+        Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+        """
+        return pulumi.get(self, "suppression_conditions")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -196,7 +218,9 @@ class AwaitableGetAlarmSuppressionResult(GetAlarmSuppressionResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            level=self.level,
             state=self.state,
+            suppression_conditions=self.suppression_conditions,
             time_created=self.time_created,
             time_suppress_from=self.time_suppress_from,
             time_suppress_until=self.time_suppress_until,
@@ -208,7 +232,8 @@ def get_alarm_suppression(alarm_suppression_id: Optional[str] = None,
     """
     This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 
-    Gets the specified alarm suppression.
+    Gets the specified alarm suppression. For more information, see
+    [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
 
     For important limits information, see
     [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -244,7 +269,9 @@ def get_alarm_suppression(alarm_suppression_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        level=pulumi.get(__ret__, 'level'),
         state=pulumi.get(__ret__, 'state'),
+        suppression_conditions=pulumi.get(__ret__, 'suppression_conditions'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_suppress_from=pulumi.get(__ret__, 'time_suppress_from'),
         time_suppress_until=pulumi.get(__ret__, 'time_suppress_until'),
@@ -254,7 +281,8 @@ def get_alarm_suppression_output(alarm_suppression_id: Optional[pulumi.Input[str
     """
     This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 
-    Gets the specified alarm suppression.
+    Gets the specified alarm suppression. For more information, see
+    [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
 
     For important limits information, see
     [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -289,7 +317,9 @@ def get_alarm_suppression_output(alarm_suppression_id: Optional[pulumi.Input[str
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        level=pulumi.get(__response__, 'level'),
         state=pulumi.get(__response__, 'state'),
+        suppression_conditions=pulumi.get(__response__, 'suppression_conditions'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_suppress_from=pulumi.get(__response__, 'time_suppress_from'),
         time_suppress_until=pulumi.get(__response__, 'time_suppress_until'),

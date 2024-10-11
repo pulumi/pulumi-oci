@@ -157,6 +157,7 @@ __all__ = [
     'IpsecConnectionTunnelManagementEncryptionDomainConfig',
     'IpsecConnectionTunnelManagementPhaseOneDetails',
     'IpsecConnectionTunnelManagementPhaseTwoDetails',
+    'IpsecTunnelConfiguration',
     'NetworkSecurityGroupSecurityRuleIcmpOptions',
     'NetworkSecurityGroupSecurityRuleTcpOptions',
     'NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange',
@@ -576,6 +577,7 @@ __all__ = [
     'GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult',
     'GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult',
     'GetIpsecConnectionsConnectionResult',
+    'GetIpsecConnectionsConnectionTunnelConfigurationResult',
     'GetIpsecConnectionsFilterResult',
     'GetIpsecStatusFilterResult',
     'GetIpsecStatusTunnelResult',
@@ -5137,7 +5139,6 @@ class InstanceConfigurationInstanceDetails(dict):
         :param str instance_type: The type of instance details. Supported instanceType is compute
         :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeArgs'] block_volumes: Block volume parameters.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsArgs' launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-               
                See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         :param Sequence['InstanceConfigurationInstanceDetailsOptionArgs'] options: Multiple Compute Instance Configuration instance details.
         :param Sequence['InstanceConfigurationInstanceDetailsSecondaryVnicArgs'] secondary_vnics: Secondary VNIC parameters.
@@ -5173,7 +5174,6 @@ class InstanceConfigurationInstanceDetails(dict):
     def launch_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetails']:
         """
         Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
         See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         """
         return pulumi.get(self, "launch_details")
@@ -5295,7 +5295,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
                  is_shareable: Optional[bool] = None,
                  use_chap: Optional[bool] = None):
         """
-        :param str type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        :param str type: The type of volume. The only supported values are "iscsi" and "paravirtualized"
         :param str device: The device name.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -5321,7 +5321,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
+        The type of volume. The only supported values are "iscsi" and "paravirtualized"
         """
         return pulumi.get(self, "type")
 
@@ -5767,6 +5767,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             suggest = "preemptible_instance_config"
         elif key == "preferredMaintenanceAction":
             suggest = "preferred_maintenance_action"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "shapeConfig":
             suggest = "shape_config"
         elif key == "sourceDetails":
@@ -5806,6 +5808,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  shape: Optional[str] = None,
                  shape_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig'] = None,
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails'] = None):
@@ -5814,18 +5817,40 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs' availability_config: Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
-        :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        :param str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
+        :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
-        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+               
+               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
+        :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
@@ -5833,13 +5858,48 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-        :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
+               
+               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+               
+               **Providing Cloud-Init Metadata**
+               
+               You can use the following metadata key names to provide information to Cloud-Init:
+               
+               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+               
+               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+               
+               **Metadata Example**
+               
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+               
+               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs' shape_config: The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
@@ -5885,6 +5945,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preferred_maintenance_action is not None:
             pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -5928,7 +5990,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[str]:
         """
-        The clusterPlacementGroup Id of the volume for volume placement.
+        The OCID of the cluster placement group of the instance.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -5936,7 +5998,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -5953,6 +6015,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def dedicated_vm_host_id(self) -> Optional[str]:
         """
         The OCID of the dedicated virtual machine host to place the instance on.
+
+        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -5960,7 +6024,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -5968,7 +6032,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -5977,6 +6041,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def extended_metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "extended_metadata")
 
@@ -5985,6 +6053,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def fault_domain(self) -> Optional[str]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -5992,7 +6066,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6009,6 +6083,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+
+        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -6016,7 +6100,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -6045,6 +6129,30 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+
+        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+
+        **Providing Cloud-Init Metadata**
+
+        You can use the following metadata key names to provide information to Cloud-Init:
+
+        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+
+        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+
+        **Metadata Example**
+
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
 
@@ -6052,7 +6160,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="platformConfig")
     def platform_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig']:
         """
-        The platform configuration requested for the instance.
+        (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+
+        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "platform_config")
 
@@ -6075,10 +6187,20 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[str]:
         """
         The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -6087,6 +6209,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def shape_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig']:
         """
         The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_config")
 
@@ -6131,19 +6257,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
                
                To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-               
-               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-               
-               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-               
-               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-               
-               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs'] plugins_configs: The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -6170,12 +6284,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-
-        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-
-        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -6184,12 +6292,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-
-        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-
-        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -6226,7 +6328,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
                  name: Optional[str] = None):
         """
         :param str desired_state: Whether the plugin should be enabled or disabled.
-               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         if desired_state is not None:
@@ -6239,7 +6340,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
     def desired_state(self) -> Optional[str]:
         """
         Whether the plugin should be enabled or disabled.
-        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -6331,6 +6431,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -6358,17 +6460,21 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -6392,6 +6498,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -6400,13 +6508,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -6422,7 +6533,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6430,7 +6541,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -6438,7 +6549,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6453,6 +6564,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -6470,6 +6584,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -6510,6 +6632,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
+        """
+        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -6518,11 +6644,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -6749,7 +6881,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
                  numa_nodes_per_socket: Optional[str] = None,
                  percentage_of_cores_enabled: Optional[int] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type of platform being configured.
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
@@ -6757,7 +6889,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        :param bool is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+               
+               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
@@ -6792,7 +6926,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type of platform being configured.
         """
         return pulumi.get(self, "type")
 
@@ -6856,7 +6990,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
-        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -6999,6 +7135,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
                  vcpus: Optional[int] = None):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -7020,6 +7161,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -7100,9 +7246,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str image_id: The OCID of the image used to boot the instance.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs' instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
-        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
@@ -7147,6 +7295,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -7170,7 +7320,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
         """
-        The OCID of the Vault service key to assign as the master encryption key for the volume.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -7206,7 +7356,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
@@ -7224,7 +7374,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        (Updatable) The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
 
@@ -7283,6 +7433,8 @@ class InstanceConfigurationInstanceDetailsOption(dict):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs'] block_volumes: Block volume parameters.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs' launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+               
+               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         :param Sequence['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs'] secondary_vnics: Secondary VNIC parameters.
         """
         if block_volumes is not None:
@@ -7305,6 +7457,8 @@ class InstanceConfigurationInstanceDetailsOption(dict):
     def launch_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetails']:
         """
         Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+
+        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         """
         return pulumi.get(self, "launch_details")
 
@@ -7417,10 +7571,10 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
                  is_shareable: Optional[bool] = None,
                  use_chap: Optional[bool] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
         :param str device: The device name.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param bool is_read_only: Whether the attachment should be created in read-only mode.
         :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param bool use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
@@ -7443,7 +7597,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type of volume. The only supported values are "iscsi" and "paravirtualized".
         """
         return pulumi.get(self, "type")
 
@@ -7459,7 +7613,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -7467,7 +7621,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -7558,18 +7712,20 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
                  vpus_per_gb: Optional[str] = None):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
-        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str availability_domain: The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param 'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str compartment_id: (Updatable) The OCID of the compartment that contains the volume.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
@@ -7612,7 +7768,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -7644,7 +7800,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        (Updatable) The OCID of the compartment that contains the volume.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -7652,7 +7808,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -7660,7 +7816,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -7668,7 +7824,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -7706,6 +7862,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     def vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -7814,7 +7972,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
                  type: str,
                  id: Optional[str] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type can be one of these values: `volume`, `volumeBackup`
         :param str id: The OCID of the volume backup.
         """
         pulumi.set(__self__, "type", type)
@@ -7825,7 +7983,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type can be one of these values: `volume`, `volumeBackup`
         """
         return pulumi.get(self, "type")
 
@@ -7885,6 +8043,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             suggest = "preemptible_instance_config"
         elif key == "preferredMaintenanceAction":
             suggest = "preferred_maintenance_action"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "shapeConfig":
             suggest = "shape_config"
         elif key == "sourceDetails":
@@ -7924,6 +8084,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  shape: Optional[str] = None,
                  shape_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig'] = None,
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails'] = None):
@@ -7933,7 +8094,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        :param str compartment_id: (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -7956,6 +8117,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs' shape_config: The shape configuration requested for the instance.
         """
@@ -8003,6 +8165,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preferred_maintenance_action is not None:
             pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -8054,7 +8218,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -8193,6 +8357,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[str]:
         """
@@ -8246,8 +8418,22 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+               
+               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs'] plugins_configs: The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -8264,6 +8450,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -8272,6 +8460,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -8280,6 +8474,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -8316,6 +8516,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
                  name: Optional[str] = None):
         """
         :param str desired_state: Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         if desired_state is not None:
@@ -8328,6 +8530,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
     def desired_state(self) -> Optional[str]:
         """
         Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -8419,6 +8623,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -8446,9 +8652,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
+        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -8457,6 +8665,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -8480,6 +8689,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -8488,6 +8699,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
@@ -8558,6 +8772,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -8845,8 +9067,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-               
-               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
@@ -8955,8 +9175,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
     def percentage_of_cores_enabled(self) -> Optional[int]:
         """
         The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-
-        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
@@ -9356,7 +9574,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnic(dict):
                  nic_index: Optional[int] = None):
         """
         :param 'InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param int nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         if create_vnic_details is not None:
@@ -9378,7 +9596,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnic(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9416,6 +9634,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -9443,17 +9663,20 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -9477,6 +9700,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -9485,13 +9710,16 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -9507,7 +9735,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9515,7 +9743,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9523,7 +9751,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -9555,6 +9783,14 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -9640,7 +9876,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnic(dict):
                  nic_index: Optional[int] = None):
         """
         :param 'InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param int nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         if create_vnic_details is not None:
@@ -9662,7 +9898,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnic(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9700,6 +9936,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -9727,17 +9965,20 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -9761,6 +10002,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -9769,13 +10012,16 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -9791,7 +10037,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9799,7 +10045,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9807,7 +10053,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -9839,6 +10085,14 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -9920,6 +10174,8 @@ class InstanceCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -9949,6 +10205,7 @@ class InstanceCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None,
                  vlan_id: Optional[str] = None):
@@ -9986,6 +10243,7 @@ class InstanceCreateVnicDetails(dict):
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `10.0.3.3`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
                
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -10018,6 +10276,8 @@ class InstanceCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -10127,6 +10387,14 @@ class InstanceCreateVnicDetails(dict):
         Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -10380,6 +10648,8 @@ class InstanceLaunchVolumeAttachment(dict):
             suggest = "encryption_in_transit_type"
         elif key == "isAgentAutoIscsiLoginEnabled":
             suggest = "is_agent_auto_iscsi_login_enabled"
+        elif key == "isPvEncryptionInTransitEnabled":
+            suggest = "is_pv_encryption_in_transit_enabled"
         elif key == "isReadOnly":
             suggest = "is_read_only"
         elif key == "isShareable":
@@ -10408,6 +10678,7 @@ class InstanceLaunchVolumeAttachment(dict):
                  display_name: Optional[str] = None,
                  encryption_in_transit_type: Optional[str] = None,
                  is_agent_auto_iscsi_login_enabled: Optional[bool] = None,
+                 is_pv_encryption_in_transit_enabled: Optional[bool] = None,
                  is_read_only: Optional[bool] = None,
                  is_shareable: Optional[bool] = None,
                  launch_create_volume_details: Optional['outputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails'] = None,
@@ -10419,6 +10690,7 @@ class InstanceLaunchVolumeAttachment(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         :param bool is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param bool is_read_only: Whether the attachment was created in read-only mode.
         :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param 'InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs' launch_create_volume_details: Define a volume that will be created and attached or attached to an instance on creation.
@@ -10434,6 +10706,8 @@ class InstanceLaunchVolumeAttachment(dict):
             pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
         if is_agent_auto_iscsi_login_enabled is not None:
             pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        if is_pv_encryption_in_transit_enabled is not None:
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
             pulumi.set(__self__, "is_read_only", is_read_only)
         if is_shareable is not None:
@@ -10484,6 +10758,14 @@ class InstanceLaunchVolumeAttachment(dict):
         Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
+        """
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -11692,7 +11974,7 @@ class InstanceSourceDetails(dict):
         :param 'InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs' instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param bool is_preserve_boot_volume_enabled: (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
         :param str kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
-        :param str source_id: (Updatable) The OCID of the boot volume used to boot the instance.
+        :param str source_id: (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
         """
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
@@ -11762,7 +12044,7 @@ class InstanceSourceDetails(dict):
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the boot volume used to boot the instance.
+        (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
         """
         return pulumi.get(self, "source_id")
 
@@ -12543,6 +12825,56 @@ class IpsecConnectionTunnelManagementPhaseTwoDetails(dict):
         The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "remaining_lifetime_last_retrieved")
+
+
+@pulumi.output_type
+class IpsecTunnelConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "associatedVirtualCircuits":
+            suggest = "associated_virtual_circuits"
+        elif key == "drgRouteTableId":
+            suggest = "drg_route_table_id"
+        elif key == "oracleTunnelIp":
+            suggest = "oracle_tunnel_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IpsecTunnelConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IpsecTunnelConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IpsecTunnelConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 associated_virtual_circuits: Optional[Sequence[str]] = None,
+                 drg_route_table_id: Optional[str] = None,
+                 oracle_tunnel_ip: Optional[str] = None):
+        if associated_virtual_circuits is not None:
+            pulumi.set(__self__, "associated_virtual_circuits", associated_virtual_circuits)
+        if drg_route_table_id is not None:
+            pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
+        if oracle_tunnel_ip is not None:
+            pulumi.set(__self__, "oracle_tunnel_ip", oracle_tunnel_ip)
+
+    @property
+    @pulumi.getter(name="associatedVirtualCircuits")
+    def associated_virtual_circuits(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "associated_virtual_circuits")
+
+    @property
+    @pulumi.getter(name="drgRouteTableId")
+    def drg_route_table_id(self) -> Optional[str]:
+        return pulumi.get(self, "drg_route_table_id")
+
+    @property
+    @pulumi.getter(name="oracleTunnelIp")
+    def oracle_tunnel_ip(self) -> Optional[str]:
+        return pulumi.get(self, "oracle_tunnel_ip")
 
 
 @pulumi.output_type
@@ -13958,6 +14290,8 @@ class VnicAttachmentCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
             suggest = "skip_source_dest_check"
         elif key == "subnetId":
@@ -13987,6 +14321,7 @@ class VnicAttachmentCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
+                 security_attributes: Optional[Mapping[str, str]] = None,
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None,
                  vlan_id: Optional[str] = None):
@@ -14025,6 +14360,7 @@ class VnicAttachmentCreateVnicDetails(dict):
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `10.0.3.3`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
                
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -14057,6 +14393,8 @@ class VnicAttachmentCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
@@ -14167,6 +14505,14 @@ class VnicAttachmentCreateVnicDetails(dict):
         Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, str]]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -26300,6 +26646,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  shape_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult'],
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult']):
@@ -26332,6 +26679,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -26357,6 +26705,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "source_details", source_details)
@@ -26544,6 +26893,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -26691,6 +27048,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -26704,6 +27062,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -26717,6 +27076,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -26799,6 +27159,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -27783,6 +28151,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  shape_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult'],
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailResult']):
@@ -27815,6 +28184,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -27840,6 +28210,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "source_details", source_details)
@@ -28027,6 +28398,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -28174,6 +28553,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -28187,6 +28567,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -28200,6 +28581,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -28282,6 +28664,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -28875,6 +29265,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -28888,6 +29279,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -28901,6 +29293,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -28983,6 +29376,14 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -29083,6 +29484,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -29096,6 +29498,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         :param Sequence['GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -29109,6 +29512,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -29191,6 +29595,14 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -29831,6 +30243,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  shape_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult'],
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult']):
@@ -29863,6 +30276,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -29888,6 +30302,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "source_details", source_details)
@@ -30075,6 +30490,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -30222,6 +30645,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -30235,6 +30659,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -30248,6 +30673,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -30330,6 +30756,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -31314,6 +31748,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  shape_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult'],
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailResult']):
@@ -31346,6 +31781,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
                * `LIVE_MIGRATE` - Run maintenance using a live migration.
                * `REBOOT` - Run maintenance using a reboot.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -31371,6 +31807,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "source_details", source_details)
@@ -31558,6 +31995,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         return pulumi.get(self, "preferred_maintenance_action")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -31705,6 +32150,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -31718,6 +32164,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -31731,6 +32178,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -31813,6 +32261,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -32406,6 +32862,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -32419,6 +32876,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -32432,6 +32890,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -32514,6 +32973,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -32614,6 +33081,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str):
         """
@@ -32627,6 +33095,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
@@ -32640,6 +33109,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -32722,6 +33192,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -32933,6 +33411,7 @@ class GetInstanceCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str,
                  vlan_id: str):
@@ -32942,6 +33421,7 @@ class GetInstanceCreateVnicDetailResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the instance VNIC's primary private IP.
         :param str private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -32953,6 +33433,7 @@ class GetInstanceCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vlan_id", vlan_id)
@@ -33021,6 +33502,14 @@ class GetInstanceCreateVnicDetailResult(dict):
         The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         """
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -33247,6 +33736,7 @@ class GetInstanceLaunchVolumeAttachmentResult(dict):
                  display_name: str,
                  encryption_in_transit_type: str,
                  is_agent_auto_iscsi_login_enabled: bool,
+                 is_pv_encryption_in_transit_enabled: bool,
                  is_read_only: bool,
                  is_shareable: bool,
                  launch_create_volume_details: Sequence['outputs.GetInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult'],
@@ -33255,12 +33745,14 @@ class GetInstanceLaunchVolumeAttachmentResult(dict):
                  volume_id: str):
         """
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "device", device)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
         pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_read_only", is_read_only)
         pulumi.set(__self__, "is_shareable", is_shareable)
         pulumi.set(__self__, "launch_create_volume_details", launch_create_volume_details)
@@ -33290,6 +33782,14 @@ class GetInstanceLaunchVolumeAttachmentResult(dict):
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
     def is_agent_auto_iscsi_login_enabled(self) -> bool:
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> bool:
+        """
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -35320,6 +35820,8 @@ class GetInstancesInstanceResult(dict):
                  private_ip: str,
                  public_ip: str,
                  region: str,
+                 security_attributes: Mapping[str, str],
+                 security_attributes_state: str,
                  shape: str,
                  shape_configs: Sequence['outputs.GetInstancesInstanceShapeConfigResult'],
                  source_details: Sequence['outputs.GetInstancesInstanceSourceDetailResult'],
@@ -35362,6 +35864,8 @@ class GetInstancesInstanceResult(dict):
         :param Sequence['GetInstancesInstancePreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Optional) Configuration options for preemptible instances.
         :param bool preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param str region: The region that contains the availability domain the instance is running in.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param str security_attributes_state: The lifecycle state of the `securityAttributes`
         :param str shape: The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param Sequence['GetInstancesInstanceShapeConfigArgs'] shape_configs: The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -35404,6 +35908,8 @@ class GetInstancesInstanceResult(dict):
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "public_ip", public_ip)
         pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "security_attributes", security_attributes)
+        pulumi.set(__self__, "security_attributes_state", security_attributes_state)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "source_details", source_details)
@@ -35680,6 +36186,22 @@ class GetInstancesInstanceResult(dict):
         return pulumi.get(self, "region")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
+    @pulumi.getter(name="securityAttributesState")
+    def security_attributes_state(self) -> str:
+        """
+        The lifecycle state of the `securityAttributes`
+        """
+        return pulumi.get(self, "security_attributes_state")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -35870,6 +36392,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str,
                  vlan_id: str):
@@ -35877,6 +36400,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -35888,6 +36412,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vlan_id", vlan_id)
@@ -35950,6 +36475,14 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
@@ -36114,6 +36647,7 @@ class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
                  display_name: str,
                  encryption_in_transit_type: str,
                  is_agent_auto_iscsi_login_enabled: bool,
+                 is_pv_encryption_in_transit_enabled: bool,
                  is_read_only: bool,
                  is_shareable: bool,
                  launch_create_volume_details: Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult'],
@@ -36122,12 +36656,14 @@ class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
                  volume_id: str):
         """
         :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "device", device)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
         pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+        pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_read_only", is_read_only)
         pulumi.set(__self__, "is_shareable", is_shareable)
         pulumi.set(__self__, "launch_create_volume_details", launch_create_volume_details)
@@ -36157,6 +36693,14 @@ class GetInstancesInstanceLaunchVolumeAttachmentResult(dict):
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
     def is_agent_auto_iscsi_login_enabled(self) -> bool:
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @property
+    @pulumi.getter(name="isPvEncryptionInTransitEnabled")
+    def is_pv_encryption_in_transit_enabled(self) -> bool:
+        """
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        """
+        return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -38622,7 +39166,8 @@ class GetIpsecConnectionsConnectionResult(dict):
                  state: str,
                  static_routes: Sequence[str],
                  time_created: str,
-                 transport_type: str):
+                 transport_type: str,
+                 tunnel_configurations: Sequence['outputs.GetIpsecConnectionsConnectionTunnelConfigurationResult']):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
@@ -38651,6 +39196,7 @@ class GetIpsecConnectionsConnectionResult(dict):
         pulumi.set(__self__, "static_routes", static_routes)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "transport_type", transport_type)
+        pulumi.set(__self__, "tunnel_configurations", tunnel_configurations)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -38755,6 +39301,37 @@ class GetIpsecConnectionsConnectionResult(dict):
         The transport type used for the IPSec connection.
         """
         return pulumi.get(self, "transport_type")
+
+    @property
+    @pulumi.getter(name="tunnelConfigurations")
+    def tunnel_configurations(self) -> Sequence['outputs.GetIpsecConnectionsConnectionTunnelConfigurationResult']:
+        return pulumi.get(self, "tunnel_configurations")
+
+
+@pulumi.output_type
+class GetIpsecConnectionsConnectionTunnelConfigurationResult(dict):
+    def __init__(__self__, *,
+                 associated_virtual_circuits: Sequence[str],
+                 drg_route_table_id: str,
+                 oracle_tunnel_ip: str):
+        pulumi.set(__self__, "associated_virtual_circuits", associated_virtual_circuits)
+        pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
+        pulumi.set(__self__, "oracle_tunnel_ip", oracle_tunnel_ip)
+
+    @property
+    @pulumi.getter(name="associatedVirtualCircuits")
+    def associated_virtual_circuits(self) -> Sequence[str]:
+        return pulumi.get(self, "associated_virtual_circuits")
+
+    @property
+    @pulumi.getter(name="drgRouteTableId")
+    def drg_route_table_id(self) -> str:
+        return pulumi.get(self, "drg_route_table_id")
+
+    @property
+    @pulumi.getter(name="oracleTunnelIp")
+    def oracle_tunnel_ip(self) -> str:
+        return pulumi.get(self, "oracle_tunnel_ip")
 
 
 @pulumi.output_type
@@ -44021,6 +44598,7 @@ class GetVcnsVirtualNetworkResult(dict):
                  ipv6private_cidr_blocks: Sequence[str],
                  is_ipv6enabled: bool,
                  is_oracle_gua_allocation_enabled: bool,
+                 security_attributes: Mapping[str, str],
                  state: str,
                  time_created: str,
                  vcn_domain_name: str):
@@ -44039,6 +44617,7 @@ class GetVcnsVirtualNetworkResult(dict):
         :param str id: The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param Sequence[str] ipv6cidr_blocks: For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         :param Sequence[str] ipv6private_cidr_blocks: For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str vcn_domain_name: The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
@@ -44060,6 +44639,7 @@ class GetVcnsVirtualNetworkResult(dict):
         pulumi.set(__self__, "ipv6private_cidr_blocks", ipv6private_cidr_blocks)
         pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_domain_name", vcn_domain_name)
@@ -44190,6 +44770,14 @@ class GetVcnsVirtualNetworkResult(dict):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> bool:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter
@@ -45025,6 +45613,7 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
                  ipv6private_cidr_blocks: Sequence[str],
                  is_ipv6enabled: bool,
                  is_oracle_gua_allocation_enabled: bool,
+                 security_attributes: Mapping[str, str],
                  state: str,
                  time_created: str,
                  vcn_domain_name: str):
@@ -45045,6 +45634,7 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
         pulumi.set(__self__, "ipv6private_cidr_blocks", ipv6private_cidr_blocks)
         pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_domain_name", vcn_domain_name)
@@ -45133,6 +45723,11 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> bool:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter
@@ -45532,6 +46127,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
                  private_ip: str,
+                 security_attributes: Mapping[str, str],
                  skip_source_dest_check: bool,
                  subnet_id: str,
                  vlan_id: str):
@@ -45550,6 +46146,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vlan_id", vlan_id)
@@ -45606,6 +46203,11 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")

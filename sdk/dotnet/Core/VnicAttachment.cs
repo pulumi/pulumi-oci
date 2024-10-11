@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Core
     ///             Ipv6addressIpv6subnetCidrPairDetails = vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails,
     ///             NsgIds = vnicAttachmentCreateVnicDetailsNsgIds,
     ///             PrivateIp = vnicAttachmentCreateVnicDetailsPrivateIp,
+    ///             SecurityAttributes = vnicAttachmentCreateVnicDetailsSecurityAttributes,
     ///             SkipSourceDestCheck = vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
     ///             SubnetId = testSubnet.Id,
     ///             VlanId = testVlan.Id,

@@ -36,6 +36,21 @@ namespace Pulumi.Oci.Database
     ///         SshPublicKeys = cloudVmClusterSshPublicKeys,
     ///         SubnetId = testSubnet.Id,
     ///         BackupNetworkNsgIds = cloudVmClusterBackupNetworkNsgIds,
+    ///         CloudAutomationUpdateDetails = new Oci.Database.Inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs
+    ///         {
+    ///             ApplyUpdateTimePreference = new Oci.Database.Inputs.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs
+    ///             {
+    ///                 ApplyUpdatePreferredEndTime = cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime,
+    ///                 ApplyUpdatePreferredStartTime = cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime,
+    ///             },
+    ///             FreezePeriod = new Oci.Database.Inputs.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs
+    ///             {
+    ///                 FreezePeriodEndTime = cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime,
+    ///                 FreezePeriodStartTime = cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime,
+    ///             },
+    ///             IsEarlyAdoptionEnabled = cloudVmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled,
+    ///             IsFreezePeriodEnabled = cloudVmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled,
+    ///         },
     ///         ClusterName = cloudVmClusterClusterName,
     ///         DataCollectionOptions = new Oci.Database.Inputs.CloudVmClusterDataCollectionOptionsArgs
     ///         {
@@ -106,6 +121,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("backupSubnetId")]
         public Output<string> BackupSubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Output("cloudAutomationUpdateDetails")]
+        public Output<Outputs.CloudVmClusterCloudAutomationUpdateDetails> CloudAutomationUpdateDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
@@ -467,6 +488,12 @@ namespace Pulumi.Oci.Database
         public Input<string> BackupSubnetId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Input("cloudAutomationUpdateDetails")]
+        public Input<Inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs>? CloudAutomationUpdateDetails { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         /// </summary>
         [Input("cloudExadataInfrastructureId", required: true)]
@@ -732,6 +759,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("backupSubnetId")]
         public Input<string>? BackupSubnetId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Input("cloudAutomationUpdateDetails")]
+        public Input<Inputs.CloudVmClusterCloudAutomationUpdateDetailsGetArgs>? CloudAutomationUpdateDetails { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.

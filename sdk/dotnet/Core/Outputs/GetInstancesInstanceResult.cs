@@ -137,6 +137,14 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The lifecycle state of the `securityAttributes`
+        /// </summary>
+        public readonly string SecurityAttributesState;
+        /// <summary>
         /// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         public readonly string Shape;
@@ -236,6 +244,10 @@ namespace Pulumi.Oci.Core.Outputs
 
             string region,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
+            string securityAttributesState,
+
             string shape,
 
             ImmutableArray<Outputs.GetInstancesInstanceShapeConfigResult> shapeConfigs,
@@ -289,6 +301,8 @@ namespace Pulumi.Oci.Core.Outputs
             PrivateIp = privateIp;
             PublicIp = publicIp;
             Region = region;
+            SecurityAttributes = securityAttributes;
+            SecurityAttributesState = securityAttributesState;
             Shape = shape;
             ShapeConfigs = shapeConfigs;
             SourceDetails = sourceDetails;

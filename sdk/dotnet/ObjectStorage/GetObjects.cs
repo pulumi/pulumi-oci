@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ObjectStorage
         public string? Delimiter { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be strictly less than this parameter.
+        /// Returns object names which are lexicographically strictly less than this parameter.
         /// </summary>
         [Input("end")]
         public string? End { get; set; }
@@ -88,13 +88,13 @@ namespace Pulumi.Oci.ObjectStorage
         public string? Prefix { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be greater or equal to this parameter.
+        /// Returns object names which are lexicographically greater than or equal to this parameter.
         /// </summary>
         [Input("start")]
         public string? Start { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be greater than this parameter.
+        /// Returns object names which are lexicographically strictly greater than this parameter.
         /// </summary>
         [Input("startAfter")]
         public string? StartAfter { get; set; }
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Delimiter { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be strictly less than this parameter.
+        /// Returns object names which are lexicographically strictly less than this parameter.
         /// </summary>
         [Input("end")]
         public Input<string>? End { get; set; }
@@ -146,13 +146,13 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be greater or equal to this parameter.
+        /// Returns object names which are lexicographically greater than or equal to this parameter.
         /// </summary>
         [Input("start")]
         public Input<string>? Start { get; set; }
 
         /// <summary>
-        /// Object names returned by a list query must be greater than this parameter.
+        /// Returns object names which are lexicographically strictly greater than this parameter.
         /// </summary>
         [Input("startAfter")]
         public Input<string>? StartAfter { get; set; }

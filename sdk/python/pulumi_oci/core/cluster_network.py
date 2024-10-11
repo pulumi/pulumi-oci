@@ -37,7 +37,7 @@ class ClusterNetworkArgs:
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input['ClusterNetworkClusterConfigurationArgs'] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
                
-               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -98,7 +98,7 @@ class ClusterNetworkArgs:
         """
         The HPC cluster configuration requested when launching instances of a cluster network.
 
-        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_configuration")
 
@@ -162,7 +162,7 @@ class _ClusterNetworkState:
         Input properties used for looking up and filtering ClusterNetwork resources.
         :param pulumi.Input['ClusterNetworkClusterConfigurationArgs'] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
                
-               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -208,7 +208,7 @@ class _ClusterNetworkState:
         """
         The HPC cluster configuration requested when launching instances of a cluster network.
 
-        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_configuration")
 
@@ -445,7 +445,7 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
                
-               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -618,7 +618,7 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
                
-               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+               If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -657,7 +657,7 @@ class ClusterNetwork(pulumi.CustomResource):
         """
         The HPC cluster configuration requested when launching instances of a cluster network.
 
-        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_configuration")
 

@@ -33,6 +33,11 @@ public final class GetDatabaseInsightResult {
      */
     private List<GetDatabaseInsightConnectionDetail> connectionDetails;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    private String connectorId;
+    /**
      * @return User credential details to connect to the database.
      * 
      */
@@ -131,6 +136,11 @@ public final class GetDatabaseInsightResult {
      */
     private String id;
     /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    private Boolean isAdvancedFeaturesEnabled;
+    /**
      * @return Specifies if MYSQL DB System has heatwave cluster attached.
      * 
      */
@@ -145,6 +155,7 @@ public final class GetDatabaseInsightResult {
      * 
      */
     private String lifecycleDetails;
+    private String managementAgentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
@@ -217,6 +228,13 @@ public final class GetDatabaseInsightResult {
      */
     public List<GetDatabaseInsightConnectionDetail> connectionDetails() {
         return this.connectionDetails;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    public String connectorId() {
+        return this.connectorId;
     }
     /**
      * @return User credential details to connect to the database.
@@ -361,6 +379,13 @@ public final class GetDatabaseInsightResult {
         return this.id;
     }
     /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    public Boolean isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
+    }
+    /**
      * @return Specifies if MYSQL DB System has heatwave cluster attached.
      * 
      */
@@ -380,6 +405,9 @@ public final class GetDatabaseInsightResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public String managementAgentId() {
+        return this.managementAgentId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -464,6 +492,7 @@ public final class GetDatabaseInsightResult {
         private String compartmentId;
         private List<GetDatabaseInsightConnectionCredentialDetail> connectionCredentialDetails;
         private List<GetDatabaseInsightConnectionDetail> connectionDetails;
+        private String connectorId;
         private List<GetDatabaseInsightCredentialDetail> credentialDetails;
         private String databaseConnectionStatusDetails;
         private String databaseDisplayName;
@@ -486,9 +515,11 @@ public final class GetDatabaseInsightResult {
         private String exadataInsightId;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isAdvancedFeaturesEnabled;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
         private String lifecycleDetails;
+        private String managementAgentId;
         private String opsiPrivateEndpointId;
         private String parentId;
         private Integer processorCount;
@@ -505,6 +536,7 @@ public final class GetDatabaseInsightResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionCredentialDetails = defaults.connectionCredentialDetails;
     	      this.connectionDetails = defaults.connectionDetails;
+    	      this.connectorId = defaults.connectorId;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseConnectionStatusDetails = defaults.databaseConnectionStatusDetails;
     	      this.databaseDisplayName = defaults.databaseDisplayName;
@@ -527,9 +559,11 @@ public final class GetDatabaseInsightResult {
     	      this.exadataInsightId = defaults.exadataInsightId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isAdvancedFeaturesEnabled = defaults.isAdvancedFeaturesEnabled;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.managementAgentId = defaults.managementAgentId;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.parentId = defaults.parentId;
     	      this.processorCount = defaults.processorCount;
@@ -571,6 +605,14 @@ public final class GetDatabaseInsightResult {
         }
         public Builder connectionDetails(GetDatabaseInsightConnectionDetail... connectionDetails) {
             return connectionDetails(List.of(connectionDetails));
+        }
+        @CustomType.Setter
+        public Builder connectorId(String connectorId) {
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "connectorId");
+            }
+            this.connectorId = connectorId;
+            return this;
         }
         @CustomType.Setter
         public Builder credentialDetails(List<GetDatabaseInsightCredentialDetail> credentialDetails) {
@@ -752,6 +794,14 @@ public final class GetDatabaseInsightResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            if (isAdvancedFeaturesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "isAdvancedFeaturesEnabled");
+            }
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             if (isHeatWaveClusterAttached == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "isHeatWaveClusterAttached");
@@ -773,6 +823,14 @@ public final class GetDatabaseInsightResult {
               throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managementAgentId(String managementAgentId) {
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightResult", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
@@ -860,6 +918,7 @@ public final class GetDatabaseInsightResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionCredentialDetails = connectionCredentialDetails;
             _resultValue.connectionDetails = connectionDetails;
+            _resultValue.connectorId = connectorId;
             _resultValue.credentialDetails = credentialDetails;
             _resultValue.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
             _resultValue.databaseDisplayName = databaseDisplayName;
@@ -882,9 +941,11 @@ public final class GetDatabaseInsightResult {
             _resultValue.exadataInsightId = exadataInsightId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementAgentId = managementAgentId;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.parentId = parentId;
             _resultValue.processorCount = processorCount;

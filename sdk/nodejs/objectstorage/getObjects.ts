@@ -47,7 +47,7 @@ export interface GetObjectsArgs {
      */
     delimiter?: string;
     /**
-     * Object names returned by a list query must be strictly less than this parameter.
+     * Returns object names which are lexicographically strictly less than this parameter.
      */
     end?: string;
     filters?: inputs.ObjectStorage.GetObjectsFilter[];
@@ -60,11 +60,11 @@ export interface GetObjectsArgs {
      */
     prefix?: string;
     /**
-     * Object names returned by a list query must be greater or equal to this parameter.
+     * Returns object names which are lexicographically greater than or equal to this parameter.
      */
     start?: string;
     /**
-     * Object names returned by a list query must be greater than this parameter.
+     * Returns object names which are lexicographically strictly greater than this parameter.
      */
     startAfter?: string;
 }
@@ -132,7 +132,7 @@ export interface GetObjectsOutputArgs {
      */
     delimiter?: pulumi.Input<string>;
     /**
-     * Object names returned by a list query must be strictly less than this parameter.
+     * Returns object names which are lexicographically strictly less than this parameter.
      */
     end?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetObjectsFilterArgs>[]>;
@@ -145,11 +145,11 @@ export interface GetObjectsOutputArgs {
      */
     prefix?: pulumi.Input<string>;
     /**
-     * Object names returned by a list query must be greater or equal to this parameter.
+     * Returns object names which are lexicographically greater than or equal to this parameter.
      */
     start?: pulumi.Input<string>;
     /**
-     * Object names returned by a list query must be greater than this parameter.
+     * Returns object names which are lexicographically strictly greater than this parameter.
      */
     startAfter?: pulumi.Input<string>;
 }

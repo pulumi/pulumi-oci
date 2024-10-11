@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccessLevel = reportAccessLevel,
         ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
         ///         DisplayName = reportDisplayName,
+        ///         MimeType = reportMimeType,
         ///         ReportDefinitionId = testReportDefinition.Id,
         ///         State = reportState,
         ///         TimeGeneratedGreaterThanOrEqualTo = reportTimeGeneratedGreaterThanOrEqualTo,
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccessLevel = reportAccessLevel,
         ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
         ///         DisplayName = reportDisplayName,
+        ///         MimeType = reportMimeType,
         ///         ReportDefinitionId = testReportDefinition.Id,
         ///         State = reportState,
         ///         TimeGeneratedGreaterThanOrEqualTo = reportTimeGeneratedGreaterThanOrEqualTo,
@@ -114,6 +116,12 @@ namespace Pulumi.Oci.DataSafe
             get => _filters ?? (_filters = new List<Inputs.GetReportsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// An optional filter to return only resources that match the specified mime type.
+        /// </summary>
+        [Input("mimeType")]
+        public string? MimeType { get; set; }
 
         /// <summary>
         /// The ID of the report definition to filter the list of reports
@@ -190,6 +198,12 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// An optional filter to return only resources that match the specified mime type.
+        /// </summary>
+        [Input("mimeType")]
+        public Input<string>? MimeType { get; set; }
+
+        /// <summary>
         /// The ID of the report definition to filter the list of reports
         /// </summary>
         [Input("reportDefinitionId")]
@@ -249,6 +263,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Specifies the format of report to be .xls or .pdf or .json
+        /// </summary>
+        public readonly string? MimeType;
+        /// <summary>
         /// The list of report_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetReportsReportCollectionResult> ReportCollections;
@@ -281,6 +299,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            string? mimeType,
+
             ImmutableArray<Outputs.GetReportsReportCollectionResult> reportCollections,
 
             string? reportDefinitionId,
@@ -299,6 +319,7 @@ namespace Pulumi.Oci.DataSafe
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            MimeType = mimeType;
             ReportCollections = reportCollections;
             ReportDefinitionId = reportDefinitionId;
             State = state;

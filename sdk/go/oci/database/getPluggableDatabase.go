@@ -73,7 +73,8 @@ type LookupPluggableDatabaseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id string `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted bool `pulumi:"isRestricted"`
+	IsRestricted    bool   `pulumi:"isRestricted"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
@@ -187,6 +188,10 @@ func (o LookupPluggableDatabaseResultOutput) Id() pulumi.StringOutput {
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 func (o LookupPluggableDatabaseResultOutput) IsRestricted() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) bool { return v.IsRestricted }).(pulumi.BoolOutput)
+}
+
+func (o LookupPluggableDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
 // Detailed message for the lifecycle state.

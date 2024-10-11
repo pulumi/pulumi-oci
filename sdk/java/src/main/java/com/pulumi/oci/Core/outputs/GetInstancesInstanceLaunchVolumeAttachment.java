@@ -21,6 +21,11 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
     private String displayName;
     private String encryptionInTransitType;
     private Boolean isAgentAutoIscsiLoginEnabled;
+    /**
+     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * 
+     */
+    private Boolean isPvEncryptionInTransitEnabled;
     private Boolean isReadOnly;
     private Boolean isShareable;
     private List<GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail> launchCreateVolumeDetails;
@@ -48,6 +53,13 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
     }
     public Boolean isAgentAutoIscsiLoginEnabled() {
         return this.isAgentAutoIscsiLoginEnabled;
+    }
+    /**
+     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+     * 
+     */
+    public Boolean isPvEncryptionInTransitEnabled() {
+        return this.isPvEncryptionInTransitEnabled;
     }
     public Boolean isReadOnly() {
         return this.isReadOnly;
@@ -85,6 +97,7 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
         private String displayName;
         private String encryptionInTransitType;
         private Boolean isAgentAutoIscsiLoginEnabled;
+        private Boolean isPvEncryptionInTransitEnabled;
         private Boolean isReadOnly;
         private Boolean isShareable;
         private List<GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetail> launchCreateVolumeDetails;
@@ -98,6 +111,7 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
     	      this.displayName = defaults.displayName;
     	      this.encryptionInTransitType = defaults.encryptionInTransitType;
     	      this.isAgentAutoIscsiLoginEnabled = defaults.isAgentAutoIscsiLoginEnabled;
+    	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
     	      this.isShareable = defaults.isShareable;
     	      this.launchCreateVolumeDetails = defaults.launchCreateVolumeDetails;
@@ -136,6 +150,14 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
               throw new MissingRequiredPropertyException("GetInstancesInstanceLaunchVolumeAttachment", "isAgentAutoIscsiLoginEnabled");
             }
             this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceLaunchVolumeAttachment", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -195,6 +217,7 @@ public final class GetInstancesInstanceLaunchVolumeAttachment {
             _resultValue.displayName = displayName;
             _resultValue.encryptionInTransitType = encryptionInTransitType;
             _resultValue.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.isReadOnly = isReadOnly;
             _resultValue.isShareable = isShareable;
             _resultValue.launchCreateVolumeDetails = launchCreateVolumeDetails;

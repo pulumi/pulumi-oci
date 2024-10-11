@@ -33,6 +33,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    private String connectorId;
+    /**
      * @return User credential details to connect to the database.
      * 
      */
@@ -130,6 +135,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     private String id;
     /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    private Boolean isAdvancedFeaturesEnabled;
+    /**
      * @return Specifies if MYSQL DB System has heatwave cluster attached.
      * 
      */
@@ -144,6 +154,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    private String managementAgentId;
     /**
      * @return Unique Operations Insights PrivateEndpoint identifier
      * 
@@ -216,6 +227,13 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails() {
         return this.connectionDetails;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    public String connectorId() {
+        return this.connectorId;
     }
     /**
      * @return User credential details to connect to the database.
@@ -357,6 +375,13 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         return this.id;
     }
     /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    public Boolean isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
+    }
+    /**
      * @return Specifies if MYSQL DB System has heatwave cluster attached.
      * 
      */
@@ -376,6 +401,9 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public String managementAgentId() {
+        return this.managementAgentId;
     }
     /**
      * @return Unique Operations Insights PrivateEndpoint identifier
@@ -460,6 +488,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String compartmentId;
         private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
         private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
+        private String connectorId;
         private List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
         private String databaseConnectionStatusDetails;
         private String databaseDisplayName;
@@ -481,9 +510,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String exadataInsightId;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isAdvancedFeaturesEnabled;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
         private String lifecycleDetails;
+        private String managementAgentId;
         private String opsiPrivateEndpointId;
         private String parentId;
         private Integer processorCount;
@@ -500,6 +531,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionCredentialDetails = defaults.connectionCredentialDetails;
     	      this.connectionDetails = defaults.connectionDetails;
+    	      this.connectorId = defaults.connectorId;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseConnectionStatusDetails = defaults.databaseConnectionStatusDetails;
     	      this.databaseDisplayName = defaults.databaseDisplayName;
@@ -521,9 +553,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
     	      this.exadataInsightId = defaults.exadataInsightId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isAdvancedFeaturesEnabled = defaults.isAdvancedFeaturesEnabled;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.managementAgentId = defaults.managementAgentId;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.parentId = defaults.parentId;
     	      this.processorCount = defaults.processorCount;
@@ -565,6 +599,14 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         }
         public Builder connectionDetails(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail... connectionDetails) {
             return connectionDetails(List.of(connectionDetails));
+        }
+        @CustomType.Setter
+        public Builder connectorId(String connectorId) {
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "connectorId");
+            }
+            this.connectorId = connectorId;
+            return this;
         }
         @CustomType.Setter
         public Builder credentialDetails(List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails) {
@@ -738,6 +780,14 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            if (isAdvancedFeaturesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "isAdvancedFeaturesEnabled");
+            }
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             if (isHeatWaveClusterAttached == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "isHeatWaveClusterAttached");
@@ -759,6 +809,14 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managementAgentId(String managementAgentId) {
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
@@ -846,6 +904,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionCredentialDetails = connectionCredentialDetails;
             _resultValue.connectionDetails = connectionDetails;
+            _resultValue.connectorId = connectorId;
             _resultValue.credentialDetails = credentialDetails;
             _resultValue.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
             _resultValue.databaseDisplayName = databaseDisplayName;
@@ -867,9 +926,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             _resultValue.exadataInsightId = exadataInsightId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementAgentId = managementAgentId;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.parentId = parentId;
             _resultValue.processorCount = processorCount;

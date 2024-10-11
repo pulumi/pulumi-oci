@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetIpsecConnectionsConnectionTunnelConfiguration;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,7 @@ public final class GetIpsecConnectionsConnection {
      * 
      */
     private String transportType;
+    private List<GetIpsecConnectionsConnectionTunnelConfiguration> tunnelConfigurations;
 
     private GetIpsecConnectionsConnection() {}
     /**
@@ -170,6 +172,9 @@ public final class GetIpsecConnectionsConnection {
     public String transportType() {
         return this.transportType;
     }
+    public List<GetIpsecConnectionsConnectionTunnelConfiguration> tunnelConfigurations() {
+        return this.tunnelConfigurations;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -193,6 +198,7 @@ public final class GetIpsecConnectionsConnection {
         private List<String> staticRoutes;
         private String timeCreated;
         private String transportType;
+        private List<GetIpsecConnectionsConnectionTunnelConfiguration> tunnelConfigurations;
         public Builder() {}
         public Builder(GetIpsecConnectionsConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -209,6 +215,7 @@ public final class GetIpsecConnectionsConnection {
     	      this.staticRoutes = defaults.staticRoutes;
     	      this.timeCreated = defaults.timeCreated;
     	      this.transportType = defaults.transportType;
+    	      this.tunnelConfigurations = defaults.tunnelConfigurations;
         }
 
         @CustomType.Setter
@@ -318,6 +325,17 @@ public final class GetIpsecConnectionsConnection {
             this.transportType = transportType;
             return this;
         }
+        @CustomType.Setter
+        public Builder tunnelConfigurations(List<GetIpsecConnectionsConnectionTunnelConfiguration> tunnelConfigurations) {
+            if (tunnelConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionsConnection", "tunnelConfigurations");
+            }
+            this.tunnelConfigurations = tunnelConfigurations;
+            return this;
+        }
+        public Builder tunnelConfigurations(GetIpsecConnectionsConnectionTunnelConfiguration... tunnelConfigurations) {
+            return tunnelConfigurations(List.of(tunnelConfigurations));
+        }
         public GetIpsecConnectionsConnection build() {
             final var _resultValue = new GetIpsecConnectionsConnection();
             _resultValue.compartmentId = compartmentId;
@@ -333,6 +351,7 @@ public final class GetIpsecConnectionsConnection {
             _resultValue.staticRoutes = staticRoutes;
             _resultValue.timeCreated = timeCreated;
             _resultValue.transportType = transportType;
+            _resultValue.tunnelConfigurations = tunnelConfigurations;
             return _resultValue;
         }
     }

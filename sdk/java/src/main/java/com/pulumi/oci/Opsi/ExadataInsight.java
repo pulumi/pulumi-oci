@@ -62,11 +62,21 @@ import javax.annotation.Nullable;
  *                 .dbmPrivateEndpointId(testPrivateEndpoint.id())
  *                 .memberDatabaseDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs.builder()
  *                     .compartmentId(compartmentId)
+ *                     .connectionCredentialDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs.builder()
+ *                         .credentialType(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType)
+ *                         .credentialSourceName(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName)
+ *                         .passwordSecretId(testSecret.id())
+ *                         .role(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole)
+ *                         .userName(testUser.name())
+ *                         .walletSecretId(testSecret.id())
+ *                         .build())
  *                     .connectionDetails(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs.builder()
+ *                         .hostName(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName)
  *                         .hosts(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs.builder()
  *                             .hostIp(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp)
  *                             .port(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort)
  *                             .build())
+ *                         .port(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort)
  *                         .protocol(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol)
  *                         .serviceName(testService.name())
  *                         .build())
@@ -85,11 +95,13 @@ import javax.annotation.Nullable;
  *                     .deploymentType(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDeploymentType)
  *                     .entitySource(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsEntitySource)
  *                     .freeformTags(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsFreeformTags)
+ *                     .managementAgentId(testManagementAgent.id())
  *                     .opsiPrivateEndpointId(testPrivateEndpoint.id())
  *                     .serviceName(testService.name())
  *                     .systemTags(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsSystemTags)
  *                     .build())
  *                 .opsiPrivateEndpointId(testPrivateEndpoint.id())
+ *                 .vmClusterType(exadataInsightMemberVmClusterDetailsVmClusterType)
  *                 .vmclusterId(testVmcluster.id())
  *                 .build())
  *             .build());
@@ -251,9 +263,17 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
     public Output<String> exadataDisplayName() {
         return this.exadataDisplayName;
     }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
     @Export(name="exadataInfraId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfraId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
     public Output<String> exadataInfraId() {
         return this.exadataInfraId;
     }

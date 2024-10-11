@@ -31,6 +31,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     private List<String> ipv6privateCidrBlocks;
     private Boolean isIpv6enabled;
     private Boolean isOracleGuaAllocationEnabled;
+    private Map<String,String> securityAttributes;
     private String state;
     private String timeCreated;
     private String vcnDomainName;
@@ -87,6 +88,9 @@ public final class GetVirtualNetworksVirtualNetwork {
     public Boolean isOracleGuaAllocationEnabled() {
         return this.isOracleGuaAllocationEnabled;
     }
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
     public String state() {
         return this.state;
     }
@@ -123,6 +127,7 @@ public final class GetVirtualNetworksVirtualNetwork {
         private List<String> ipv6privateCidrBlocks;
         private Boolean isIpv6enabled;
         private Boolean isOracleGuaAllocationEnabled;
+        private Map<String,String> securityAttributes;
         private String state;
         private String timeCreated;
         private String vcnDomainName;
@@ -146,6 +151,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     	      this.ipv6privateCidrBlocks = defaults.ipv6privateCidrBlocks;
     	      this.isIpv6enabled = defaults.isIpv6enabled;
     	      this.isOracleGuaAllocationEnabled = defaults.isOracleGuaAllocationEnabled;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnDomainName = defaults.vcnDomainName;
@@ -303,6 +309,14 @@ public final class GetVirtualNetworksVirtualNetwork {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNetworksVirtualNetwork", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetVirtualNetworksVirtualNetwork", "state");
@@ -345,6 +359,7 @@ public final class GetVirtualNetworksVirtualNetwork {
             _resultValue.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             _resultValue.isIpv6enabled = isIpv6enabled;
             _resultValue.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vcnDomainName = vcnDomainName;

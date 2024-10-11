@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string BackupSubnetId;
         /// <summary>
+        /// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult> CloudAutomationUpdateDetails;
+        /// <summary>
         /// If provided, filters the results for the specified cloud Exadata infrastructure.
         /// </summary>
         public readonly string CloudExadataInfrastructureId;
@@ -218,6 +222,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string backupSubnetId,
 
+            ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult> cloudAutomationUpdateDetails,
+
             string cloudExadataInfrastructureId,
 
             string clusterName,
@@ -317,6 +323,7 @@ namespace Pulumi.Oci.Database.Outputs
             AvailabilityDomain = availabilityDomain;
             BackupNetworkNsgIds = backupNetworkNsgIds;
             BackupSubnetId = backupSubnetId;
+            CloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
             ClusterName = clusterName;
             CompartmentId = compartmentId;

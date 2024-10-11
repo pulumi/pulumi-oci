@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsAgentAutoIscsiLoginEnabled;
         /// <summary>
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+        /// </summary>
+        public readonly bool? IsPvEncryptionInTransitEnabled;
+        /// <summary>
         /// Whether the attachment was created in read-only mode.
         /// </summary>
         public readonly bool? IsReadOnly;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? isAgentAutoIscsiLoginEnabled,
 
+            bool? isPvEncryptionInTransitEnabled,
+
             bool? isReadOnly,
 
             bool? isShareable,
@@ -80,6 +86,7 @@ namespace Pulumi.Oci.Core.Outputs
             DisplayName = displayName;
             EncryptionInTransitType = encryptionInTransitType;
             IsAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             IsReadOnly = isReadOnly;
             IsShareable = isShareable;
             LaunchCreateVolumeDetails = launchCreateVolumeDetails;

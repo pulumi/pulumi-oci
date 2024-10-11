@@ -91,7 +91,7 @@ type LookupDatabaseResult struct {
 	Id string `pulumi:"id"`
 	// True if the database is a container database.
 	IsCdb bool `pulumi:"isCdb"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
@@ -99,7 +99,7 @@ type LookupDatabaseResult struct {
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyMigration bool   `pulumi:"kmsKeyMigration"`
 	KmsKeyRotation  int    `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds int `pulumi:"lastBackupDurationInSeconds"`
@@ -122,7 +122,7 @@ type LookupDatabaseResult struct {
 	State string `pulumi:"state"`
 	// The date and time the database was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId string `pulumi:"vaultId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 	VmClusterId string `pulumi:"vmClusterId"`
@@ -259,7 +259,7 @@ func (o LookupDatabaseResultOutput) IsCdb() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) bool { return v.IsCdb }).(pulumi.BoolOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 func (o LookupDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
 }
@@ -282,7 +282,7 @@ func (o LookupDatabaseResultOutput) KmsKeyRotation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) int { return v.KmsKeyRotation }).(pulumi.IntOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 func (o LookupDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -341,7 +341,7 @@ func (o LookupDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o LookupDatabaseResultOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
 }

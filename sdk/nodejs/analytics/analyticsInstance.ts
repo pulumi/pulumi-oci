@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *             whitelistedIps: analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsWhitelistedIps,
  *         }],
  *     },
+ *     updateChannel: analyticsInstanceUpdateChannel,
  * });
  * ```
  *
@@ -175,6 +176,10 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * (Updatable) Analytics instance update channel.
+     */
+    public readonly updateChannel!: pulumi.Output<string>;
 
     /**
      * Create a AnalyticsInstance resource with the given unique name, arguments, and options.
@@ -209,6 +214,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["updateChannel"] = state ? state.updateChannel : undefined;
         } else {
             const args = argsOrState as AnalyticsInstanceArgs | undefined;
             if ((!args || args.capacity === undefined) && !opts.urn) {
@@ -239,6 +245,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["updateChannel"] = args ? args.updateChannel : undefined;
             resourceInputs["serviceUrl"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -339,6 +346,10 @@ export interface AnalyticsInstanceState {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * (Updatable) Analytics instance update channel.
+     */
+    updateChannel?: pulumi.Input<string>;
 }
 
 /**
@@ -413,4 +424,8 @@ export interface AnalyticsInstanceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) Analytics instance update channel.
+     */
+    updateChannel?: pulumi.Input<string>;
 }

@@ -165,9 +165,17 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolNetworkConfigurationResult> NetworkConfigurations;
         /// <summary>
-        /// A list of network security groups for the desktop pool.
+        /// A list of network security groups for the private access.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The details of the desktop's private access network connectivity that were used to create the pool.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolPrivateAccessDetailResult> PrivateAccessDetails;
+        /// <summary>
+        /// The shape configuration used for each desktop compute instance in the desktop pool.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolShapeConfigResult> ShapeConfigs;
         /// <summary>
         /// The shape of the desktop pool.
         /// </summary>
@@ -200,6 +208,10 @@ namespace Pulumi.Oci.Desktops
         /// The stop time of the desktop pool.
         /// </summary>
         public readonly string TimeStopScheduled;
+        /// <summary>
+        /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+        /// </summary>
+        public readonly string UseDedicatedVmHost;
 
         [OutputConstructor]
         private GetDesktopPoolResult(
@@ -239,6 +251,10 @@ namespace Pulumi.Oci.Desktops
 
             ImmutableArray<string> nsgIds,
 
+            ImmutableArray<Outputs.GetDesktopPoolPrivateAccessDetailResult> privateAccessDetails,
+
+            ImmutableArray<Outputs.GetDesktopPoolShapeConfigResult> shapeConfigs,
+
             string shapeName,
 
             int standbySize,
@@ -253,7 +269,9 @@ namespace Pulumi.Oci.Desktops
 
             string timeStartScheduled,
 
-            string timeStopScheduled)
+            string timeStopScheduled,
+
+            string useDedicatedVmHost)
         {
             ActiveDesktops = activeDesktops;
             ArePrivilegedUsers = arePrivilegedUsers;
@@ -273,6 +291,8 @@ namespace Pulumi.Oci.Desktops
             MaximumSize = maximumSize;
             NetworkConfigurations = networkConfigurations;
             NsgIds = nsgIds;
+            PrivateAccessDetails = privateAccessDetails;
+            ShapeConfigs = shapeConfigs;
             ShapeName = shapeName;
             StandbySize = standbySize;
             State = state;
@@ -281,6 +301,7 @@ namespace Pulumi.Oci.Desktops
             TimeCreated = timeCreated;
             TimeStartScheduled = timeStartScheduled;
             TimeStopScheduled = timeStopScheduled;
+            UseDedicatedVmHost = useDedicatedVmHost;
         }
     }
 }

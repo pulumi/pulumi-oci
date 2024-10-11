@@ -32,6 +32,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         public readonly string PrivateIp;
+        /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly bool SkipSourceDestCheck;
         public readonly string SubnetId;
         public readonly string VlanId;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string privateIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             bool skipSourceDestCheck,
 
             string subnetId,
@@ -74,6 +80,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetId = subnetId;
             VlanId = vlanId;

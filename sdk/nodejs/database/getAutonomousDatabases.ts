@@ -7,9 +7,45 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+ * ## 
  *
- * Gets the details of the specified Autonomous Database.
+ * ***
+ * ## subcategory: "Database"
+ *
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
+ * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of Autonomous Databases based on the query parameters specified.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ *     compartmentId: compartmentId,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     dbVersion: autonomousDatabaseDbVersion,
+ *     dbWorkload: autonomousDatabaseDbWorkload,
+ *     displayName: autonomousDatabaseDisplayName,
+ *     infrastructureType: autonomousDatabaseInfrastructureType,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
+ *     isFreeTier: autonomousDatabaseIsFreeTier,
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
+ *     resourcePoolLeaderId: testResourcePoolLeader.id,
+ *     state: autonomousDatabaseState,
+ * });
+ * ```
  */
 export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -25,6 +61,7 @@ export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: 
         "isFreeTier": args.isFreeTier,
         "isRefreshableClone": args.isRefreshableClone,
         "isResourcePoolLeader": args.isResourcePoolLeader,
+        "lifecycleStateNotEqualTo": args.lifecycleStateNotEqualTo,
         "resourcePoolLeaderId": args.resourcePoolLeaderId,
         "state": args.state,
     }, opts);
@@ -76,6 +113,7 @@ export interface GetAutonomousDatabasesArgs {
      */
     isRefreshableClone?: boolean;
     isResourcePoolLeader?: boolean;
+    lifecycleStateNotEqualTo?: string;
     /**
      * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -137,6 +175,7 @@ export interface GetAutonomousDatabasesResult {
      */
     readonly isRefreshableClone?: boolean;
     readonly isResourcePoolLeader?: boolean;
+    readonly lifecycleStateNotEqualTo?: string;
     /**
      * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -147,9 +186,45 @@ export interface GetAutonomousDatabasesResult {
     readonly state?: string;
 }
 /**
- * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+ * ## 
  *
- * Gets the details of the specified Autonomous Database.
+ * ***
+ * ## subcategory: "Database"
+ *
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
+ * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of Autonomous Databases based on the query parameters specified.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ *     compartmentId: compartmentId,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     dbVersion: autonomousDatabaseDbVersion,
+ *     dbWorkload: autonomousDatabaseDbWorkload,
+ *     displayName: autonomousDatabaseDisplayName,
+ *     infrastructureType: autonomousDatabaseInfrastructureType,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
+ *     isFreeTier: autonomousDatabaseIsFreeTier,
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
+ *     resourcePoolLeaderId: testResourcePoolLeader.id,
+ *     state: autonomousDatabaseState,
+ * });
+ * ```
  */
 export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -165,6 +240,7 @@ export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputA
         "isFreeTier": args.isFreeTier,
         "isRefreshableClone": args.isRefreshableClone,
         "isResourcePoolLeader": args.isResourcePoolLeader,
+        "lifecycleStateNotEqualTo": args.lifecycleStateNotEqualTo,
         "resourcePoolLeaderId": args.resourcePoolLeaderId,
         "state": args.state,
     }, opts);
@@ -216,6 +292,7 @@ export interface GetAutonomousDatabasesOutputArgs {
      */
     isRefreshableClone?: pulumi.Input<boolean>;
     isResourcePoolLeader?: pulumi.Input<boolean>;
+    lifecycleStateNotEqualTo?: pulumi.Input<string>;
     /**
      * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

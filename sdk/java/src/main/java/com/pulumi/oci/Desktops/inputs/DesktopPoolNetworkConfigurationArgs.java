@@ -15,14 +15,14 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
     public static final DesktopPoolNetworkConfigurationArgs Empty = new DesktopPoolNetworkConfigurationArgs();
 
     /**
-     * The OCID of the subnet to use for the desktop pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet to use for the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     public Output<String> subnetId() {
@@ -30,14 +30,14 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
     }
 
     /**
-     * The OCID of the VCN used by the desktop pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
      * 
      */
     @Import(name="vcnId", required=true)
     private Output<String> vcnId;
 
     /**
-     * @return The OCID of the VCN used by the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
      * 
      */
     public Output<String> vcnId() {
@@ -70,7 +70,7 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subnetId The OCID of the subnet to use for the desktop pool.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subnetId The OCID of the subnet to use for the desktop pool.
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param vcnId The OCID of the VCN used by the desktop pool.
+         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class DesktopPoolNetworkConfigurationArgs extends com.pulumi.resour
         }
 
         /**
-         * @param vcnId The OCID of the VCN used by the desktop pool.
+         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
          * 
          * @return builder
          * 

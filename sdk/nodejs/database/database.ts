@@ -118,7 +118,7 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly isCdb!: pulumi.Output<boolean>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     public readonly keyStoreId!: pulumi.Output<string>;
     /**
@@ -140,7 +140,7 @@ export class Database extends pulumi.CustomResource {
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public readonly kmsKeyVersionId!: pulumi.Output<string>;
+    public readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The duration when the latest database backup created.
      */
@@ -190,7 +190,7 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
@@ -371,7 +371,7 @@ export interface DatabaseState {
      */
     isCdb?: pulumi.Input<boolean>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     keyStoreId?: pulumi.Input<string>;
     /**
@@ -443,7 +443,7 @@ export interface DatabaseState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     vaultId?: pulumi.Input<string>;
     /**
@@ -473,7 +473,7 @@ export interface DatabaseArgs {
      */
     dbVersion?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     keyStoreId?: pulumi.Input<string>;
     /**
@@ -501,7 +501,7 @@ export interface DatabaseArgs {
      */
     source: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     vaultId?: pulumi.Input<string>;
 }

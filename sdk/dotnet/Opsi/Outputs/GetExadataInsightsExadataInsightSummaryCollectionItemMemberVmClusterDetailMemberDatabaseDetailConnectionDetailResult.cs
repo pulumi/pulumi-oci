@@ -13,19 +13,27 @@ namespace Pulumi.Oci.Opsi.Outputs
     [OutputType]
     public sealed class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult
     {
+        public readonly string HostName;
         public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult> Hosts;
+        public readonly int Port;
         public readonly string Protocol;
         public readonly string ServiceName;
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult(
+            string hostName,
+
             ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult> hosts,
+
+            int port,
 
             string protocol,
 
             string serviceName)
         {
+            HostName = hostName;
             Hosts = hosts;
+            Port = port;
             Protocol = protocol;
             ServiceName = serviceName;
         }

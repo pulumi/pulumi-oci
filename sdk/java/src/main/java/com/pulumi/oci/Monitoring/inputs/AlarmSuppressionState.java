@@ -6,7 +6,9 @@ package com.pulumi.oci.Monitoring.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionAlarmSuppressionTargetArgs;
+import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionSuppressionConditionArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -88,7 +90,7 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
      * 
-     * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
+     * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
      * 
      */
     @Import(name="dimensions")
@@ -97,7 +99,7 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
     /**
      * @return A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
      * 
-     * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
+     * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
      * 
      */
     public Optional<Output<Map<String,String>>> dimensions() {
@@ -135,6 +137,25 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     * Defaut: `DIMENSION`
+     * 
+     */
+    @Import(name="level")
+    private @Nullable Output<String> level;
+
+    /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     * Defaut: `DIMENSION`
+     * 
+     */
+    public Optional<Output<String>> level() {
+        return Optional.ofNullable(this.level);
+    }
+
+    /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      * 
      */
@@ -147,6 +168,21 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+     * 
+     */
+    @Import(name="suppressionConditions")
+    private @Nullable Output<List<AlarmSuppressionSuppressionConditionArgs>> suppressionConditions;
+
+    /**
+     * @return Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+     * 
+     */
+    public Optional<Output<List<AlarmSuppressionSuppressionConditionArgs>>> suppressionConditions() {
+        return Optional.ofNullable(this.suppressionConditions);
     }
 
     /**
@@ -225,7 +261,9 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
         this.dimensions = $.dimensions;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.level = $.level;
         this.state = $.state;
+        this.suppressionConditions = $.suppressionConditions;
         this.timeCreated = $.timeCreated;
         this.timeSuppressFrom = $.timeSuppressFrom;
         this.timeSuppressUntil = $.timeSuppressUntil;
@@ -345,7 +383,7 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
         /**
          * @param dimensions A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
          * 
-         * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
+         * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
          * 
          * @return builder
          * 
@@ -358,7 +396,7 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
         /**
          * @param dimensions A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
          * 
-         * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
+         * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
          * 
          * @return builder
          * 
@@ -410,6 +448,31 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param level The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+         * 
+         * Defaut: `DIMENSION`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder level(@Nullable Output<String> level) {
+            $.level = level;
+            return this;
+        }
+
+        /**
+         * @param level The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+         * 
+         * Defaut: `DIMENSION`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder level(String level) {
+            return level(Output.of(level));
+        }
+
+        /**
          * @param state The current lifecycle state of the alarm suppression.  Example: `DELETED`
          * 
          * @return builder
@@ -428,6 +491,37 @@ public final class AlarmSuppressionState extends com.pulumi.resources.ResourceAr
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param suppressionConditions Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suppressionConditions(@Nullable Output<List<AlarmSuppressionSuppressionConditionArgs>> suppressionConditions) {
+            $.suppressionConditions = suppressionConditions;
+            return this;
+        }
+
+        /**
+         * @param suppressionConditions Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suppressionConditions(List<AlarmSuppressionSuppressionConditionArgs> suppressionConditions) {
+            return suppressionConditions(Output.of(suppressionConditions));
+        }
+
+        /**
+         * @param suppressionConditions Array of all preconditions for alarm suppression. Example: `[{ conditionType: &#34;RECURRENCE&#34;, suppressionRecurrence: &#34;FRQ=DAILY;BYHOUR=10&#34;, suppressionDuration: &#34;PT1H&#34; }]`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder suppressionConditions(AlarmSuppressionSuppressionConditionArgs... suppressionConditions) {
+            return suppressionConditions(List.of(suppressionConditions));
         }
 
         /**

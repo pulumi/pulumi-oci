@@ -66,6 +66,7 @@ namespace Pulumi.Oci.Database
     ///             },
     ///             PatchingMode = cloudAutonomousVmClusterMaintenanceWindowDetailsPatchingMode,
     ///             Preference = cloudAutonomousVmClusterMaintenanceWindowDetailsPreference,
+    ///             SkipRus = cloudAutonomousVmClusterMaintenanceWindowDetailsSkipRu,
     ///             WeeksOfMonths = cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
     ///         },
     ///         MemoryPerOracleComputeUnitInGbs = cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs,

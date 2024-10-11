@@ -23,9 +23,6 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * DatabaseInsights can be imported using the `id`, e.g.
@@ -52,32 +49,46 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Export(name="connectionCredentialDetails", refs={DatabaseInsightConnectionCredentialDetails.class}, tree="[0]")
     private Output<DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Output<DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails() {
         return this.connectionCredentialDetails;
     }
     /**
-     * Connection details of the private endpoints.
+     * Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
     @Export(name="connectionDetails", refs={DatabaseInsightConnectionDetails.class}, tree="[0]")
     private Output<DatabaseInsightConnectionDetails> connectionDetails;
 
     /**
-     * @return Connection details of the private endpoints.
+     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
     public Output<DatabaseInsightConnectionDetails> connectionDetails() {
         return this.connectionDetails;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    @Export(name="connectorId", refs={String.class}, tree="[0]")
+    private Output<String> connectorId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    public Output<String> connectorId() {
+        return this.connectorId;
     }
     /**
      * User credential details to connect to the database.
@@ -220,14 +231,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * Database Deployment Type
+     * Database Deployment Type (EXACS will be supported in the future)
      * 
      */
     @Export(name="deploymentType", refs={String.class}, tree="[0]")
     private Output<String> deploymentType;
 
     /**
-     * @return Database Deployment Type
+     * @return Database Deployment Type (EXACS will be supported in the future)
      * 
      */
     public Output<String> deploymentType() {
@@ -360,6 +371,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    @Export(name="isAdvancedFeaturesEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAdvancedFeaturesEnabled;
+
+    /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    public Output<Boolean> isAdvancedFeaturesEnabled() {
+        return this.isAdvancedFeaturesEnabled;
+    }
+    /**
      * Specifies if MYSQL DB System has heatwave cluster attached.
      * 
      */
@@ -400,6 +425,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * 
+     */
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> managementAgentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * 
+     */
+    public Output<Optional<String>> managementAgentId() {
+        return Codegen.optional(this.managementAgentId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint

@@ -63,6 +63,36 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
     }
 
     /**
+     * Type of DNS.
+     * 
+     */
+    @Import(name="dnsType")
+    private @Nullable Output<String> dnsType;
+
+    /**
+     * @return Type of DNS.
+     * 
+     */
+    public Optional<Output<String>> dnsType() {
+        return Optional.ofNullable(this.dnsType);
+    }
+
+    /**
+     * DNS Zone name
+     * 
+     */
+    @Import(name="dnsZoneName", required=true)
+    private Output<String> dnsZoneName;
+
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    public Output<String> dnsZoneName() {
+        return this.dnsZoneName;
+    }
+
+    /**
      * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
@@ -77,13 +107,31 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
         return this.hostname;
     }
 
+    /**
+     * Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    @Import(name="managedType")
+    private @Nullable Output<String> managedType;
+
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    public Optional<Output<String>> managedType() {
+        return Optional.ofNullable(this.managedType);
+    }
+
     private IntegrationInstanceCustomEndpointArgs() {}
 
     private IntegrationInstanceCustomEndpointArgs(IntegrationInstanceCustomEndpointArgs $) {
         this.alias = $.alias;
         this.certificateSecretId = $.certificateSecretId;
         this.certificateSecretVersion = $.certificateSecretVersion;
+        this.dnsType = $.dnsType;
+        this.dnsZoneName = $.dnsZoneName;
         this.hostname = $.hostname;
+        this.managedType = $.managedType;
     }
 
     public static Builder builder() {
@@ -168,6 +216,48 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
         }
 
         /**
+         * @param dnsType Type of DNS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsType(@Nullable Output<String> dnsType) {
+            $.dnsType = dnsType;
+            return this;
+        }
+
+        /**
+         * @param dnsType Type of DNS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsType(String dnsType) {
+            return dnsType(Output.of(dnsType));
+        }
+
+        /**
+         * @param dnsZoneName DNS Zone name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsZoneName(Output<String> dnsZoneName) {
+            $.dnsZoneName = dnsZoneName;
+            return this;
+        }
+
+        /**
+         * @param dnsZoneName DNS Zone name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsZoneName(String dnsZoneName) {
+            return dnsZoneName(Output.of(dnsZoneName));
+        }
+
+        /**
          * @param hostname (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          * 
          * @return builder
@@ -188,7 +278,31 @@ public final class IntegrationInstanceCustomEndpointArgs extends com.pulumi.reso
             return hostname(Output.of(hostname));
         }
 
+        /**
+         * @param managedType Indicates if custom endpoint is managed by oracle or customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedType(@Nullable Output<String> managedType) {
+            $.managedType = managedType;
+            return this;
+        }
+
+        /**
+         * @param managedType Indicates if custom endpoint is managed by oracle or customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedType(String managedType) {
+            return managedType(Output.of(managedType));
+        }
+
         public IntegrationInstanceCustomEndpointArgs build() {
+            if ($.dnsZoneName == null) {
+                throw new MissingRequiredPropertyException("IntegrationInstanceCustomEndpointArgs", "dnsZoneName");
+            }
             if ($.hostname == null) {
                 throw new MissingRequiredPropertyException("IntegrationInstanceCustomEndpointArgs", "hostname");
             }

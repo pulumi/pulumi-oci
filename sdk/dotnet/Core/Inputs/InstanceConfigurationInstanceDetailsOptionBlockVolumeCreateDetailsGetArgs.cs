@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        /// (Updatable) The OCID of the compartment that contains the volume.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -107,6 +107,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("vpusPerGb")]
         public Input<string>? VpusPerGb { get; set; }

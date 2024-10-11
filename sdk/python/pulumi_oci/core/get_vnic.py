@@ -26,7 +26,7 @@ class GetVnicResult:
     """
     A collection of values returned by getVnic.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ipv6addresses=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname_label=None, id=None, ipv6addresses=None, is_primary=None, mac_address=None, nsg_ids=None, private_ip_address=None, public_ip_address=None, security_attributes=None, skip_source_dest_check=None, state=None, subnet_id=None, time_created=None, vlan_id=None, vnic_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -66,6 +66,9 @@ class GetVnicResult:
         if public_ip_address and not isinstance(public_ip_address, str):
             raise TypeError("Expected argument 'public_ip_address' to be a str")
         pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check and not isinstance(skip_source_dest_check, bool):
             raise TypeError("Expected argument 'skip_source_dest_check' to be a bool")
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
@@ -190,6 +193,14 @@ class GetVnicResult:
         return pulumi.get(self, "public_ip_address")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> bool:
         """
@@ -254,6 +265,7 @@ class AwaitableGetVnicResult(GetVnicResult):
             nsg_ids=self.nsg_ids,
             private_ip_address=self.private_ip_address,
             public_ip_address=self.public_ip_address,
+            security_attributes=self.security_attributes,
             skip_source_dest_check=self.skip_source_dest_check,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -303,6 +315,7 @@ def get_vnic(vnic_id: Optional[str] = None,
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         public_ip_address=pulumi.get(__ret__, 'public_ip_address'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         skip_source_dest_check=pulumi.get(__ret__, 'skip_source_dest_check'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -349,6 +362,7 @@ def get_vnic_output(vnic_id: Optional[pulumi.Input[str]] = None,
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         public_ip_address=pulumi.get(__response__, 'public_ip_address'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         skip_source_dest_check=pulumi.get(__response__, 'skip_source_dest_check'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

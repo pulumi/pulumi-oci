@@ -26,9 +26,21 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly int? CertificateSecretVersion;
         /// <summary>
+        /// Type of DNS.
+        /// </summary>
+        public readonly string? DnsType;
+        /// <summary>
+        /// DNS Zone name
+        /// </summary>
+        public readonly string DnsZoneName;
+        /// <summary>
         /// (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
         /// </summary>
         public readonly string Hostname;
+        /// <summary>
+        /// Indicates if custom endpoint is managed by oracle or customer.
+        /// </summary>
+        public readonly string? ManagedType;
 
         [OutputConstructor]
         private IntegrationInstanceCustomEndpoint(
@@ -38,12 +50,21 @@ namespace Pulumi.Oci.Integration.Outputs
 
             int? certificateSecretVersion,
 
-            string hostname)
+            string? dnsType,
+
+            string dnsZoneName,
+
+            string hostname,
+
+            string? managedType)
         {
             Alias = alias;
             CertificateSecretId = certificateSecretId;
             CertificateSecretVersion = certificateSecretVersion;
+            DnsType = dnsType;
+            DnsZoneName = dnsZoneName;
             Hostname = hostname;
+            ManagedType = managedType;
         }
     }
 }

@@ -11,6 +11,7 @@ import com.pulumi.oci.FusionApps.FusionEnvironmentRefreshActivityArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRefreshActivityState;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -23,37 +24,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.FusionApps.FusionEnvironmentRefreshActivity;
- * import com.pulumi.oci.FusionApps.FusionEnvironmentRefreshActivityArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentRefreshActivity = new FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", FusionEnvironmentRefreshActivityArgs.builder()
- *             .fusionEnvironmentId(testFusionEnvironment.id())
- *             .sourceFusionEnvironmentId(testFusionEnvironment.id())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -94,6 +64,20 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      */
     public Output<String> fusionEnvironmentId() {
         return this.fusionEnvironmentId;
+    }
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    @Export(name="isDataMaskingOpted", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDataMaskingOpted;
+
+    /**
+     * @return Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    public Output<Boolean> isDataMaskingOpted() {
+        return this.isDataMaskingOpted;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -146,18 +130,12 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="sourceFusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> sourceFusionEnvironmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceFusionEnvironmentId() {

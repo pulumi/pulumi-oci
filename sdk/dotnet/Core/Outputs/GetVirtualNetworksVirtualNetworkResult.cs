@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<string> Ipv6privateCidrBlocks;
         public readonly bool IsIpv6enabled;
         public readonly bool IsOracleGuaAllocationEnabled;
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly string State;
         public readonly string TimeCreated;
         public readonly string VcnDomainName;
@@ -70,6 +71,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isOracleGuaAllocationEnabled,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string timeCreated,
@@ -93,6 +96,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             IsIpv6enabled = isIpv6enabled;
             IsOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            SecurityAttributes = securityAttributes;
             State = state;
             TimeCreated = timeCreated;
             VcnDomainName = vcnDomainName;

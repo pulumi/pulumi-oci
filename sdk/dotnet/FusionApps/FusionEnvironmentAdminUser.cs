@@ -30,8 +30,8 @@ namespace Pulumi.Oci.FusionApps
     ///         FirstName = fusionEnvironmentAdminUserFirstName,
     ///         FusionEnvironmentId = testFusionEnvironment.Id,
     ///         LastName = fusionEnvironmentAdminUserLastName,
-    ///         Password = fusionEnvironmentAdminUserPassword,
     ///         Username = fusionEnvironmentAdminUserUsername,
+    ///         Password = fusionEnvironmentAdminUserPassword,
     ///     });
     /// 
     /// });
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.FusionApps
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
 
-        [Input("password", required: true)]
+        [Input("password")]
         private Input<string>? _password;
 
         /// <summary>

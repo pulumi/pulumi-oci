@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -20,7 +21,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
      * @return Credential type.
      * 
      */
-    private @Nullable String credentialType;
+    private String credentialType;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
@@ -36,11 +37,6 @@ public final class DatabaseInsightConnectionCredentialDetails {
      * 
      */
     private @Nullable String userName;
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-     * 
-     */
-    private @Nullable String walletSecretId;
 
     private DatabaseInsightConnectionCredentialDetails() {}
     /**
@@ -54,8 +50,8 @@ public final class DatabaseInsightConnectionCredentialDetails {
      * @return Credential type.
      * 
      */
-    public Optional<String> credentialType() {
-        return Optional.ofNullable(this.credentialType);
+    public String credentialType() {
+        return this.credentialType;
     }
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
@@ -78,13 +74,6 @@ public final class DatabaseInsightConnectionCredentialDetails {
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-     * 
-     */
-    public Optional<String> walletSecretId() {
-        return Optional.ofNullable(this.walletSecretId);
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -96,11 +85,10 @@ public final class DatabaseInsightConnectionCredentialDetails {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String credentialSourceName;
-        private @Nullable String credentialType;
+        private String credentialType;
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
-        private @Nullable String walletSecretId;
         public Builder() {}
         public Builder(DatabaseInsightConnectionCredentialDetails defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,7 +97,6 @@ public final class DatabaseInsightConnectionCredentialDetails {
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
-    	      this.walletSecretId = defaults.walletSecretId;
         }
 
         @CustomType.Setter
@@ -119,8 +106,10 @@ public final class DatabaseInsightConnectionCredentialDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder credentialType(@Nullable String credentialType) {
-
+        public Builder credentialType(String credentialType) {
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("DatabaseInsightConnectionCredentialDetails", "credentialType");
+            }
             this.credentialType = credentialType;
             return this;
         }
@@ -142,12 +131,6 @@ public final class DatabaseInsightConnectionCredentialDetails {
             this.userName = userName;
             return this;
         }
-        @CustomType.Setter
-        public Builder walletSecretId(@Nullable String walletSecretId) {
-
-            this.walletSecretId = walletSecretId;
-            return this;
-        }
         public DatabaseInsightConnectionCredentialDetails build() {
             final var _resultValue = new DatabaseInsightConnectionCredentialDetails();
             _resultValue.credentialSourceName = credentialSourceName;
@@ -155,7 +138,6 @@ public final class DatabaseInsightConnectionCredentialDetails {
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;
-            _resultValue.walletSecretId = walletSecretId;
             return _resultValue;
         }
     }

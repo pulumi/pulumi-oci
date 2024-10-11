@@ -814,6 +814,8 @@ class ListenerConnectionConfiguration(dict):
         suggest = None
         if key == "idleTimeoutInSeconds":
             suggest = "idle_timeout_in_seconds"
+        elif key == "backendTcpProxyProtocolOptions":
+            suggest = "backend_tcp_proxy_protocol_options"
         elif key == "backendTcpProxyProtocolVersion":
             suggest = "backend_tcp_proxy_protocol_version"
 
@@ -830,6 +832,7 @@ class ListenerConnectionConfiguration(dict):
 
     def __init__(__self__, *,
                  idle_timeout_in_seconds: str,
+                 backend_tcp_proxy_protocol_options: Optional[Sequence[str]] = None,
                  backend_tcp_proxy_protocol_version: Optional[int] = None):
         """
         :param str idle_timeout_in_seconds: (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
@@ -837,9 +840,12 @@ class ListenerConnectionConfiguration(dict):
                For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
                
                Example: `1200`
+        :param Sequence[str] backend_tcp_proxy_protocol_options: (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
         :param int backend_tcp_proxy_protocol_version: (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         """
         pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+        if backend_tcp_proxy_protocol_options is not None:
+            pulumi.set(__self__, "backend_tcp_proxy_protocol_options", backend_tcp_proxy_protocol_options)
         if backend_tcp_proxy_protocol_version is not None:
             pulumi.set(__self__, "backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
 
@@ -854,6 +860,14 @@ class ListenerConnectionConfiguration(dict):
         Example: `1200`
         """
         return pulumi.get(self, "idle_timeout_in_seconds")
+
+    @property
+    @pulumi.getter(name="backendTcpProxyProtocolOptions")
+    def backend_tcp_proxy_protocol_options(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+        """
+        return pulumi.get(self, "backend_tcp_proxy_protocol_options")
 
     @property
     @pulumi.getter(name="backendTcpProxyProtocolVersion")
@@ -4006,7 +4020,7 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
                  minimum_bandwidth_in_mbps: int):
         """
         :param int maximum_bandwidth_in_mbps: Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
-        :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+        :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
         """
         pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
         pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
@@ -4023,7 +4037,7 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
     @pulumi.getter(name="minimumBandwidthInMbps")
     def minimum_bandwidth_in_mbps(self) -> int:
         """
-        Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
+        Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
         """
         return pulumi.get(self, "minimum_bandwidth_in_mbps")
 

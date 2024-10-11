@@ -27,10 +27,13 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if cloud_automation_update_details and not isinstance(cloud_automation_update_details, list):
+            raise TypeError("Expected argument 'cloud_automation_update_details' to be a list")
+        pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -132,6 +135,14 @@ class GetVmClusterResult:
         The name of the availability domain that the VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Sequence['outputs.GetVmClusterCloudAutomationUpdateDetailResult']:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -377,6 +388,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             yield self
         return GetVmClusterResult(
             availability_domain=self.availability_domain,
+            cloud_automation_update_details=self.cloud_automation_update_details,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             cpus_enabled=self.cpus_enabled,
@@ -436,6 +448,7 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
 
     return AwaitableGetVmClusterResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cloud_automation_update_details=pulumi.get(__ret__, 'cloud_automation_update_details'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
@@ -492,6 +505,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmCluster:getVmCluster', __args__, opts=opts, typ=GetVmClusterResult)
     return __ret__.apply(lambda __response__: GetVmClusterResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
+        cloud_automation_update_details=pulumi.get(__response__, 'cloud_automation_update_details'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         cpus_enabled=pulumi.get(__response__, 'cpus_enabled'),

@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string? OpsiPrivateEndpointId;
         /// <summary>
+        /// Exadata VMCluster type
+        /// </summary>
+        public readonly string? VmClusterType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         /// </summary>
         public readonly string? VmclusterId;
@@ -44,12 +48,15 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string? opsiPrivateEndpointId,
 
+            string? vmClusterType,
+
             string? vmclusterId)
         {
             CompartmentId = compartmentId;
             DbmPrivateEndpointId = dbmPrivateEndpointId;
             MemberDatabaseDetails = memberDatabaseDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
+            VmClusterType = vmClusterType;
             VmclusterId = vmclusterId;
         }
     }

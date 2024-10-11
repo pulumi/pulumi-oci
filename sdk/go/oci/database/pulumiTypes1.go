@@ -13,6 +13,2732 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetExadbVmClusterUpdateHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExadbVmClusterUpdateHistoryEntriesFilterInput is an input type that accepts GetExadbVmClusterUpdateHistoryEntriesFilterArgs and GetExadbVmClusterUpdateHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdateHistoryEntriesFilterInput` via:
+//
+//	GetExadbVmClusterUpdateHistoryEntriesFilterArgs{...}
+type GetExadbVmClusterUpdateHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdateHistoryEntriesFilterOutput() GetExadbVmClusterUpdateHistoryEntriesFilterOutput
+	ToGetExadbVmClusterUpdateHistoryEntriesFilterOutputWithContext(context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterOutput
+}
+
+type GetExadbVmClusterUpdateHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExadbVmClusterUpdateHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdateHistoryEntriesFilterArgs) ToGetExadbVmClusterUpdateHistoryEntriesFilterOutput() GetExadbVmClusterUpdateHistoryEntriesFilterOutput {
+	return i.ToGetExadbVmClusterUpdateHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdateHistoryEntriesFilterArgs) ToGetExadbVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdateHistoryEntriesFilterOutput)
+}
+
+// GetExadbVmClusterUpdateHistoryEntriesFilterArrayInput is an input type that accepts GetExadbVmClusterUpdateHistoryEntriesFilterArray and GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdateHistoryEntriesFilterArrayInput` via:
+//
+//	GetExadbVmClusterUpdateHistoryEntriesFilterArray{ GetExadbVmClusterUpdateHistoryEntriesFilterArgs{...} }
+type GetExadbVmClusterUpdateHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput() GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput
+	ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput
+}
+
+type GetExadbVmClusterUpdateHistoryEntriesFilterArray []GetExadbVmClusterUpdateHistoryEntriesFilterInput
+
+func (GetExadbVmClusterUpdateHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdateHistoryEntriesFilterArray) ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput() GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return i.ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdateHistoryEntriesFilterArray) ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput)
+}
+
+type GetExadbVmClusterUpdateHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdateHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterOutput) ToGetExadbVmClusterUpdateHistoryEntriesFilterOutput() GetExadbVmClusterUpdateHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterOutput) ToGetExadbVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdateHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdateHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdateHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput() GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetExadbVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterUpdateHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterUpdateHistoryEntriesFilter {
+		return vs[0].([]GetExadbVmClusterUpdateHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetExadbVmClusterUpdateHistoryEntriesFilterOutput)
+}
+
+type GetExadbVmClusterUpdatesExadbVmClusterUpdate struct {
+	// The possible actions performed by the update operation on the infrastructure components.
+	AvailableActions []string `pulumi:"availableActions"`
+	// Details of the maintenance update package.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	Id string `pulumi:"id"`
+	// The previous update action performed.
+	LastAction string `pulumi:"lastAction"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the maintenance update. Dependent on value of `lastAction`.
+	State string `pulumi:"state"`
+	// The date and time the maintenance update was released.
+	TimeReleased string `pulumi:"timeReleased"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType string `pulumi:"updateType"`
+	// A filter to return only resources that match the given update version exactly.
+	Version string `pulumi:"version"`
+}
+
+// GetExadbVmClusterUpdatesExadbVmClusterUpdateInput is an input type that accepts GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs and GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdatesExadbVmClusterUpdateInput` via:
+//
+//	GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs{...}
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput
+	ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutputWithContext(context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput
+}
+
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs struct {
+	// The possible actions performed by the update operation on the infrastructure components.
+	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// Details of the maintenance update package.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The previous update action performed.
+	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the maintenance update. Dependent on value of `lastAction`.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the maintenance update was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType pulumi.StringInput `pulumi:"updateType"`
+	// A filter to return only resources that match the given update version exactly.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdatesExadbVmClusterUpdate)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput {
+	return i.ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput)
+}
+
+// GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayInput is an input type that accepts GetExadbVmClusterUpdatesExadbVmClusterUpdateArray and GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayInput` via:
+//
+//	GetExadbVmClusterUpdatesExadbVmClusterUpdateArray{ GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs{...} }
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput
+	ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutputWithContext(context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput
+}
+
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateArray []GetExadbVmClusterUpdatesExadbVmClusterUpdateInput
+
+func (GetExadbVmClusterUpdatesExadbVmClusterUpdateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdatesExadbVmClusterUpdate)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdatesExadbVmClusterUpdateArray) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput {
+	return i.ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdatesExadbVmClusterUpdateArray) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput)
+}
+
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdatesExadbVmClusterUpdate)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput {
+	return o
+}
+
+// The possible actions performed by the update operation on the infrastructure components.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) AvailableActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
+}
+
+// Details of the maintenance update package.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The previous update action performed.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) LastAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.LastAction }).(pulumi.StringOutput)
+}
+
+// Descriptive text providing additional details about the lifecycle state.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the maintenance update. Dependent on value of `lastAction`.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance update was released.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given update type exactly.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) UpdateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.UpdateType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given update version exactly.
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesExadbVmClusterUpdate) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdatesExadbVmClusterUpdate)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput() GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput) ToGetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterUpdatesExadbVmClusterUpdate {
+		return vs[0].([]GetExadbVmClusterUpdatesExadbVmClusterUpdate)[vs[1].(int)]
+	}).(GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput)
+}
+
+type GetExadbVmClusterUpdatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExadbVmClusterUpdatesFilterInput is an input type that accepts GetExadbVmClusterUpdatesFilterArgs and GetExadbVmClusterUpdatesFilterOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdatesFilterInput` via:
+//
+//	GetExadbVmClusterUpdatesFilterArgs{...}
+type GetExadbVmClusterUpdatesFilterInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdatesFilterOutput() GetExadbVmClusterUpdatesFilterOutput
+	ToGetExadbVmClusterUpdatesFilterOutputWithContext(context.Context) GetExadbVmClusterUpdatesFilterOutput
+}
+
+type GetExadbVmClusterUpdatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExadbVmClusterUpdatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdatesFilterArgs) ToGetExadbVmClusterUpdatesFilterOutput() GetExadbVmClusterUpdatesFilterOutput {
+	return i.ToGetExadbVmClusterUpdatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdatesFilterArgs) ToGetExadbVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdatesFilterOutput)
+}
+
+// GetExadbVmClusterUpdatesFilterArrayInput is an input type that accepts GetExadbVmClusterUpdatesFilterArray and GetExadbVmClusterUpdatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterUpdatesFilterArrayInput` via:
+//
+//	GetExadbVmClusterUpdatesFilterArray{ GetExadbVmClusterUpdatesFilterArgs{...} }
+type GetExadbVmClusterUpdatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterUpdatesFilterArrayOutput() GetExadbVmClusterUpdatesFilterArrayOutput
+	ToGetExadbVmClusterUpdatesFilterArrayOutputWithContext(context.Context) GetExadbVmClusterUpdatesFilterArrayOutput
+}
+
+type GetExadbVmClusterUpdatesFilterArray []GetExadbVmClusterUpdatesFilterInput
+
+func (GetExadbVmClusterUpdatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterUpdatesFilterArray) ToGetExadbVmClusterUpdatesFilterArrayOutput() GetExadbVmClusterUpdatesFilterArrayOutput {
+	return i.ToGetExadbVmClusterUpdatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterUpdatesFilterArray) ToGetExadbVmClusterUpdatesFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterUpdatesFilterArrayOutput)
+}
+
+type GetExadbVmClusterUpdatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdatesFilterOutput) ToGetExadbVmClusterUpdatesFilterOutput() GetExadbVmClusterUpdatesFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesFilterOutput) ToGetExadbVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClusterUpdatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExadbVmClusterUpdatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClusterUpdatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExadbVmClusterUpdatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterUpdatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterUpdatesFilterArrayOutput) ToGetExadbVmClusterUpdatesFilterArrayOutput() GetExadbVmClusterUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesFilterArrayOutput) ToGetExadbVmClusterUpdatesFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClusterUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterUpdatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterUpdatesFilter {
+		return vs[0].([]GetExadbVmClusterUpdatesFilter)[vs[1].(int)]
+	}).(GetExadbVmClusterUpdatesFilterOutput)
+}
+
+type GetExadbVmClustersExadbVmCluster struct {
+	// The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+	BackupSubnetId string `pulumi:"backupSubnetId"`
+	// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+	ClusterName string `pulumi:"clusterName"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions []GetExadbVmClustersExadbVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
+	Domain string `pulumi:"domain"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
+	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	GiVersion string `pulumi:"giVersion"`
+	// Grid Setup will be done using this grid image id
+	GridImageId string `pulumi:"gridImageId"`
+	// The type of Grid Image
+	GridImageType string `pulumi:"gridImageType"`
+	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+	Hostname string `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+	Id string `pulumi:"id"`
+	// The IORM settings of the Exadata DB system.
+	IormConfigCaches []GetExadbVmClustersExadbVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
+	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+	LicenseModel string `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+	ListenerPort string `pulumi:"listenerPort"`
+	// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+	NodeConfigs []GetExadbVmClustersExadbVmClusterNodeConfig `pulumi:"nodeConfigs"`
+	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
+	NodeResources []GetExadbVmClustersExadbVmClusterNodeResource `pulumi:"nodeResources"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The private zone ID in which you want DNS records to be created.
+	PrivateZoneId string `pulumi:"privateZoneId"`
+	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+	ScanDnsName string `pulumi:"scanDnsName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+	ScanDnsRecordId string `pulumi:"scanDnsRecordId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpIds []string `pulumi:"scanIpIds"`
+	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
+	Shape string `pulumi:"shape"`
+	// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+	SshPublicKeys []string `pulumi:"sshPublicKeys"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Operating system version of the image.
+	SystemVersion string `pulumi:"systemVersion"`
+	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone string `pulumi:"timeZone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+	VipIds []string `pulumi:"vipIds"`
+	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetExadbVmClustersExadbVmClusterInput is an input type that accepts GetExadbVmClustersExadbVmClusterArgs and GetExadbVmClustersExadbVmClusterOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterArgs{...}
+type GetExadbVmClustersExadbVmClusterInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterOutput() GetExadbVmClustersExadbVmClusterOutput
+	ToGetExadbVmClustersExadbVmClusterOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterOutput
+}
+
+type GetExadbVmClustersExadbVmClusterArgs struct {
+	// The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+	BackupNetworkNsgIds pulumi.StringArrayInput `pulumi:"backupNetworkNsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+	BackupSubnetId pulumi.StringInput `pulumi:"backupSubnetId"`
+	// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
+	ExascaleDbStorageVaultId pulumi.StringInput `pulumi:"exascaleDbStorageVaultId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	GiVersion pulumi.StringInput `pulumi:"giVersion"`
+	// Grid Setup will be done using this grid image id
+	GridImageId pulumi.StringInput `pulumi:"gridImageId"`
+	// The type of Grid Image
+	GridImageType pulumi.StringInput `pulumi:"gridImageType"`
+	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IORM settings of the Exadata DB system.
+	IormConfigCaches GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput `pulumi:"iormConfigCaches"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+	LastUpdateHistoryEntryId pulumi.StringInput `pulumi:"lastUpdateHistoryEntryId"`
+	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+	ListenerPort pulumi.StringInput `pulumi:"listenerPort"`
+	// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+	NodeConfigs GetExadbVmClustersExadbVmClusterNodeConfigArrayInput `pulumi:"nodeConfigs"`
+	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
+	NodeResources GetExadbVmClustersExadbVmClusterNodeResourceArrayInput `pulumi:"nodeResources"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The private zone ID in which you want DNS records to be created.
+	PrivateZoneId pulumi.StringInput `pulumi:"privateZoneId"`
+	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+	ScanDnsName pulumi.StringInput `pulumi:"scanDnsName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+	ScanDnsRecordId pulumi.StringInput `pulumi:"scanDnsRecordId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+	ScanIpIds pulumi.StringArrayInput `pulumi:"scanIpIds"`
+	// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+	SshPublicKeys pulumi.StringArrayInput `pulumi:"sshPublicKeys"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Operating system version of the image.
+	SystemVersion pulumi.StringInput `pulumi:"systemVersion"`
+	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
+	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetExadbVmClustersExadbVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmCluster)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterArgs) ToGetExadbVmClustersExadbVmClusterOutput() GetExadbVmClustersExadbVmClusterOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterArgs) ToGetExadbVmClustersExadbVmClusterOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterArray and GetExadbVmClustersExadbVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterArray{ GetExadbVmClustersExadbVmClusterArgs{...} }
+type GetExadbVmClustersExadbVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterArrayOutput() GetExadbVmClustersExadbVmClusterArrayOutput
+	ToGetExadbVmClustersExadbVmClusterArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterArray []GetExadbVmClustersExadbVmClusterInput
+
+func (GetExadbVmClustersExadbVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmCluster)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterArray) ToGetExadbVmClustersExadbVmClusterArrayOutput() GetExadbVmClustersExadbVmClusterArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterArray) ToGetExadbVmClustersExadbVmClusterArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmCluster)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterOutput) ToGetExadbVmClustersExadbVmClusterOutput() GetExadbVmClustersExadbVmClusterOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterOutput) ToGetExadbVmClustersExadbVmClusterOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterOutput {
+	return o
+}
+
+// The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+func (o GetExadbVmClustersExadbVmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+func (o GetExadbVmClustersExadbVmClusterOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) BackupSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.BackupSubnetId }).(pulumi.StringOutput)
+}
+
+// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+func (o GetExadbVmClustersExadbVmClusterOutput) ClusterName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ClusterName }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExadbVmClustersExadbVmClusterOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+func (o GetExadbVmClustersExadbVmClusterOutput) DataCollectionOptions() GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExadbVmClustersExadbVmClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExadbVmClustersExadbVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
+func (o GetExadbVmClustersExadbVmClusterOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
+func (o GetExadbVmClustersExadbVmClusterOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ExascaleDbStorageVaultId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExadbVmClustersExadbVmClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetExadbVmClustersExadbVmClusterOutput) GiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.GiVersion }).(pulumi.StringOutput)
+}
+
+// Grid Setup will be done using this grid image id
+func (o GetExadbVmClustersExadbVmClusterOutput) GridImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.GridImageId }).(pulumi.StringOutput)
+}
+
+// The type of Grid Image
+func (o GetExadbVmClustersExadbVmClusterOutput) GridImageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.GridImageType }).(pulumi.StringOutput)
+}
+
+// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+func (o GetExadbVmClustersExadbVmClusterOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IORM settings of the Exadata DB system.
+func (o GetExadbVmClustersExadbVmClusterOutput) IormConfigCaches() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterIormConfigCach {
+		return v.IormConfigCaches
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+func (o GetExadbVmClustersExadbVmClusterOutput) LastUpdateHistoryEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+func (o GetExadbVmClustersExadbVmClusterOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExadbVmClustersExadbVmClusterOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) ListenerPort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ListenerPort }).(pulumi.StringOutput)
+}
+
+// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) NodeConfigs() GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterNodeConfig {
+		return v.NodeConfigs
+	}).(GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput)
+}
+
+// The list of node in the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) NodeResources() GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterNodeResource {
+		return v.NodeResources
+	}).(GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+func (o GetExadbVmClustersExadbVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The private zone ID in which you want DNS records to be created.
+func (o GetExadbVmClustersExadbVmClusterOutput) PrivateZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.PrivateZoneId }).(pulumi.StringOutput)
+}
+
+// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) ScanDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ScanDnsName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) ScanDnsRecordId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ScanDnsRecordId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+func (o GetExadbVmClustersExadbVmClusterOutput) ScanIpIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.ScanIpIds }).(pulumi.StringArrayOutput)
+}
+
+// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+func (o GetExadbVmClustersExadbVmClusterOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+func (o GetExadbVmClustersExadbVmClusterOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+// The shape of the Exadata VM cluster on Exascale Infrastructure resource
+func (o GetExadbVmClustersExadbVmClusterOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) SshPublicKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.SshPublicKeys }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+func (o GetExadbVmClustersExadbVmClusterOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+func (o GetExadbVmClustersExadbVmClusterOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExadbVmClustersExadbVmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Operating system version of the image.
+func (o GetExadbVmClustersExadbVmClusterOutput) SystemVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.SystemVersion }).(pulumi.StringOutput)
+}
+
+// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+func (o GetExadbVmClustersExadbVmClusterOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+func (o GetExadbVmClustersExadbVmClusterOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+func (o GetExadbVmClustersExadbVmClusterOutput) VipIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []string { return v.VipIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+func (o GetExadbVmClustersExadbVmClusterOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmCluster)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterArrayOutput) ToGetExadbVmClustersExadbVmClusterArrayOutput() GetExadbVmClustersExadbVmClusterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterArrayOutput) ToGetExadbVmClustersExadbVmClusterArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmCluster {
+		return vs[0].([]GetExadbVmClustersExadbVmCluster)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetExadbVmClustersExadbVmClusterDataCollectionOptionInput is an input type that accepts GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs and GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterDataCollectionOptionInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs{...}
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput
+	ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput
+}
+
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterDataCollectionOptionArray and GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterDataCollectionOptionArray{ GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs{...} }
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput
+	ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionArray []GetExadbVmClustersExadbVmClusterDataCollectionOptionInput
+
+func (GetExadbVmClustersExadbVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterDataCollectionOptionArray) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterDataCollectionOptionArray) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput() GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput) ToGetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterDataCollectionOption {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCach struct {
+	// An array of IORM settings for all the database in the Exadata DB system.
+	DbPlans []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current value for the IORM objective. The default is `AUTO`.
+	Objective string `pulumi:"objective"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+}
+
+// GetExadbVmClustersExadbVmClusterIormConfigCachInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachArgs and GetExadbVmClustersExadbVmClusterIormConfigCachOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterIormConfigCachArgs{...}
+type GetExadbVmClustersExadbVmClusterIormConfigCachInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachArgs struct {
+	// An array of IORM settings for all the database in the Exadata DB system.
+	DbPlans GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current value for the IORM objective. The default is `AUTO`.
+	Objective pulumi.StringInput `pulumi:"objective"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachArray and GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterIormConfigCachArray{ GetExadbVmClustersExadbVmClusterIormConfigCachArgs{...} }
+type GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachArray []GetExadbVmClustersExadbVmClusterIormConfigCachInput
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+	return o
+}
+
+// An array of IORM settings for all the database in the Exadata DB system.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) DbPlans() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan {
+		return v.DbPlans
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current value for the IORM objective. The default is `AUTO`.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.Objective }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCach {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCach)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCachOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan struct {
+	// The database name. For the default `DbPlan`, the `dbName` is `default`.
+	DbName string `pulumi:"dbName"`
+	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+	FlashCacheLimit string `pulumi:"flashCacheLimit"`
+	// The relative priority of this database.
+	Share int `pulumi:"share"`
+}
+
+// GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs and GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{...}
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs struct {
+	// The database name. For the default `DbPlan`, the `dbName` is `default`.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+	FlashCacheLimit pulumi.StringInput `pulumi:"flashCacheLimit"`
+	// The relative priority of this database.
+	Share pulumi.IntInput `pulumi:"share"`
+}
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray and GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray{ GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{...} }
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+	return o
+}
+
+// The database name. For the default `DbPlan`, the `dbName` is `default`.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+}
+
+// The relative priority of this database.
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) int { return v.Share }).(pulumi.IntOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeConfig struct {
+	EnabledEcpuCountPerNode int `pulumi:"enabledEcpuCountPerNode"`
+	// The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+	MemorySizeInGbsPerNode int `pulumi:"memorySizeInGbsPerNode"`
+	// The file system storage in GBs for snapshot for each node.
+	SnapshotFileSystemStorageSizeGbsPerNode int `pulumi:"snapshotFileSystemStorageSizeGbsPerNode"`
+	TotalEcpuCountPerNode                   int `pulumi:"totalEcpuCountPerNode"`
+	// Total file system storage in GBs for each node.
+	TotalFileSystemStorageSizeGbsPerNode int `pulumi:"totalFileSystemStorageSizeGbsPerNode"`
+	// The file system storage in GBs for each node.
+	VmFileSystemStorageSizeGbsPerNode int `pulumi:"vmFileSystemStorageSizeGbsPerNode"`
+}
+
+// GetExadbVmClustersExadbVmClusterNodeConfigInput is an input type that accepts GetExadbVmClustersExadbVmClusterNodeConfigArgs and GetExadbVmClustersExadbVmClusterNodeConfigOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterNodeConfigInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterNodeConfigArgs{...}
+type GetExadbVmClustersExadbVmClusterNodeConfigInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterNodeConfigOutput() GetExadbVmClustersExadbVmClusterNodeConfigOutput
+	ToGetExadbVmClustersExadbVmClusterNodeConfigOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterNodeConfigOutput
+}
+
+type GetExadbVmClustersExadbVmClusterNodeConfigArgs struct {
+	EnabledEcpuCountPerNode pulumi.IntInput `pulumi:"enabledEcpuCountPerNode"`
+	// The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+	MemorySizeInGbsPerNode pulumi.IntInput `pulumi:"memorySizeInGbsPerNode"`
+	// The file system storage in GBs for snapshot for each node.
+	SnapshotFileSystemStorageSizeGbsPerNode pulumi.IntInput `pulumi:"snapshotFileSystemStorageSizeGbsPerNode"`
+	TotalEcpuCountPerNode                   pulumi.IntInput `pulumi:"totalEcpuCountPerNode"`
+	// Total file system storage in GBs for each node.
+	TotalFileSystemStorageSizeGbsPerNode pulumi.IntInput `pulumi:"totalFileSystemStorageSizeGbsPerNode"`
+	// The file system storage in GBs for each node.
+	VmFileSystemStorageSizeGbsPerNode pulumi.IntInput `pulumi:"vmFileSystemStorageSizeGbsPerNode"`
+}
+
+func (GetExadbVmClustersExadbVmClusterNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeConfigArgs) ToGetExadbVmClustersExadbVmClusterNodeConfigOutput() GetExadbVmClustersExadbVmClusterNodeConfigOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterNodeConfigOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeConfigArgs) ToGetExadbVmClustersExadbVmClusterNodeConfigOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterNodeConfigOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterNodeConfigArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterNodeConfigArray and GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterNodeConfigArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterNodeConfigArray{ GetExadbVmClustersExadbVmClusterNodeConfigArgs{...} }
+type GetExadbVmClustersExadbVmClusterNodeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutput() GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput
+	ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterNodeConfigArray []GetExadbVmClustersExadbVmClusterNodeConfigInput
+
+func (GetExadbVmClustersExadbVmClusterNodeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterNodeConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeConfigArray) ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutput() GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeConfigArray) ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) ToGetExadbVmClustersExadbVmClusterNodeConfigOutput() GetExadbVmClustersExadbVmClusterNodeConfigOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) ToGetExadbVmClustersExadbVmClusterNodeConfigOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeConfigOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) EnabledEcpuCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int { return v.EnabledEcpuCountPerNode }).(pulumi.IntOutput)
+}
+
+// The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) MemorySizeInGbsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int { return v.MemorySizeInGbsPerNode }).(pulumi.IntOutput)
+}
+
+// The file system storage in GBs for snapshot for each node.
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) SnapshotFileSystemStorageSizeGbsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int {
+		return v.SnapshotFileSystemStorageSizeGbsPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) TotalEcpuCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int { return v.TotalEcpuCountPerNode }).(pulumi.IntOutput)
+}
+
+// Total file system storage in GBs for each node.
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) TotalFileSystemStorageSizeGbsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int { return v.TotalFileSystemStorageSizeGbsPerNode }).(pulumi.IntOutput)
+}
+
+// The file system storage in GBs for each node.
+func (o GetExadbVmClustersExadbVmClusterNodeConfigOutput) VmFileSystemStorageSizeGbsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeConfig) int { return v.VmFileSystemStorageSizeGbsPerNode }).(pulumi.IntOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterNodeConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput) ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutput() GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput) ToGetExadbVmClustersExadbVmClusterNodeConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterNodeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterNodeConfig {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterNodeConfig)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterNodeConfigOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeResource struct {
+	// The host name for the node.
+	NodeHostname string `pulumi:"nodeHostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+	NodeId   string `pulumi:"nodeId"`
+	NodeName string `pulumi:"nodeName"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+}
+
+// GetExadbVmClustersExadbVmClusterNodeResourceInput is an input type that accepts GetExadbVmClustersExadbVmClusterNodeResourceArgs and GetExadbVmClustersExadbVmClusterNodeResourceOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterNodeResourceInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterNodeResourceArgs{...}
+type GetExadbVmClustersExadbVmClusterNodeResourceInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterNodeResourceOutput() GetExadbVmClustersExadbVmClusterNodeResourceOutput
+	ToGetExadbVmClustersExadbVmClusterNodeResourceOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterNodeResourceOutput
+}
+
+type GetExadbVmClustersExadbVmClusterNodeResourceArgs struct {
+	// The host name for the node.
+	NodeHostname pulumi.StringInput `pulumi:"nodeHostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+	NodeId   pulumi.StringInput `pulumi:"nodeId"`
+	NodeName pulumi.StringInput `pulumi:"nodeName"`
+	// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetExadbVmClustersExadbVmClusterNodeResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResource)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeResourceArgs) ToGetExadbVmClustersExadbVmClusterNodeResourceOutput() GetExadbVmClustersExadbVmClusterNodeResourceOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterNodeResourceOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeResourceArgs) ToGetExadbVmClustersExadbVmClusterNodeResourceOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterNodeResourceOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterNodeResourceArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterNodeResourceArray and GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterNodeResourceArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterNodeResourceArray{ GetExadbVmClustersExadbVmClusterNodeResourceArgs{...} }
+type GetExadbVmClustersExadbVmClusterNodeResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutput() GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput
+	ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterNodeResourceArray []GetExadbVmClustersExadbVmClusterNodeResourceInput
+
+func (GetExadbVmClustersExadbVmClusterNodeResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterNodeResource)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeResourceArray) ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutput() GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterNodeResourceArray) ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeResourceOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterNodeResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResource)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) ToGetExadbVmClustersExadbVmClusterNodeResourceOutput() GetExadbVmClustersExadbVmClusterNodeResourceOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) ToGetExadbVmClustersExadbVmClusterNodeResourceOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeResourceOutput {
+	return o
+}
+
+// The host name for the node.
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) NodeHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeResource) string { return v.NodeHostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeResource) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) NodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeResource) string { return v.NodeName }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+func (o GetExadbVmClustersExadbVmClusterNodeResourceOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterNodeResource) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterNodeResource)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput) ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutput() GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput) ToGetExadbVmClustersExadbVmClusterNodeResourceArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterNodeResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterNodeResource {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterNodeResource)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterNodeResourceOutput)
+}
+
+type GetExadbVmClustersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExadbVmClustersFilterInput is an input type that accepts GetExadbVmClustersFilterArgs and GetExadbVmClustersFilterOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersFilterInput` via:
+//
+//	GetExadbVmClustersFilterArgs{...}
+type GetExadbVmClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersFilterOutput() GetExadbVmClustersFilterOutput
+	ToGetExadbVmClustersFilterOutputWithContext(context.Context) GetExadbVmClustersFilterOutput
+}
+
+type GetExadbVmClustersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExadbVmClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersFilterArgs) ToGetExadbVmClustersFilterOutput() GetExadbVmClustersFilterOutput {
+	return i.ToGetExadbVmClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersFilterArgs) ToGetExadbVmClustersFilterOutputWithContext(ctx context.Context) GetExadbVmClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersFilterOutput)
+}
+
+// GetExadbVmClustersFilterArrayInput is an input type that accepts GetExadbVmClustersFilterArray and GetExadbVmClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersFilterArrayInput` via:
+//
+//	GetExadbVmClustersFilterArray{ GetExadbVmClustersFilterArgs{...} }
+type GetExadbVmClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersFilterArrayOutput() GetExadbVmClustersFilterArrayOutput
+	ToGetExadbVmClustersFilterArrayOutputWithContext(context.Context) GetExadbVmClustersFilterArrayOutput
+}
+
+type GetExadbVmClustersFilterArray []GetExadbVmClustersFilterInput
+
+func (GetExadbVmClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersFilterArray) ToGetExadbVmClustersFilterArrayOutput() GetExadbVmClustersFilterArrayOutput {
+	return i.ToGetExadbVmClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersFilterArray) ToGetExadbVmClustersFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersFilterArrayOutput)
+}
+
+type GetExadbVmClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersFilterOutput) ToGetExadbVmClustersFilterOutput() GetExadbVmClustersFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClustersFilterOutput) ToGetExadbVmClustersFilterOutputWithContext(ctx context.Context) GetExadbVmClustersFilterOutput {
+	return o
+}
+
+func (o GetExadbVmClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExadbVmClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExadbVmClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExadbVmClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersFilterArrayOutput) ToGetExadbVmClustersFilterArrayOutput() GetExadbVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersFilterArrayOutput) ToGetExadbVmClustersFilterArrayOutputWithContext(ctx context.Context) GetExadbVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersFilter {
+		return vs[0].([]GetExadbVmClustersFilter)[vs[1].(int)]
+	}).(GetExadbVmClustersFilterOutput)
+}
+
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorage struct {
+	// Available Capacity
+	AvailableSizeInGbs int `pulumi:"availableSizeInGbs"`
+	// Total Capacity
+	TotalSizeInGbs int `pulumi:"totalSizeInGbs"`
+}
+
+// GetExascaleDbStorageVaultHighCapacityDatabaseStorageInput is an input type that accepts GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs and GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultHighCapacityDatabaseStorageInput` via:
+//
+//	GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{...}
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput
+	ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput
+}
+
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs struct {
+	// Available Capacity
+	AvailableSizeInGbs pulumi.IntInput `pulumi:"availableSizeInGbs"`
+	// Total Capacity
+	TotalSizeInGbs pulumi.IntInput `pulumi:"totalSizeInGbs"`
+}
+
+func (GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return i.ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput)
+}
+
+// GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput is an input type that accepts GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray and GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput` via:
+//
+//	GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray{ GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{...} }
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput
+	ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput
+}
+
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray []GetExascaleDbStorageVaultHighCapacityDatabaseStorageInput
+
+func (GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return i.ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput)
+}
+
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return o
+}
+
+// Available Capacity
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) AvailableSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultHighCapacityDatabaseStorage) int { return v.AvailableSizeInGbs }).(pulumi.IntOutput)
+}
+
+// Total Capacity
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) TotalSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultHighCapacityDatabaseStorage) int { return v.TotalSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ToGetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) Index(i pulumi.IntInput) GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExascaleDbStorageVaultHighCapacityDatabaseStorage {
+		return vs[0].([]GetExascaleDbStorageVaultHighCapacityDatabaseStorage)[vs[1].(int)]
+	}).(GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
+	// The size of additional Flash Cache in percentage of High Capacity database storage.
+	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
+	// The name of the availability domain in which the Exadata Database Storage Vault is located.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Exadata Database Storage Vault description.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Exadata Database Storage Details
+	HighCapacityDatabaseStorages []GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage `pulumi:"highCapacityDatabaseStorages"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Storage Vault was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone string `pulumi:"timeZone"`
+	// The number of Exadata VM clusters used the Exadata Database Storage Vault.
+	VmClusterCount int `pulumi:"vmClusterCount"`
+	// The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+	VmClusterIds []string `pulumi:"vmClusterIds"`
+}
+
+// GetExascaleDbStorageVaultsExascaleDbStorageVaultInput is an input type that accepts GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs and GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsExascaleDbStorageVaultInput` via:
+//
+//	GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs{...}
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutputWithContext(context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
+	// The size of additional Flash Cache in percentage of High Capacity database storage.
+	AdditionalFlashCacheInPercent pulumi.IntInput `pulumi:"additionalFlashCacheInPercent"`
+	// The name of the availability domain in which the Exadata Database Storage Vault is located.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Exadata Database Storage Vault description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Exadata Database Storage Details
+	HighCapacityDatabaseStorages GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput `pulumi:"highCapacityDatabaseStorages"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Storage Vault was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// The number of Exadata VM clusters used the Exadata Database Storage Vault.
+	VmClusterCount pulumi.IntInput `pulumi:"vmClusterCount"`
+	// The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+	VmClusterIds pulumi.StringArrayInput `pulumi:"vmClusterIds"`
+}
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVault)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput {
+	return i.ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput)
+}
+
+// GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayInput is an input type that accepts GetExascaleDbStorageVaultsExascaleDbStorageVaultArray and GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayInput` via:
+//
+//	GetExascaleDbStorageVaultsExascaleDbStorageVaultArray{ GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs{...} }
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutputWithContext(context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultArray []GetExascaleDbStorageVaultsExascaleDbStorageVaultInput
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsExascaleDbStorageVault)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultArray) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput {
+	return i.ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultArray) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVault)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput {
+	return o
+}
+
+// The size of additional Flash Cache in percentage of High Capacity database storage.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AdditionalFlashCacheInPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) int { return v.AdditionalFlashCacheInPercent }).(pulumi.IntOutput)
+}
+
+// The name of the availability domain in which the Exadata Database Storage Vault is located.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Exadata Database Storage Vault description.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Exadata Database Storage Details
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) HighCapacityDatabaseStorages() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) []GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage {
+		return v.HighCapacityDatabaseStorages
+	}).(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the Exadata Database Storage Vault was created.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The number of Exadata VM clusters used the Exadata Database Storage Vault.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) VmClusterCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) int { return v.VmClusterCount }).(pulumi.IntOutput)
+}
+
+// The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) VmClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) []string { return v.VmClusterIds }).(pulumi.StringArrayOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsExascaleDbStorageVault)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput) Index(i pulumi.IntInput) GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExascaleDbStorageVaultsExascaleDbStorageVault {
+		return vs[0].([]GetExascaleDbStorageVaultsExascaleDbStorageVault)[vs[1].(int)]
+	}).(GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage struct {
+	// Available Capacity
+	AvailableSizeInGbs int `pulumi:"availableSizeInGbs"`
+	// Total Capacity
+	TotalSizeInGbs int `pulumi:"totalSizeInGbs"`
+}
+
+// GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageInput is an input type that accepts GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs and GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageInput` via:
+//
+//	GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{...}
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs struct {
+	// Available Capacity
+	AvailableSizeInGbs pulumi.IntInput `pulumi:"availableSizeInGbs"`
+	// Total Capacity
+	TotalSizeInGbs pulumi.IntInput `pulumi:"totalSizeInGbs"`
+}
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return i.ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput)
+}
+
+// GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput is an input type that accepts GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray and GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput` via:
+//
+//	GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray{ GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{...} }
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput
+	ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray []GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageInput
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return i.ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return o
+}
+
+// Available Capacity
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) AvailableSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage) int {
+		return v.AvailableSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// Total Capacity
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput) TotalSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage) int {
+		return v.TotalSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput() GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) ToGetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput) Index(i pulumi.IntInput) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage {
+		return vs[0].([]GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage)[vs[1].(int)]
+	}).(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput)
+}
+
+type GetExascaleDbStorageVaultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExascaleDbStorageVaultsFilterInput is an input type that accepts GetExascaleDbStorageVaultsFilterArgs and GetExascaleDbStorageVaultsFilterOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsFilterInput` via:
+//
+//	GetExascaleDbStorageVaultsFilterArgs{...}
+type GetExascaleDbStorageVaultsFilterInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsFilterOutput() GetExascaleDbStorageVaultsFilterOutput
+	ToGetExascaleDbStorageVaultsFilterOutputWithContext(context.Context) GetExascaleDbStorageVaultsFilterOutput
+}
+
+type GetExascaleDbStorageVaultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExascaleDbStorageVaultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsFilter)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsFilterArgs) ToGetExascaleDbStorageVaultsFilterOutput() GetExascaleDbStorageVaultsFilterOutput {
+	return i.ToGetExascaleDbStorageVaultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsFilterArgs) ToGetExascaleDbStorageVaultsFilterOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsFilterOutput)
+}
+
+// GetExascaleDbStorageVaultsFilterArrayInput is an input type that accepts GetExascaleDbStorageVaultsFilterArray and GetExascaleDbStorageVaultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetExascaleDbStorageVaultsFilterArrayInput` via:
+//
+//	GetExascaleDbStorageVaultsFilterArray{ GetExascaleDbStorageVaultsFilterArgs{...} }
+type GetExascaleDbStorageVaultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExascaleDbStorageVaultsFilterArrayOutput() GetExascaleDbStorageVaultsFilterArrayOutput
+	ToGetExascaleDbStorageVaultsFilterArrayOutputWithContext(context.Context) GetExascaleDbStorageVaultsFilterArrayOutput
+}
+
+type GetExascaleDbStorageVaultsFilterArray []GetExascaleDbStorageVaultsFilterInput
+
+func (GetExascaleDbStorageVaultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsFilter)(nil)).Elem()
+}
+
+func (i GetExascaleDbStorageVaultsFilterArray) ToGetExascaleDbStorageVaultsFilterArrayOutput() GetExascaleDbStorageVaultsFilterArrayOutput {
+	return i.ToGetExascaleDbStorageVaultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExascaleDbStorageVaultsFilterArray) ToGetExascaleDbStorageVaultsFilterArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExascaleDbStorageVaultsFilterArrayOutput)
+}
+
+type GetExascaleDbStorageVaultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExascaleDbStorageVaultsFilter)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsFilterOutput) ToGetExascaleDbStorageVaultsFilterOutput() GetExascaleDbStorageVaultsFilterOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsFilterOutput) ToGetExascaleDbStorageVaultsFilterOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsFilterOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExascaleDbStorageVaultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExascaleDbStorageVaultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExascaleDbStorageVaultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExascaleDbStorageVaultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExascaleDbStorageVaultsFilter)(nil)).Elem()
+}
+
+func (o GetExascaleDbStorageVaultsFilterArrayOutput) ToGetExascaleDbStorageVaultsFilterArrayOutput() GetExascaleDbStorageVaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsFilterArrayOutput) ToGetExascaleDbStorageVaultsFilterArrayOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetExascaleDbStorageVaultsFilterArrayOutput) Index(i pulumi.IntInput) GetExascaleDbStorageVaultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExascaleDbStorageVaultsFilter {
+		return vs[0].([]GetExascaleDbStorageVaultsFilter)[vs[1].(int)]
+	}).(GetExascaleDbStorageVaultsFilterOutput)
+}
+
+type GetExternalContainerDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalContainerDatabaseDatabaseManagementConfigArgs and GetExternalContainerDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalContainerDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalContainerDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabaseDatabaseManagementConfigOutput
+	ToGetExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalContainerDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalContainerDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalContainerDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalContainerDatabaseDatabaseManagementConfigArray and GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalContainerDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalContainerDatabaseDatabaseManagementConfigArray []GetExternalContainerDatabaseDatabaseManagementConfigInput
+
+func (GetExternalContainerDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseDatabaseManagementConfigArray) ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseDatabaseManagementConfigArray) ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalContainerDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseDatabaseManagementConfig) string { return v.DatabaseManagementStatus }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalContainerDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseDatabaseManagementConfig) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalContainerDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArray []GetExternalContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringConnectorId }).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabase struct {
+	// The character set of the external database.
+	CharacterSet string `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition string `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs []GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion string `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId string `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks string `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName string `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseArgs and GetExternalContainerDatabasesExternalContainerDatabaseOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseArgs{...}
+type GetExternalContainerDatabasesExternalContainerDatabaseInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseOutput() GetExternalContainerDatabasesExternalContainerDatabaseOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseArgs struct {
+	// The character set of the external database.
+	CharacterSet pulumi.StringInput `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId pulumi.StringInput `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks pulumi.StringInput `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabase)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseOutput() GetExternalContainerDatabasesExternalContainerDatabaseOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseOutput)
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseArray and GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseArrayInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseArray{ GetExternalContainerDatabasesExternalContainerDatabaseArgs{...} }
+type GetExternalContainerDatabasesExternalContainerDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseArray []GetExternalContainerDatabasesExternalContainerDatabaseInput
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabase)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseArray) ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseArray) ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabase)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseOutput() GetExternalContainerDatabasesExternalContainerDatabaseOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseOutput {
+	return o
+}
+
+// The character set of the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The Oracle Database configuration
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+}
+
+// The Oracle Database edition.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+}
+
+// The configuration of the Database Management service.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseManagementConfigs() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) []GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig {
+		return v.DatabaseManagementConfigs
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+// The Oracle Database version.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DbId }).(pulumi.StringOutput)
+}
+
+// The database packs licensed for the external Oracle Database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DbPacks() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DbPacks }).(pulumi.StringOutput)
+}
+
+// The `DB_UNIQUE_NAME` of the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The national character of the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) StackMonitoringConfigs() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was created.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabase)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabasesExternalContainerDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabasesExternalContainerDatabase {
+		return vs[0].([]GetExternalContainerDatabasesExternalContainerDatabase)[vs[1].(int)]
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs and GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray and GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray []GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementStatus
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput)
+}
+
 type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
@@ -4113,7 +6839,7 @@ type GetKeyStoreTypeDetail struct {
 	SecretId string `pulumi:"secretId"`
 	// The type of key store.
 	Type string `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId string `pulumi:"vaultId"`
 }
 
@@ -4137,7 +6863,7 @@ type GetKeyStoreTypeDetailArgs struct {
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// The type of key store.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 }
 
@@ -4212,7 +6938,7 @@ func (o GetKeyStoreTypeDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o GetKeyStoreTypeDetailOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -4642,7 +7368,7 @@ type GetKeyStoresKeyStoreTypeDetail struct {
 	SecretId string `pulumi:"secretId"`
 	// The type of key store.
 	Type string `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId string `pulumi:"vaultId"`
 }
 
@@ -4666,7 +7392,7 @@ type GetKeyStoresKeyStoreTypeDetailArgs struct {
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// The type of key store.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 }
 
@@ -4741,7 +7467,7 @@ func (o GetKeyStoresKeyStoreTypeDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o GetKeyStoresKeyStoreTypeDetailOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -6965,7 +9691,8 @@ type GetPluggableDatabasesPluggableDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id string `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted bool `pulumi:"isRestricted"`
+	IsRestricted    bool   `pulumi:"isRestricted"`
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
@@ -7018,7 +9745,8 @@ type GetPluggableDatabasesPluggableDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted pulumi.BoolInput `pulumi:"isRestricted"`
+	IsRestricted    pulumi.BoolInput   `pulumi:"isRestricted"`
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
@@ -7138,6 +9866,10 @@ func (o GetPluggableDatabasesPluggableDatabaseOutput) Id() pulumi.StringOutput {
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 func (o GetPluggableDatabasesPluggableDatabaseOutput) IsRestricted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) bool { return v.IsRestricted }).(pulumi.BoolOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
 
 // Detailed message for the lifecycle state.
@@ -8210,6 +10942,350 @@ func (o GetSystemVersionsSystemVersionCollectionItemArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSystemVersionsSystemVersionCollectionItem {
 		return vs[0].([]GetSystemVersionsSystemVersionCollectionItem)[vs[1].(int)]
 	}).(GetSystemVersionsSystemVersionCollectionItemOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetail struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences []GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods []GetVmClusterCloudAutomationUpdateDetailFreezePeriod `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled bool `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled bool `pulumi:"isFreezePeriodEnabled"`
+}
+
+// GetVmClusterCloudAutomationUpdateDetailInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailArgs and GetVmClusterCloudAutomationUpdateDetailOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailArgs{...}
+type GetVmClusterCloudAutomationUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailOutput() GetVmClusterCloudAutomationUpdateDetailOutput
+	ToGetVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailArgs struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled pulumi.BoolInput `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled pulumi.BoolInput `pulumi:"isFreezePeriodEnabled"`
+}
+
+func (GetVmClusterCloudAutomationUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailArgs) ToGetVmClusterCloudAutomationUpdateDetailOutput() GetVmClusterCloudAutomationUpdateDetailOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailArgs) ToGetVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+// GetVmClusterCloudAutomationUpdateDetailArrayInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailArray and GetVmClusterCloudAutomationUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailArrayInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailArray{ GetVmClusterCloudAutomationUpdateDetailArgs{...} }
+type GetVmClusterCloudAutomationUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClusterCloudAutomationUpdateDetailArrayOutput
+	ToGetVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailArrayOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailArray []GetVmClusterCloudAutomationUpdateDetailInput
+
+func (GetVmClusterCloudAutomationUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailArray) ToGetVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailArray) ToGetVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailArrayOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) ToGetVmClusterCloudAutomationUpdateDetailOutput() GetVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) ToGetVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) ApplyUpdateTimePreferences() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetail) []GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return v.ApplyUpdateTimePreferences
+	}).(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) FreezePeriods() GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetail) []GetVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return v.FreezePeriods
+	}).(GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) IsEarlyAdoptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetail) bool { return v.IsEarlyAdoptionEnabled }).(pulumi.BoolOutput)
+}
+
+// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+func (o GetVmClusterCloudAutomationUpdateDetailOutput) IsFreezePeriodEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetail) bool { return v.IsFreezePeriodEnabled }).(pulumi.BoolOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterCloudAutomationUpdateDetail {
+		return vs[0].([]GetVmClusterCloudAutomationUpdateDetail)[vs[1].(int)]
+	}).(GetVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime string `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime string `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+// GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs and GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...}
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+	ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime pulumi.StringInput `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime pulumi.StringInput `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+func (GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+// GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray and GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{ GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...} }
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+	ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray []GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput
+
+func (GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) Index(i pulumi.IntInput) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return vs[0].([]GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)[vs[1].(int)]
+	}).(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriod struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime string `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime string `pulumi:"freezePeriodStartTime"`
+}
+
+// GetVmClusterCloudAutomationUpdateDetailFreezePeriodInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs and GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailFreezePeriodInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...}
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+	ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime pulumi.StringInput `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime pulumi.StringInput `pulumi:"freezePeriodStartTime"`
+}
+
+func (GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+// GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput is an input type that accepts GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray and GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput` via:
+//
+//	GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray{ GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...} }
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+	ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+}
+
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray []GetVmClusterCloudAutomationUpdateDetailFreezePeriodInput
+
+func (GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return i.ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+// End time of the freeze period cycle.
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetailFreezePeriod) string { return v.FreezePeriodEndTime }).(pulumi.StringOutput)
+}
+
+// Start time of the freeze period cycle.
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterCloudAutomationUpdateDetailFreezePeriod) string { return v.FreezePeriodStartTime }).(pulumi.StringOutput)
+}
+
+type GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) Index(i pulumi.IntInput) GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return vs[0].([]GetVmClusterCloudAutomationUpdateDetailFreezePeriod)[vs[1].(int)]
+	}).(GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
 }
 
 type GetVmClusterDataCollectionOption struct {
@@ -11704,6 +14780,8 @@ func (o GetVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetVmClustersFi
 type GetVmClustersVmCluster struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails []GetVmClustersVmClusterCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
@@ -11777,6 +14855,8 @@ type GetVmClustersVmClusterInput interface {
 type GetVmClustersVmClusterArgs struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput `pulumi:"cloudAutomationUpdateDetails"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	CpuCoreCount  pulumi.IntInput    `pulumi:"cpuCoreCount"`
@@ -11890,6 +14970,13 @@ func (o GetVmClustersVmClusterOutput) ToGetVmClustersVmClusterOutputWithContext(
 // The name of the availability domain that the VM cluster is located in.
 func (o GetVmClustersVmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o GetVmClustersVmClusterOutput) CloudAutomationUpdateDetails() GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) []GetVmClustersVmClusterCloudAutomationUpdateDetail {
+		return v.CloudAutomationUpdateDetails
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -12061,6 +15148,354 @@ func (o GetVmClustersVmClusterArrayOutput) Index(i pulumi.IntInput) GetVmCluster
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmCluster {
 		return vs[0].([]GetVmClustersVmCluster)[vs[1].(int)]
 	}).(GetVmClustersVmClusterOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetail struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences []GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods []GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled bool `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled bool `pulumi:"isFreezePeriodEnabled"`
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailArgs and GetVmClustersVmClusterCloudAutomationUpdateDetailOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailArgs{...}
+type GetVmClustersVmClusterCloudAutomationUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailArgs struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled pulumi.BoolInput `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled pulumi.BoolInput `pulumi:"isFreezePeriodEnabled"`
+}
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailArray and GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailArray{ GetVmClustersVmClusterCloudAutomationUpdateDetailArgs{...} }
+type GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailArray []GetVmClustersVmClusterCloudAutomationUpdateDetailInput
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) ApplyUpdateTimePreferences() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetail) []GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return v.ApplyUpdateTimePreferences
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) FreezePeriods() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetail) []GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return v.FreezePeriods
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) IsEarlyAdoptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetail) bool { return v.IsEarlyAdoptionEnabled }).(pulumi.BoolOutput)
+}
+
+// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailOutput) IsFreezePeriodEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetail) bool { return v.IsFreezePeriodEnabled }).(pulumi.BoolOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterCloudAutomationUpdateDetail {
+		return vs[0].([]GetVmClustersVmClusterCloudAutomationUpdateDetail)[vs[1].(int)]
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime string `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime string `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs and GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...}
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime pulumi.StringInput `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime pulumi.StringInput `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray and GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{ GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...} }
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray []GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return vs[0].([]GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)[vs[1].(int)]
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime string `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime string `pulumi:"freezePeriodStartTime"`
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs and GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...}
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime pulumi.StringInput `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime pulumi.StringInput `pulumi:"freezePeriodStartTime"`
+}
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+// GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput is an input type that accepts GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray and GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput` via:
+//
+//	GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray{ GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...} }
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+	ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray []GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodInput
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return i.ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+// End time of the freeze period cycle.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod) string {
+		return v.FreezePeriodEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Start time of the freeze period cycle.
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod) string {
+		return v.FreezePeriodStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return vs[0].([]GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriod)[vs[1].(int)]
+	}).(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
 }
 
 type GetVmClustersVmClusterDataCollectionOption struct {
@@ -12285,6 +15720,42 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdateHistoryEntriesFilterInput)(nil)).Elem(), GetExadbVmClusterUpdateHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdateHistoryEntriesFilterArrayInput)(nil)).Elem(), GetExadbVmClusterUpdateHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdatesExadbVmClusterUpdateInput)(nil)).Elem(), GetExadbVmClusterUpdatesExadbVmClusterUpdateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayInput)(nil)).Elem(), GetExadbVmClusterUpdatesExadbVmClusterUpdateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdatesFilterInput)(nil)).Elem(), GetExadbVmClusterUpdatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterUpdatesFilterArrayInput)(nil)).Elem(), GetExadbVmClusterUpdatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOptionInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResourceInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResourceArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersFilterInput)(nil)).Elem(), GetExadbVmClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersFilterArrayInput)(nil)).Elem(), GetExadbVmClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultHighCapacityDatabaseStorageInput)(nil)).Elem(), GetExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultHighCapacityDatabaseStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultInput)(nil)).Elem(), GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultsExascaleDbStorageVaultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageInput)(nil)).Elem(), GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsFilterInput)(nil)).Elem(), GetExascaleDbStorageVaultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExascaleDbStorageVaultsFilterArrayInput)(nil)).Elem(), GetExascaleDbStorageVaultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesFilterInput)(nil)).Elem(), GetExternalContainerDatabasesFilterArgs{})
@@ -12411,6 +15882,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionArrayInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItemInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItemArrayInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailArrayInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailFreezePeriodInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput)(nil)).Elem(), GetVmClusterCloudAutomationUpdateDetailFreezePeriodArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClusterFileSystemConfigurationDetailArgs{})
@@ -12465,10 +15942,52 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersFilterArrayInput)(nil)).Elem(), GetVmClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterInput)(nil)).Elem(), GetVmClustersVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput)(nil)).Elem(), GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdateHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdateHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdatesExadbVmClusterUpdateOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdatesExadbVmClusterUpdateArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdatesFilterOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterUpdatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeResourceOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultHighCapacityDatabaseStorageOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsExascaleDbStorageVaultArrayOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsFilterOutput{})
+	pulumi.RegisterOutputType(GetExascaleDbStorageVaultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesFilterOutput{})
@@ -12595,6 +16114,12 @@ func init() {
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailFreezePeriodOutput{})
+	pulumi.RegisterOutputType(GetVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterFileSystemConfigurationDetailOutput{})
@@ -12649,6 +16174,12 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterFileSystemConfigurationDetailOutput{})

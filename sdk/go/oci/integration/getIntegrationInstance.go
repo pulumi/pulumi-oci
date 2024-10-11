@@ -72,18 +72,22 @@ type LookupIntegrationInstanceResult struct {
 	DataRetentionPeriod string `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails []GetIntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// Integration Instance Identifier, can be renamed.
 	DisplayName                    string `pulumi:"displayName"`
 	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	ExtendDataRetentionTrigger     int    `pulumi:"extendDataRetentionTrigger"`
+	FailoverTrigger                int    `pulumi:"failoverTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id     string `pulumi:"id"`
 	IdcsAt string `pulumi:"idcsAt"`
 	// Information for IDCS access
-	IdcsInfos []GetIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	IdcsInfos             []GetIntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	InstanceDesignTimeUrl string                           `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl           string `pulumi:"instanceUrl"`
 	IntegrationInstanceId string `pulumi:"integrationInstanceId"`
@@ -91,10 +95,14 @@ type LookupIntegrationInstanceResult struct {
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
+	// Is Disaster Recovery enabled for the integrationInstance
+	IsDisasterRecoveryEnabled bool `pulumi:"isDisasterRecoveryEnabled"`
 	// The file server is enabled or not.
 	IsFileServerEnabled bool `pulumi:"isFileServerEnabled"`
 	// Visual Builder is enabled or not.
 	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	// Additional details of lifecycleState or substates
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The number of configured message packs (if any)
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -198,6 +206,13 @@ func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.StringMapOut
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Disaster recovery details for the integration instance created in the region.
+func (o LookupIntegrationInstanceResultOutput) DisasterRecoveryDetails() GetIntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceDisasterRecoveryDetail {
+		return v.DisasterRecoveryDetails
+	}).(GetIntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
 // Integration Instance Identifier, can be renamed.
 func (o LookupIntegrationInstanceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -213,6 +228,10 @@ func (o LookupIntegrationInstanceResultOutput) EnableProcessAutomationTrigger() 
 
 func (o LookupIntegrationInstanceResultOutput) ExtendDataRetentionTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.ExtendDataRetentionTrigger }).(pulumi.IntOutput)
+}
+
+func (o LookupIntegrationInstanceResultOutput) FailoverTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.FailoverTrigger }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -234,6 +253,10 @@ func (o LookupIntegrationInstanceResultOutput) IdcsInfos() GetIntegrationInstanc
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceIdcsInfo { return v.IdcsInfos }).(GetIntegrationInstanceIdcsInfoArrayOutput)
 }
 
+func (o LookupIntegrationInstanceResultOutput) InstanceDesignTimeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.InstanceDesignTimeUrl }).(pulumi.StringOutput)
+}
+
 // The Integration Instance URL.
 func (o LookupIntegrationInstanceResultOutput) InstanceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.InstanceUrl }).(pulumi.StringOutput)
@@ -253,6 +276,11 @@ func (o LookupIntegrationInstanceResultOutput) IsByol() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsByol }).(pulumi.BoolOutput)
 }
 
+// Is Disaster Recovery enabled for the integrationInstance
+func (o LookupIntegrationInstanceResultOutput) IsDisasterRecoveryEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsDisasterRecoveryEnabled }).(pulumi.BoolOutput)
+}
+
 // The file server is enabled or not.
 func (o LookupIntegrationInstanceResultOutput) IsFileServerEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
@@ -261,6 +289,11 @@ func (o LookupIntegrationInstanceResultOutput) IsFileServerEnabled() pulumi.Bool
 // Visual Builder is enabled or not.
 func (o LookupIntegrationInstanceResultOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+}
+
+// Additional details of lifecycleState or substates
+func (o LookupIntegrationInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The number of configured message packs (if any)

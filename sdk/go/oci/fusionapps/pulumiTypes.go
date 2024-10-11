@@ -154,7 +154,7 @@ type FusionEnvironmentCreateFusionEnvironmentAdminUserDetails struct {
 	// The administrator's last name.
 	LastName string `pulumi:"lastName"`
 	// The password for the administrator.
-	Password string `pulumi:"password"`
+	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	Username string `pulumi:"username"`
 }
@@ -178,7 +178,7 @@ type FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs struct {
 	// The administrator's last name.
 	LastName pulumi.StringInput `pulumi:"lastName"`
 	// The password for the administrator.
-	Password pulumi.StringInput `pulumi:"password"`
+	Password pulumi.StringPtrInput `pulumi:"password"`
 	// The username for the administrator.
 	Username pulumi.StringInput `pulumi:"username"`
 }
@@ -276,8 +276,8 @@ func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) LastName
 }
 
 // The password for the administrator.
-func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v FusionEnvironmentCreateFusionEnvironmentAdminUserDetails) string { return v.Password }).(pulumi.StringOutput)
+func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FusionEnvironmentCreateFusionEnvironmentAdminUserDetails) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The username for the administrator.
@@ -345,7 +345,7 @@ func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput) Passw
 		if v == nil {
 			return nil
 		}
-		return &v.Password
+		return v.Password
 	}).(pulumi.StringPtrOutput)
 }
 

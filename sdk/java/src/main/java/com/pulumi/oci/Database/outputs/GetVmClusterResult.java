@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetVmClusterCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetVmClusterFileSystemConfigurationDetail;
 import java.lang.Boolean;
@@ -22,6 +23,11 @@ public final class GetVmClusterResult {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    private List<GetVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -169,6 +175,13 @@ public final class GetVmClusterResult {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public List<GetVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -382,6 +395,7 @@ public final class GetVmClusterResult {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private List<GetVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
         private String compartmentId;
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
@@ -417,6 +431,7 @@ public final class GetVmClusterResult {
         public Builder(GetVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.cloudAutomationUpdateDetails = defaults.cloudAutomationUpdateDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
@@ -457,6 +472,17 @@ public final class GetVmClusterResult {
             }
             this.availabilityDomain = availabilityDomain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder cloudAutomationUpdateDetails(List<GetVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails) {
+            if (cloudAutomationUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "cloudAutomationUpdateDetails");
+            }
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+        public Builder cloudAutomationUpdateDetails(GetVmClusterCloudAutomationUpdateDetail... cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(List.of(cloudAutomationUpdateDetails));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -721,6 +747,7 @@ public final class GetVmClusterResult {
         public GetVmClusterResult build() {
             final var _resultValue = new GetVmClusterResult();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.cpusEnabled = cpusEnabled;

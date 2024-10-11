@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     accessLevel: reportAccessLevel,
  *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
  *     displayName: reportDisplayName,
+ *     mimeType: reportMimeType,
  *     reportDefinitionId: testReportDefinition.id,
  *     state: reportState,
  *     timeGeneratedGreaterThanOrEqualTo: reportTimeGeneratedGreaterThanOrEqualTo,
@@ -38,6 +39,7 @@ export function getReports(args: GetReportsArgs, opts?: pulumi.InvokeOptions): P
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "mimeType": args.mimeType,
         "reportDefinitionId": args.reportDefinitionId,
         "state": args.state,
         "timeGeneratedGreaterThanOrEqualTo": args.timeGeneratedGreaterThanOrEqualTo,
@@ -67,6 +69,10 @@ export interface GetReportsArgs {
      */
     displayName?: string;
     filters?: inputs.DataSafe.GetReportsFilter[];
+    /**
+     * An optional filter to return only resources that match the specified mime type.
+     */
+    mimeType?: string;
     /**
      * The ID of the report definition to filter the list of reports
      */
@@ -113,6 +119,10 @@ export interface GetReportsResult {
      */
     readonly id: string;
     /**
+     * Specifies the format of report to be .xls or .pdf or .json
+     */
+    readonly mimeType?: string;
+    /**
      * The list of report_collection.
      */
     readonly reportCollections: outputs.DataSafe.GetReportsReportCollection[];
@@ -147,6 +157,7 @@ export interface GetReportsResult {
  *     accessLevel: reportAccessLevel,
  *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
  *     displayName: reportDisplayName,
+ *     mimeType: reportMimeType,
  *     reportDefinitionId: testReportDefinition.id,
  *     state: reportState,
  *     timeGeneratedGreaterThanOrEqualTo: reportTimeGeneratedGreaterThanOrEqualTo,
@@ -163,6 +174,7 @@ export function getReportsOutput(args: GetReportsOutputArgs, opts?: pulumi.Invok
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "mimeType": args.mimeType,
         "reportDefinitionId": args.reportDefinitionId,
         "state": args.state,
         "timeGeneratedGreaterThanOrEqualTo": args.timeGeneratedGreaterThanOrEqualTo,
@@ -192,6 +204,10 @@ export interface GetReportsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetReportsFilterArgs>[]>;
+    /**
+     * An optional filter to return only resources that match the specified mime type.
+     */
+    mimeType?: pulumi.Input<string>;
     /**
      * The ID of the report definition to filter the list of reports
      */

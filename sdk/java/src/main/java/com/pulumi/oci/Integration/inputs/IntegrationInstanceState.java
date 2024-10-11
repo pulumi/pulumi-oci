@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceAlternateCustomEndpointArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceAttachmentArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstanceDisasterRecoveryDetailArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceIdcsInfoArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
 import com.pulumi.oci.Integration.inputs.IntegrationInstancePrivateEndpointOutboundConnectionArgs;
@@ -131,6 +132,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    @Import(name="disasterRecoveryDetails")
+    private @Nullable Output<List<IntegrationInstanceDisasterRecoveryDetailArgs>> disasterRecoveryDetails;
+
+    /**
+     * @return Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    public Optional<Output<List<IntegrationInstanceDisasterRecoveryDetailArgs>>> disasterRecoveryDetails() {
+        return Optional.ofNullable(this.disasterRecoveryDetails);
+    }
+
+    /**
      * (Updatable) Integration Instance Identifier.
      * 
      */
@@ -191,6 +207,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    @Import(name="failoverTrigger")
+    private @Nullable Output<Integer> failoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> failoverTrigger() {
+        return Optional.ofNullable(this.failoverTrigger);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -233,6 +264,13 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<List<IntegrationInstanceIdcsInfoArgs>>> idcsInfos() {
         return Optional.ofNullable(this.idcsInfos);
+    }
+
+    @Import(name="instanceDesignTimeUrl")
+    private @Nullable Output<String> instanceDesignTimeUrl;
+
+    public Optional<Output<String>> instanceDesignTimeUrl() {
+        return Optional.ofNullable(this.instanceDesignTimeUrl);
     }
 
     /**
@@ -281,6 +319,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Is Disaster Recovery enabled or not.
+     * 
+     */
+    @Import(name="isDisasterRecoveryEnabled")
+    private @Nullable Output<Boolean> isDisasterRecoveryEnabled;
+
+    /**
+     * @return Is Disaster Recovery enabled or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isDisasterRecoveryEnabled() {
+        return Optional.ofNullable(this.isDisasterRecoveryEnabled);
+    }
+
+    /**
      * (Updatable) The file server is enabled or not.
      * 
      */
@@ -308,6 +361,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Boolean>> isVisualBuilderEnabled() {
         return Optional.ofNullable(this.isVisualBuilderEnabled);
+    }
+
+    /**
+     * Additional details of lifecycleState or substates
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Additional details of lifecycleState or substates
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
 
     /**
@@ -461,18 +529,23 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.customEndpoint = $.customEndpoint;
         this.dataRetentionPeriod = $.dataRetentionPeriod;
         this.definedTags = $.definedTags;
+        this.disasterRecoveryDetails = $.disasterRecoveryDetails;
         this.displayName = $.displayName;
         this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
         this.extendDataRetentionTrigger = $.extendDataRetentionTrigger;
+        this.failoverTrigger = $.failoverTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
         this.idcsInfos = $.idcsInfos;
+        this.instanceDesignTimeUrl = $.instanceDesignTimeUrl;
         this.instanceUrl = $.instanceUrl;
         this.integrationInstanceType = $.integrationInstanceType;
         this.isByol = $.isByol;
+        this.isDisasterRecoveryEnabled = $.isDisasterRecoveryEnabled;
         this.isFileServerEnabled = $.isFileServerEnabled;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
         this.privateEndpointOutboundConnections = $.privateEndpointOutboundConnections;
@@ -670,6 +743,37 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param disasterRecoveryDetails Disaster recovery details for the integration instance created in the region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disasterRecoveryDetails(@Nullable Output<List<IntegrationInstanceDisasterRecoveryDetailArgs>> disasterRecoveryDetails) {
+            $.disasterRecoveryDetails = disasterRecoveryDetails;
+            return this;
+        }
+
+        /**
+         * @param disasterRecoveryDetails Disaster recovery details for the integration instance created in the region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disasterRecoveryDetails(List<IntegrationInstanceDisasterRecoveryDetailArgs> disasterRecoveryDetails) {
+            return disasterRecoveryDetails(Output.of(disasterRecoveryDetails));
+        }
+
+        /**
+         * @param disasterRecoveryDetails Disaster recovery details for the integration instance created in the region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disasterRecoveryDetails(IntegrationInstanceDisasterRecoveryDetailArgs... disasterRecoveryDetails) {
+            return disasterRecoveryDetails(List.of(disasterRecoveryDetails));
+        }
+
+        /**
          * @param displayName (Updatable) Integration Instance Identifier.
          * 
          * @return builder
@@ -754,6 +858,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(@Nullable Output<Integer> failoverTrigger) {
+            $.failoverTrigger = failoverTrigger;
+            return this;
+        }
+
+        /**
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(Integer failoverTrigger) {
+            return failoverTrigger(Output.of(failoverTrigger));
+        }
+
+        /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -826,6 +951,15 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
             return idcsInfos(List.of(idcsInfos));
         }
 
+        public Builder instanceDesignTimeUrl(@Nullable Output<String> instanceDesignTimeUrl) {
+            $.instanceDesignTimeUrl = instanceDesignTimeUrl;
+            return this;
+        }
+
+        public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
+            return instanceDesignTimeUrl(Output.of(instanceDesignTimeUrl));
+        }
+
         /**
          * @param instanceUrl The Integration Instance URL.
          * 
@@ -890,6 +1024,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param isDisasterRecoveryEnabled Is Disaster Recovery enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisasterRecoveryEnabled(@Nullable Output<Boolean> isDisasterRecoveryEnabled) {
+            $.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDisasterRecoveryEnabled Is Disaster Recovery enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            return isDisasterRecoveryEnabled(Output.of(isDisasterRecoveryEnabled));
+        }
+
+        /**
          * @param isFileServerEnabled (Updatable) The file server is enabled or not.
          * 
          * @return builder
@@ -929,6 +1084,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             return isVisualBuilderEnabled(Output.of(isVisualBuilderEnabled));
+        }
+
+        /**
+         * @param lifecycleDetails Additional details of lifecycleState or substates
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Additional details of lifecycleState or substates
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
         /**

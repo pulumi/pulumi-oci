@@ -656,30 +656,6 @@ class HostInsight(pulumi.CustomResource):
 
         Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_host_insight = oci.opsi.HostInsight("test_host_insight",
-            compartment_id=compartment_id,
-            entity_source=host_insight_entity_source,
-            compute_id=test_compute["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
-            enterprise_manager_entity_identifier=host_insight_enterprise_manager_entity_identifier,
-            enterprise_manager_identifier=host_insight_enterprise_manager_identifier,
-            exadata_insight_id=test_exadata_insight["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            management_agent_id=test_management_agent["id"],
-            status="DISABLED")
-        ```
-
         ## Import
 
         HostInsights can be imported using the `id`, e.g.
@@ -716,30 +692,6 @@ class HostInsight(pulumi.CustomResource):
         This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 
         Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_host_insight = oci.opsi.HostInsight("test_host_insight",
-            compartment_id=compartment_id,
-            entity_source=host_insight_entity_source,
-            compute_id=test_compute["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
-            enterprise_manager_entity_identifier=host_insight_enterprise_manager_entity_identifier,
-            enterprise_manager_identifier=host_insight_enterprise_manager_identifier,
-            exadata_insight_id=test_exadata_insight["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            management_agent_id=test_management_agent["id"],
-            status="DISABLED")
-        ```
 
         ## Import
 

@@ -165,7 +165,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private String databaseManagementStatus;
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     private String dataguardRegionType;
@@ -199,12 +199,12 @@ public final class GetAutonomousDatabaseResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     private String disasterRecoveryRegionType;
     /**
-     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String disasterRecoveryType;
@@ -632,6 +632,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeReclamationOfFreeAutonomousDatabase;
     /**
+     * @return The date and time the Autonomous Database was most recently undeleted.
+     * 
+     */
+    private String timeUndeleted;
+    /**
      * @return The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
@@ -863,7 +868,7 @@ public final class GetAutonomousDatabaseResult {
         return this.databaseManagementStatus;
     }
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public String dataguardRegionType() {
@@ -909,14 +914,14 @@ public final class GetAutonomousDatabaseResult {
         return this.definedTags;
     }
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public String disasterRecoveryRegionType() {
         return this.disasterRecoveryRegionType;
     }
     /**
-     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String disasterRecoveryType() {
@@ -1528,6 +1533,13 @@ public final class GetAutonomousDatabaseResult {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
+     * @return The date and time the Autonomous Database was most recently undeleted.
+     * 
+     */
+    public String timeUndeleted() {
+        return this.timeUndeleted;
+    }
+    /**
      * @return The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
@@ -1715,6 +1727,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeOfLastSwitchover;
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
+        private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
         private Double totalBackupStorageSizeInGbs;
@@ -1856,6 +1869,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeOfLastSwitchover = defaults.timeOfLastSwitchover;
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
+    	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
     	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
@@ -2967,6 +2981,14 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeUndeleted(String timeUndeleted) {
+            if (timeUndeleted == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeUndeleted");
+            }
+            this.timeUndeleted = timeUndeleted;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUntilReconnectCloneEnabled(String timeUntilReconnectCloneEnabled) {
             if (timeUntilReconnectCloneEnabled == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeUntilReconnectCloneEnabled");
@@ -3165,6 +3187,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeOfLastSwitchover = timeOfLastSwitchover;
             _resultValue.timeOfNextRefresh = timeOfNextRefresh;
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;
             _resultValue.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;

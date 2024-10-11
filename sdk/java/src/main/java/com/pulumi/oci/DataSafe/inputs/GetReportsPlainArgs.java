@@ -86,6 +86,21 @@ public final class GetReportsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * An optional filter to return only resources that match the specified mime type.
+     * 
+     */
+    @Import(name="mimeType")
+    private @Nullable String mimeType;
+
+    /**
+     * @return An optional filter to return only resources that match the specified mime type.
+     * 
+     */
+    public Optional<String> mimeType() {
+        return Optional.ofNullable(this.mimeType);
+    }
+
+    /**
      * The ID of the report definition to filter the list of reports
      * 
      */
@@ -176,6 +191,7 @@ public final class GetReportsPlainArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.mimeType = $.mimeType;
         this.reportDefinitionId = $.reportDefinitionId;
         this.state = $.state;
         this.timeGeneratedGreaterThanOrEqualTo = $.timeGeneratedGreaterThanOrEqualTo;
@@ -252,6 +268,17 @@ public final class GetReportsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetReportsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param mimeType An optional filter to return only resources that match the specified mime type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mimeType(@Nullable String mimeType) {
+            $.mimeType = mimeType;
+            return this;
         }
 
         /**

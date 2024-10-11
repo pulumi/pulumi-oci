@@ -78,6 +78,21 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
     }
 
     /**
+     * Exadata VMCluster type
+     * 
+     */
+    @Import(name="vmClusterType")
+    private @Nullable Output<String> vmClusterType;
+
+    /**
+     * @return Exadata VMCluster type
+     * 
+     */
+    public Optional<Output<String>> vmClusterType() {
+        return Optional.ofNullable(this.vmClusterType);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
      * 
      */
@@ -99,6 +114,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
         this.dbmPrivateEndpointId = $.dbmPrivateEndpointId;
         this.memberDatabaseDetails = $.memberDatabaseDetails;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
+        this.vmClusterType = $.vmClusterType;
         this.vmclusterId = $.vmclusterId;
     }
 
@@ -212,6 +228,27 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
          */
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             return opsiPrivateEndpointId(Output.of(opsiPrivateEndpointId));
+        }
+
+        /**
+         * @param vmClusterType Exadata VMCluster type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(@Nullable Output<String> vmClusterType) {
+            $.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
+         * @param vmClusterType Exadata VMCluster type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterType(String vmClusterType) {
+            return vmClusterType(Output.of(vmClusterType));
         }
 
         /**

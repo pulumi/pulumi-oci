@@ -70,6 +70,12 @@ import javax.annotation.Nullable;
  * with the signature. To get the image ID for the LaunchInstance operation, call
  * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
  * 
+ * When launching an instance, you may provide the `securityAttributes` parameter in
+ * [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+ * or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+ * via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+ * 400 Bad Request response.
+ * 
  * To determine whether capacity is available for a specific shape before you create an instance,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
@@ -656,6 +662,34 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> region() {
         return this.region;
+    }
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
+     * The lifecycle state of the `securityAttributes`
+     * 
+     */
+    @Export(name="securityAttributesState", refs={String.class}, tree="[0]")
+    private Output<String> securityAttributesState;
+
+    /**
+     * @return The lifecycle state of the `securityAttributes`
+     * 
+     */
+    public Output<String> securityAttributesState() {
+        return this.securityAttributesState;
     }
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.

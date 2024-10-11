@@ -14,7 +14,10 @@ import (
 
 // This resource provides the Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
 //
-// Creates a dimension-specific suppression for an alarm.
+// Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+// For more information, see
+// [Adding an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm) and
+// [Adding a Dimension-Specific Alarm Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
 //
 // For important limits information, see
 // [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -39,10 +42,11 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.NewAlarmSuppression(ctx, "test_alarm_suppression", &Monitoring.AlarmSuppressionArgs{
 //				AlarmSuppressionTarget: &monitoring.AlarmSuppressionAlarmSuppressionTargetArgs{
-//					AlarmId:    pulumi.Any(testAlarm.Id),
-//					TargetType: pulumi.Any(alarmSuppressionAlarmSuppressionTargetTargetType),
+//					TargetType:             pulumi.Any(alarmSuppressionAlarmSuppressionTargetTargetType),
+//					AlarmId:                pulumi.Any(testAlarm.Id),
+//					CompartmentId:          pulumi.Any(compartmentId),
+//					CompartmentIdInSubtree: pulumi.Any(alarmSuppressionAlarmSuppressionTargetCompartmentIdInSubtree),
 //				},
-//				Dimensions:        pulumi.Any(alarmSuppressionDimensions),
 //				DisplayName:       pulumi.Any(alarmSuppressionDisplayName),
 //				TimeSuppressFrom:  pulumi.Any(alarmSuppressionTimeSuppressFrom),
 //				TimeSuppressUntil: pulumi.Any(alarmSuppressionTimeSuppressUntil),
@@ -50,8 +54,17 @@ import (
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(alarmSuppressionDescription),
+//				Dimensions:  pulumi.Any(alarmSuppressionDimensions),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
+//				},
+//				Level: pulumi.Any(alarmSuppressionLevel),
+//				SuppressionConditions: monitoring.AlarmSuppressionSuppressionConditionArray{
+//					&monitoring.AlarmSuppressionSuppressionConditionArgs{
+//						ConditionType:         pulumi.Any(alarmSuppressionSuppressionConditionsConditionType),
+//						SuppressionDuration:   pulumi.Any(alarmSuppressionSuppressionConditionsSuppressionDuration),
+//						SuppressionRecurrence: pulumi.Any(alarmSuppressionSuppressionConditionsSuppressionRecurrence),
+//					},
 //				},
 //			})
 //			if err != nil {
@@ -87,14 +100,20 @@ type AlarmSuppression struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
-	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+	// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 	Dimensions pulumi.StringMapOutput `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	//
+	// Defaut: `DIMENSION`
+	Level pulumi.StringOutput `pulumi:"level"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State pulumi.StringOutput `pulumi:"state"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions AlarmSuppressionSuppressionConditionArrayOutput `pulumi:"suppressionConditions"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -117,9 +136,6 @@ func NewAlarmSuppression(ctx *pulumi.Context,
 
 	if args.AlarmSuppressionTarget == nil {
 		return nil, errors.New("invalid value for required argument 'AlarmSuppressionTarget'")
-	}
-	if args.Dimensions == nil {
-		return nil, errors.New("invalid value for required argument 'Dimensions'")
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
@@ -167,14 +183,20 @@ type alarmSuppressionState struct {
 	Description *string `pulumi:"description"`
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
-	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+	// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 	Dimensions map[string]string `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	//
+	// Defaut: `DIMENSION`
+	Level *string `pulumi:"level"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State *string `pulumi:"state"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions []AlarmSuppressionSuppressionCondition `pulumi:"suppressionConditions"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -203,14 +225,20 @@ type AlarmSuppressionState struct {
 	Description pulumi.StringPtrInput
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
-	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+	// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 	Dimensions pulumi.StringMapInput
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	//
+	// Defaut: `DIMENSION`
+	Level pulumi.StringPtrInput
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State pulumi.StringPtrInput
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions AlarmSuppressionSuppressionConditionArrayInput
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -241,12 +269,18 @@ type alarmSuppressionArgs struct {
 	Description *string `pulumi:"description"`
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
-	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+	// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 	Dimensions map[string]string `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	//
+	// Defaut: `DIMENSION`
+	Level *string `pulumi:"level"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions []AlarmSuppressionSuppressionCondition `pulumi:"suppressionConditions"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
@@ -270,12 +304,18 @@ type AlarmSuppressionArgs struct {
 	Description pulumi.StringPtrInput
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
-	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+	// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 	Dimensions pulumi.StringMapInput
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	//
+	// Defaut: `DIMENSION`
+	Level pulumi.StringPtrInput
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions AlarmSuppressionSuppressionConditionArrayInput
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeSuppressFrom pulumi.StringInput
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
@@ -400,7 +440,7 @@ func (o AlarmSuppressionOutput) Description() pulumi.StringOutput {
 
 // A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 //
-// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
+// This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
 func (o AlarmSuppressionOutput) Dimensions() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringMapOutput { return v.Dimensions }).(pulumi.StringMapOutput)
 }
@@ -415,9 +455,23 @@ func (o AlarmSuppressionOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+//
+// Defaut: `DIMENSION`
+func (o AlarmSuppressionOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringOutput { return v.Level }).(pulumi.StringOutput)
+}
+
 // The current lifecycle state of the alarm suppression.  Example: `DELETED`
 func (o AlarmSuppressionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+func (o AlarmSuppressionOutput) SuppressionConditions() AlarmSuppressionSuppressionConditionArrayOutput {
+	return o.ApplyT(func(v *AlarmSuppression) AlarmSuppressionSuppressionConditionArrayOutput {
+		return v.SuppressionConditions
+	}).(AlarmSuppressionSuppressionConditionArrayOutput)
 }
 
 // The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`

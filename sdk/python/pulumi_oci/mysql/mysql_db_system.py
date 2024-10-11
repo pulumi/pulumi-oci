@@ -81,7 +81,7 @@ class MysqlDbSystemArgs:
                
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+        :param pulumi.Input[str] hostname_label: (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
                
                The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
                
@@ -400,7 +400,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
-        The hostname for the primary endpoint of the DB System. Used for DNS.
+        (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 
         The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 
@@ -611,7 +611,7 @@ class _MysqlDbSystemState:
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]] heat_wave_clusters: A summary of a HeatWave cluster.
-        :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+        :param pulumi.Input[str] hostname_label: (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
                
                The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
                
@@ -983,7 +983,7 @@ class _MysqlDbSystemState:
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
-        The hostname for the primary endpoint of the DB System. Used for DNS.
+        (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 
         The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 
@@ -1352,7 +1352,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+        :param pulumi.Input[str] hostname_label: (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
                
                The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
                
@@ -1653,7 +1653,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]] heat_wave_clusters: A summary of a HeatWave cluster.
-        :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+        :param pulumi.Input[str] hostname_label: (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
                
                The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
                
@@ -1907,7 +1907,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> pulumi.Output[str]:
         """
-        The hostname for the primary endpoint of the DB System. Used for DNS.
+        (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
 
         The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 

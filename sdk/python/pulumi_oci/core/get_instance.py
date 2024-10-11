@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, security_attributes=None, security_attributes_state=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -136,6 +136,12 @@ class GetInstanceResult:
         if region and not isinstance(region, str):
             raise TypeError("Expected argument 'region' to be a str")
         pulumi.set(__self__, "region", region)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
+        if security_attributes_state and not isinstance(security_attributes_state, str):
+            raise TypeError("Expected argument 'security_attributes_state' to be a str")
+        pulumi.set(__self__, "security_attributes_state", security_attributes_state)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -441,6 +447,22 @@ class GetInstanceResult:
         return pulumi.get(self, "region")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
+    @pulumi.getter(name="securityAttributesState")
+    def security_attributes_state(self) -> str:
+        """
+        The lifecycle state of the `securityAttributes`
+        """
+        return pulumi.get(self, "security_attributes_state")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -547,6 +569,8 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             private_ip=self.private_ip,
             public_ip=self.public_ip,
             region=self.region,
+            security_attributes=self.security_attributes,
+            security_attributes_state=self.security_attributes_state,
             shape=self.shape,
             shape_configs=self.shape_configs,
             source_details=self.source_details,
@@ -622,6 +646,8 @@ def get_instance(instance_id: Optional[str] = None,
         private_ip=pulumi.get(__ret__, 'private_ip'),
         public_ip=pulumi.get(__ret__, 'public_ip'),
         region=pulumi.get(__ret__, 'region'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
+        security_attributes_state=pulumi.get(__ret__, 'security_attributes_state'),
         shape=pulumi.get(__ret__, 'shape'),
         shape_configs=pulumi.get(__ret__, 'shape_configs'),
         source_details=pulumi.get(__ret__, 'source_details'),
@@ -694,6 +720,8 @@ def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
         private_ip=pulumi.get(__response__, 'private_ip'),
         public_ip=pulumi.get(__response__, 'public_ip'),
         region=pulumi.get(__response__, 'region'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
+        security_attributes_state=pulumi.get(__response__, 'security_attributes_state'),
         shape=pulumi.get(__response__, 'shape'),
         shape_configs=pulumi.get(__response__, 'shape_configs'),
         source_details=pulumi.get(__response__, 'source_details'),

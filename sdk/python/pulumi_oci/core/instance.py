@@ -49,6 +49,7 @@ class InstanceArgs:
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
                  preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
@@ -144,6 +145,7 @@ class InstanceArgs:
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -219,6 +221,8 @@ class InstanceArgs:
             pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
         if preserve_data_volumes_created_at_launch is not None:
             pulumi.set(__self__, "preserve_data_volumes_created_at_launch", preserve_data_volumes_created_at_launch)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -627,6 +631,18 @@ class InstanceArgs:
         pulumi.set(self, "preserve_data_volumes_created_at_launch", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -743,6 +759,8 @@ class _InstanceState:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  public_ip: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 security_attributes_state: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
@@ -851,6 +869,8 @@ class _InstanceState:
         :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[str] security_attributes_state: The lifecycle state of the `securityAttributes`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -943,6 +963,10 @@ class _InstanceState:
             pulumi.set(__self__, "public_ip", public_ip)
         if region is not None:
             pulumi.set(__self__, "region", region)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
+        if security_attributes_state is not None:
+            pulumi.set(__self__, "security_attributes_state", security_attributes_state)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -1433,6 +1457,30 @@ class _InstanceState:
         pulumi.set(self, "region", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
+    @pulumi.getter(name="securityAttributesState")
+    def security_attributes_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The lifecycle state of the `securityAttributes`
+        """
+        return pulumi.get(self, "security_attributes_state")
+
+    @security_attributes_state.setter
+    def security_attributes_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_attributes_state", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1581,6 +1629,7 @@ class Instance(pulumi.CustomResource):
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
                  preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
                  source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
@@ -1630,6 +1679,12 @@ class Instance(pulumi.CustomResource):
         Then, call [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
         with the signature. To get the image ID for the LaunchInstance operation, call
         [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
+
+        When launching an instance, you may provide the `securityAttributes` parameter in
+        [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+        or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+        via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+        400 Bad Request response.
 
         To determine whether capacity is available for a specific shape before you create an instance,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
@@ -1732,6 +1787,7 @@ class Instance(pulumi.CustomResource):
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1796,6 +1852,12 @@ class Instance(pulumi.CustomResource):
         with the signature. To get the image ID for the LaunchInstance operation, call
         [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
 
+        When launching an instance, you may provide the `securityAttributes` parameter in
+        [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+        or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+        via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+        400 Bad Request response.
+
         To determine whether capacity is available for a specific shape before you create an instance,
         use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
         operation.
@@ -1851,6 +1913,7 @@ class Instance(pulumi.CustomResource):
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
                  preserve_data_volumes_created_at_launch: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
                  source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
@@ -1898,6 +1961,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
             __props__.__dict__["preserve_data_volumes_created_at_launch"] = preserve_data_volumes_created_at_launch
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shape"] = shape
             __props__.__dict__["shape_config"] = shape_config
             __props__.__dict__["source_details"] = source_details
@@ -1910,6 +1974,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["private_ip"] = None
             __props__.__dict__["public_ip"] = None
             __props__.__dict__["region"] = None
+            __props__.__dict__["security_attributes_state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_maintenance_reboot_due"] = None
@@ -1957,6 +2022,8 @@ class Instance(pulumi.CustomResource):
             private_ip: Optional[pulumi.Input[str]] = None,
             public_ip: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            security_attributes_state: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             shape_config: Optional[pulumi.Input[Union['InstanceShapeConfigArgs', 'InstanceShapeConfigArgsDict']]] = None,
             source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
@@ -2070,6 +2137,8 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[str] security_attributes_state: The lifecycle state of the `securityAttributes`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -2126,6 +2195,8 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["public_ip"] = public_ip
         __props__.__dict__["region"] = region
+        __props__.__dict__["security_attributes"] = security_attributes
+        __props__.__dict__["security_attributes_state"] = security_attributes_state
         __props__.__dict__["shape"] = shape
         __props__.__dict__["shape_config"] = shape_config
         __props__.__dict__["source_details"] = source_details
@@ -2467,6 +2538,22 @@ class Instance(pulumi.CustomResource):
         The region that contains the availability domain the instance is running in.
         """
         return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
+    @pulumi.getter(name="securityAttributesState")
+    def security_attributes_state(self) -> pulumi.Output[str]:
+        """
+        The lifecycle state of the `securityAttributes`
+        """
+        return pulumi.get(self, "security_attributes_state")
 
     @property
     @pulumi.getter

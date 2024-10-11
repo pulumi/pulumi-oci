@@ -90,6 +90,7 @@ import (
 //				Ipv6privateCidrBlocks:        pulumi.Any(vcnIpv6privateCidrBlocks),
 //				IsIpv6enabled:                pulumi.Any(vcnIsIpv6enabled),
 //				IsOracleGuaAllocationEnabled: pulumi.Any(vcnIsOracleGuaAllocationEnabled),
+//				SecurityAttributes:           pulumi.Any(vcnSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -155,10 +156,12 @@ type Vcn struct {
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolOutput `pulumi:"isIpv6enabled"`
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	IsOracleGuaAllocationEnabled pulumi.BoolOutput `pulumi:"isOracleGuaAllocationEnabled"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled pulumi.BoolOutput `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The VCN's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -245,10 +248,12 @@ type vcnState struct {
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled *bool `pulumi:"isIpv6enabled"`
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The VCN's current state.
 	State *string `pulumi:"state"`
 	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -303,10 +308,12 @@ type VcnState struct {
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolPtrInput
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	SecurityAttributes pulumi.StringMapInput
 	// The VCN's current state.
 	State pulumi.StringPtrInput
 	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -355,10 +362,12 @@ type vcnArgs struct {
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled *bool `pulumi:"isIpv6enabled"`
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 }
 
 // The set of arguments for constructing a Vcn resource.
@@ -398,10 +407,12 @@ type VcnArgs struct {
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolPtrInput
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	SecurityAttributes pulumi.StringMapInput
 }
 
 func (VcnArgs) ElementType() reflect.Type {
@@ -581,11 +592,16 @@ func (o VcnOutput) IsIpv6enabled() pulumi.BoolOutput {
 }
 
 // Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+func (o VcnOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VcnOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+func (o VcnOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The VCN's current state.

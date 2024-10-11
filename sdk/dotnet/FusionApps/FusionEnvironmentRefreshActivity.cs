@@ -14,25 +14,6 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// Creates a new RefreshActivity.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testFusionEnvironmentRefreshActivity = new Oci.FusionApps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", new()
-    ///     {
-    ///         FusionEnvironmentId = testFusionEnvironment.Id,
-    ///         SourceFusionEnvironmentId = testFusionEnvironment.Id,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
@@ -57,6 +38,12 @@ namespace Pulumi.Oci.FusionApps
         public Output<string> FusionEnvironmentId { get; private set; } = null!;
 
         /// <summary>
+        /// Represents if the customer opted for Data Masking or not during refreshActivity.
+        /// </summary>
+        [Output("isDataMaskingOpted")]
+        public Output<bool> IsDataMaskingOpted { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -79,10 +66,6 @@ namespace Pulumi.Oci.FusionApps
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceFusionEnvironmentId")]
         public Output<string> SourceFusionEnvironmentId { get; private set; } = null!;
@@ -176,11 +159,13 @@ namespace Pulumi.Oci.FusionApps
         public Input<string> FusionEnvironmentId { get; set; } = null!;
 
         /// <summary>
+        /// Represents if the customer opted for Data Masking or not during refreshActivity.
+        /// </summary>
+        [Input("isDataMaskingOpted")]
+        public Input<bool>? IsDataMaskingOpted { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceFusionEnvironmentId", required: true)]
         public Input<string> SourceFusionEnvironmentId { get; set; } = null!;
@@ -204,6 +189,12 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("fusionEnvironmentId")]
         public Input<string>? FusionEnvironmentId { get; set; }
+
+        /// <summary>
+        /// Represents if the customer opted for Data Masking or not during refreshActivity.
+        /// </summary>
+        [Input("isDataMaskingOpted")]
+        public Input<bool>? IsDataMaskingOpted { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -234,10 +225,6 @@ namespace Pulumi.Oci.FusionApps
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceFusionEnvironmentId")]
         public Input<string>? SourceFusionEnvironmentId { get; set; }

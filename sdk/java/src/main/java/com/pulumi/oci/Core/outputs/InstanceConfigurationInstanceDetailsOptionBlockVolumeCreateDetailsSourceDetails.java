@@ -18,7 +18,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
      */
     private @Nullable String id;
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type can be one of these values: `volume`, `volumeBackup`
      * 
      */
     private String type;
@@ -32,7 +32,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type can be one of these values: `volume`, `volumeBackup`
      * 
      */
     public String type() {

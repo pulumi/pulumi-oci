@@ -16,92 +16,44 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
 
     public static final ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs Empty = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs();
 
-    /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-     * 
-     */
     @Import(name="credentialSourceName")
     private @Nullable Output<String> credentialSourceName;
 
-    /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-     * 
-     */
     public Optional<Output<String>> credentialSourceName() {
         return Optional.ofNullable(this.credentialSourceName);
     }
 
-    /**
-     * Credential type.
-     * 
-     */
     @Import(name="credentialType", required=true)
     private Output<String> credentialType;
 
-    /**
-     * @return Credential type.
-     * 
-     */
     public Output<String> credentialType() {
         return this.credentialType;
     }
 
-    /**
-     * The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-     * 
-     */
     @Import(name="passwordSecretId")
     private @Nullable Output<String> passwordSecretId;
 
-    /**
-     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-     * 
-     */
     public Optional<Output<String>> passwordSecretId() {
         return Optional.ofNullable(this.passwordSecretId);
     }
 
-    /**
-     * database user role.
-     * 
-     */
     @Import(name="role")
     private @Nullable Output<String> role;
 
-    /**
-     * @return database user role.
-     * 
-     */
     public Optional<Output<String>> role() {
         return Optional.ofNullable(this.role);
     }
 
-    /**
-     * database user name.
-     * 
-     */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
-    /**
-     * @return database user name.
-     * 
-     */
     public Optional<Output<String>> userName() {
         return Optional.ofNullable(this.userName);
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
     @Import(name="walletSecretId")
     private @Nullable Output<String> walletSecretId;
 
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
     public Optional<Output<String>> walletSecretId() {
         return Optional.ofNullable(this.walletSecretId);
     }
@@ -135,128 +87,56 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
             $ = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-         * 
-         * @return builder
-         * 
-         */
         public Builder credentialSourceName(@Nullable Output<String> credentialSourceName) {
             $.credentialSourceName = credentialSourceName;
             return this;
         }
 
-        /**
-         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-         * 
-         * @return builder
-         * 
-         */
         public Builder credentialSourceName(String credentialSourceName) {
             return credentialSourceName(Output.of(credentialSourceName));
         }
 
-        /**
-         * @param credentialType Credential type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder credentialType(Output<String> credentialType) {
             $.credentialType = credentialType;
             return this;
         }
 
-        /**
-         * @param credentialType Credential type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder credentialType(String credentialType) {
             return credentialType(Output.of(credentialType));
         }
 
-        /**
-         * @param passwordSecretId The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-         * 
-         * @return builder
-         * 
-         */
         public Builder passwordSecretId(@Nullable Output<String> passwordSecretId) {
             $.passwordSecretId = passwordSecretId;
             return this;
         }
 
-        /**
-         * @param passwordSecretId The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-         * 
-         * @return builder
-         * 
-         */
         public Builder passwordSecretId(String passwordSecretId) {
             return passwordSecretId(Output.of(passwordSecretId));
         }
 
-        /**
-         * @param role database user role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder role(@Nullable Output<String> role) {
             $.role = role;
             return this;
         }
 
-        /**
-         * @param role database user role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder role(String role) {
             return role(Output.of(role));
         }
 
-        /**
-         * @param userName database user name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
             return this;
         }
 
-        /**
-         * @param userName database user name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
         }
 
-        /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-         * 
-         * @return builder
-         * 
-         */
         public Builder walletSecretId(@Nullable Output<String> walletSecretId) {
             $.walletSecretId = walletSecretId;
             return this;
         }
 
-        /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-         * 
-         * @return builder
-         * 
-         */
         public Builder walletSecretId(String walletSecretId) {
             return walletSecretId(Output.of(walletSecretId));
         }

@@ -89,6 +89,8 @@ type LookupVcnResult struct {
 	Ipv6privateCidrBlocks        []string `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                bool     `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled bool     `pulumi:"isOracleGuaAllocationEnabled"`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The VCN's current state.
 	State string `pulumi:"state"`
 	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -222,6 +224,11 @@ func (o LookupVcnResultOutput) IsIpv6enabled() pulumi.BoolOutput {
 
 func (o LookupVcnResultOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVcnResult) bool { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+}
+
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+func (o LookupVcnResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVcnResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The VCN's current state.

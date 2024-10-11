@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<bool>? _skipRus;
 
         /// <summary>
-        /// (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        /// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         /// </summary>
         public InputList<bool> SkipRus
         {

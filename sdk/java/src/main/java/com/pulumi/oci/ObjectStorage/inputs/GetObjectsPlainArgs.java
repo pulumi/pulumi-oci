@@ -48,14 +48,14 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Object names returned by a list query must be strictly less than this parameter.
+     * Returns object names which are lexicographically strictly less than this parameter.
      * 
      */
     @Import(name="end")
     private @Nullable String end;
 
     /**
-     * @return Object names returned by a list query must be strictly less than this parameter.
+     * @return Returns object names which are lexicographically strictly less than this parameter.
      * 
      */
     public Optional<String> end() {
@@ -100,14 +100,14 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Object names returned by a list query must be greater or equal to this parameter.
+     * Returns object names which are lexicographically greater than or equal to this parameter.
      * 
      */
     @Import(name="start")
     private @Nullable String start;
 
     /**
-     * @return Object names returned by a list query must be greater or equal to this parameter.
+     * @return Returns object names which are lexicographically greater than or equal to this parameter.
      * 
      */
     public Optional<String> start() {
@@ -115,14 +115,14 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Object names returned by a list query must be greater than this parameter.
+     * Returns object names which are lexicographically strictly greater than this parameter.
      * 
      */
     @Import(name="startAfter")
     private @Nullable String startAfter;
 
     /**
-     * @return Object names returned by a list query must be greater than this parameter.
+     * @return Returns object names which are lexicographically strictly greater than this parameter.
      * 
      */
     public Optional<String> startAfter() {
@@ -183,7 +183,7 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param end Object names returned by a list query must be strictly less than this parameter.
+         * @param end Returns object names which are lexicographically strictly less than this parameter.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param start Object names returned by a list query must be greater or equal to this parameter.
+         * @param start Returns object names which are lexicographically greater than or equal to this parameter.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class GetObjectsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param startAfter Object names returned by a list query must be greater than this parameter.
+         * @param startAfter Returns object names which are lexicographically strictly greater than this parameter.
          * 
          * @return builder
          * 

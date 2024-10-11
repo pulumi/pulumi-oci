@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FusionApps.Inputs
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
 
-        [Input("password", required: true)]
+        [Input("password")]
         private Input<string>? _password;
 
         /// <summary>

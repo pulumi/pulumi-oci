@@ -363,7 +363,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
+     * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      * 
      * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
      * 
@@ -374,7 +374,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> hostnameLabel;
 
     /**
-     * @return The hostname for the primary endpoint of the DB System. Used for DNS.
+     * @return (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      * 
      * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
      * 
@@ -1232,7 +1232,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param hostnameLabel The hostname for the primary endpoint of the DB System. Used for DNS.
+         * @param hostnameLabel (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
          * 
          * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
          * 
@@ -1247,7 +1247,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param hostnameLabel The hostname for the primary endpoint of the DB System. Used for DNS.
+         * @param hostnameLabel (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
          * 
          * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
          * 

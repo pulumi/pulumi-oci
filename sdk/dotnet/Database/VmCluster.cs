@@ -33,6 +33,21 @@ namespace Pulumi.Oci.Database
     ///         GiVersion = vmClusterGiVersion,
     ///         SshPublicKeys = vmClusterSshPublicKeys,
     ///         VmClusterNetworkId = testVmClusterNetwork.Id,
+    ///         CloudAutomationUpdateDetails = new Oci.Database.Inputs.VmClusterCloudAutomationUpdateDetailsArgs
+    ///         {
+    ///             ApplyUpdateTimePreference = new Oci.Database.Inputs.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs
+    ///             {
+    ///                 ApplyUpdatePreferredEndTime = vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime,
+    ///                 ApplyUpdatePreferredStartTime = vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime,
+    ///             },
+    ///             FreezePeriod = new Oci.Database.Inputs.VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs
+    ///             {
+    ///                 FreezePeriodEndTime = vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime,
+    ///                 FreezePeriodStartTime = vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime,
+    ///             },
+    ///             IsEarlyAdoptionEnabled = vmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled,
+    ///             IsFreezePeriodEnabled = vmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled,
+    ///         },
     ///         DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
     ///         {
     ///             IsDiagnosticsEventsEnabled = vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
@@ -82,6 +97,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Output("cloudAutomationUpdateDetails")]
+        public Output<Outputs.VmClusterCloudAutomationUpdateDetails> CloudAutomationUpdateDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -299,6 +320,12 @@ namespace Pulumi.Oci.Database
     public sealed class VmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Input("cloudAutomationUpdateDetails")]
+        public Input<Inputs.VmClusterCloudAutomationUpdateDetailsArgs>? CloudAutomationUpdateDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -471,6 +498,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        /// </summary>
+        [Input("cloudAutomationUpdateDetails")]
+        public Input<Inputs.VmClusterCloudAutomationUpdateDetailsGetArgs>? CloudAutomationUpdateDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

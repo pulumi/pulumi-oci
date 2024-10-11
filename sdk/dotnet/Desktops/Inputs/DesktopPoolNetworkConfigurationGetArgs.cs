@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Desktops.Inputs
     public sealed class DesktopPoolNetworkConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the subnet to use for the desktop pool.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the VCN used by the desktop pool.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;

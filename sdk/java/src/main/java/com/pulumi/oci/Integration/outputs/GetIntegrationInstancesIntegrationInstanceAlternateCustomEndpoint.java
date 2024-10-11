@@ -22,15 +22,26 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
      */
     private String certificateSecretId;
     /**
-     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
      * 
      */
     private Integer certificateSecretVersion;
+    private String dnsType;
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    private String dnsZoneName;
     /**
      * @return A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
     private String hostname;
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    private String managedType;
 
     private GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint() {}
     /**
@@ -48,11 +59,21 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
         return this.certificateSecretId;
     }
     /**
-     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
      * 
      */
     public Integer certificateSecretVersion() {
         return this.certificateSecretVersion;
+    }
+    public String dnsType() {
+        return this.dnsType;
+    }
+    /**
+     * @return DNS Zone name
+     * 
+     */
+    public String dnsZoneName() {
+        return this.dnsZoneName;
     }
     /**
      * @return A custom hostname to be used for the integration instance URL, in FQDN format.
@@ -60,6 +81,13 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
      */
     public String hostname() {
         return this.hostname;
+    }
+    /**
+     * @return Indicates if custom endpoint is managed by oracle or customer.
+     * 
+     */
+    public String managedType() {
+        return this.managedType;
     }
 
     public static Builder builder() {
@@ -74,14 +102,20 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
         private String alias;
         private String certificateSecretId;
         private Integer certificateSecretVersion;
+        private String dnsType;
+        private String dnsZoneName;
         private String hostname;
+        private String managedType;
         public Builder() {}
         public Builder(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alias = defaults.alias;
     	      this.certificateSecretId = defaults.certificateSecretId;
     	      this.certificateSecretVersion = defaults.certificateSecretVersion;
+    	      this.dnsType = defaults.dnsType;
+    	      this.dnsZoneName = defaults.dnsZoneName;
     	      this.hostname = defaults.hostname;
+    	      this.managedType = defaults.managedType;
         }
 
         @CustomType.Setter
@@ -109,6 +143,22 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
             return this;
         }
         @CustomType.Setter
+        public Builder dnsType(String dnsType) {
+            if (dnsType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "dnsType");
+            }
+            this.dnsType = dnsType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dnsZoneName(String dnsZoneName) {
+            if (dnsZoneName == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "dnsZoneName");
+            }
+            this.dnsZoneName = dnsZoneName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             if (hostname == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "hostname");
@@ -116,12 +166,23 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
+        public Builder managedType(String managedType) {
+            if (managedType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint", "managedType");
+            }
+            this.managedType = managedType;
+            return this;
+        }
         public GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint build() {
             final var _resultValue = new GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint();
             _resultValue.alias = alias;
             _resultValue.certificateSecretId = certificateSecretId;
             _resultValue.certificateSecretVersion = certificateSecretVersion;
+            _resultValue.dnsType = dnsType;
+            _resultValue.dnsZoneName = dnsZoneName;
             _resultValue.hostname = hostname;
+            _resultValue.managedType = managedType;
             return _resultValue;
         }
     }

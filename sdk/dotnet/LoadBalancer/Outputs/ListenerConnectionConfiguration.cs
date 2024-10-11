@@ -14,6 +14,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class ListenerConnectionConfiguration
     {
         /// <summary>
+        /// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+        /// </summary>
+        public readonly ImmutableArray<string> BackendTcpProxyProtocolOptions;
+        /// <summary>
         /// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         /// </summary>
         public readonly int? BackendTcpProxyProtocolVersion;
@@ -28,10 +32,13 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private ListenerConnectionConfiguration(
+            ImmutableArray<string> backendTcpProxyProtocolOptions,
+
             int? backendTcpProxyProtocolVersion,
 
             string idleTimeoutInSeconds)
         {
+            BackendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
             BackendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             IdleTimeoutInSeconds = idleTimeoutInSeconds;
         }

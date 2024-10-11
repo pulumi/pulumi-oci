@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionCredentialDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -36,14 +37,14 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Import(name="connectionCredentialDetails")
     private @Nullable Output<DatabaseInsightConnectionCredentialDetailsArgs> connectionCredentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Optional<Output<DatabaseInsightConnectionCredentialDetailsArgs>> connectionCredentialDetails() {
@@ -51,18 +52,33 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Connection details of the private endpoints.
+     * Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
     @Import(name="connectionDetails")
     private @Nullable Output<DatabaseInsightConnectionDetailsArgs> connectionDetails;
 
     /**
-     * @return Connection details of the private endpoints.
+     * @return Connection details to connect to the database. HostName, protocol, and port should be specified.
      * 
      */
     public Optional<Output<DatabaseInsightConnectionDetailsArgs>> connectionDetails() {
         return Optional.ofNullable(this.connectionDetails);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    @Import(name="connectorId")
+    private @Nullable Output<String> connectorId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     * 
+     */
+    public Optional<Output<String>> connectorId() {
+        return Optional.ofNullable(this.connectorId);
     }
 
     /**
@@ -156,14 +172,14 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Database Deployment Type
+     * Database Deployment Type (EXACS will be supported in the future)
      * 
      */
     @Import(name="deploymentType")
     private @Nullable Output<String> deploymentType;
 
     /**
-     * @return Database Deployment Type
+     * @return Database Deployment Type (EXACS will be supported in the future)
      * 
      */
     public Optional<Output<String>> deploymentType() {
@@ -261,6 +277,36 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    @Import(name="isAdvancedFeaturesEnabled")
+    private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
+
+    /**
+     * @return Flag is to identify if advanced features for autonomous database is enabled or not
+     * 
+     */
+    public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
+        return Optional.ofNullable(this.isAdvancedFeaturesEnabled);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * 
+     */
+    @Import(name="managementAgentId")
+    private @Nullable Output<String> managementAgentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * 
+     */
+    public Optional<Output<String>> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
      */
@@ -317,6 +363,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         this.compartmentId = $.compartmentId;
         this.connectionCredentialDetails = $.connectionCredentialDetails;
         this.connectionDetails = $.connectionDetails;
+        this.connectorId = $.connectorId;
         this.credentialDetails = $.credentialDetails;
         this.databaseConnectionStatusDetails = $.databaseConnectionStatusDetails;
         this.databaseId = $.databaseId;
@@ -330,6 +377,8 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         this.entitySource = $.entitySource;
         this.exadataInsightId = $.exadataInsightId;
         this.freeformTags = $.freeformTags;
+        this.isAdvancedFeaturesEnabled = $.isAdvancedFeaturesEnabled;
+        this.managementAgentId = $.managementAgentId;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
         this.serviceName = $.serviceName;
         this.status = $.status;
@@ -375,7 +424,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionCredentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param connectionCredentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -386,7 +435,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionCredentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param connectionCredentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -396,7 +445,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionDetails Connection details of the private endpoints.
+         * @param connectionDetails Connection details to connect to the database. HostName, protocol, and port should be specified.
          * 
          * @return builder
          * 
@@ -407,13 +456,34 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param connectionDetails Connection details of the private endpoints.
+         * @param connectionDetails Connection details to connect to the database. HostName, protocol, and port should be specified.
          * 
          * @return builder
          * 
          */
         public Builder connectionDetails(DatabaseInsightConnectionDetailsArgs connectionDetails) {
             return connectionDetails(Output.of(connectionDetails));
+        }
+
+        /**
+         * @param connectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectorId(@Nullable Output<String> connectorId) {
+            $.connectorId = connectorId;
+            return this;
+        }
+
+        /**
+         * @param connectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectorId(String connectorId) {
+            return connectorId(Output.of(connectorId));
         }
 
         /**
@@ -543,7 +613,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param deploymentType Database Deployment Type
+         * @param deploymentType Database Deployment Type (EXACS will be supported in the future)
          * 
          * @return builder
          * 
@@ -554,7 +624,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param deploymentType Database Deployment Type
+         * @param deploymentType Database Deployment Type (EXACS will be supported in the future)
          * 
          * @return builder
          * 
@@ -687,6 +757,48 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled Flag is to identify if advanced features for autonomous database is enabled or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(@Nullable Output<Boolean> isAdvancedFeaturesEnabled) {
+            $.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAdvancedFeaturesEnabled Flag is to identify if advanced features for autonomous database is enabled or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            return isAdvancedFeaturesEnabled(Output.of(isAdvancedFeaturesEnabled));
+        }
+
+        /**
+         * @param managementAgentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentId(@Nullable Output<String> managementAgentId) {
+            $.managementAgentId = managementAgentId;
+            return this;
+        }
+
+        /**
+         * @param managementAgentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentId(String managementAgentId) {
+            return managementAgentId(Output.of(managementAgentId));
         }
 
         /**

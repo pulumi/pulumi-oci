@@ -9,6 +9,8 @@ import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolDevicePolicyArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolImageArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolNetworkConfigurationArgs;
+import com.pulumi.oci.Desktops.inputs.DesktopPoolPrivateAccessDetailsArgs;
+import com.pulumi.oci.Desktops.inputs.DesktopPoolShapeConfigArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -249,18 +251,48 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the private access.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return A list of network security groups for the desktop pool.
+     * @return A list of network security groups for the private access.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
         return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
+     * The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * 
+     */
+    @Import(name="privateAccessDetails")
+    private @Nullable Output<DesktopPoolPrivateAccessDetailsArgs> privateAccessDetails;
+
+    /**
+     * @return The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * 
+     */
+    public Optional<Output<DesktopPoolPrivateAccessDetailsArgs>> privateAccessDetails() {
+        return Optional.ofNullable(this.privateAccessDetails);
+    }
+
+    /**
+     * The compute instance shape configuration requested for each desktop in the desktop pool.
+     * 
+     */
+    @Import(name="shapeConfig")
+    private @Nullable Output<DesktopPoolShapeConfigArgs> shapeConfig;
+
+    /**
+     * @return The compute instance shape configuration requested for each desktop in the desktop pool.
+     * 
+     */
+    public Optional<Output<DesktopPoolShapeConfigArgs>> shapeConfig() {
+        return Optional.ofNullable(this.shapeConfig);
     }
 
     /**
@@ -371,9 +403,6 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The stop time of the desktop pool.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timeStopScheduled")
     private @Nullable Output<String> timeStopScheduled;
@@ -381,12 +410,30 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) The stop time of the desktop pool.
      * 
+     */
+    public Optional<Output<String>> timeStopScheduled() {
+        return Optional.ofNullable(this.timeStopScheduled);
+    }
+
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> timeStopScheduled() {
-        return Optional.ofNullable(this.timeStopScheduled);
+    @Import(name="useDedicatedVmHost")
+    private @Nullable Output<String> useDedicatedVmHost;
+
+    /**
+     * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> useDedicatedVmHost() {
+        return Optional.ofNullable(this.useDedicatedVmHost);
     }
 
     private DesktopPoolState() {}
@@ -408,6 +455,8 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         this.maximumSize = $.maximumSize;
         this.networkConfiguration = $.networkConfiguration;
         this.nsgIds = $.nsgIds;
+        this.privateAccessDetails = $.privateAccessDetails;
+        this.shapeConfig = $.shapeConfig;
         this.shapeName = $.shapeName;
         this.standbySize = $.standbySize;
         this.state = $.state;
@@ -416,6 +465,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         this.timeCreated = $.timeCreated;
         this.timeStartScheduled = $.timeStartScheduled;
         this.timeStopScheduled = $.timeStopScheduled;
+        this.useDedicatedVmHost = $.useDedicatedVmHost;
     }
 
     public static Builder builder() {
@@ -752,7 +802,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds A list of network security groups for the desktop pool.
+         * @param nsgIds A list of network security groups for the private access.
          * 
          * @return builder
          * 
@@ -763,7 +813,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds A list of network security groups for the desktop pool.
+         * @param nsgIds A list of network security groups for the private access.
          * 
          * @return builder
          * 
@@ -773,13 +823,55 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds A list of network security groups for the desktop pool.
+         * @param nsgIds A list of network security groups for the private access.
          * 
          * @return builder
          * 
          */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param privateAccessDetails The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAccessDetails(@Nullable Output<DesktopPoolPrivateAccessDetailsArgs> privateAccessDetails) {
+            $.privateAccessDetails = privateAccessDetails;
+            return this;
+        }
+
+        /**
+         * @param privateAccessDetails The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateAccessDetails(DesktopPoolPrivateAccessDetailsArgs privateAccessDetails) {
+            return privateAccessDetails(Output.of(privateAccessDetails));
+        }
+
+        /**
+         * @param shapeConfig The compute instance shape configuration requested for each desktop in the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeConfig(@Nullable Output<DesktopPoolShapeConfigArgs> shapeConfig) {
+            $.shapeConfig = shapeConfig;
+            return this;
+        }
+
+        /**
+         * @param shapeConfig The compute instance shape configuration requested for each desktop in the desktop pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeConfig(DesktopPoolShapeConfigArgs shapeConfig) {
+            return shapeConfig(Output.of(shapeConfig));
         }
 
         /**
@@ -932,9 +1024,6 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeStopScheduled (Updatable) The stop time of the desktop pool.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -946,14 +1035,38 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeStopScheduled (Updatable) The stop time of the desktop pool.
          * 
+         * @return builder
+         * 
+         */
+        public Builder timeStopScheduled(String timeStopScheduled) {
+            return timeStopScheduled(Output.of(timeStopScheduled));
+        }
+
+        /**
+         * @param useDedicatedVmHost Indicates whether the desktop pool uses dedicated virtual machine hosts.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder timeStopScheduled(String timeStopScheduled) {
-            return timeStopScheduled(Output.of(timeStopScheduled));
+        public Builder useDedicatedVmHost(@Nullable Output<String> useDedicatedVmHost) {
+            $.useDedicatedVmHost = useDedicatedVmHost;
+            return this;
+        }
+
+        /**
+         * @param useDedicatedVmHost Indicates whether the desktop pool uses dedicated virtual machine hosts.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useDedicatedVmHost(String useDedicatedVmHost) {
+            return useDedicatedVmHost(Output.of(useDedicatedVmHost));
         }
 
         public DesktopPoolState build() {

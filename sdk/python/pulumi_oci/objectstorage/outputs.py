@@ -20,6 +20,7 @@ __all__ = [
     'BucketRetentionRuleDuration',
     'ObjectLifecyclePolicyRule',
     'ObjectLifecyclePolicyRuleObjectNameFilter',
+    'PrivateEndpointAccessTarget',
     'StorageObjectSourceUriDetails',
     'GetBucketRetentionRuleResult',
     'GetBucketRetentionRuleDurationResult',
@@ -35,6 +36,10 @@ __all__ = [
     'GetObjectsObjectResult',
     'GetPreauthrequestsFilterResult',
     'GetPreauthrequestsPreauthenticatedRequestResult',
+    'GetPrivateEndpointAccessTargetResult',
+    'GetPrivateEndpointSummariesFilterResult',
+    'GetPrivateEndpointSummariesPrivateEndpointSummaryResult',
+    'GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult',
     'GetReplicationPoliciesFilterResult',
     'GetReplicationPoliciesReplicationPolicyResult',
     'GetReplicationSourcesFilterResult',
@@ -391,6 +396,49 @@ class ObjectLifecyclePolicyRuleObjectNameFilter(dict):
         (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
         return pulumi.get(self, "inclusion_prefixes")
+
+
+@pulumi.output_type
+class PrivateEndpointAccessTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PrivateEndpointAccessTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PrivateEndpointAccessTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PrivateEndpointAccessTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 namespace: str):
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        return pulumi.get(self, "namespace")
 
 
 @pulumi.output_type
@@ -1548,6 +1596,216 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
         The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         """
         return pulumi.get(self, "time_expires")
+
+
+@pulumi.output_type
+class GetPrivateEndpointAccessTargetResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 namespace: str):
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetPrivateEndpointSummariesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
+    def __init__(__self__, *,
+                 access_targets: Sequence['outputs.GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult'],
+                 additional_prefixes: Sequence[str],
+                 compartment_id: str,
+                 created_by: str,
+                 defined_tags: Mapping[str, str],
+                 etag: str,
+                 fqdns: Mapping[str, Mapping[str, Mapping[str, str]]],
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 name: str,
+                 namespace: str,
+                 nsg_ids: Sequence[str],
+                 prefix: str,
+                 private_endpoint_ip: str,
+                 state: str,
+                 subnet_id: str,
+                 time_created: str,
+                 time_modified: str):
+        pulumi.set(__self__, "access_targets", access_targets)
+        pulumi.set(__self__, "additional_prefixes", additional_prefixes)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "etag", etag)
+        pulumi.set(__self__, "fqdns", fqdns)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_modified", time_modified)
+
+    @property
+    @pulumi.getter(name="accessTargets")
+    def access_targets(self) -> Sequence['outputs.GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult']:
+        return pulumi.get(self, "access_targets")
+
+    @property
+    @pulumi.getter(name="additionalPrefixes")
+    def additional_prefixes(self) -> Sequence[str]:
+        return pulumi.get(self, "additional_prefixes")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def etag(self) -> str:
+        return pulumi.get(self, "etag")
+
+    @property
+    @pulumi.getter
+    def fqdns(self) -> Mapping[str, Mapping[str, Mapping[str, str]]]:
+        return pulumi.get(self, "fqdns")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> str:
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        return pulumi.get(self, "time_modified")
+
+
+@pulumi.output_type
+class GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 compartment_id: str,
+                 namespace: str):
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        return pulumi.get(self, "namespace")
 
 
 @pulumi.output_type

@@ -81,6 +81,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .patchingMode(cloudAutonomousVmClusterMaintenanceWindowDetailsPatchingMode)
  *                 .preference(cloudAutonomousVmClusterMaintenanceWindowDetailsPreference)
+ *                 .skipRus(cloudAutonomousVmClusterMaintenanceWindowDetailsSkipRu)
  *                 .weeksOfMonths(cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth)
  *                 .build())
  *             .memoryPerOracleComputeUnitInGbs(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs)

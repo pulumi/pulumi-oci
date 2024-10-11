@@ -63,7 +63,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindow {
      */
     private @Nullable String preference;
     /**
-     * @return (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * @return If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
      * 
      */
     private @Nullable List<Boolean> skipRus;
@@ -139,7 +139,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindow {
         return Optional.ofNullable(this.preference);
     }
     /**
-     * @return (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * @return If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
      * 
      */
     public List<Boolean> skipRus() {

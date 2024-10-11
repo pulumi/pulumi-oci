@@ -58,6 +58,7 @@ namespace Pulumi.Oci.Desktops
     ///         {
     ///             ImageId = testImage.Id,
     ///             ImageName = desktopPoolImageImageName,
+    ///             OperatingSystem = desktopPoolImageOperatingSystem,
     ///         },
     ///         IsStorageEnabled = desktopPoolIsStorageEnabled,
     ///         MaximumSize = desktopPoolMaximumSize,
@@ -80,8 +81,21 @@ namespace Pulumi.Oci.Desktops
     ///             { "Department", "Finance" },
     ///         },
     ///         NsgIds = desktopPoolNsgIds,
+    ///         ShapeConfig = new Oci.Desktops.Inputs.DesktopPoolShapeConfigArgs
+    ///         {
+    ///             BaselineOcpuUtilization = desktopPoolShapeConfigBaselineOcpuUtilization,
+    ///             MemoryInGbs = desktopPoolShapeConfigMemoryInGbs,
+    ///             Ocpus = desktopPoolShapeConfigOcpus,
+    ///         },
+    ///         PrivateAccessDetails = new Oci.Desktops.Inputs.DesktopPoolPrivateAccessDetailsArgs
+    ///         {
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = desktopPoolPrivateAccessDetailsNsgIds,
+    ///             PrivateIp = desktopPoolPrivateAccessDetailsPrivateIp,
+    ///         },
     ///         TimeStartScheduled = desktopPoolTimeStartScheduled,
     ///         TimeStopScheduled = desktopPoolTimeStopScheduled,
+    ///         UseDedicatedVmHost = desktopPoolUseDedicatedVmHost,
     ///     });
     /// 
     /// });
@@ -189,10 +203,22 @@ namespace Pulumi.Oci.Desktops
         public Output<Outputs.DesktopPoolNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// A list of network security groups for the desktop pool.
+        /// A list of network security groups for the private access.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// </summary>
+        [Output("privateAccessDetails")]
+        public Output<Outputs.DesktopPoolPrivateAccessDetails> PrivateAccessDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute instance shape configuration requested for each desktop in the desktop pool.
+        /// </summary>
+        [Output("shapeConfig")]
+        public Output<Outputs.DesktopPoolShapeConfig> ShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the desktop pool.
@@ -238,13 +264,19 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// (Updatable) The stop time of the desktop pool.
+        /// </summary>
+        [Output("timeStopScheduled")]
+        public Output<string?> TimeStopScheduled { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("timeStopScheduled")]
-        public Output<string?> TimeStopScheduled { get; private set; } = null!;
+        [Output("useDedicatedVmHost")]
+        public Output<string> UseDedicatedVmHost { get; private set; } = null!;
 
 
         /// <summary>
@@ -392,13 +424,25 @@ namespace Pulumi.Oci.Desktops
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// A list of network security groups for the desktop pool.
+        /// A list of network security groups for the private access.
         /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// </summary>
+        [Input("privateAccessDetails")]
+        public Input<Inputs.DesktopPoolPrivateAccessDetailsArgs>? PrivateAccessDetails { get; set; }
+
+        /// <summary>
+        /// The compute instance shape configuration requested for each desktop in the desktop pool.
+        /// </summary>
+        [Input("shapeConfig")]
+        public Input<Inputs.DesktopPoolShapeConfigArgs>? ShapeConfig { get; set; }
 
         /// <summary>
         /// The shape of the desktop pool.
@@ -432,13 +476,19 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// (Updatable) The stop time of the desktop pool.
+        /// </summary>
+        [Input("timeStopScheduled")]
+        public Input<string>? TimeStopScheduled { get; set; }
+
+        /// <summary>
+        /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeStopScheduled")]
-        public Input<string>? TimeStopScheduled { get; set; }
+        [Input("useDedicatedVmHost")]
+        public Input<string>? UseDedicatedVmHost { get; set; }
 
         public DesktopPoolArgs()
         {
@@ -554,13 +604,25 @@ namespace Pulumi.Oci.Desktops
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// A list of network security groups for the desktop pool.
+        /// A list of network security groups for the private access.
         /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// </summary>
+        [Input("privateAccessDetails")]
+        public Input<Inputs.DesktopPoolPrivateAccessDetailsGetArgs>? PrivateAccessDetails { get; set; }
+
+        /// <summary>
+        /// The compute instance shape configuration requested for each desktop in the desktop pool.
+        /// </summary>
+        [Input("shapeConfig")]
+        public Input<Inputs.DesktopPoolShapeConfigGetArgs>? ShapeConfig { get; set; }
 
         /// <summary>
         /// The shape of the desktop pool.
@@ -606,13 +668,19 @@ namespace Pulumi.Oci.Desktops
 
         /// <summary>
         /// (Updatable) The stop time of the desktop pool.
+        /// </summary>
+        [Input("timeStopScheduled")]
+        public Input<string>? TimeStopScheduled { get; set; }
+
+        /// <summary>
+        /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeStopScheduled")]
-        public Input<string>? TimeStopScheduled { get; set; }
+        [Input("useDedicatedVmHost")]
+        public Input<string>? UseDedicatedVmHost { get; set; }
 
         public DesktopPoolState()
         {

@@ -324,6 +324,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * (Updatable) Analytics instance update channel.
+     * 
+     */
+    @Import(name="updateChannel")
+    private @Nullable Output<String> updateChannel;
+
+    /**
+     * @return (Updatable) Analytics instance update channel.
+     * 
+     */
+    public Optional<Output<String>> updateChannel() {
+        return Optional.ofNullable(this.updateChannel);
+    }
+
     private AnalyticsInstanceState() {}
 
     private AnalyticsInstanceState(AnalyticsInstanceState $) {
@@ -347,6 +362,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.updateChannel = $.updateChannel;
     }
 
     public static Builder builder() {
@@ -791,6 +807,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param updateChannel (Updatable) Analytics instance update channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateChannel(@Nullable Output<String> updateChannel) {
+            $.updateChannel = updateChannel;
+            return this;
+        }
+
+        /**
+         * @param updateChannel (Updatable) Analytics instance update channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateChannel(String updateChannel) {
+            return updateChannel(Output.of(updateChannel));
         }
 
         public AnalyticsInstanceState build() {

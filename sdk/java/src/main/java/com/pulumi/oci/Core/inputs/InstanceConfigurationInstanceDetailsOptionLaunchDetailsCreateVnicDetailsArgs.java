@@ -19,9 +19,17 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
 
     public static final InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs Empty = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs();
 
+    /**
+     * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
     @Import(name="assignIpv6ip")
     private @Nullable Output<Boolean> assignIpv6ip;
 
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
     public Optional<Output<Boolean>> assignIpv6ip() {
         return Optional.ofNullable(this.assignIpv6ip);
     }
@@ -154,6 +162,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
     }
 
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -196,6 +219,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
+        this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
         this.subnetId = $.subnetId;
     }
@@ -218,11 +242,23 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             $ = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param assignIpv6ip Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
         public Builder assignIpv6ip(@Nullable Output<Boolean> assignIpv6ip) {
             $.assignIpv6ip = assignIpv6ip;
             return this;
         }
 
+        /**
+         * @param assignIpv6ip Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
         public Builder assignIpv6ip(Boolean assignIpv6ip) {
             return assignIpv6ip(Output.of(assignIpv6ip));
         }
@@ -416,6 +452,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
          */
         public Builder privateIp(String privateIp) {
             return privateIp(Output.of(privateIp));
+        }
+
+        /**
+         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

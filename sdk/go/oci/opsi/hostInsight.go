@@ -16,46 +16,6 @@ import (
 //
 // Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Opsi"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewHostInsight(ctx, "test_host_insight", &Opsi.HostInsightArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				EntitySource:  pulumi.Any(hostInsightEntitySource),
-//				ComputeId:     pulumi.Any(testCompute.Id),
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				EnterpriseManagerBridgeId:         pulumi.Any(testEnterpriseManagerBridge.Id),
-//				EnterpriseManagerEntityIdentifier: pulumi.Any(hostInsightEnterpriseManagerEntityIdentifier),
-//				EnterpriseManagerIdentifier:       pulumi.Any(hostInsightEnterpriseManagerIdentifier),
-//				ExadataInsightId:                  pulumi.Any(testExadataInsight.Id),
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
-//				Status:            pulumi.String("DISABLED"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // HostInsights can be imported using the `id`, e.g.

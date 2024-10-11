@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails {
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
     private @Nullable Boolean assignIpv6ip;
     /**
      * @return Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
@@ -58,6 +62,11 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
      */
     private @Nullable String privateIp;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -69,6 +78,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
     private @Nullable String subnetId;
 
     private InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails() {}
+    /**
+     * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
     public Optional<Boolean> assignIpv6ip() {
         return Optional.ofNullable(this.assignIpv6ip);
     }
@@ -132,6 +145,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         return Optional.ofNullable(this.privateIp);
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
+    }
+    /**
      * @return Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -165,6 +185,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         private @Nullable List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
+        private @Nullable Map<String,String> securityAttributes;
         private @Nullable Boolean skipSourceDestCheck;
         private @Nullable String subnetId;
         public Builder() {}
@@ -180,6 +201,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
         }
@@ -251,6 +273,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
 
             this.skipSourceDestCheck = skipSourceDestCheck;
@@ -274,6 +302,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;
             return _resultValue;

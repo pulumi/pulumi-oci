@@ -21,6 +21,8 @@ __all__ = [
     'AlarmSuppressionArgsDict',
     'AlarmSuppressionAlarmSuppressionTargetArgs',
     'AlarmSuppressionAlarmSuppressionTargetArgsDict',
+    'AlarmSuppressionSuppressionConditionArgs',
+    'AlarmSuppressionSuppressionConditionArgsDict',
     'GetAlarmStatusesFilterArgs',
     'GetAlarmStatusesFilterArgsDict',
     'GetAlarmSuppressionsFilterArgs',
@@ -321,13 +323,21 @@ class AlarmSuppressionArgs:
 
 if not MYPY:
     class AlarmSuppressionAlarmSuppressionTargetArgsDict(TypedDict):
-        alarm_id: pulumi.Input[str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-        """
         target_type: pulumi.Input[str]
         """
         The type of the alarm suppression target.
+        """
+        alarm_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+        """
+        compartment_id: NotRequired[pulumi.Input[str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+        """
+        compartment_id_in_subtree: NotRequired[pulumi.Input[bool]]
+        """
+        When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
         """
 elif False:
     AlarmSuppressionAlarmSuppressionTargetArgsDict: TypeAlias = Mapping[str, Any]
@@ -335,26 +345,23 @@ elif False:
 @pulumi.input_type
 class AlarmSuppressionAlarmSuppressionTargetArgs:
     def __init__(__self__, *,
-                 alarm_id: pulumi.Input[str],
-                 target_type: pulumi.Input[str]):
+                 target_type: pulumi.Input[str],
+                 alarm_id: Optional[pulumi.Input[str]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
         :param pulumi.Input[str] target_type: The type of the alarm suppression target.
+        :param pulumi.Input[str] alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+        :param pulumi.Input[bool] compartment_id_in_subtree: When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
         """
-        pulumi.set(__self__, "alarm_id", alarm_id)
         pulumi.set(__self__, "target_type", target_type)
-
-    @property
-    @pulumi.getter(name="alarmId")
-    def alarm_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-        """
-        return pulumi.get(self, "alarm_id")
-
-    @alarm_id.setter
-    def alarm_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "alarm_id", value)
+        if alarm_id is not None:
+            pulumi.set(__self__, "alarm_id", alarm_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
 
     @property
     @pulumi.getter(name="targetType")
@@ -367,6 +374,120 @@ class AlarmSuppressionAlarmSuppressionTargetArgs:
     @target_type.setter
     def target_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "target_type", value)
+
+    @property
+    @pulumi.getter(name="alarmId")
+    def alarm_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
+        """
+        return pulumi.get(self, "alarm_id")
+
+    @alarm_id.setter
+    def alarm_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alarm_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[pulumi.Input[bool]]:
+        """
+        When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id_in_subtree")
+
+    @compartment_id_in_subtree.setter
+    def compartment_id_in_subtree(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "compartment_id_in_subtree", value)
+
+
+if not MYPY:
+    class AlarmSuppressionSuppressionConditionArgsDict(TypedDict):
+        condition_type: pulumi.Input[str]
+        """
+        Type of suppression condition.
+        """
+        suppression_duration: pulumi.Input[str]
+        """
+        Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+        """
+        suppression_recurrence: pulumi.Input[str]
+        """
+        Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+        * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+        * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+        * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+        """
+elif False:
+    AlarmSuppressionSuppressionConditionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AlarmSuppressionSuppressionConditionArgs:
+    def __init__(__self__, *,
+                 condition_type: pulumi.Input[str],
+                 suppression_duration: pulumi.Input[str],
+                 suppression_recurrence: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] condition_type: Type of suppression condition.
+        :param pulumi.Input[str] suppression_duration: Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+        :param pulumi.Input[str] suppression_recurrence: Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+               * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+               * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+               * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+        """
+        pulumi.set(__self__, "condition_type", condition_type)
+        pulumi.set(__self__, "suppression_duration", suppression_duration)
+        pulumi.set(__self__, "suppression_recurrence", suppression_recurrence)
+
+    @property
+    @pulumi.getter(name="conditionType")
+    def condition_type(self) -> pulumi.Input[str]:
+        """
+        Type of suppression condition.
+        """
+        return pulumi.get(self, "condition_type")
+
+    @condition_type.setter
+    def condition_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition_type", value)
+
+    @property
+    @pulumi.getter(name="suppressionDuration")
+    def suppression_duration(self) -> pulumi.Input[str]:
+        """
+        Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+        """
+        return pulumi.get(self, "suppression_duration")
+
+    @suppression_duration.setter
+    def suppression_duration(self, value: pulumi.Input[str]):
+        pulumi.set(self, "suppression_duration", value)
+
+    @property
+    @pulumi.getter(name="suppressionRecurrence")
+    def suppression_recurrence(self) -> pulumi.Input[str]:
+        """
+        Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+        * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+        * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+        * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+        """
+        return pulumi.get(self, "suppression_recurrence")
+
+    @suppression_recurrence.setter
+    def suppression_recurrence(self, value: pulumi.Input[str]):
+        pulumi.set(self, "suppression_recurrence", value)
 
 
 if not MYPY:

@@ -35,6 +35,11 @@ public final class GetReportsResult {
      */
     private String id;
     /**
+     * @return Specifies the format of report to be .xls or .pdf or .json
+     * 
+     */
+    private @Nullable String mimeType;
+    /**
      * @return The list of report_collection.
      * 
      */
@@ -89,6 +94,13 @@ public final class GetReportsResult {
         return this.id;
     }
     /**
+     * @return Specifies the format of report to be .xls or .pdf or .json
+     * 
+     */
+    public Optional<String> mimeType() {
+        return Optional.ofNullable(this.mimeType);
+    }
+    /**
      * @return The list of report_collection.
      * 
      */
@@ -138,6 +150,7 @@ public final class GetReportsResult {
         private @Nullable String displayName;
         private @Nullable List<GetReportsFilter> filters;
         private String id;
+        private @Nullable String mimeType;
         private List<GetReportsReportCollection> reportCollections;
         private @Nullable String reportDefinitionId;
         private @Nullable String state;
@@ -153,6 +166,7 @@ public final class GetReportsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.mimeType = defaults.mimeType;
     	      this.reportCollections = defaults.reportCollections;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
     	      this.state = defaults.state;
@@ -205,6 +219,12 @@ public final class GetReportsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder mimeType(@Nullable String mimeType) {
+
+            this.mimeType = mimeType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder reportCollections(List<GetReportsReportCollection> reportCollections) {
             if (reportCollections == null) {
               throw new MissingRequiredPropertyException("GetReportsResult", "reportCollections");
@@ -253,6 +273,7 @@ public final class GetReportsResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.mimeType = mimeType;
             _resultValue.reportCollections = reportCollections;
             _resultValue.reportDefinitionId = reportDefinitionId;
             _resultValue.state = state;

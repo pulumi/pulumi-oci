@@ -54,9 +54,10 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				IdcsAt:                 pulumi.Any(integrationInstanceIdcsAt),
-//				IsFileServerEnabled:    pulumi.Any(integrationInstanceIsFileServerEnabled),
-//				IsVisualBuilderEnabled: pulumi.Any(integrationInstanceIsVisualBuilderEnabled),
+//				IdcsAt:                    pulumi.Any(integrationInstanceIdcsAt),
+//				IsDisasterRecoveryEnabled: pulumi.Any(integrationInstanceIsDisasterRecoveryEnabled),
+//				IsFileServerEnabled:       pulumi.Any(integrationInstanceIsFileServerEnabled),
+//				IsVisualBuilderEnabled:    pulumi.Any(integrationInstanceIsVisualBuilderEnabled),
 //				NetworkEndpointDetails: &integration.IntegrationInstanceNetworkEndpointDetailsArgs{
 //					NetworkEndpointType: pulumi.Any(integrationInstanceNetworkEndpointDetailsNetworkEndpointType),
 //					AllowlistedHttpIps:  pulumi.Any(integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps),
@@ -104,6 +105,8 @@ type IntegrationInstance struct {
 	DataRetentionPeriod pulumi.StringOutput `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails IntegrationInstanceDisasterRecoveryDetailArrayOutput `pulumi:"disasterRecoveryDetails"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
@@ -112,22 +115,29 @@ type IntegrationInstance struct {
 	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 	ExtendDataRetentionTrigger pulumi.IntPtrOutput `pulumi:"extendDataRetentionTrigger"`
+	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+	FailoverTrigger pulumi.IntPtrOutput `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrOutput `pulumi:"idcsAt"`
 	// Information for IDCS access
-	IdcsInfos IntegrationInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
+	IdcsInfos             IntegrationInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
+	InstanceDesignTimeUrl pulumi.StringOutput                    `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringOutput `pulumi:"instanceUrl"`
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringOutput `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolOutput `pulumi:"isByol"`
+	// Is Disaster Recovery enabled or not.
+	IsDisasterRecoveryEnabled pulumi.BoolOutput `pulumi:"isDisasterRecoveryEnabled"`
 	// (Updatable) The file server is enabled or not.
 	IsFileServerEnabled pulumi.BoolOutput `pulumi:"isFileServerEnabled"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolOutput `pulumi:"isVisualBuilderEnabled"`
+	// Additional details of lifecycleState or substates
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntOutput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -217,6 +227,8 @@ type integrationInstanceState struct {
 	DataRetentionPeriod *string `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails []IntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
@@ -225,22 +237,29 @@ type integrationInstanceState struct {
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
+	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
 	// Information for IDCS access
-	IdcsInfos []IntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	IdcsInfos             []IntegrationInstanceIdcsInfo `pulumi:"idcsInfos"`
+	InstanceDesignTimeUrl *string                       `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl *string `pulumi:"instanceUrl"`
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType *string `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol *bool `pulumi:"isByol"`
+	// Is Disaster Recovery enabled or not.
+	IsDisasterRecoveryEnabled *bool `pulumi:"isDisasterRecoveryEnabled"`
 	// (Updatable) The file server is enabled or not.
 	IsFileServerEnabled *bool `pulumi:"isFileServerEnabled"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
+	// Additional details of lifecycleState or substates
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The number of configured message packs
 	MessagePacks *int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -279,6 +298,8 @@ type IntegrationInstanceState struct {
 	DataRetentionPeriod pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// Disaster recovery details for the integration instance created in the region.
+	DisasterRecoveryDetails IntegrationInstanceDisasterRecoveryDetailArrayInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
@@ -287,22 +308,29 @@ type IntegrationInstanceState struct {
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 	ExtendDataRetentionTrigger pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrInput
 	// Information for IDCS access
-	IdcsInfos IntegrationInstanceIdcsInfoArrayInput
+	IdcsInfos             IntegrationInstanceIdcsInfoArrayInput
+	InstanceDesignTimeUrl pulumi.StringPtrInput
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringPtrInput
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringPtrInput
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolPtrInput
+	// Is Disaster Recovery enabled or not.
+	IsDisasterRecoveryEnabled pulumi.BoolPtrInput
 	// (Updatable) The file server is enabled or not.
 	IsFileServerEnabled pulumi.BoolPtrInput
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
+	// Additional details of lifecycleState or substates
+	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntPtrInput
 	// Base representation of a network endpoint.
@@ -349,6 +377,8 @@ type integrationInstanceArgs struct {
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
+	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -357,6 +387,8 @@ type integrationInstanceArgs struct {
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol bool `pulumi:"isByol"`
+	// Is Disaster Recovery enabled or not.
+	IsDisasterRecoveryEnabled *bool `pulumi:"isDisasterRecoveryEnabled"`
 	// (Updatable) The file server is enabled or not.
 	IsFileServerEnabled *bool `pulumi:"isFileServerEnabled"`
 	// (Updatable) Visual Builder is enabled or not.
@@ -394,6 +426,8 @@ type IntegrationInstanceArgs struct {
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 	ExtendDataRetentionTrigger pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -402,6 +436,8 @@ type IntegrationInstanceArgs struct {
 	IntegrationInstanceType pulumi.StringInput
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolInput
+	// Is Disaster Recovery enabled or not.
+	IsDisasterRecoveryEnabled pulumi.BoolPtrInput
 	// (Updatable) The file server is enabled or not.
 	IsFileServerEnabled pulumi.BoolPtrInput
 	// (Updatable) Visual Builder is enabled or not.
@@ -543,6 +579,13 @@ func (o IntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Disaster recovery details for the integration instance created in the region.
+func (o IntegrationInstanceOutput) DisasterRecoveryDetails() IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceDisasterRecoveryDetailArrayOutput {
+		return v.DisasterRecoveryDetails
+	}).(IntegrationInstanceDisasterRecoveryDetailArrayOutput)
+}
+
 // (Updatable) Integration Instance Identifier.
 func (o IntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -563,6 +606,11 @@ func (o IntegrationInstanceOutput) ExtendDataRetentionTrigger() pulumi.IntPtrOut
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.ExtendDataRetentionTrigger }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+func (o IntegrationInstanceOutput) FailoverTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.FailoverTrigger }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o IntegrationInstanceOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -576,6 +624,10 @@ func (o IntegrationInstanceOutput) IdcsAt() pulumi.StringPtrOutput {
 // Information for IDCS access
 func (o IntegrationInstanceOutput) IdcsInfos() IntegrationInstanceIdcsInfoArrayOutput {
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceIdcsInfoArrayOutput { return v.IdcsInfos }).(IntegrationInstanceIdcsInfoArrayOutput)
+}
+
+func (o IntegrationInstanceOutput) InstanceDesignTimeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.InstanceDesignTimeUrl }).(pulumi.StringOutput)
 }
 
 // The Integration Instance URL.
@@ -593,6 +645,11 @@ func (o IntegrationInstanceOutput) IsByol() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsByol }).(pulumi.BoolOutput)
 }
 
+// Is Disaster Recovery enabled or not.
+func (o IntegrationInstanceOutput) IsDisasterRecoveryEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsDisasterRecoveryEnabled }).(pulumi.BoolOutput)
+}
+
 // (Updatable) The file server is enabled or not.
 func (o IntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
@@ -601,6 +658,11 @@ func (o IntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolOutput {
 // (Updatable) Visual Builder is enabled or not.
 func (o IntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+}
+
+// Additional details of lifecycleState or substates
+func (o IntegrationInstanceOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // (Updatable) The number of configured message packs

@@ -93,14 +93,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
     }
 
     /**
-     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;
      * 
      */
     public Output<String> type() {
@@ -258,7 +258,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
+         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;
          * 
          * @return builder
          * 

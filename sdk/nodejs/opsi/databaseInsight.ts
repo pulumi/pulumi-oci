@@ -50,13 +50,17 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     public readonly connectionCredentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details of the private endpoints.
+     * Connection details to connect to the database. HostName, protocol, and port should be specified.
      */
     public readonly connectionDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionDetails>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     */
+    public readonly connectorId!: pulumi.Output<string>;
     /**
      * User credential details to connect to the database.
      */
@@ -98,7 +102,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Database Deployment Type
+     * Database Deployment Type (EXACS will be supported in the future)
      */
     public readonly deploymentType!: pulumi.Output<string>;
     /**
@@ -138,6 +142,10 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     */
+    public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
+    /**
      * Specifies if MYSQL DB System has heatwave cluster attached.
      */
     public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
@@ -149,6 +157,10 @@ export class DatabaseInsight extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     */
+    public readonly managementAgentId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */
@@ -209,6 +221,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionCredentialDetails"] = state ? state.connectionCredentialDetails : undefined;
             resourceInputs["connectionDetails"] = state ? state.connectionDetails : undefined;
+            resourceInputs["connectorId"] = state ? state.connectorId : undefined;
             resourceInputs["credentialDetails"] = state ? state.credentialDetails : undefined;
             resourceInputs["databaseConnectionStatusDetails"] = state ? state.databaseConnectionStatusDetails : undefined;
             resourceInputs["databaseDisplayName"] = state ? state.databaseDisplayName : undefined;
@@ -229,9 +242,11 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["entitySource"] = state ? state.entitySource : undefined;
             resourceInputs["exadataInsightId"] = state ? state.exadataInsightId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isAdvancedFeaturesEnabled"] = state ? state.isAdvancedFeaturesEnabled : undefined;
             resourceInputs["isHeatWaveClusterAttached"] = state ? state.isHeatWaveClusterAttached : undefined;
             resourceInputs["isHighlyAvailable"] = state ? state.isHighlyAvailable : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
             resourceInputs["opsiPrivateEndpointId"] = state ? state.opsiPrivateEndpointId : undefined;
             resourceInputs["parentId"] = state ? state.parentId : undefined;
             resourceInputs["processorCount"] = state ? state.processorCount : undefined;
@@ -253,6 +268,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["connectionCredentialDetails"] = args ? args.connectionCredentialDetails : undefined;
             resourceInputs["connectionDetails"] = args ? args.connectionDetails : undefined;
+            resourceInputs["connectorId"] = args ? args.connectorId : undefined;
             resourceInputs["credentialDetails"] = args ? args.credentialDetails : undefined;
             resourceInputs["databaseConnectionStatusDetails"] = args ? args.databaseConnectionStatusDetails : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
@@ -266,6 +282,8 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["entitySource"] = args ? args.entitySource : undefined;
             resourceInputs["exadataInsightId"] = args ? args.exadataInsightId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isAdvancedFeaturesEnabled"] = args ? args.isAdvancedFeaturesEnabled : undefined;
+            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
             resourceInputs["opsiPrivateEndpointId"] = args ? args.opsiPrivateEndpointId : undefined;
             resourceInputs["serviceName"] = args ? args.serviceName : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
@@ -301,13 +319,17 @@ export interface DatabaseInsightState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     connectionCredentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details of the private endpoints.
+     * Connection details to connect to the database. HostName, protocol, and port should be specified.
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     */
+    connectorId?: pulumi.Input<string>;
     /**
      * User credential details to connect to the database.
      */
@@ -349,7 +371,7 @@ export interface DatabaseInsightState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Database Deployment Type
+     * Database Deployment Type (EXACS will be supported in the future)
      */
     deploymentType?: pulumi.Input<string>;
     /**
@@ -389,6 +411,10 @@ export interface DatabaseInsightState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     */
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    /**
      * Specifies if MYSQL DB System has heatwave cluster attached.
      */
     isHeatWaveClusterAttached?: pulumi.Input<boolean>;
@@ -400,6 +426,10 @@ export interface DatabaseInsightState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     */
+    managementAgentId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */
@@ -454,13 +484,17 @@ export interface DatabaseInsightArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     connectionCredentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionCredentialDetails>;
     /**
-     * Connection details of the private endpoints.
+     * Connection details to connect to the database. HostName, protocol, and port should be specified.
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+     */
+    connectorId?: pulumi.Input<string>;
     /**
      * User credential details to connect to the database.
      */
@@ -486,7 +520,7 @@ export interface DatabaseInsightArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Database Deployment Type
+     * Database Deployment Type (EXACS will be supported in the future)
      */
     deploymentType?: pulumi.Input<string>;
     /**
@@ -513,6 +547,14 @@ export interface DatabaseInsightArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     */
+    isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     */
+    managementAgentId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */

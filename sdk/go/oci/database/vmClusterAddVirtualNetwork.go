@@ -61,6 +61,8 @@ type VmClusterAddVirtualNetwork struct {
 
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArrayOutput `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
@@ -159,6 +161,8 @@ func GetVmClusterAddVirtualNetwork(ctx *pulumi.Context,
 type vmClusterAddVirtualNetworkState struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails []VmClusterAddVirtualNetworkCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
@@ -222,6 +226,8 @@ type vmClusterAddVirtualNetworkState struct {
 type VmClusterAddVirtualNetworkState struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain pulumi.StringPtrInput
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The number of enabled CPU cores.
@@ -397,6 +403,13 @@ func (o VmClusterAddVirtualNetworkOutput) ToVmClusterAddVirtualNetworkOutputWith
 // The name of the availability domain that the VM cluster is located in.
 func (o VmClusterAddVirtualNetworkOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o VmClusterAddVirtualNetworkOutput) CloudAutomationUpdateDetails() VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArrayOutput {
+	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArrayOutput {
+		return v.CloudAutomationUpdateDetails
+	}).(VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

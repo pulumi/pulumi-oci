@@ -22,6 +22,9 @@ namespace Pulumi.Oci.Core
     /// You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
     /// It does not have to be unique, and you can change it. Avoid entering confidential information.
     /// 
+    /// Use the [ListServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/ListServices) operation to find service CIDR labels
+    /// available in the region.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -76,7 +79,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> BlockTraffic { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -186,7 +189,7 @@ namespace Pulumi.Oci.Core
     public sealed class ServiceGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -270,7 +273,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? BlockTraffic { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

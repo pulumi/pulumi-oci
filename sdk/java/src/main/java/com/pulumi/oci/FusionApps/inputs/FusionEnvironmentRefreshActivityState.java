@@ -6,6 +6,7 @@ package com.pulumi.oci.FusionApps.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -45,6 +46,21 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
      */
     public Optional<Output<String>> fusionEnvironmentId() {
         return Optional.ofNullable(this.fusionEnvironmentId);
+    }
+
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    @Import(name="isDataMaskingOpted")
+    private @Nullable Output<Boolean> isDataMaskingOpted;
+
+    /**
+     * @return Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    public Optional<Output<Boolean>> isDataMaskingOpted() {
+        return Optional.ofNullable(this.isDataMaskingOpted);
     }
 
     /**
@@ -102,18 +118,12 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="sourceFusionEnvironmentId")
     private @Nullable Output<String> sourceFusionEnvironmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceFusionEnvironmentId() {
@@ -215,6 +225,7 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
     private FusionEnvironmentRefreshActivityState(FusionEnvironmentRefreshActivityState $) {
         this.displayName = $.displayName;
         this.fusionEnvironmentId = $.fusionEnvironmentId;
+        this.isDataMaskingOpted = $.isDataMaskingOpted;
         this.lifecycleDetails = $.lifecycleDetails;
         this.refreshActivityId = $.refreshActivityId;
         this.refreshIssueDetailsLists = $.refreshIssueDetailsLists;
@@ -286,6 +297,27 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
          */
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
             return fusionEnvironmentId(Output.of(fusionEnvironmentId));
+        }
+
+        /**
+         * @param isDataMaskingOpted Represents if the customer opted for Data Masking or not during refreshActivity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDataMaskingOpted(@Nullable Output<Boolean> isDataMaskingOpted) {
+            $.isDataMaskingOpted = isDataMaskingOpted;
+            return this;
+        }
+
+        /**
+         * @param isDataMaskingOpted Represents if the customer opted for Data Masking or not during refreshActivity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            return isDataMaskingOpted(Output.of(isDataMaskingOpted));
         }
 
         /**
@@ -373,9 +405,6 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
         /**
          * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -386,9 +415,6 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
 
         /**
          * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

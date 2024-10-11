@@ -72,12 +72,17 @@ export interface GetIntegrationInstanceResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
+     * Disaster recovery details for the integration instance created in the region.
+     */
+    readonly disasterRecoveryDetails: outputs.Integration.GetIntegrationInstanceDisasterRecoveryDetail[];
+    /**
      * Integration Instance Identifier, can be renamed.
      */
     readonly displayName: string;
     readonly domainId: string;
     readonly enableProcessAutomationTrigger: number;
     readonly extendDataRetentionTrigger: number;
+    readonly failoverTrigger: number;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -91,6 +96,7 @@ export interface GetIntegrationInstanceResult {
      * Information for IDCS access
      */
     readonly idcsInfos: outputs.Integration.GetIntegrationInstanceIdcsInfo[];
+    readonly instanceDesignTimeUrl: string;
     /**
      * The Integration Instance URL.
      */
@@ -105,6 +111,10 @@ export interface GetIntegrationInstanceResult {
      */
     readonly isByol: boolean;
     /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     */
+    readonly isDisasterRecoveryEnabled: boolean;
+    /**
      * The file server is enabled or not.
      */
     readonly isFileServerEnabled: boolean;
@@ -112,6 +122,10 @@ export interface GetIntegrationInstanceResult {
      * Visual Builder is enabled or not.
      */
     readonly isVisualBuilderEnabled: boolean;
+    /**
+     * Additional details of lifecycleState or substates
+     */
+    readonly lifecycleDetails: string;
     /**
      * The number of configured message packs (if any)
      */

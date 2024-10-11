@@ -37,13 +37,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
-        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// The OCID of the cluster placement group of the instance.
         /// </summary>
         [Input("clusterPlacementGroupId")]
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        /// The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -56,6 +56,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The OCID of the dedicated virtual machine host to place the instance on.
+        /// 
+        /// Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         /// </summary>
         [Input("dedicatedVmHostId")]
         public Input<string>? DedicatedVmHostId { get; set; }
@@ -64,7 +66,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -73,7 +75,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -83,6 +85,10 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// 
+        /// They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+        /// 
+        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> ExtendedMetadata
         {
@@ -92,6 +98,12 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        /// 
+        /// If you do not specify the fault domain, the system selects one for you.
+        /// 
+        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -100,7 +112,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -116,12 +128,22 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// This is an advanced option.
+        /// 
+        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        /// 
+        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+        /// 
+        /// The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+        /// 
+        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+        /// 
+        /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -147,6 +169,30 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        /// 
+        /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        /// * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        /// * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+        /// 
+        /// **Providing Cloud-Init Metadata**
+        /// 
+        /// You can use the following metadata key names to provide information to Cloud-Init:
+        /// 
+        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// 
+        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// 
+        /// **Metadata Example**
+        /// 
+        /// "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227", "user_data" : "&lt;your_public_SSH_key&gt;==" } **Getting Metadata on the Instance**
+        /// 
+        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+        /// 
+        /// curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/&lt;any-key-name&gt;
+        /// 
+        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+        /// 
+        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -155,7 +201,11 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// The platform configuration requested for the instance.
+        /// (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+        /// 
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Input("platformConfig")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigGetArgs>? PlatformConfig { get; set; }
@@ -174,14 +224,32 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("preferredMaintenanceAction")]
         public Input<string>? PreferredMaintenanceAction { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        /// 
+        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// The shape configuration requested for the instance.
+        /// 
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigGetArgs>? ShapeConfig { get; set; }

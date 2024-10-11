@@ -22,6 +22,9 @@ __all__ = [
     'DiscoveryJobDiscoveryDetailsCredentialsItemProperties',
     'DiscoveryJobDiscoveryDetailsProperties',
     'DiscoveryJobDiscoveryDetailsTags',
+    'MaintenanceWindowResource',
+    'MaintenanceWindowResourcesDetail',
+    'MaintenanceWindowSchedule',
     'MetricExtensionEnabledOnResource',
     'MetricExtensionMetricList',
     'MetricExtensionQueryProperties',
@@ -75,6 +78,13 @@ __all__ = [
     'GetDiscoveryJobsDiscoveryJobCollectionResult',
     'GetDiscoveryJobsDiscoveryJobCollectionItemResult',
     'GetDiscoveryJobsFilterResult',
+    'GetMaintenanceWindowResourceResult',
+    'GetMaintenanceWindowResourcesDetailResult',
+    'GetMaintenanceWindowScheduleResult',
+    'GetMaintenanceWindowsFilterResult',
+    'GetMaintenanceWindowsMaintenanceWindowCollectionResult',
+    'GetMaintenanceWindowsMaintenanceWindowCollectionItemResult',
+    'GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleResult',
     'GetMetricExtensionEnabledOnResourceResult',
     'GetMetricExtensionMetricListResult',
     'GetMetricExtensionQueryPropertyResult',
@@ -427,6 +437,228 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
         Key/Value pair of Property
         """
         return pulumi.get(self, "properties_map")
+
+
+@pulumi.output_type
+class MaintenanceWindowResource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceId":
+            suggest = "resource_id"
+        elif key == "areMembersIncluded":
+            suggest = "are_members_included"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceWindowResource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceWindowResource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceWindowResource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource_id: str,
+                 are_members_included: Optional[bool] = None):
+        """
+        :param str resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        :param bool are_members_included: (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+        """
+        pulumi.set(__self__, "resource_id", resource_id)
+        if are_members_included is not None:
+            pulumi.set(__self__, "are_members_included", are_members_included)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="areMembersIncluded")
+    def are_members_included(self) -> Optional[bool]:
+        """
+        (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+        """
+        return pulumi.get(self, "are_members_included")
+
+
+@pulumi.output_type
+class MaintenanceWindowResourcesDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "numberOfMembers":
+            suggest = "number_of_members"
+        elif key == "resourceId":
+            suggest = "resource_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceWindowResourcesDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceWindowResourcesDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceWindowResourcesDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 number_of_members: Optional[int] = None,
+                 resource_id: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str name: Maintenance Window name.
+        :param int number_of_members: Number of members of the resource
+        :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        :param str type: Type of the monitored resource
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if number_of_members is not None:
+            pulumi.set(__self__, "number_of_members", number_of_members)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Maintenance Window name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="numberOfMembers")
+    def number_of_members(self) -> Optional[int]:
+        """
+        Number of members of the resource
+        """
+        return pulumi.get(self, "number_of_members")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the monitored resource
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class MaintenanceWindowSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "scheduleType":
+            suggest = "schedule_type"
+        elif key == "maintenanceWindowDuration":
+            suggest = "maintenance_window_duration"
+        elif key == "maintenanceWindowRecurrences":
+            suggest = "maintenance_window_recurrences"
+        elif key == "timeMaintenanceWindowEnd":
+            suggest = "time_maintenance_window_end"
+        elif key == "timeMaintenanceWindowStart":
+            suggest = "time_maintenance_window_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceWindowSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceWindowSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceWindowSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 schedule_type: str,
+                 maintenance_window_duration: Optional[str] = None,
+                 maintenance_window_recurrences: Optional[str] = None,
+                 time_maintenance_window_end: Optional[str] = None,
+                 time_maintenance_window_start: Optional[str] = None):
+        """
+        :param str schedule_type: (Updatable) Property to identify the type of the Maintenance Window.
+        :param str maintenance_window_duration: (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        :param str maintenance_window_recurrences: (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        :param str time_maintenance_window_end: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+        :param str time_maintenance_window_start: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "schedule_type", schedule_type)
+        if maintenance_window_duration is not None:
+            pulumi.set(__self__, "maintenance_window_duration", maintenance_window_duration)
+        if maintenance_window_recurrences is not None:
+            pulumi.set(__self__, "maintenance_window_recurrences", maintenance_window_recurrences)
+        if time_maintenance_window_end is not None:
+            pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
+        if time_maintenance_window_start is not None:
+            pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+
+    @property
+    @pulumi.getter(name="scheduleType")
+    def schedule_type(self) -> str:
+        """
+        (Updatable) Property to identify the type of the Maintenance Window.
+        """
+        return pulumi.get(self, "schedule_type")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowDuration")
+    def maintenance_window_duration(self) -> Optional[str]:
+        """
+        (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        """
+        return pulumi.get(self, "maintenance_window_duration")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowRecurrences")
+    def maintenance_window_recurrences(self) -> Optional[str]:
+        """
+        (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        """
+        return pulumi.get(self, "maintenance_window_recurrences")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowEnd")
+    def time_maintenance_window_end(self) -> Optional[str]:
+        """
+        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_maintenance_window_end")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowStart")
+    def time_maintenance_window_start(self) -> Optional[str]:
+        """
+        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "time_maintenance_window_start")
 
 
 @pulumi.output_type
@@ -4111,6 +4343,377 @@ class GetDiscoveryJobsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowResourceResult(dict):
+    def __init__(__self__, *,
+                 are_members_included: bool,
+                 resource_id: str):
+        """
+        :param bool are_members_included: Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+        :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        """
+        pulumi.set(__self__, "are_members_included", are_members_included)
+        pulumi.set(__self__, "resource_id", resource_id)
+
+    @property
+    @pulumi.getter(name="areMembersIncluded")
+    def are_members_included(self) -> bool:
+        """
+        Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+        """
+        return pulumi.get(self, "are_members_included")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        """
+        return pulumi.get(self, "resource_id")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowResourcesDetailResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 number_of_members: int,
+                 resource_id: str,
+                 type: str):
+        """
+        :param str name: Name of the monitored resource
+        :param int number_of_members: Number of members of the resource
+        :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        :param str type: Type of the monitored resource
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "number_of_members", number_of_members)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the monitored resource
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="numberOfMembers")
+    def number_of_members(self) -> int:
+        """
+        Number of members of the resource
+        """
+        return pulumi.get(self, "number_of_members")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the monitored resource
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowScheduleResult(dict):
+    def __init__(__self__, *,
+                 maintenance_window_duration: str,
+                 maintenance_window_recurrences: str,
+                 schedule_type: str,
+                 time_maintenance_window_end: str,
+                 time_maintenance_window_start: str):
+        """
+        :param str maintenance_window_duration: Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        :param str maintenance_window_recurrences: A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        :param str schedule_type: Property to identify the type of the Maintenance Window.
+        :param str time_maintenance_window_end: Start time of Maintenance window. A RFC3339 formatted datetime string
+        :param str time_maintenance_window_start: Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "maintenance_window_duration", maintenance_window_duration)
+        pulumi.set(__self__, "maintenance_window_recurrences", maintenance_window_recurrences)
+        pulumi.set(__self__, "schedule_type", schedule_type)
+        pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
+        pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+
+    @property
+    @pulumi.getter(name="maintenanceWindowDuration")
+    def maintenance_window_duration(self) -> str:
+        """
+        Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        """
+        return pulumi.get(self, "maintenance_window_duration")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowRecurrences")
+    def maintenance_window_recurrences(self) -> str:
+        """
+        A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        """
+        return pulumi.get(self, "maintenance_window_recurrences")
+
+    @property
+    @pulumi.getter(name="scheduleType")
+    def schedule_type(self) -> str:
+        """
+        Property to identify the type of the Maintenance Window.
+        """
+        return pulumi.get(self, "schedule_type")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowEnd")
+    def time_maintenance_window_end(self) -> str:
+        """
+        Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_maintenance_window_end")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowStart")
+    def time_maintenance_window_start(self) -> str:
+        """
+        Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_maintenance_window_start")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return maintenance windows that match exact resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return maintenance windows that match exact resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowsMaintenanceWindowCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaintenanceWindowsMaintenanceWindowCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaintenanceWindowsMaintenanceWindowCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowsMaintenanceWindowCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 lifecycle_state: str,
+                 name: str,
+                 number_of_resources: int,
+                 operation_status: str,
+                 operation_type: str,
+                 schedules: Sequence['outputs.GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleResult'],
+                 state: str,
+                 system_tags: Mapping[str, str]):
+        """
+        :param str compartment_id: The ID of the compartment in which data is listed.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+        :param str lifecycle_details: A filter to return maintenance windows with matching lifecycleDetails.
+        :param str name: A filter to return maintenance windows that match exact resource name.
+        :param Sequence['GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs'] schedules: Schedule information of the Maintenance Window
+        :param str state: Lifecycle state of the monitored resource.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "number_of_resources", number_of_resources)
+        pulumi.set(__self__, "operation_status", operation_status)
+        pulumi.set(__self__, "operation_type", operation_type)
+        pulumi.set(__self__, "schedules", schedules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which data is listed.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A filter to return maintenance windows with matching lifecycleDetails.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> str:
+        return pulumi.get(self, "lifecycle_state")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return maintenance windows that match exact resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="numberOfResources")
+    def number_of_resources(self) -> int:
+        return pulumi.get(self, "number_of_resources")
+
+    @property
+    @pulumi.getter(name="operationStatus")
+    def operation_status(self) -> str:
+        return pulumi.get(self, "operation_status")
+
+    @property
+    @pulumi.getter(name="operationType")
+    def operation_type(self) -> str:
+        return pulumi.get(self, "operation_type")
+
+    @property
+    @pulumi.getter
+    def schedules(self) -> Sequence['outputs.GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleResult']:
+        """
+        Schedule information of the Maintenance Window
+        """
+        return pulumi.get(self, "schedules")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Lifecycle state of the monitored resource.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleResult(dict):
+    def __init__(__self__, *,
+                 maintenance_window_duration: str,
+                 maintenance_window_recurrences: str,
+                 schedule_type: str,
+                 time_maintenance_window_end: str,
+                 time_maintenance_window_start: str):
+        """
+        :param str maintenance_window_duration: Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        :param str maintenance_window_recurrences: A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        :param str schedule_type: Property to identify the type of the Maintenance Window.
+        :param str time_maintenance_window_end: Start time of Maintenance window. A RFC3339 formatted datetime string
+        :param str time_maintenance_window_start: Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "maintenance_window_duration", maintenance_window_duration)
+        pulumi.set(__self__, "maintenance_window_recurrences", maintenance_window_recurrences)
+        pulumi.set(__self__, "schedule_type", schedule_type)
+        pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
+        pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+
+    @property
+    @pulumi.getter(name="maintenanceWindowDuration")
+    def maintenance_window_duration(self) -> str:
+        """
+        Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+        """
+        return pulumi.get(self, "maintenance_window_duration")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowRecurrences")
+    def maintenance_window_recurrences(self) -> str:
+        """
+        A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+        """
+        return pulumi.get(self, "maintenance_window_recurrences")
+
+    @property
+    @pulumi.getter(name="scheduleType")
+    def schedule_type(self) -> str:
+        """
+        Property to identify the type of the Maintenance Window.
+        """
+        return pulumi.get(self, "schedule_type")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowEnd")
+    def time_maintenance_window_end(self) -> str:
+        """
+        Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_maintenance_window_end")
+
+    @property
+    @pulumi.getter(name="timeMaintenanceWindowStart")
+    def time_maintenance_window_start(self) -> str:
+        """
+        Start time of Maintenance window. A RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_maintenance_window_start")
 
 
 @pulumi.output_type

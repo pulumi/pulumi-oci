@@ -20,6 +20,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string DisplayName;
         public readonly string EncryptionInTransitType;
         public readonly bool IsAgentAutoIscsiLoginEnabled;
+        /// <summary>
+        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+        /// </summary>
+        public readonly bool IsPvEncryptionInTransitEnabled;
         public readonly bool IsReadOnly;
         public readonly bool IsShareable;
         public readonly ImmutableArray<Outputs.GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult> LaunchCreateVolumeDetails;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isAgentAutoIscsiLoginEnabled,
 
+            bool isPvEncryptionInTransitEnabled,
+
             bool isReadOnly,
 
             bool isShareable,
@@ -56,6 +62,7 @@ namespace Pulumi.Oci.Core.Outputs
             DisplayName = displayName;
             EncryptionInTransitType = encryptionInTransitType;
             IsAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             IsReadOnly = isReadOnly;
             IsShareable = isShareable;
             LaunchCreateVolumeDetails = launchCreateVolumeDetails;

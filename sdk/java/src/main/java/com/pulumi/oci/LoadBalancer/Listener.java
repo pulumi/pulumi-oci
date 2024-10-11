@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .protocol(listenerProtocol)
  *             .connectionConfiguration(ListenerConnectionConfigurationArgs.builder()
  *                 .idleTimeoutInSeconds(listenerConnectionConfigurationIdleTimeoutInSeconds)
+ *                 .backendTcpProxyProtocolOptions(listenerConnectionConfigurationBackendTcpProxyProtocolOptions)
  *                 .backendTcpProxyProtocolVersion(listenerConnectionConfigurationBackendTcpProxyProtocolVersion)
  *                 .build())
  *             .hostnameNames(testHostname.name())
@@ -173,7 +174,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pathRouteSetName", refs={String.class}, tree="[0]")
-    private Output<String> pathRouteSetName;
+    private Output</* @Nullable */ String> pathRouteSetName;
 
     /**
      * @return (Updatable) Deprecated. Please use `routingPolicies` instead.
@@ -183,8 +184,8 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * Example: `example_path_route_set`
      * 
      */
-    public Output<String> pathRouteSetName() {
-        return this.pathRouteSetName;
+    public Output<Optional<String>> pathRouteSetName() {
+        return Codegen.optional(this.pathRouteSetName);
     }
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
@@ -219,14 +220,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="routingPolicyName", refs={String.class}, tree="[0]")
-    private Output<String> routingPolicyName;
+    private Output</* @Nullable */ String> routingPolicyName;
 
     /**
      * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
      * 
      */
-    public Output<String> routingPolicyName() {
-        return this.routingPolicyName;
+    public Output<Optional<String>> routingPolicyName() {
+        return Codegen.optional(this.routingPolicyName);
     }
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]

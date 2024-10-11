@@ -2166,6 +2166,7 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
                  display_name: str,
                  fusion_environment_id: str,
                  id: str,
+                 is_data_masking_opted: bool,
                  lifecycle_details: str,
                  refresh_activity_id: str,
                  refresh_issue_details_lists: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult'],
@@ -2181,6 +2182,7 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str fusion_environment_id: unique FusionEnvironment identifier
         :param str id: The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+        :param bool is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs'] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param str service_availability: Service availability / impact during refresh activity execution up down
@@ -2195,6 +2197,7 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_data_masking_opted", is_data_masking_opted)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "refresh_activity_id", refresh_activity_id)
         pulumi.set(__self__, "refresh_issue_details_lists", refresh_issue_details_lists)
@@ -2230,6 +2233,14 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
         The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isDataMaskingOpted")
+    def is_data_masking_opted(self) -> bool:
+        """
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+        """
+        return pulumi.get(self, "is_data_masking_opted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

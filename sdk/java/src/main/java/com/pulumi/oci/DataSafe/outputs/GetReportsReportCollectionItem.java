@@ -47,7 +47,7 @@ public final class GetReportsReportCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Specifies the format of report to be .xls or .pdf or .json
+     * @return An optional filter to return only resources that match the specified mime type.
      * 
      */
     private String mimeType;
@@ -129,7 +129,7 @@ public final class GetReportsReportCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Specifies the format of report to be .xls or .pdf or .json
+     * @return An optional filter to return only resources that match the specified mime type.
      * 
      */
     public String mimeType() {

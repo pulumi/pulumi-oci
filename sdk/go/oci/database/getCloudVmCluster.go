@@ -64,6 +64,8 @@ type LookupCloudVmClusterResult struct {
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId string `pulumi:"backupSubnetId"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails []GetCloudVmClusterCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
 	CloudVmClusterId             string `pulumi:"cloudVmClusterId"`
@@ -219,6 +221,13 @@ func (o LookupCloudVmClusterResultOutput) BackupNetworkNsgIds() pulumi.StringArr
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) BackupSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.BackupSubnetId }).(pulumi.StringOutput)
+}
+
+// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o LookupCloudVmClusterResultOutput) CloudAutomationUpdateDetails() GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterCloudAutomationUpdateDetail {
+		return v.CloudAutomationUpdateDetails
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.

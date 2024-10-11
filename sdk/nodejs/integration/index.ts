@@ -20,6 +20,11 @@ export type IntegrationInstance = import("./integrationInstance").IntegrationIns
 export const IntegrationInstance: typeof import("./integrationInstance").IntegrationInstance = null as any;
 utilities.lazyLoad(exports, ["IntegrationInstance"], () => require("./integrationInstance"));
 
+export { OracleManagedCustomEndpointArgs, OracleManagedCustomEndpointState } from "./oracleManagedCustomEndpoint";
+export type OracleManagedCustomEndpoint = import("./oracleManagedCustomEndpoint").OracleManagedCustomEndpoint;
+export const OracleManagedCustomEndpoint: typeof import("./oracleManagedCustomEndpoint").OracleManagedCustomEndpoint = null as any;
+utilities.lazyLoad(exports, ["OracleManagedCustomEndpoint"], () => require("./oracleManagedCustomEndpoint"));
+
 export { PrivateEndpointOutboundConnectionArgs, PrivateEndpointOutboundConnectionState } from "./privateEndpointOutboundConnection";
 export type PrivateEndpointOutboundConnection = import("./privateEndpointOutboundConnection").PrivateEndpointOutboundConnection;
 export const PrivateEndpointOutboundConnection: typeof import("./privateEndpointOutboundConnection").PrivateEndpointOutboundConnection = null as any;
@@ -32,6 +37,8 @@ const _module = {
         switch (type) {
             case "oci:Integration/integrationInstance:IntegrationInstance":
                 return new IntegrationInstance(name, <any>undefined, { urn })
+            case "oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint":
+                return new OracleManagedCustomEndpoint(name, <any>undefined, { urn })
             case "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection":
                 return new PrivateEndpointOutboundConnection(name, <any>undefined, { urn })
             default:
@@ -40,4 +47,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Integration/integrationInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "Integration/oracleManagedCustomEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "Integration/privateEndpointOutboundConnection", _module)

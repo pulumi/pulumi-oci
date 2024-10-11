@@ -68,6 +68,7 @@ namespace Pulumi.Oci.Analytics
     ///                 },
     ///             },
     ///         },
+    ///         UpdateChannel = analyticsInstanceUpdateChannel,
     ///     });
     /// 
     /// });
@@ -207,6 +208,12 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Analytics instance update channel.
+        /// </summary>
+        [Output("updateChannel")]
+        public Output<string> UpdateChannel { get; private set; } = null!;
 
 
         /// <summary>
@@ -380,6 +387,12 @@ namespace Pulumi.Oci.Analytics
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// (Updatable) Analytics instance update channel.
+        /// </summary>
+        [Input("updateChannel")]
+        public Input<string>? UpdateChannel { get; set; }
+
         public AnalyticsInstanceArgs()
         {
         }
@@ -539,6 +552,12 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Analytics instance update channel.
+        /// </summary>
+        [Input("updateChannel")]
+        public Input<string>? UpdateChannel { get; set; }
 
         public AnalyticsInstanceState()
         {

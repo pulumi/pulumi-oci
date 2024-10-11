@@ -56,8 +56,9 @@ import (
 //				},
 //				DisplayName: pulumi.Any(desktopPoolDisplayName),
 //				Image: &desktops.DesktopPoolImageArgs{
-//					ImageId:   pulumi.Any(testImage.Id),
-//					ImageName: pulumi.Any(desktopPoolImageImageName),
+//					ImageId:         pulumi.Any(testImage.Id),
+//					ImageName:       pulumi.Any(desktopPoolImageImageName),
+//					OperatingSystem: pulumi.Any(desktopPoolImageOperatingSystem),
 //				},
 //				IsStorageEnabled: pulumi.Any(desktopPoolIsStorageEnabled),
 //				MaximumSize:      pulumi.Any(desktopPoolMaximumSize),
@@ -76,9 +77,20 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				NsgIds:             pulumi.Any(desktopPoolNsgIds),
+//				NsgIds: pulumi.Any(desktopPoolNsgIds),
+//				ShapeConfig: &desktops.DesktopPoolShapeConfigArgs{
+//					BaselineOcpuUtilization: pulumi.Any(desktopPoolShapeConfigBaselineOcpuUtilization),
+//					MemoryInGbs:             pulumi.Any(desktopPoolShapeConfigMemoryInGbs),
+//					Ocpus:                   pulumi.Any(desktopPoolShapeConfigOcpus),
+//				},
+//				PrivateAccessDetails: &desktops.DesktopPoolPrivateAccessDetailsArgs{
+//					SubnetId:  pulumi.Any(testSubnet.Id),
+//					NsgIds:    pulumi.Any(desktopPoolPrivateAccessDetailsNsgIds),
+//					PrivateIp: pulumi.Any(desktopPoolPrivateAccessDetailsPrivateIp),
+//				},
 //				TimeStartScheduled: pulumi.Any(desktopPoolTimeStartScheduled),
 //				TimeStopScheduled:  pulumi.Any(desktopPoolTimeStopScheduled),
+//				UseDedicatedVmHost: pulumi.Any(desktopPoolUseDedicatedVmHost),
 //			})
 //			if err != nil {
 //				return err
@@ -129,8 +141,12 @@ type DesktopPool struct {
 	MaximumSize pulumi.IntOutput `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationOutput `pulumi:"networkConfiguration"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	PrivateAccessDetails DesktopPoolPrivateAccessDetailsOutput `pulumi:"privateAccessDetails"`
+	// The compute instance shape configuration requested for each desktop in the desktop pool.
+	ShapeConfig DesktopPoolShapeConfigOutput `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -146,10 +162,12 @@ type DesktopPool struct {
 	// (Updatable) The start time of the desktop pool.
 	TimeStartScheduled pulumi.StringPtrOutput `pulumi:"timeStartScheduled"`
 	// (Updatable) The stop time of the desktop pool.
+	TimeStopScheduled pulumi.StringPtrOutput `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStopScheduled pulumi.StringPtrOutput `pulumi:"timeStopScheduled"`
+	UseDedicatedVmHost pulumi.StringOutput `pulumi:"useDedicatedVmHost"`
 }
 
 // NewDesktopPool registers a new resource with the given unique name, arguments, and options.
@@ -257,8 +275,12 @@ type desktopPoolState struct {
 	MaximumSize *int `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration *DesktopPoolNetworkConfiguration `pulumi:"networkConfiguration"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// The compute instance shape configuration requested for each desktop in the desktop pool.
+	ShapeConfig *DesktopPoolShapeConfig `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
 	ShapeName *string `pulumi:"shapeName"`
 	// (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -274,10 +296,12 @@ type desktopPoolState struct {
 	// (Updatable) The start time of the desktop pool.
 	TimeStartScheduled *string `pulumi:"timeStartScheduled"`
 	// (Updatable) The stop time of the desktop pool.
+	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
+	UseDedicatedVmHost *string `pulumi:"useDedicatedVmHost"`
 }
 
 type DesktopPoolState struct {
@@ -311,8 +335,12 @@ type DesktopPoolState struct {
 	MaximumSize pulumi.IntPtrInput
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationPtrInput
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput
+	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// The compute instance shape configuration requested for each desktop in the desktop pool.
+	ShapeConfig DesktopPoolShapeConfigPtrInput
 	// The shape of the desktop pool.
 	ShapeName pulumi.StringPtrInput
 	// (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -328,10 +356,12 @@ type DesktopPoolState struct {
 	// (Updatable) The start time of the desktop pool.
 	TimeStartScheduled pulumi.StringPtrInput
 	// (Updatable) The stop time of the desktop pool.
+	TimeStopScheduled pulumi.StringPtrInput
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStopScheduled pulumi.StringPtrInput
+	UseDedicatedVmHost pulumi.StringPtrInput
 }
 
 func (DesktopPoolState) ElementType() reflect.Type {
@@ -367,8 +397,12 @@ type desktopPoolArgs struct {
 	MaximumSize int `pulumi:"maximumSize"`
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfiguration `pulumi:"networkConfiguration"`
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// The compute instance shape configuration requested for each desktop in the desktop pool.
+	ShapeConfig *DesktopPoolShapeConfig `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
 	ShapeName string `pulumi:"shapeName"`
 	// (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -380,10 +414,12 @@ type desktopPoolArgs struct {
 	// (Updatable) The start time of the desktop pool.
 	TimeStartScheduled *string `pulumi:"timeStartScheduled"`
 	// (Updatable) The stop time of the desktop pool.
+	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStopScheduled *string `pulumi:"timeStopScheduled"`
+	UseDedicatedVmHost *string `pulumi:"useDedicatedVmHost"`
 }
 
 // The set of arguments for constructing a DesktopPool resource.
@@ -416,8 +452,12 @@ type DesktopPoolArgs struct {
 	MaximumSize pulumi.IntInput
 	// Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationInput
-	// A list of network security groups for the desktop pool.
+	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput
+	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// The compute instance shape configuration requested for each desktop in the desktop pool.
+	ShapeConfig DesktopPoolShapeConfigPtrInput
 	// The shape of the desktop pool.
 	ShapeName pulumi.StringInput
 	// (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -429,10 +469,12 @@ type DesktopPoolArgs struct {
 	// (Updatable) The start time of the desktop pool.
 	TimeStartScheduled pulumi.StringPtrInput
 	// (Updatable) The stop time of the desktop pool.
+	TimeStopScheduled pulumi.StringPtrInput
+	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeStopScheduled pulumi.StringPtrInput
+	UseDedicatedVmHost pulumi.StringPtrInput
 }
 
 func (DesktopPoolArgs) ElementType() reflect.Type {
@@ -597,9 +639,19 @@ func (o DesktopPoolOutput) NetworkConfiguration() DesktopPoolNetworkConfiguratio
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolNetworkConfigurationOutput { return v.NetworkConfiguration }).(DesktopPoolNetworkConfigurationOutput)
 }
 
-// A list of network security groups for the desktop pool.
+// A list of network security groups for the private access.
 func (o DesktopPoolOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+func (o DesktopPoolOutput) PrivateAccessDetails() DesktopPoolPrivateAccessDetailsOutput {
+	return o.ApplyT(func(v *DesktopPool) DesktopPoolPrivateAccessDetailsOutput { return v.PrivateAccessDetails }).(DesktopPoolPrivateAccessDetailsOutput)
+}
+
+// The compute instance shape configuration requested for each desktop in the desktop pool.
+func (o DesktopPoolOutput) ShapeConfig() DesktopPoolShapeConfigOutput {
+	return o.ApplyT(func(v *DesktopPool) DesktopPoolShapeConfigOutput { return v.ShapeConfig }).(DesktopPoolShapeConfigOutput)
 }
 
 // The shape of the desktop pool.
@@ -638,11 +690,16 @@ func (o DesktopPoolOutput) TimeStartScheduled() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The stop time of the desktop pool.
+func (o DesktopPoolOutput) TimeStopScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPool) pulumi.StringPtrOutput { return v.TimeStopScheduled }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the desktop pool uses dedicated virtual machine hosts.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DesktopPoolOutput) TimeStopScheduled() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *DesktopPool) pulumi.StringPtrOutput { return v.TimeStopScheduled }).(pulumi.StringPtrOutput)
+func (o DesktopPoolOutput) UseDedicatedVmHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *DesktopPool) pulumi.StringOutput { return v.UseDedicatedVmHost }).(pulumi.StringOutput)
 }
 
 type DesktopPoolArrayOutput struct{ *pulumi.OutputState }

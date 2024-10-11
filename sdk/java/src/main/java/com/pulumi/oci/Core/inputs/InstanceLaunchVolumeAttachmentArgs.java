@@ -79,6 +79,21 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
     }
 
     /**
+     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+     * 
+     */
+    @Import(name="isPvEncryptionInTransitEnabled")
+    private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
+
+    /**
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+     * 
+     */
+    public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
+    }
+
+    /**
      * Whether the attachment was created in read-only mode.
      * 
      */
@@ -175,6 +190,7 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
         this.displayName = $.displayName;
         this.encryptionInTransitType = $.encryptionInTransitType;
         this.isAgentAutoIscsiLoginEnabled = $.isAgentAutoIscsiLoginEnabled;
+        this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.isReadOnly = $.isReadOnly;
         this.isShareable = $.isShareable;
         this.launchCreateVolumeDetails = $.launchCreateVolumeDetails;
@@ -283,6 +299,27 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
          */
         public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
             return isAgentAutoIscsiLoginEnabled(Output.of(isAgentAutoIscsiLoginEnabled));
+        }
+
+        /**
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Output<Boolean> isPvEncryptionInTransitEnabled) {
+            $.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            return isPvEncryptionInTransitEnabled(Output.of(isPvEncryptionInTransitEnabled));
         }
 
         /**

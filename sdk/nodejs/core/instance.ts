@@ -49,6 +49,12 @@ import * as utilities from "../utilities";
  * with the signature. To get the image ID for the LaunchInstance operation, call
  * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
  *
+ * When launching an instance, you may provide the `securityAttributes` parameter in
+ * [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+ * or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+ * via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+ * 400 Bad Request response.
+ *
  * To determine whether capacity is available for a specific shape before you create an instance,
  * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
  * operation.
@@ -287,6 +293,14 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly region!: pulumi.Output<string>;
     /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The lifecycle state of the `securityAttributes`
+     */
+    public /*out*/ readonly securityAttributesState!: pulumi.Output<string>;
+    /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -378,6 +392,8 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
             resourceInputs["publicIp"] = state ? state.publicIp : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
+            resourceInputs["securityAttributesState"] = state ? state.securityAttributesState : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["shapeConfig"] = state ? state.shapeConfig : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
@@ -423,6 +439,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["preemptibleInstanceConfig"] = args ? args.preemptibleInstanceConfig : undefined;
             resourceInputs["preserveBootVolume"] = args ? args.preserveBootVolume : undefined;
             resourceInputs["preserveDataVolumesCreatedAtLaunch"] = args ? args.preserveDataVolumesCreatedAtLaunch : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
@@ -435,6 +452,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["publicIp"] = undefined /*out*/;
             resourceInputs["region"] = undefined /*out*/;
+            resourceInputs["securityAttributesState"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeMaintenanceRebootDue"] = undefined /*out*/;
@@ -645,6 +663,14 @@ export interface InstanceState {
      * The region that contains the availability domain the instance is running in.
      */
     region?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The lifecycle state of the `securityAttributes`
+     */
+    securityAttributesState?: pulumi.Input<string>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
@@ -864,6 +890,10 @@ export interface InstanceArgs {
      */
     preserveBootVolume?: pulumi.Input<boolean>;
     preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *

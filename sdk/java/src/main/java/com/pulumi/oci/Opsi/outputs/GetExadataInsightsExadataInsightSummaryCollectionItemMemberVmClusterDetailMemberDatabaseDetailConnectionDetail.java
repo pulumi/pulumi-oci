@@ -6,19 +6,28 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
+    private String hostName;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+    private Integer port;
     private String protocol;
     private String serviceName;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail() {}
+    public String hostName() {
+        return this.hostName;
+    }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts() {
         return this.hosts;
+    }
+    public Integer port() {
+        return this.port;
     }
     public String protocol() {
         return this.protocol;
@@ -36,17 +45,29 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     @CustomType.Builder
     public static final class Builder {
+        private String hostName;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+        private Integer port;
         private String protocol;
         private String serviceName;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.hostName = defaults.hostName;
     	      this.hosts = defaults.hosts;
+    	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
+        public Builder hostName(String hostName) {
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "hostName");
+            }
+            this.hostName = hostName;
+            return this;
+        }
         @CustomType.Setter
         public Builder hosts(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts) {
             if (hosts == null) {
@@ -57,6 +78,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         }
         public Builder hosts(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost... hosts) {
             return hosts(List.of(hosts));
+        }
+        @CustomType.Setter
+        public Builder port(Integer port) {
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "port");
+            }
+            this.port = port;
+            return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
@@ -76,7 +105,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail build() {
             final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail();
+            _resultValue.hostName = hostName;
             _resultValue.hosts = hosts;
+            _resultValue.port = port;
             _resultValue.protocol = protocol;
             _resultValue.serviceName = serviceName;
             return _resultValue;

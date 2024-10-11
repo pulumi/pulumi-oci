@@ -122,6 +122,10 @@ export interface GetAnalyticsInstanceResult {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     readonly timeUpdated: string;
+    /**
+     * Analytics instance update channel.
+     */
+    readonly updateChannel: string;
 }
 /**
  * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.

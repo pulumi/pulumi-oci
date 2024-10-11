@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
@@ -33,6 +34,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String backupSubnetId;
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    private List<GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
     /**
      * @return If provided, filters the results for the specified cloud Exadata infrastructure.
      * 
@@ -284,6 +290,13 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     public String backupSubnetId() {
         return this.backupSubnetId;
+    }
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public List<GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * @return If provided, filters the results for the specified cloud Exadata infrastructure.
@@ -623,6 +636,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String availabilityDomain;
         private List<String> backupNetworkNsgIds;
         private String backupSubnetId;
+        private List<GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails;
         private String cloudExadataInfrastructureId;
         private String clusterName;
         private String compartmentId;
@@ -677,6 +691,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
     	      this.backupSubnetId = defaults.backupSubnetId;
+    	      this.cloudAutomationUpdateDetails = defaults.cloudAutomationUpdateDetails;
     	      this.cloudExadataInfrastructureId = defaults.cloudExadataInfrastructureId;
     	      this.clusterName = defaults.clusterName;
     	      this.compartmentId = defaults.compartmentId;
@@ -753,6 +768,17 @@ public final class GetCloudVmClustersCloudVmCluster {
             }
             this.backupSubnetId = backupSubnetId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder cloudAutomationUpdateDetails(List<GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail> cloudAutomationUpdateDetails) {
+            if (cloudAutomationUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "cloudAutomationUpdateDetails");
+            }
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+        public Builder cloudAutomationUpdateDetails(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail... cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(List.of(cloudAutomationUpdateDetails));
         }
         @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
@@ -1167,6 +1193,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupNetworkNsgIds = backupNetworkNsgIds;
             _resultValue.backupSubnetId = backupSubnetId;
+            _resultValue.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
             _resultValue.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             _resultValue.clusterName = clusterName;
             _resultValue.compartmentId = compartmentId;

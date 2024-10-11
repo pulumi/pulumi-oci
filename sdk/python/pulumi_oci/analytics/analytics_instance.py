@@ -36,7 +36,8 @@ class AnalyticsInstanceArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[str]] = None):
+                 state: Optional[pulumi.Input[str]] = None,
+                 update_channel: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstance resource.
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -59,6 +60,7 @@ class AnalyticsInstanceArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] update_channel: (Updatable) Analytics instance update channel.
         """
         pulumi.set(__self__, "capacity", capacity)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -88,6 +90,8 @@ class AnalyticsInstanceArgs:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if update_channel is not None:
+            pulumi.set(__self__, "update_channel", update_channel)
 
     @property
     @pulumi.getter
@@ -285,6 +289,18 @@ class AnalyticsInstanceArgs:
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
 
+    @property
+    @pulumi.getter(name="updateChannel")
+    def update_channel(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Analytics instance update channel.
+        """
+        return pulumi.get(self, "update_channel")
+
+    @update_channel.setter
+    def update_channel(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "update_channel", value)
+
 
 @pulumi.input_type
 class _AnalyticsInstanceState:
@@ -308,7 +324,8 @@ class _AnalyticsInstanceState:
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 update_channel: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstance resources.
         :param pulumi.Input[str] admin_user: user name of the authorized user.
@@ -335,6 +352,7 @@ class _AnalyticsInstanceState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        :param pulumi.Input[str] update_channel: (Updatable) Analytics instance update channel.
         """
         if admin_user is not None:
             pulumi.set(__self__, "admin_user", admin_user)
@@ -376,6 +394,8 @@ class _AnalyticsInstanceState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if update_channel is not None:
+            pulumi.set(__self__, "update_channel", update_channel)
 
     @property
     @pulumi.getter(name="adminUser")
@@ -621,6 +641,18 @@ class _AnalyticsInstanceState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter(name="updateChannel")
+    def update_channel(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Analytics instance update channel.
+        """
+        return pulumi.get(self, "update_channel")
+
+    @update_channel.setter
+    def update_channel(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "update_channel", value)
+
 
 class AnalyticsInstance(pulumi.CustomResource):
     @overload
@@ -643,6 +675,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 update_channel: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -689,7 +722,8 @@ class AnalyticsInstance(pulumi.CustomResource):
                     "id": analytics_instance_network_endpoint_details_whitelisted_vcns_id,
                     "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
                 }],
-            })
+            },
+            update_channel=analytics_instance_update_channel)
         ```
 
         ## Import
@@ -722,6 +756,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] update_channel: (Updatable) Analytics instance update channel.
         """
         ...
     @overload
@@ -774,7 +809,8 @@ class AnalyticsInstance(pulumi.CustomResource):
                     "id": analytics_instance_network_endpoint_details_whitelisted_vcns_id,
                     "whitelisted_ips": analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
                 }],
-            })
+            },
+            update_channel=analytics_instance_update_channel)
         ```
 
         ## Import
@@ -816,6 +852,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 update_channel: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -849,6 +886,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
+            __props__.__dict__["update_channel"] = update_channel
             __props__.__dict__["service_url"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -884,7 +922,8 @@ class AnalyticsInstance(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'AnalyticsInstance':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            update_channel: Optional[pulumi.Input[str]] = None) -> 'AnalyticsInstance':
         """
         Get an existing AnalyticsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -916,6 +955,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        :param pulumi.Input[str] update_channel: (Updatable) Analytics instance update channel.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -941,6 +981,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["update_channel"] = update_channel
         return AnalyticsInstance(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1106,4 +1147,12 @@ class AnalyticsInstance(pulumi.CustomResource):
         The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updateChannel")
+    def update_channel(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Analytics instance update channel.
+        """
+        return pulumi.get(self, "update_channel")
 

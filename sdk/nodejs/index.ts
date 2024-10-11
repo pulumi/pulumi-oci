@@ -63,6 +63,7 @@ import * as dns from "./dns";
 import * as email from "./email";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
+import * as fleetappsmanagement from "./fleetappsmanagement";
 import * as fleetsoftwareupdate from "./fleetsoftwareupdate";
 import * as functions from "./functions";
 import * as fusionapps from "./fusionapps";
@@ -117,6 +118,7 @@ import * as resourcemanager from "./resourcemanager";
 import * as resourcescheduler from "./resourcescheduler";
 import * as sch from "./sch";
 import * as secrets from "./secrets";
+import * as securityattribute from "./securityattribute";
 import * as servicecatalog from "./servicecatalog";
 import * as servicemanagerproxy from "./servicemanagerproxy";
 import * as servicemesh from "./servicemesh";
@@ -132,6 +134,7 @@ import * as vulnerabilityscanning from "./vulnerabilityscanning";
 import * as waa from "./waa";
 import * as waas from "./waas";
 import * as waf from "./waf";
+import * as zpr from "./zpr";
 
 export {
     adm,
@@ -185,6 +188,7 @@ export {
     email,
     events,
     filestorage,
+    fleetappsmanagement,
     fleetsoftwareupdate,
     functions,
     fusionapps,
@@ -239,6 +243,7 @@ export {
     resourcescheduler,
     sch,
     secrets,
+    securityattribute,
     servicecatalog,
     servicemanagerproxy,
     servicemesh,
@@ -254,6 +259,7 @@ export {
     waa,
     waas,
     waf,
+    zpr,
 };
 pulumi.runtime.registerResourcePackage("oci", {
     version: utilities.getVersion(),

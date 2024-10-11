@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Opsi
         private List<string>? _hostTypes;
 
         /// <summary>
-        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
         /// </summary>
         public List<string> HostTypes
         {
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Opsi
         private InputList<string>? _hostTypes;
 
         /// <summary>
-        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
         /// </summary>
         public InputList<string> HostTypes
         {

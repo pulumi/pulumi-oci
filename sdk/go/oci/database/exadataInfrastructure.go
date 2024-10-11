@@ -80,6 +80,7 @@ import (
 //					},
 //					PatchingMode:  pulumi.Any(exadataInfrastructureMaintenanceWindowPatchingMode),
 //					Preference:    pulumi.Any(exadataInfrastructureMaintenanceWindowPreference),
+//					SkipRus:       pulumi.Any(exadataInfrastructureMaintenanceWindowSkipRu),
 //					WeeksOfMonths: pulumi.Any(exadataInfrastructureMaintenanceWindowWeeksOfMonth),
 //				},
 //				MultiRackConfigurationFile: pulumi.Any(exadataInfrastructureMultiRackConfigurationFile),

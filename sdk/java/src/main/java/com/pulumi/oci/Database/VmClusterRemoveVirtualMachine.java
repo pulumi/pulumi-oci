@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterRemoveVirtualMachineArgs;
 import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineState;
+import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDbServer;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail;
@@ -89,6 +90,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Export(name="cloudAutomationUpdateDetails", refs={List.class,VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail>> cloudAutomationUpdateDetails;
+
+    /**
+     * @return Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Output<List<VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail>> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

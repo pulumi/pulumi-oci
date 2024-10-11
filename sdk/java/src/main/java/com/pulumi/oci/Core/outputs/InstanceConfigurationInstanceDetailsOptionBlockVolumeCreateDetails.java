@@ -23,7 +23,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
      */
     private @Nullable List<InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy> autotunePolicies;
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
@@ -43,22 +43,22 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
      */
     private @Nullable String clusterPlacementGroupId;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * @return (Updatable) The OCID of the compartment that contains the volume.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private @Nullable Map<String,String> definedTags;
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private @Nullable Map<String,String> freeformTags;
@@ -81,6 +81,8 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     private @Nullable String vpusPerGb;
 
@@ -93,7 +95,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         return this.autotunePolicies == null ? List.of() : this.autotunePolicies;
     }
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
@@ -121,28 +123,28 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+     * @return (Updatable) The OCID of the compartment that contains the volume.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,String> freeformTags() {
@@ -174,6 +176,8 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     }
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<String> vpusPerGb() {

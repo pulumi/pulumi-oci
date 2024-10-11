@@ -50,6 +50,7 @@ export class VirtualNetwork extends pulumi.CustomResource {
     public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
     public readonly isIpv6enabled!: pulumi.Output<boolean>;
     public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly state!: pulumi.Output<string>;
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     public /*out*/ readonly vcnDomainName!: pulumi.Output<string>;
@@ -83,6 +84,7 @@ export class VirtualNetwork extends pulumi.CustomResource {
             resourceInputs["ipv6privateCidrBlocks"] = state ? state.ipv6privateCidrBlocks : undefined;
             resourceInputs["isIpv6enabled"] = state ? state.isIpv6enabled : undefined;
             resourceInputs["isOracleGuaAllocationEnabled"] = state ? state.isOracleGuaAllocationEnabled : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vcnDomainName"] = state ? state.vcnDomainName : undefined;
@@ -102,6 +104,7 @@ export class VirtualNetwork extends pulumi.CustomResource {
             resourceInputs["ipv6privateCidrBlocks"] = args ? args.ipv6privateCidrBlocks : undefined;
             resourceInputs["isIpv6enabled"] = args ? args.isIpv6enabled : undefined;
             resourceInputs["isOracleGuaAllocationEnabled"] = args ? args.isOracleGuaAllocationEnabled : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["byoipv6cidrBlocks"] = undefined /*out*/;
             resourceInputs["defaultDhcpOptionsId"] = undefined /*out*/;
             resourceInputs["defaultRouteTableId"] = undefined /*out*/;
@@ -136,6 +139,7 @@ export interface VirtualNetworkState {
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     isIpv6enabled?: pulumi.Input<boolean>;
     isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     state?: pulumi.Input<string>;
     timeCreated?: pulumi.Input<string>;
     vcnDomainName?: pulumi.Input<string>;
@@ -156,4 +160,5 @@ export interface VirtualNetworkArgs {
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     isIpv6enabled?: pulumi.Input<boolean>;
     isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

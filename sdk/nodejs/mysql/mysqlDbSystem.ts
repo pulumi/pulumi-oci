@@ -211,7 +211,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly heatWaveClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[]>;
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
+     * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
      * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
      *
@@ -503,7 +503,7 @@ export interface MysqlDbSystemState {
      */
     heatWaveClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemHeatWaveCluster>[]>;
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
+     * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
      * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
      *
@@ -667,7 +667,7 @@ export interface MysqlDbSystemArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
+     * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
      * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
      *

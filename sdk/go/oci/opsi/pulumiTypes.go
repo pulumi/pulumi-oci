@@ -17,15 +17,13 @@ type DatabaseInsightConnectionCredentialDetails struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName *string `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType *string `pulumi:"credentialType"`
+	CredentialType string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// database user role.
 	Role *string `pulumi:"role"`
 	// database user name.
 	UserName *string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
 // DatabaseInsightConnectionCredentialDetailsInput is an input type that accepts DatabaseInsightConnectionCredentialDetailsArgs and DatabaseInsightConnectionCredentialDetailsOutput values.
@@ -43,15 +41,13 @@ type DatabaseInsightConnectionCredentialDetailsArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
 	// Credential type.
-	CredentialType pulumi.StringPtrInput `pulumi:"credentialType"`
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// database user role.
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (DatabaseInsightConnectionCredentialDetailsArgs) ElementType() reflect.Type {
@@ -137,8 +133,8 @@ func (o DatabaseInsightConnectionCredentialDetailsOutput) CredentialSourceName()
 }
 
 // Credential type.
-func (o DatabaseInsightConnectionCredentialDetailsOutput) CredentialType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) *string { return v.CredentialType }).(pulumi.StringPtrOutput)
+func (o DatabaseInsightConnectionCredentialDetailsOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) string { return v.CredentialType }).(pulumi.StringOutput)
 }
 
 // The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
@@ -154,11 +150,6 @@ func (o DatabaseInsightConnectionCredentialDetailsOutput) Role() pulumi.StringPt
 // database user name.
 func (o DatabaseInsightConnectionCredentialDetailsOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) *string { return v.UserName }).(pulumi.StringPtrOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-func (o DatabaseInsightConnectionCredentialDetailsOutput) WalletSecretId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) *string { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseInsightConnectionCredentialDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -201,7 +192,7 @@ func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) CredentialType() pu
 		if v == nil {
 			return nil
 		}
-		return v.CredentialType
+		return &v.CredentialType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -232,16 +223,6 @@ func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) UserName() pulumi.S
 			return nil
 		}
 		return v.UserName
-	}).(pulumi.StringPtrOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) WalletSecretId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *DatabaseInsightConnectionCredentialDetails) *string {
-		if v == nil {
-			return nil
-		}
-		return v.WalletSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -805,6 +786,8 @@ type ExadataInsightMemberVmClusterDetail struct {
 	MemberDatabaseDetails []ExadataInsightMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
+	// Exadata VMCluster type
+	VmClusterType *string `pulumi:"vmClusterType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
 	VmclusterId *string `pulumi:"vmclusterId"`
 }
@@ -829,6 +812,8 @@ type ExadataInsightMemberVmClusterDetailArgs struct {
 	MemberDatabaseDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
+	// Exadata VMCluster type
+	VmClusterType pulumi.StringPtrInput `pulumi:"vmClusterType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
 	VmclusterId pulumi.StringPtrInput `pulumi:"vmclusterId"`
 }
@@ -906,6 +891,11 @@ func (o ExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulum
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.OpsiPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
+// Exadata VMCluster type
+func (o ExadataInsightMemberVmClusterDetailOutput) VmClusterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.VmClusterType }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
 func (o ExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.VmclusterId }).(pulumi.StringPtrOutput)
@@ -934,7 +924,9 @@ func (o ExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput)
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Connection details of the private endpoints.
+	// User credential details to connect to the database.
+	ConnectionCredentialDetails *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails `pulumi:"connectionDetails"`
 	// User credential details to connect to the database.
 	CredentialDetails *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails `pulumi:"credentialDetails"`
@@ -942,20 +934,20 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	DatabaseId *string `pulumi:"databaseId"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType *string `pulumi:"databaseResourceType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType *string `pulumi:"deploymentType"`
-	// Source of the database entity.
+	// (Updatable) Source of the Exadata system.
 	EntitySource *string `pulumi:"entitySource"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
-	// Database service name used for connection requests.
-	ServiceName *string `pulumi:"serviceName"`
+	ServiceName           *string `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 }
@@ -974,7 +966,9 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput interface {
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// Connection details of the private endpoints.
+	// User credential details to connect to the database.
+	ConnectionCredentialDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput `pulumi:"connectionCredentialDetails"`
+	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrInput `pulumi:"connectionDetails"`
 	// User credential details to connect to the database.
 	CredentialDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput `pulumi:"credentialDetails"`
@@ -982,20 +976,20 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	DatabaseId pulumi.StringPtrInput `pulumi:"databaseId"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType pulumi.StringPtrInput `pulumi:"databaseResourceType"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId pulumi.StringPtrInput `pulumi:"dbmPrivateEndpointId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// Database Deployment Type
+	// Database Deployment Type (EXACS will be supported in the future)
 	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
-	// Source of the database entity.
+	// (Updatable) Source of the Exadata system.
 	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
-	// Database service name used for connection requests.
-	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	ServiceName           pulumi.StringPtrInput `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
@@ -1056,7 +1050,14 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Compartme
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Connection details of the private endpoints.
+// User credential details to connect to the database.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionCredentialDetails() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails {
+		return v.ConnectionCredentialDetails
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput)
+}
+
+// Connection details to connect to the database. HostName, protocol, and port should be specified.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionDetails() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
 		return v.ConnectionDetails
@@ -1080,33 +1081,37 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseR
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DatabaseResourceType }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DbmPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.DefinedTags
 	}).(pulumi.StringMapOutput)
 }
 
-// Database Deployment Type
+// Database Deployment Type (EXACS will be supported in the future)
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
-// Source of the database entity.
+// (Updatable) Source of the Exadata system.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.FreeformTags
 	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -1116,7 +1121,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPriva
 	}).(pulumi.StringPtrOutput)
 }
 
-// Database service name used for connection requests.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
@@ -1146,9 +1150,257 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Inde
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
 }
 
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails struct {
+	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
+	// Credential type.
+	CredentialType string `pulumi:"credentialType"`
+	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
+	// database user role.
+	Role *string `pulumi:"role"`
+	// database user name.
+	UserName *string `pulumi:"userName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+	WalletSecretId *string `pulumi:"walletSecretId"`
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{...}
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs struct {
+	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
+	// Credential type.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	// database user role.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// database user name.
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
+}
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput)
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput).ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(ctx)
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs, ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtr and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput` via:
+//
+//	        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput
+}
+
+type exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrType ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs
+
+func ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtr(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput {
+	return (*exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrType)(v)
+}
+
+func (*exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails)(nil)).Elem()
+}
+
+func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrType) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrType) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return o.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails {
+		return &v
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput)
+}
+
+// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		return v.CredentialSourceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Credential type.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// database user role.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// database user name.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		return v.WalletSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) Elem() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails
+		return ret
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput)
+}
+
+// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CredentialSourceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Credential type.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// database user role.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// database user name.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput) WalletSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WalletSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails struct {
+	// Name of the listener host that will be used to create the connect string to the database.
+	HostName *string `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts []ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost `pulumi:"hosts"`
+	// Listener port number used for connection requests.
+	Port *int `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
 	Protocol *string `pulumi:"protocol"`
 	// Database service name used for connection requests.
@@ -1167,8 +1419,12 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsInp
 }
 
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs struct {
+	// Name of the listener host that will be used to create the connect string to the database.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayInput `pulumi:"hosts"`
+	// Listener port number used for connection requests.
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Database service name used for connection requests.
@@ -1252,11 +1508,23 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput)
 }
 
+// Name of the listener host that will be used to create the connect string to the database.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) *string {
+		return v.HostName
+	}).(pulumi.StringPtrOutput)
+}
+
 // List of hosts and port for private endpoint accessed database resource.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput) Hosts() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) []ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost {
 		return v.Hosts
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput)
+}
+
+// Listener port number used for connection requests.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Protocol used for connection requests for private endpoint accssed database resource.
@@ -1297,6 +1565,16 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput)
 }
 
+// Name of the listener host that will be used to create the connect string to the database.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostName
+	}).(pulumi.StringPtrOutput)
+}
+
 // List of hosts and port for private endpoint accessed database resource.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) Hosts() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) []ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost {
@@ -1305,6 +1583,16 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 		}
 		return v.Hosts
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArrayOutput)
+}
+
+// Listener port number used for connection requests.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
 }
 
 // Protocol used for connection requests for private endpoint accssed database resource.
@@ -1438,18 +1726,12 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails
 }
 
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails struct {
-	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName *string `pulumi:"credentialSourceName"`
-	// Credential type.
-	CredentialType string `pulumi:"credentialType"`
-	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId *string `pulumi:"passwordSecretId"`
-	// database user role.
-	Role *string `pulumi:"role"`
-	// database user name.
-	UserName *string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId *string `pulumi:"walletSecretId"`
+	CredentialType       string  `pulumi:"credentialType"`
+	PasswordSecretId     *string `pulumi:"passwordSecretId"`
+	Role                 *string `pulumi:"role"`
+	UserName             *string `pulumi:"userName"`
+	WalletSecretId       *string `pulumi:"walletSecretId"`
 }
 
 // ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput values.
@@ -1464,18 +1746,12 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInp
 }
 
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs struct {
-	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
-	// Credential type.
-	CredentialType pulumi.StringInput `pulumi:"credentialType"`
-	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
-	// database user role.
-	Role pulumi.StringPtrInput `pulumi:"role"`
-	// database user name.
-	UserName pulumi.StringPtrInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
+	CredentialType       pulumi.StringInput    `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringPtrInput `pulumi:"role"`
+	UserName             pulumi.StringPtrInput `pulumi:"userName"`
+	WalletSecretId       pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ElementType() reflect.Type {
@@ -1555,42 +1831,36 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
 }
 
-// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) CredentialSourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		return v.CredentialSourceName
 	}).(pulumi.StringPtrOutput)
 }
 
-// Credential type.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) string {
 		return v.CredentialType
 	}).(pulumi.StringOutput)
 }
 
-// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		return v.PasswordSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
-// database user role.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		return v.Role
 	}).(pulumi.StringPtrOutput)
 }
 
-// database user name.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		return v.UserName
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		return v.WalletSecretId
@@ -1621,7 +1891,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput)
 }
 
-// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) CredentialSourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -1631,7 +1900,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
-// Credential type.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) CredentialType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -1641,7 +1909,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
-// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -1651,7 +1918,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
-// database user role.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -1661,7 +1927,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
-// database user name.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -1671,7 +1936,6 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
 		if v == nil {
@@ -4142,7 +4406,7 @@ func (o GetAwrHubsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubsFilterOu
 type GetDatabaseInsightConnectionCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName string `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
@@ -4150,8 +4414,6 @@ type GetDatabaseInsightConnectionCredentialDetail struct {
 	Role string `pulumi:"role"`
 	// database user name.
 	UserName string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightConnectionCredentialDetailArgs and GetDatabaseInsightConnectionCredentialDetailOutput values.
@@ -4168,7 +4430,7 @@ type GetDatabaseInsightConnectionCredentialDetailInput interface {
 type GetDatabaseInsightConnectionCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
@@ -4176,8 +4438,6 @@ type GetDatabaseInsightConnectionCredentialDetailArgs struct {
 	Role pulumi.StringInput `pulumi:"role"`
 	// database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightConnectionCredentialDetailArgs) ElementType() reflect.Type {
@@ -4236,7 +4496,7 @@ func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialSourceName
 	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.CredentialSourceName }).(pulumi.StringOutput)
 }
 
-// Credential type.
+// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 func (o GetDatabaseInsightConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.CredentialType }).(pulumi.StringOutput)
 }
@@ -4254,11 +4514,6 @@ func (o GetDatabaseInsightConnectionCredentialDetailOutput) Role() pulumi.String
 // database user name.
 func (o GetDatabaseInsightConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.UserName }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightConnectionCredentialDetail) string { return v.WalletSecretId }).(pulumi.StringOutput)
 }
 
 type GetDatabaseInsightConnectionCredentialDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4523,7 +4778,7 @@ func (o GetDatabaseInsightConnectionDetailHostArrayOutput) Index(i pulumi.IntInp
 type GetDatabaseInsightCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName string `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
@@ -4549,7 +4804,7 @@ type GetDatabaseInsightCredentialDetailInput interface {
 type GetDatabaseInsightCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
@@ -4617,7 +4872,7 @@ func (o GetDatabaseInsightCredentialDetailOutput) CredentialSourceName() pulumi.
 	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.CredentialSourceName }).(pulumi.StringOutput)
 }
 
-// Credential type.
+// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 func (o GetDatabaseInsightCredentialDetailOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightCredentialDetail) string { return v.CredentialType }).(pulumi.StringOutput)
 }
@@ -4765,6 +5020,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	ConnectionCredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId string `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -4805,12 +5062,15 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails  string `pulumi:"lifecycleDetails"`
+	ManagementAgentId string `pulumi:"managementAgentId"`
 	// Unique Operations Insights PrivateEndpoint identifier
 	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -4851,6 +5111,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	ConnectionCredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -4891,12 +5153,15 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails  pulumi.StringInput `pulumi:"lifecycleDetails"`
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
 	// Unique Operations Insights PrivateEndpoint identifier
 	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -4987,6 +5252,11 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ConnectionDetai
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail {
 		return v.ConnectionDetails
 	}).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ConnectorId }).(pulumi.StringOutput)
 }
 
 // User credential details to connect to the database.
@@ -5100,6 +5370,11 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Id() pulumi.Str
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Flag is to identify if advanced features for autonomous database is enabled or not
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
 // Specifies if MYSQL DB System has heatwave cluster attached.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -5113,6 +5388,10 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) IsHighlyAvailab
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
 }
 
 // Unique Operations Insights PrivateEndpoint identifier
@@ -5188,7 +5467,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemArrayOutput) Index(i pu
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName string `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
@@ -5196,8 +5475,6 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail
 	Role string `pulumi:"role"`
 	// database user name.
 	UserName string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId string `pulumi:"walletSecretId"`
 }
 
 // GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailInput is an input type that accepts GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs and GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput values.
@@ -5214,7 +5491,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail
 type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
@@ -5222,8 +5499,6 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail
 	Role pulumi.StringInput `pulumi:"role"`
 	// database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-	WalletSecretId pulumi.StringInput `pulumi:"walletSecretId"`
 }
 
 func (GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs) ElementType() reflect.Type {
@@ -5284,7 +5559,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 	}).(pulumi.StringOutput)
 }
 
-// Credential type.
+// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
 		return v.CredentialType
@@ -5309,13 +5584,6 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDet
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
 		return v.UserName
-	}).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail) string {
-		return v.WalletSecretId
 	}).(pulumi.StringOutput)
 }
 
@@ -5583,7 +5851,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArr
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName string `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType string `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
@@ -5609,7 +5877,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailInput inte
 type GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
-	// Credential type.
+	// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 	CredentialType pulumi.StringInput `pulumi:"credentialType"`
 	// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
@@ -5679,7 +5947,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput)
 	}).(pulumi.StringOutput)
 }
 
-// Credential type.
+// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailOutput) CredentialType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail) string {
 		return v.CredentialType
@@ -6274,6 +6542,7 @@ type GetExadataInsightMemberVmClusterDetail struct {
 	DbmPrivateEndpointId  string                                                       `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
 	OpsiPrivateEndpointId string                                                       `pulumi:"opsiPrivateEndpointId"`
+	VmClusterType         string                                                       `pulumi:"vmClusterType"`
 	VmclusterId           string                                                       `pulumi:"vmclusterId"`
 }
 
@@ -6294,6 +6563,7 @@ type GetExadataInsightMemberVmClusterDetailArgs struct {
 	DbmPrivateEndpointId  pulumi.StringInput                                                   `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
 	OpsiPrivateEndpointId pulumi.StringInput                                                   `pulumi:"opsiPrivateEndpointId"`
+	VmClusterType         pulumi.StringInput                                                   `pulumi:"vmClusterType"`
 	VmclusterId           pulumi.StringInput                                                   `pulumi:"vmclusterId"`
 }
 
@@ -6367,6 +6637,10 @@ func (o GetExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pu
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
 }
 
+func (o GetExadataInsightMemberVmClusterDetailOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.VmClusterType }).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.VmclusterId }).(pulumi.StringOutput)
 }
@@ -6393,12 +6667,13 @@ func (o GetExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInp
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId        string                                                                       `pulumi:"compartmentId"`
-	ConnectionDetails    []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail `pulumi:"connectionDetails"`
-	CredentialDetails    []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
-	DatabaseId           string                                                                       `pulumi:"databaseId"`
-	DatabaseResourceType string                                                                       `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId string                                                                       `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId               string                                                                                 `pulumi:"compartmentId"`
+	ConnectionCredentialDetails []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
+	ConnectionDetails           []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail           `pulumi:"connectionDetails"`
+	CredentialDetails           []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail           `pulumi:"credentialDetails"`
+	DatabaseId                  string                                                                                 `pulumi:"databaseId"`
+	DatabaseResourceType        string                                                                                 `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId        string                                                                                 `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]string `pulumi:"definedTags"`
 	DeploymentType string            `pulumi:"deploymentType"`
@@ -6406,6 +6681,7 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	EntitySource string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          map[string]string `pulumi:"freeformTags"`
+	ManagementAgentId     string            `pulumi:"managementAgentId"`
 	OpsiPrivateEndpointId string            `pulumi:"opsiPrivateEndpointId"`
 	ServiceName           string            `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6425,12 +6701,13 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput interface {
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// Compartment identifier of the Exadata insight resource
-	CompartmentId        pulumi.StringInput                                                                   `pulumi:"compartmentId"`
-	ConnectionDetails    GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput `pulumi:"connectionDetails"`
-	CredentialDetails    GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
-	DatabaseId           pulumi.StringInput                                                                   `pulumi:"databaseId"`
-	DatabaseResourceType pulumi.StringInput                                                                   `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId pulumi.StringInput                                                                   `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId               pulumi.StringInput                                                                             `pulumi:"compartmentId"`
+	ConnectionCredentialDetails GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput `pulumi:"connectionCredentialDetails"`
+	ConnectionDetails           GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput           `pulumi:"connectionDetails"`
+	CredentialDetails           GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput           `pulumi:"credentialDetails"`
+	DatabaseId                  pulumi.StringInput                                                                             `pulumi:"databaseId"`
+	DatabaseResourceType        pulumi.StringInput                                                                             `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId        pulumi.StringInput                                                                             `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    pulumi.StringMapInput `pulumi:"definedTags"`
 	DeploymentType pulumi.StringInput    `pulumi:"deploymentType"`
@@ -6438,6 +6715,7 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          pulumi.StringMapInput `pulumi:"freeformTags"`
+	ManagementAgentId     pulumi.StringInput    `pulumi:"managementAgentId"`
 	OpsiPrivateEndpointId pulumi.StringInput    `pulumi:"opsiPrivateEndpointId"`
 	ServiceName           pulumi.StringInput    `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6500,6 +6778,12 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Compar
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionCredentialDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail {
+		return v.ConnectionCredentialDetails
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput)
+}
+
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
 		return v.ConnectionDetails
@@ -6551,6 +6835,10 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Freefo
 	}).(pulumi.StringMapOutput)
 }
 
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
 		return v.OpsiPrivateEndpointId
@@ -6588,8 +6876,146 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) I
 	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
 }
 
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail struct {
+	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialType       string `pulumi:"credentialType"`
+	PasswordSecretId     string `pulumi:"passwordSecretId"`
+	Role                 string `pulumi:"role"`
+	UserName             string `pulumi:"userName"`
+	WalletSecretId       string `pulumi:"walletSecretId"`
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{...}
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs struct {
+	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringInput `pulumi:"role"`
+	UserName             pulumi.StringInput `pulumi:"userName"`
+	WalletSecretId       pulumi.StringInput `pulumi:"walletSecretId"`
+}
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput)
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray{ GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{...} }
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.CredentialSourceName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.WalletSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail {
+		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)[vs[1].(int)]
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput)
+}
+
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail struct {
+	HostName    string                                                                           `pulumi:"hostName"`
 	Hosts       []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost `pulumi:"hosts"`
+	Port        int                                                                              `pulumi:"port"`
 	Protocol    string                                                                           `pulumi:"protocol"`
 	ServiceName string                                                                           `pulumi:"serviceName"`
 }
@@ -6606,7 +7032,9 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailI
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs struct {
+	HostName    pulumi.StringInput                                                                       `pulumi:"hostName"`
 	Hosts       GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput `pulumi:"hosts"`
+	Port        pulumi.IntInput                                                                          `pulumi:"port"`
 	Protocol    pulumi.StringInput                                                                       `pulumi:"protocol"`
 	ServiceName pulumi.StringInput                                                                       `pulumi:"serviceName"`
 }
@@ -6662,10 +7090,20 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDeta
 	return o
 }
 
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Hosts() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return v.Hosts
 	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) int { return v.Port }).(pulumi.IntOutput)
 }
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringOutput {
@@ -7383,6 +7821,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail 
 	DbmPrivateEndpointId  string                                                                                           `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
 	OpsiPrivateEndpointId string                                                                                           `pulumi:"opsiPrivateEndpointId"`
+	VmClusterType         string                                                                                           `pulumi:"vmClusterType"`
 	VmclusterId           string                                                                                           `pulumi:"vmclusterId"`
 }
 
@@ -7403,6 +7842,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailA
 	DbmPrivateEndpointId  pulumi.StringInput                                                                                       `pulumi:"dbmPrivateEndpointId"`
 	MemberDatabaseDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
 	OpsiPrivateEndpointId pulumi.StringInput                                                                                       `pulumi:"opsiPrivateEndpointId"`
+	VmClusterType         pulumi.StringInput                                                                                       `pulumi:"vmClusterType"`
 	VmclusterId           pulumi.StringInput                                                                                       `pulumi:"vmclusterId"`
 }
 
@@ -7482,6 +7922,12 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(pulumi.StringOutput)
 }
 
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) VmClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+		return v.VmClusterType
+	}).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
 		return v.VmclusterId
@@ -7510,12 +7956,13 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId        string                                                                                                           `pulumi:"compartmentId"`
-	ConnectionDetails    []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail `pulumi:"connectionDetails"`
-	CredentialDetails    []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
-	DatabaseId           string                                                                                                           `pulumi:"databaseId"`
-	DatabaseResourceType string                                                                                                           `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId string                                                                                                           `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId               string                                                                                                                     `pulumi:"compartmentId"`
+	ConnectionCredentialDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
+	ConnectionDetails           []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail           `pulumi:"connectionDetails"`
+	CredentialDetails           []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail           `pulumi:"credentialDetails"`
+	DatabaseId                  string                                                                                                                     `pulumi:"databaseId"`
+	DatabaseResourceType        string                                                                                                                     `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId        string                                                                                                                     `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]string `pulumi:"definedTags"`
 	DeploymentType string            `pulumi:"deploymentType"`
@@ -7523,6 +7970,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 	EntitySource string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          map[string]string `pulumi:"freeformTags"`
+	ManagementAgentId     string            `pulumi:"managementAgentId"`
 	OpsiPrivateEndpointId string            `pulumi:"opsiPrivateEndpointId"`
 	ServiceName           string            `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7542,12 +7990,13 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId        pulumi.StringInput                                                                                                       `pulumi:"compartmentId"`
-	ConnectionDetails    GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput `pulumi:"connectionDetails"`
-	CredentialDetails    GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
-	DatabaseId           pulumi.StringInput                                                                                                       `pulumi:"databaseId"`
-	DatabaseResourceType pulumi.StringInput                                                                                                       `pulumi:"databaseResourceType"`
-	DbmPrivateEndpointId pulumi.StringInput                                                                                                       `pulumi:"dbmPrivateEndpointId"`
+	CompartmentId               pulumi.StringInput                                                                                                                 `pulumi:"compartmentId"`
+	ConnectionCredentialDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput `pulumi:"connectionCredentialDetails"`
+	ConnectionDetails           GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput           `pulumi:"connectionDetails"`
+	CredentialDetails           GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput           `pulumi:"credentialDetails"`
+	DatabaseId                  pulumi.StringInput                                                                                                                 `pulumi:"databaseId"`
+	DatabaseResourceType        pulumi.StringInput                                                                                                                 `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId        pulumi.StringInput                                                                                                                 `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    pulumi.StringMapInput `pulumi:"definedTags"`
 	DeploymentType pulumi.StringInput    `pulumi:"deploymentType"`
@@ -7555,6 +8004,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags          pulumi.StringMapInput `pulumi:"freeformTags"`
+	ManagementAgentId     pulumi.StringInput    `pulumi:"managementAgentId"`
 	OpsiPrivateEndpointId pulumi.StringInput    `pulumi:"opsiPrivateEndpointId"`
 	ServiceName           pulumi.StringInput    `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7619,6 +8069,12 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(pulumi.StringOutput)
 }
 
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionCredentialDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail {
+		return v.ConnectionCredentialDetails
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput)
+}
+
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ConnectionDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
 		return v.ConnectionDetails
@@ -7676,6 +8132,12 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(pulumi.StringMapOutput)
 }
 
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.ManagementAgentId
+	}).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
 		return v.OpsiPrivateEndpointId
@@ -7715,8 +8177,146 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput)
 }
 
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail struct {
+	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialType       string `pulumi:"credentialType"`
+	PasswordSecretId     string `pulumi:"passwordSecretId"`
+	Role                 string `pulumi:"role"`
+	UserName             string `pulumi:"userName"`
+	WalletSecretId       string `pulumi:"walletSecretId"`
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{...}
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs struct {
+	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringInput `pulumi:"role"`
+	UserName             pulumi.StringInput `pulumi:"userName"`
+	WalletSecretId       pulumi.StringInput `pulumi:"walletSecretId"`
+}
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput)
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray{ GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{...} }
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.CredentialSourceName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput) WalletSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail) string {
+		return v.WalletSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail {
+		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail)[vs[1].(int)]
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput)
+}
+
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail struct {
+	HostName    string                                                                                                               `pulumi:"hostName"`
 	Hosts       []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost `pulumi:"hosts"`
+	Port        int                                                                                                                  `pulumi:"port"`
 	Protocol    string                                                                                                               `pulumi:"protocol"`
 	ServiceName string                                                                                                               `pulumi:"serviceName"`
 }
@@ -7733,7 +8333,9 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs struct {
+	HostName    pulumi.StringInput                                                                                                           `pulumi:"hostName"`
 	Hosts       GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayInput `pulumi:"hosts"`
+	Port        pulumi.IntInput                                                                                                              `pulumi:"port"`
 	Protocol    pulumi.StringInput                                                                                                           `pulumi:"protocol"`
 	ServiceName pulumi.StringInput                                                                                                           `pulumi:"serviceName"`
 }
@@ -7789,10 +8391,22 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 	return o
 }
 
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Hosts() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
 		return v.Hosts
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArrayOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail) int {
+		return v.Port
+	}).(pulumi.IntOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput) Protocol() pulumi.StringOutput {
@@ -8404,7 +9018,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	HostDisplayName string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
 	HostType string `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
@@ -8472,7 +9086,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	HostDisplayName pulumi.StringInput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
 	HostType pulumi.StringInput `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
@@ -8625,7 +9239,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostType }).(pulumi.StringOutput)
 }
@@ -13482,6 +14096,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs{})
@@ -13554,6 +14170,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs{})
@@ -13568,6 +14186,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostArgs{})
@@ -13660,6 +14280,8 @@ func init() {
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostOutput{})
@@ -13732,6 +14354,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput{})
@@ -13746,6 +14370,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostOutput{})

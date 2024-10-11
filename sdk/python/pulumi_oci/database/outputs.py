@@ -72,6 +72,9 @@ __all__ = [
     'CloudExadataInfrastructureMaintenanceWindow',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'CloudExadataInfrastructureMaintenanceWindowMonth',
+    'CloudVmClusterCloudAutomationUpdateDetails',
+    'CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference',
+    'CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod',
     'CloudVmClusterDataCollectionOptions',
     'CloudVmClusterFileSystemConfigurationDetail',
     'CloudVmClusterIormConfigCach',
@@ -165,15 +168,24 @@ __all__ = [
     'PluggableDatabasesRemoteClonePdbNodeLevelDetail',
     'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig',
     'PluggableDatabasesRemoteCloneRefreshableCloneConfig',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetail',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference',
+    'VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod',
     'VmClusterAddVirtualNetworkDataCollectionOption',
     'VmClusterAddVirtualNetworkDbServer',
     'VmClusterAddVirtualNetworkFileSystemConfigurationDetail',
+    'VmClusterCloudAutomationUpdateDetails',
+    'VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference',
+    'VmClusterCloudAutomationUpdateDetailsFreezePeriod',
     'VmClusterDataCollectionOptions',
     'VmClusterFileSystemConfigurationDetail',
     'VmClusterNetworkDrScan',
     'VmClusterNetworkScan',
     'VmClusterNetworkVmNetwork',
     'VmClusterNetworkVmNetworkNode',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference',
+    'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod',
     'VmClusterRemoveVirtualMachineDataCollectionOption',
     'VmClusterRemoveVirtualMachineDbServer',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetail',
@@ -366,12 +378,18 @@ __all__ = [
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthResult',
     'GetCloudExadataInfrastructuresFilterResult',
+    'GetCloudVmClusterCloudAutomationUpdateDetailResult',
+    'GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult',
+    'GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClusterFileSystemConfigurationDetailResult',
     'GetCloudVmClusterIormConfigCachResult',
     'GetCloudVmClusterIormConfigCachDbPlanResult',
     'GetCloudVmClusterIormConfigDbPlanResult',
     'GetCloudVmClustersCloudVmClusterResult',
+    'GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult',
+    'GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult',
+    'GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetCloudVmClustersCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailResult',
     'GetCloudVmClustersCloudVmClusterIormConfigCachResult',
@@ -579,6 +597,9 @@ __all__ = [
     'GetSystemVersionsFilterResult',
     'GetSystemVersionsSystemVersionCollectionResult',
     'GetSystemVersionsSystemVersionCollectionItemResult',
+    'GetVmClusterCloudAutomationUpdateDetailResult',
+    'GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult',
+    'GetVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetVmClusterDataCollectionOptionResult',
     'GetVmClusterFileSystemConfigurationDetailResult',
     'GetVmClusterNetworkDrScanResult',
@@ -606,6 +627,9 @@ __all__ = [
     'GetVmClusterUpdatesVmClusterUpdateResult',
     'GetVmClustersFilterResult',
     'GetVmClustersVmClusterResult',
+    'GetVmClustersVmClusterCloudAutomationUpdateDetailResult',
+    'GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult',
+    'GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetVmClustersVmClusterDataCollectionOptionResult',
     'GetVmClustersVmClusterFileSystemConfigurationDetailResult',
 ]
@@ -928,7 +952,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
                  vault_id: Optional[str] = None):
         """
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str time_activated: The date and time the kms key activated.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
@@ -953,7 +977,7 @@ class AutonomousContainerDatabaseKeyHistoryEntry(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -1032,7 +1056,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
-        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -1135,7 +1159,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         return pulumi.get(self, "skip_rus")
 
@@ -2955,6 +2979,7 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
         :param Sequence['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3056,6 +3081,9 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -3146,6 +3174,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3249,6 +3278,9 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -3372,6 +3404,7 @@ class AutonomousVmClusterMaintenanceWindow(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3466,6 +3499,9 @@ class AutonomousVmClusterMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -3553,6 +3589,7 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3647,6 +3684,9 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -3896,6 +3936,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
         :param Sequence['CloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3997,6 +4038,9 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -4087,6 +4131,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4190,6 +4235,9 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -4461,6 +4509,7 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -4564,6 +4613,9 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -4609,6 +4661,184 @@ class CloudExadataInfrastructureMaintenanceWindowMonth(dict):
         (Updatable) Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudVmClusterCloudAutomationUpdateDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdateTimePreference":
+            suggest = "apply_update_time_preference"
+        elif key == "freezePeriod":
+            suggest = "freeze_period"
+        elif key == "isEarlyAdoptionEnabled":
+            suggest = "is_early_adoption_enabled"
+        elif key == "isFreezePeriodEnabled":
+            suggest = "is_freeze_period_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterCloudAutomationUpdateDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_time_preference: Optional['outputs.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference'] = None,
+                 freeze_period: Optional['outputs.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod'] = None,
+                 is_early_adoption_enabled: Optional[bool] = None,
+                 is_freeze_period_enabled: Optional[bool] = None):
+        """
+        :param 'CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs' apply_update_time_preference: (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param 'CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs' freeze_period: (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preference is not None:
+            pulumi.set(__self__, "apply_update_time_preference", apply_update_time_preference)
+        if freeze_period is not None:
+            pulumi.set(__self__, "freeze_period", freeze_period)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreference")
+    def apply_update_time_preference(self) -> Optional['outputs.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference']:
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preference")
+
+    @property
+    @pulumi.getter(name="freezePeriod")
+    def freeze_period(self) -> Optional['outputs.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod']:
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_period")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdatePreferredEndTime":
+            suggest = "apply_update_preferred_end_time"
+        elif key == "applyUpdatePreferredStartTime":
+            suggest = "apply_update_preferred_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[str] = None,
+                 apply_update_preferred_start_time: Optional[str] = None):
+        """
+        :param str apply_update_preferred_end_time: (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[str]:
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[str]:
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freezePeriodEndTime":
+            suggest = "freeze_period_end_time"
+        elif key == "freezePeriodStartTime":
+            suggest = "freeze_period_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[str] = None,
+                 freeze_period_start_time: Optional[str] = None):
+        """
+        :param str freeze_period_end_time: (Updatable) End time of the freeze period cycle.
+        :param str freeze_period_start_time: (Updatable) Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[str]:
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[str]:
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -5141,13 +5371,13 @@ class DatabaseDatabase(dict):
         :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param Sequence[str] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "db_name", db_name)
@@ -5290,7 +5520,7 @@ class DatabaseDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -5338,7 +5568,7 @@ class DatabaseDatabase(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -6308,7 +6538,7 @@ class DbHomeDatabase(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param Sequence[str] one_off_patches: List of one-off patches for Database Homes.
@@ -6319,7 +6549,7 @@ class DbHomeDatabase(dict):
         :param str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param str time_created: The date and time the Database Home was created.
         :param str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -6507,7 +6737,7 @@ class DbHomeDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -6595,7 +6825,7 @@ class DbHomeDatabase(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -7217,7 +7447,7 @@ class DbSystemDbHomeDatabase(dict):
         :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -7226,7 +7456,7 @@ class DbSystemDbHomeDatabase(dict):
         :param str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param str time_created: The date and time the DB system was created.
         :param str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -7413,7 +7643,7 @@ class DbSystemDbHomeDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -7485,7 +7715,7 @@ class DbSystemDbHomeDatabase(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -7974,6 +8204,7 @@ class DbSystemMaintenanceWindow(dict):
         :param Sequence['DbSystemMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -8075,6 +8306,9 @@ class DbSystemMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -8165,6 +8399,7 @@ class DbSystemMaintenanceWindowDetails(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -8268,6 +8503,9 @@ class DbSystemMaintenanceWindowDetails(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -9159,6 +9397,7 @@ class ExadataInfrastructureMaintenanceWindow(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -9262,6 +9501,9 @@ class ExadataInfrastructureMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -10699,7 +10941,7 @@ class KeyStoreTypeDetails(dict):
         :param Sequence[str] connection_ips: (Updatable) The list of Oracle Key Vault connection IP addresses.
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str type: (Updatable) The type of key store.
-        :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
                
                
                ** IMPORTANT **
@@ -10747,7 +10989,7 @@ class KeyStoreTypeDetails(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 
 
         ** IMPORTANT **
@@ -11737,6 +11979,184 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfig(dict):
 
 
 @pulumi.output_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdateTimePreferences":
+            suggest = "apply_update_time_preferences"
+        elif key == "freezePeriods":
+            suggest = "freeze_periods"
+        elif key == "isEarlyAdoptionEnabled":
+            suggest = "is_early_adoption_enabled"
+        elif key == "isFreezePeriodEnabled":
+            suggest = "is_freeze_period_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterAddVirtualNetworkCloudAutomationUpdateDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Optional[Sequence['outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference']] = None,
+                 freeze_periods: Optional[Sequence['outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod']] = None,
+                 is_early_adoption_enabled: Optional[bool] = None,
+                 is_freeze_period_enabled: Optional[bool] = None):
+        """
+        :param Sequence['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preferences is not None:
+            pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        if freeze_periods is not None:
+            pulumi.set(__self__, "freeze_periods", freeze_periods)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Optional[Sequence['outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference']]:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Optional[Sequence['outputs.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod']]:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[bool]:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[bool]:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdatePreferredEndTime":
+            suggest = "apply_update_preferred_end_time"
+        elif key == "applyUpdatePreferredStartTime":
+            suggest = "apply_update_preferred_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[str] = None,
+                 apply_update_preferred_start_time: Optional[str] = None):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[str]:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[str]:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freezePeriodEndTime":
+            suggest = "freeze_period_end_time"
+        elif key == "freezePeriodStartTime":
+            suggest = "freeze_period_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[str] = None,
+                 freeze_period_start_time: Optional[str] = None):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[str]:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[str]:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
+
+
+@pulumi.output_type
 class VmClusterAddVirtualNetworkDataCollectionOption(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -11883,6 +12303,184 @@ class VmClusterAddVirtualNetworkFileSystemConfigurationDetail(dict):
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class VmClusterCloudAutomationUpdateDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdateTimePreference":
+            suggest = "apply_update_time_preference"
+        elif key == "freezePeriod":
+            suggest = "freeze_period"
+        elif key == "isEarlyAdoptionEnabled":
+            suggest = "is_early_adoption_enabled"
+        elif key == "isFreezePeriodEnabled":
+            suggest = "is_freeze_period_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterCloudAutomationUpdateDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterCloudAutomationUpdateDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterCloudAutomationUpdateDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_time_preference: Optional['outputs.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference'] = None,
+                 freeze_period: Optional['outputs.VmClusterCloudAutomationUpdateDetailsFreezePeriod'] = None,
+                 is_early_adoption_enabled: Optional[bool] = None,
+                 is_freeze_period_enabled: Optional[bool] = None):
+        """
+        :param 'VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs' apply_update_time_preference: (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param 'VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs' freeze_period: (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preference is not None:
+            pulumi.set(__self__, "apply_update_time_preference", apply_update_time_preference)
+        if freeze_period is not None:
+            pulumi.set(__self__, "freeze_period", freeze_period)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreference")
+    def apply_update_time_preference(self) -> Optional['outputs.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference']:
+        """
+        (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preference")
+
+    @property
+    @pulumi.getter(name="freezePeriod")
+    def freeze_period(self) -> Optional['outputs.VmClusterCloudAutomationUpdateDetailsFreezePeriod']:
+        """
+        (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_period")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdatePreferredEndTime":
+            suggest = "apply_update_preferred_end_time"
+        elif key == "applyUpdatePreferredStartTime":
+            suggest = "apply_update_preferred_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[str] = None,
+                 apply_update_preferred_start_time: Optional[str] = None):
+        """
+        :param str apply_update_preferred_end_time: (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[str]:
+        """
+        (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[str]:
+        """
+        (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class VmClusterCloudAutomationUpdateDetailsFreezePeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freezePeriodEndTime":
+            suggest = "freeze_period_end_time"
+        elif key == "freezePeriodStartTime":
+            suggest = "freeze_period_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterCloudAutomationUpdateDetailsFreezePeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterCloudAutomationUpdateDetailsFreezePeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterCloudAutomationUpdateDetailsFreezePeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[str] = None,
+                 freeze_period_start_time: Optional[str] = None):
+        """
+        :param str freeze_period_end_time: (Updatable) End time of the freeze period cycle.
+        :param str freeze_period_start_time: (Updatable) Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[str]:
+        """
+        (Updatable) End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[str]:
+        """
+        (Updatable) Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -12340,6 +12938,184 @@ class VmClusterNetworkVmNetworkNode(dict):
         (Updatable) The node virtual IP (VIP) host name.
         """
         return pulumi.get(self, "vip_hostname")
+
+
+@pulumi.output_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdateTimePreferences":
+            suggest = "apply_update_time_preferences"
+        elif key == "freezePeriods":
+            suggest = "freeze_periods"
+        elif key == "isEarlyAdoptionEnabled":
+            suggest = "is_early_adoption_enabled"
+        elif key == "isFreezePeriodEnabled":
+            suggest = "is_freeze_period_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Optional[Sequence['outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference']] = None,
+                 freeze_periods: Optional[Sequence['outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod']] = None,
+                 is_early_adoption_enabled: Optional[bool] = None,
+                 is_freeze_period_enabled: Optional[bool] = None):
+        """
+        :param Sequence['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        if apply_update_time_preferences is not None:
+            pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        if freeze_periods is not None:
+            pulumi.set(__self__, "freeze_periods", freeze_periods)
+        if is_early_adoption_enabled is not None:
+            pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        if is_freeze_period_enabled is not None:
+            pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Optional[Sequence['outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference']]:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Optional[Sequence['outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod']]:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> Optional[bool]:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> Optional[bool]:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applyUpdatePreferredEndTime":
+            suggest = "apply_update_preferred_end_time"
+        elif key == "applyUpdatePreferredStartTime":
+            suggest = "apply_update_preferred_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: Optional[str] = None,
+                 apply_update_preferred_start_time: Optional[str] = None):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        if apply_update_preferred_end_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        if apply_update_preferred_start_time is not None:
+            pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> Optional[str]:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> Optional[str]:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freezePeriodEndTime":
+            suggest = "freeze_period_end_time"
+        elif key == "freezePeriodStartTime":
+            suggest = "freeze_period_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 freeze_period_end_time: Optional[str] = None,
+                 freeze_period_start_time: Optional[str] = None):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        if freeze_period_end_time is not None:
+            pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        if freeze_period_start_time is not None:
+            pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> Optional[str]:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> Optional[str]:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -13236,7 +14012,7 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
                  vault_id: str):
         """
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str time_activated: The date and time the kms key activated.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
@@ -13257,7 +14033,7 @@ class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -13978,7 +14754,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param float largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
@@ -14254,7 +15030,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -14625,7 +15401,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
                  vault_id: str):
         """
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str time_activated: The date and time the kms key activated.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
@@ -14646,7 +15422,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryR
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -15434,10 +16210,10 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         :param bool is_automatic: Indicates whether the backup is user-initiated or automatic.
         :param bool is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int retention_period_in_days: Retention period, in days, for long-term backups
         :param float size_in_tbs: The backup size in terrabytes (TB).
@@ -15446,7 +16222,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
         :param str time_ended: The date and time the backup completed.
         :param str time_started: The date and time the backup started.
         :param str type: A filter to return only backups that matches with the given type of Backup.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
@@ -15553,7 +16329,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -15577,7 +16353,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -15649,7 +16425,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -16712,8 +17488,10 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
                  is_snapshot_standby: bool,
                  time_snapshot_standby_enabled_till: str):
         """
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        :param bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        :param str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
@@ -16724,7 +17502,7 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> str:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -16739,11 +17517,17 @@ class GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     @property
     @pulumi.getter(name="isSnapshotStandby")
     def is_snapshot_standby(self) -> bool:
+        """
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        """
         return pulumi.get(self, "is_snapshot_standby")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
     def time_snapshot_standby_enabled_till(self) -> str:
+        """
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        """
         return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
@@ -17225,6 +18009,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_of_last_switchover: str,
                  time_of_next_refresh: str,
                  time_reclamation_of_free_autonomous_database: str,
+                 time_undeleted: str,
                  time_until_reconnect_clone_enabled: str,
                  timestamp: str,
                  total_backup_storage_size_in_gbs: float,
@@ -17261,7 +18046,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int data_storage_size_in_tbs: The quantity of data in the database, in terabytes.
         :param str database_edition: The Oracle Database Edition that applies to the Autonomous databases.
         :param str database_management_status: Status of Database Management for this Autonomous Database.
-        :param str dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        :param str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
         :param str db_version: A valid Oracle Database version for Autonomous Database.
@@ -17271,8 +18056,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -17295,7 +18080,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
@@ -17356,6 +18141,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous Database.
         :param str time_of_next_refresh: The date and time of next refresh.
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+        :param str time_undeleted: The date and time the Autonomous Database was most recently undeleted.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param float total_backup_storage_size_in_gbs: The backup storage to the database.
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
@@ -17493,6 +18279,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_of_last_switchover", time_of_last_switchover)
         pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+        pulumi.set(__self__, "time_undeleted", time_undeleted)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         pulumi.set(__self__, "timestamp", timestamp)
         pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
@@ -17742,7 +18529,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataguardRegionType")
     def dataguard_region_type(self) -> str:
         """
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
@@ -17794,7 +18581,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryRegionType")
     def disaster_recovery_region_type(self) -> str:
         """
-        The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
@@ -17802,7 +18589,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> str:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -17997,7 +18784,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -18506,6 +19293,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeUndeleted")
+    def time_undeleted(self) -> str:
+        """
+        The date and time the Autonomous Database was most recently undeleted.
+        """
+        return pulumi.get(self, "time_undeleted")
 
     @property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")
@@ -19241,8 +20036,10 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
                  is_snapshot_standby: bool,
                  time_snapshot_standby_enabled_till: str):
         """
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+        :param bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        :param str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
@@ -19253,7 +20050,7 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> str:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -19268,11 +20065,17 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
     @property
     @pulumi.getter(name="isSnapshotStandby")
     def is_snapshot_standby(self) -> bool:
+        """
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        """
         return pulumi.get(self, "is_snapshot_standby")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
     def time_snapshot_standby_enabled_till(self) -> str:
+        """
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        """
         return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 
@@ -19551,6 +20354,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_of_last_switchover: str,
                  time_of_next_refresh: str,
                  time_reclamation_of_free_autonomous_database: str,
+                 time_undeleted: str,
                  time_until_reconnect_clone_enabled: str,
                  total_backup_storage_size_in_gbs: float,
                  used_data_storage_size_in_gbs: int,
@@ -19583,7 +20387,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int data_storage_size_in_tbs: The quantity of data in the database, in terabytes.
         :param str database_edition: The Oracle Database Edition that applies to the Autonomous databases.
         :param str database_management_status: Status of Database Management for this Autonomous Database.
-        :param str dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        :param str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
         :param str db_version: A valid Oracle Database version for Autonomous Database.
@@ -19593,7 +20397,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -19615,7 +20419,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_lifecycle_details: KMS key lifecycle details.
@@ -19638,7 +20442,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence[str] peer_db_ids: The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         :param str private_endpoint: The private endpoint for the resource.
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
-        :param str private_endpoint_label: The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        :param str private_endpoint_label: The resource's private endpoint label.
+               * Setting the endpoint label to a non-empty string creates a private endpoint database.
+               * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+               * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs'] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
         :param str public_endpoint: The public endpoint for the private endpoint enabled resource.
@@ -19672,6 +20479,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str time_of_last_switchover: The timestamp of the last switchover operation for the Autonomous Database.
         :param str time_of_next_refresh: The date and time of next refresh.
         :param str time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+        :param str time_undeleted: The date and time the Autonomous Database was most recently undeleted.
         :param str time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param float total_backup_storage_size_in_gbs: The backup storage to the database.
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
@@ -19791,6 +20599,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_of_last_switchover", time_of_last_switchover)
         pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+        pulumi.set(__self__, "time_undeleted", time_undeleted)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
@@ -20012,7 +20821,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataguardRegionType")
     def dataguard_region_type(self) -> str:
         """
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
@@ -20064,7 +20873,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryRegionType")
     def disaster_recovery_region_type(self) -> str:
         """
-        The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
@@ -20240,7 +21049,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -20417,7 +21226,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="privateEndpointLabel")
     def private_endpoint_label(self) -> str:
         """
-        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        The resource's private endpoint label.
+        * Setting the endpoint label to a non-empty string creates a private endpoint database.
+        * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
         """
         return pulumi.get(self, "private_endpoint_label")
 
@@ -20689,6 +21501,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeUndeleted")
+    def time_undeleted(self) -> str:
+        """
+        The date and time the Autonomous Database was most recently undeleted.
+        """
+        return pulumi.get(self, "time_undeleted")
 
     @property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")
@@ -21919,6 +22739,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowResult(dict):
         :param Sequence['GetAutonomousExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -22009,6 +22830,9 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -22063,6 +22887,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult(dict):
         :param Sequence['GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -22153,6 +22978,9 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -22622,6 +23450,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         :param Sequence['GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -22712,6 +23541,9 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -22766,6 +23598,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         :param Sequence['GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -22856,6 +23689,9 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -23391,6 +24227,7 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['GetAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -23469,6 +24306,9 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -23519,6 +24359,7 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['GetAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -23597,6 +24438,9 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -24414,6 +25258,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -24492,6 +25337,9 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -24542,6 +25390,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -24620,6 +25469,9 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -25118,17 +25970,17 @@ class GetBackupsBackupResult(dict):
         :param float database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param str display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str shape: Shape of the backup's source database.
         :param str state: The current state of the backup.
         :param str time_ended: The date and time the backup was completed.
         :param str time_started: The date and time the backup started.
         :param str type: The type of backup.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param str version: Version of the backup's source database
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -25211,7 +26063,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -25235,7 +26087,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -25291,7 +26143,7 @@ class GetBackupsBackupResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -25595,6 +26447,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
         :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -25685,6 +26538,9 @@ class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -25739,6 +26595,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -25829,6 +26686,9 @@ class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -26723,6 +27583,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResul
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -26813,6 +27674,9 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResul
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -26867,6 +27731,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetai
         :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -26957,6 +27822,9 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetai
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -27149,6 +28017,7 @@ class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
         :param Sequence['GetCloudExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -27239,6 +28108,9 @@ class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -27812,6 +28684,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowR
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -27902,6 +28775,9 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowR
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -27980,6 +28856,115 @@ class GetCloudExadataInfrastructuresFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudVmClusterCloudAutomationUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Sequence['outputs.GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult'],
+                 freeze_periods: Sequence['outputs.GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult'],
+                 is_early_adoption_enabled: bool,
+                 is_freeze_period_enabled: bool):
+        """
+        :param Sequence['GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        pulumi.set(__self__, "freeze_periods", freeze_periods)
+        pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Sequence['outputs.GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult']:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Sequence['outputs.GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult']:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> bool:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> bool:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult(dict):
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: str,
+                 apply_update_preferred_start_time: str):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> str:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> str:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult(dict):
+    def __init__(__self__, *,
+                 freeze_period_end_time: str,
+                 freeze_period_start_time: str):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> str:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> str:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -28188,6 +29173,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  availability_domain: str,
                  backup_network_nsg_ids: Sequence[str],
                  backup_subnet_id: str,
+                 cloud_automation_update_details: Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult'],
                  cloud_exadata_infrastructure_id: str,
                  cluster_name: str,
                  compartment_id: str,
@@ -28240,6 +29226,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param Sequence[str] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param str backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
+        :param Sequence['GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailArgs'] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -28290,6 +29277,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -28362,6 +29350,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "backup_subnet_id")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult']:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -28738,6 +29734,115 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The OCID of the zone the cloud VM cluster is associated with.
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult'],
+                 freeze_periods: Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult'],
+                 is_early_adoption_enabled: bool,
+                 is_freeze_period_enabled: bool):
+        """
+        :param Sequence['GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        pulumi.set(__self__, "freeze_periods", freeze_periods)
+        pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult']:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult']:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> bool:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> bool:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult(dict):
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: str,
+                 apply_update_preferred_start_time: str):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> str:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> str:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult(dict):
+    def __init__(__self__, *,
+                 freeze_period_end_time: str,
+                 freeze_period_start_time: str):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> str:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> str:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -29435,11 +30540,11 @@ class GetDatabaseDatabaseResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str ncharacter_set: The national character set for the database.
         :param str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
@@ -29552,7 +30657,7 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -29594,7 +30699,7 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -31555,10 +32660,10 @@ class GetDatabasesDatabaseResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param bool is_cdb: True if the database is a container database.
-        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param int last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param str last_backup_timestamp: The date and time when the latest database backup was created.
         :param str last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -31569,7 +32674,7 @@ class GetDatabasesDatabaseResult(dict):
         :param str source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the database was created.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "character_set", character_set)
@@ -31743,7 +32848,7 @@ class GetDatabasesDatabaseResult(dict):
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
@@ -31777,7 +32882,7 @@ class GetDatabasesDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -31870,7 +32975,7 @@ class GetDatabasesDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -31955,11 +33060,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str ncharacter_set: The national character set for the database.
         :param str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
@@ -32072,7 +33177,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -32114,7 +33219,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -36776,6 +37881,7 @@ class GetDbSystemsDbSystemMaintenanceWindowResult(dict):
         :param Sequence['GetDbSystemsDbSystemMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -36866,6 +37972,9 @@ class GetDbSystemsDbSystemMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -36920,6 +38029,7 @@ class GetDbSystemsDbSystemMaintenanceWindowDetailResult(dict):
         :param Sequence['GetDbSystemsDbSystemMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -37010,6 +38120,9 @@ class GetDbSystemsDbSystemMaintenanceWindowDetailResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -37490,6 +38603,7 @@ class GetExadataInfrastructureMaintenanceWindowResult(dict):
         :param Sequence['GetExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -37580,6 +38694,9 @@ class GetExadataInfrastructureMaintenanceWindowResult(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -38372,6 +39489,7 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult(dict
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -38462,6 +39580,9 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult(dict
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -42115,7 +43236,7 @@ class GetKeyStoreTypeDetailResult(dict):
         :param Sequence[str] connection_ips: The list of Oracle Key Vault connection IP addresses.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str type: The type of key store.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "connection_ips", connection_ips)
@@ -42159,7 +43280,7 @@ class GetKeyStoreTypeDetailResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -42357,7 +43478,7 @@ class GetKeyStoresKeyStoreTypeDetailResult(dict):
         :param Sequence[str] connection_ips: The list of Oracle Key Vault connection IP addresses.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str type: The type of key store.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "connection_ips", connection_ips)
@@ -42401,7 +43522,7 @@ class GetKeyStoresKeyStoreTypeDetailResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -43435,6 +44556,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
                  freeform_tags: Mapping[str, str],
                  id: str,
                  is_restricted: bool,
+                 kms_key_version_id: str,
                  lifecycle_details: str,
                  open_mode: str,
                  pdb_admin_password: str,
@@ -43476,6 +44598,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_restricted", is_restricted)
+        pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "open_mode", open_mode)
         pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
@@ -43557,6 +44680,11 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         """
         return pulumi.get(self, "is_restricted")
+
+    @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> str:
+        return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -43918,6 +45046,115 @@ class GetSystemVersionsSystemVersionCollectionItemResult(dict):
         Compatible Exadata system versions for a given shape and GI version.
         """
         return pulumi.get(self, "system_versions")
+
+
+@pulumi.output_type
+class GetVmClusterCloudAutomationUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Sequence['outputs.GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult'],
+                 freeze_periods: Sequence['outputs.GetVmClusterCloudAutomationUpdateDetailFreezePeriodResult'],
+                 is_early_adoption_enabled: bool,
+                 is_freeze_period_enabled: bool):
+        """
+        :param Sequence['GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['GetVmClusterCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        pulumi.set(__self__, "freeze_periods", freeze_periods)
+        pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Sequence['outputs.GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult']:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Sequence['outputs.GetVmClusterCloudAutomationUpdateDetailFreezePeriodResult']:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> bool:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> bool:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class GetVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult(dict):
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: str,
+                 apply_update_preferred_start_time: str):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> str:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> str:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class GetVmClusterCloudAutomationUpdateDetailFreezePeriodResult(dict):
+    def __init__(__self__, *,
+                 freeze_period_end_time: str,
+                 freeze_period_start_time: str):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> str:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> str:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type
@@ -45549,6 +46786,7 @@ class GetVmClustersFilterResult(dict):
 class GetVmClustersVmClusterResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
+                 cloud_automation_update_details: Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailResult'],
                  compartment_id: str,
                  cpu_core_count: int,
                  cpus_enabled: int,
@@ -45581,6 +46819,7 @@ class GetVmClustersVmClusterResult(dict):
                  vm_cluster_network_id: str):
         """
         :param str availability_domain: The name of the availability domain that the VM cluster is located in.
+        :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailArgs'] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpus_enabled: The number of enabled CPU cores.
         :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -45610,6 +46849,7 @@ class GetVmClustersVmClusterResult(dict):
         :param str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
@@ -45648,6 +46888,14 @@ class GetVmClustersVmClusterResult(dict):
         The name of the availability domain that the VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailResult']:
+        """
+        Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -45879,6 +47127,115 @@ class GetVmClustersVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         return pulumi.get(self, "vm_cluster_network_id")
+
+
+@pulumi.output_type
+class GetVmClustersVmClusterCloudAutomationUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 apply_update_time_preferences: Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult'],
+                 freeze_periods: Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodResult'],
+                 is_early_adoption_enabled: bool,
+                 is_freeze_period_enabled: bool):
+        """
+        :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs'] apply_update_time_preferences: Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        :param Sequence['GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodArgs'] freeze_periods: Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        :param bool is_early_adoption_enabled: Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        :param bool is_freeze_period_enabled: Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        pulumi.set(__self__, "apply_update_time_preferences", apply_update_time_preferences)
+        pulumi.set(__self__, "freeze_periods", freeze_periods)
+        pulumi.set(__self__, "is_early_adoption_enabled", is_early_adoption_enabled)
+        pulumi.set(__self__, "is_freeze_period_enabled", is_freeze_period_enabled)
+
+    @property
+    @pulumi.getter(name="applyUpdateTimePreferences")
+    def apply_update_time_preferences(self) -> Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult']:
+        """
+        Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+        """
+        return pulumi.get(self, "apply_update_time_preferences")
+
+    @property
+    @pulumi.getter(name="freezePeriods")
+    def freeze_periods(self) -> Sequence['outputs.GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodResult']:
+        """
+        Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+        """
+        return pulumi.get(self, "freeze_periods")
+
+    @property
+    @pulumi.getter(name="isEarlyAdoptionEnabled")
+    def is_early_adoption_enabled(self) -> bool:
+        """
+        Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+        """
+        return pulumi.get(self, "is_early_adoption_enabled")
+
+    @property
+    @pulumi.getter(name="isFreezePeriodEnabled")
+    def is_freeze_period_enabled(self) -> bool:
+        """
+        Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+        """
+        return pulumi.get(self, "is_freeze_period_enabled")
+
+
+@pulumi.output_type
+class GetVmClustersVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceResult(dict):
+    def __init__(__self__, *,
+                 apply_update_preferred_end_time: str,
+                 apply_update_preferred_start_time: str):
+        """
+        :param str apply_update_preferred_end_time: End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        :param str apply_update_preferred_start_time: Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        pulumi.set(__self__, "apply_update_preferred_end_time", apply_update_preferred_end_time)
+        pulumi.set(__self__, "apply_update_preferred_start_time", apply_update_preferred_start_time)
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredEndTime")
+    def apply_update_preferred_end_time(self) -> str:
+        """
+        End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_end_time")
+
+    @property
+    @pulumi.getter(name="applyUpdatePreferredStartTime")
+    def apply_update_preferred_start_time(self) -> str:
+        """
+        Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+        """
+        return pulumi.get(self, "apply_update_preferred_start_time")
+
+
+@pulumi.output_type
+class GetVmClustersVmClusterCloudAutomationUpdateDetailFreezePeriodResult(dict):
+    def __init__(__self__, *,
+                 freeze_period_end_time: str,
+                 freeze_period_start_time: str):
+        """
+        :param str freeze_period_end_time: End time of the freeze period cycle.
+        :param str freeze_period_start_time: Start time of the freeze period cycle.
+        """
+        pulumi.set(__self__, "freeze_period_end_time", freeze_period_end_time)
+        pulumi.set(__self__, "freeze_period_start_time", freeze_period_start_time)
+
+    @property
+    @pulumi.getter(name="freezePeriodEndTime")
+    def freeze_period_end_time(self) -> str:
+        """
+        End time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_end_time")
+
+    @property
+    @pulumi.getter(name="freezePeriodStartTime")
+    def freeze_period_start_time(self) -> str:
+        """
+        Start time of the freeze period cycle.
+        """
+        return pulumi.get(self, "freeze_period_start_time")
 
 
 @pulumi.output_type

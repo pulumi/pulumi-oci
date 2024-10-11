@@ -11,18 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new RefreshActivity.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", {
- *     fusionEnvironmentId: testFusionEnvironment.id,
- *     sourceFusionEnvironmentId: testFusionEnvironment.id,
- * });
- * ```
- *
  * ## Import
  *
  * FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
@@ -68,6 +56,10 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
      */
     public readonly fusionEnvironmentId!: pulumi.Output<string>;
     /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     */
+    public readonly isDataMaskingOpted!: pulumi.Output<boolean>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -82,10 +74,6 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     public /*out*/ readonly serviceAvailability!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sourceFusionEnvironmentId!: pulumi.Output<string>;
     /**
@@ -128,6 +116,7 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
             const state = argsOrState as FusionEnvironmentRefreshActivityState | undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
+            resourceInputs["isDataMaskingOpted"] = state ? state.isDataMaskingOpted : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["refreshActivityId"] = state ? state.refreshActivityId : undefined;
             resourceInputs["refreshIssueDetailsLists"] = state ? state.refreshIssueDetailsLists : undefined;
@@ -148,6 +137,7 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
                 throw new Error("Missing required property 'sourceFusionEnvironmentId'");
             }
             resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
+            resourceInputs["isDataMaskingOpted"] = args ? args.isDataMaskingOpted : undefined;
             resourceInputs["sourceFusionEnvironmentId"] = args ? args.sourceFusionEnvironmentId : undefined;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -179,6 +169,10 @@ export interface FusionEnvironmentRefreshActivityState {
      */
     fusionEnvironmentId?: pulumi.Input<string>;
     /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     */
+    isDataMaskingOpted?: pulumi.Input<boolean>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -193,10 +187,6 @@ export interface FusionEnvironmentRefreshActivityState {
     serviceAvailability?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceFusionEnvironmentId?: pulumi.Input<string>;
     /**
@@ -234,11 +224,11 @@ export interface FusionEnvironmentRefreshActivityArgs {
      */
     fusionEnvironmentId: pulumi.Input<string>;
     /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     */
+    isDataMaskingOpted?: pulumi.Input<boolean>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceFusionEnvironmentId: pulumi.Input<string>;
 }

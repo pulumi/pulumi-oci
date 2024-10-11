@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Integration/integrationInstance:IntegrationInstance":
 		r = &IntegrationInstance{}
+	case "oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint":
+		r = &OracleManagedCustomEndpoint{}
 	case "oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection":
 		r = &PrivateEndpointOutboundConnection{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Integration/integrationInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Integration/oracleManagedCustomEndpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

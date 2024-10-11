@@ -145,6 +145,7 @@ namespace Pulumi.Oci.Core
     ///                     },
     ///                     NsgIds = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsNsgIds,
     ///                     PrivateIp = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                     SecurityAttributes = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSecurityAttributes,
     ///                     SkipSourceDestCheck = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
     ///                     SubnetId = testSubnet.Id,
     ///                 },
@@ -201,6 +202,7 @@ namespace Pulumi.Oci.Core
     ///                     },
     ///                 },
     ///                 PreferredMaintenanceAction = instanceConfigurationInstanceDetailsLaunchDetailsPreferredMaintenanceAction,
+    ///                 SecurityAttributes = instanceConfigurationInstanceDetailsLaunchDetailsSecurityAttributes,
     ///                 Shape = instanceConfigurationInstanceDetailsLaunchDetailsShape,
     ///                 ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs
     ///                 {
@@ -329,6 +331,7 @@ namespace Pulumi.Oci.Core
     ///                             },
     ///                             NsgIds = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsNsgIds,
     ///                             PrivateIp = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                             SecurityAttributes = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSecurityAttributes,
     ///                             SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
     ///                             SubnetId = testSubnet.Id,
     ///                         },
@@ -384,6 +387,7 @@ namespace Pulumi.Oci.Core
     ///                             },
     ///                         },
     ///                         PreferredMaintenanceAction = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreferredMaintenanceAction,
+    ///                         SecurityAttributes = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSecurityAttributes,
     ///                         Shape = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShape,
     ///                         ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs
     ///                         {
@@ -438,6 +442,7 @@ namespace Pulumi.Oci.Core
     ///                                 },
     ///                                 NsgIds = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsNsgIds,
     ///                                 PrivateIp = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                                 SecurityAttributes = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
     ///                                 SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
     ///                                 SubnetId = testSubnet.Id,
     ///                             },
@@ -467,6 +472,7 @@ namespace Pulumi.Oci.Core
     ///                         HostnameLabel = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel,
     ///                         NsgIds = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds,
     ///                         PrivateIp = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                         SecurityAttributes = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
     ///                         SkipSourceDestCheck = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
     ///                         SubnetId = testSubnet.Id,
     ///                     },

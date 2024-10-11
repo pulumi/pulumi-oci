@@ -35,11 +35,21 @@ import * as utilities from "../utilities";
  *         dbmPrivateEndpointId: testPrivateEndpoint.id,
  *         memberDatabaseDetails: [{
  *             compartmentId: compartmentId,
+ *             connectionCredentialDetails: {
+ *                 credentialType: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType,
+ *                 credentialSourceName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole,
+ *                 userName: testUser.name,
+ *                 walletSecretId: testSecret.id,
+ *             },
  *             connectionDetails: {
+ *                 hostName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName,
  *                 hosts: [{
  *                     hostIp: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp,
  *                     port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort,
  *                 }],
+ *                 port: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort,
  *                 protocol: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol,
  *                 serviceName: testService.name,
  *             },
@@ -58,11 +68,13 @@ import * as utilities from "../utilities";
  *             deploymentType: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDeploymentType,
  *             entitySource: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsEntitySource,
  *             freeformTags: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsFreeformTags,
+ *             managementAgentId: testManagementAgent.id,
  *             opsiPrivateEndpointId: testPrivateEndpoint.id,
  *             serviceName: testService.name,
  *             systemTags: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsSystemTags,
  *         }],
  *         opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *         vmClusterType: exadataInsightMemberVmClusterDetailsVmClusterType,
  *         vmclusterId: testVmcluster.id,
  *     }],
  * });
@@ -144,6 +156,9 @@ export class ExadataInsight extends pulumi.CustomResource {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
     public /*out*/ readonly exadataDisplayName!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
     public readonly exadataInfraId!: pulumi.Output<string>;
     public /*out*/ readonly exadataInfraResourceType!: pulumi.Output<string>;
     /**
@@ -182,6 +197,7 @@ export class ExadataInsight extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -323,6 +339,9 @@ export interface ExadataInsightState {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
     exadataDisplayName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
     exadataInfraId?: pulumi.Input<string>;
     exadataInfraResourceType?: pulumi.Input<string>;
     /**
@@ -361,6 +380,7 @@ export interface ExadataInsightState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -408,6 +428,9 @@ export interface ExadataInsightArgs {
      * (Updatable) Source of the Exadata system.
      */
     entitySource: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
     exadataInfraId?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -420,6 +443,7 @@ export interface ExadataInsightArgs {
     memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

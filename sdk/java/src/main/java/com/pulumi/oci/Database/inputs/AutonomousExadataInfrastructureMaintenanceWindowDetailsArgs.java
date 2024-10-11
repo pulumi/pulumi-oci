@@ -161,9 +161,17 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs e
         return Optional.ofNullable(this.preference);
     }
 
+    /**
+     * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * 
+     */
     @Import(name="skipRus")
     private @Nullable Output<List<Boolean>> skipRus;
 
+    /**
+     * @return (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * 
+     */
     public Optional<Output<List<Boolean>>> skipRus() {
         return Optional.ofNullable(this.skipRus);
     }
@@ -443,15 +451,33 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs e
             return preference(Output.of(preference));
         }
 
+        /**
+         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder skipRus(@Nullable Output<List<Boolean>> skipRus) {
             $.skipRus = skipRus;
             return this;
         }
 
+        /**
+         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder skipRus(List<Boolean> skipRus) {
             return skipRus(Output.of(skipRus));
         }
 
+        /**
+         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder skipRus(Boolean... skipRus) {
             return skipRus(List.of(skipRus));
         }

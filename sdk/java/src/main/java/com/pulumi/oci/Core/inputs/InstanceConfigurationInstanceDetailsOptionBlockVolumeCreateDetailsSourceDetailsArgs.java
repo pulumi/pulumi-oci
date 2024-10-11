@@ -32,14 +32,14 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     }
 
     /**
-     * The type of action to run when the instance is interrupted for eviction.
+     * The type can be one of these values: `volume`, `volumeBackup`
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type can be one of these values: `volume`, `volumeBackup`
      * 
      */
     public Output<String> type() {
@@ -93,7 +93,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type can be one of these values: `volume`, `volumeBackup`
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type can be one of these values: `volume`, `volumeBackup`
          * 
          * @return builder
          * 

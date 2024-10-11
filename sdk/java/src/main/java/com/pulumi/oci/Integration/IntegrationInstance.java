@@ -12,6 +12,7 @@ import com.pulumi.oci.Integration.inputs.IntegrationInstanceState;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceAlternateCustomEndpoint;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceCustomEndpoint;
+import com.pulumi.oci.Integration.outputs.IntegrationInstanceDisasterRecoveryDetail;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceIdcsInfo;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetails;
 import com.pulumi.oci.Integration.outputs.IntegrationInstancePrivateEndpointOutboundConnection;
@@ -76,6 +77,7 @@ import javax.annotation.Nullable;
  *             .domainId(testDomain.id())
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .idcsAt(integrationInstanceIdcsAt)
+ *             .isDisasterRecoveryEnabled(integrationInstanceIsDisasterRecoveryEnabled)
  *             .isFileServerEnabled(integrationInstanceIsFileServerEnabled)
  *             .isVisualBuilderEnabled(integrationInstanceIsVisualBuilderEnabled)
  *             .networkEndpointDetails(IntegrationInstanceNetworkEndpointDetailsArgs.builder()
@@ -207,6 +209,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    @Export(name="disasterRecoveryDetails", refs={List.class,IntegrationInstanceDisasterRecoveryDetail.class}, tree="[0,1]")
+    private Output<List<IntegrationInstanceDisasterRecoveryDetail>> disasterRecoveryDetails;
+
+    /**
+     * @return Disaster recovery details for the integration instance created in the region.
+     * 
+     */
+    public Output<List<IntegrationInstanceDisasterRecoveryDetail>> disasterRecoveryDetails() {
+        return this.disasterRecoveryDetails;
+    }
+    /**
      * (Updatable) Integration Instance Identifier.
      * 
      */
@@ -263,6 +279,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.extendDataRetentionTrigger);
     }
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    @Export(name="failoverTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> failoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> failoverTrigger() {
+        return Codegen.optional(this.failoverTrigger);
+    }
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -303,6 +333,12 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<IntegrationInstanceIdcsInfo>> idcsInfos() {
         return this.idcsInfos;
+    }
+    @Export(name="instanceDesignTimeUrl", refs={String.class}, tree="[0]")
+    private Output<String> instanceDesignTimeUrl;
+
+    public Output<String> instanceDesignTimeUrl() {
+        return this.instanceDesignTimeUrl;
     }
     /**
      * The Integration Instance URL.
@@ -347,6 +383,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.isByol;
     }
     /**
+     * Is Disaster Recovery enabled or not.
+     * 
+     */
+    @Export(name="isDisasterRecoveryEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDisasterRecoveryEnabled;
+
+    /**
+     * @return Is Disaster Recovery enabled or not.
+     * 
+     */
+    public Output<Boolean> isDisasterRecoveryEnabled() {
+        return this.isDisasterRecoveryEnabled;
+    }
+    /**
      * (Updatable) The file server is enabled or not.
      * 
      */
@@ -373,6 +423,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isVisualBuilderEnabled() {
         return this.isVisualBuilderEnabled;
+    }
+    /**
+     * Additional details of lifecycleState or substates
+     * 
+     */
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Additional details of lifecycleState or substates
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
     }
     /**
      * (Updatable) The number of configured message packs

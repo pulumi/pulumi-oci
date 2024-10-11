@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -16,7 +17,21 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppre
      */
     private String alarmId;
     /**
-     * @return The type of the alarm suppression target.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+     * 
+     * If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+     * 
+     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    private String compartmentId;
+    /**
+     * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+     * 
+     */
+    private Boolean compartmentIdInSubtree;
+    /**
+     * @return The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
      * 
      */
     private String targetType;
@@ -30,7 +45,25 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppre
         return this.alarmId;
     }
     /**
-     * @return The type of the alarm suppression target.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+     * 
+     * If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+     * 
+     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
+    /**
+     * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+     * 
+     */
+    public Boolean compartmentIdInSubtree() {
+        return this.compartmentIdInSubtree;
+    }
+    /**
+     * @return The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
      * 
      */
     public String targetType() {
@@ -47,11 +80,15 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppre
     @CustomType.Builder
     public static final class Builder {
         private String alarmId;
+        private String compartmentId;
+        private Boolean compartmentIdInSubtree;
         private String targetType;
         public Builder() {}
         public Builder(GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmId = defaults.alarmId;
+    	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.targetType = defaults.targetType;
         }
 
@@ -61,6 +98,22 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppre
               throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget", "alarmId");
             }
             this.alarmId = alarmId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +127,8 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppre
         public GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget build() {
             final var _resultValue = new GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget();
             _resultValue.alarmId = alarmId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.targetType = targetType;
             return _resultValue;
         }

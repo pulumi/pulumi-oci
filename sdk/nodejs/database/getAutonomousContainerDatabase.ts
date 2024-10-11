@@ -129,7 +129,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly keyHistoryEntries: outputs.Database.GetAutonomousContainerDatabaseKeyHistoryEntry[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
     readonly keyStoreId: string;
     /**

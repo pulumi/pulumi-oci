@@ -6,6 +6,7 @@ package com.pulumi.oci.Opsi.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs Empty = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs();
+
+    /**
+     * Name of the listener host that will be used to create the connect string to the database.
+     * 
+     */
+    @Import(name="hostName")
+    private @Nullable Output<String> hostName;
+
+    /**
+     * @return Name of the listener host that will be used to create the connect string to the database.
+     * 
+     */
+    public Optional<Output<String>> hostName() {
+        return Optional.ofNullable(this.hostName);
+    }
 
     /**
      * List of hosts and port for private endpoint accessed database resource.
@@ -30,6 +46,21 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
      */
     public Optional<Output<List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs>>> hosts() {
         return Optional.ofNullable(this.hosts);
+    }
+
+    /**
+     * Listener port number used for connection requests.
+     * 
+     */
+    @Import(name="port")
+    private @Nullable Output<Integer> port;
+
+    /**
+     * @return Listener port number used for connection requests.
+     * 
+     */
+    public Optional<Output<Integer>> port() {
+        return Optional.ofNullable(this.port);
     }
 
     /**
@@ -65,7 +96,9 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs() {}
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs $) {
+        this.hostName = $.hostName;
         this.hosts = $.hosts;
+        this.port = $.port;
         this.protocol = $.protocol;
         this.serviceName = $.serviceName;
     }
@@ -86,6 +119,27 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
 
         public Builder(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs defaults) {
             $ = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param hostName Name of the listener host that will be used to create the connect string to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(@Nullable Output<String> hostName) {
+            $.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * @param hostName Name of the listener host that will be used to create the connect string to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostName(String hostName) {
+            return hostName(Output.of(hostName));
         }
 
         /**
@@ -117,6 +171,27 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
          */
         public Builder hosts(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs... hosts) {
             return hosts(List.of(hosts));
+        }
+
+        /**
+         * @param port Listener port number used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(@Nullable Output<Integer> port) {
+            $.port = port;
+            return this;
+        }
+
+        /**
+         * @param port Listener port number used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(Integer port) {
+            return port(Output.of(port));
         }
 
         /**

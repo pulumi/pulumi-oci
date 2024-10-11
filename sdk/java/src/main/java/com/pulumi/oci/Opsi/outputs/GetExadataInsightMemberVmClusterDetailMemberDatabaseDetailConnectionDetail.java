@@ -6,19 +6,28 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail {
+    private String hostName;
     private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+    private Integer port;
     private String protocol;
     private String serviceName;
 
     private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail() {}
+    public String hostName() {
+        return this.hostName;
+    }
     public List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts() {
         return this.hosts;
+    }
+    public Integer port() {
+        return this.port;
     }
     public String protocol() {
         return this.protocol;
@@ -36,17 +45,29 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
     }
     @CustomType.Builder
     public static final class Builder {
+        private String hostName;
         private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts;
+        private Integer port;
         private String protocol;
         private String serviceName;
         public Builder() {}
         public Builder(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.hostName = defaults.hostName;
     	      this.hosts = defaults.hosts;
+    	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
+        public Builder hostName(String hostName) {
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "hostName");
+            }
+            this.hostName = hostName;
+            return this;
+        }
         @CustomType.Setter
         public Builder hosts(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts) {
             if (hosts == null) {
@@ -57,6 +78,14 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
         }
         public Builder hosts(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost... hosts) {
             return hosts(List.of(hosts));
+        }
+        @CustomType.Setter
+        public Builder port(Integer port) {
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "port");
+            }
+            this.port = port;
+            return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
@@ -76,7 +105,9 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail build() {
             final var _resultValue = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail();
+            _resultValue.hostName = hostName;
             _resultValue.hosts = hosts;
+            _resultValue.port = port;
             _resultValue.protocol = protocol;
             _resultValue.serviceName = serviceName;
             return _resultValue;

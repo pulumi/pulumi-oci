@@ -95,6 +95,13 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="kmsKeyVersionId")
+    private @Nullable Output<String> kmsKeyVersionId;
+
+    public Optional<Output<String>> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
+    }
+
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
@@ -233,6 +240,7 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         this.convertToRegularTrigger = $.convertToRegularTrigger;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
+        this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.pdbAdminPassword = $.pdbAdminPassword;
         this.pdbCreationTypeDetails = $.pdbCreationTypeDetails;
         this.pdbName = $.pdbName;
@@ -364,6 +372,15 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder kmsKeyVersionId(@Nullable Output<String> kmsKeyVersionId) {
+            $.kmsKeyVersionId = kmsKeyVersionId;
+            return this;
+        }
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            return kmsKeyVersionId(Output.of(kmsKeyVersionId));
         }
 
         /**

@@ -64,6 +64,8 @@ type LookupDatabaseInsightResult struct {
 	ConnectionCredentialDetails []GetDatabaseInsightConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails []GetDatabaseInsightConnectionDetail `pulumi:"connectionDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+	ConnectorId string `pulumi:"connectorId"`
 	// User credential details to connect to the database.
 	CredentialDetails []GetDatabaseInsightCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -105,12 +107,15 @@ type LookupDatabaseInsightResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Database insight identifier
 	Id string `pulumi:"id"`
+	// Flag is to identify if advanced features for autonomous database is enabled or not
+	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails  string `pulumi:"lifecycleDetails"`
+	ManagementAgentId string `pulumi:"managementAgentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -192,6 +197,11 @@ func (o LookupDatabaseInsightResultOutput) ConnectionCredentialDetails() GetData
 // Connection details to connect to the database. HostName, protocol, and port should be specified.
 func (o LookupDatabaseInsightResultOutput) ConnectionDetails() GetDatabaseInsightConnectionDetailArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) []GetDatabaseInsightConnectionDetail { return v.ConnectionDetails }).(GetDatabaseInsightConnectionDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+func (o LookupDatabaseInsightResultOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ConnectorId }).(pulumi.StringOutput)
 }
 
 // User credential details to connect to the database.
@@ -301,6 +311,11 @@ func (o LookupDatabaseInsightResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Flag is to identify if advanced features for autonomous database is enabled or not
+func (o LookupDatabaseInsightResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
 // Specifies if MYSQL DB System has heatwave cluster attached.
 func (o LookupDatabaseInsightResultOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -314,6 +329,10 @@ func (o LookupDatabaseInsightResultOutput) IsHighlyAvailable() pulumi.BoolOutput
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupDatabaseInsightResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupDatabaseInsightResultOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint

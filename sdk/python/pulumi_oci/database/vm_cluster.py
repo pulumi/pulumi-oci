@@ -28,6 +28,7 @@ class VmClusterArgs:
                  gi_version: pulumi.Input[str],
                  ssh_public_keys: pulumi.Input[Sequence[pulumi.Input[str]]],
                  vm_cluster_network_id: pulumi.Input[str],
+                 cloud_automation_update_details: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']] = None,
                  data_collection_options: Optional[pulumi.Input['VmClusterDataCollectionOptionsArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
@@ -55,6 +56,7 @@ class VmClusterArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
@@ -77,6 +79,8 @@ class VmClusterArgs:
         pulumi.set(__self__, "gi_version", gi_version)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+        if cloud_automation_update_details is not None:
+            pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if data_collection_options is not None:
             pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_size_in_gb is not None:
@@ -192,6 +196,18 @@ class VmClusterArgs:
     @vm_cluster_network_id.setter
     def vm_cluster_network_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "vm_cluster_network_id", value)
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']]:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, value: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']]):
+        pulumi.set(self, "cloud_automation_update_details", value)
 
     @property
     @pulumi.getter(name="dataCollectionOptions")
@@ -375,6 +391,7 @@ class VmClusterArgs:
 class _VmClusterState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[str]] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  cpus_enabled: Optional[pulumi.Input[int]] = None,
@@ -407,6 +424,7 @@ class _VmClusterState:
         """
         Input properties used for looking up and filtering VmCluster resources.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
+        :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -440,6 +458,8 @@ class _VmClusterState:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cloud_automation_update_details is not None:
+            pulumi.set(__self__, "cloud_automation_update_details", cloud_automation_update_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpu_core_count is not None:
@@ -510,6 +530,18 @@ class _VmClusterState:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']]:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, value: Optional[pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs']]):
+        pulumi.set(self, "cloud_automation_update_details", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -860,6 +892,7 @@ class VmCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
@@ -902,6 +935,18 @@ class VmCluster(pulumi.CustomResource):
             gi_version=vm_cluster_gi_version,
             ssh_public_keys=vm_cluster_ssh_public_keys,
             vm_cluster_network_id=test_vm_cluster_network["id"],
+            cloud_automation_update_details={
+                "apply_update_time_preference": {
+                    "apply_update_preferred_end_time": vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_end_time,
+                    "apply_update_preferred_start_time": vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_start_time,
+                },
+                "freeze_period": {
+                    "freeze_period_end_time": vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_end_time,
+                    "freeze_period_start_time": vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_start_time,
+                },
+                "is_early_adoption_enabled": vm_cluster_cloud_automation_update_details_is_early_adoption_enabled,
+                "is_freeze_period_enabled": vm_cluster_cloud_automation_update_details_is_freeze_period_enabled,
+            },
             data_collection_options={
                 "is_diagnostics_events_enabled": vm_cluster_data_collection_options_is_diagnostics_events_enabled,
                 "is_health_monitoring_enabled": vm_cluster_data_collection_options_is_health_monitoring_enabled,
@@ -936,6 +981,7 @@ class VmCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
@@ -986,6 +1032,18 @@ class VmCluster(pulumi.CustomResource):
             gi_version=vm_cluster_gi_version,
             ssh_public_keys=vm_cluster_ssh_public_keys,
             vm_cluster_network_id=test_vm_cluster_network["id"],
+            cloud_automation_update_details={
+                "apply_update_time_preference": {
+                    "apply_update_preferred_end_time": vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_end_time,
+                    "apply_update_preferred_start_time": vm_cluster_cloud_automation_update_details_apply_update_time_preference_apply_update_preferred_start_time,
+                },
+                "freeze_period": {
+                    "freeze_period_end_time": vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_end_time,
+                    "freeze_period_start_time": vm_cluster_cloud_automation_update_details_freeze_period_freeze_period_start_time,
+                },
+                "is_early_adoption_enabled": vm_cluster_cloud_automation_update_details_is_early_adoption_enabled,
+                "is_freeze_period_enabled": vm_cluster_cloud_automation_update_details_is_freeze_period_enabled,
+            },
             data_collection_options={
                 "is_diagnostics_events_enabled": vm_cluster_data_collection_options_is_diagnostics_events_enabled,
                 "is_health_monitoring_enabled": vm_cluster_data_collection_options_is_health_monitoring_enabled,
@@ -1033,6 +1091,7 @@ class VmCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cloud_automation_update_details: Optional[pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']]] = None,
@@ -1064,6 +1123,7 @@ class VmCluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VmClusterArgs.__new__(VmClusterArgs)
 
+            __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1119,6 +1179,7 @@ class VmCluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
+            cloud_automation_update_details: Optional[pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
@@ -1156,6 +1217,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
+        :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Union['VmClusterDataCollectionOptionsArgs', 'VmClusterDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -1192,6 +1254,7 @@ class VmCluster(pulumi.CustomResource):
         __props__ = _VmClusterState.__new__(_VmClusterState)
 
         __props__.__dict__["availability_domain"] = availability_domain
+        __props__.__dict__["cloud_automation_update_details"] = cloud_automation_update_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["cpus_enabled"] = cpus_enabled
@@ -1230,6 +1293,14 @@ class VmCluster(pulumi.CustomResource):
         The name of the availability domain that the VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="cloudAutomationUpdateDetails")
+    def cloud_automation_update_details(self) -> pulumi.Output['outputs.VmClusterCloudAutomationUpdateDetails']:
+        """
+        (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+        """
+        return pulumi.get(self, "cloud_automation_update_details")
 
     @property
     @pulumi.getter(name="compartmentId")

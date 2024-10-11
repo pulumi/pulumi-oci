@@ -135,6 +135,10 @@ type LookupInstanceResult struct {
 	PublicIp string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region string `pulumi:"region"`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the `securityAttributes`
+	SecurityAttributesState string `pulumi:"securityAttributesState"`
 	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
 	Shape string `pulumi:"shape"`
 	// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
@@ -379,6 +383,16 @@ func (o LookupInstanceResultOutput) PublicIp() pulumi.StringOutput {
 // The region that contains the availability domain the instance is running in.
 func (o LookupInstanceResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o LookupInstanceResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The lifecycle state of the `securityAttributes`
+func (o LookupInstanceResultOutput) SecurityAttributesState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.SecurityAttributesState }).(pulumi.StringOutput)
 }
 
 // The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).

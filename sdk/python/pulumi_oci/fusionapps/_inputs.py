@@ -157,13 +157,13 @@ if not MYPY:
         """
         The administrator's last name.
         """
-        password: pulumi.Input[str]
-        """
-        The password for the administrator.
-        """
         username: pulumi.Input[str]
         """
         The username for the administrator.
+        """
+        password: NotRequired[pulumi.Input[str]]
+        """
+        The password for the administrator.
         """
 elif False:
     FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -174,20 +174,21 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
                  email_address: pulumi.Input[str],
                  first_name: pulumi.Input[str],
                  last_name: pulumi.Input[str],
-                 password: pulumi.Input[str],
-                 username: pulumi.Input[str]):
+                 username: pulumi.Input[str],
+                 password: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] email_address: The email address for the administrator.
         :param pulumi.Input[str] first_name: The administrator's first name.
         :param pulumi.Input[str] last_name: The administrator's last name.
-        :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
+        :param pulumi.Input[str] password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -227,18 +228,6 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
 
     @property
     @pulumi.getter
-    def password(self) -> pulumi.Input[str]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: pulumi.Input[str]):
-        pulumi.set(self, "password", value)
-
-    @property
-    @pulumi.getter
     def username(self) -> pulumi.Input[str]:
         """
         The username for the administrator.
@@ -248,6 +237,18 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
     @username.setter
     def username(self, value: pulumi.Input[str]):
         pulumi.set(self, "username", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The password for the administrator.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
 
 
 if not MYPY:

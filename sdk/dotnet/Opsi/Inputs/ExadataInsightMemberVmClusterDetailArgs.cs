@@ -43,6 +43,12 @@ namespace Pulumi.Oci.Opsi.Inputs
         public Input<string>? OpsiPrivateEndpointId { get; set; }
 
         /// <summary>
+        /// Exadata VMCluster type
+        /// </summary>
+        [Input("vmClusterType")]
+        public Input<string>? VmClusterType { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         /// </summary>
         [Input("vmclusterId")]

@@ -73,6 +73,7 @@ public final class GetAutonomousDatabasesResult {
      */
     private @Nullable Boolean isRefreshableClone;
     private @Nullable Boolean isResourcePoolLeader;
+    private @Nullable String lifecycleStateNotEqualTo;
     /**
      * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -168,6 +169,9 @@ public final class GetAutonomousDatabasesResult {
     public Optional<Boolean> isResourcePoolLeader() {
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
+    public Optional<String> lifecycleStateNotEqualTo() {
+        return Optional.ofNullable(this.lifecycleStateNotEqualTo);
+    }
     /**
      * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -205,6 +209,7 @@ public final class GetAutonomousDatabasesResult {
         private @Nullable Boolean isFreeTier;
         private @Nullable Boolean isRefreshableClone;
         private @Nullable Boolean isResourcePoolLeader;
+        private @Nullable String lifecycleStateNotEqualTo;
         private @Nullable String resourcePoolLeaderId;
         private @Nullable String state;
         public Builder() {}
@@ -223,6 +228,7 @@ public final class GetAutonomousDatabasesResult {
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isRefreshableClone = defaults.isRefreshableClone;
     	      this.isResourcePoolLeader = defaults.isResourcePoolLeader;
+    	      this.lifecycleStateNotEqualTo = defaults.lifecycleStateNotEqualTo;
     	      this.resourcePoolLeaderId = defaults.resourcePoolLeaderId;
     	      this.state = defaults.state;
         }
@@ -318,6 +324,12 @@ public final class GetAutonomousDatabasesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleStateNotEqualTo(@Nullable String lifecycleStateNotEqualTo) {
+
+            this.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourcePoolLeaderId(@Nullable String resourcePoolLeaderId) {
 
             this.resourcePoolLeaderId = resourcePoolLeaderId;
@@ -344,6 +356,7 @@ public final class GetAutonomousDatabasesResult {
             _resultValue.isFreeTier = isFreeTier;
             _resultValue.isRefreshableClone = isRefreshableClone;
             _resultValue.isResourcePoolLeader = isResourcePoolLeader;
+            _resultValue.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             _resultValue.resourcePoolLeaderId = resourcePoolLeaderId;
             _resultValue.state = state;
             return _resultValue;

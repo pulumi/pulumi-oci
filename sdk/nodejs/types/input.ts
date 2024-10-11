@@ -14084,7 +14084,6 @@ export namespace Core {
         instanceType: pulumi.Input<string>;
         /**
          * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-         *
          * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
          */
         launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetails>;
@@ -14135,7 +14134,7 @@ export namespace Core {
          */
         isShareable?: pulumi.Input<boolean>;
         /**
-         * The type of volume. The only supported values are "iscsi" and "paravirtualized".
+         * The type of volume. The only supported values are "iscsi" and "paravirtualized"
          */
         type: pulumi.Input<string>;
         /**
@@ -14253,11 +14252,11 @@ export namespace Core {
          */
         capacityReservationId?: pulumi.Input<string>;
         /**
-         * The clusterPlacementGroup Id of the volume for volume placement.
+         * The OCID of the cluster placement group of the instance.
          */
         clusterPlacementGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14266,26 +14265,38 @@ export namespace Core {
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails>;
         /**
          * The OCID of the dedicated virtual machine host to place the instance on.
+         *
+         * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
          */
         dedicatedVmHostId?: pulumi.Input<string>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         *
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -14294,10 +14305,20 @@ export namespace Core {
         instanceOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions>;
         /**
          * This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+         *
+         * The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
@@ -14314,10 +14335,38 @@ export namespace Core {
         launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions>;
         /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+         *
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         *
+         * **Providing Cloud-Init Metadata**
+         *
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         *
+         * **"sshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
+         *
+         * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         *
+         * **Metadata Example**
+         *
+         * "metadata" : { "quakeBotLevel" : "Severe", "sshAuthorizedKeys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "userData" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+         *
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         *
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         *
+         * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * The platform configuration requested for the instance.
+         * (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
+         *
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         platformConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig>;
         /**
@@ -14331,11 +14380,21 @@ export namespace Core {
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
          */
         shape?: pulumi.Input<string>;
         /**
          * The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         shapeConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig>;
         sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails>;
@@ -14350,22 +14409,10 @@ export namespace Core {
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-         *
-         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-         *
-         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-         *
-         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-         *
-         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -14377,7 +14424,6 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig {
         /**
          * Whether the plugin should be enabled or disabled.
-         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState?: pulumi.Input<string>;
         /**
@@ -14400,9 +14446,12 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
         assignIpv6ip?: pulumi.Input<boolean>;
         /**
-         * Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -14410,21 +14459,24 @@ export namespace Core {
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         hostnameLabel?: pulumi.Input<string>;
+        /**
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         */
         ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
         /**
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -14434,6 +14486,10 @@ export namespace Core {
          * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -14445,7 +14501,13 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         */
         ipv6address?: pulumi.Input<string>;
+        /**
+         * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         */
         ipv6subnetCidr?: pulumi.Input<string>;
     }
 
@@ -14528,7 +14590,9 @@ export namespace Core {
          */
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
-         * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         * (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -14546,7 +14610,7 @@ export namespace Core {
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
-         * The type of action to run when the instance is interrupted for eviction.
+         * The type of platform being configured.
          */
         type: pulumi.Input<string>;
     }
@@ -14572,6 +14636,11 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig {
         /**
          * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -14603,6 +14672,8 @@ export namespace Core {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -14614,7 +14685,7 @@ export namespace Core {
          */
         instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
@@ -14625,7 +14696,7 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails {
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * (Updatable) The OCID of the compartment containing images to search
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14649,6 +14720,8 @@ export namespace Core {
         blockVolumes?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolume>[]>;
         /**
          * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         *
+         * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
          */
         launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetails>;
         /**
@@ -14678,11 +14751,11 @@ export namespace Core {
          */
         device?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
@@ -14694,7 +14767,7 @@ export namespace Core {
          */
         isShareable?: pulumi.Input<boolean>;
         /**
-         * The type of action to run when the instance is interrupted for eviction.
+         * The type of volume. The only supported values are "iscsi" and "paravirtualized".
          */
         type: pulumi.Input<string>;
         /**
@@ -14709,7 +14782,7 @@ export namespace Core {
          */
         autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy>[]>;
         /**
-         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -14725,19 +14798,19 @@ export namespace Core {
          */
         clusterPlacementGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * (Updatable) The OCID of the compartment that contains the volume.
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -14755,6 +14828,8 @@ export namespace Core {
         sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails>;
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         vpusPerGb?: pulumi.Input<string>;
     }
@@ -14787,7 +14862,7 @@ export namespace Core {
          */
         id?: pulumi.Input<string>;
         /**
-         * The type of action to run when the instance is interrupted for eviction.
+         * The type can be one of these values: `volume`, `volumeBackup`
          */
         type: pulumi.Input<string>;
     }
@@ -14814,7 +14889,7 @@ export namespace Core {
          */
         clusterPlacementGroupId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+         * (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14888,6 +14963,10 @@ export namespace Core {
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
          */
         shape?: pulumi.Input<string>;
@@ -14901,14 +14980,28 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig {
         /**
          * Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+         *
+         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -14920,6 +15013,8 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfig {
         /**
          * Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState?: pulumi.Input<string>;
         /**
@@ -14942,6 +15037,9 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
         assignIpv6ip?: pulumi.Input<boolean>;
         /**
          * Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
@@ -14976,6 +15074,10 @@ export namespace Core {
          * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15079,8 +15181,6 @@ export namespace Core {
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
          * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-         *
-         * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
@@ -15186,7 +15286,7 @@ export namespace Core {
          */
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -15196,9 +15296,12 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
         assignIpv6ip?: pulumi.Input<boolean>;
         /**
-         * Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -15206,15 +15309,15 @@ export namespace Core {
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -15230,6 +15333,10 @@ export namespace Core {
          * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15251,7 +15358,7 @@ export namespace Core {
          */
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -15261,9 +15368,12 @@ export namespace Core {
     }
 
     export interface InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails {
+        /**
+         * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+         */
         assignIpv6ip?: pulumi.Input<boolean>;
         /**
-         * Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
+         * Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
@@ -15271,15 +15381,15 @@ export namespace Core {
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -15295,6 +15405,10 @@ export namespace Core {
          * A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15374,6 +15488,10 @@ export namespace Core {
          * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
@@ -15467,6 +15585,10 @@ export namespace Core {
          * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
          */
         isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
+        /**
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+         */
+        isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Whether the attachment was created in read-only mode.
          */
@@ -15816,7 +15938,7 @@ export namespace Core {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the boot volume used to boot the instance.
+         * (Updatable) The OCID of the boot volume used to boot the instance. Updates are supported only for linux Images. The user will need to manually destroy and re-create the resource for other image types.
          */
         sourceId?: pulumi.Input<string>;
         /**
@@ -16045,6 +16167,12 @@ export namespace Core {
          * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
          */
         remainingLifetimeLastRetrieved?: pulumi.Input<string>;
+    }
+
+    export interface IpsecTunnelConfiguration {
+        associatedVirtualCircuits?: pulumi.Input<pulumi.Input<string>[]>;
+        drgRouteTableId?: pulumi.Input<string>;
+        oracleTunnelIp?: pulumi.Input<string>;
     }
 
     export interface NetworkSecurityGroupSecurityRuleIcmpOptions {
@@ -16521,6 +16649,10 @@ export namespace Core {
          * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
@@ -21106,6 +21238,114 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSqlCollectionAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlCollectionLogInsightsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionLogInsightsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlCollectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallAllowedSqlAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallAllowedSqlAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallAllowedSqlsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallAllowedSqlsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallPolicyAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallPolicyAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallViolationAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallViolationAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallViolationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallViolationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetTargetAlertPolicyAssociationsFilter {
         name: string;
         regex?: boolean;
@@ -23611,7 +23851,7 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -23663,7 +23903,7 @@ export namespace Database {
          */
         preference?: pulumi.Input<string>;
         /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
@@ -24173,6 +24413,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24227,6 +24470,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24286,6 +24532,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24331,6 +24580,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24427,6 +24679,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24481,6 +24736,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24586,6 +24844,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -24605,6 +24866,47 @@ export namespace Database {
          * (Updatable) Name of the month of the year.
          */
         name: pulumi.Input<string>;
+    }
+
+    export interface CloudVmClusterCloudAutomationUpdateDetails {
+        /**
+         * (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+         */
+        applyUpdateTimePreference?: pulumi.Input<inputs.Database.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference>;
+        /**
+         * (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+         */
+        freezePeriod?: pulumi.Input<inputs.Database.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod>;
+        /**
+         * (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+         */
+        isEarlyAdoptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+         */
+        isFreezePeriodEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference {
+        /**
+         * (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+         */
+        applyUpdatePreferredEndTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+         */
+        applyUpdatePreferredStartTime?: pulumi.Input<string>;
+    }
+
+    export interface CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod {
+        /**
+         * (Updatable) End time of the freeze period cycle.
+         */
+        freezePeriodEndTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time of the freeze period cycle.
+         */
+        freezePeriodStartTime?: pulumi.Input<string>;
     }
 
     export interface CloudVmClusterDataCollectionOptions {
@@ -24766,7 +25068,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -24790,7 +25092,7 @@ export namespace Database {
          */
         tdeWalletPassword?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -25076,7 +25378,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -25120,7 +25422,7 @@ export namespace Database {
          */
         timeStampForPointInTimeRecovery?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -25316,7 +25618,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -25352,7 +25654,7 @@ export namespace Database {
          */
         timeStampForPointInTimeRecovery?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -25493,6 +25795,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25547,6 +25852,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -25821,6 +26129,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -27169,7 +27480,7 @@ export namespace Database {
          */
         type: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          *
          *
          * ** IMPORTANT **
@@ -27404,6 +27715,47 @@ export namespace Database {
         isRefreshableClone?: pulumi.Input<boolean>;
     }
 
+    export interface VmClusterAddVirtualNetworkCloudAutomationUpdateDetail {
+        /**
+         * Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+         */
+        applyUpdateTimePreferences?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference>[]>;
+        /**
+         * Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+         */
+        freezePeriods?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod>[]>;
+        /**
+         * Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+         */
+        isEarlyAdoptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+         */
+        isFreezePeriodEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreference {
+        /**
+         * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+         */
+        applyUpdatePreferredEndTime?: pulumi.Input<string>;
+        /**
+         * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+         */
+        applyUpdatePreferredStartTime?: pulumi.Input<string>;
+    }
+
+    export interface VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriod {
+        /**
+         * End time of the freeze period cycle.
+         */
+        freezePeriodEndTime?: pulumi.Input<string>;
+        /**
+         * Start time of the freeze period cycle.
+         */
+        freezePeriodStartTime?: pulumi.Input<string>;
+    }
+
     export interface VmClusterAddVirtualNetworkDataCollectionOption {
         /**
          * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -27435,6 +27787,47 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface VmClusterCloudAutomationUpdateDetails {
+        /**
+         * (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+         */
+        applyUpdateTimePreference?: pulumi.Input<inputs.Database.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference>;
+        /**
+         * (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+         */
+        freezePeriod?: pulumi.Input<inputs.Database.VmClusterCloudAutomationUpdateDetailsFreezePeriod>;
+        /**
+         * (Updatable) Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+         */
+        isEarlyAdoptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+         */
+        isFreezePeriodEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference {
+        /**
+         * (Updatable) End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+         */
+        applyUpdatePreferredEndTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+         */
+        applyUpdatePreferredStartTime?: pulumi.Input<string>;
+    }
+
+    export interface VmClusterCloudAutomationUpdateDetailsFreezePeriod {
+        /**
+         * (Updatable) End time of the freeze period cycle.
+         */
+        freezePeriodEndTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time of the freeze period cycle.
+         */
+        freezePeriodStartTime?: pulumi.Input<string>;
     }
 
     export interface VmClusterDataCollectionOptions {
@@ -27557,6 +27950,47 @@ export namespace Database {
          * (Updatable) The node virtual IP (VIP) host name.
          */
         vipHostname?: pulumi.Input<string>;
+    }
+
+    export interface VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail {
+        /**
+         * Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+         */
+        applyUpdateTimePreferences?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference>[]>;
+        /**
+         * Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+         */
+        freezePeriods?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod>[]>;
+        /**
+         * Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+         */
+        isEarlyAdoptionEnabled?: pulumi.Input<boolean>;
+        /**
+         * Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+         */
+        isFreezePeriodEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreference {
+        /**
+         * End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+         */
+        applyUpdatePreferredEndTime?: pulumi.Input<string>;
+        /**
+         * Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+         */
+        applyUpdatePreferredStartTime?: pulumi.Input<string>;
+    }
+
+    export interface VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriod {
+        /**
+         * End time of the freeze period cycle.
+         */
+        freezePeriodEndTime?: pulumi.Input<string>;
+        /**
+         * Start time of the freeze period cycle.
+         */
+        freezePeriodStartTime?: pulumi.Input<string>;
     }
 
     export interface VmClusterRemoveVirtualMachineDataCollectionOption {
@@ -31543,17 +31977,62 @@ export namespace Desktops {
          * The name of the desktop image.
          */
         imageName: pulumi.Input<string>;
+        /**
+         * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+         */
+        operatingSystem?: pulumi.Input<string>;
     }
 
     export interface DesktopPoolNetworkConfiguration {
         /**
-         * The OCID of the subnet to use for the desktop pool.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
          */
         subnetId: pulumi.Input<string>;
         /**
-         * The OCID of the VCN used by the desktop pool.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
          */
         vcnId: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolPrivateAccessDetails {
+        /**
+         * The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+         */
+        endpointFqdn?: pulumi.Input<string>;
+        /**
+         * A list of network security groups for the private access.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+         */
+        privateIp?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+         */
+        subnetId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+         */
+        vcnId?: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolShapeConfig {
+        /**
+         * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+         */
+        baselineOcpuUtilization?: pulumi.Input<string>;
+        /**
+         * The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+         */
+        memoryInGbs?: pulumi.Input<string>;
+        /**
+         * The total number of OCPUs available for each desktop compute instance in the desktop pool.
+         */
+        ocpus?: pulumi.Input<string>;
     }
 
     export interface GetDesktopPoolDesktopsFilter {
@@ -34605,6 +35084,479 @@ export namespace FileStorage {
     }
 }
 
+export namespace FleetAppsManagement {
+    export interface FleetCredentialEntitySpecifics {
+        /**
+         * (Updatable) Credential Level.
+         */
+        credentialLevel: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the resource associated with the target for which credential is created
+         */
+        resourceId: pulumi.Input<string>;
+        /**
+         * (Updatable) Target associated with the Credential
+         */
+        target: pulumi.Input<string>;
+    }
+
+    export interface FleetCredentialPassword {
+        /**
+         * (Updatable) Credential Type
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+         */
+        keyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Vault Key version.
+         */
+        keyVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+         */
+        secretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The secret version.
+         */
+        secretVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value corresponding to the credential
+         */
+        value?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface FleetCredentialUser {
+        /**
+         * (Updatable) Credential Type
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+         */
+        keyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Vault Key version.
+         */
+        keyVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+         */
+        secretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The secret version.
+         */
+        secretVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value corresponding to the credential
+         */
+        value?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface FleetNotificationPreferences {
+        /**
+         * (Updatable) Copartment Id of the topic where the notifications will be directed
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * (Updatable) Preferences to send notifications on the fleet activities
+         */
+        preferences?: pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreferencesPreferences>;
+        /**
+         * (Updatable) Topic Id where the notifications will be directed
+         */
+        topicId: pulumi.Input<string>;
+    }
+
+    export interface FleetNotificationPreferencesPreferences {
+        /**
+         * (Updatable) Enables or disables notification on Job Failures.'
+         */
+        onJobFailure?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
+         */
+        onTopologyModification?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enables notification on upcoming schedule.
+         */
+        onUpcomingSchedule?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetRuleSelectionCriteria {
+        /**
+         * (Updatable) Rule selection match condition.
+         */
+        matchCondition: pulumi.Input<string>;
+        /**
+         * (Updatable) Rules.
+         */
+        rules: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteriaRule>[]>;
+    }
+
+    export interface FleetRuleSelectionCriteriaRule {
+        /**
+         * (Updatable) Rule to be be applied on.
+         */
+        basis?: pulumi.Input<string>;
+        /**
+         * (Updatable) Please provide the root compartmentId (TenancyId).
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * (Updatable) Rule Conditions
+         */
+        conditions: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetRuleSelectionCriteriaRuleCondition>[]>;
+        /**
+         * (Updatable) Resource Compartment Id.Provide the compartmentId the resource belongs to.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        resourceCompartmentId: pulumi.Input<string>;
+    }
+
+    export interface FleetRuleSelectionCriteriaRuleCondition {
+        /**
+         * (Updatable) Attribute Group.
+         */
+        attrGroup: pulumi.Input<string>;
+        /**
+         * (Updatable) Attribute Key.
+         */
+        attrKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Attribute Value.
+         */
+        attrValue: pulumi.Input<string>;
+    }
+
+    export interface GetAnnouncementsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnnouncementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetCredentialsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetCredentialsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetProductsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetProductsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetPropertiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetPropertiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetResourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetResourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetTargetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetTargetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetInventoryResourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInventoryResourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMaintenanceWindowsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaintenanceWindowsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOnboardingPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOnboardingPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOnboardingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOnboardingsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPropertiesFilter {
+        name: string;
+        regex?: boolean;
+        /**
+         * Values of the property (must be a single value if selection = 'single choice')
+         */
+        values: string[];
+    }
+
+    export interface GetPropertiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * Values of the property (must be a single value if selection = 'single choice')
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRunbooksFilter {
+        /**
+         * The name of the task
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRunbooksFilterArgs {
+        /**
+         * The name of the task
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulerDefinitionScheduledFleetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulerDefinitionScheduledFleetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSchedulerDefinitionsFilter {
+        /**
+         * Name of the output variable
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulerDefinitionsFilterArgs {
+        /**
+         * Name of the output variable
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetTaskRecordsFilter {
+        /**
+         * The name of the argument
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetTaskRecordsFilterArgs {
+        /**
+         * The name of the argument
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SchedulerDefinitionActionGroup {
+        /**
+         * (Updatable) Application Type associated. Only applicable if type is ENVIRONMENT.
+         */
+        applicationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) LifeCycle Operation
+         */
+        lifecycleOperation?: pulumi.Input<string>;
+        /**
+         * (Updatable) Product associated. Only applicable if type is PRODUCT.
+         */
+        product?: pulumi.Input<string>;
+        /**
+         * (Updatable) Provide the ID of the resource; Ex- fleetId.
+         */
+        resourceId: pulumi.Input<string>;
+        /**
+         * (Updatable) ID of the runbook
+         */
+        runbookId: pulumi.Input<string>;
+        /**
+         * (Updatable) Provide subjects that need to be considered for the schedule.
+         */
+        subjects?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Provide the target if schedule is created against the target
+         */
+        targetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) ActionGroup Type associated.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface SchedulerDefinitionRunBook {
+        /**
+         * (Updatable) The ID of the Runbook
+         */
+        id: pulumi.Input<string>;
+        /**
+         * (Updatable) Input Parameters for the Task
+         */
+        inputParameters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.SchedulerDefinitionRunBookInputParameter>[]>;
+    }
+
+    export interface SchedulerDefinitionRunBookInputParameter {
+        /**
+         * (Updatable) Arguments for the Task
+         */
+        arguments?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.SchedulerDefinitionRunBookInputParameterArgument>[]>;
+        /**
+         * (Updatable) stepName for which the input parameters are provided
+         */
+        stepName: pulumi.Input<string>;
+    }
+
+    export interface SchedulerDefinitionRunBookInputParameterArgument {
+        /**
+         * (Updatable) Name of the output variable
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The task output
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface SchedulerDefinitionSchedule {
+        /**
+         * (Updatable) Duration if schedule type is Custom
+         */
+        duration?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
+         */
+        executionStartdate: pulumi.Input<string>;
+        /**
+         * (Updatable) Provide MaintenanceWindowId if Schedule Type is Maintenance Window
+         */
+        maintenanceWindowId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Recurrence rule specification if Schedule Type is Custom and Recurring
+         */
+        recurrences?: pulumi.Input<string>;
+        /**
+         * (Updatable) Schedule Type
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+}
+
 export namespace FleetSoftwareUpdate {
     export interface FsuCollectionActiveFsuCycle {
         /**
@@ -35085,7 +36037,7 @@ export namespace FusionApps {
         /**
          * The password for the administrator.
          */
-        password: pulumi.Input<string>;
+        password?: pulumi.Input<string>;
         /**
          * The username for the administrator.
          */
@@ -63789,9 +64741,21 @@ export namespace Integration {
          */
         certificateSecretVersion?: pulumi.Input<number>;
         /**
+         * Type of DNS.
+         */
+        dnsType?: pulumi.Input<string>;
+        /**
+         * DNS Zone name
+         */
+        dnsZoneName?: pulumi.Input<string>;
+        /**
          * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: pulumi.Input<string>;
+        /**
+         * Indicates if custom endpoint is managed by oracle or customer.
+         */
+        managedType?: pulumi.Input<string>;
     }
 
     export interface IntegrationInstanceAttachment {
@@ -63834,9 +64798,55 @@ export namespace Integration {
          */
         certificateSecretVersion?: pulumi.Input<number>;
         /**
+         * Type of DNS.
+         */
+        dnsType?: pulumi.Input<string>;
+        /**
+         * DNS Zone name
+         */
+        dnsZoneName: pulumi.Input<string>;
+        /**
          * (Updatable) A custom hostname to be used for the integration instance URL, in FQDN format.
          */
         hostname: pulumi.Input<string>;
+        /**
+         * Indicates if custom endpoint is managed by oracle or customer.
+         */
+        managedType?: pulumi.Input<string>;
+    }
+
+    export interface IntegrationInstanceDisasterRecoveryDetail {
+        /**
+         * Details of integration instance created in cross region for disaster recovery.
+         */
+        crossRegionIntegrationInstanceDetails?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail>[]>;
+        /**
+         * Region specific instance url for the integration instance in the region
+         */
+        regionalInstanceUrl?: pulumi.Input<string>;
+        /**
+         * Role of the integration instance in the region
+         */
+        role?: pulumi.Input<string>;
+    }
+
+    export interface IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetail {
+        /**
+         * The Virtual Cloud Network OCID.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Cross region where integration instance is created
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * Role of the integration instance in the region
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * Time when cross region integration instance role was changed
+         */
+        timeRoleChanged?: pulumi.Input<string>;
     }
 
     export interface IntegrationInstanceIdcsInfo {
@@ -65334,6 +66344,10 @@ export namespace LoadBalancer {
     }
 
     export interface ListenerConnectionConfiguration {
+        /**
+         * (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+         */
+        backendTcpProxyProtocolOptions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
          */
@@ -68949,11 +69963,37 @@ export namespace Monitoring {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
          */
-        alarmId: pulumi.Input<string>;
+        alarmId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+         */
+        compartmentIdInSubtree?: pulumi.Input<boolean>;
         /**
          * The type of the alarm suppression target.
          */
         targetType: pulumi.Input<string>;
+    }
+
+    export interface AlarmSuppressionSuppressionCondition {
+        /**
+         * Type of suppression condition.
+         */
+        conditionType: pulumi.Input<string>;
+        /**
+         * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+         */
+        suppressionDuration: pulumi.Input<string>;
+        /**
+         * Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+         * * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+         * * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+         * * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+         */
+        suppressionRecurrence: pulumi.Input<string>;
     }
 
     export interface GetAlarmStatusesFilter {
@@ -71348,6 +72388,18 @@ export namespace ObjectStorage {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPrivateEndpointSummariesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPrivateEndpointSummariesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetReplicationPoliciesFilter {
         /**
          * The name of the policy.
@@ -71436,6 +72488,12 @@ export namespace ObjectStorage {
          * (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
          */
         inclusionPrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface PrivateEndpointAccessTarget {
+        bucket: pulumi.Input<string>;
+        compartmentId: pulumi.Input<string>;
+        namespace: pulumi.Input<string>;
     }
 
     export interface StorageObjectSourceUriDetails {
@@ -72350,7 +73408,7 @@ export namespace Opsi {
         /**
          * Credential type.
          */
-        credentialType?: pulumi.Input<string>;
+        credentialType: pulumi.Input<string>;
         /**
          * The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
          */
@@ -72363,10 +73421,6 @@ export namespace Opsi {
          * database user name.
          */
         userName?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-         */
-        walletSecretId?: pulumi.Input<string>;
     }
 
     export interface DatabaseInsightConnectionDetails {
@@ -72448,6 +73502,10 @@ export namespace Opsi {
          */
         opsiPrivateEndpointId?: pulumi.Input<string>;
         /**
+         * Exadata VMCluster type
+         */
+        vmClusterType?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
          */
         vmclusterId?: pulumi.Input<string>;
@@ -72459,7 +73517,11 @@ export namespace Opsi {
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * Connection details of the private endpoints.
+         * User credential details to connect to the database.
+         */
+        connectionCredentialDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails>;
+        /**
+         * Connection details to connect to the database. HostName, protocol, and port should be specified.
          */
         connectionDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails>;
         /**
@@ -72474,33 +73536,31 @@ export namespace Opsi {
          * Oracle Cloud Infrastructure database resource type
          */
         databaseResourceType?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-         */
         dbmPrivateEndpointId?: pulumi.Input<string>;
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * Database Deployment Type
+         * Database Deployment Type (EXACS will be supported in the future)
          */
         deploymentType?: pulumi.Input<string>;
         /**
-         * Source of the database entity.
+         * (Updatable) Source of the Exadata system.
          */
         entitySource?: pulumi.Input<string>;
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
         freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         */
+        managementAgentId?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
          */
         opsiPrivateEndpointId?: pulumi.Input<string>;
-        /**
-         * Database service name used for connection requests.
-         */
         serviceName?: pulumi.Input<string>;
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -72508,11 +73568,46 @@ export namespace Opsi {
         systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
+    export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails {
+        /**
+         * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+         */
+        credentialSourceName?: pulumi.Input<string>;
+        /**
+         * Credential type.
+         */
+        credentialType: pulumi.Input<string>;
+        /**
+         * The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * database user role.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * database user name.
+         */
+        userName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+         */
+        walletSecretId?: pulumi.Input<string>;
+    }
+
     export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
+        /**
+         * Name of the listener host that will be used to create the connect string to the database.
+         */
+        hostName?: pulumi.Input<string>;
         /**
          * List of hosts and port for private endpoint accessed database resource.
          */
         hosts?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost>[]>;
+        /**
+         * Listener port number used for connection requests.
+         */
+        port?: pulumi.Input<number>;
         /**
          * Protocol used for connection requests for private endpoint accssed database resource.
          */
@@ -72535,29 +73630,11 @@ export namespace Opsi {
     }
 
     export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
-        /**
-         * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-         */
         credentialSourceName?: pulumi.Input<string>;
-        /**
-         * Credential type.
-         */
         credentialType: pulumi.Input<string>;
-        /**
-         * The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-         */
         passwordSecretId?: pulumi.Input<string>;
-        /**
-         * database user role.
-         */
         role?: pulumi.Input<string>;
-        /**
-         * database user name.
-         */
         userName?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-         */
         walletSecretId?: pulumi.Input<string>;
     }
 
@@ -76371,6 +77448,65 @@ export namespace Secrets {
 
 }
 
+export namespace SecurityAttribute {
+    export interface GetSecurityAttributeNamespacesFilter {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityAttributeNamespacesFilterArgs {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityAttributesFilter {
+        /**
+         * The name assigned to the security attribute during creation. This is the security attribute key. The name must be unique within the security attribute namespace and cannot be changed.
+         */
+        name: string;
+        regex?: boolean;
+        /**
+         * The list of allowed values for a security attribute value.
+         */
+        values: string[];
+    }
+
+    export interface GetSecurityAttributesFilterArgs {
+        /**
+         * The name assigned to the security attribute during creation. This is the security attribute key. The name must be unique within the security attribute namespace and cannot be changed.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * The list of allowed values for a security attribute value.
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SecurityAttributeValidator {
+        /**
+         * (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+         */
+        validatorType: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of allowed values for a security attribute value. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+}
+
 export namespace ServiceCatalog {
     export interface GetPrivateApplicationPackagesFilter {
         name: string;
@@ -77221,6 +78357,24 @@ export namespace StackMonitoring {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaintenanceWindowsFilter {
+        /**
+         * A filter to return maintenance windows that match exact resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaintenanceWindowsFilterArgs {
+        /**
+         * A filter to return maintenance windows that match exact resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMetricExtensionsFilter {
         /**
          * A filter to return resources based on name.
@@ -77303,6 +78457,63 @@ export namespace StackMonitoring {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MaintenanceWindowResource {
+        /**
+         * (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+         */
+        areMembersIncluded?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+         */
+        resourceId: pulumi.Input<string>;
+    }
+
+    export interface MaintenanceWindowResourcesDetail {
+        /**
+         * Maintenance Window name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Number of members of the resource
+         */
+        numberOfMembers?: pulumi.Input<number>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+         */
+        resourceId?: pulumi.Input<string>;
+        /**
+         * Type of the monitored resource
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MaintenanceWindowSchedule {
+        /**
+         * (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+         */
+        maintenanceWindowDuration?: pulumi.Input<string>;
+        /**
+         * (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+         */
+        maintenanceWindowRecurrences?: pulumi.Input<string>;
+        /**
+         * (Updatable) Property to identify the type of the Maintenance Window.
+         */
+        scheduleType: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+         */
+        timeMaintenanceWindowEnd?: pulumi.Input<string>;
+        /**
+         * (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        timeMaintenanceWindowStart?: pulumi.Input<string>;
     }
 
     export interface MetricExtensionEnabledOnResource {
@@ -80624,4 +81835,25 @@ export namespace Waf {
          */
         vcnId?: pulumi.Input<string>;
     }
+}
+
+export namespace Zpr {
+    export interface GetZprPoliciesFilter {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetZprPoliciesFilterArgs {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
 }

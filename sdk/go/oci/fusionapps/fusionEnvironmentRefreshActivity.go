@@ -16,33 +16,6 @@ import (
 //
 // Creates a new RefreshActivity.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/FusionApps"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentRefreshActivity(ctx, "test_fusion_environment_refresh_activity", &FusionApps.FusionEnvironmentRefreshActivityArgs{
-//				FusionEnvironmentId:       pulumi.Any(testFusionEnvironment.Id),
-//				SourceFusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
@@ -57,6 +30,8 @@ type FusionEnvironmentRefreshActivity struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringOutput `pulumi:"fusionEnvironmentId"`
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted pulumi.BoolOutput `pulumi:"isDataMaskingOpted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails  pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	RefreshActivityId pulumi.StringOutput `pulumi:"refreshActivityId"`
@@ -65,9 +40,6 @@ type FusionEnvironmentRefreshActivity struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringOutput `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringOutput `pulumi:"sourceFusionEnvironmentId"`
 	// The current state of the refreshActivity.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -123,6 +95,8 @@ type fusionEnvironmentRefreshActivityState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted *bool `pulumi:"isDataMaskingOpted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails  *string `pulumi:"lifecycleDetails"`
 	RefreshActivityId *string `pulumi:"refreshActivityId"`
@@ -131,9 +105,6 @@ type fusionEnvironmentRefreshActivityState struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// The current state of the refreshActivity.
 	State *string `pulumi:"state"`
@@ -154,6 +125,8 @@ type FusionEnvironmentRefreshActivityState struct {
 	DisplayName pulumi.StringPtrInput
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringPtrInput
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails  pulumi.StringPtrInput
 	RefreshActivityId pulumi.StringPtrInput
@@ -162,9 +135,6 @@ type FusionEnvironmentRefreshActivityState struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringPtrInput
 	// The current state of the refreshActivity.
 	State pulumi.StringPtrInput
@@ -187,10 +157,9 @@ func (FusionEnvironmentRefreshActivityState) ElementType() reflect.Type {
 type fusionEnvironmentRefreshActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted *bool `pulumi:"isDataMaskingOpted"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
 }
 
@@ -198,10 +167,9 @@ type fusionEnvironmentRefreshActivityArgs struct {
 type FusionEnvironmentRefreshActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput
+	// Represents if the customer opted for Data Masking or not during refreshActivity.
+	IsDataMaskingOpted pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringInput
 }
 
@@ -302,6 +270,11 @@ func (o FusionEnvironmentRefreshActivityOutput) FusionEnvironmentId() pulumi.Str
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.FusionEnvironmentId }).(pulumi.StringOutput)
 }
 
+// Represents if the customer opted for Data Masking or not during refreshActivity.
+func (o FusionEnvironmentRefreshActivityOutput) IsDataMaskingOpted() pulumi.BoolOutput {
+	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.BoolOutput { return v.IsDataMaskingOpted }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o FusionEnvironmentRefreshActivityOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -324,9 +297,6 @@ func (o FusionEnvironmentRefreshActivityOutput) ServiceAvailability() pulumi.Str
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentRefreshActivityOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.SourceFusionEnvironmentId }).(pulumi.StringOutput)
 }

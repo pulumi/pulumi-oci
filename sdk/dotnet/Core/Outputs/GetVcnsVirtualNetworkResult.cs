@@ -73,6 +73,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool IsIpv6enabled;
         public readonly bool IsOracleGuaAllocationEnabled;
         /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
@@ -121,6 +125,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isOracleGuaAllocationEnabled,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string timeCreated,
@@ -144,6 +150,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             IsIpv6enabled = isIpv6enabled;
             IsOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            SecurityAttributes = securityAttributes;
             State = state;
             TimeCreated = timeCreated;
             VcnDomainName = vcnDomainName;

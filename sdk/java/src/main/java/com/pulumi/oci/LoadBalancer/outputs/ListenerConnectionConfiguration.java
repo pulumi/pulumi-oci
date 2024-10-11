@@ -7,12 +7,18 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class ListenerConnectionConfiguration {
+    /**
+     * @return (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+     * 
+     */
+    private @Nullable List<String> backendTcpProxyProtocolOptions;
     /**
      * @return (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
      * 
@@ -29,6 +35,13 @@ public final class ListenerConnectionConfiguration {
     private String idleTimeoutInSeconds;
 
     private ListenerConnectionConfiguration() {}
+    /**
+     * @return (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+     * 
+     */
+    public List<String> backendTcpProxyProtocolOptions() {
+        return this.backendTcpProxyProtocolOptions == null ? List.of() : this.backendTcpProxyProtocolOptions;
+    }
     /**
      * @return (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
      * 
@@ -57,15 +70,26 @@ public final class ListenerConnectionConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> backendTcpProxyProtocolOptions;
         private @Nullable Integer backendTcpProxyProtocolVersion;
         private String idleTimeoutInSeconds;
         public Builder() {}
         public Builder(ListenerConnectionConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backendTcpProxyProtocolOptions = defaults.backendTcpProxyProtocolOptions;
     	      this.backendTcpProxyProtocolVersion = defaults.backendTcpProxyProtocolVersion;
     	      this.idleTimeoutInSeconds = defaults.idleTimeoutInSeconds;
         }
 
+        @CustomType.Setter
+        public Builder backendTcpProxyProtocolOptions(@Nullable List<String> backendTcpProxyProtocolOptions) {
+
+            this.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
+            return this;
+        }
+        public Builder backendTcpProxyProtocolOptions(String... backendTcpProxyProtocolOptions) {
+            return backendTcpProxyProtocolOptions(List.of(backendTcpProxyProtocolOptions));
+        }
         @CustomType.Setter
         public Builder backendTcpProxyProtocolVersion(@Nullable Integer backendTcpProxyProtocolVersion) {
 
@@ -82,6 +106,7 @@ public final class ListenerConnectionConfiguration {
         }
         public ListenerConnectionConfiguration build() {
             final var _resultValue = new ListenerConnectionConfiguration();
+            _resultValue.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
             _resultValue.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             _resultValue.idleTimeoutInSeconds = idleTimeoutInSeconds;
             return _resultValue;

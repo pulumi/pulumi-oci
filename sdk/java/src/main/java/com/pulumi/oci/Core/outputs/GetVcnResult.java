@@ -88,6 +88,11 @@ public final class GetVcnResult {
     private Boolean isIpv6enabled;
     private Boolean isOracleGuaAllocationEnabled;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The VCN&#39;s current state.
      * 
      */
@@ -213,6 +218,13 @@ public final class GetVcnResult {
         return this.isOracleGuaAllocationEnabled;
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The VCN&#39;s current state.
      * 
      */
@@ -263,6 +275,7 @@ public final class GetVcnResult {
         private List<String> ipv6privateCidrBlocks;
         private Boolean isIpv6enabled;
         private Boolean isOracleGuaAllocationEnabled;
+        private Map<String,String> securityAttributes;
         private String state;
         private String timeCreated;
         private String vcnDomainName;
@@ -287,6 +300,7 @@ public final class GetVcnResult {
     	      this.ipv6privateCidrBlocks = defaults.ipv6privateCidrBlocks;
     	      this.isIpv6enabled = defaults.isIpv6enabled;
     	      this.isOracleGuaAllocationEnabled = defaults.isOracleGuaAllocationEnabled;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnDomainName = defaults.vcnDomainName;
@@ -445,6 +459,14 @@ public final class GetVcnResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetVcnResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetVcnResult", "state");
@@ -495,6 +517,7 @@ public final class GetVcnResult {
             _resultValue.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             _resultValue.isIpv6enabled = isIpv6enabled;
             _resultValue.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vcnDomainName = vcnDomainName;

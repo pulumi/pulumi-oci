@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArgs {
@@ -44,11 +46,27 @@ public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArg
         return this.imageName;
     }
 
+    /**
+     * The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    @Import(name="operatingSystem")
+    private @Nullable Output<String> operatingSystem;
+
+    /**
+     * @return The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    public Optional<Output<String>> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
+    }
+
     private DesktopPoolImageArgs() {}
 
     private DesktopPoolImageArgs(DesktopPoolImageArgs $) {
         this.imageId = $.imageId;
         this.imageName = $.imageName;
+        this.operatingSystem = $.operatingSystem;
     }
 
     public static Builder builder() {
@@ -109,6 +127,27 @@ public final class DesktopPoolImageArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder imageName(String imageName) {
             return imageName(Output.of(imageName));
+        }
+
+        /**
+         * @param operatingSystem The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder operatingSystem(@Nullable Output<String> operatingSystem) {
+            $.operatingSystem = operatingSystem;
+            return this;
+        }
+
+        /**
+         * @param operatingSystem The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder operatingSystem(String operatingSystem) {
+            return operatingSystem(Output.of(operatingSystem));
         }
 
         public DesktopPoolImageArgs build() {

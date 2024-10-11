@@ -12,6 +12,18 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
     public sealed class ListenerConnectionConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("backendTcpProxyProtocolOptions")]
+        private InputList<string>? _backendTcpProxyProtocolOptions;
+
+        /// <summary>
+        /// (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: ["PP2_TYPE_AUTHORITY"]
+        /// </summary>
+        public InputList<string> BackendTcpProxyProtocolOptions
+        {
+            get => _backendTcpProxyProtocolOptions ?? (_backendTcpProxyProtocolOptions = new InputList<string>());
+            set => _backendTcpProxyProtocolOptions = value;
+        }
+
         /// <summary>
         /// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         /// </summary>

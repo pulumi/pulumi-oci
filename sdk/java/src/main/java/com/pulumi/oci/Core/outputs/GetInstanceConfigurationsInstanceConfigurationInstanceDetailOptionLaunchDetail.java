@@ -139,6 +139,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      */
     private String preferredMaintenanceAction;
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
@@ -312,6 +317,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         return this.preferredMaintenanceAction;
     }
     /**
+     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
@@ -360,6 +372,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private String preferredMaintenanceAction;
+        private Map<String,String> securityAttributes;
         private String shape;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails;
@@ -388,6 +401,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
     	      this.preferredMaintenanceAction = defaults.preferredMaintenanceAction;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -591,6 +605,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail", "shape");
@@ -644,6 +666,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             _resultValue.preferredMaintenanceAction = preferredMaintenanceAction;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.sourceDetails = sourceDetails;

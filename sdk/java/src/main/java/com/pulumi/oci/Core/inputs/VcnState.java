@@ -275,9 +275,6 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isOracleGuaAllocationEnabled")
     private @Nullable Output<Boolean> isOracleGuaAllocationEnabled;
@@ -285,12 +282,30 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      * 
+     */
+    public Optional<Output<Boolean>> isOracleGuaAllocationEnabled() {
+        return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
+    }
+
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Boolean>> isOracleGuaAllocationEnabled() {
-        return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     /**
@@ -357,6 +372,7 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         this.ipv6privateCidrBlocks = $.ipv6privateCidrBlocks;
         this.isIpv6enabled = $.isIpv6enabled;
         this.isOracleGuaAllocationEnabled = $.isOracleGuaAllocationEnabled;
+        this.securityAttributes = $.securityAttributes;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.vcnDomainName = $.vcnDomainName;
@@ -785,9 +801,6 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isOracleGuaAllocationEnabled Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -799,14 +812,38 @@ public final class VcnState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isOracleGuaAllocationEnabled Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
          * 
+         * @return builder
+         * 
+         */
+        public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
+            return isOracleGuaAllocationEnabled(Output.of(isOracleGuaAllocationEnabled));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
-            return isOracleGuaAllocationEnabled(Output.of(isOracleGuaAllocationEnabled));
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

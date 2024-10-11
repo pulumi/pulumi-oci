@@ -27,7 +27,7 @@ class GetDatabaseInsightResult:
     """
     A collection of values returned by getDatabaseInsight.
     """
-    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, connector_id=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, is_advanced_features_enabled=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, management_agent_id=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -37,6 +37,9 @@ class GetDatabaseInsightResult:
         if connection_details and not isinstance(connection_details, list):
             raise TypeError("Expected argument 'connection_details' to be a list")
         pulumi.set(__self__, "connection_details", connection_details)
+        if connector_id and not isinstance(connector_id, str):
+            raise TypeError("Expected argument 'connector_id' to be a str")
+        pulumi.set(__self__, "connector_id", connector_id)
         if credential_details and not isinstance(credential_details, list):
             raise TypeError("Expected argument 'credential_details' to be a list")
         pulumi.set(__self__, "credential_details", credential_details)
@@ -103,6 +106,9 @@ class GetDatabaseInsightResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_advanced_features_enabled and not isinstance(is_advanced_features_enabled, bool):
+            raise TypeError("Expected argument 'is_advanced_features_enabled' to be a bool")
+        pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
         if is_heat_wave_cluster_attached and not isinstance(is_heat_wave_cluster_attached, bool):
             raise TypeError("Expected argument 'is_heat_wave_cluster_attached' to be a bool")
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
@@ -112,6 +118,9 @@ class GetDatabaseInsightResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if management_agent_id and not isinstance(management_agent_id, str):
+            raise TypeError("Expected argument 'management_agent_id' to be a str")
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
         if opsi_private_endpoint_id and not isinstance(opsi_private_endpoint_id, str):
             raise TypeError("Expected argument 'opsi_private_endpoint_id' to be a str")
         pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
@@ -166,6 +175,14 @@ class GetDatabaseInsightResult:
         Connection details to connect to the database. HostName, protocol, and port should be specified.
         """
         return pulumi.get(self, "connection_details")
+
+    @property
+    @pulumi.getter(name="connectorId")
+    def connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+        """
+        return pulumi.get(self, "connector_id")
 
     @property
     @pulumi.getter(name="credentialDetails")
@@ -335,6 +352,14 @@ class GetDatabaseInsightResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isAdvancedFeaturesEnabled")
+    def is_advanced_features_enabled(self) -> bool:
+        """
+        Flag is to identify if advanced features for autonomous database is enabled or not
+        """
+        return pulumi.get(self, "is_advanced_features_enabled")
+
+    @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> bool:
         """
@@ -357,6 +382,11 @@ class GetDatabaseInsightResult:
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> str:
+        return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
@@ -448,6 +478,7 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             compartment_id=self.compartment_id,
             connection_credential_details=self.connection_credential_details,
             connection_details=self.connection_details,
+            connector_id=self.connector_id,
             credential_details=self.credential_details,
             database_connection_status_details=self.database_connection_status_details,
             database_display_name=self.database_display_name,
@@ -470,9 +501,11 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             exadata_insight_id=self.exadata_insight_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_advanced_features_enabled=self.is_advanced_features_enabled,
             is_heat_wave_cluster_attached=self.is_heat_wave_cluster_attached,
             is_highly_available=self.is_highly_available,
             lifecycle_details=self.lifecycle_details,
+            management_agent_id=self.management_agent_id,
             opsi_private_endpoint_id=self.opsi_private_endpoint_id,
             parent_id=self.parent_id,
             processor_count=self.processor_count,
@@ -513,6 +546,7 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_credential_details=pulumi.get(__ret__, 'connection_credential_details'),
         connection_details=pulumi.get(__ret__, 'connection_details'),
+        connector_id=pulumi.get(__ret__, 'connector_id'),
         credential_details=pulumi.get(__ret__, 'credential_details'),
         database_connection_status_details=pulumi.get(__ret__, 'database_connection_status_details'),
         database_display_name=pulumi.get(__ret__, 'database_display_name'),
@@ -535,9 +569,11 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         exadata_insight_id=pulumi.get(__ret__, 'exadata_insight_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_advanced_features_enabled=pulumi.get(__ret__, 'is_advanced_features_enabled'),
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_highly_available=pulumi.get(__ret__, 'is_highly_available'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         parent_id=pulumi.get(__ret__, 'parent_id'),
         processor_count=pulumi.get(__ret__, 'processor_count'),
@@ -575,6 +611,7 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_credential_details=pulumi.get(__response__, 'connection_credential_details'),
         connection_details=pulumi.get(__response__, 'connection_details'),
+        connector_id=pulumi.get(__response__, 'connector_id'),
         credential_details=pulumi.get(__response__, 'credential_details'),
         database_connection_status_details=pulumi.get(__response__, 'database_connection_status_details'),
         database_display_name=pulumi.get(__response__, 'database_display_name'),
@@ -597,9 +634,11 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
         exadata_insight_id=pulumi.get(__response__, 'exadata_insight_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_advanced_features_enabled=pulumi.get(__response__, 'is_advanced_features_enabled'),
         is_heat_wave_cluster_attached=pulumi.get(__response__, 'is_heat_wave_cluster_attached'),
         is_highly_available=pulumi.get(__response__, 'is_highly_available'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
         opsi_private_endpoint_id=pulumi.get(__response__, 'opsi_private_endpoint_id'),
         parent_id=pulumi.get(__response__, 'parent_id'),
         processor_count=pulumi.get(__response__, 'processor_count'),

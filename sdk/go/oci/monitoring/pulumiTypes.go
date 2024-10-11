@@ -429,7 +429,11 @@ func (o AlarmSuppressionTypePtrOutput) TimeSuppressUntil() pulumi.StringPtrOutpu
 
 type AlarmSuppressionAlarmSuppressionTarget struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-	AlarmId string `pulumi:"alarmId"`
+	AlarmId *string `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId *string `pulumi:"compartmentId"`
+	// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// The type of the alarm suppression target.
 	TargetType string `pulumi:"targetType"`
 }
@@ -447,7 +451,11 @@ type AlarmSuppressionAlarmSuppressionTargetInput interface {
 
 type AlarmSuppressionAlarmSuppressionTargetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-	AlarmId pulumi.StringInput `pulumi:"alarmId"`
+	AlarmId pulumi.StringPtrInput `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// The type of the alarm suppression target.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -530,8 +538,18 @@ func (o AlarmSuppressionAlarmSuppressionTargetOutput) ToAlarmSuppressionAlarmSup
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
-func (o AlarmSuppressionAlarmSuppressionTargetOutput) AlarmId() pulumi.StringOutput {
-	return o.ApplyT(func(v AlarmSuppressionAlarmSuppressionTarget) string { return v.AlarmId }).(pulumi.StringOutput)
+func (o AlarmSuppressionAlarmSuppressionTargetOutput) AlarmId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmSuppressionAlarmSuppressionTarget) *string { return v.AlarmId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+func (o AlarmSuppressionAlarmSuppressionTargetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmSuppressionAlarmSuppressionTarget) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+func (o AlarmSuppressionAlarmSuppressionTargetOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AlarmSuppressionAlarmSuppressionTarget) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // The type of the alarm suppression target.
@@ -569,8 +587,28 @@ func (o AlarmSuppressionAlarmSuppressionTargetPtrOutput) AlarmId() pulumi.String
 		if v == nil {
 			return nil
 		}
-		return &v.AlarmId
+		return v.AlarmId
 	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+func (o AlarmSuppressionAlarmSuppressionTargetPtrOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmSuppressionAlarmSuppressionTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+func (o AlarmSuppressionAlarmSuppressionTargetPtrOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AlarmSuppressionAlarmSuppressionTarget) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentIdInSubtree
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The type of the alarm suppression target.
@@ -581,6 +619,130 @@ func (o AlarmSuppressionAlarmSuppressionTargetPtrOutput) TargetType() pulumi.Str
 		}
 		return &v.TargetType
 	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmSuppressionSuppressionCondition struct {
+	// Type of suppression condition.
+	ConditionType string `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration string `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence string `pulumi:"suppressionRecurrence"`
+}
+
+// AlarmSuppressionSuppressionConditionInput is an input type that accepts AlarmSuppressionSuppressionConditionArgs and AlarmSuppressionSuppressionConditionOutput values.
+// You can construct a concrete instance of `AlarmSuppressionSuppressionConditionInput` via:
+//
+//	AlarmSuppressionSuppressionConditionArgs{...}
+type AlarmSuppressionSuppressionConditionInput interface {
+	pulumi.Input
+
+	ToAlarmSuppressionSuppressionConditionOutput() AlarmSuppressionSuppressionConditionOutput
+	ToAlarmSuppressionSuppressionConditionOutputWithContext(context.Context) AlarmSuppressionSuppressionConditionOutput
+}
+
+type AlarmSuppressionSuppressionConditionArgs struct {
+	// Type of suppression condition.
+	ConditionType pulumi.StringInput `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration pulumi.StringInput `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence pulumi.StringInput `pulumi:"suppressionRecurrence"`
+}
+
+func (AlarmSuppressionSuppressionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (i AlarmSuppressionSuppressionConditionArgs) ToAlarmSuppressionSuppressionConditionOutput() AlarmSuppressionSuppressionConditionOutput {
+	return i.ToAlarmSuppressionSuppressionConditionOutputWithContext(context.Background())
+}
+
+func (i AlarmSuppressionSuppressionConditionArgs) ToAlarmSuppressionSuppressionConditionOutputWithContext(ctx context.Context) AlarmSuppressionSuppressionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionSuppressionConditionOutput)
+}
+
+// AlarmSuppressionSuppressionConditionArrayInput is an input type that accepts AlarmSuppressionSuppressionConditionArray and AlarmSuppressionSuppressionConditionArrayOutput values.
+// You can construct a concrete instance of `AlarmSuppressionSuppressionConditionArrayInput` via:
+//
+//	AlarmSuppressionSuppressionConditionArray{ AlarmSuppressionSuppressionConditionArgs{...} }
+type AlarmSuppressionSuppressionConditionArrayInput interface {
+	pulumi.Input
+
+	ToAlarmSuppressionSuppressionConditionArrayOutput() AlarmSuppressionSuppressionConditionArrayOutput
+	ToAlarmSuppressionSuppressionConditionArrayOutputWithContext(context.Context) AlarmSuppressionSuppressionConditionArrayOutput
+}
+
+type AlarmSuppressionSuppressionConditionArray []AlarmSuppressionSuppressionConditionInput
+
+func (AlarmSuppressionSuppressionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (i AlarmSuppressionSuppressionConditionArray) ToAlarmSuppressionSuppressionConditionArrayOutput() AlarmSuppressionSuppressionConditionArrayOutput {
+	return i.ToAlarmSuppressionSuppressionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmSuppressionSuppressionConditionArray) ToAlarmSuppressionSuppressionConditionArrayOutputWithContext(ctx context.Context) AlarmSuppressionSuppressionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionSuppressionConditionArrayOutput)
+}
+
+type AlarmSuppressionSuppressionConditionOutput struct{ *pulumi.OutputState }
+
+func (AlarmSuppressionSuppressionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (o AlarmSuppressionSuppressionConditionOutput) ToAlarmSuppressionSuppressionConditionOutput() AlarmSuppressionSuppressionConditionOutput {
+	return o
+}
+
+func (o AlarmSuppressionSuppressionConditionOutput) ToAlarmSuppressionSuppressionConditionOutputWithContext(ctx context.Context) AlarmSuppressionSuppressionConditionOutput {
+	return o
+}
+
+// Type of suppression condition.
+func (o AlarmSuppressionSuppressionConditionOutput) ConditionType() pulumi.StringOutput {
+	return o.ApplyT(func(v AlarmSuppressionSuppressionCondition) string { return v.ConditionType }).(pulumi.StringOutput)
+}
+
+// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+func (o AlarmSuppressionSuppressionConditionOutput) SuppressionDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v AlarmSuppressionSuppressionCondition) string { return v.SuppressionDuration }).(pulumi.StringOutput)
+}
+
+// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+func (o AlarmSuppressionSuppressionConditionOutput) SuppressionRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v AlarmSuppressionSuppressionCondition) string { return v.SuppressionRecurrence }).(pulumi.StringOutput)
+}
+
+type AlarmSuppressionSuppressionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmSuppressionSuppressionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (o AlarmSuppressionSuppressionConditionArrayOutput) ToAlarmSuppressionSuppressionConditionArrayOutput() AlarmSuppressionSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o AlarmSuppressionSuppressionConditionArrayOutput) ToAlarmSuppressionSuppressionConditionArrayOutputWithContext(ctx context.Context) AlarmSuppressionSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o AlarmSuppressionSuppressionConditionArrayOutput) Index(i pulumi.IntInput) AlarmSuppressionSuppressionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmSuppressionSuppressionCondition {
+		return vs[0].([]AlarmSuppressionSuppressionCondition)[vs[1].(int)]
+	}).(AlarmSuppressionSuppressionConditionOutput)
 }
 
 type GetAlarmHistoryCollectionEntry struct {
@@ -1339,6 +1501,10 @@ func (o GetAlarmSuppressionTypeArrayOutput) Index(i pulumi.IntInput) GetAlarmSup
 type GetAlarmSuppressionAlarmSuppressionTarget struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
 	AlarmId string `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+	CompartmentId string `pulumi:"compartmentId"`
+	// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// The type of the alarm suppression target.
 	TargetType string `pulumi:"targetType"`
 }
@@ -1357,6 +1523,10 @@ type GetAlarmSuppressionAlarmSuppressionTargetInput interface {
 type GetAlarmSuppressionAlarmSuppressionTargetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
 	AlarmId pulumi.StringInput `pulumi:"alarmId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// The type of the alarm suppression target.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -1417,6 +1587,16 @@ func (o GetAlarmSuppressionAlarmSuppressionTargetOutput) AlarmId() pulumi.String
 	return o.ApplyT(func(v GetAlarmSuppressionAlarmSuppressionTarget) string { return v.AlarmId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+func (o GetAlarmSuppressionAlarmSuppressionTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionAlarmSuppressionTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+func (o GetAlarmSuppressionAlarmSuppressionTargetOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionAlarmSuppressionTarget) bool { return v.CompartmentIdInSubtree }).(pulumi.BoolOutput)
+}
+
 // The type of the alarm suppression target.
 func (o GetAlarmSuppressionAlarmSuppressionTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionAlarmSuppressionTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -1440,6 +1620,130 @@ func (o GetAlarmSuppressionAlarmSuppressionTargetArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmSuppressionAlarmSuppressionTarget {
 		return vs[0].([]GetAlarmSuppressionAlarmSuppressionTarget)[vs[1].(int)]
 	}).(GetAlarmSuppressionAlarmSuppressionTargetOutput)
+}
+
+type GetAlarmSuppressionSuppressionCondition struct {
+	// Type of suppression condition.
+	ConditionType string `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration string `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence string `pulumi:"suppressionRecurrence"`
+}
+
+// GetAlarmSuppressionSuppressionConditionInput is an input type that accepts GetAlarmSuppressionSuppressionConditionArgs and GetAlarmSuppressionSuppressionConditionOutput values.
+// You can construct a concrete instance of `GetAlarmSuppressionSuppressionConditionInput` via:
+//
+//	GetAlarmSuppressionSuppressionConditionArgs{...}
+type GetAlarmSuppressionSuppressionConditionInput interface {
+	pulumi.Input
+
+	ToGetAlarmSuppressionSuppressionConditionOutput() GetAlarmSuppressionSuppressionConditionOutput
+	ToGetAlarmSuppressionSuppressionConditionOutputWithContext(context.Context) GetAlarmSuppressionSuppressionConditionOutput
+}
+
+type GetAlarmSuppressionSuppressionConditionArgs struct {
+	// Type of suppression condition.
+	ConditionType pulumi.StringInput `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration pulumi.StringInput `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence pulumi.StringInput `pulumi:"suppressionRecurrence"`
+}
+
+func (GetAlarmSuppressionSuppressionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (i GetAlarmSuppressionSuppressionConditionArgs) ToGetAlarmSuppressionSuppressionConditionOutput() GetAlarmSuppressionSuppressionConditionOutput {
+	return i.ToGetAlarmSuppressionSuppressionConditionOutputWithContext(context.Background())
+}
+
+func (i GetAlarmSuppressionSuppressionConditionArgs) ToGetAlarmSuppressionSuppressionConditionOutputWithContext(ctx context.Context) GetAlarmSuppressionSuppressionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionSuppressionConditionOutput)
+}
+
+// GetAlarmSuppressionSuppressionConditionArrayInput is an input type that accepts GetAlarmSuppressionSuppressionConditionArray and GetAlarmSuppressionSuppressionConditionArrayOutput values.
+// You can construct a concrete instance of `GetAlarmSuppressionSuppressionConditionArrayInput` via:
+//
+//	GetAlarmSuppressionSuppressionConditionArray{ GetAlarmSuppressionSuppressionConditionArgs{...} }
+type GetAlarmSuppressionSuppressionConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmSuppressionSuppressionConditionArrayOutput() GetAlarmSuppressionSuppressionConditionArrayOutput
+	ToGetAlarmSuppressionSuppressionConditionArrayOutputWithContext(context.Context) GetAlarmSuppressionSuppressionConditionArrayOutput
+}
+
+type GetAlarmSuppressionSuppressionConditionArray []GetAlarmSuppressionSuppressionConditionInput
+
+func (GetAlarmSuppressionSuppressionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (i GetAlarmSuppressionSuppressionConditionArray) ToGetAlarmSuppressionSuppressionConditionArrayOutput() GetAlarmSuppressionSuppressionConditionArrayOutput {
+	return i.ToGetAlarmSuppressionSuppressionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmSuppressionSuppressionConditionArray) ToGetAlarmSuppressionSuppressionConditionArrayOutputWithContext(ctx context.Context) GetAlarmSuppressionSuppressionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionSuppressionConditionArrayOutput)
+}
+
+type GetAlarmSuppressionSuppressionConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmSuppressionSuppressionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (o GetAlarmSuppressionSuppressionConditionOutput) ToGetAlarmSuppressionSuppressionConditionOutput() GetAlarmSuppressionSuppressionConditionOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionSuppressionConditionOutput) ToGetAlarmSuppressionSuppressionConditionOutputWithContext(ctx context.Context) GetAlarmSuppressionSuppressionConditionOutput {
+	return o
+}
+
+// Type of suppression condition.
+func (o GetAlarmSuppressionSuppressionConditionOutput) ConditionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionSuppressionCondition) string { return v.ConditionType }).(pulumi.StringOutput)
+}
+
+// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+func (o GetAlarmSuppressionSuppressionConditionOutput) SuppressionDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionSuppressionCondition) string { return v.SuppressionDuration }).(pulumi.StringOutput)
+}
+
+// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+func (o GetAlarmSuppressionSuppressionConditionOutput) SuppressionRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionSuppressionCondition) string { return v.SuppressionRecurrence }).(pulumi.StringOutput)
+}
+
+type GetAlarmSuppressionSuppressionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmSuppressionSuppressionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmSuppressionSuppressionCondition)(nil)).Elem()
+}
+
+func (o GetAlarmSuppressionSuppressionConditionArrayOutput) ToGetAlarmSuppressionSuppressionConditionArrayOutput() GetAlarmSuppressionSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionSuppressionConditionArrayOutput) ToGetAlarmSuppressionSuppressionConditionArrayOutputWithContext(ctx context.Context) GetAlarmSuppressionSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionSuppressionConditionArrayOutput) Index(i pulumi.IntInput) GetAlarmSuppressionSuppressionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmSuppressionSuppressionCondition {
+		return vs[0].([]GetAlarmSuppressionSuppressionCondition)[vs[1].(int)]
+	}).(GetAlarmSuppressionSuppressionConditionOutput)
 }
 
 type GetAlarmSuppressionsAlarmSuppressionCollection struct {
@@ -1541,7 +1845,11 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionArrayOutput) Index(i pulum
 type GetAlarmSuppressionsAlarmSuppressionCollectionItem struct {
 	// The target of the alarm suppression.
 	AlarmSuppressionTargets []GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget `pulumi:"alarmSuppressionTargets"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -1549,14 +1857,18 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItem struct {
 	Description string `pulumi:"description"`
 	// Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
 	Dimensions map[string]string `pulumi:"dimensions"`
-	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id string `pulumi:"id"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level string `pulumi:"level"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 	State string `pulumi:"state"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions []GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition `pulumi:"suppressionConditions"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -1581,7 +1893,11 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItemInput interface {
 type GetAlarmSuppressionsAlarmSuppressionCollectionItemArgs struct {
 	// The target of the alarm suppression.
 	AlarmSuppressionTargets GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArrayInput `pulumi:"alarmSuppressionTargets"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -1589,14 +1905,18 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
 	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
-	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+	Level pulumi.StringInput `pulumi:"level"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 	State pulumi.StringInput `pulumi:"state"`
+	// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+	SuppressionConditions GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayInput `pulumi:"suppressionConditions"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -1665,7 +1985,11 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) AlarmSuppressi
 	}).(GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+//
+// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+//
+// Example: `ocid1.compartment.oc1..exampleuniqueID`
 func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1685,7 +2009,7 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Dimensions() p
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
-// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -1700,9 +2024,21 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Id() pulumi.St
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) string { return v.Level }).(pulumi.StringOutput)
+}
+
 // A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) SuppressionConditions() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) []GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition {
+		return v.SuppressionConditions
+	}).(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput)
 }
 
 // The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -1748,7 +2084,15 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemArrayOutput) Index(i p
 type GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
 	AlarmId string `pulumi:"alarmId"`
-	// The type of the alarm suppression target.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId string `pulumi:"compartmentId"`
+	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
+	// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
 	TargetType string `pulumi:"targetType"`
 }
 
@@ -1766,7 +2110,15 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetInp
 type GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
 	AlarmId pulumi.StringInput `pulumi:"alarmId"`
-	// The type of the alarm suppression target.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+	//
+	// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+	//
+	// Example: `ocid1.compartment.oc1..exampleuniqueID`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
+	// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
 
@@ -1828,7 +2180,25 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget
 	}).(pulumi.StringOutput)
 }
 
-// The type of the alarm suppression target.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+//
+// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+//
+// Example: `ocid1.compartment.oc1..exampleuniqueID`
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget) bool {
+		return v.CompartmentIdInSubtree
+	}).(pulumi.BoolOutput)
+}
+
+// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
 func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget) string {
 		return v.TargetType
@@ -1853,6 +2223,136 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget {
 		return vs[0].([]GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget)[vs[1].(int)]
 	}).(GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetOutput)
+}
+
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition struct {
+	// Type of suppression condition.
+	ConditionType string `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration string `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence string `pulumi:"suppressionRecurrence"`
+}
+
+// GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionInput is an input type that accepts GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs and GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput values.
+// You can construct a concrete instance of `GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionInput` via:
+//
+//	GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs{...}
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionInput interface {
+	pulumi.Input
+
+	ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput
+	ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutputWithContext(context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput
+}
+
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs struct {
+	// Type of suppression condition.
+	ConditionType pulumi.StringInput `pulumi:"conditionType"`
+	// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+	SuppressionDuration pulumi.StringInput `pulumi:"suppressionDuration"`
+	// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+	// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+	// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+	// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+	SuppressionRecurrence pulumi.StringInput `pulumi:"suppressionRecurrence"`
+}
+
+func (GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition)(nil)).Elem()
+}
+
+func (i GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput {
+	return i.ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutputWithContext(context.Background())
+}
+
+func (i GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutputWithContext(ctx context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput)
+}
+
+// GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayInput is an input type that accepts GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray and GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput values.
+// You can construct a concrete instance of `GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayInput` via:
+//
+//	GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray{ GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs{...} }
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput
+	ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutputWithContext(context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput
+}
+
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray []GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionInput
+
+func (GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition)(nil)).Elem()
+}
+
+func (i GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput {
+	return i.ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutputWithContext(ctx context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput)
+}
+
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition)(nil)).Elem()
+}
+
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutputWithContext(ctx context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput {
+	return o
+}
+
+// Type of suppression condition.
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) ConditionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition) string {
+		return v.ConditionType
+	}).(pulumi.StringOutput)
+}
+
+// Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: `PT1M` (1 minute). Maximum: `PT24H` (24 hours).
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) SuppressionDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition) string {
+		return v.SuppressionDuration
+	}).(pulumi.StringOutput)
+}
+
+// Frequency and start time of the recurring suppression. The format follows [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+// * `FREQ`: Frequency of the recurring suppression: `WEEKLY` or `DAILY` only.
+// * `BYDAY`: Comma separated days. Use with weekly suppressions only. Supported values: `MO`, `TU`, `WE`, `TH`, `FR`, `SA` ,`SU`.
+// * `BYHOUR`, `BYMINUTE`, `BYSECOND`: Start time in UTC, after `timeSuppressFrom` value. Default is 00:00:00 UTC after `timeSuppressFrom`.
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput) SuppressionRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition) string {
+		return v.SuppressionRecurrence
+	}).(pulumi.StringOutput)
+}
+
+type GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition)(nil)).Elem()
+}
+
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput() GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput) ToGetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutputWithContext(ctx context.Context) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput {
+	return o
+}
+
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput) Index(i pulumi.IntInput) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition {
+		return vs[0].([]GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionCondition)[vs[1].(int)]
+	}).(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput)
 }
 
 type GetAlarmSuppressionsFilter struct {
@@ -3392,6 +3892,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionTypePtrInput)(nil)).Elem(), AlarmSuppressionTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionAlarmSuppressionTargetInput)(nil)).Elem(), AlarmSuppressionAlarmSuppressionTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionAlarmSuppressionTargetPtrInput)(nil)).Elem(), AlarmSuppressionAlarmSuppressionTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionSuppressionConditionInput)(nil)).Elem(), AlarmSuppressionSuppressionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionSuppressionConditionArrayInput)(nil)).Elem(), AlarmSuppressionSuppressionConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmHistoryCollectionEntryInput)(nil)).Elem(), GetAlarmHistoryCollectionEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmHistoryCollectionEntryArrayInput)(nil)).Elem(), GetAlarmHistoryCollectionEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmOverrideInput)(nil)).Elem(), GetAlarmOverrideArgs{})
@@ -3406,12 +3908,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionTypeArrayInput)(nil)).Elem(), GetAlarmSuppressionTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionAlarmSuppressionTargetInput)(nil)).Elem(), GetAlarmSuppressionAlarmSuppressionTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionAlarmSuppressionTargetArrayInput)(nil)).Elem(), GetAlarmSuppressionAlarmSuppressionTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionSuppressionConditionInput)(nil)).Elem(), GetAlarmSuppressionSuppressionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionSuppressionConditionArrayInput)(nil)).Elem(), GetAlarmSuppressionSuppressionConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionArrayInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemArrayInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArrayInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayInput)(nil)).Elem(), GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsFilterInput)(nil)).Elem(), GetAlarmSuppressionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsFilterArrayInput)(nil)).Elem(), GetAlarmSuppressionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmInput)(nil)).Elem(), GetAlarmsAlarmArgs{})
@@ -3438,6 +3944,8 @@ func init() {
 	pulumi.RegisterOutputType(AlarmSuppressionTypePtrOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionAlarmSuppressionTargetOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionAlarmSuppressionTargetPtrOutput{})
+	pulumi.RegisterOutputType(AlarmSuppressionSuppressionConditionOutput{})
+	pulumi.RegisterOutputType(AlarmSuppressionSuppressionConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmHistoryCollectionEntryOutput{})
 	pulumi.RegisterOutputType(GetAlarmHistoryCollectionEntryArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmOverrideOutput{})
@@ -3452,12 +3960,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmSuppressionTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionAlarmSuppressionTargetOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionAlarmSuppressionTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmSuppressionSuppressionConditionOutput{})
+	pulumi.RegisterOutputType(GetAlarmSuppressionSuppressionConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionOutput{})
+	pulumi.RegisterOutputType(GetAlarmSuppressionsAlarmSuppressionCollectionItemSuppressionConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsFilterOutput{})
 	pulumi.RegisterOutputType(GetAlarmSuppressionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmsAlarmOutput{})

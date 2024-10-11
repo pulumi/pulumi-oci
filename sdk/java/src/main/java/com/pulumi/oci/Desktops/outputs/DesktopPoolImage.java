@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DesktopPoolImage {
@@ -20,6 +22,11 @@ public final class DesktopPoolImage {
      * 
      */
     private String imageName;
+    /**
+     * @return The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    private @Nullable String operatingSystem;
 
     private DesktopPoolImage() {}
     /**
@@ -36,6 +43,13 @@ public final class DesktopPoolImage {
     public String imageName() {
         return this.imageName;
     }
+    /**
+     * @return The operating system of the desktop image, e.g. &#34;Oracle Linux&#34;, &#34;Windows&#34;.
+     * 
+     */
+    public Optional<String> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +62,13 @@ public final class DesktopPoolImage {
     public static final class Builder {
         private String imageId;
         private String imageName;
+        private @Nullable String operatingSystem;
         public Builder() {}
         public Builder(DesktopPoolImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageId = defaults.imageId;
     	      this.imageName = defaults.imageName;
+    	      this.operatingSystem = defaults.operatingSystem;
         }
 
         @CustomType.Setter
@@ -71,10 +87,17 @@ public final class DesktopPoolImage {
             this.imageName = imageName;
             return this;
         }
+        @CustomType.Setter
+        public Builder operatingSystem(@Nullable String operatingSystem) {
+
+            this.operatingSystem = operatingSystem;
+            return this;
+        }
         public DesktopPoolImage build() {
             final var _resultValue = new DesktopPoolImage();
             _resultValue.imageId = imageId;
             _resultValue.imageName = imageName;
+            _resultValue.operatingSystem = operatingSystem;
             return _resultValue;
         }
     }

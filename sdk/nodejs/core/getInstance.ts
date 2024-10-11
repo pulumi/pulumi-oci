@@ -181,6 +181,14 @@ export interface GetInstanceResult {
      */
     readonly region: string;
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
+     * The lifecycle state of the `securityAttributes`
+     */
+    readonly securityAttributesState: string;
+    /**
      * The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
     readonly shape: string;

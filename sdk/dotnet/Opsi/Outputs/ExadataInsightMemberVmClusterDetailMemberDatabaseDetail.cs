@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Connection details of the private endpoints.
+        /// User credential details to connect to the database.
+        /// </summary>
+        public readonly Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails? ConnectionCredentialDetails;
+        /// <summary>
+        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
         /// </summary>
         public readonly Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails? ConnectionDetails;
         /// <summary>
@@ -33,33 +37,31 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Oracle Cloud Infrastructure database resource type
         /// </summary>
         public readonly string? DatabaseResourceType;
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        /// </summary>
         public readonly string? DbmPrivateEndpointId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
-        /// Database Deployment Type
+        /// Database Deployment Type (EXACS will be supported in the future)
         /// </summary>
         public readonly string? DeploymentType;
         /// <summary>
-        /// Source of the database entity.
+        /// (Updatable) Source of the Exadata system.
         /// </summary>
         public readonly string? EntitySource;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? FreeformTags;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        /// </summary>
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         /// </summary>
         public readonly string? OpsiPrivateEndpointId;
-        /// <summary>
-        /// Database service name used for connection requests.
-        /// </summary>
         public readonly string? ServiceName;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -69,6 +71,8 @@ namespace Pulumi.Oci.Opsi.Outputs
         [OutputConstructor]
         private ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(
             string? compartmentId,
+
+            Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetails? connectionCredentialDetails,
 
             Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails? connectionDetails,
 
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             ImmutableDictionary<string, string>? freeformTags,
 
+            string? managementAgentId,
+
             string? opsiPrivateEndpointId,
 
             string? serviceName,
@@ -95,6 +101,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             ImmutableDictionary<string, string>? systemTags)
         {
             CompartmentId = compartmentId;
+            ConnectionCredentialDetails = connectionCredentialDetails;
             ConnectionDetails = connectionDetails;
             CredentialDetails = credentialDetails;
             DatabaseId = databaseId;
@@ -104,6 +111,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             DeploymentType = deploymentType;
             EntitySource = entitySource;
             FreeformTags = freeformTags;
+            ManagementAgentId = managementAgentId;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             ServiceName = serviceName;
             SystemTags = systemTags;

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CredentialSourceName;
         /// <summary>
-        /// Credential type.
+        /// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         /// </summary>
         public readonly string CredentialType;
         /// <summary>
@@ -33,10 +33,6 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// database user name.
         /// </summary>
         public readonly string UserName;
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        /// </summary>
-        public readonly string WalletSecretId;
 
         [OutputConstructor]
         private GetDatabaseInsightConnectionCredentialDetailResult(
@@ -48,16 +44,13 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string role,
 
-            string userName,
-
-            string walletSecretId)
+            string userName)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;
-            WalletSecretId = walletSecretId;
         }
     }
 }

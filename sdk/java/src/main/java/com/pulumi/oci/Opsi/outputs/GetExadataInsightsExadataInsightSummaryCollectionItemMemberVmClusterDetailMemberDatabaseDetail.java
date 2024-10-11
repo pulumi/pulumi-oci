@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail;
 import java.lang.String;
@@ -19,6 +20,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      * 
      */
     private String compartmentId;
+    private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
     private String databaseId;
@@ -40,6 +42,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      * 
      */
     private Map<String,String> freeformTags;
+    private String managementAgentId;
     private String opsiPrivateEndpointId;
     private String serviceName;
     /**
@@ -55,6 +58,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails() {
+        return this.connectionCredentialDetails;
     }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails() {
         return this.connectionDetails;
@@ -95,6 +101,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
+    public String managementAgentId() {
+        return this.managementAgentId;
+    }
     public String opsiPrivateEndpointId() {
         return this.opsiPrivateEndpointId;
     }
@@ -119,6 +128,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
         private String databaseId;
@@ -128,6 +138,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         private String deploymentType;
         private String entitySource;
         private Map<String,String> freeformTags;
+        private String managementAgentId;
         private String opsiPrivateEndpointId;
         private String serviceName;
         private Map<String,String> systemTags;
@@ -135,6 +146,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionCredentialDetails = defaults.connectionCredentialDetails;
     	      this.connectionDetails = defaults.connectionDetails;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseId = defaults.databaseId;
@@ -144,6 +156,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     	      this.deploymentType = defaults.deploymentType;
     	      this.entitySource = defaults.entitySource;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.managementAgentId = defaults.managementAgentId;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.serviceName = defaults.serviceName;
     	      this.systemTags = defaults.systemTags;
@@ -156,6 +169,17 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder connectionCredentialDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails) {
+            if (connectionCredentialDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail", "connectionCredentialDetails");
+            }
+            this.connectionCredentialDetails = connectionCredentialDetails;
+            return this;
+        }
+        public Builder connectionCredentialDetails(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail... connectionCredentialDetails) {
+            return connectionCredentialDetails(List.of(connectionCredentialDetails));
         }
         @CustomType.Setter
         public Builder connectionDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
@@ -236,6 +260,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             return this;
         }
         @CustomType.Setter
+        public Builder managementAgentId(String managementAgentId) {
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             if (opsiPrivateEndpointId == null) {
               throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail", "opsiPrivateEndpointId");
@@ -262,6 +294,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail build() {
             final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionCredentialDetails = connectionCredentialDetails;
             _resultValue.connectionDetails = connectionDetails;
             _resultValue.credentialDetails = credentialDetails;
             _resultValue.databaseId = databaseId;
@@ -271,6 +304,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             _resultValue.deploymentType = deploymentType;
             _resultValue.entitySource = entitySource;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.managementAgentId = managementAgentId;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.serviceName = serviceName;
             _resultValue.systemTags = systemTags;

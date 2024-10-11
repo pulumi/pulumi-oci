@@ -56,6 +56,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly backupSubnetId: string;
     /**
+     * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    readonly cloudAutomationUpdateDetails: outputs.Database.GetCloudVmClusterCloudAutomationUpdateDetail[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
     readonly cloudExadataInfrastructureId: string;

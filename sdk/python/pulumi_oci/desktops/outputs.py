@@ -22,6 +22,8 @@ __all__ = [
     'DesktopPoolDevicePolicy',
     'DesktopPoolImage',
     'DesktopPoolNetworkConfiguration',
+    'DesktopPoolPrivateAccessDetails',
+    'DesktopPoolShapeConfig',
     'GetDesktopDevicePolicyResult',
     'GetDesktopHostingOptionResult',
     'GetDesktopHostingOptionImageResult',
@@ -34,6 +36,8 @@ __all__ = [
     'GetDesktopPoolDevicePolicyResult',
     'GetDesktopPoolImageResult',
     'GetDesktopPoolNetworkConfigurationResult',
+    'GetDesktopPoolPrivateAccessDetailResult',
+    'GetDesktopPoolShapeConfigResult',
     'GetDesktopPoolVolumesDesktopPoolVolumeCollectionResult',
     'GetDesktopPoolVolumesDesktopPoolVolumeCollectionItemResult',
     'GetDesktopPoolVolumesFilterResult',
@@ -45,6 +49,8 @@ __all__ = [
     'GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult',
     'GetDesktopPoolsDesktopPoolCollectionItemImageResult',
     'GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult',
+    'GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult',
+    'GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult',
     'GetDesktopPoolsFilterResult',
     'GetDesktopsDesktopCollectionResult',
     'GetDesktopsDesktopCollectionItemResult',
@@ -313,6 +319,8 @@ class DesktopPoolImage(dict):
             suggest = "image_id"
         elif key == "imageName":
             suggest = "image_name"
+        elif key == "operatingSystem":
+            suggest = "operating_system"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DesktopPoolImage. Access the value via the '{suggest}' property getter instead.")
@@ -327,13 +335,17 @@ class DesktopPoolImage(dict):
 
     def __init__(__self__, *,
                  image_id: str,
-                 image_name: str):
+                 image_name: str,
+                 operating_system: Optional[str] = None):
         """
         :param str image_id: The OCID of the desktop image.
         :param str image_name: The name of the desktop image.
+        :param str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "image_name", image_name)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
 
     @property
     @pulumi.getter(name="imageId")
@@ -350,6 +362,14 @@ class DesktopPoolImage(dict):
         The name of the desktop image.
         """
         return pulumi.get(self, "image_name")
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> Optional[str]:
+        """
+        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        return pulumi.get(self, "operating_system")
 
 
 @pulumi.output_type
@@ -377,8 +397,8 @@ class DesktopPoolNetworkConfiguration(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str subnet_id: The OCID of the subnet to use for the desktop pool.
-        :param str vcn_id: The OCID of the VCN used by the desktop pool.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -387,7 +407,7 @@ class DesktopPoolNetworkConfiguration(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet to use for the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -395,9 +415,168 @@ class DesktopPoolNetworkConfiguration(dict):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> str:
         """
-        The OCID of the VCN used by the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class DesktopPoolPrivateAccessDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "endpointFqdn":
+            suggest = "endpoint_fqdn"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+        elif key == "privateIp":
+            suggest = "private_ip"
+        elif key == "vcnId":
+            suggest = "vcn_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DesktopPoolPrivateAccessDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DesktopPoolPrivateAccessDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DesktopPoolPrivateAccessDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: str,
+                 endpoint_fqdn: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_ip: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        """
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        :param Sequence[str] nsg_ids: A list of network security groups for the private access.
+        :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if endpoint_fqdn is not None:
+            pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="endpointFqdn")
+    def endpoint_fqdn(self) -> Optional[str]:
+        """
+        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        """
+        return pulumi.get(self, "endpoint_fqdn")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        A list of network security groups for the private access.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[str]:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class DesktopPoolShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baselineOcpuUtilization":
+            suggest = "baseline_ocpu_utilization"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DesktopPoolShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DesktopPoolShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DesktopPoolShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: Optional[str] = None,
+                 memory_in_gbs: Optional[str] = None,
+                 ocpus: Optional[str] = None):
+        """
+        :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        :param str memory_in_gbs: The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        :param str ocpus: The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        if baseline_ocpu_utilization is not None:
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> Optional[str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[str]:
+        """
+        The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[str]:
+        """
+        The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -517,13 +696,16 @@ class GetDesktopHostingOptionResult(dict):
 class GetDesktopHostingOptionImageResult(dict):
     def __init__(__self__, *,
                  image_id: str,
-                 image_name: str):
+                 image_name: str,
+                 operating_system: str):
         """
         :param str image_id: The OCID of the desktop image.
         :param str image_name: The name of the desktop image.
+        :param str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "operating_system", operating_system)
 
     @property
     @pulumi.getter(name="imageId")
@@ -540,6 +722,14 @@ class GetDesktopHostingOptionImageResult(dict):
         The name of the desktop image.
         """
         return pulumi.get(self, "image_name")
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> str:
+        """
+        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        return pulumi.get(self, "operating_system")
 
 
 @pulumi.output_type
@@ -857,13 +1047,16 @@ class GetDesktopPoolDevicePolicyResult(dict):
 class GetDesktopPoolImageResult(dict):
     def __init__(__self__, *,
                  image_id: str,
-                 image_name: str):
+                 image_name: str,
+                 operating_system: str):
         """
         :param str image_id: The OCID of the desktop image.
         :param str image_name: The name of the desktop image.
+        :param str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "operating_system", operating_system)
 
     @property
     @pulumi.getter(name="imageId")
@@ -881,6 +1074,14 @@ class GetDesktopPoolImageResult(dict):
         """
         return pulumi.get(self, "image_name")
 
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> str:
+        """
+        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        return pulumi.get(self, "operating_system")
+
 
 @pulumi.output_type
 class GetDesktopPoolNetworkConfigurationResult(dict):
@@ -888,8 +1089,8 @@ class GetDesktopPoolNetworkConfigurationResult(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str subnet_id: The OCID of the subnet to use for the desktop pool.
-        :param str vcn_id: The OCID of the VCN used by the desktop pool.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -898,7 +1099,7 @@ class GetDesktopPoolNetworkConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet to use for the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -906,9 +1107,117 @@ class GetDesktopPoolNetworkConfigurationResult(dict):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> str:
         """
-        The OCID of the VCN used by the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolPrivateAccessDetailResult(dict):
+    def __init__(__self__, *,
+                 endpoint_fqdn: str,
+                 nsg_ids: Sequence[str],
+                 private_ip: str,
+                 subnet_id: str,
+                 vcn_id: str):
+        """
+        :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        :param Sequence[str] nsg_ids: A list of network security groups for the private access.
+        :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="endpointFqdn")
+    def endpoint_fqdn(self) -> str:
+        """
+        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        """
+        return pulumi.get(self, "endpoint_fqdn")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        A list of network security groups for the private access.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: str,
+                 memory_in_gbs: str,
+                 ocpus: str):
+        """
+        :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        :param str memory_in_gbs: The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        :param str ocpus: The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> str:
+        """
+        The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> str:
+        """
+        The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -1089,6 +1398,8 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
                  maximum_size: int,
                  network_configurations: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult'],
                  nsg_ids: Sequence[str],
+                 private_access_details: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult'],
+                 shape_configs: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult'],
                  shape_name: str,
                  standby_size: int,
                  state: str,
@@ -1096,7 +1407,8 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
                  storage_size_in_gbs: int,
                  time_created: str,
                  time_start_scheduled: str,
-                 time_stop_scheduled: str):
+                 time_stop_scheduled: str,
+                 use_dedicated_vm_host: str):
         """
         :param int active_desktops: The number of active desktops in the desktop pool.
         :param bool are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
@@ -1114,7 +1426,9 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         :param bool is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param int maximum_size: The maximum number of desktops permitted in the desktop pool.
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs'] network_configurations: Provides information about the network configuration of the desktop pool.
-        :param Sequence[str] nsg_ids: A list of network security groups for the desktop pool.
+        :param Sequence[str] nsg_ids: A list of network security groups for the private access.
+        :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs'] private_access_details: The details of the desktop's private access network connectivity that were used to create the pool.
+        :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs'] shape_configs: The shape configuration used for each desktop compute instance in the desktop pool.
         :param str shape_name: The shape of the desktop pool.
         :param int standby_size: The maximum number of standby desktops available in the desktop pool.
         :param str state: A filter to return only results with the given lifecycleState.
@@ -1123,6 +1437,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created.
         :param str time_start_scheduled: The start time of the desktop pool.
         :param str time_stop_scheduled: The stop time of the desktop pool.
+        :param str use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
         """
         pulumi.set(__self__, "active_desktops", active_desktops)
         pulumi.set(__self__, "are_privileged_users", are_privileged_users)
@@ -1141,6 +1456,8 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         pulumi.set(__self__, "maximum_size", maximum_size)
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_access_details", private_access_details)
+        pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "standby_size", standby_size)
         pulumi.set(__self__, "state", state)
@@ -1149,6 +1466,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_start_scheduled", time_start_scheduled)
         pulumi.set(__self__, "time_stop_scheduled", time_stop_scheduled)
+        pulumi.set(__self__, "use_dedicated_vm_host", use_dedicated_vm_host)
 
     @property
     @pulumi.getter(name="activeDesktops")
@@ -1282,9 +1600,25 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateAccessDetails")
+    def private_access_details(self) -> Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult']:
+        """
+        The details of the desktop's private access network connectivity that were used to create the pool.
+        """
+        return pulumi.get(self, "private_access_details")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult']:
+        """
+        The shape configuration used for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "shape_configs")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -1349,6 +1683,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         The stop time of the desktop pool.
         """
         return pulumi.get(self, "time_stop_scheduled")
+
+    @property
+    @pulumi.getter(name="useDedicatedVmHost")
+    def use_dedicated_vm_host(self) -> str:
+        """
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+        """
+        return pulumi.get(self, "use_dedicated_vm_host")
 
 
 @pulumi.output_type
@@ -1526,13 +1868,16 @@ class GetDesktopPoolsDesktopPoolCollectionItemDevicePolicyResult(dict):
 class GetDesktopPoolsDesktopPoolCollectionItemImageResult(dict):
     def __init__(__self__, *,
                  image_id: str,
-                 image_name: str):
+                 image_name: str,
+                 operating_system: str):
         """
         :param str image_id: The OCID of the desktop image.
         :param str image_name: The name of the desktop image.
+        :param str operating_system: The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "operating_system", operating_system)
 
     @property
     @pulumi.getter(name="imageId")
@@ -1550,6 +1895,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemImageResult(dict):
         """
         return pulumi.get(self, "image_name")
 
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> str:
+        """
+        The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+        """
+        return pulumi.get(self, "operating_system")
+
 
 @pulumi.output_type
 class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
@@ -1557,8 +1910,8 @@ class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str subnet_id: The OCID of the subnet to use for the desktop pool.
-        :param str vcn_id: The OCID of the VCN used by the desktop pool.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -1567,7 +1920,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet to use for the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1575,9 +1928,117 @@ class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> str:
         """
-        The OCID of the VCN used by the desktop pool.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
+    def __init__(__self__, *,
+                 endpoint_fqdn: str,
+                 nsg_ids: Sequence[str],
+                 private_ip: str,
+                 subnet_id: str,
+                 vcn_id: str):
+        """
+        :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        :param Sequence[str] nsg_ids: A list of network security groups for the private access.
+        :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="endpointFqdn")
+    def endpoint_fqdn(self) -> str:
+        """
+        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        """
+        return pulumi.get(self, "endpoint_fqdn")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        A list of network security groups for the private access.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 baseline_ocpu_utilization: str,
+                 memory_in_gbs: str,
+                 ocpus: str):
+        """
+        :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        :param str memory_in_gbs: The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        :param str ocpus: The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="baselineOcpuUtilization")
+    def baseline_ocpu_utilization(self) -> str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> str:
+        """
+        The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> str:
+        """
+        The total number of OCPUs available for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

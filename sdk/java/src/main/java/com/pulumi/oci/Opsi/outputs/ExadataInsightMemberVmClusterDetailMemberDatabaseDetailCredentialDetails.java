@@ -12,77 +12,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
-    /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-     * 
-     */
     private @Nullable String credentialSourceName;
-    /**
-     * @return Credential type.
-     * 
-     */
     private String credentialType;
-    /**
-     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-     * 
-     */
     private @Nullable String passwordSecretId;
-    /**
-     * @return database user role.
-     * 
-     */
     private @Nullable String role;
-    /**
-     * @return database user name.
-     * 
-     */
     private @Nullable String userName;
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
     private @Nullable String walletSecretId;
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails() {}
-    /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-     * 
-     */
     public Optional<String> credentialSourceName() {
         return Optional.ofNullable(this.credentialSourceName);
     }
-    /**
-     * @return Credential type.
-     * 
-     */
     public String credentialType() {
         return this.credentialType;
     }
-    /**
-     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-     * 
-     */
     public Optional<String> passwordSecretId() {
         return Optional.ofNullable(this.passwordSecretId);
     }
-    /**
-     * @return database user role.
-     * 
-     */
     public Optional<String> role() {
         return Optional.ofNullable(this.role);
     }
-    /**
-     * @return database user name.
-     * 
-     */
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-     * 
-     */
     public Optional<String> walletSecretId() {
         return Optional.ofNullable(this.walletSecretId);
     }

@@ -4,8 +4,8 @@
 package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,26 +21,64 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    @Import(name="alarmId", required=true)
-    private String alarmId;
+    @Import(name="alarmId")
+    private @Nullable String alarmId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    public String alarmId() {
-        return this.alarmId;
+    public Optional<String> alarmId() {
+        return Optional.ofNullable(this.alarmId);
     }
 
     /**
-     * A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+     * 
+     * If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+     * 
+     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+     * 
+     * If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+     * 
+     * Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Boolean compartmentIdInSubtree;
+
+    /**
+     * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    /**
+     * A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+     * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
      * 
      */
     public Optional<String> displayName() {
@@ -52,6 +90,44 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
 
     public Optional<List<GetAlarmSuppressionsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+     * 
+     * When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+     * 
+     * Default is false.
+     * 
+     */
+    @Import(name="isAllSuppressions")
+    private @Nullable Boolean isAllSuppressions;
+
+    /**
+     * @return Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+     * 
+     * When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+     * 
+     * Default is false.
+     * 
+     */
+    public Optional<Boolean> isAllSuppressions() {
+        return Optional.ofNullable(this.isAllSuppressions);
+    }
+
+    /**
+     * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    @Import(name="level")
+    private @Nullable String level;
+
+    /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    public Optional<String> level() {
+        return Optional.ofNullable(this.level);
     }
 
     /**
@@ -69,13 +145,33 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable String targetType;
+
+    /**
+     * @return The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
     private GetAlarmSuppressionsPlainArgs() {}
 
     private GetAlarmSuppressionsPlainArgs(GetAlarmSuppressionsPlainArgs $) {
         this.alarmId = $.alarmId;
+        this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isAllSuppressions = $.isAllSuppressions;
+        this.level = $.level;
         this.state = $.state;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -102,13 +198,39 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
          * @return builder
          * 
          */
-        public Builder alarmId(String alarmId) {
+        public Builder alarmId(@Nullable String alarmId) {
             $.alarmId = alarmId;
             return this;
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+         * 
+         * If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+         * 
+         * Example: `ocid1.compartment.oc1..exampleuniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * @param displayName A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
          * 
          * @return builder
          * 
@@ -128,6 +250,32 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
         }
 
         /**
+         * @param isAllSuppressions Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+         * 
+         * When true, lists all alarm suppressions that affect the specified alarm, including suppressions that target the corresponding compartment or tenancy. When false, lists only the alarm suppressions that target the specified alarm.
+         * 
+         * Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAllSuppressions(@Nullable Boolean isAllSuppressions) {
+            $.isAllSuppressions = isAllSuppressions;
+            return this;
+        }
+
+        /**
+         * @param level The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder level(@Nullable String level) {
+            $.level = level;
+            return this;
+        }
+
+        /**
          * @param state A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
          * 
          * @return builder
@@ -138,10 +286,18 @@ public final class GetAlarmSuppressionsPlainArgs extends com.pulumi.resources.In
             return this;
         }
 
+        /**
+         * @param targetType The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable String targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
         public GetAlarmSuppressionsPlainArgs build() {
-            if ($.alarmId == null) {
-                throw new MissingRequiredPropertyException("GetAlarmSuppressionsPlainArgs", "alarmId");
-            }
             return $;
         }
     }

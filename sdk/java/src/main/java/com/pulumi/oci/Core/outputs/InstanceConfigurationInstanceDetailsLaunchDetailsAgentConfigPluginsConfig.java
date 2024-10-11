@@ -13,7 +13,6 @@ import javax.annotation.Nullable;
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig {
     /**
      * @return Whether the plugin should be enabled or disabled.
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
     private @Nullable String desiredState;
@@ -26,7 +25,6 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
     private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig() {}
     /**
      * @return Whether the plugin should be enabled or disabled.
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
     public Optional<String> desiredState() {

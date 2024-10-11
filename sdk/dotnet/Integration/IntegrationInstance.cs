@@ -55,6 +55,7 @@ namespace Pulumi.Oci.Integration
     ///             { "bar-key", "value" },
     ///         },
     ///         IdcsAt = integrationInstanceIdcsAt,
+    ///         IsDisasterRecoveryEnabled = integrationInstanceIsDisasterRecoveryEnabled,
     ///         IsFileServerEnabled = integrationInstanceIsFileServerEnabled,
     ///         IsVisualBuilderEnabled = integrationInstanceIsVisualBuilderEnabled,
     ///         NetworkEndpointDetails = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsArgs
@@ -132,6 +133,12 @@ namespace Pulumi.Oci.Integration
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// Disaster recovery details for the integration instance created in the region.
+        /// </summary>
+        [Output("disasterRecoveryDetails")]
+        public Output<ImmutableArray<Outputs.IntegrationInstanceDisasterRecoveryDetail>> DisasterRecoveryDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Integration Instance Identifier.
         /// </summary>
         [Output("displayName")]
@@ -156,6 +163,12 @@ namespace Pulumi.Oci.Integration
         public Output<int?> ExtendDataRetentionTrigger { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Output("failoverTrigger")]
+        public Output<int?> FailoverTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -172,6 +185,9 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("idcsInfos")]
         public Output<ImmutableArray<Outputs.IntegrationInstanceIdcsInfo>> IdcsInfos { get; private set; } = null!;
+
+        [Output("instanceDesignTimeUrl")]
+        public Output<string> InstanceDesignTimeUrl { get; private set; } = null!;
 
         /// <summary>
         /// The Integration Instance URL.
@@ -192,6 +208,12 @@ namespace Pulumi.Oci.Integration
         public Output<bool> IsByol { get; private set; } = null!;
 
         /// <summary>
+        /// Is Disaster Recovery enabled or not.
+        /// </summary>
+        [Output("isDisasterRecoveryEnabled")]
+        public Output<bool> IsDisasterRecoveryEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The file server is enabled or not.
         /// </summary>
         [Output("isFileServerEnabled")]
@@ -202,6 +224,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("isVisualBuilderEnabled")]
         public Output<bool> IsVisualBuilderEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Additional details of lifecycleState or substates
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of configured message packs
@@ -377,6 +405,12 @@ namespace Pulumi.Oci.Integration
         [Input("extendDataRetentionTrigger")]
         public Input<int>? ExtendDataRetentionTrigger { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Input("failoverTrigger")]
+        public Input<int>? FailoverTrigger { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -416,6 +450,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("isByol", required: true)]
         public Input<bool> IsByol { get; set; } = null!;
+
+        /// <summary>
+        /// Is Disaster Recovery enabled or not.
+        /// </summary>
+        [Input("isDisasterRecoveryEnabled")]
+        public Input<bool>? IsDisasterRecoveryEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The file server is enabled or not.
@@ -525,6 +565,18 @@ namespace Pulumi.Oci.Integration
             set => _definedTags = value;
         }
 
+        [Input("disasterRecoveryDetails")]
+        private InputList<Inputs.IntegrationInstanceDisasterRecoveryDetailGetArgs>? _disasterRecoveryDetails;
+
+        /// <summary>
+        /// Disaster recovery details for the integration instance created in the region.
+        /// </summary>
+        public InputList<Inputs.IntegrationInstanceDisasterRecoveryDetailGetArgs> DisasterRecoveryDetails
+        {
+            get => _disasterRecoveryDetails ?? (_disasterRecoveryDetails = new InputList<Inputs.IntegrationInstanceDisasterRecoveryDetailGetArgs>());
+            set => _disasterRecoveryDetails = value;
+        }
+
         /// <summary>
         /// (Updatable) Integration Instance Identifier.
         /// </summary>
@@ -548,6 +600,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("extendDataRetentionTrigger")]
         public Input<int>? ExtendDataRetentionTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+        /// </summary>
+        [Input("failoverTrigger")]
+        public Input<int>? FailoverTrigger { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -589,6 +647,9 @@ namespace Pulumi.Oci.Integration
             set => _idcsInfos = value;
         }
 
+        [Input("instanceDesignTimeUrl")]
+        public Input<string>? InstanceDesignTimeUrl { get; set; }
+
         /// <summary>
         /// The Integration Instance URL.
         /// </summary>
@@ -608,6 +669,12 @@ namespace Pulumi.Oci.Integration
         public Input<bool>? IsByol { get; set; }
 
         /// <summary>
+        /// Is Disaster Recovery enabled or not.
+        /// </summary>
+        [Input("isDisasterRecoveryEnabled")]
+        public Input<bool>? IsDisasterRecoveryEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The file server is enabled or not.
         /// </summary>
         [Input("isFileServerEnabled")]
@@ -618,6 +685,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("isVisualBuilderEnabled")]
         public Input<bool>? IsVisualBuilderEnabled { get; set; }
+
+        /// <summary>
+        /// Additional details of lifecycleState or substates
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The number of configured message packs

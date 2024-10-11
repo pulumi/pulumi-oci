@@ -1376,6 +1376,8 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Analytics instance update channel.
+	UpdateChannel string `pulumi:"updateChannel"`
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArgs and GetAnalyticsInstancesAnalyticsInstanceOutput values.
@@ -1430,6 +1432,8 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Analytics instance update channel.
+	UpdateChannel pulumi.StringInput `pulumi:"updateChannel"`
 }
 
 func (GetAnalyticsInstancesAnalyticsInstanceArgs) ElementType() reflect.Type {
@@ -1588,6 +1592,11 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeCreated() pulumi.Strin
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Analytics instance update channel.
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) UpdateChannel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.UpdateChannel }).(pulumi.StringOutput)
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceArrayOutput struct{ *pulumi.OutputState }

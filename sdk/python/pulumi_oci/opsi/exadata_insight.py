@@ -40,9 +40,11 @@ class ExadataInsightArgs:
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
+        :param pulumi.Input[str] exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,6 +145,9 @@ class ExadataInsightArgs:
     @property
     @pulumi.getter(name="exadataInfraId")
     def exadata_infra_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
         return pulumi.get(self, "exadata_infra_id")
 
     @exadata_infra_id.setter
@@ -187,6 +192,7 @@ class ExadataInsightArgs:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,6 +245,7 @@ class _ExadataInsightState:
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
         :param pulumi.Input[str] exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
+        :param pulumi.Input[str] exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[str] exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         :param pulumi.Input[str] exadata_rack_type: Exadata rack type.
         :param pulumi.Input[str] exadata_type: Operations Insights internal representation of the the Exadata system type.
@@ -248,6 +255,7 @@ class _ExadataInsightState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the Exadata insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -431,6 +439,9 @@ class _ExadataInsightState:
     @property
     @pulumi.getter(name="exadataInfraId")
     def exadata_infra_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
         return pulumi.get(self, "exadata_infra_id")
 
     @exadata_infra_id.setter
@@ -566,6 +577,7 @@ class _ExadataInsightState:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 
+
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -658,11 +670,21 @@ class ExadataInsight(pulumi.CustomResource):
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
                 "member_database_details": [{
                     "compartment_id": compartment_id,
+                    "connection_credential_details": {
+                        "credential_type": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_credential_type,
+                        "credential_source_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_credential_source_name,
+                        "password_secret_id": test_secret["id"],
+                        "role": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_role,
+                        "user_name": test_user["name"],
+                        "wallet_secret_id": test_secret["id"],
+                    },
                     "connection_details": {
+                        "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
                             "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
                         }],
+                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -681,11 +703,13 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+                    "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "service_name": test_service["name"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
                 }],
                 "opsi_private_endpoint_id": test_private_endpoint["id"],
+                "vm_cluster_type": exadata_insight_member_vm_cluster_details_vm_cluster_type,
                 "vmcluster_id": test_vmcluster["id"],
             }])
         ```
@@ -706,9 +730,11 @@ class ExadataInsight(pulumi.CustomResource):
         :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
+        :param pulumi.Input[str] exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_sync_enabled: (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -748,11 +774,21 @@ class ExadataInsight(pulumi.CustomResource):
                 "dbm_private_endpoint_id": test_private_endpoint["id"],
                 "member_database_details": [{
                     "compartment_id": compartment_id,
+                    "connection_credential_details": {
+                        "credential_type": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_credential_type,
+                        "credential_source_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_credential_source_name,
+                        "password_secret_id": test_secret["id"],
+                        "role": exadata_insight_member_vm_cluster_details_member_database_details_connection_credential_details_role,
+                        "user_name": test_user["name"],
+                        "wallet_secret_id": test_secret["id"],
+                    },
                     "connection_details": {
+                        "host_name": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_host_name,
                         "hosts": [{
                             "host_ip": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
                             "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
                         }],
+                        "port": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_port,
                         "protocol": exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
                         "service_name": test_service["name"],
                     },
@@ -771,11 +807,13 @@ class ExadataInsight(pulumi.CustomResource):
                     "deployment_type": exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
                     "entity_source": exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
                     "freeform_tags": exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
+                    "management_agent_id": test_management_agent["id"],
                     "opsi_private_endpoint_id": test_private_endpoint["id"],
                     "service_name": test_service["name"],
                     "system_tags": exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
                 }],
                 "opsi_private_endpoint_id": test_private_endpoint["id"],
+                "vm_cluster_type": exadata_insight_member_vm_cluster_details_vm_cluster_type,
                 "vmcluster_id": test_vmcluster["id"],
             }])
         ```
@@ -906,6 +944,7 @@ class ExadataInsight(pulumi.CustomResource):
         :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
         :param pulumi.Input[str] exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
+        :param pulumi.Input[str] exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[str] exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         :param pulumi.Input[str] exadata_rack_type: Exadata rack type.
         :param pulumi.Input[str] exadata_type: Operations Insights internal representation of the the Exadata system type.
@@ -915,6 +954,7 @@ class ExadataInsight(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the Exadata insight.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1037,6 +1077,9 @@ class ExadataInsight(pulumi.CustomResource):
     @property
     @pulumi.getter(name="exadataInfraId")
     def exadata_infra_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
         return pulumi.get(self, "exadata_infra_id")
 
     @property
@@ -1123,6 +1166,7 @@ class ExadataInsight(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

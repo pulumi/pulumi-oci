@@ -126,7 +126,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
     private String keyStoreId;
@@ -433,7 +433,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.keyHistoryEntries;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
     public String keyStoreId() {

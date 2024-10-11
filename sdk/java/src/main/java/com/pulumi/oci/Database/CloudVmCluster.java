@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.CloudVmClusterArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterState;
+import com.pulumi.oci.Database.outputs.CloudVmClusterCloudAutomationUpdateDetails;
 import com.pulumi.oci.Database.outputs.CloudVmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.CloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigCach;
@@ -39,6 +40,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Database.CloudVmCluster;
  * import com.pulumi.oci.Database.CloudVmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs;
  * import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
  * import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
  * import java.util.List;
@@ -65,6 +69,18 @@ import javax.annotation.Nullable;
  *             .sshPublicKeys(cloudVmClusterSshPublicKeys)
  *             .subnetId(testSubnet.id())
  *             .backupNetworkNsgIds(cloudVmClusterBackupNetworkNsgIds)
+ *             .cloudAutomationUpdateDetails(CloudVmClusterCloudAutomationUpdateDetailsArgs.builder()
+ *                 .applyUpdateTimePreference(CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs.builder()
+ *                     .applyUpdatePreferredEndTime(cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime)
+ *                     .applyUpdatePreferredStartTime(cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime)
+ *                     .build())
+ *                 .freezePeriod(CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs.builder()
+ *                     .freezePeriodEndTime(cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime)
+ *                     .freezePeriodStartTime(cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime)
+ *                     .build())
+ *                 .isEarlyAdoptionEnabled(cloudVmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled)
+ *                 .isFreezePeriodEnabled(cloudVmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled)
+ *                 .build())
  *             .clusterName(cloudVmClusterClusterName)
  *             .dataCollectionOptions(CloudVmClusterDataCollectionOptionsArgs.builder()
  *                 .isDiagnosticsEventsEnabled(cloudVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled)
@@ -154,6 +170,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> backupSubnetId() {
         return this.backupSubnetId;
+    }
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Export(name="cloudAutomationUpdateDetails", refs={CloudVmClusterCloudAutomationUpdateDetails.class}, tree="[0]")
+    private Output<CloudVmClusterCloudAutomationUpdateDetails> cloudAutomationUpdateDetails;
+
+    /**
+     * @return (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Output<CloudVmClusterCloudAutomationUpdateDetails> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.

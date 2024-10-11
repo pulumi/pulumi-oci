@@ -31,7 +31,8 @@ class VirtualNetworkArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a VirtualNetwork resource.
         """
@@ -56,6 +57,8 @@ class VirtualNetworkArgs:
             pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
             pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -156,6 +159,15 @@ class VirtualNetworkArgs:
     def is_oracle_gua_allocation_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
 
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _VirtualNetworkState:
@@ -176,6 +188,7 @@ class _VirtualNetworkState:
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  vcn_domain_name: Optional[pulumi.Input[str]] = None):
@@ -214,6 +227,8 @@ class _VirtualNetworkState:
             pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
             pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -366,6 +381,15 @@ class _VirtualNetworkState:
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "state")
@@ -409,6 +433,7 @@ class VirtualNetwork(pulumi.CustomResource):
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         Create a VirtualNetwork resource with the given unique name, props, and options.
@@ -449,6 +474,7 @@ class VirtualNetwork(pulumi.CustomResource):
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,6 +497,7 @@ class VirtualNetwork(pulumi.CustomResource):
             __props__.__dict__["ipv6private_cidr_blocks"] = ipv6private_cidr_blocks
             __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
             __props__.__dict__["is_oracle_gua_allocation_enabled"] = is_oracle_gua_allocation_enabled
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["byoipv6cidr_blocks"] = None
             __props__.__dict__["default_dhcp_options_id"] = None
             __props__.__dict__["default_route_table_id"] = None
@@ -505,6 +532,7 @@ class VirtualNetwork(pulumi.CustomResource):
             ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
             is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_domain_name: Optional[pulumi.Input[str]] = None) -> 'VirtualNetwork':
@@ -536,6 +564,7 @@ class VirtualNetwork(pulumi.CustomResource):
         __props__.__dict__["ipv6private_cidr_blocks"] = ipv6private_cidr_blocks
         __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
         __props__.__dict__["is_oracle_gua_allocation_enabled"] = is_oracle_gua_allocation_enabled
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vcn_domain_name"] = vcn_domain_name
@@ -620,6 +649,11 @@ class VirtualNetwork(pulumi.CustomResource):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[bool]:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

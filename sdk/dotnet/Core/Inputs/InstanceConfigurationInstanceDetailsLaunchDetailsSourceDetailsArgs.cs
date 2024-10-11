@@ -26,6 +26,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("bootVolumeVpusPerGb")]
         public Input<string>? BootVolumeVpusPerGb { get; set; }
@@ -43,7 +45,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs>? InstanceSourceImageFilterDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

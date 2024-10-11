@@ -144,6 +144,13 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.isRestricted);
     }
 
+    @Import(name="kmsKeyVersionId")
+    private @Nullable Output<String> kmsKeyVersionId;
+
+    public Optional<Output<String>> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
+    }
+
     /**
      * Detailed message for the lifecycle state.
      * 
@@ -390,6 +397,7 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isRestricted = $.isRestricted;
+        this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.openMode = $.openMode;
         this.pdbAdminPassword = $.pdbAdminPassword;
@@ -601,6 +609,15 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
          */
         public Builder isRestricted(Boolean isRestricted) {
             return isRestricted(Output.of(isRestricted));
+        }
+
+        public Builder kmsKeyVersionId(@Nullable Output<String> kmsKeyVersionId) {
+            $.kmsKeyVersionId = kmsKeyVersionId;
+            return this;
+        }
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            return kmsKeyVersionId(Output.of(kmsKeyVersionId));
         }
 
         /**

@@ -39,16 +39,16 @@ type GetObjectsArgs struct {
 	Bucket string `pulumi:"bucket"`
 	// When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
 	Delimiter *string `pulumi:"delimiter"`
-	// Object names returned by a list query must be strictly less than this parameter.
+	// Returns object names which are lexicographically strictly less than this parameter.
 	End     *string            `pulumi:"end"`
 	Filters []GetObjectsFilter `pulumi:"filters"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// The string to use for matching against the start of object names in a list query.
 	Prefix *string `pulumi:"prefix"`
-	// Object names returned by a list query must be greater or equal to this parameter.
+	// Returns object names which are lexicographically greater than or equal to this parameter.
 	Start *string `pulumi:"start"`
-	// Object names returned by a list query must be greater than this parameter.
+	// Returns object names which are lexicographically strictly greater than this parameter.
 	StartAfter *string `pulumi:"startAfter"`
 }
 
@@ -94,16 +94,16 @@ type GetObjectsOutputArgs struct {
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// Object names returned by a list query must be strictly less than this parameter.
+	// Returns object names which are lexicographically strictly less than this parameter.
 	End     pulumi.StringPtrInput      `pulumi:"end"`
 	Filters GetObjectsFilterArrayInput `pulumi:"filters"`
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The string to use for matching against the start of object names in a list query.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
-	// Object names returned by a list query must be greater or equal to this parameter.
+	// Returns object names which are lexicographically greater than or equal to this parameter.
 	Start pulumi.StringPtrInput `pulumi:"start"`
-	// Object names returned by a list query must be greater than this parameter.
+	// Returns object names which are lexicographically strictly greater than this parameter.
 	StartAfter pulumi.StringPtrInput `pulumi:"startAfter"`
 }
 

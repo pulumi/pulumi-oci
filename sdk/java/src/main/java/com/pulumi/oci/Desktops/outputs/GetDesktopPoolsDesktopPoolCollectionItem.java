@@ -9,6 +9,8 @@ import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemA
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemDevicePolicy;
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemImage;
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration;
+import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail;
+import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -99,10 +101,20 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      */
     private List<GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration> networkConfigurations;
     /**
-     * @return A list of network security groups for the desktop pool.
+     * @return A list of network security groups for the private access.
      * 
      */
     private List<String> nsgIds;
+    /**
+     * @return The details of the desktop&#39;s private access network connectivity that were used to create the pool.
+     * 
+     */
+    private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
+    /**
+     * @return The shape configuration used for each desktop compute instance in the desktop pool.
+     * 
+     */
+    private List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs;
     /**
      * @return The shape of the desktop pool.
      * 
@@ -143,6 +155,11 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      * 
      */
     private String timeStopScheduled;
+    /**
+     * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
+     */
+    private String useDedicatedVmHost;
 
     private GetDesktopPoolsDesktopPoolCollectionItem() {}
     /**
@@ -258,11 +275,25 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         return this.networkConfigurations;
     }
     /**
-     * @return A list of network security groups for the desktop pool.
+     * @return A list of network security groups for the private access.
      * 
      */
     public List<String> nsgIds() {
         return this.nsgIds;
+    }
+    /**
+     * @return The details of the desktop&#39;s private access network connectivity that were used to create the pool.
+     * 
+     */
+    public List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails() {
+        return this.privateAccessDetails;
+    }
+    /**
+     * @return The shape configuration used for each desktop compute instance in the desktop pool.
+     * 
+     */
+    public List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs() {
+        return this.shapeConfigs;
     }
     /**
      * @return The shape of the desktop pool.
@@ -320,6 +351,13 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     public String timeStopScheduled() {
         return this.timeStopScheduled;
     }
+    /**
+     * @return Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * 
+     */
+    public String useDedicatedVmHost() {
+        return this.useDedicatedVmHost;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -347,6 +385,8 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         private Integer maximumSize;
         private List<GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration> networkConfigurations;
         private List<String> nsgIds;
+        private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
+        private List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs;
         private String shapeName;
         private Integer standbySize;
         private String state;
@@ -355,6 +395,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         private String timeCreated;
         private String timeStartScheduled;
         private String timeStopScheduled;
+        private String useDedicatedVmHost;
         public Builder() {}
         public Builder(GetDesktopPoolsDesktopPoolCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -375,6 +416,8 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      this.maximumSize = defaults.maximumSize;
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.privateAccessDetails = defaults.privateAccessDetails;
+    	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.shapeName = defaults.shapeName;
     	      this.standbySize = defaults.standbySize;
     	      this.state = defaults.state;
@@ -383,6 +426,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStartScheduled = defaults.timeStartScheduled;
     	      this.timeStopScheduled = defaults.timeStopScheduled;
+    	      this.useDedicatedVmHost = defaults.useDedicatedVmHost;
         }
 
         @CustomType.Setter
@@ -537,6 +581,28 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder privateAccessDetails(List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails) {
+            if (privateAccessDetails == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "privateAccessDetails");
+            }
+            this.privateAccessDetails = privateAccessDetails;
+            return this;
+        }
+        public Builder privateAccessDetails(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail... privateAccessDetails) {
+            return privateAccessDetails(List.of(privateAccessDetails));
+        }
+        @CustomType.Setter
+        public Builder shapeConfigs(List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs) {
+            if (shapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "shapeConfigs");
+            }
+            this.shapeConfigs = shapeConfigs;
+            return this;
+        }
+        public Builder shapeConfigs(GetDesktopPoolsDesktopPoolCollectionItemShapeConfig... shapeConfigs) {
+            return shapeConfigs(List.of(shapeConfigs));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "shapeName");
@@ -600,6 +666,14 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             this.timeStopScheduled = timeStopScheduled;
             return this;
         }
+        @CustomType.Setter
+        public Builder useDedicatedVmHost(String useDedicatedVmHost) {
+            if (useDedicatedVmHost == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "useDedicatedVmHost");
+            }
+            this.useDedicatedVmHost = useDedicatedVmHost;
+            return this;
+        }
         public GetDesktopPoolsDesktopPoolCollectionItem build() {
             final var _resultValue = new GetDesktopPoolsDesktopPoolCollectionItem();
             _resultValue.activeDesktops = activeDesktops;
@@ -619,6 +693,8 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             _resultValue.maximumSize = maximumSize;
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.privateAccessDetails = privateAccessDetails;
+            _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.shapeName = shapeName;
             _resultValue.standbySize = standbySize;
             _resultValue.state = state;
@@ -627,6 +703,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStartScheduled = timeStartScheduled;
             _resultValue.timeStopScheduled = timeStopScheduled;
+            _resultValue.useDedicatedVmHost = useDedicatedVmHost;
             return _resultValue;
         }
     }

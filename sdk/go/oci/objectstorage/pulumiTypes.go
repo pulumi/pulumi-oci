@@ -688,6 +688,112 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) InclusionPrefixes() 
 	}).(pulumi.StringArrayOutput)
 }
 
+type PrivateEndpointAccessTarget struct {
+	Bucket        string `pulumi:"bucket"`
+	CompartmentId string `pulumi:"compartmentId"`
+	Namespace     string `pulumi:"namespace"`
+}
+
+// PrivateEndpointAccessTargetInput is an input type that accepts PrivateEndpointAccessTargetArgs and PrivateEndpointAccessTargetOutput values.
+// You can construct a concrete instance of `PrivateEndpointAccessTargetInput` via:
+//
+//	PrivateEndpointAccessTargetArgs{...}
+type PrivateEndpointAccessTargetInput interface {
+	pulumi.Input
+
+	ToPrivateEndpointAccessTargetOutput() PrivateEndpointAccessTargetOutput
+	ToPrivateEndpointAccessTargetOutputWithContext(context.Context) PrivateEndpointAccessTargetOutput
+}
+
+type PrivateEndpointAccessTargetArgs struct {
+	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	Namespace     pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (PrivateEndpointAccessTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (i PrivateEndpointAccessTargetArgs) ToPrivateEndpointAccessTargetOutput() PrivateEndpointAccessTargetOutput {
+	return i.ToPrivateEndpointAccessTargetOutputWithContext(context.Background())
+}
+
+func (i PrivateEndpointAccessTargetArgs) ToPrivateEndpointAccessTargetOutputWithContext(ctx context.Context) PrivateEndpointAccessTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointAccessTargetOutput)
+}
+
+// PrivateEndpointAccessTargetArrayInput is an input type that accepts PrivateEndpointAccessTargetArray and PrivateEndpointAccessTargetArrayOutput values.
+// You can construct a concrete instance of `PrivateEndpointAccessTargetArrayInput` via:
+//
+//	PrivateEndpointAccessTargetArray{ PrivateEndpointAccessTargetArgs{...} }
+type PrivateEndpointAccessTargetArrayInput interface {
+	pulumi.Input
+
+	ToPrivateEndpointAccessTargetArrayOutput() PrivateEndpointAccessTargetArrayOutput
+	ToPrivateEndpointAccessTargetArrayOutputWithContext(context.Context) PrivateEndpointAccessTargetArrayOutput
+}
+
+type PrivateEndpointAccessTargetArray []PrivateEndpointAccessTargetInput
+
+func (PrivateEndpointAccessTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (i PrivateEndpointAccessTargetArray) ToPrivateEndpointAccessTargetArrayOutput() PrivateEndpointAccessTargetArrayOutput {
+	return i.ToPrivateEndpointAccessTargetArrayOutputWithContext(context.Background())
+}
+
+func (i PrivateEndpointAccessTargetArray) ToPrivateEndpointAccessTargetArrayOutputWithContext(ctx context.Context) PrivateEndpointAccessTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointAccessTargetArrayOutput)
+}
+
+type PrivateEndpointAccessTargetOutput struct{ *pulumi.OutputState }
+
+func (PrivateEndpointAccessTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (o PrivateEndpointAccessTargetOutput) ToPrivateEndpointAccessTargetOutput() PrivateEndpointAccessTargetOutput {
+	return o
+}
+
+func (o PrivateEndpointAccessTargetOutput) ToPrivateEndpointAccessTargetOutputWithContext(ctx context.Context) PrivateEndpointAccessTargetOutput {
+	return o
+}
+
+func (o PrivateEndpointAccessTargetOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+func (o PrivateEndpointAccessTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o PrivateEndpointAccessTargetOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type PrivateEndpointAccessTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (PrivateEndpointAccessTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (o PrivateEndpointAccessTargetArrayOutput) ToPrivateEndpointAccessTargetArrayOutput() PrivateEndpointAccessTargetArrayOutput {
+	return o
+}
+
+func (o PrivateEndpointAccessTargetArrayOutput) ToPrivateEndpointAccessTargetArrayOutputWithContext(ctx context.Context) PrivateEndpointAccessTargetArrayOutput {
+	return o
+}
+
+func (o PrivateEndpointAccessTargetArrayOutput) Index(i pulumi.IntInput) PrivateEndpointAccessTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrivateEndpointAccessTarget {
+		return vs[0].([]PrivateEndpointAccessTarget)[vs[1].(int)]
+	}).(PrivateEndpointAccessTargetOutput)
+}
+
 type StorageObjectSourceUriDetails struct {
 	// The name of the bucket for the source object.
 	Bucket string `pulumi:"bucket"`
@@ -2979,6 +3085,524 @@ func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) Index(i pulumi.Int
 	}).(GetPreauthrequestsPreauthenticatedRequestOutput)
 }
 
+type GetPrivateEndpointAccessTarget struct {
+	Bucket        string `pulumi:"bucket"`
+	CompartmentId string `pulumi:"compartmentId"`
+	Namespace     string `pulumi:"namespace"`
+}
+
+// GetPrivateEndpointAccessTargetInput is an input type that accepts GetPrivateEndpointAccessTargetArgs and GetPrivateEndpointAccessTargetOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointAccessTargetInput` via:
+//
+//	GetPrivateEndpointAccessTargetArgs{...}
+type GetPrivateEndpointAccessTargetInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointAccessTargetOutput() GetPrivateEndpointAccessTargetOutput
+	ToGetPrivateEndpointAccessTargetOutputWithContext(context.Context) GetPrivateEndpointAccessTargetOutput
+}
+
+type GetPrivateEndpointAccessTargetArgs struct {
+	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	Namespace     pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetPrivateEndpointAccessTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointAccessTargetArgs) ToGetPrivateEndpointAccessTargetOutput() GetPrivateEndpointAccessTargetOutput {
+	return i.ToGetPrivateEndpointAccessTargetOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointAccessTargetArgs) ToGetPrivateEndpointAccessTargetOutputWithContext(ctx context.Context) GetPrivateEndpointAccessTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointAccessTargetOutput)
+}
+
+// GetPrivateEndpointAccessTargetArrayInput is an input type that accepts GetPrivateEndpointAccessTargetArray and GetPrivateEndpointAccessTargetArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointAccessTargetArrayInput` via:
+//
+//	GetPrivateEndpointAccessTargetArray{ GetPrivateEndpointAccessTargetArgs{...} }
+type GetPrivateEndpointAccessTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointAccessTargetArrayOutput() GetPrivateEndpointAccessTargetArrayOutput
+	ToGetPrivateEndpointAccessTargetArrayOutputWithContext(context.Context) GetPrivateEndpointAccessTargetArrayOutput
+}
+
+type GetPrivateEndpointAccessTargetArray []GetPrivateEndpointAccessTargetInput
+
+func (GetPrivateEndpointAccessTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointAccessTargetArray) ToGetPrivateEndpointAccessTargetArrayOutput() GetPrivateEndpointAccessTargetArrayOutput {
+	return i.ToGetPrivateEndpointAccessTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointAccessTargetArray) ToGetPrivateEndpointAccessTargetArrayOutputWithContext(ctx context.Context) GetPrivateEndpointAccessTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointAccessTargetArrayOutput)
+}
+
+type GetPrivateEndpointAccessTargetOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointAccessTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointAccessTargetOutput) ToGetPrivateEndpointAccessTargetOutput() GetPrivateEndpointAccessTargetOutput {
+	return o
+}
+
+func (o GetPrivateEndpointAccessTargetOutput) ToGetPrivateEndpointAccessTargetOutputWithContext(ctx context.Context) GetPrivateEndpointAccessTargetOutput {
+	return o
+}
+
+func (o GetPrivateEndpointAccessTargetOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointAccessTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointAccessTargetOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointAccessTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointAccessTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointAccessTarget)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointAccessTargetArrayOutput) ToGetPrivateEndpointAccessTargetArrayOutput() GetPrivateEndpointAccessTargetArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointAccessTargetArrayOutput) ToGetPrivateEndpointAccessTargetArrayOutputWithContext(ctx context.Context) GetPrivateEndpointAccessTargetArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointAccessTargetArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointAccessTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointAccessTarget {
+		return vs[0].([]GetPrivateEndpointAccessTarget)[vs[1].(int)]
+	}).(GetPrivateEndpointAccessTargetOutput)
+}
+
+type GetPrivateEndpointSummariesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPrivateEndpointSummariesFilterInput is an input type that accepts GetPrivateEndpointSummariesFilterArgs and GetPrivateEndpointSummariesFilterOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesFilterInput` via:
+//
+//	GetPrivateEndpointSummariesFilterArgs{...}
+type GetPrivateEndpointSummariesFilterInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesFilterOutput() GetPrivateEndpointSummariesFilterOutput
+	ToGetPrivateEndpointSummariesFilterOutputWithContext(context.Context) GetPrivateEndpointSummariesFilterOutput
+}
+
+type GetPrivateEndpointSummariesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPrivateEndpointSummariesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesFilterArgs) ToGetPrivateEndpointSummariesFilterOutput() GetPrivateEndpointSummariesFilterOutput {
+	return i.ToGetPrivateEndpointSummariesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesFilterArgs) ToGetPrivateEndpointSummariesFilterOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesFilterOutput)
+}
+
+// GetPrivateEndpointSummariesFilterArrayInput is an input type that accepts GetPrivateEndpointSummariesFilterArray and GetPrivateEndpointSummariesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesFilterArrayInput` via:
+//
+//	GetPrivateEndpointSummariesFilterArray{ GetPrivateEndpointSummariesFilterArgs{...} }
+type GetPrivateEndpointSummariesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesFilterArrayOutput() GetPrivateEndpointSummariesFilterArrayOutput
+	ToGetPrivateEndpointSummariesFilterArrayOutputWithContext(context.Context) GetPrivateEndpointSummariesFilterArrayOutput
+}
+
+type GetPrivateEndpointSummariesFilterArray []GetPrivateEndpointSummariesFilterInput
+
+func (GetPrivateEndpointSummariesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesFilterArray) ToGetPrivateEndpointSummariesFilterArrayOutput() GetPrivateEndpointSummariesFilterArrayOutput {
+	return i.ToGetPrivateEndpointSummariesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesFilterArray) ToGetPrivateEndpointSummariesFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesFilterArrayOutput)
+}
+
+type GetPrivateEndpointSummariesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesFilterOutput) ToGetPrivateEndpointSummariesFilterOutput() GetPrivateEndpointSummariesFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesFilterOutput) ToGetPrivateEndpointSummariesFilterOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPrivateEndpointSummariesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPrivateEndpointSummariesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesFilterArrayOutput) ToGetPrivateEndpointSummariesFilterArrayOutput() GetPrivateEndpointSummariesFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesFilterArrayOutput) ToGetPrivateEndpointSummariesFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointSummariesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointSummariesFilter {
+		return vs[0].([]GetPrivateEndpointSummariesFilter)[vs[1].(int)]
+	}).(GetPrivateEndpointSummariesFilterOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummary struct {
+	AccessTargets      []GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget `pulumi:"accessTargets"`
+	AdditionalPrefixes []string                                                        `pulumi:"additionalPrefixes"`
+	CompartmentId      string                                                          `pulumi:"compartmentId"`
+	CreatedBy          string                                                          `pulumi:"createdBy"`
+	DefinedTags        map[string]string                                               `pulumi:"definedTags"`
+	Etag               string                                                          `pulumi:"etag"`
+	Fqdns              map[string]map[string]map[string]string                         `pulumi:"fqdns"`
+	FreeformTags       map[string]string                                               `pulumi:"freeformTags"`
+	Id                 string                                                          `pulumi:"id"`
+	Name               string                                                          `pulumi:"name"`
+	Namespace          string                                                          `pulumi:"namespace"`
+	NsgIds             []string                                                        `pulumi:"nsgIds"`
+	Prefix             string                                                          `pulumi:"prefix"`
+	PrivateEndpointIp  string                                                          `pulumi:"privateEndpointIp"`
+	State              string                                                          `pulumi:"state"`
+	SubnetId           string                                                          `pulumi:"subnetId"`
+	TimeCreated        string                                                          `pulumi:"timeCreated"`
+	TimeModified       string                                                          `pulumi:"timeModified"`
+}
+
+// GetPrivateEndpointSummariesPrivateEndpointSummaryInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryArgs and GetPrivateEndpointSummariesPrivateEndpointSummaryOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesPrivateEndpointSummaryInput` via:
+//
+//	GetPrivateEndpointSummariesPrivateEndpointSummaryArgs{...}
+type GetPrivateEndpointSummariesPrivateEndpointSummaryInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryOutput
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutputWithContext(context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryOutput
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryArgs struct {
+	AccessTargets      GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput `pulumi:"accessTargets"`
+	AdditionalPrefixes pulumi.StringArrayInput                                                 `pulumi:"additionalPrefixes"`
+	CompartmentId      pulumi.StringInput                                                      `pulumi:"compartmentId"`
+	CreatedBy          pulumi.StringInput                                                      `pulumi:"createdBy"`
+	DefinedTags        pulumi.StringMapInput                                                   `pulumi:"definedTags"`
+	Etag               pulumi.StringInput                                                      `pulumi:"etag"`
+	Fqdns              pulumi.StringMapMapMapInput                                             `pulumi:"fqdns"`
+	FreeformTags       pulumi.StringMapInput                                                   `pulumi:"freeformTags"`
+	Id                 pulumi.StringInput                                                      `pulumi:"id"`
+	Name               pulumi.StringInput                                                      `pulumi:"name"`
+	Namespace          pulumi.StringInput                                                      `pulumi:"namespace"`
+	NsgIds             pulumi.StringArrayInput                                                 `pulumi:"nsgIds"`
+	Prefix             pulumi.StringInput                                                      `pulumi:"prefix"`
+	PrivateEndpointIp  pulumi.StringInput                                                      `pulumi:"privateEndpointIp"`
+	State              pulumi.StringInput                                                      `pulumi:"state"`
+	SubnetId           pulumi.StringInput                                                      `pulumi:"subnetId"`
+	TimeCreated        pulumi.StringInput                                                      `pulumi:"timeCreated"`
+	TimeModified       pulumi.StringInput                                                      `pulumi:"timeModified"`
+}
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummary)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryArgs) ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryOutput {
+	return i.ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryArgs) ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesPrivateEndpointSummaryOutput)
+}
+
+// GetPrivateEndpointSummariesPrivateEndpointSummaryArrayInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryArray and GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesPrivateEndpointSummaryArrayInput` via:
+//
+//	GetPrivateEndpointSummariesPrivateEndpointSummaryArray{ GetPrivateEndpointSummariesPrivateEndpointSummaryArgs{...} }
+type GetPrivateEndpointSummariesPrivateEndpointSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutputWithContext(context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryArray []GetPrivateEndpointSummariesPrivateEndpointSummaryInput
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesPrivateEndpointSummary)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryArray) ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput {
+	return i.ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryArray) ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummary)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) AccessTargets() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) []GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget {
+		return v.AccessTargets
+	}).(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) AdditionalPrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) []string { return v.AdditionalPrefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Etag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Etag }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Fqdns() pulumi.StringMapMapMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]map[string]map[string]string {
+		return v.Fqdns
+	}).(pulumi.StringMapMapMapOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.TimeModified }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesPrivateEndpointSummary)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointSummariesPrivateEndpointSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointSummariesPrivateEndpointSummary {
+		return vs[0].([]GetPrivateEndpointSummariesPrivateEndpointSummary)[vs[1].(int)]
+	}).(GetPrivateEndpointSummariesPrivateEndpointSummaryOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget struct {
+	Bucket        string `pulumi:"bucket"`
+	CompartmentId string `pulumi:"compartmentId"`
+	Namespace     string `pulumi:"namespace"`
+}
+
+// GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs and GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput` via:
+//
+//	GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs{...}
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutputWithContext(context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs struct {
+	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	Namespace     pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput {
+	return i.ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput)
+}
+
+// GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray and GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput` via:
+//
+//	GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray{ GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs{...} }
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput
+	ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutputWithContext(context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray []GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput {
+	return i.ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput() GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput) ToGetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutputWithContext(ctx context.Context) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget {
+		return vs[0].([]GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget)[vs[1].(int)]
+	}).(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput)
+}
+
 type GetReplicationPoliciesFilter struct {
 	// The name of the policy.
 	Name   string   `pulumi:"name"`
@@ -3505,6 +4129,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectLifecyclePolicyRuleArrayInput)(nil)).Elem(), ObjectLifecyclePolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectLifecyclePolicyRuleObjectNameFilterInput)(nil)).Elem(), ObjectLifecyclePolicyRuleObjectNameFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ObjectLifecyclePolicyRuleObjectNameFilterPtrInput)(nil)).Elem(), ObjectLifecyclePolicyRuleObjectNameFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointAccessTargetInput)(nil)).Elem(), PrivateEndpointAccessTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointAccessTargetArrayInput)(nil)).Elem(), PrivateEndpointAccessTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StorageObjectSourceUriDetailsInput)(nil)).Elem(), StorageObjectSourceUriDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*StorageObjectSourceUriDetailsPtrInput)(nil)).Elem(), StorageObjectSourceUriDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBucketRetentionRuleInput)(nil)).Elem(), GetBucketRetentionRuleArgs{})
@@ -3535,6 +4161,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPreauthrequestsFilterArrayInput)(nil)).Elem(), GetPreauthrequestsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPreauthrequestsPreauthenticatedRequestInput)(nil)).Elem(), GetPreauthrequestsPreauthenticatedRequestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPreauthrequestsPreauthenticatedRequestArrayInput)(nil)).Elem(), GetPreauthrequestsPreauthenticatedRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointAccessTargetInput)(nil)).Elem(), GetPrivateEndpointAccessTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointAccessTargetArrayInput)(nil)).Elem(), GetPrivateEndpointAccessTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesFilterInput)(nil)).Elem(), GetPrivateEndpointSummariesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesFilterArrayInput)(nil)).Elem(), GetPrivateEndpointSummariesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryInput)(nil)).Elem(), GetPrivateEndpointSummariesPrivateEndpointSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryArrayInput)(nil)).Elem(), GetPrivateEndpointSummariesPrivateEndpointSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput)(nil)).Elem(), GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput)(nil)).Elem(), GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationPoliciesFilterInput)(nil)).Elem(), GetReplicationPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationPoliciesFilterArrayInput)(nil)).Elem(), GetReplicationPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationPoliciesReplicationPolicyInput)(nil)).Elem(), GetReplicationPoliciesReplicationPolicyArgs{})
@@ -3551,6 +4185,8 @@ func init() {
 	pulumi.RegisterOutputType(ObjectLifecyclePolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(ObjectLifecyclePolicyRuleObjectNameFilterOutput{})
 	pulumi.RegisterOutputType(ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput{})
+	pulumi.RegisterOutputType(PrivateEndpointAccessTargetOutput{})
+	pulumi.RegisterOutputType(PrivateEndpointAccessTargetArrayOutput{})
 	pulumi.RegisterOutputType(StorageObjectSourceUriDetailsOutput{})
 	pulumi.RegisterOutputType(StorageObjectSourceUriDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetBucketRetentionRuleOutput{})
@@ -3581,6 +4217,14 @@ func init() {
 	pulumi.RegisterOutputType(GetPreauthrequestsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPreauthrequestsPreauthenticatedRequestOutput{})
 	pulumi.RegisterOutputType(GetPreauthrequestsPreauthenticatedRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointAccessTargetOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointAccessTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesFilterOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesPrivateEndpointSummaryOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicationPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationPoliciesReplicationPolicyOutput{})

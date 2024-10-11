@@ -28,6 +28,18 @@ import * as utilities from "../utilities";
  *     sshPublicKeys: cloudVmClusterSshPublicKeys,
  *     subnetId: testSubnet.id,
  *     backupNetworkNsgIds: cloudVmClusterBackupNetworkNsgIds,
+ *     cloudAutomationUpdateDetails: {
+ *         applyUpdateTimePreference: {
+ *             applyUpdatePreferredEndTime: cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime,
+ *             applyUpdatePreferredStartTime: cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime,
+ *         },
+ *         freezePeriod: {
+ *             freezePeriodEndTime: cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime,
+ *             freezePeriodStartTime: cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime,
+ *         },
+ *         isEarlyAdoptionEnabled: cloudVmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled,
+ *         isFreezePeriodEnabled: cloudVmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled,
+ *     },
  *     clusterName: cloudVmClusterClusterName,
  *     dataCollectionOptions: {
  *         isDiagnosticsEventsEnabled: cloudVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
@@ -110,6 +122,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      */
     public readonly backupSubnetId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    public readonly cloudAutomationUpdateDetails!: pulumi.Output<outputs.Database.CloudVmClusterCloudAutomationUpdateDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      */
@@ -328,6 +344,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
             resourceInputs["backupSubnetId"] = state ? state.backupSubnetId : undefined;
+            resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
             resourceInputs["cloudExadataInfrastructureId"] = state ? state.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterName"] = state ? state.clusterName : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -406,6 +423,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             }
             resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
             resourceInputs["backupSubnetId"] = args ? args.backupSubnetId : undefined;
+            resourceInputs["cloudAutomationUpdateDetails"] = args ? args.cloudAutomationUpdateDetails : undefined;
             resourceInputs["cloudExadataInfrastructureId"] = args ? args.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterName"] = args ? args.clusterName : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -476,6 +494,10 @@ export interface CloudVmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      */
     backupSubnetId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    cloudAutomationUpdateDetails?: pulumi.Input<inputs.Database.CloudVmClusterCloudAutomationUpdateDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      */
@@ -691,6 +713,10 @@ export interface CloudVmClusterArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      */
     backupSubnetId: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     */
+    cloudAutomationUpdateDetails?: pulumi.Input<inputs.Database.CloudVmClusterCloudAutomationUpdateDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      */

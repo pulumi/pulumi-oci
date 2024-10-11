@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  *             .firstName(fusionEnvironmentAdminUserFirstName)
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .lastName(fusionEnvironmentAdminUserLastName)
- *             .password(fusionEnvironmentAdminUserPassword)
  *             .username(fusionEnvironmentAdminUserUsername)
+ *             .password(fusionEnvironmentAdminUserPassword)
  *             .build());
  * 
  *     }

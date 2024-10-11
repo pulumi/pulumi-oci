@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST, COMANAGED-EXACC-HOST
         /// </summary>
         public readonly string HostType;
         /// <summary>

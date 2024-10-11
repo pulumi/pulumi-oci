@@ -35,8 +35,8 @@ import (
 //				FirstName:           pulumi.Any(fusionEnvironmentAdminUserFirstName),
 //				FusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
 //				LastName:            pulumi.Any(fusionEnvironmentAdminUserLastName),
-//				Password:            pulumi.Any(fusionEnvironmentAdminUserPassword),
 //				Username:            pulumi.Any(fusionEnvironmentAdminUserUsername),
+//				Password:            pulumi.Any(fusionEnvironmentAdminUserPassword),
 //			})
 //			if err != nil {
 //				return err
@@ -95,14 +95,11 @@ func NewFusionEnvironmentAdminUser(ctx *pulumi.Context,
 	if args.LastName == nil {
 		return nil, errors.New("invalid value for required argument 'LastName'")
 	}
-	if args.Password == nil {
-		return nil, errors.New("invalid value for required argument 'Password'")
-	}
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
 	if args.Password != nil {
-		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringInput)
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"password",
@@ -184,7 +181,7 @@ type fusionEnvironmentAdminUserArgs struct {
 	// The administrator's last name.
 	LastName string `pulumi:"lastName"`
 	// The password for the administrator.
-	Password string `pulumi:"password"`
+	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -203,7 +200,7 @@ type FusionEnvironmentAdminUserArgs struct {
 	// The administrator's last name.
 	LastName pulumi.StringInput
 	// The password for the administrator.
-	Password pulumi.StringInput
+	Password pulumi.StringPtrInput
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **

@@ -31,6 +31,7 @@ type VirtualNetwork struct {
 	Ipv6privateCidrBlocks        pulumi.StringArrayOutput                   `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                pulumi.BoolOutput                          `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled pulumi.BoolOutput                          `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes           pulumi.StringMapOutput                     `pulumi:"securityAttributes"`
 	State                        pulumi.StringOutput                        `pulumi:"state"`
 	TimeCreated                  pulumi.StringOutput                        `pulumi:"timeCreated"`
 	VcnDomainName                pulumi.StringOutput                        `pulumi:"vcnDomainName"`
@@ -85,6 +86,7 @@ type virtualNetworkState struct {
 	Ipv6privateCidrBlocks        []string                          `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                *bool                             `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled *bool                             `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes           map[string]string                 `pulumi:"securityAttributes"`
 	State                        *string                           `pulumi:"state"`
 	TimeCreated                  *string                           `pulumi:"timeCreated"`
 	VcnDomainName                *string                           `pulumi:"vcnDomainName"`
@@ -107,6 +109,7 @@ type VirtualNetworkState struct {
 	Ipv6privateCidrBlocks        pulumi.StringArrayInput
 	IsIpv6enabled                pulumi.BoolPtrInput
 	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	SecurityAttributes           pulumi.StringMapInput
 	State                        pulumi.StringPtrInput
 	TimeCreated                  pulumi.StringPtrInput
 	VcnDomainName                pulumi.StringPtrInput
@@ -128,6 +131,7 @@ type virtualNetworkArgs struct {
 	Ipv6privateCidrBlocks        []string                          `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                *bool                             `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled *bool                             `pulumi:"isOracleGuaAllocationEnabled"`
+	SecurityAttributes           map[string]string                 `pulumi:"securityAttributes"`
 }
 
 // The set of arguments for constructing a VirtualNetwork resource.
@@ -143,6 +147,7 @@ type VirtualNetworkArgs struct {
 	Ipv6privateCidrBlocks        pulumi.StringArrayInput
 	IsIpv6enabled                pulumi.BoolPtrInput
 	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
+	SecurityAttributes           pulumi.StringMapInput
 }
 
 func (VirtualNetworkArgs) ElementType() reflect.Type {
@@ -294,6 +299,10 @@ func (o VirtualNetworkOutput) IsIpv6enabled() pulumi.BoolOutput {
 
 func (o VirtualNetworkOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+}
+
+func (o VirtualNetworkOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 func (o VirtualNetworkOutput) State() pulumi.StringOutput {

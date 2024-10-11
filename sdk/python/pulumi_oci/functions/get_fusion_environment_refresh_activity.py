@@ -27,7 +27,7 @@ class GetFusionEnvironmentRefreshActivityResult:
     """
     A collection of values returned by getFusionEnvironmentRefreshActivity.
     """
-    def __init__(__self__, display_name=None, fusion_environment_id=None, id=None, lifecycle_details=None, refresh_activity_id=None, refresh_issue_details_lists=None, service_availability=None, source_fusion_environment_id=None, state=None, time_accepted=None, time_expected_finish=None, time_finished=None, time_of_restoration_point=None, time_updated=None):
+    def __init__(__self__, display_name=None, fusion_environment_id=None, id=None, is_data_masking_opted=None, lifecycle_details=None, refresh_activity_id=None, refresh_issue_details_lists=None, service_availability=None, source_fusion_environment_id=None, state=None, time_accepted=None, time_expected_finish=None, time_finished=None, time_of_restoration_point=None, time_updated=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -37,6 +37,9 @@ class GetFusionEnvironmentRefreshActivityResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_data_masking_opted and not isinstance(is_data_masking_opted, bool):
+            raise TypeError("Expected argument 'is_data_masking_opted' to be a bool")
+        pulumi.set(__self__, "is_data_masking_opted", is_data_masking_opted)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -91,6 +94,14 @@ class GetFusionEnvironmentRefreshActivityResult:
         The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isDataMaskingOpted")
+    def is_data_masking_opted(self) -> bool:
+        """
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+        """
+        return pulumi.get(self, "is_data_masking_opted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -187,6 +198,7 @@ class AwaitableGetFusionEnvironmentRefreshActivityResult(GetFusionEnvironmentRef
             display_name=self.display_name,
             fusion_environment_id=self.fusion_environment_id,
             id=self.id,
+            is_data_masking_opted=self.is_data_masking_opted,
             lifecycle_details=self.lifecycle_details,
             refresh_activity_id=self.refresh_activity_id,
             refresh_issue_details_lists=self.refresh_issue_details_lists,
@@ -232,6 +244,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
         display_name=pulumi.get(__ret__, 'display_name'),
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
+        is_data_masking_opted=pulumi.get(__ret__, 'is_data_masking_opted'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         refresh_activity_id=pulumi.get(__ret__, 'refresh_activity_id'),
         refresh_issue_details_lists=pulumi.get(__ret__, 'refresh_issue_details_lists'),
@@ -274,6 +287,7 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
         display_name=pulumi.get(__response__, 'display_name'),
         fusion_environment_id=pulumi.get(__response__, 'fusion_environment_id'),
         id=pulumi.get(__response__, 'id'),
+        is_data_masking_opted=pulumi.get(__response__, 'is_data_masking_opted'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         refresh_activity_id=pulumi.get(__response__, 'refresh_activity_id'),
         refresh_issue_details_lists=pulumi.get(__response__, 'refresh_issue_details_lists'),

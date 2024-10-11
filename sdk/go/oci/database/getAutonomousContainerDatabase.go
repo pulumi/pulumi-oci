@@ -103,7 +103,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
 	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
@@ -339,7 +339,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) KeyHistoryEntries() GetAu
 	}).(GetAutonomousContainerDatabaseKeyHistoryEntryArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 func (o LookupAutonomousContainerDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
 }

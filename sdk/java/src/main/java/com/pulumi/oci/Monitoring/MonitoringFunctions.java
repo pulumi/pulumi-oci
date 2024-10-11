@@ -469,7 +469,8 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
-     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+     * Optionally filter by resource or status value.
+     * 
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -530,7 +531,8 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
-     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+     * Optionally filter by resource or status value.
+     * 
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -591,7 +593,8 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
-     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+     * Optionally filter by resource or status value.
+     * 
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -652,7 +655,8 @@ public final class MonitoringFunctions {
      * List the status of each alarm in the specified compartment.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
-     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+     * Optionally filter by resource or status value.
+     * 
      * For more information, see
      * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see
@@ -710,7 +714,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Gets the specified alarm suppression.
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -761,7 +766,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Gets the specified alarm suppression.
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -812,7 +818,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Gets the specified alarm suppression.
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -863,7 +870,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides details about a specific Alarm Suppression resource in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Gets the specified alarm suppression.
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -914,8 +922,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Lists alarm suppressions for the specified alarm.
-     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -951,8 +959,131 @@ public final class MonitoringFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
      *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
      *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAlarmSuppressionsResult> getAlarmSuppressions() {
+        return getAlarmSuppressions(GetAlarmSuppressionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
+     *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAlarmSuppressionsResult> getAlarmSuppressionsPlain() {
+        return getAlarmSuppressionsPlain(GetAlarmSuppressionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
+     * 
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+     * 
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * 
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
+     *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
+     *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
      *             .build());
      * 
      *     }
@@ -968,8 +1099,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Lists alarm suppressions for the specified alarm.
-     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -1005,8 +1136,13 @@ public final class MonitoringFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
      *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
      *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
      *             .build());
      * 
      *     }
@@ -1022,8 +1158,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Lists alarm suppressions for the specified alarm.
-     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -1059,8 +1195,13 @@ public final class MonitoringFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
      *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
      *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
      *             .build());
      * 
      *     }
@@ -1076,8 +1217,8 @@ public final class MonitoringFunctions {
     /**
      * This data source provides the list of Alarm Suppressions in Oracle Cloud Infrastructure Monitoring service.
      * 
-     * Lists alarm suppressions for the specified alarm.
-     * Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
      * 
      * For important limits information, see
      * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -1113,8 +1254,13 @@ public final class MonitoringFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
      *             .alarmId(testAlarm.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmSuppressionCompartmentIdInSubtree)
      *             .displayName(alarmSuppressionDisplayName)
+     *             .isAllSuppressions(alarmSuppressionIsAllSuppressions)
+     *             .level(alarmSuppressionLevel)
      *             .state(alarmSuppressionState)
+     *             .targetType(alarmSuppressionTargetType)
      *             .build());
      * 
      *     }

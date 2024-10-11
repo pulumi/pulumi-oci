@@ -12,17 +12,105 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabases
     {
         /// <summary>
-        /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+        /// ## 
         /// 
-        /// Gets the details of the specified Autonomous Database.
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
+        /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         DbVersion = autonomousDatabaseDbVersion,
+        ///         DbWorkload = autonomousDatabaseDbWorkload,
+        ///         DisplayName = autonomousDatabaseDisplayName,
+        ///         InfrastructureType = autonomousDatabaseInfrastructureType,
+        ///         IsDataGuardEnabled = autonomousDatabaseIsDataGuardEnabled,
+        ///         IsFreeTier = autonomousDatabaseIsFreeTier,
+        ///         IsRefreshableClone = autonomousDatabaseIsRefreshableClone,
+        ///         IsResourcePoolLeader = autonomousDatabaseIsResourcePoolLeader,
+        ///         LifecycleStateNotEqualTo = autonomousDatabaseLifecycleStateNotEqualTo,
+        ///         ResourcePoolLeaderId = testResourcePoolLeader.Id,
+        ///         State = autonomousDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAutonomousDatabasesResult> InvokeAsync(GetAutonomousDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+        /// ## 
         /// 
-        /// Gets the details of the specified Autonomous Database.
+        /// ---
+        /// ## subcategory: "Database"
+        /// 
+        /// layout: "oci"
+        /// page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+        /// sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+        /// description: |-
+        ///   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+        /// ---
+        /// 
+        /// # Data Source: oci.Database.getAutonomousDatabases
+        /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets a list of Autonomous Databases based on the query parameters specified.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         DbVersion = autonomousDatabaseDbVersion,
+        ///         DbWorkload = autonomousDatabaseDbWorkload,
+        ///         DisplayName = autonomousDatabaseDisplayName,
+        ///         InfrastructureType = autonomousDatabaseInfrastructureType,
+        ///         IsDataGuardEnabled = autonomousDatabaseIsDataGuardEnabled,
+        ///         IsFreeTier = autonomousDatabaseIsFreeTier,
+        ///         IsRefreshableClone = autonomousDatabaseIsRefreshableClone,
+        ///         IsResourcePoolLeader = autonomousDatabaseIsResourcePoolLeader,
+        ///         LifecycleStateNotEqualTo = autonomousDatabaseLifecycleStateNotEqualTo,
+        ///         ResourcePoolLeaderId = testResourcePoolLeader.Id,
+        ///         State = autonomousDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAutonomousDatabasesResult> Invoke(GetAutonomousDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
@@ -99,6 +187,9 @@ namespace Pulumi.Oci.Database
 
         [Input("isResourcePoolLeader")]
         public bool? IsResourcePoolLeader { get; set; }
+
+        [Input("lifecycleStateNotEqualTo")]
+        public string? LifecycleStateNotEqualTo { get; set; }
 
         /// <summary>
         /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -189,6 +280,9 @@ namespace Pulumi.Oci.Database
         [Input("isResourcePoolLeader")]
         public Input<bool>? IsResourcePoolLeader { get; set; }
 
+        [Input("lifecycleStateNotEqualTo")]
+        public Input<string>? LifecycleStateNotEqualTo { get; set; }
+
         /// <summary>
         /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -258,6 +352,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool? IsRefreshableClone;
         public readonly bool? IsResourcePoolLeader;
+        public readonly string? LifecycleStateNotEqualTo;
         /// <summary>
         /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -295,6 +390,8 @@ namespace Pulumi.Oci.Database
 
             bool? isResourcePoolLeader,
 
+            string? lifecycleStateNotEqualTo,
+
             string? resourcePoolLeaderId,
 
             string? state)
@@ -312,6 +409,7 @@ namespace Pulumi.Oci.Database
             IsFreeTier = isFreeTier;
             IsRefreshableClone = isRefreshableClone;
             IsResourcePoolLeader = isResourcePoolLeader;
+            LifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             ResourcePoolLeaderId = resourcePoolLeaderId;
             State = state;
         }

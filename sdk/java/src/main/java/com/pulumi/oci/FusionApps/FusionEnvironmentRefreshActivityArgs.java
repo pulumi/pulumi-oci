@@ -6,8 +6,11 @@ package com.pulumi.oci.FusionApps;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resources.ResourceArgs {
@@ -30,10 +33,22 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="isDataMaskingOpted")
+    private @Nullable Output<Boolean> isDataMaskingOpted;
+
+    /**
+     * @return Represents if the customer opted for Data Masking or not during refreshActivity.
+     * 
+     */
+    public Optional<Output<Boolean>> isDataMaskingOpted() {
+        return Optional.ofNullable(this.isDataMaskingOpted);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      * 
      */
     @Import(name="sourceFusionEnvironmentId", required=true)
@@ -41,9 +56,6 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceFusionEnvironmentId() {
@@ -54,6 +66,7 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
 
     private FusionEnvironmentRefreshActivityArgs(FusionEnvironmentRefreshActivityArgs $) {
         this.fusionEnvironmentId = $.fusionEnvironmentId;
+        this.isDataMaskingOpted = $.isDataMaskingOpted;
         this.sourceFusionEnvironmentId = $.sourceFusionEnvironmentId;
     }
 
@@ -97,10 +110,28 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
         }
 
         /**
-         * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+         * @param isDataMaskingOpted Represents if the customer opted for Data Masking or not during refreshActivity.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder isDataMaskingOpted(@Nullable Output<Boolean> isDataMaskingOpted) {
+            $.isDataMaskingOpted = isDataMaskingOpted;
+            return this;
+        }
+
+        /**
+         * @param isDataMaskingOpted Represents if the customer opted for Data Masking or not during refreshActivity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            return isDataMaskingOpted(Output.of(isDataMaskingOpted));
+        }
+
+        /**
+         * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
          * 
          * @return builder
          * 
@@ -112,9 +143,6 @@ public final class FusionEnvironmentRefreshActivityArgs extends com.pulumi.resou
 
         /**
          * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -27,7 +27,7 @@ class GetDesktopPoolResult:
     """
     A collection of values returned by getDesktopPool.
     """
-    def __init__(__self__, active_desktops=None, are_privileged_users=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None):
+    def __init__(__self__, active_desktops=None, are_privileged_users=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
         if active_desktops and not isinstance(active_desktops, int):
             raise TypeError("Expected argument 'active_desktops' to be a int")
         pulumi.set(__self__, "active_desktops", active_desktops)
@@ -82,6 +82,12 @@ class GetDesktopPoolResult:
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_access_details and not isinstance(private_access_details, list):
+            raise TypeError("Expected argument 'private_access_details' to be a list")
+        pulumi.set(__self__, "private_access_details", private_access_details)
+        if shape_configs and not isinstance(shape_configs, list):
+            raise TypeError("Expected argument 'shape_configs' to be a list")
+        pulumi.set(__self__, "shape_configs", shape_configs)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
@@ -106,6 +112,9 @@ class GetDesktopPoolResult:
         if time_stop_scheduled and not isinstance(time_stop_scheduled, str):
             raise TypeError("Expected argument 'time_stop_scheduled' to be a str")
         pulumi.set(__self__, "time_stop_scheduled", time_stop_scheduled)
+        if use_dedicated_vm_host and not isinstance(use_dedicated_vm_host, str):
+            raise TypeError("Expected argument 'use_dedicated_vm_host' to be a str")
+        pulumi.set(__self__, "use_dedicated_vm_host", use_dedicated_vm_host)
 
     @property
     @pulumi.getter(name="activeDesktops")
@@ -244,9 +253,25 @@ class GetDesktopPoolResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateAccessDetails")
+    def private_access_details(self) -> Sequence['outputs.GetDesktopPoolPrivateAccessDetailResult']:
+        """
+        The details of the desktop's private access network connectivity that were used to create the pool.
+        """
+        return pulumi.get(self, "private_access_details")
+
+    @property
+    @pulumi.getter(name="shapeConfigs")
+    def shape_configs(self) -> Sequence['outputs.GetDesktopPoolShapeConfigResult']:
+        """
+        The shape configuration used for each desktop compute instance in the desktop pool.
+        """
+        return pulumi.get(self, "shape_configs")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -312,6 +337,14 @@ class GetDesktopPoolResult:
         """
         return pulumi.get(self, "time_stop_scheduled")
 
+    @property
+    @pulumi.getter(name="useDedicatedVmHost")
+    def use_dedicated_vm_host(self) -> str:
+        """
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+        """
+        return pulumi.get(self, "use_dedicated_vm_host")
+
 
 class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
     # pylint: disable=using-constant-test
@@ -337,6 +370,8 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
             maximum_size=self.maximum_size,
             network_configurations=self.network_configurations,
             nsg_ids=self.nsg_ids,
+            private_access_details=self.private_access_details,
+            shape_configs=self.shape_configs,
             shape_name=self.shape_name,
             standby_size=self.standby_size,
             state=self.state,
@@ -344,7 +379,8 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
             storage_size_in_gbs=self.storage_size_in_gbs,
             time_created=self.time_created,
             time_start_scheduled=self.time_start_scheduled,
-            time_stop_scheduled=self.time_stop_scheduled)
+            time_stop_scheduled=self.time_stop_scheduled,
+            use_dedicated_vm_host=self.use_dedicated_vm_host)
 
 
 def get_desktop_pool(desktop_pool_id: Optional[str] = None,
@@ -390,6 +426,8 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
         maximum_size=pulumi.get(__ret__, 'maximum_size'),
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        private_access_details=pulumi.get(__ret__, 'private_access_details'),
+        shape_configs=pulumi.get(__ret__, 'shape_configs'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         standby_size=pulumi.get(__ret__, 'standby_size'),
         state=pulumi.get(__ret__, 'state'),
@@ -397,7 +435,8 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
         storage_size_in_gbs=pulumi.get(__ret__, 'storage_size_in_gbs'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_start_scheduled=pulumi.get(__ret__, 'time_start_scheduled'),
-        time_stop_scheduled=pulumi.get(__ret__, 'time_stop_scheduled'))
+        time_stop_scheduled=pulumi.get(__ret__, 'time_stop_scheduled'),
+        use_dedicated_vm_host=pulumi.get(__ret__, 'use_dedicated_vm_host'))
 def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDesktopPoolResult]:
     """
@@ -440,6 +479,8 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
         maximum_size=pulumi.get(__response__, 'maximum_size'),
         network_configurations=pulumi.get(__response__, 'network_configurations'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        private_access_details=pulumi.get(__response__, 'private_access_details'),
+        shape_configs=pulumi.get(__response__, 'shape_configs'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         standby_size=pulumi.get(__response__, 'standby_size'),
         state=pulumi.get(__response__, 'state'),
@@ -447,4 +488,5 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
         storage_size_in_gbs=pulumi.get(__response__, 'storage_size_in_gbs'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_start_scheduled=pulumi.get(__response__, 'time_start_scheduled'),
-        time_stop_scheduled=pulumi.get(__response__, 'time_stop_scheduled')))
+        time_stop_scheduled=pulumi.get(__response__, 'time_stop_scheduled'),
+        use_dedicated_vm_host=pulumi.get(__response__, 'use_dedicated_vm_host')))

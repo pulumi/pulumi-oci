@@ -265,6 +265,21 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * (Updatable) Analytics instance update channel.
+     * 
+     */
+    @Import(name="updateChannel")
+    private @Nullable Output<String> updateChannel;
+
+    /**
+     * @return (Updatable) Analytics instance update channel.
+     * 
+     */
+    public Optional<Output<String>> updateChannel() {
+        return Optional.ofNullable(this.updateChannel);
+    }
+
     private AnalyticsInstanceArgs() {}
 
     private AnalyticsInstanceArgs(AnalyticsInstanceArgs $) {
@@ -284,6 +299,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         this.name = $.name;
         this.networkEndpointDetails = $.networkEndpointDetails;
         this.state = $.state;
+        this.updateChannel = $.updateChannel;
     }
 
     public static Builder builder() {
@@ -644,6 +660,27 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param updateChannel (Updatable) Analytics instance update channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateChannel(@Nullable Output<String> updateChannel) {
+            $.updateChannel = updateChannel;
+            return this;
+        }
+
+        /**
+         * @param updateChannel (Updatable) Analytics instance update channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateChannel(String updateChannel) {
+            return updateChannel(Output.of(updateChannel));
         }
 
         public AnalyticsInstanceArgs build() {

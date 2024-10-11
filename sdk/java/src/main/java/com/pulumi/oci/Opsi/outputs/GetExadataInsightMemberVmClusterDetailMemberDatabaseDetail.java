@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail;
 import java.lang.String;
@@ -19,6 +20,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * 
      */
     private String compartmentId;
+    private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails;
     private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
     private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
     private String databaseId;
@@ -40,6 +42,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * 
      */
     private Map<String,String> freeformTags;
+    private String managementAgentId;
     private String opsiPrivateEndpointId;
     private String serviceName;
     /**
@@ -55,6 +58,9 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails() {
+        return this.connectionCredentialDetails;
     }
     public List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails() {
         return this.connectionDetails;
@@ -95,6 +101,9 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
+    public String managementAgentId() {
+        return this.managementAgentId;
+    }
     public String opsiPrivateEndpointId() {
         return this.opsiPrivateEndpointId;
     }
@@ -119,6 +128,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails;
         private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
         private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
         private String databaseId;
@@ -128,6 +138,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         private String deploymentType;
         private String entitySource;
         private Map<String,String> freeformTags;
+        private String managementAgentId;
         private String opsiPrivateEndpointId;
         private String serviceName;
         private Map<String,String> systemTags;
@@ -135,6 +146,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         public Builder(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.connectionCredentialDetails = defaults.connectionCredentialDetails;
     	      this.connectionDetails = defaults.connectionDetails;
     	      this.credentialDetails = defaults.credentialDetails;
     	      this.databaseId = defaults.databaseId;
@@ -144,6 +156,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
     	      this.deploymentType = defaults.deploymentType;
     	      this.entitySource = defaults.entitySource;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.managementAgentId = defaults.managementAgentId;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.serviceName = defaults.serviceName;
     	      this.systemTags = defaults.systemTags;
@@ -156,6 +169,17 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder connectionCredentialDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail> connectionCredentialDetails) {
+            if (connectionCredentialDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "connectionCredentialDetails");
+            }
+            this.connectionCredentialDetails = connectionCredentialDetails;
+            return this;
+        }
+        public Builder connectionCredentialDetails(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetail... connectionCredentialDetails) {
+            return connectionCredentialDetails(List.of(connectionCredentialDetails));
         }
         @CustomType.Setter
         public Builder connectionDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
@@ -236,6 +260,14 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder managementAgentId(String managementAgentId) {
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             if (opsiPrivateEndpointId == null) {
               throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail", "opsiPrivateEndpointId");
@@ -262,6 +294,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail build() {
             final var _resultValue = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionCredentialDetails = connectionCredentialDetails;
             _resultValue.connectionDetails = connectionDetails;
             _resultValue.credentialDetails = credentialDetails;
             _resultValue.databaseId = databaseId;
@@ -271,6 +304,7 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             _resultValue.deploymentType = deploymentType;
             _resultValue.entitySource = entitySource;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.managementAgentId = managementAgentId;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.serviceName = serviceName;
             _resultValue.systemTags = systemTags;

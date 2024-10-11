@@ -44,6 +44,11 @@ import (
 // (that is, the pre-shared key). For more information, see
 // [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
 //
+// To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnelConfiguration`.
+// You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracleTunnelIp`,
+// `associatedVirtualCircuits` and `drgRouteTableId` at time of creation. These attributes cannot be updated using IPSec
+// connection APIs. To update drg route table id, use `Core.DrgAttachmentManagement` resource to update.
+//
 // ## Example Usage
 //
 // ```go
@@ -71,6 +76,40 @@ import (
 //				DisplayName: pulumi.Any(ipSecConnectionDisplayName),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = Core.NewIpsec(ctx, "test_ip_sec_connection_over_fc", &Core.IpsecArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				CpeId:                  pulumi.Any(testCpe.Id),
+//				DrgId:                  pulumi.Any(testDrg.Id),
+//				StaticRoutes:           pulumi.Any(ipSecConnectionStaticRoutes),
+//				CpeLocalIdentifier:     pulumi.Any(ipSecConnectionCpeLocalIdentifier),
+//				CpeLocalIdentifierType: pulumi.Any(ipSecConnectionCpeLocalIdentifierType),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(ipSecConnectionDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				TunnelConfigurations: core.IpsecTunnelConfigurationArray{
+//					&core.IpsecTunnelConfigurationArgs{
+//						OracleTunnelIp: pulumi.String("10.1.5.5"),
+//						AssociatedVirtualCircuits: pulumi.StringArray{
+//							testIpsecOverFcVirtualCircuit.Id,
+//						},
+//						DrgRouteTableId: pulumi.Any(testDrgIpsecOverFcRouteTable.Id),
+//					},
+//					&core.IpsecTunnelConfigurationArgs{
+//						OracleTunnelIp: pulumi.String("10.1.7.7"),
+//						AssociatedVirtualCircuits: pulumi.StringArray{
+//							testIpsecOverFcVirtualCircuit.Id,
+//						},
+//						DrgRouteTableId: pulumi.Any(testDrgIpsecOverFcRouteTable.Id),
+//					},
 //				},
 //			})
 //			if err != nil {
@@ -123,14 +162,22 @@ type Ipsec struct {
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 	//
 	// Example: `10.0.1.0/24`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StaticRoutes pulumi.StringArrayOutput `pulumi:"staticRoutes"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The transport type used for the IPSec connection.
 	TransportType pulumi.StringOutput `pulumi:"transportType"`
+	// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+	//
+	// Example: `tunnelConfiguration {
+	// oracleTunnelIp = "10.1.5.5"
+	// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+	// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+	// }`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TunnelConfigurations IpsecTunnelConfigurationArrayOutput `pulumi:"tunnelConfigurations"`
 }
 
 // NewIpsec registers a new resource with the given unique name, arguments, and options.
@@ -206,14 +253,22 @@ type ipsecState struct {
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 	//
 	// Example: `10.0.1.0/24`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StaticRoutes []string `pulumi:"staticRoutes"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The transport type used for the IPSec connection.
 	TransportType *string `pulumi:"transportType"`
+	// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+	//
+	// Example: `tunnelConfiguration {
+	// oracleTunnelIp = "10.1.5.5"
+	// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+	// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+	// }`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TunnelConfigurations []IpsecTunnelConfiguration `pulumi:"tunnelConfigurations"`
 }
 
 type IpsecState struct {
@@ -248,14 +303,22 @@ type IpsecState struct {
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 	//
 	// Example: `10.0.1.0/24`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StaticRoutes pulumi.StringArrayInput
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The transport type used for the IPSec connection.
 	TransportType pulumi.StringPtrInput
+	// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+	//
+	// Example: `tunnelConfiguration {
+	// oracleTunnelIp = "10.1.5.5"
+	// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+	// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+	// }`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TunnelConfigurations IpsecTunnelConfigurationArrayInput
 }
 
 func (IpsecState) ElementType() reflect.Type {
@@ -292,10 +355,18 @@ type ipsecArgs struct {
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 	//
 	// Example: `10.0.1.0/24`
+	StaticRoutes []string `pulumi:"staticRoutes"`
+	// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+	//
+	// Example: `tunnelConfiguration {
+	// oracleTunnelIp = "10.1.5.5"
+	// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+	// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+	// }`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StaticRoutes []string `pulumi:"staticRoutes"`
+	TunnelConfigurations []IpsecTunnelConfiguration `pulumi:"tunnelConfigurations"`
 }
 
 // The set of arguments for constructing a Ipsec resource.
@@ -329,10 +400,18 @@ type IpsecArgs struct {
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 	//
 	// Example: `10.0.1.0/24`
+	StaticRoutes pulumi.StringArrayInput
+	// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+	//
+	// Example: `tunnelConfiguration {
+	// oracleTunnelIp = "10.1.5.5"
+	// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+	// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+	// }`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StaticRoutes pulumi.StringArrayInput
+	TunnelConfigurations IpsecTunnelConfigurationArrayInput
 }
 
 func (IpsecArgs) ElementType() reflect.Type {
@@ -480,9 +559,6 @@ func (o IpsecOutput) State() pulumi.StringOutput {
 // Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 //
 // Example: `10.0.1.0/24`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IpsecOutput) StaticRoutes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Ipsec) pulumi.StringArrayOutput { return v.StaticRoutes }).(pulumi.StringArrayOutput)
 }
@@ -495,6 +571,20 @@ func (o IpsecOutput) TimeCreated() pulumi.StringOutput {
 // The transport type used for the IPSec connection.
 func (o IpsecOutput) TransportType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.TransportType }).(pulumi.StringOutput)
+}
+
+// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
+//
+// Example: `tunnelConfiguration {
+// oracleTunnelIp = "10.1.5.5"
+// associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+// drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+// }`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o IpsecOutput) TunnelConfigurations() IpsecTunnelConfigurationArrayOutput {
+	return o.ApplyT(func(v *Ipsec) IpsecTunnelConfigurationArrayOutput { return v.TunnelConfigurations }).(IpsecTunnelConfigurationArrayOutput)
 }
 
 type IpsecArrayOutput struct{ *pulumi.OutputState }

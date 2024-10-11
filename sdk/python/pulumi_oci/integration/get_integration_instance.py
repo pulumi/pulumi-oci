@@ -27,7 +27,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, disaster_recovery_details=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, failover_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_design_time_url=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_disaster_recovery_enabled=None, is_file_server_enabled=None, is_visual_builder_enabled=None, lifecycle_details=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -49,6 +49,9 @@ class GetIntegrationInstanceResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if disaster_recovery_details and not isinstance(disaster_recovery_details, list):
+            raise TypeError("Expected argument 'disaster_recovery_details' to be a list")
+        pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -61,6 +64,9 @@ class GetIntegrationInstanceResult:
         if extend_data_retention_trigger and not isinstance(extend_data_retention_trigger, int):
             raise TypeError("Expected argument 'extend_data_retention_trigger' to be a int")
         pulumi.set(__self__, "extend_data_retention_trigger", extend_data_retention_trigger)
+        if failover_trigger and not isinstance(failover_trigger, int):
+            raise TypeError("Expected argument 'failover_trigger' to be a int")
+        pulumi.set(__self__, "failover_trigger", failover_trigger)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -73,6 +79,9 @@ class GetIntegrationInstanceResult:
         if idcs_infos and not isinstance(idcs_infos, list):
             raise TypeError("Expected argument 'idcs_infos' to be a list")
         pulumi.set(__self__, "idcs_infos", idcs_infos)
+        if instance_design_time_url and not isinstance(instance_design_time_url, str):
+            raise TypeError("Expected argument 'instance_design_time_url' to be a str")
+        pulumi.set(__self__, "instance_design_time_url", instance_design_time_url)
         if instance_url and not isinstance(instance_url, str):
             raise TypeError("Expected argument 'instance_url' to be a str")
         pulumi.set(__self__, "instance_url", instance_url)
@@ -85,12 +94,18 @@ class GetIntegrationInstanceResult:
         if is_byol and not isinstance(is_byol, bool):
             raise TypeError("Expected argument 'is_byol' to be a bool")
         pulumi.set(__self__, "is_byol", is_byol)
+        if is_disaster_recovery_enabled and not isinstance(is_disaster_recovery_enabled, bool):
+            raise TypeError("Expected argument 'is_disaster_recovery_enabled' to be a bool")
+        pulumi.set(__self__, "is_disaster_recovery_enabled", is_disaster_recovery_enabled)
         if is_file_server_enabled and not isinstance(is_file_server_enabled, bool):
             raise TypeError("Expected argument 'is_file_server_enabled' to be a bool")
         pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled and not isinstance(is_visual_builder_enabled, bool):
             raise TypeError("Expected argument 'is_visual_builder_enabled' to be a bool")
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if message_packs and not isinstance(message_packs, int):
             raise TypeError("Expected argument 'message_packs' to be a int")
         pulumi.set(__self__, "message_packs", message_packs)
@@ -176,6 +191,14 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="disasterRecoveryDetails")
+    def disaster_recovery_details(self) -> Sequence['outputs.GetIntegrationInstanceDisasterRecoveryDetailResult']:
+        """
+        Disaster recovery details for the integration instance created in the region.
+        """
+        return pulumi.get(self, "disaster_recovery_details")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -197,6 +220,11 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="extendDataRetentionTrigger")
     def extend_data_retention_trigger(self) -> int:
         return pulumi.get(self, "extend_data_retention_trigger")
+
+    @property
+    @pulumi.getter(name="failoverTrigger")
+    def failover_trigger(self) -> int:
+        return pulumi.get(self, "failover_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -228,6 +256,11 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "idcs_infos")
 
     @property
+    @pulumi.getter(name="instanceDesignTimeUrl")
+    def instance_design_time_url(self) -> str:
+        return pulumi.get(self, "instance_design_time_url")
+
+    @property
     @pulumi.getter(name="instanceUrl")
     def instance_url(self) -> str:
         """
@@ -257,6 +290,14 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "is_byol")
 
     @property
+    @pulumi.getter(name="isDisasterRecoveryEnabled")
+    def is_disaster_recovery_enabled(self) -> bool:
+        """
+        Is Disaster Recovery enabled for the integrationInstance
+        """
+        return pulumi.get(self, "is_disaster_recovery_enabled")
+
+    @property
     @pulumi.getter(name="isFileServerEnabled")
     def is_file_server_enabled(self) -> bool:
         """
@@ -271,6 +312,14 @@ class GetIntegrationInstanceResult:
         Visual Builder is enabled or not.
         """
         return pulumi.get(self, "is_visual_builder_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional details of lifecycleState or substates
+        """
+        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="messagePacks")
@@ -358,20 +407,25 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             custom_endpoints=self.custom_endpoints,
             data_retention_period=self.data_retention_period,
             defined_tags=self.defined_tags,
+            disaster_recovery_details=self.disaster_recovery_details,
             display_name=self.display_name,
             domain_id=self.domain_id,
             enable_process_automation_trigger=self.enable_process_automation_trigger,
             extend_data_retention_trigger=self.extend_data_retention_trigger,
+            failover_trigger=self.failover_trigger,
             freeform_tags=self.freeform_tags,
             id=self.id,
             idcs_at=self.idcs_at,
             idcs_infos=self.idcs_infos,
+            instance_design_time_url=self.instance_design_time_url,
             instance_url=self.instance_url,
             integration_instance_id=self.integration_instance_id,
             integration_instance_type=self.integration_instance_type,
             is_byol=self.is_byol,
+            is_disaster_recovery_enabled=self.is_disaster_recovery_enabled,
             is_file_server_enabled=self.is_file_server_enabled,
             is_visual_builder_enabled=self.is_visual_builder_enabled,
+            lifecycle_details=self.lifecycle_details,
             message_packs=self.message_packs,
             network_endpoint_details=self.network_endpoint_details,
             private_endpoint_outbound_connections=self.private_endpoint_outbound_connections,
@@ -415,20 +469,25 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         custom_endpoints=pulumi.get(__ret__, 'custom_endpoints'),
         data_retention_period=pulumi.get(__ret__, 'data_retention_period'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        disaster_recovery_details=pulumi.get(__ret__, 'disaster_recovery_details'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain_id=pulumi.get(__ret__, 'domain_id'),
         enable_process_automation_trigger=pulumi.get(__ret__, 'enable_process_automation_trigger'),
         extend_data_retention_trigger=pulumi.get(__ret__, 'extend_data_retention_trigger'),
+        failover_trigger=pulumi.get(__ret__, 'failover_trigger'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         idcs_at=pulumi.get(__ret__, 'idcs_at'),
         idcs_infos=pulumi.get(__ret__, 'idcs_infos'),
+        instance_design_time_url=pulumi.get(__ret__, 'instance_design_time_url'),
         instance_url=pulumi.get(__ret__, 'instance_url'),
         integration_instance_id=pulumi.get(__ret__, 'integration_instance_id'),
         integration_instance_type=pulumi.get(__ret__, 'integration_instance_type'),
         is_byol=pulumi.get(__ret__, 'is_byol'),
+        is_disaster_recovery_enabled=pulumi.get(__ret__, 'is_disaster_recovery_enabled'),
         is_file_server_enabled=pulumi.get(__ret__, 'is_file_server_enabled'),
         is_visual_builder_enabled=pulumi.get(__ret__, 'is_visual_builder_enabled'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         message_packs=pulumi.get(__ret__, 'message_packs'),
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__ret__, 'private_endpoint_outbound_connections'),
@@ -469,20 +528,25 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
         custom_endpoints=pulumi.get(__response__, 'custom_endpoints'),
         data_retention_period=pulumi.get(__response__, 'data_retention_period'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        disaster_recovery_details=pulumi.get(__response__, 'disaster_recovery_details'),
         display_name=pulumi.get(__response__, 'display_name'),
         domain_id=pulumi.get(__response__, 'domain_id'),
         enable_process_automation_trigger=pulumi.get(__response__, 'enable_process_automation_trigger'),
         extend_data_retention_trigger=pulumi.get(__response__, 'extend_data_retention_trigger'),
+        failover_trigger=pulumi.get(__response__, 'failover_trigger'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         idcs_at=pulumi.get(__response__, 'idcs_at'),
         idcs_infos=pulumi.get(__response__, 'idcs_infos'),
+        instance_design_time_url=pulumi.get(__response__, 'instance_design_time_url'),
         instance_url=pulumi.get(__response__, 'instance_url'),
         integration_instance_id=pulumi.get(__response__, 'integration_instance_id'),
         integration_instance_type=pulumi.get(__response__, 'integration_instance_type'),
         is_byol=pulumi.get(__response__, 'is_byol'),
+        is_disaster_recovery_enabled=pulumi.get(__response__, 'is_disaster_recovery_enabled'),
         is_file_server_enabled=pulumi.get(__response__, 'is_file_server_enabled'),
         is_visual_builder_enabled=pulumi.get(__response__, 'is_visual_builder_enabled'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         message_packs=pulumi.get(__response__, 'message_packs'),
         network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__response__, 'private_endpoint_outbound_connections'),

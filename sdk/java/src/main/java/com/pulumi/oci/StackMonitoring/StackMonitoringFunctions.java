@@ -23,6 +23,10 @@ import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
@@ -51,6 +55,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetConfigsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobsResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMaintenanceWindowResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMaintenanceWindowsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceResult;
@@ -1664,6 +1670,370 @@ public final class StackMonitoringFunctions {
      */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", TypeShape.of(GetDiscoveryJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get maintenance window for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindow = StackMonitoringFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
+     *             .maintenanceWindowId(testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args) {
+        return getMaintenanceWindow(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get maintenance window for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindow = StackMonitoringFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
+     *             .maintenanceWindowId(testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaintenanceWindowResult> getMaintenanceWindowPlain(GetMaintenanceWindowPlainArgs args) {
+        return getMaintenanceWindowPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get maintenance window for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindow = StackMonitoringFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
+     *             .maintenanceWindowId(testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceWindowResult> getMaintenanceWindow(GetMaintenanceWindowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", TypeShape.of(GetMaintenanceWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get maintenance window for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindow = StackMonitoringFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
+     *             .maintenanceWindowId(testMaintenanceWindowOciStackMonitoringMaintenanceWindow.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaintenanceWindowResult> getMaintenanceWindowPlain(GetMaintenanceWindowPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMaintenanceWindow:getMaintenanceWindow", TypeShape.of(GetMaintenanceWindowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of maintenance windows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindows = StackMonitoringFunctions.getMaintenanceWindows(GetMaintenanceWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .lifecycleDetails(maintenanceWindowLifecycleDetails)
+     *             .name(maintenanceWindowName)
+     *             .status(maintenanceWindowStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceWindowsResult> getMaintenanceWindows(GetMaintenanceWindowsArgs args) {
+        return getMaintenanceWindows(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of maintenance windows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindows = StackMonitoringFunctions.getMaintenanceWindows(GetMaintenanceWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .lifecycleDetails(maintenanceWindowLifecycleDetails)
+     *             .name(maintenanceWindowName)
+     *             .status(maintenanceWindowStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaintenanceWindowsResult> getMaintenanceWindowsPlain(GetMaintenanceWindowsPlainArgs args) {
+        return getMaintenanceWindowsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of maintenance windows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindows = StackMonitoringFunctions.getMaintenanceWindows(GetMaintenanceWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .lifecycleDetails(maintenanceWindowLifecycleDetails)
+     *             .name(maintenanceWindowName)
+     *             .status(maintenanceWindowStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaintenanceWindowsResult> getMaintenanceWindows(GetMaintenanceWindowsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", TypeShape.of(GetMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of maintenance windows.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceWindows = StackMonitoringFunctions.getMaintenanceWindows(GetMaintenanceWindowsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .lifecycleDetails(maintenanceWindowLifecycleDetails)
+     *             .name(maintenanceWindowName)
+     *             .status(maintenanceWindowStatus)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaintenanceWindowsResult> getMaintenanceWindowsPlain(GetMaintenanceWindowsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMaintenanceWindows:getMaintenanceWindows", TypeShape.of(GetMaintenanceWindowsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.

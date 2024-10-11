@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ObjectLifecyclePolicy{}
 	case "oci:ObjectStorage/preauthrequest:Preauthrequest":
 		r = &Preauthrequest{}
+	case "oci:ObjectStorage/privateEndpoint:PrivateEndpoint":
+		r = &PrivateEndpoint{}
 	case "oci:ObjectStorage/replicationPolicy:ReplicationPolicy":
 		r = &ReplicationPolicy{}
 	case "oci:ObjectStorage/storageObject:StorageObject":
@@ -64,6 +66,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ObjectStorage/preauthrequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ObjectStorage/privateEndpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -34,6 +34,7 @@ import (
 //				AccessLevel:                       pulumi.StringRef(reportAccessLevel),
 //				CompartmentIdInSubtree:            pulumi.BoolRef(reportCompartmentIdInSubtree),
 //				DisplayName:                       pulumi.StringRef(reportDisplayName),
+//				MimeType:                          pulumi.StringRef(reportMimeType),
 //				ReportDefinitionId:                pulumi.StringRef(testReportDefinition.Id),
 //				State:                             pulumi.StringRef(reportState),
 //				TimeGeneratedGreaterThanOrEqualTo: pulumi.StringRef(reportTimeGeneratedGreaterThanOrEqualTo),
@@ -69,6 +70,8 @@ type GetReportsArgs struct {
 	// The name of the report definition to query.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetReportsFilter `pulumi:"filters"`
+	// An optional filter to return only resources that match the specified mime type.
+	MimeType *string `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
@@ -96,6 +99,8 @@ type GetReportsResult struct {
 	Filters     []GetReportsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Specifies the format of report to be .xls or .pdf or .json
+	MimeType *string `pulumi:"mimeType"`
 	// The list of report_collection.
 	ReportCollections []GetReportsReportCollection `pulumi:"reportCollections"`
 	// The OCID of the report definition.
@@ -138,6 +143,8 @@ type GetReportsOutputArgs struct {
 	// The name of the report definition to query.
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetReportsFilterArrayInput `pulumi:"filters"`
+	// An optional filter to return only resources that match the specified mime type.
+	MimeType pulumi.StringPtrInput `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId pulumi.StringPtrInput `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
@@ -198,6 +205,11 @@ func (o GetReportsResultOutput) Filters() GetReportsFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetReportsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies the format of report to be .xls or .pdf or .json
+func (o GetReportsResultOutput) MimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportsResult) *string { return v.MimeType }).(pulumi.StringPtrOutput)
 }
 
 // The list of report_collection.

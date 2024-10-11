@@ -12,7 +12,8 @@ import * as utilities from "../utilities";
  * List the status of each alarm in the specified compartment.
  * Status is collective, across all metric streams in the alarm.
  * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
- * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+ * Optionally filter by resource or status value.
+ *
  * For more information, see
  * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
  * For important limits information, see
@@ -111,7 +112,7 @@ export interface GetAlarmStatusesResult {
     readonly resourceId?: string;
     readonly serviceName?: string;
     /**
-     * The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
+     * The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).  Example: `FIRING`
      */
     readonly status?: string;
 }
@@ -121,7 +122,8 @@ export interface GetAlarmStatusesResult {
  * List the status of each alarm in the specified compartment.
  * Status is collective, across all metric streams in the alarm.
  * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
- * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+ * Optionally filter by resource or status value.
+ *
  * For more information, see
  * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
  * For important limits information, see

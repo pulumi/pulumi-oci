@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *         ipv6addressIpv6subnetCidrPairDetails: vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails,
  *         nsgIds: vnicAttachmentCreateVnicDetailsNsgIds,
  *         privateIp: vnicAttachmentCreateVnicDetailsPrivateIp,
+ *         securityAttributes: vnicAttachmentCreateVnicDetailsSecurityAttributes,
  *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
  *         subnetId: testSubnet.id,
  *         vlanId: testVlan.id,

@@ -102,6 +102,7 @@ import javax.annotation.Nullable;
  *             .ipv6privateCidrBlocks(vcnIpv6privateCidrBlocks)
  *             .isIpv6enabled(vcnIsIpv6enabled)
  *             .isOracleGuaAllocationEnabled(vcnIsOracleGuaAllocationEnabled)
+ *             .securityAttributes(vcnSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -362,9 +363,6 @@ public class Vcn extends com.pulumi.resources.CustomResource {
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="isOracleGuaAllocationEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOracleGuaAllocationEnabled;
@@ -372,12 +370,29 @@ public class Vcn extends com.pulumi.resources.CustomResource {
     /**
      * @return Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      * 
+     */
+    public Output<Boolean> isOracleGuaAllocationEnabled() {
+        return this.isOracleGuaAllocationEnabled;
+    }
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> isOracleGuaAllocationEnabled() {
-        return this.isOracleGuaAllocationEnabled;
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The VCN&#39;s current state.

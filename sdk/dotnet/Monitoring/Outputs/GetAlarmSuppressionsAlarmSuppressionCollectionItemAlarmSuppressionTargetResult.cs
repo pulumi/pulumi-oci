@@ -18,7 +18,19 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string AlarmId;
         /// <summary>
-        /// The type of the alarm suppression target.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
+        /// 
+        /// If targetType is not specified, searches all suppressions defined under the compartment.  If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+        /// 
+        /// Example: `ocid1.compartment.oc1..exampleuniqueID`
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
+        /// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
+        /// </summary>
+        public readonly bool CompartmentIdInSubtree;
+        /// <summary>
+        /// The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
         /// </summary>
         public readonly string TargetType;
 
@@ -26,9 +38,15 @@ namespace Pulumi.Oci.Monitoring.Outputs
         private GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetResult(
             string alarmId,
 
+            string compartmentId,
+
+            bool compartmentIdInSubtree,
+
             string targetType)
         {
             AlarmId = alarmId;
+            CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             TargetType = targetType;
         }
     }

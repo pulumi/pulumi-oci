@@ -41,7 +41,19 @@ import (
 //				SshPublicKeys:                pulumi.Any(cloudVmClusterSshPublicKeys),
 //				SubnetId:                     pulumi.Any(testSubnet.Id),
 //				BackupNetworkNsgIds:          pulumi.Any(cloudVmClusterBackupNetworkNsgIds),
-//				ClusterName:                  pulumi.Any(cloudVmClusterClusterName),
+//				CloudAutomationUpdateDetails: &database.CloudVmClusterCloudAutomationUpdateDetailsArgs{
+//					ApplyUpdateTimePreference: &database.CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs{
+//						ApplyUpdatePreferredEndTime:   pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime),
+//						ApplyUpdatePreferredStartTime: pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime),
+//					},
+//					FreezePeriod: &database.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs{
+//						FreezePeriodEndTime:   pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime),
+//						FreezePeriodStartTime: pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime),
+//					},
+//					IsEarlyAdoptionEnabled: pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled),
+//					IsFreezePeriodEnabled:  pulumi.Any(cloudVmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled),
+//				},
+//				ClusterName: pulumi.Any(cloudVmClusterClusterName),
 //				DataCollectionOptions: &database.CloudVmClusterDataCollectionOptionsArgs{
 //					IsDiagnosticsEventsEnabled: pulumi.Any(cloudVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled),
 //					IsHealthMonitoringEnabled:  pulumi.Any(cloudVmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
@@ -100,6 +112,8 @@ type CloudVmCluster struct {
 	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId pulumi.StringOutput `pulumi:"backupSubnetId"`
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails CloudVmClusterCloudAutomationUpdateDetailsOutput `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	CloudExadataInfrastructureId pulumi.StringOutput `pulumi:"cloudExadataInfrastructureId"`
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
@@ -273,6 +287,8 @@ type cloudVmClusterState struct {
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId *string `pulumi:"backupSubnetId"`
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails *CloudVmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	CloudExadataInfrastructureId *string `pulumi:"cloudExadataInfrastructureId"`
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
@@ -390,6 +406,8 @@ type CloudVmClusterState struct {
 	BackupNetworkNsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId pulumi.StringPtrInput
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails CloudVmClusterCloudAutomationUpdateDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	CloudExadataInfrastructureId pulumi.StringPtrInput
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
@@ -509,6 +527,8 @@ type cloudVmClusterArgs struct {
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId string `pulumi:"backupSubnetId"`
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails *CloudVmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
@@ -593,6 +613,8 @@ type CloudVmClusterArgs struct {
 	BackupNetworkNsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 	BackupSubnetId pulumi.StringInput
+	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails CloudVmClusterCloudAutomationUpdateDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	CloudExadataInfrastructureId pulumi.StringInput
 	// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
@@ -771,6 +793,13 @@ func (o CloudVmClusterOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
 func (o CloudVmClusterOutput) BackupSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.BackupSubnetId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o CloudVmClusterOutput) CloudAutomationUpdateDetails() CloudVmClusterCloudAutomationUpdateDetailsOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterCloudAutomationUpdateDetailsOutput {
+		return v.CloudAutomationUpdateDetails
+	}).(CloudVmClusterCloudAutomationUpdateDetailsOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.

@@ -187,11 +187,11 @@ class AutonomousDatabaseArgs:
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
-               The following points apply:
-               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-               * For Autonomous Database Serverless instances, this parameter is not used.
+               
                * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+               The following points apply:
+               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
@@ -1067,11 +1067,11 @@ class AutonomousDatabaseArgs:
         """
         (Updatable) The number of OCPU cores to be made available to the database.
 
-        The following points apply:
-        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-        * For Autonomous Database Serverless instances, this parameter is not used.
+
         * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+        The following points apply:
+        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
         For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
@@ -1572,6 +1572,7 @@ class _AutonomousDatabaseState:
                  time_of_last_switchover: Optional[pulumi.Input[str]] = None,
                  time_of_next_refresh: Optional[pulumi.Input[str]] = None,
                  time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+                 time_undeleted: Optional[pulumi.Input[str]] = None,
                  time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
                  total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
@@ -1695,11 +1696,11 @@ class _AutonomousDatabaseState:
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
-               The following points apply:
-               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-               * For Autonomous Database Serverless instances, this parameter is not used.
+               
                * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+               The following points apply:
+               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
@@ -2056,6 +2057,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
         if time_reclamation_of_free_autonomous_database is not None:
             pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+        if time_undeleted is not None:
+            pulumi.set(__self__, "time_undeleted", time_undeleted)
         if time_until_reconnect_clone_enabled is not None:
             pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         if timestamp is not None:
@@ -3058,11 +3061,11 @@ class _AutonomousDatabaseState:
         """
         (Updatable) The number of OCPU cores to be made available to the database.
 
-        The following points apply:
-        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-        * For Autonomous Database Serverless instances, this parameter is not used.
+
         * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+        The following points apply:
+        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
         For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
@@ -3686,6 +3689,15 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "time_reclamation_of_free_autonomous_database", value)
 
     @property
+    @pulumi.getter(name="timeUndeleted")
+    def time_undeleted(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "time_undeleted")
+
+    @time_undeleted.setter
+    def time_undeleted(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_undeleted", value)
+
+    @property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")
     def time_until_reconnect_clone_enabled(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3975,11 +3987,11 @@ class AutonomousDatabase(pulumi.CustomResource):
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
-               The following points apply:
-               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-               * For Autonomous Database Serverless instances, this parameter is not used.
+               
                * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+               The following points apply:
+               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
@@ -4307,6 +4319,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_of_last_switchover"] = None
             __props__.__dict__["time_of_next_refresh"] = None
             __props__.__dict__["time_reclamation_of_free_autonomous_database"] = None
+            __props__.__dict__["time_undeleted"] = None
             __props__.__dict__["time_until_reconnect_clone_enabled"] = None
             __props__.__dict__["total_backup_storage_size_in_gbs"] = None
             __props__.__dict__["used_data_storage_size_in_gbs"] = None
@@ -4452,6 +4465,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_of_last_switchover: Optional[pulumi.Input[str]] = None,
             time_of_next_refresh: Optional[pulumi.Input[str]] = None,
             time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+            time_undeleted: Optional[pulumi.Input[str]] = None,
             time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
             timestamp: Optional[pulumi.Input[str]] = None,
             total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
@@ -4580,11 +4594,11 @@ class AutonomousDatabase(pulumi.CustomResource):
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to be made available to the database.
                
-               The following points apply:
-               * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-               * For Autonomous Database Serverless instances, this parameter is not used.
+               
                * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+               The following points apply:
+               * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+               * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
                
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
@@ -4813,6 +4827,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_of_last_switchover"] = time_of_last_switchover
         __props__.__dict__["time_of_next_refresh"] = time_of_next_refresh
         __props__.__dict__["time_reclamation_of_free_autonomous_database"] = time_reclamation_of_free_autonomous_database
+        __props__.__dict__["time_undeleted"] = time_undeleted
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
         __props__.__dict__["timestamp"] = timestamp
         __props__.__dict__["total_backup_storage_size_in_gbs"] = total_backup_storage_size_in_gbs
@@ -5492,11 +5507,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         """
         (Updatable) The number of OCPU cores to be made available to the database.
 
-        The following points apply:
-        * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-        * For Autonomous Database Serverless instances, this parameter is not used.
+
         * Providing `computeModel` and `computeCount` is the preferred method for setting CPUs for both OCPU and ECPU.
+        The following points apply:
+        * For Autonomous Databases on dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
+        * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
 
         For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
 
@@ -5918,6 +5933,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
+
+    @property
+    @pulumi.getter(name="timeUndeleted")
+    def time_undeleted(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "time_undeleted")
 
     @property
     @pulumi.getter(name="timeUntilReconnectCloneEnabled")

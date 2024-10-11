@@ -123,7 +123,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The HPC cluster configuration requested when launching instances of a cluster network.
         /// 
-        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         /// </summary>
         [Output("clusterConfiguration")]
         public Output<Outputs.ClusterNetworkClusterConfiguration> ClusterConfiguration { get; private set; } = null!;
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The HPC cluster configuration requested when launching instances of a cluster network.
         /// 
-        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         /// </summary>
         [Input("clusterConfiguration")]
         public Input<Inputs.ClusterNetworkClusterConfigurationArgs>? ClusterConfiguration { get; set; }
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The HPC cluster configuration requested when launching instances of a cluster network.
         /// 
-        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+        /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
         /// </summary>
         [Input("clusterConfiguration")]
         public Input<Inputs.ClusterNetworkClusterConfigurationGetArgs>? ClusterConfiguration { get; set; }

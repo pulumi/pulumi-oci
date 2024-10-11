@@ -5,8 +5,11 @@ package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class AlarmSuppressionAlarmSuppressionTarget {
@@ -14,7 +17,17 @@ public final class AlarmSuppressionAlarmSuppressionTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    private String alarmId;
+    private @Nullable String alarmId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The type of the alarm suppression target.
      * 
@@ -26,8 +39,22 @@ public final class AlarmSuppressionAlarmSuppressionTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    public String alarmId() {
-        return this.alarmId;
+    public Optional<String> alarmId() {
+        return Optional.ofNullable(this.alarmId);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment or tenancy that is the  target of the alarm suppression. Example: `ocid1.compartment.oc1..exampleuniqueID`
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return The type of the alarm suppression target.
@@ -46,21 +73,35 @@ public final class AlarmSuppressionAlarmSuppressionTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String alarmId;
+        private @Nullable String alarmId;
+        private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private String targetType;
         public Builder() {}
         public Builder(AlarmSuppressionAlarmSuppressionTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmId = defaults.alarmId;
+    	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.targetType = defaults.targetType;
         }
 
         @CustomType.Setter
-        public Builder alarmId(String alarmId) {
-            if (alarmId == null) {
-              throw new MissingRequiredPropertyException("AlarmSuppressionAlarmSuppressionTarget", "alarmId");
-            }
+        public Builder alarmId(@Nullable String alarmId) {
+
             this.alarmId = alarmId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +115,8 @@ public final class AlarmSuppressionAlarmSuppressionTarget {
         public AlarmSuppressionAlarmSuppressionTarget build() {
             final var _resultValue = new AlarmSuppressionAlarmSuppressionTarget();
             _resultValue.alarmId = alarmId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.targetType = targetType;
             return _resultValue;
         }

@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ClusterPlacementGroupId;
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        /// (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -108,6 +108,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? PreferredMaintenanceAction;
         /// <summary>
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? SecurityAttributes;
+        /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         public readonly string? Shape;
@@ -163,6 +167,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? preferredMaintenanceAction,
 
+            ImmutableDictionary<string, string>? securityAttributes,
+
             string? shape,
 
             Outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig? shapeConfig,
@@ -191,6 +197,7 @@ namespace Pulumi.Oci.Core.Outputs
             PlatformConfig = platformConfig;
             PreemptibleInstanceConfig = preemptibleInstanceConfig;
             PreferredMaintenanceAction = preferredMaintenanceAction;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             ShapeConfig = shapeConfig;
             SourceDetails = sourceDetails;

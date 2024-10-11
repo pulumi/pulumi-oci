@@ -50,12 +50,16 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     @Import(name="bootVolumeVpusPerGb")
     private @Nullable Output<String> bootVolumeVpusPerGb;
 
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<Output<String>> bootVolumeVpusPerGb() {
@@ -93,14 +97,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     }
 
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -197,6 +201,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         /**
          * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          * 
+         * Allowed values:
+         * 
          * @return builder
          * 
          */
@@ -207,6 +213,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
 
         /**
          * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * 
+         * Allowed values:
          * 
          * @return builder
          * 
@@ -258,7 +266,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -269,7 +277,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 

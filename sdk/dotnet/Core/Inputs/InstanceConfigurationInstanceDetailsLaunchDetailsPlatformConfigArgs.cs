@@ -61,7 +61,9 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsSecureBootEnabled { get; set; }
 
         /// <summary>
-        /// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        /// (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+        /// 
+        /// Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         /// </summary>
         [Input("isSymmetricMultiThreadingEnabled")]
         public Input<bool>? IsSymmetricMultiThreadingEnabled { get; set; }
@@ -87,7 +89,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? PercentageOfCoresEnabled { get; set; }
 
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type of platform being configured.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -126,12 +126,17 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Disaster recovery details for the integration instance created in the region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstanceDisasterRecoveryDetailResult> DisasterRecoveryDetails;
+        /// <summary>
         /// Integration Instance Identifier, can be renamed.
         /// </summary>
         public readonly string DisplayName;
         public readonly string DomainId;
         public readonly int EnableProcessAutomationTrigger;
         public readonly int ExtendDataRetentionTrigger;
+        public readonly int FailoverTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -145,6 +150,7 @@ namespace Pulumi.Oci.Integration
         /// Information for IDCS access
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstanceIdcsInfoResult> IdcsInfos;
+        public readonly string InstanceDesignTimeUrl;
         /// <summary>
         /// The Integration Instance URL.
         /// </summary>
@@ -159,6 +165,10 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly bool IsByol;
         /// <summary>
+        /// Is Disaster Recovery enabled for the integrationInstance
+        /// </summary>
+        public readonly bool IsDisasterRecoveryEnabled;
+        /// <summary>
         /// The file server is enabled or not.
         /// </summary>
         public readonly bool IsFileServerEnabled;
@@ -166,6 +176,10 @@ namespace Pulumi.Oci.Integration
         /// Visual Builder is enabled or not.
         /// </summary>
         public readonly bool IsVisualBuilderEnabled;
+        /// <summary>
+        /// Additional details of lifecycleState or substates
+        /// </summary>
+        public readonly string LifecycleDetails;
         /// <summary>
         /// The number of configured message packs (if any)
         /// </summary>
@@ -219,6 +233,8 @@ namespace Pulumi.Oci.Integration
 
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetIntegrationInstanceDisasterRecoveryDetailResult> disasterRecoveryDetails,
+
             string displayName,
 
             string domainId,
@@ -226,6 +242,8 @@ namespace Pulumi.Oci.Integration
             int enableProcessAutomationTrigger,
 
             int extendDataRetentionTrigger,
+
+            int failoverTrigger,
 
             ImmutableDictionary<string, string> freeformTags,
 
@@ -235,6 +253,8 @@ namespace Pulumi.Oci.Integration
 
             ImmutableArray<Outputs.GetIntegrationInstanceIdcsInfoResult> idcsInfos,
 
+            string instanceDesignTimeUrl,
+
             string instanceUrl,
 
             string integrationInstanceId,
@@ -243,9 +263,13 @@ namespace Pulumi.Oci.Integration
 
             bool isByol,
 
+            bool isDisasterRecoveryEnabled,
+
             bool isFileServerEnabled,
 
             bool isVisualBuilderEnabled,
+
+            string lifecycleDetails,
 
             int messagePacks,
 
@@ -272,20 +296,25 @@ namespace Pulumi.Oci.Integration
             CustomEndpoints = customEndpoints;
             DataRetentionPeriod = dataRetentionPeriod;
             DefinedTags = definedTags;
+            DisasterRecoveryDetails = disasterRecoveryDetails;
             DisplayName = displayName;
             DomainId = domainId;
             EnableProcessAutomationTrigger = enableProcessAutomationTrigger;
             ExtendDataRetentionTrigger = extendDataRetentionTrigger;
+            FailoverTrigger = failoverTrigger;
             FreeformTags = freeformTags;
             Id = id;
             IdcsAt = idcsAt;
             IdcsInfos = idcsInfos;
+            InstanceDesignTimeUrl = instanceDesignTimeUrl;
             InstanceUrl = instanceUrl;
             IntegrationInstanceId = integrationInstanceId;
             IntegrationInstanceType = integrationInstanceType;
             IsByol = isByol;
+            IsDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
             IsFileServerEnabled = isFileServerEnabled;
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
+            LifecycleDetails = lifecycleDetails;
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
             PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;

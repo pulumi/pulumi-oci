@@ -40,8 +40,11 @@ class DesktopPoolArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
                  time_start_scheduled: Optional[pulumi.Input[str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[str]] = None):
+                 time_stop_scheduled: Optional[pulumi.Input[str]] = None,
+                 use_dedicated_vm_host: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DesktopPool resource.
         :param pulumi.Input[bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
@@ -62,9 +65,12 @@ class DesktopPoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the desktop pool.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
+        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
+        :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
                
                
                ** IMPORTANT **
@@ -93,10 +99,16 @@ class DesktopPoolArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_access_details is not None:
+            pulumi.set(__self__, "private_access_details", private_access_details)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
         if time_start_scheduled is not None:
             pulumi.set(__self__, "time_start_scheduled", time_start_scheduled)
         if time_stop_scheduled is not None:
             pulumi.set(__self__, "time_stop_scheduled", time_stop_scheduled)
+        if use_dedicated_vm_host is not None:
+            pulumi.set(__self__, "use_dedicated_vm_host", use_dedicated_vm_host)
 
     @property
     @pulumi.getter(name="arePrivilegedUsers")
@@ -318,13 +330,37 @@ class DesktopPoolArgs:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="privateAccessDetails")
+    def private_access_details(self) -> Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]:
+        """
+        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        """
+        return pulumi.get(self, "private_access_details")
+
+    @private_access_details.setter
+    def private_access_details(self, value: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]):
+        pulumi.set(self, "private_access_details", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
+        """
+        The compute instance shape configuration requested for each desktop in the desktop pool.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
 
     @property
     @pulumi.getter(name="timeStartScheduled")
@@ -343,16 +379,28 @@ class DesktopPoolArgs:
     def time_stop_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The stop time of the desktop pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_stop_scheduled")
 
     @time_stop_scheduled.setter
     def time_stop_scheduled(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_stop_scheduled", value)
+
+    @property
+    @pulumi.getter(name="useDedicatedVmHost")
+    def use_dedicated_vm_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "use_dedicated_vm_host")
+
+    @use_dedicated_vm_host.setter
+    def use_dedicated_vm_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "use_dedicated_vm_host", value)
 
 
 @pulumi.input_type
@@ -374,6 +422,8 @@ class _DesktopPoolState:
                  maximum_size: Optional[pulumi.Input[int]] = None,
                  network_configuration: Optional[pulumi.Input['DesktopPoolNetworkConfigurationArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -381,7 +431,8 @@ class _DesktopPoolState:
                  storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_start_scheduled: Optional[pulumi.Input[str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[str]] = None):
+                 time_stop_scheduled: Optional[pulumi.Input[str]] = None,
+                 use_dedicated_vm_host: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DesktopPool resources.
         :param pulumi.Input[int] active_desktops: The number of active desktops in the desktop pool.
@@ -399,7 +450,9 @@ class _DesktopPoolState:
         :param pulumi.Input[bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the desktop pool.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
+        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[str] state: The current state of the desktop pool.
@@ -408,6 +461,7 @@ class _DesktopPoolState:
         :param pulumi.Input[str] time_created: The date and time the resource was created.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
+        :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
                
                
                ** IMPORTANT **
@@ -445,6 +499,10 @@ class _DesktopPoolState:
             pulumi.set(__self__, "network_configuration", network_configuration)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_access_details is not None:
+            pulumi.set(__self__, "private_access_details", private_access_details)
+        if shape_config is not None:
+            pulumi.set(__self__, "shape_config", shape_config)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if standby_size is not None:
@@ -461,6 +519,8 @@ class _DesktopPoolState:
             pulumi.set(__self__, "time_start_scheduled", time_start_scheduled)
         if time_stop_scheduled is not None:
             pulumi.set(__self__, "time_stop_scheduled", time_stop_scheduled)
+        if use_dedicated_vm_host is not None:
+            pulumi.set(__self__, "use_dedicated_vm_host", use_dedicated_vm_host)
 
     @property
     @pulumi.getter(name="activeDesktops")
@@ -646,13 +706,37 @@ class _DesktopPoolState:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="privateAccessDetails")
+    def private_access_details(self) -> Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]:
+        """
+        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        """
+        return pulumi.get(self, "private_access_details")
+
+    @private_access_details.setter
+    def private_access_details(self, value: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]):
+        pulumi.set(self, "private_access_details", value)
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
+        """
+        The compute instance shape configuration requested for each desktop in the desktop pool.
+        """
+        return pulumi.get(self, "shape_config")
+
+    @shape_config.setter
+    def shape_config(self, value: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]):
+        pulumi.set(self, "shape_config", value)
 
     @property
     @pulumi.getter(name="shapeName")
@@ -743,16 +827,28 @@ class _DesktopPoolState:
     def time_stop_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The stop time of the desktop pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_stop_scheduled")
 
     @time_stop_scheduled.setter
     def time_stop_scheduled(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_stop_scheduled", value)
+
+    @property
+    @pulumi.getter(name="useDedicatedVmHost")
+    def use_dedicated_vm_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "use_dedicated_vm_host")
+
+    @use_dedicated_vm_host.setter
+    def use_dedicated_vm_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "use_dedicated_vm_host", value)
 
 
 class DesktopPool(pulumi.CustomResource):
@@ -775,12 +871,15 @@ class DesktopPool(pulumi.CustomResource):
                  maximum_size: Optional[pulumi.Input[int]] = None,
                  network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
                  storage_backup_policy_id: Optional[pulumi.Input[str]] = None,
                  storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  time_start_scheduled: Optional[pulumi.Input[str]] = None,
                  time_stop_scheduled: Optional[pulumi.Input[str]] = None,
+                 use_dedicated_vm_host: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
@@ -821,6 +920,7 @@ class DesktopPool(pulumi.CustomResource):
             image={
                 "image_id": test_image["id"],
                 "image_name": desktop_pool_image_image_name,
+                "operating_system": desktop_pool_image_operating_system,
             },
             is_storage_enabled=desktop_pool_is_storage_enabled,
             maximum_size=desktop_pool_maximum_size,
@@ -840,8 +940,19 @@ class DesktopPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             nsg_ids=desktop_pool_nsg_ids,
+            shape_config={
+                "baseline_ocpu_utilization": desktop_pool_shape_config_baseline_ocpu_utilization,
+                "memory_in_gbs": desktop_pool_shape_config_memory_in_gbs,
+                "ocpus": desktop_pool_shape_config_ocpus,
+            },
+            private_access_details={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": desktop_pool_private_access_details_nsg_ids,
+                "private_ip": desktop_pool_private_access_details_private_ip,
+            },
             time_start_scheduled=desktop_pool_time_start_scheduled,
-            time_stop_scheduled=desktop_pool_time_stop_scheduled)
+            time_stop_scheduled=desktop_pool_time_stop_scheduled,
+            use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
         ```
 
         ## Import
@@ -868,13 +979,16 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the desktop pool.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[str] storage_backup_policy_id: The backup policy OCID of the storage.
         :param pulumi.Input[int] storage_size_in_gbs: The size in GBs of the storage for the desktop pool.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
+        :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
                
                
                ** IMPORTANT **
@@ -925,6 +1039,7 @@ class DesktopPool(pulumi.CustomResource):
             image={
                 "image_id": test_image["id"],
                 "image_name": desktop_pool_image_image_name,
+                "operating_system": desktop_pool_image_operating_system,
             },
             is_storage_enabled=desktop_pool_is_storage_enabled,
             maximum_size=desktop_pool_maximum_size,
@@ -944,8 +1059,19 @@ class DesktopPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             nsg_ids=desktop_pool_nsg_ids,
+            shape_config={
+                "baseline_ocpu_utilization": desktop_pool_shape_config_baseline_ocpu_utilization,
+                "memory_in_gbs": desktop_pool_shape_config_memory_in_gbs,
+                "ocpus": desktop_pool_shape_config_ocpus,
+            },
+            private_access_details={
+                "subnet_id": test_subnet["id"],
+                "nsg_ids": desktop_pool_private_access_details_nsg_ids,
+                "private_ip": desktop_pool_private_access_details_private_ip,
+            },
             time_start_scheduled=desktop_pool_time_start_scheduled,
-            time_stop_scheduled=desktop_pool_time_stop_scheduled)
+            time_stop_scheduled=desktop_pool_time_stop_scheduled,
+            use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
         ```
 
         ## Import
@@ -986,12 +1112,15 @@ class DesktopPool(pulumi.CustomResource):
                  maximum_size: Optional[pulumi.Input[int]] = None,
                  network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
                  storage_backup_policy_id: Optional[pulumi.Input[str]] = None,
                  storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  time_start_scheduled: Optional[pulumi.Input[str]] = None,
                  time_stop_scheduled: Optional[pulumi.Input[str]] = None,
+                 use_dedicated_vm_host: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1038,6 +1167,8 @@ class DesktopPool(pulumi.CustomResource):
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["private_access_details"] = private_access_details
+            __props__.__dict__["shape_config"] = shape_config
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
@@ -1052,6 +1183,7 @@ class DesktopPool(pulumi.CustomResource):
             __props__.__dict__["storage_size_in_gbs"] = storage_size_in_gbs
             __props__.__dict__["time_start_scheduled"] = time_start_scheduled
             __props__.__dict__["time_stop_scheduled"] = time_stop_scheduled
+            __props__.__dict__["use_dedicated_vm_host"] = use_dedicated_vm_host
             __props__.__dict__["active_desktops"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -1081,6 +1213,8 @@ class DesktopPool(pulumi.CustomResource):
             maximum_size: Optional[pulumi.Input[int]] = None,
             network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+            shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             standby_size: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1088,7 +1222,8 @@ class DesktopPool(pulumi.CustomResource):
             storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_start_scheduled: Optional[pulumi.Input[str]] = None,
-            time_stop_scheduled: Optional[pulumi.Input[str]] = None) -> 'DesktopPool':
+            time_stop_scheduled: Optional[pulumi.Input[str]] = None,
+            use_dedicated_vm_host: Optional[pulumi.Input[str]] = None) -> 'DesktopPool':
         """
         Get an existing DesktopPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1111,7 +1246,9 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the desktop pool.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[str] state: The current state of the desktop pool.
@@ -1120,6 +1257,7 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the resource was created.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
+        :param pulumi.Input[str] use_dedicated_vm_host: Indicates whether the desktop pool uses dedicated virtual machine hosts.
                
                
                ** IMPORTANT **
@@ -1145,6 +1283,8 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["maximum_size"] = maximum_size
         __props__.__dict__["network_configuration"] = network_configuration
         __props__.__dict__["nsg_ids"] = nsg_ids
+        __props__.__dict__["private_access_details"] = private_access_details
+        __props__.__dict__["shape_config"] = shape_config
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["standby_size"] = standby_size
         __props__.__dict__["state"] = state
@@ -1153,6 +1293,7 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_start_scheduled"] = time_start_scheduled
         __props__.__dict__["time_stop_scheduled"] = time_stop_scheduled
+        __props__.__dict__["use_dedicated_vm_host"] = use_dedicated_vm_host
         return DesktopPool(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1279,9 +1420,25 @@ class DesktopPool(pulumi.CustomResource):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateAccessDetails")
+    def private_access_details(self) -> pulumi.Output['outputs.DesktopPoolPrivateAccessDetails']:
+        """
+        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        """
+        return pulumi.get(self, "private_access_details")
+
+    @property
+    @pulumi.getter(name="shapeConfig")
+    def shape_config(self) -> pulumi.Output['outputs.DesktopPoolShapeConfig']:
+        """
+        The compute instance shape configuration requested for each desktop in the desktop pool.
+        """
+        return pulumi.get(self, "shape_config")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -1344,10 +1501,18 @@ class DesktopPool(pulumi.CustomResource):
     def time_stop_scheduled(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) The stop time of the desktop pool.
+        """
+        return pulumi.get(self, "time_stop_scheduled")
+
+    @property
+    @pulumi.getter(name="useDedicatedVmHost")
+    def use_dedicated_vm_host(self) -> pulumi.Output[str]:
+        """
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "time_stop_scheduled")
+        return pulumi.get(self, "use_dedicated_vm_host")
 

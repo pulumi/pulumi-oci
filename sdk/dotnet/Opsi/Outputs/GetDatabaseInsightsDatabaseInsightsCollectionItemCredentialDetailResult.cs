@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CredentialSourceName;
         /// <summary>
-        /// Credential type.
+        /// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         /// </summary>
         public readonly string CredentialType;
         /// <summary>

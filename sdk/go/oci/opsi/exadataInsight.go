@@ -50,13 +50,23 @@ import (
 //						MemberDatabaseDetails: opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{
 //							&opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{
 //								CompartmentId: pulumi.Any(compartmentId),
+//								ConnectionCredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{
+//									CredentialType:       pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType),
+//									CredentialSourceName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName),
+//									PasswordSecretId:     pulumi.Any(testSecret.Id),
+//									Role:                 pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole),
+//									UserName:             pulumi.Any(testUser.Name),
+//									WalletSecretId:       pulumi.Any(testSecret.Id),
+//								},
 //								ConnectionDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs{
+//									HostName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName),
 //									Hosts: opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArray{
 //										&opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs{
 //											HostIp: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp),
 //											Port:   pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort),
 //										},
 //									},
+//									Port:        pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort),
 //									Protocol:    pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol),
 //									ServiceName: pulumi.Any(testService.Name),
 //								},
@@ -75,12 +85,14 @@ import (
 //								DeploymentType:        pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDeploymentType),
 //								EntitySource:          pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsEntitySource),
 //								FreeformTags:          pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsFreeformTags),
+//								ManagementAgentId:     pulumi.Any(testManagementAgent.Id),
 //								OpsiPrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
 //								ServiceName:           pulumi.Any(testService.Name),
 //								SystemTags:            pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsSystemTags),
 //							},
 //						},
 //						OpsiPrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
+//						VmClusterType:         pulumi.Any(exadataInsightMemberVmClusterDetailsVmClusterType),
 //						VmclusterId:           pulumi.Any(testVmcluster.Id),
 //					},
 //				},
@@ -123,7 +135,8 @@ type ExadataInsight struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource pulumi.StringOutput `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName       pulumi.StringOutput `pulumi:"exadataDisplayName"`
+	ExadataDisplayName pulumi.StringOutput `pulumi:"exadataDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 	ExadataInfraId           pulumi.StringOutput `pulumi:"exadataInfraId"`
 	ExadataInfraResourceType pulumi.StringOutput `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -212,7 +225,8 @@ type exadataInsightState struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource *string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName       *string `pulumi:"exadataDisplayName"`
+	ExadataDisplayName *string `pulumi:"exadataDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 	ExadataInfraId           *string `pulumi:"exadataInfraId"`
 	ExadataInfraResourceType *string `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -266,7 +280,8 @@ type ExadataInsightState struct {
 	// (Updatable) Source of the Exadata system.
 	EntitySource pulumi.StringPtrInput
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
-	ExadataDisplayName       pulumi.StringPtrInput
+	ExadataDisplayName pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 	ExadataInfraId           pulumi.StringPtrInput
 	ExadataInfraResourceType pulumi.StringPtrInput
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -316,7 +331,8 @@ type exadataInsightArgs struct {
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// (Updatable) Source of the Exadata system.
-	EntitySource   string  `pulumi:"entitySource"`
+	EntitySource string `pulumi:"entitySource"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 	ExadataInfraId *string `pulumi:"exadataInfraId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -343,7 +359,8 @@ type ExadataInsightArgs struct {
 	// Enterprise Manager Unique Identifier
 	EnterpriseManagerIdentifier pulumi.StringPtrInput
 	// (Updatable) Source of the Exadata system.
-	EntitySource   pulumi.StringInput
+	EntitySource pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 	ExadataInfraId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
@@ -494,6 +511,7 @@ func (o ExadataInsightOutput) ExadataDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataDisplayName }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
 func (o ExadataInsightOutput) ExadataInfraId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.ExadataInfraId }).(pulumi.StringOutput)
 }

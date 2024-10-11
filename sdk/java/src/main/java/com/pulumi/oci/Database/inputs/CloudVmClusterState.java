@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCachArgs;
@@ -66,6 +67,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> backupSubnetId() {
         return Optional.ofNullable(this.backupSubnetId);
+    }
+
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Import(name="cloudAutomationUpdateDetails")
+    private @Nullable Output<CloudVmClusterCloudAutomationUpdateDetailsArgs> cloudAutomationUpdateDetails;
+
+    /**
+     * @return (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Optional<Output<CloudVmClusterCloudAutomationUpdateDetailsArgs>> cloudAutomationUpdateDetails() {
+        return Optional.ofNullable(this.cloudAutomationUpdateDetails);
     }
 
     /**
@@ -801,6 +817,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.availabilityDomain = $.availabilityDomain;
         this.backupNetworkNsgIds = $.backupNetworkNsgIds;
         this.backupSubnetId = $.backupSubnetId;
+        this.cloudAutomationUpdateDetails = $.cloudAutomationUpdateDetails;
         this.cloudExadataInfrastructureId = $.cloudExadataInfrastructureId;
         this.clusterName = $.clusterName;
         this.compartmentId = $.compartmentId;
@@ -939,6 +956,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder backupSubnetId(String backupSubnetId) {
             return backupSubnetId(Output.of(backupSubnetId));
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(@Nullable Output<CloudVmClusterCloudAutomationUpdateDetailsArgs> cloudAutomationUpdateDetails) {
+            $.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param cloudAutomationUpdateDetails (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloudAutomationUpdateDetails(CloudVmClusterCloudAutomationUpdateDetailsArgs cloudAutomationUpdateDetails) {
+            return cloudAutomationUpdateDetails(Output.of(cloudAutomationUpdateDetails));
         }
 
         /**

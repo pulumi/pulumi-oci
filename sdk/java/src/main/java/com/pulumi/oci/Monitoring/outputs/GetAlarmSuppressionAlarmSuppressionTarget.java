@@ -5,6 +5,7 @@ package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -15,6 +16,16 @@ public final class GetAlarmSuppressionAlarmSuppressionTarget {
      * 
      */
     private String alarmId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+     * 
+     */
+    private String compartmentId;
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    private Boolean compartmentIdInSubtree;
     /**
      * @return The type of the alarm suppression target.
      * 
@@ -28,6 +39,20 @@ public final class GetAlarmSuppressionAlarmSuppressionTarget {
      */
     public String alarmId() {
         return this.alarmId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    public Boolean compartmentIdInSubtree() {
+        return this.compartmentIdInSubtree;
     }
     /**
      * @return The type of the alarm suppression target.
@@ -47,11 +72,15 @@ public final class GetAlarmSuppressionAlarmSuppressionTarget {
     @CustomType.Builder
     public static final class Builder {
         private String alarmId;
+        private String compartmentId;
+        private Boolean compartmentIdInSubtree;
         private String targetType;
         public Builder() {}
         public Builder(GetAlarmSuppressionAlarmSuppressionTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmId = defaults.alarmId;
+    	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.targetType = defaults.targetType;
         }
 
@@ -61,6 +90,22 @@ public final class GetAlarmSuppressionAlarmSuppressionTarget {
               throw new MissingRequiredPropertyException("GetAlarmSuppressionAlarmSuppressionTarget", "alarmId");
             }
             this.alarmId = alarmId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionAlarmSuppressionTarget", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetAlarmSuppressionAlarmSuppressionTarget", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +119,8 @@ public final class GetAlarmSuppressionAlarmSuppressionTarget {
         public GetAlarmSuppressionAlarmSuppressionTarget build() {
             final var _resultValue = new GetAlarmSuppressionAlarmSuppressionTarget();
             _resultValue.alarmId = alarmId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.targetType = targetType;
             return _resultValue;
         }

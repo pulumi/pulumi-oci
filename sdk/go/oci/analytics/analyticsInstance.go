@@ -67,6 +67,7 @@ import (
 //						},
 //					},
 //				},
+//				UpdateChannel: pulumi.Any(analyticsInstanceUpdateChannel),
 //			})
 //			if err != nil {
 //				return err
@@ -130,6 +131,8 @@ type AnalyticsInstance struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Analytics instance update channel.
+	UpdateChannel pulumi.StringOutput `pulumi:"updateChannel"`
 }
 
 // NewAnalyticsInstance registers a new resource with the given unique name, arguments, and options.
@@ -224,6 +227,8 @@ type analyticsInstanceState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Analytics instance update channel.
+	UpdateChannel *string `pulumi:"updateChannel"`
 }
 
 type AnalyticsInstanceState struct {
@@ -270,6 +275,8 @@ type AnalyticsInstanceState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Analytics instance update channel.
+	UpdateChannel pulumi.StringPtrInput
 }
 
 func (AnalyticsInstanceState) ElementType() reflect.Type {
@@ -312,6 +319,8 @@ type analyticsInstanceArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
+	// (Updatable) Analytics instance update channel.
+	UpdateChannel *string `pulumi:"updateChannel"`
 }
 
 // The set of arguments for constructing a AnalyticsInstance resource.
@@ -351,6 +360,8 @@ type AnalyticsInstanceArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
+	// (Updatable) Analytics instance update channel.
+	UpdateChannel pulumi.StringPtrInput
 }
 
 func (AnalyticsInstanceArgs) ElementType() reflect.Type {
@@ -543,6 +554,11 @@ func (o AnalyticsInstanceOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 func (o AnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// (Updatable) Analytics instance update channel.
+func (o AnalyticsInstanceOutput) UpdateChannel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.UpdateChannel }).(pulumi.StringOutput)
 }
 
 type AnalyticsInstanceArrayOutput struct{ *pulumi.OutputState }

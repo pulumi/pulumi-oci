@@ -16,6 +16,8 @@ from .get_configs import *
 from .get_discovery_job import *
 from .get_discovery_job_logs import *
 from .get_discovery_jobs import *
+from .get_maintenance_window import *
+from .get_maintenance_windows import *
 from .get_metric_extension import *
 from .get_metric_extensions import *
 from .get_monitored_resource import *
@@ -26,6 +28,9 @@ from .get_monitored_resource_types import *
 from .get_monitored_resources import *
 from .get_process_set import *
 from .get_process_sets import *
+from .maintenance_window import *
+from .maintenance_windows_retry_failed_operation import *
+from .maintenance_windows_stop import *
 from .metric_extension import *
 from .metric_extension_metric_extension_on_given_resources_management import *
 from .metric_extensions_test_management import *

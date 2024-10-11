@@ -27,6 +27,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Config{}
 	case "oci:StackMonitoring/discoveryJob:DiscoveryJob":
 		r = &DiscoveryJob{}
+	case "oci:StackMonitoring/maintenanceWindow:MaintenanceWindow":
+		r = &MaintenanceWindow{}
+	case "oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation":
+		r = &MaintenanceWindowsRetryFailedOperation{}
+	case "oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop":
+		r = &MaintenanceWindowsStop{}
 	case "oci:StackMonitoring/metricExtension:MetricExtension":
 		r = &MetricExtension{}
 	case "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement":
@@ -75,6 +81,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"StackMonitoring/discoveryJob",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/maintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/maintenanceWindowsRetryFailedOperation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/maintenanceWindowsStop",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

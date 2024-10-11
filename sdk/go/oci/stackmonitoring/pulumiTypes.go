@@ -848,6 +848,461 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) PropertiesMap() pulumi.String
 	}).(pulumi.StringMapOutput)
 }
 
+type MaintenanceWindowResource struct {
+	// (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+	AreMembersIncluded *bool `pulumi:"areMembersIncluded"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId string `pulumi:"resourceId"`
+}
+
+// MaintenanceWindowResourceInput is an input type that accepts MaintenanceWindowResourceArgs and MaintenanceWindowResourceOutput values.
+// You can construct a concrete instance of `MaintenanceWindowResourceInput` via:
+//
+//	MaintenanceWindowResourceArgs{...}
+type MaintenanceWindowResourceInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowResourceOutput() MaintenanceWindowResourceOutput
+	ToMaintenanceWindowResourceOutputWithContext(context.Context) MaintenanceWindowResourceOutput
+}
+
+type MaintenanceWindowResourceArgs struct {
+	// (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+	AreMembersIncluded pulumi.BoolPtrInput `pulumi:"areMembersIncluded"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+}
+
+func (MaintenanceWindowResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowResource)(nil)).Elem()
+}
+
+func (i MaintenanceWindowResourceArgs) ToMaintenanceWindowResourceOutput() MaintenanceWindowResourceOutput {
+	return i.ToMaintenanceWindowResourceOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowResourceArgs) ToMaintenanceWindowResourceOutputWithContext(ctx context.Context) MaintenanceWindowResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowResourceOutput)
+}
+
+// MaintenanceWindowResourceArrayInput is an input type that accepts MaintenanceWindowResourceArray and MaintenanceWindowResourceArrayOutput values.
+// You can construct a concrete instance of `MaintenanceWindowResourceArrayInput` via:
+//
+//	MaintenanceWindowResourceArray{ MaintenanceWindowResourceArgs{...} }
+type MaintenanceWindowResourceArrayInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowResourceArrayOutput() MaintenanceWindowResourceArrayOutput
+	ToMaintenanceWindowResourceArrayOutputWithContext(context.Context) MaintenanceWindowResourceArrayOutput
+}
+
+type MaintenanceWindowResourceArray []MaintenanceWindowResourceInput
+
+func (MaintenanceWindowResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceWindowResource)(nil)).Elem()
+}
+
+func (i MaintenanceWindowResourceArray) ToMaintenanceWindowResourceArrayOutput() MaintenanceWindowResourceArrayOutput {
+	return i.ToMaintenanceWindowResourceArrayOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowResourceArray) ToMaintenanceWindowResourceArrayOutputWithContext(ctx context.Context) MaintenanceWindowResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowResourceArrayOutput)
+}
+
+type MaintenanceWindowResourceOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowResource)(nil)).Elem()
+}
+
+func (o MaintenanceWindowResourceOutput) ToMaintenanceWindowResourceOutput() MaintenanceWindowResourceOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourceOutput) ToMaintenanceWindowResourceOutputWithContext(ctx context.Context) MaintenanceWindowResourceOutput {
+	return o
+}
+
+// (Updatable) Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+func (o MaintenanceWindowResourceOutput) AreMembersIncluded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowResource) *bool { return v.AreMembersIncluded }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+func (o MaintenanceWindowResourceOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceWindowResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+type MaintenanceWindowResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceWindowResource)(nil)).Elem()
+}
+
+func (o MaintenanceWindowResourceArrayOutput) ToMaintenanceWindowResourceArrayOutput() MaintenanceWindowResourceArrayOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourceArrayOutput) ToMaintenanceWindowResourceArrayOutputWithContext(ctx context.Context) MaintenanceWindowResourceArrayOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourceArrayOutput) Index(i pulumi.IntInput) MaintenanceWindowResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MaintenanceWindowResource {
+		return vs[0].([]MaintenanceWindowResource)[vs[1].(int)]
+	}).(MaintenanceWindowResourceOutput)
+}
+
+type MaintenanceWindowResourcesDetail struct {
+	// Maintenance Window name.
+	Name *string `pulumi:"name"`
+	// Number of members of the resource
+	NumberOfMembers *int `pulumi:"numberOfMembers"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId *string `pulumi:"resourceId"`
+	// Type of the monitored resource
+	Type *string `pulumi:"type"`
+}
+
+// MaintenanceWindowResourcesDetailInput is an input type that accepts MaintenanceWindowResourcesDetailArgs and MaintenanceWindowResourcesDetailOutput values.
+// You can construct a concrete instance of `MaintenanceWindowResourcesDetailInput` via:
+//
+//	MaintenanceWindowResourcesDetailArgs{...}
+type MaintenanceWindowResourcesDetailInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowResourcesDetailOutput() MaintenanceWindowResourcesDetailOutput
+	ToMaintenanceWindowResourcesDetailOutputWithContext(context.Context) MaintenanceWindowResourcesDetailOutput
+}
+
+type MaintenanceWindowResourcesDetailArgs struct {
+	// Maintenance Window name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Number of members of the resource
+	NumberOfMembers pulumi.IntPtrInput `pulumi:"numberOfMembers"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// Type of the monitored resource
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MaintenanceWindowResourcesDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (i MaintenanceWindowResourcesDetailArgs) ToMaintenanceWindowResourcesDetailOutput() MaintenanceWindowResourcesDetailOutput {
+	return i.ToMaintenanceWindowResourcesDetailOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowResourcesDetailArgs) ToMaintenanceWindowResourcesDetailOutputWithContext(ctx context.Context) MaintenanceWindowResourcesDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowResourcesDetailOutput)
+}
+
+// MaintenanceWindowResourcesDetailArrayInput is an input type that accepts MaintenanceWindowResourcesDetailArray and MaintenanceWindowResourcesDetailArrayOutput values.
+// You can construct a concrete instance of `MaintenanceWindowResourcesDetailArrayInput` via:
+//
+//	MaintenanceWindowResourcesDetailArray{ MaintenanceWindowResourcesDetailArgs{...} }
+type MaintenanceWindowResourcesDetailArrayInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowResourcesDetailArrayOutput() MaintenanceWindowResourcesDetailArrayOutput
+	ToMaintenanceWindowResourcesDetailArrayOutputWithContext(context.Context) MaintenanceWindowResourcesDetailArrayOutput
+}
+
+type MaintenanceWindowResourcesDetailArray []MaintenanceWindowResourcesDetailInput
+
+func (MaintenanceWindowResourcesDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (i MaintenanceWindowResourcesDetailArray) ToMaintenanceWindowResourcesDetailArrayOutput() MaintenanceWindowResourcesDetailArrayOutput {
+	return i.ToMaintenanceWindowResourcesDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowResourcesDetailArray) ToMaintenanceWindowResourcesDetailArrayOutputWithContext(ctx context.Context) MaintenanceWindowResourcesDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowResourcesDetailArrayOutput)
+}
+
+type MaintenanceWindowResourcesDetailOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowResourcesDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (o MaintenanceWindowResourcesDetailOutput) ToMaintenanceWindowResourcesDetailOutput() MaintenanceWindowResourcesDetailOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourcesDetailOutput) ToMaintenanceWindowResourcesDetailOutputWithContext(ctx context.Context) MaintenanceWindowResourcesDetailOutput {
+	return o
+}
+
+// Maintenance Window name.
+func (o MaintenanceWindowResourcesDetailOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowResourcesDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Number of members of the resource
+func (o MaintenanceWindowResourcesDetailOutput) NumberOfMembers() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowResourcesDetail) *int { return v.NumberOfMembers }).(pulumi.IntPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+func (o MaintenanceWindowResourcesDetailOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowResourcesDetail) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Type of the monitored resource
+func (o MaintenanceWindowResourcesDetailOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowResourcesDetail) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceWindowResourcesDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowResourcesDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (o MaintenanceWindowResourcesDetailArrayOutput) ToMaintenanceWindowResourcesDetailArrayOutput() MaintenanceWindowResourcesDetailArrayOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourcesDetailArrayOutput) ToMaintenanceWindowResourcesDetailArrayOutputWithContext(ctx context.Context) MaintenanceWindowResourcesDetailArrayOutput {
+	return o
+}
+
+func (o MaintenanceWindowResourcesDetailArrayOutput) Index(i pulumi.IntInput) MaintenanceWindowResourcesDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MaintenanceWindowResourcesDetail {
+		return vs[0].([]MaintenanceWindowResourcesDetail)[vs[1].(int)]
+	}).(MaintenanceWindowResourcesDetailOutput)
+}
+
+type MaintenanceWindowSchedule struct {
+	// (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration *string `pulumi:"maintenanceWindowDuration"`
+	// (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences *string `pulumi:"maintenanceWindowRecurrences"`
+	// (Updatable) Property to identify the type of the Maintenance Window.
+	ScheduleType string `pulumi:"scheduleType"`
+	// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd *string `pulumi:"timeMaintenanceWindowEnd"`
+	// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TimeMaintenanceWindowStart *string `pulumi:"timeMaintenanceWindowStart"`
+}
+
+// MaintenanceWindowScheduleInput is an input type that accepts MaintenanceWindowScheduleArgs and MaintenanceWindowScheduleOutput values.
+// You can construct a concrete instance of `MaintenanceWindowScheduleInput` via:
+//
+//	MaintenanceWindowScheduleArgs{...}
+type MaintenanceWindowScheduleInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowScheduleOutput() MaintenanceWindowScheduleOutput
+	ToMaintenanceWindowScheduleOutputWithContext(context.Context) MaintenanceWindowScheduleOutput
+}
+
+type MaintenanceWindowScheduleArgs struct {
+	// (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration pulumi.StringPtrInput `pulumi:"maintenanceWindowDuration"`
+	// (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences pulumi.StringPtrInput `pulumi:"maintenanceWindowRecurrences"`
+	// (Updatable) Property to identify the type of the Maintenance Window.
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
+	// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd pulumi.StringPtrInput `pulumi:"timeMaintenanceWindowEnd"`
+	// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TimeMaintenanceWindowStart pulumi.StringPtrInput `pulumi:"timeMaintenanceWindowStart"`
+}
+
+func (MaintenanceWindowScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i MaintenanceWindowScheduleArgs) ToMaintenanceWindowScheduleOutput() MaintenanceWindowScheduleOutput {
+	return i.ToMaintenanceWindowScheduleOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowScheduleArgs) ToMaintenanceWindowScheduleOutputWithContext(ctx context.Context) MaintenanceWindowScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowScheduleOutput)
+}
+
+func (i MaintenanceWindowScheduleArgs) ToMaintenanceWindowSchedulePtrOutput() MaintenanceWindowSchedulePtrOutput {
+	return i.ToMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowScheduleArgs) ToMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) MaintenanceWindowSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowScheduleOutput).ToMaintenanceWindowSchedulePtrOutputWithContext(ctx)
+}
+
+// MaintenanceWindowSchedulePtrInput is an input type that accepts MaintenanceWindowScheduleArgs, MaintenanceWindowSchedulePtr and MaintenanceWindowSchedulePtrOutput values.
+// You can construct a concrete instance of `MaintenanceWindowSchedulePtrInput` via:
+//
+//	        MaintenanceWindowScheduleArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceWindowSchedulePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowSchedulePtrOutput() MaintenanceWindowSchedulePtrOutput
+	ToMaintenanceWindowSchedulePtrOutputWithContext(context.Context) MaintenanceWindowSchedulePtrOutput
+}
+
+type maintenanceWindowSchedulePtrType MaintenanceWindowScheduleArgs
+
+func MaintenanceWindowSchedulePtr(v *MaintenanceWindowScheduleArgs) MaintenanceWindowSchedulePtrInput {
+	return (*maintenanceWindowSchedulePtrType)(v)
+}
+
+func (*maintenanceWindowSchedulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i *maintenanceWindowSchedulePtrType) ToMaintenanceWindowSchedulePtrOutput() MaintenanceWindowSchedulePtrOutput {
+	return i.ToMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceWindowSchedulePtrType) ToMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) MaintenanceWindowSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowSchedulePtrOutput)
+}
+
+type MaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o MaintenanceWindowScheduleOutput) ToMaintenanceWindowScheduleOutput() MaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o MaintenanceWindowScheduleOutput) ToMaintenanceWindowScheduleOutputWithContext(ctx context.Context) MaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o MaintenanceWindowScheduleOutput) ToMaintenanceWindowSchedulePtrOutput() MaintenanceWindowSchedulePtrOutput {
+	return o.ToMaintenanceWindowSchedulePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceWindowScheduleOutput) ToMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) MaintenanceWindowSchedulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceWindowSchedule) *MaintenanceWindowSchedule {
+		return &v
+	}).(MaintenanceWindowSchedulePtrOutput)
+}
+
+// (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+func (o MaintenanceWindowScheduleOutput) MaintenanceWindowDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowSchedule) *string { return v.MaintenanceWindowDuration }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+func (o MaintenanceWindowScheduleOutput) MaintenanceWindowRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowSchedule) *string { return v.MaintenanceWindowRecurrences }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Property to identify the type of the Maintenance Window.
+func (o MaintenanceWindowScheduleOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceWindowSchedule) string { return v.ScheduleType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o MaintenanceWindowScheduleOutput) TimeMaintenanceWindowEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowSchedule) *string { return v.TimeMaintenanceWindowEnd }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MaintenanceWindowScheduleOutput) TimeMaintenanceWindowStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowSchedule) *string { return v.TimeMaintenanceWindowStart }).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceWindowSchedulePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowSchedulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o MaintenanceWindowSchedulePtrOutput) ToMaintenanceWindowSchedulePtrOutput() MaintenanceWindowSchedulePtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowSchedulePtrOutput) ToMaintenanceWindowSchedulePtrOutputWithContext(ctx context.Context) MaintenanceWindowSchedulePtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowSchedulePtrOutput) Elem() MaintenanceWindowScheduleOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) MaintenanceWindowSchedule {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceWindowSchedule
+		return ret
+	}).(MaintenanceWindowScheduleOutput)
+}
+
+// (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+func (o MaintenanceWindowSchedulePtrOutput) MaintenanceWindowDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceWindowDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+func (o MaintenanceWindowSchedulePtrOutput) MaintenanceWindowRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceWindowRecurrences
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Property to identify the type of the Maintenance Window.
+func (o MaintenanceWindowSchedulePtrOutput) ScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ScheduleType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o MaintenanceWindowSchedulePtrOutput) TimeMaintenanceWindowEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeMaintenanceWindowEnd
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MaintenanceWindowSchedulePtrOutput) TimeMaintenanceWindowStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeMaintenanceWindowStart
+	}).(pulumi.StringPtrOutput)
+}
+
 type MetricExtensionEnabledOnResource struct {
 	// The OCID of the resource on which Metric Extension is enabled
 	ResourceId *string `pulumi:"resourceId"`
@@ -8749,6 +9204,901 @@ func (o GetDiscoveryJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscovery
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobsFilter {
 		return vs[0].([]GetDiscoveryJobsFilter)[vs[1].(int)]
 	}).(GetDiscoveryJobsFilterOutput)
+}
+
+type GetMaintenanceWindowResource struct {
+	// Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+	AreMembersIncluded bool `pulumi:"areMembersIncluded"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId string `pulumi:"resourceId"`
+}
+
+// GetMaintenanceWindowResourceInput is an input type that accepts GetMaintenanceWindowResourceArgs and GetMaintenanceWindowResourceOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowResourceInput` via:
+//
+//	GetMaintenanceWindowResourceArgs{...}
+type GetMaintenanceWindowResourceInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowResourceOutput() GetMaintenanceWindowResourceOutput
+	ToGetMaintenanceWindowResourceOutputWithContext(context.Context) GetMaintenanceWindowResourceOutput
+}
+
+type GetMaintenanceWindowResourceArgs struct {
+	// Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+	AreMembersIncluded pulumi.BoolInput `pulumi:"areMembersIncluded"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+}
+
+func (GetMaintenanceWindowResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowResource)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowResourceArgs) ToGetMaintenanceWindowResourceOutput() GetMaintenanceWindowResourceOutput {
+	return i.ToGetMaintenanceWindowResourceOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowResourceArgs) ToGetMaintenanceWindowResourceOutputWithContext(ctx context.Context) GetMaintenanceWindowResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowResourceOutput)
+}
+
+// GetMaintenanceWindowResourceArrayInput is an input type that accepts GetMaintenanceWindowResourceArray and GetMaintenanceWindowResourceArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowResourceArrayInput` via:
+//
+//	GetMaintenanceWindowResourceArray{ GetMaintenanceWindowResourceArgs{...} }
+type GetMaintenanceWindowResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowResourceArrayOutput() GetMaintenanceWindowResourceArrayOutput
+	ToGetMaintenanceWindowResourceArrayOutputWithContext(context.Context) GetMaintenanceWindowResourceArrayOutput
+}
+
+type GetMaintenanceWindowResourceArray []GetMaintenanceWindowResourceInput
+
+func (GetMaintenanceWindowResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowResource)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowResourceArray) ToGetMaintenanceWindowResourceArrayOutput() GetMaintenanceWindowResourceArrayOutput {
+	return i.ToGetMaintenanceWindowResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowResourceArray) ToGetMaintenanceWindowResourceArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowResourceArrayOutput)
+}
+
+type GetMaintenanceWindowResourceOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowResource)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowResourceOutput) ToGetMaintenanceWindowResourceOutput() GetMaintenanceWindowResourceOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourceOutput) ToGetMaintenanceWindowResourceOutputWithContext(ctx context.Context) GetMaintenanceWindowResourceOutput {
+	return o
+}
+
+// Flag to indicate if the members of the resource has to be include in the Maintenance Window.
+func (o GetMaintenanceWindowResourceOutput) AreMembersIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResource) bool { return v.AreMembersIncluded }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+func (o GetMaintenanceWindowResourceOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceWindowResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowResource)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowResourceArrayOutput) ToGetMaintenanceWindowResourceArrayOutput() GetMaintenanceWindowResourceArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourceArrayOutput) ToGetMaintenanceWindowResourceArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowResourceArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourceArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowResource {
+		return vs[0].([]GetMaintenanceWindowResource)[vs[1].(int)]
+	}).(GetMaintenanceWindowResourceOutput)
+}
+
+type GetMaintenanceWindowResourcesDetail struct {
+	// Name of the monitored resource
+	Name string `pulumi:"name"`
+	// Number of members of the resource
+	NumberOfMembers int `pulumi:"numberOfMembers"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId string `pulumi:"resourceId"`
+	// Type of the monitored resource
+	Type string `pulumi:"type"`
+}
+
+// GetMaintenanceWindowResourcesDetailInput is an input type that accepts GetMaintenanceWindowResourcesDetailArgs and GetMaintenanceWindowResourcesDetailOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowResourcesDetailInput` via:
+//
+//	GetMaintenanceWindowResourcesDetailArgs{...}
+type GetMaintenanceWindowResourcesDetailInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowResourcesDetailOutput() GetMaintenanceWindowResourcesDetailOutput
+	ToGetMaintenanceWindowResourcesDetailOutputWithContext(context.Context) GetMaintenanceWindowResourcesDetailOutput
+}
+
+type GetMaintenanceWindowResourcesDetailArgs struct {
+	// Name of the monitored resource
+	Name pulumi.StringInput `pulumi:"name"`
+	// Number of members of the resource
+	NumberOfMembers pulumi.IntInput `pulumi:"numberOfMembers"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Type of the monitored resource
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMaintenanceWindowResourcesDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowResourcesDetailArgs) ToGetMaintenanceWindowResourcesDetailOutput() GetMaintenanceWindowResourcesDetailOutput {
+	return i.ToGetMaintenanceWindowResourcesDetailOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowResourcesDetailArgs) ToGetMaintenanceWindowResourcesDetailOutputWithContext(ctx context.Context) GetMaintenanceWindowResourcesDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowResourcesDetailOutput)
+}
+
+// GetMaintenanceWindowResourcesDetailArrayInput is an input type that accepts GetMaintenanceWindowResourcesDetailArray and GetMaintenanceWindowResourcesDetailArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowResourcesDetailArrayInput` via:
+//
+//	GetMaintenanceWindowResourcesDetailArray{ GetMaintenanceWindowResourcesDetailArgs{...} }
+type GetMaintenanceWindowResourcesDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowResourcesDetailArrayOutput() GetMaintenanceWindowResourcesDetailArrayOutput
+	ToGetMaintenanceWindowResourcesDetailArrayOutputWithContext(context.Context) GetMaintenanceWindowResourcesDetailArrayOutput
+}
+
+type GetMaintenanceWindowResourcesDetailArray []GetMaintenanceWindowResourcesDetailInput
+
+func (GetMaintenanceWindowResourcesDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowResourcesDetailArray) ToGetMaintenanceWindowResourcesDetailArrayOutput() GetMaintenanceWindowResourcesDetailArrayOutput {
+	return i.ToGetMaintenanceWindowResourcesDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowResourcesDetailArray) ToGetMaintenanceWindowResourcesDetailArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowResourcesDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowResourcesDetailArrayOutput)
+}
+
+type GetMaintenanceWindowResourcesDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowResourcesDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowResourcesDetailOutput) ToGetMaintenanceWindowResourcesDetailOutput() GetMaintenanceWindowResourcesDetailOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourcesDetailOutput) ToGetMaintenanceWindowResourcesDetailOutputWithContext(ctx context.Context) GetMaintenanceWindowResourcesDetailOutput {
+	return o
+}
+
+// Name of the monitored resource
+func (o GetMaintenanceWindowResourcesDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResourcesDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Number of members of the resource
+func (o GetMaintenanceWindowResourcesDetailOutput) NumberOfMembers() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResourcesDetail) int { return v.NumberOfMembers }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource part of the Maintenance window.
+func (o GetMaintenanceWindowResourcesDetailOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResourcesDetail) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// Type of the monitored resource
+func (o GetMaintenanceWindowResourcesDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowResourcesDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceWindowResourcesDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowResourcesDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowResourcesDetail)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowResourcesDetailArrayOutput) ToGetMaintenanceWindowResourcesDetailArrayOutput() GetMaintenanceWindowResourcesDetailArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourcesDetailArrayOutput) ToGetMaintenanceWindowResourcesDetailArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowResourcesDetailArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowResourcesDetailArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowResourcesDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowResourcesDetail {
+		return vs[0].([]GetMaintenanceWindowResourcesDetail)[vs[1].(int)]
+	}).(GetMaintenanceWindowResourcesDetailOutput)
+}
+
+type GetMaintenanceWindowSchedule struct {
+	// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration string `pulumi:"maintenanceWindowDuration"`
+	// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences string `pulumi:"maintenanceWindowRecurrences"`
+	// Property to identify the type of the Maintenance Window.
+	ScheduleType string `pulumi:"scheduleType"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd string `pulumi:"timeMaintenanceWindowEnd"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowStart string `pulumi:"timeMaintenanceWindowStart"`
+}
+
+// GetMaintenanceWindowScheduleInput is an input type that accepts GetMaintenanceWindowScheduleArgs and GetMaintenanceWindowScheduleOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowScheduleInput` via:
+//
+//	GetMaintenanceWindowScheduleArgs{...}
+type GetMaintenanceWindowScheduleInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowScheduleOutput() GetMaintenanceWindowScheduleOutput
+	ToGetMaintenanceWindowScheduleOutputWithContext(context.Context) GetMaintenanceWindowScheduleOutput
+}
+
+type GetMaintenanceWindowScheduleArgs struct {
+	// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration pulumi.StringInput `pulumi:"maintenanceWindowDuration"`
+	// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences pulumi.StringInput `pulumi:"maintenanceWindowRecurrences"`
+	// Property to identify the type of the Maintenance Window.
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd pulumi.StringInput `pulumi:"timeMaintenanceWindowEnd"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowStart pulumi.StringInput `pulumi:"timeMaintenanceWindowStart"`
+}
+
+func (GetMaintenanceWindowScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowScheduleArgs) ToGetMaintenanceWindowScheduleOutput() GetMaintenanceWindowScheduleOutput {
+	return i.ToGetMaintenanceWindowScheduleOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowScheduleArgs) ToGetMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMaintenanceWindowScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowScheduleOutput)
+}
+
+// GetMaintenanceWindowScheduleArrayInput is an input type that accepts GetMaintenanceWindowScheduleArray and GetMaintenanceWindowScheduleArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowScheduleArrayInput` via:
+//
+//	GetMaintenanceWindowScheduleArray{ GetMaintenanceWindowScheduleArgs{...} }
+type GetMaintenanceWindowScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowScheduleArrayOutput() GetMaintenanceWindowScheduleArrayOutput
+	ToGetMaintenanceWindowScheduleArrayOutputWithContext(context.Context) GetMaintenanceWindowScheduleArrayOutput
+}
+
+type GetMaintenanceWindowScheduleArray []GetMaintenanceWindowScheduleInput
+
+func (GetMaintenanceWindowScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowScheduleArray) ToGetMaintenanceWindowScheduleArrayOutput() GetMaintenanceWindowScheduleArrayOutput {
+	return i.ToGetMaintenanceWindowScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowScheduleArray) ToGetMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowScheduleArrayOutput)
+}
+
+type GetMaintenanceWindowScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowScheduleOutput) ToGetMaintenanceWindowScheduleOutput() GetMaintenanceWindowScheduleOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowScheduleOutput) ToGetMaintenanceWindowScheduleOutputWithContext(ctx context.Context) GetMaintenanceWindowScheduleOutput {
+	return o
+}
+
+// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+func (o GetMaintenanceWindowScheduleOutput) MaintenanceWindowDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowSchedule) string { return v.MaintenanceWindowDuration }).(pulumi.StringOutput)
+}
+
+// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+func (o GetMaintenanceWindowScheduleOutput) MaintenanceWindowRecurrences() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowSchedule) string { return v.MaintenanceWindowRecurrences }).(pulumi.StringOutput)
+}
+
+// Property to identify the type of the Maintenance Window.
+func (o GetMaintenanceWindowScheduleOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowSchedule) string { return v.ScheduleType }).(pulumi.StringOutput)
+}
+
+// Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o GetMaintenanceWindowScheduleOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowSchedule) string { return v.TimeMaintenanceWindowEnd }).(pulumi.StringOutput)
+}
+
+// Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o GetMaintenanceWindowScheduleOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowSchedule) string { return v.TimeMaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceWindowScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowSchedule)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowScheduleArrayOutput) ToGetMaintenanceWindowScheduleArrayOutput() GetMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowScheduleArrayOutput) ToGetMaintenanceWindowScheduleArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowScheduleArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowScheduleArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowSchedule {
+		return vs[0].([]GetMaintenanceWindowSchedule)[vs[1].(int)]
+	}).(GetMaintenanceWindowScheduleOutput)
+}
+
+type GetMaintenanceWindowsFilter struct {
+	// A filter to return maintenance windows that match exact resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaintenanceWindowsFilterInput is an input type that accepts GetMaintenanceWindowsFilterArgs and GetMaintenanceWindowsFilterOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsFilterInput` via:
+//
+//	GetMaintenanceWindowsFilterArgs{...}
+type GetMaintenanceWindowsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsFilterOutput() GetMaintenanceWindowsFilterOutput
+	ToGetMaintenanceWindowsFilterOutputWithContext(context.Context) GetMaintenanceWindowsFilterOutput
+}
+
+type GetMaintenanceWindowsFilterArgs struct {
+	// A filter to return maintenance windows that match exact resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaintenanceWindowsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsFilterArgs) ToGetMaintenanceWindowsFilterOutput() GetMaintenanceWindowsFilterOutput {
+	return i.ToGetMaintenanceWindowsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsFilterArgs) ToGetMaintenanceWindowsFilterOutputWithContext(ctx context.Context) GetMaintenanceWindowsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsFilterOutput)
+}
+
+// GetMaintenanceWindowsFilterArrayInput is an input type that accepts GetMaintenanceWindowsFilterArray and GetMaintenanceWindowsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsFilterArrayInput` via:
+//
+//	GetMaintenanceWindowsFilterArray{ GetMaintenanceWindowsFilterArgs{...} }
+type GetMaintenanceWindowsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsFilterArrayOutput() GetMaintenanceWindowsFilterArrayOutput
+	ToGetMaintenanceWindowsFilterArrayOutputWithContext(context.Context) GetMaintenanceWindowsFilterArrayOutput
+}
+
+type GetMaintenanceWindowsFilterArray []GetMaintenanceWindowsFilterInput
+
+func (GetMaintenanceWindowsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsFilterArray) ToGetMaintenanceWindowsFilterArrayOutput() GetMaintenanceWindowsFilterArrayOutput {
+	return i.ToGetMaintenanceWindowsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsFilterArray) ToGetMaintenanceWindowsFilterArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsFilterArrayOutput)
+}
+
+type GetMaintenanceWindowsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsFilterOutput) ToGetMaintenanceWindowsFilterOutput() GetMaintenanceWindowsFilterOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsFilterOutput) ToGetMaintenanceWindowsFilterOutputWithContext(ctx context.Context) GetMaintenanceWindowsFilterOutput {
+	return o
+}
+
+// A filter to return maintenance windows that match exact resource name.
+func (o GetMaintenanceWindowsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaintenanceWindowsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaintenanceWindowsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsFilter)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsFilterArrayOutput) ToGetMaintenanceWindowsFilterArrayOutput() GetMaintenanceWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsFilterArrayOutput) ToGetMaintenanceWindowsFilterArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsFilterArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowsFilter {
+		return vs[0].([]GetMaintenanceWindowsFilter)[vs[1].(int)]
+	}).(GetMaintenanceWindowsFilterOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollection struct {
+	Items []GetMaintenanceWindowsMaintenanceWindowCollectionItem `pulumi:"items"`
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionArgs and GetMaintenanceWindowsMaintenanceWindowCollectionOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionArgs{...}
+type GetMaintenanceWindowsMaintenanceWindowCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionOutput() GetMaintenanceWindowsMaintenanceWindowCollectionOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionArgs struct {
+	Items GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionOutput() GetMaintenanceWindowsMaintenanceWindowCollectionOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionOutput)
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionArrayInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionArray and GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionArrayInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionArray{ GetMaintenanceWindowsMaintenanceWindowCollectionArgs{...} }
+type GetMaintenanceWindowsMaintenanceWindowCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionArray []GetMaintenanceWindowsMaintenanceWindowCollectionInput
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionOutput() GetMaintenanceWindowsMaintenanceWindowCollectionOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionOutput) Items() GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollection) []GetMaintenanceWindowsMaintenanceWindowCollectionItem {
+		return v.Items
+	}).(GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollection)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowsMaintenanceWindowCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowsMaintenanceWindowCollection {
+		return vs[0].([]GetMaintenanceWindowsMaintenanceWindowCollection)[vs[1].(int)]
+	}).(GetMaintenanceWindowsMaintenanceWindowCollectionOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItem struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	FreeformTags  map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+	Id string `pulumi:"id"`
+	// A filter to return maintenance windows with matching lifecycleDetails.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleState   string `pulumi:"lifecycleState"`
+	// A filter to return maintenance windows that match exact resource name.
+	Name              string `pulumi:"name"`
+	NumberOfResources int    `pulumi:"numberOfResources"`
+	OperationStatus   string `pulumi:"operationStatus"`
+	OperationType     string `pulumi:"operationType"`
+	// Schedule information of the Maintenance Window
+	Schedules []GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule `pulumi:"schedules"`
+	// Lifecycle state of the monitored resource.
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionItemInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs and GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionItemInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs{...}
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
+	FreeformTags  pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return maintenance windows with matching lifecycleDetails.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleState   pulumi.StringInput `pulumi:"lifecycleState"`
+	// A filter to return maintenance windows that match exact resource name.
+	Name              pulumi.StringInput `pulumi:"name"`
+	NumberOfResources pulumi.IntInput    `pulumi:"numberOfResources"`
+	OperationStatus   pulumi.StringInput `pulumi:"operationStatus"`
+	OperationType     pulumi.StringInput `pulumi:"operationType"`
+	// Schedule information of the Maintenance Window
+	Schedules GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput `pulumi:"schedules"`
+	// Lifecycle state of the monitored resource.
+	State      pulumi.StringInput    `pulumi:"state"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput)
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionItemArray and GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionItemArray{ GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs{...} }
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemArray []GetMaintenanceWindowsMaintenanceWindowCollectionItemInput
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return maintenance windows with matching lifecycleDetails.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// A filter to return maintenance windows that match exact resource name.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) NumberOfResources() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) int { return v.NumberOfResources }).(pulumi.IntOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) OperationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.OperationStatus }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) OperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.OperationType }).(pulumi.StringOutput)
+}
+
+// Schedule information of the Maintenance Window
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) Schedules() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) []GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule {
+		return v.Schedules
+	}).(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput)
+}
+
+// Lifecycle state of the monitored resource.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowsMaintenanceWindowCollectionItem {
+		return vs[0].([]GetMaintenanceWindowsMaintenanceWindowCollectionItem)[vs[1].(int)]
+	}).(GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule struct {
+	// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration string `pulumi:"maintenanceWindowDuration"`
+	// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences string `pulumi:"maintenanceWindowRecurrences"`
+	// Property to identify the type of the Maintenance Window.
+	ScheduleType string `pulumi:"scheduleType"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd string `pulumi:"timeMaintenanceWindowEnd"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowStart string `pulumi:"timeMaintenanceWindowStart"`
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs and GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs{...}
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs struct {
+	// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+	MaintenanceWindowDuration pulumi.StringInput `pulumi:"maintenanceWindowDuration"`
+	// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+	MaintenanceWindowRecurrences pulumi.StringInput `pulumi:"maintenanceWindowRecurrences"`
+	// Property to identify the type of the Maintenance Window.
+	ScheduleType pulumi.StringInput `pulumi:"scheduleType"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowEnd pulumi.StringInput `pulumi:"timeMaintenanceWindowEnd"`
+	// Start time of Maintenance window. A RFC3339 formatted datetime string
+	TimeMaintenanceWindowStart pulumi.StringInput `pulumi:"timeMaintenanceWindowStart"`
+}
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput)
+}
+
+// GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput is an input type that accepts GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray and GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput` via:
+//
+//	GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray{ GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs{...} }
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput
+	ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutputWithContext(context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray []GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleInput
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule)(nil)).Elem()
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput {
+	return i.ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput {
+	return o
+}
+
+// Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) MaintenanceWindowDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule) string {
+		return v.MaintenanceWindowDuration
+	}).(pulumi.StringOutput)
+}
+
+// A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) MaintenanceWindowRecurrences() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule) string {
+		return v.MaintenanceWindowRecurrences
+	}).(pulumi.StringOutput)
+}
+
+// Property to identify the type of the Maintenance Window.
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule) string { return v.ScheduleType }).(pulumi.StringOutput)
+}
+
+// Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule) string {
+		return v.TimeMaintenanceWindowEnd
+	}).(pulumi.StringOutput)
+}
+
+// Start time of Maintenance window. A RFC3339 formatted datetime string
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule) string {
+		return v.TimeMaintenanceWindowStart
+	}).(pulumi.StringOutput)
+}
+
+type GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule)(nil)).Elem()
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput() GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput) ToGetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutputWithContext(ctx context.Context) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule {
+		return vs[0].([]GetMaintenanceWindowsMaintenanceWindowCollectionItemSchedule)[vs[1].(int)]
+	}).(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput)
 }
 
 type GetMetricExtensionEnabledOnResource struct {
@@ -16854,6 +18204,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPropertiesPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowResourceInput)(nil)).Elem(), MaintenanceWindowResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowResourceArrayInput)(nil)).Elem(), MaintenanceWindowResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowResourcesDetailInput)(nil)).Elem(), MaintenanceWindowResourcesDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowResourcesDetailArrayInput)(nil)).Elem(), MaintenanceWindowResourcesDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowScheduleInput)(nil)).Elem(), MaintenanceWindowScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowSchedulePtrInput)(nil)).Elem(), MaintenanceWindowScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionEnabledOnResourceInput)(nil)).Elem(), MetricExtensionEnabledOnResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionEnabledOnResourceArrayInput)(nil)).Elem(), MetricExtensionEnabledOnResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionMetricListInput)(nil)).Elem(), MetricExtensionMetricListArgs{})
@@ -16959,6 +18315,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput)(nil)).Elem(), GetDiscoveryJobsDiscoveryJobCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterInput)(nil)).Elem(), GetDiscoveryJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterArrayInput)(nil)).Elem(), GetDiscoveryJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowResourceInput)(nil)).Elem(), GetMaintenanceWindowResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowResourceArrayInput)(nil)).Elem(), GetMaintenanceWindowResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowResourcesDetailInput)(nil)).Elem(), GetMaintenanceWindowResourcesDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowResourcesDetailArrayInput)(nil)).Elem(), GetMaintenanceWindowResourcesDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowScheduleInput)(nil)).Elem(), GetMaintenanceWindowScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowScheduleArrayInput)(nil)).Elem(), GetMaintenanceWindowScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsFilterInput)(nil)).Elem(), GetMaintenanceWindowsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsFilterArrayInput)(nil)).Elem(), GetMaintenanceWindowsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionArrayInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayInput)(nil)).Elem(), GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionEnabledOnResourceInput)(nil)).Elem(), GetMetricExtensionEnabledOnResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionEnabledOnResourceArrayInput)(nil)).Elem(), GetMetricExtensionEnabledOnResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionMetricListInput)(nil)).Elem(), GetMetricExtensionMetricListArgs{})
@@ -17088,6 +18458,12 @@ func init() {
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsPtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowResourceOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowResourceArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowResourcesDetailOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowResourcesDetailArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowScheduleOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowSchedulePtrOutput{})
 	pulumi.RegisterOutputType(MetricExtensionEnabledOnResourceOutput{})
 	pulumi.RegisterOutputType(MetricExtensionEnabledOnResourceArrayOutput{})
 	pulumi.RegisterOutputType(MetricExtensionMetricListOutput{})
@@ -17193,6 +18569,20 @@ func init() {
 	pulumi.RegisterOutputType(GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowResourceOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowResourcesDetailOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowResourcesDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowScheduleOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceWindowsMaintenanceWindowCollectionItemScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetMetricExtensionEnabledOnResourceOutput{})
 	pulumi.RegisterOutputType(GetMetricExtensionEnabledOnResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMetricExtensionMetricListOutput{})

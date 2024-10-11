@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionsAlarmSuppressionCollection;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,12 +20,22 @@ public final class GetAlarmSuppressionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    private String alarmId;
+    private @Nullable String alarmId;
     /**
      * @return The list of alarm_suppression_collection.
      * 
      */
     private List<GetAlarmSuppressionsAlarmSuppressionCollection> alarmSuppressionCollections;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return A user-friendly name for the alarm suppression. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -36,19 +47,30 @@ public final class GetAlarmSuppressionsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isAllSuppressions;
+    /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    private @Nullable String level;
     /**
      * @return The current lifecycle state of the alarm suppression.  Example: `DELETED`
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The type of the alarm suppression target.
+     * 
+     */
+    private @Nullable String targetType;
 
     private GetAlarmSuppressionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      * 
      */
-    public String alarmId() {
-        return this.alarmId;
+    public Optional<String> alarmId() {
+        return Optional.ofNullable(this.alarmId);
     }
     /**
      * @return The list of alarm_suppression_collection.
@@ -56,6 +78,20 @@ public final class GetAlarmSuppressionsResult {
      */
     public List<GetAlarmSuppressionsAlarmSuppressionCollection> alarmSuppressionCollections() {
         return this.alarmSuppressionCollections;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return When true, the alarm suppression targets all alarms under all compartments and subcompartments of  the tenancy specified. The parameter can only be set to true when compartmentId is the tenancy OCID  (the tenancy is the root compartment). When false, the alarm suppression targets only the alarms under the specified compartment.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return A user-friendly name for the alarm suppression. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -74,12 +110,29 @@ public final class GetAlarmSuppressionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> isAllSuppressions() {
+        return Optional.ofNullable(this.isAllSuppressions);
+    }
+    /**
+     * @return The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
+     * 
+     */
+    public Optional<String> level() {
+        return Optional.ofNullable(this.level);
+    }
     /**
      * @return The current lifecycle state of the alarm suppression.  Example: `DELETED`
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
+    }
+    /**
+     * @return The type of the alarm suppression target.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     public static Builder builder() {
@@ -91,28 +144,36 @@ public final class GetAlarmSuppressionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String alarmId;
+        private @Nullable String alarmId;
         private List<GetAlarmSuppressionsAlarmSuppressionCollection> alarmSuppressionCollections;
+        private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAlarmSuppressionsFilter> filters;
         private String id;
+        private @Nullable Boolean isAllSuppressions;
+        private @Nullable String level;
         private @Nullable String state;
+        private @Nullable String targetType;
         public Builder() {}
         public Builder(GetAlarmSuppressionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmId = defaults.alarmId;
     	      this.alarmSuppressionCollections = defaults.alarmSuppressionCollections;
+    	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isAllSuppressions = defaults.isAllSuppressions;
+    	      this.level = defaults.level;
     	      this.state = defaults.state;
+    	      this.targetType = defaults.targetType;
         }
 
         @CustomType.Setter
-        public Builder alarmId(String alarmId) {
-            if (alarmId == null) {
-              throw new MissingRequiredPropertyException("GetAlarmSuppressionsResult", "alarmId");
-            }
+        public Builder alarmId(@Nullable String alarmId) {
+
             this.alarmId = alarmId;
             return this;
         }
@@ -126,6 +187,18 @@ public final class GetAlarmSuppressionsResult {
         }
         public Builder alarmSuppressionCollections(GetAlarmSuppressionsAlarmSuppressionCollection... alarmSuppressionCollections) {
             return alarmSuppressionCollections(List.of(alarmSuppressionCollections));
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
+            this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
@@ -151,19 +224,42 @@ public final class GetAlarmSuppressionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isAllSuppressions(@Nullable Boolean isAllSuppressions) {
+
+            this.isAllSuppressions = isAllSuppressions;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder level(@Nullable String level) {
+
+            this.level = level;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
             return this;
         }
         public GetAlarmSuppressionsResult build() {
             final var _resultValue = new GetAlarmSuppressionsResult();
             _resultValue.alarmId = alarmId;
             _resultValue.alarmSuppressionCollections = alarmSuppressionCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isAllSuppressions = isAllSuppressions;
+            _resultValue.level = level;
             _resultValue.state = state;
+            _resultValue.targetType = targetType;
             return _resultValue;
         }
     }

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterArgs;
 import com.pulumi.oci.Database.inputs.VmClusterState;
+import com.pulumi.oci.Database.outputs.VmClusterCloudAutomationUpdateDetails;
 import com.pulumi.oci.Database.outputs.VmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.VmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Utilities;
@@ -37,6 +38,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Database.VmCluster;
  * import com.pulumi.oci.Database.VmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
  * import java.util.List;
@@ -60,6 +64,18 @@ import javax.annotation.Nullable;
  *             .giVersion(vmClusterGiVersion)
  *             .sshPublicKeys(vmClusterSshPublicKeys)
  *             .vmClusterNetworkId(testVmClusterNetwork.id())
+ *             .cloudAutomationUpdateDetails(VmClusterCloudAutomationUpdateDetailsArgs.builder()
+ *                 .applyUpdateTimePreference(VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs.builder()
+ *                     .applyUpdatePreferredEndTime(vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredEndTime)
+ *                     .applyUpdatePreferredStartTime(vmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceApplyUpdatePreferredStartTime)
+ *                     .build())
+ *                 .freezePeriod(VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs.builder()
+ *                     .freezePeriodEndTime(vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodEndTime)
+ *                     .freezePeriodStartTime(vmClusterCloudAutomationUpdateDetailsFreezePeriodFreezePeriodStartTime)
+ *                     .build())
+ *                 .isEarlyAdoptionEnabled(vmClusterCloudAutomationUpdateDetailsIsEarlyAdoptionEnabled)
+ *                 .isFreezePeriodEnabled(vmClusterCloudAutomationUpdateDetailsIsFreezePeriodEnabled)
+ *                 .build())
  *             .dataCollectionOptions(VmClusterDataCollectionOptionsArgs.builder()
  *                 .isDiagnosticsEventsEnabled(vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled)
  *                 .isHealthMonitoringEnabled(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled)
@@ -112,6 +128,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    @Export(name="cloudAutomationUpdateDetails", refs={VmClusterCloudAutomationUpdateDetails.class}, tree="[0]")
+    private Output<VmClusterCloudAutomationUpdateDetails> cloudAutomationUpdateDetails;
+
+    /**
+     * @return (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+     * 
+     */
+    public Output<VmClusterCloudAutomationUpdateDetails> cloudAutomationUpdateDetails() {
+        return this.cloudAutomationUpdateDetails;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

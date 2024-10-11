@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ListenerConnectionConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ListenerConnectionConfigurationArgs Empty = new ListenerConnectionConfigurationArgs();
+
+    /**
+     * (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+     * 
+     */
+    @Import(name="backendTcpProxyProtocolOptions")
+    private @Nullable Output<List<String>> backendTcpProxyProtocolOptions;
+
+    /**
+     * @return (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+     * 
+     */
+    public Optional<Output<List<String>>> backendTcpProxyProtocolOptions() {
+        return Optional.ofNullable(this.backendTcpProxyProtocolOptions);
+    }
 
     /**
      * (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
@@ -58,6 +74,7 @@ public final class ListenerConnectionConfigurationArgs extends com.pulumi.resour
     private ListenerConnectionConfigurationArgs() {}
 
     private ListenerConnectionConfigurationArgs(ListenerConnectionConfigurationArgs $) {
+        this.backendTcpProxyProtocolOptions = $.backendTcpProxyProtocolOptions;
         this.backendTcpProxyProtocolVersion = $.backendTcpProxyProtocolVersion;
         this.idleTimeoutInSeconds = $.idleTimeoutInSeconds;
     }
@@ -78,6 +95,37 @@ public final class ListenerConnectionConfigurationArgs extends com.pulumi.resour
 
         public Builder(ListenerConnectionConfigurationArgs defaults) {
             $ = new ListenerConnectionConfigurationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backendTcpProxyProtocolOptions (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendTcpProxyProtocolOptions(@Nullable Output<List<String>> backendTcpProxyProtocolOptions) {
+            $.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
+            return this;
+        }
+
+        /**
+         * @param backendTcpProxyProtocolOptions (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendTcpProxyProtocolOptions(List<String> backendTcpProxyProtocolOptions) {
+            return backendTcpProxyProtocolOptions(Output.of(backendTcpProxyProtocolOptions));
+        }
+
+        /**
+         * @param backendTcpProxyProtocolOptions (Updatable) An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example: [&#34;PP2_TYPE_AUTHORITY&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendTcpProxyProtocolOptions(String... backendTcpProxyProtocolOptions) {
+            return backendTcpProxyProtocolOptions(List.of(backendTcpProxyProtocolOptions));
         }
 
         /**

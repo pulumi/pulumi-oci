@@ -31,7 +31,8 @@ class VcnArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a Vcn resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
@@ -58,8 +59,8 @@ class VcnArgs:
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -85,6 +86,8 @@ class VcnArgs:
             pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
             pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -224,17 +227,28 @@ class VcnArgs:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @is_oracle_gua_allocation_enabled.setter
     def is_oracle_gua_allocation_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
 
 @pulumi.input_type
@@ -256,6 +270,7 @@ class _VcnState:
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  vcn_domain_name: Optional[pulumi.Input[str]] = None):
@@ -290,8 +305,8 @@ class _VcnState:
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -331,6 +346,8 @@ class _VcnState:
             pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
             pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -536,17 +553,28 @@ class _VcnState:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @is_oracle_gua_allocation_enabled.setter
     def is_oracle_gua_allocation_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
     @property
     @pulumi.getter
@@ -601,6 +629,7 @@ class Vcn(pulumi.CustomResource):
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         This resource provides the Vcn resource in Oracle Cloud Infrastructure Core service.
@@ -670,7 +699,8 @@ class Vcn(pulumi.CustomResource):
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
             is_ipv6enabled=vcn_is_ipv6enabled,
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
+            security_attributes=vcn_security_attributes)
         ```
 
         ## Import
@@ -707,8 +737,8 @@ class Vcn(pulumi.CustomResource):
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -787,7 +817,8 @@ class Vcn(pulumi.CustomResource):
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
             is_ipv6enabled=vcn_is_ipv6enabled,
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
+            security_attributes=vcn_security_attributes)
         ```
 
         ## Import
@@ -824,6 +855,7 @@ class Vcn(pulumi.CustomResource):
                  ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
                  is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -846,6 +878,7 @@ class Vcn(pulumi.CustomResource):
             __props__.__dict__["ipv6private_cidr_blocks"] = ipv6private_cidr_blocks
             __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
             __props__.__dict__["is_oracle_gua_allocation_enabled"] = is_oracle_gua_allocation_enabled
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["byoipv6cidr_blocks"] = None
             __props__.__dict__["default_dhcp_options_id"] = None
             __props__.__dict__["default_route_table_id"] = None
@@ -880,6 +913,7 @@ class Vcn(pulumi.CustomResource):
             ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
             is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_domain_name: Optional[pulumi.Input[str]] = None) -> 'Vcn':
@@ -919,8 +953,8 @@ class Vcn(pulumi.CustomResource):
                
                **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
-               
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -948,6 +982,7 @@ class Vcn(pulumi.CustomResource):
         __props__.__dict__["ipv6private_cidr_blocks"] = ipv6private_cidr_blocks
         __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
         __props__.__dict__["is_oracle_gua_allocation_enabled"] = is_oracle_gua_allocation_enabled
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vcn_domain_name"] = vcn_domain_name
@@ -1091,13 +1126,20 @@ class Vcn(pulumi.CustomResource):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[bool]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        """
+        return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "is_oracle_gua_allocation_enabled")
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

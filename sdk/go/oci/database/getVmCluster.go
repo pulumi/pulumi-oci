@@ -60,6 +60,8 @@ type LookupVmClusterArgs struct {
 type LookupVmClusterResult struct {
 	// The name of the availability domain that the VM cluster is located in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+	CloudAutomationUpdateDetails []GetVmClusterCloudAutomationUpdateDetail `pulumi:"cloudAutomationUpdateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
@@ -167,6 +169,13 @@ func (o LookupVmClusterResultOutput) ToLookupVmClusterResultOutputWithContext(ct
 // The name of the availability domain that the VM cluster is located in.
 func (o LookupVmClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
+func (o LookupVmClusterResultOutput) CloudAutomationUpdateDetails() GetVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) []GetVmClusterCloudAutomationUpdateDetail {
+		return v.CloudAutomationUpdateDetails
+	}).(GetVmClusterCloudAutomationUpdateDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

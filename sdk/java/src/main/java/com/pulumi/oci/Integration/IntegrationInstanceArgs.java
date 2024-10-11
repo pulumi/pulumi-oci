@@ -159,6 +159,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    @Import(name="failoverTrigger")
+    private @Nullable Output<Integer> failoverTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> failoverTrigger() {
+        return Optional.ofNullable(this.failoverTrigger);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -216,6 +231,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
      */
     public Output<Boolean> isByol() {
         return this.isByol;
+    }
+
+    /**
+     * Is Disaster Recovery enabled or not.
+     * 
+     */
+    @Import(name="isDisasterRecoveryEnabled")
+    private @Nullable Output<Boolean> isDisasterRecoveryEnabled;
+
+    /**
+     * @return Is Disaster Recovery enabled or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isDisasterRecoveryEnabled() {
+        return Optional.ofNullable(this.isDisasterRecoveryEnabled);
     }
 
     /**
@@ -326,10 +356,12 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
         this.extendDataRetentionTrigger = $.extendDataRetentionTrigger;
+        this.failoverTrigger = $.failoverTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
         this.integrationInstanceType = $.integrationInstanceType;
         this.isByol = $.isByol;
+        this.isDisasterRecoveryEnabled = $.isDisasterRecoveryEnabled;
         this.isFileServerEnabled = $.isFileServerEnabled;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
         this.messagePacks = $.messagePacks;
@@ -556,6 +588,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(@Nullable Output<Integer> failoverTrigger) {
+            $.failoverTrigger = failoverTrigger;
+            return this;
+        }
+
+        /**
+         * @param failoverTrigger (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTrigger(Integer failoverTrigger) {
+            return failoverTrigger(Output.of(failoverTrigger));
+        }
+
+        /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -637,6 +690,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
          */
         public Builder isByol(Boolean isByol) {
             return isByol(Output.of(isByol));
+        }
+
+        /**
+         * @param isDisasterRecoveryEnabled Is Disaster Recovery enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisasterRecoveryEnabled(@Nullable Output<Boolean> isDisasterRecoveryEnabled) {
+            $.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDisasterRecoveryEnabled Is Disaster Recovery enabled or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            return isDisasterRecoveryEnabled(Output.of(isDisasterRecoveryEnabled));
         }
 
         /**

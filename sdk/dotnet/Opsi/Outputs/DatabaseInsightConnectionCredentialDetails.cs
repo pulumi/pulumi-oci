@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Credential type.
         /// </summary>
-        public readonly string? CredentialType;
+        public readonly string CredentialType;
         /// <summary>
         /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         /// </summary>
@@ -33,31 +33,24 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// database user name.
         /// </summary>
         public readonly string? UserName;
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
-        /// </summary>
-        public readonly string? WalletSecretId;
 
         [OutputConstructor]
         private DatabaseInsightConnectionCredentialDetails(
             string? credentialSourceName,
 
-            string? credentialType,
+            string credentialType,
 
             string? passwordSecretId,
 
             string? role,
 
-            string? userName,
-
-            string? walletSecretId)
+            string? userName)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;
-            WalletSecretId = walletSecretId;
         }
     }
 }

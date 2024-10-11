@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class DesktopPoolNetworkConfiguration
     {
         /// <summary>
-        /// The OCID of the subnet to use for the desktop pool.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// The OCID of the VCN used by the desktop pool.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         /// </summary>
         public readonly string VcnId;
 

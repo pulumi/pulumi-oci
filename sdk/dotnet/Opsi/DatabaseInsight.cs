@@ -30,16 +30,22 @@ namespace Pulumi.Oci.Opsi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Output("connectionCredentialDetails")]
         public Output<Outputs.DatabaseInsightConnectionCredentialDetails> ConnectionCredentialDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Connection details of the private endpoints.
+        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
         /// </summary>
         [Output("connectionDetails")]
         public Output<Outputs.DatabaseInsightConnectionDetails> ConnectionDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+        /// </summary>
+        [Output("connectorId")]
+        public Output<string> ConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// User credential details to connect to the database.
@@ -102,7 +108,7 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// Database Deployment Type
+        /// Database Deployment Type (EXACS will be supported in the future)
         /// </summary>
         [Output("deploymentType")]
         public Output<string> DeploymentType { get; private set; } = null!;
@@ -162,6 +168,12 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Flag is to identify if advanced features for autonomous database is enabled or not
+        /// </summary>
+        [Output("isAdvancedFeaturesEnabled")]
+        public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies if MYSQL DB System has heatwave cluster attached.
         /// </summary>
         [Output("isHeatWaveClusterAttached")]
@@ -178,6 +190,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        /// </summary>
+        [Output("managementAgentId")]
+        public Output<string?> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -295,16 +313,22 @@ namespace Pulumi.Oci.Opsi
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Input("connectionCredentialDetails")]
         public Input<Inputs.DatabaseInsightConnectionCredentialDetailsArgs>? ConnectionCredentialDetails { get; set; }
 
         /// <summary>
-        /// Connection details of the private endpoints.
+        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
         /// </summary>
         [Input("connectionDetails")]
         public Input<Inputs.DatabaseInsightConnectionDetailsArgs>? ConnectionDetails { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+        /// </summary>
+        [Input("connectorId")]
+        public Input<string>? ConnectorId { get; set; }
 
         /// <summary>
         /// User credential details to connect to the database.
@@ -349,7 +373,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Database Deployment Type
+        /// Database Deployment Type (EXACS will be supported in the future)
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
@@ -397,6 +421,18 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
+        /// Flag is to identify if advanced features for autonomous database is enabled or not
+        /// </summary>
+        [Input("isAdvancedFeaturesEnabled")]
+        public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        /// </summary>
+        [Input("managementAgentId")]
+        public Input<string>? ManagementAgentId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         /// </summary>
         [Input("opsiPrivateEndpointId")]
@@ -432,16 +468,22 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Input("connectionCredentialDetails")]
         public Input<Inputs.DatabaseInsightConnectionCredentialDetailsGetArgs>? ConnectionCredentialDetails { get; set; }
 
         /// <summary>
-        /// Connection details of the private endpoints.
+        /// Connection details to connect to the database. HostName, protocol, and port should be specified.
         /// </summary>
         [Input("connectionDetails")]
         public Input<Inputs.DatabaseInsightConnectionDetailsGetArgs>? ConnectionDetails { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+        /// </summary>
+        [Input("connectorId")]
+        public Input<string>? ConnectorId { get; set; }
 
         /// <summary>
         /// User credential details to connect to the database.
@@ -510,7 +552,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Database Deployment Type
+        /// Database Deployment Type (EXACS will be supported in the future)
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
@@ -576,6 +618,12 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
+        /// Flag is to identify if advanced features for autonomous database is enabled or not
+        /// </summary>
+        [Input("isAdvancedFeaturesEnabled")]
+        public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
+
+        /// <summary>
         /// Specifies if MYSQL DB System has heatwave cluster attached.
         /// </summary>
         [Input("isHeatWaveClusterAttached")]
@@ -592,6 +640,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        /// </summary>
+        [Input("managementAgentId")]
+        public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint

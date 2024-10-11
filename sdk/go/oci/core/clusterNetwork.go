@@ -116,7 +116,7 @@ type ClusterNetwork struct {
 
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
-	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 	ClusterConfiguration ClusterNetworkClusterConfigurationOutput `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -185,7 +185,7 @@ func GetClusterNetwork(ctx *pulumi.Context,
 type clusterNetworkState struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
-	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 	ClusterConfiguration *ClusterNetworkClusterConfiguration `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -216,7 +216,7 @@ type clusterNetworkState struct {
 type ClusterNetworkState struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
-	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 	ClusterConfiguration ClusterNetworkClusterConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
 	CompartmentId pulumi.StringPtrInput
@@ -251,7 +251,7 @@ func (ClusterNetworkState) ElementType() reflect.Type {
 type clusterNetworkArgs struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
-	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 	ClusterConfiguration *ClusterNetworkClusterConfiguration `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -273,7 +273,7 @@ type clusterNetworkArgs struct {
 type ClusterNetworkArgs struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
-	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 	ClusterConfiguration ClusterNetworkClusterConfigurationPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
 	CompartmentId pulumi.StringInput
@@ -380,7 +380,7 @@ func (o ClusterNetworkOutput) ToClusterNetworkOutputWithContext(ctx context.Cont
 
 // The HPC cluster configuration requested when launching instances of a cluster network.
 //
-// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
+// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
 func (o ClusterNetworkOutput) ClusterConfiguration() ClusterNetworkClusterConfigurationOutput {
 	return o.ApplyT(func(v *ClusterNetwork) ClusterNetworkClusterConfigurationOutput { return v.ClusterConfiguration }).(ClusterNetworkClusterConfigurationOutput)
 }

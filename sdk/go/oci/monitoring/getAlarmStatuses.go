@@ -16,7 +16,8 @@ import (
 // List the status of each alarm in the specified compartment.
 // Status is collective, across all metric streams in the alarm.
 // To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
-// The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
+// Optionally filter by resource or status value.
+//
 // For more information, see
 // [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
 // For important limits information, see
@@ -100,7 +101,7 @@ type GetAlarmStatusesResult struct {
 	Id          string  `pulumi:"id"`
 	ResourceId  *string `pulumi:"resourceId"`
 	ServiceName *string `pulumi:"serviceName"`
-	// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
+	// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).  Example: `FIRING`
 	Status *string `pulumi:"status"`
 }
 
@@ -200,7 +201,7 @@ func (o GetAlarmStatusesResultOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
-// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`. Example: `FIRING`
+// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).  Example: `FIRING`
 func (o GetAlarmStatusesResultOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }

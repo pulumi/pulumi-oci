@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult> ConnectionDetails;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
+        /// </summary>
+        public readonly string ConnectorId;
+        /// <summary>
         /// User credential details to connect to the database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult> CredentialDetails;
@@ -104,6 +108,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Flag is to identify if advanced features for autonomous database is enabled or not
+        /// </summary>
+        public readonly bool IsAdvancedFeaturesEnabled;
+        /// <summary>
         /// Specifies if MYSQL DB System has heatwave cluster attached.
         /// </summary>
         public readonly bool IsHeatWaveClusterAttached;
@@ -115,6 +123,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly string ManagementAgentId;
         /// <summary>
         /// Unique Operations Insights PrivateEndpoint identifier
         /// </summary>
@@ -164,6 +173,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult> connectionDetails,
 
+            string connectorId,
+
             ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult> credentialDetails,
 
             string databaseConnectionStatusDetails,
@@ -206,11 +217,15 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string id,
 
+            bool isAdvancedFeaturesEnabled,
+
             bool isHeatWaveClusterAttached,
 
             bool isHighlyAvailable,
 
             string lifecycleDetails,
+
+            string managementAgentId,
 
             string opsiPrivateEndpointId,
 
@@ -235,6 +250,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             CompartmentId = compartmentId;
             ConnectionCredentialDetails = connectionCredentialDetails;
             ConnectionDetails = connectionDetails;
+            ConnectorId = connectorId;
             CredentialDetails = credentialDetails;
             DatabaseConnectionStatusDetails = databaseConnectionStatusDetails;
             DatabaseDisplayName = databaseDisplayName;
@@ -256,9 +272,11 @@ namespace Pulumi.Oci.Opsi.Outputs
             ExadataInsightId = exadataInsightId;
             FreeformTags = freeformTags;
             Id = id;
+            IsAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
             IsHighlyAvailable = isHighlyAvailable;
             LifecycleDetails = lifecycleDetails;
+            ManagementAgentId = managementAgentId;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             ParentId = parentId;
             ProcessorCount = processorCount;

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class DesktopPoolNetworkConfiguration {
     /**
-     * @return The OCID of the subnet to use for the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     private String subnetId;
     /**
-     * @return The OCID of the VCN used by the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
      * 
      */
     private String vcnId;
 
     private DesktopPoolNetworkConfiguration() {}
     /**
-     * @return The OCID of the subnet to use for the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return The OCID of the VCN used by the desktop pool.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
      * 
      */
     public String vcnId() {

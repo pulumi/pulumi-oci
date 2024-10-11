@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsAgentAutoIscsiLoginEnabled { get; set; }
 
         /// <summary>
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+        /// </summary>
+        [Input("isPvEncryptionInTransitEnabled")]
+        public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
+
+        /// <summary>
         /// Whether the attachment was created in read-only mode.
         /// </summary>
         [Input("isReadOnly")]

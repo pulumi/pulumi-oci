@@ -65,6 +65,16 @@ export const getPreauthrequests: typeof import("./getPreauthrequests").getPreaut
 export const getPreauthrequestsOutput: typeof import("./getPreauthrequests").getPreauthrequestsOutput = null as any;
 utilities.lazyLoad(exports, ["getPreauthrequests","getPreauthrequestsOutput"], () => require("./getPreauthrequests"));
 
+export { GetPrivateEndpointArgs, GetPrivateEndpointResult, GetPrivateEndpointOutputArgs } from "./getPrivateEndpoint";
+export const getPrivateEndpoint: typeof import("./getPrivateEndpoint").getPrivateEndpoint = null as any;
+export const getPrivateEndpointOutput: typeof import("./getPrivateEndpoint").getPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoint","getPrivateEndpointOutput"], () => require("./getPrivateEndpoint"));
+
+export { GetPrivateEndpointSummariesArgs, GetPrivateEndpointSummariesResult, GetPrivateEndpointSummariesOutputArgs } from "./getPrivateEndpointSummaries";
+export const getPrivateEndpointSummaries: typeof import("./getPrivateEndpointSummaries").getPrivateEndpointSummaries = null as any;
+export const getPrivateEndpointSummariesOutput: typeof import("./getPrivateEndpointSummaries").getPrivateEndpointSummariesOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpointSummaries","getPrivateEndpointSummariesOutput"], () => require("./getPrivateEndpointSummaries"));
+
 export { GetReplicationPoliciesArgs, GetReplicationPoliciesResult, GetReplicationPoliciesOutputArgs } from "./getReplicationPolicies";
 export const getReplicationPolicies: typeof import("./getReplicationPolicies").getReplicationPolicies = null as any;
 export const getReplicationPoliciesOutput: typeof import("./getReplicationPolicies").getReplicationPoliciesOutput = null as any;
@@ -95,6 +105,11 @@ export type Preauthrequest = import("./preauthrequest").Preauthrequest;
 export const Preauthrequest: typeof import("./preauthrequest").Preauthrequest = null as any;
 utilities.lazyLoad(exports, ["Preauthrequest"], () => require("./preauthrequest"));
 
+export { PrivateEndpointArgs, PrivateEndpointState } from "./privateEndpoint";
+export type PrivateEndpoint = import("./privateEndpoint").PrivateEndpoint;
+export const PrivateEndpoint: typeof import("./privateEndpoint").PrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["PrivateEndpoint"], () => require("./privateEndpoint"));
+
 export { ReplicationPolicyArgs, ReplicationPolicyState } from "./replicationPolicy";
 export type ReplicationPolicy = import("./replicationPolicy").ReplicationPolicy;
 export const ReplicationPolicy: typeof import("./replicationPolicy").ReplicationPolicy = null as any;
@@ -118,6 +133,8 @@ const _module = {
                 return new ObjectLifecyclePolicy(name, <any>undefined, { urn })
             case "oci:ObjectStorage/preauthrequest:Preauthrequest":
                 return new Preauthrequest(name, <any>undefined, { urn })
+            case "oci:ObjectStorage/privateEndpoint:PrivateEndpoint":
+                return new PrivateEndpoint(name, <any>undefined, { urn })
             case "oci:ObjectStorage/replicationPolicy:ReplicationPolicy":
                 return new ReplicationPolicy(name, <any>undefined, { urn })
             case "oci:ObjectStorage/storageObject:StorageObject":
@@ -131,5 +148,6 @@ pulumi.runtime.registerResourceModule("oci", "ObjectStorage/bucket", _module)
 pulumi.runtime.registerResourceModule("oci", "ObjectStorage/namespaceMetadata", _module)
 pulumi.runtime.registerResourceModule("oci", "ObjectStorage/objectLifecyclePolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "ObjectStorage/preauthrequest", _module)
+pulumi.runtime.registerResourceModule("oci", "ObjectStorage/privateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "ObjectStorage/replicationPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "ObjectStorage/storageObject", _module)

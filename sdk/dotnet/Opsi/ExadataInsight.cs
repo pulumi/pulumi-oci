@@ -51,8 +51,18 @@ namespace Pulumi.Oci.Opsi
     ///                     new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs
     ///                     {
     ///                         CompartmentId = compartmentId,
+    ///                         ConnectionCredentialDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs
+    ///                         {
+    ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType,
+    ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName,
+    ///                             PasswordSecretId = testSecret.Id,
+    ///                             Role = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole,
+    ///                             UserName = testUser.Name,
+    ///                             WalletSecretId = testSecret.Id,
+    ///                         },
     ///                         ConnectionDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs
     ///                         {
+    ///                             HostName = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostName,
     ///                             Hosts = new[]
     ///                             {
     ///                                 new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs
@@ -61,6 +71,7 @@ namespace Pulumi.Oci.Opsi
     ///                                     Port = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort,
     ///                                 },
     ///                             },
+    ///                             Port = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsPort,
     ///                             Protocol = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol,
     ///                             ServiceName = testService.Name,
     ///                         },
@@ -80,12 +91,14 @@ namespace Pulumi.Oci.Opsi
     ///                         DeploymentType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDeploymentType,
     ///                         EntitySource = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsEntitySource,
     ///                         FreeformTags = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsFreeformTags,
+    ///                         ManagementAgentId = testManagementAgent.Id,
     ///                         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
     ///                         ServiceName = testService.Name,
     ///                         SystemTags = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsSystemTags,
     ///                     },
     ///                 },
     ///                 OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                 VmClusterType = exadataInsightMemberVmClusterDetailsVmClusterType,
     ///                 VmclusterId = testVmcluster.Id,
     ///             },
     ///         },
@@ -165,6 +178,9 @@ namespace Pulumi.Oci.Opsi
         [Output("exadataDisplayName")]
         public Output<string> ExadataDisplayName { get; private set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
         [Output("exadataInfraId")]
         public Output<string> ExadataInfraId { get; private set; } = null!;
 
@@ -227,6 +243,7 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -340,6 +357,9 @@ namespace Pulumi.Oci.Opsi
         [Input("entitySource", required: true)]
         public Input<string> EntitySource { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
         [Input("exadataInfraId")]
         public Input<string>? ExadataInfraId { get; set; }
 
@@ -371,6 +391,7 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -452,6 +473,9 @@ namespace Pulumi.Oci.Opsi
         [Input("exadataDisplayName")]
         public Input<string>? ExadataDisplayName { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
         [Input("exadataInfraId")]
         public Input<string>? ExadataInfraId { get; set; }
 
@@ -525,6 +549,7 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

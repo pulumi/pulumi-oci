@@ -99,7 +99,7 @@ export class Resolver extends pulumi.CustomResource {
      */
     public readonly rules!: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     * Specifies to operate only on resources that have a matching DNS scope. 
      *
      *
      * ** IMPORTANT **
@@ -232,7 +232,7 @@ export interface ResolverState {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     * Specifies to operate only on resources that have a matching DNS scope. 
      *
      *
      * ** IMPORTANT **
@@ -294,7 +294,7 @@ export interface ResolverArgs {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     * Specifies to operate only on resources that have a matching DNS scope. 
      *
      *
      * ** IMPORTANT **

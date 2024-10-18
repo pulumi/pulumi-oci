@@ -40,6 +40,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:GoldenGate/deployment:Deployment")
 public class Deployment extends com.pulumi.resources.CustomResource {
     /**
+     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    @Export(name="category", refs={String.class}, tree="[0]")
+    private Output<String> category;
+
+    /**
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    public Output<String> category() {
+        return this.category;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -166,6 +180,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    @Export(name="environmentType", refs={String.class}, tree="[0]")
+    private Output<String> environmentType;
+
+    /**
+     * @return (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    public Output<String> environmentType() {
+        return this.environmentType;
+    }
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -270,14 +298,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.isPublic;
     }
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     @Export(name="isStorageUtilizationLimitExceeded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isStorageUtilizationLimitExceeded;
 
     /**
-     * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     public Output<Boolean> isStorageUtilizationLimitExceeded() {

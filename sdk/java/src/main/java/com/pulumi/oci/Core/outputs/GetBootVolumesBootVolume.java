@@ -130,6 +130,7 @@ public final class GetBootVolumesBootVolume {
      * 
      */
     private String vpusPerGb;
+    private String xrcKmsKeyId;
 
     private GetBootVolumesBootVolume() {}
     /**
@@ -294,6 +295,9 @@ public final class GetBootVolumesBootVolume {
     public String vpusPerGb() {
         return this.vpusPerGb;
     }
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -328,6 +332,7 @@ public final class GetBootVolumesBootVolume {
         private String timeCreated;
         private String volumeGroupId;
         private String vpusPerGb;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetBootVolumesBootVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -355,6 +360,7 @@ public final class GetBootVolumesBootVolume {
     	      this.timeCreated = defaults.timeCreated;
     	      this.volumeGroupId = defaults.volumeGroupId;
     	      this.vpusPerGb = defaults.vpusPerGb;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -558,6 +564,14 @@ public final class GetBootVolumesBootVolume {
             this.vpusPerGb = vpusPerGb;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumesBootVolume", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetBootVolumesBootVolume build() {
             final var _resultValue = new GetBootVolumesBootVolume();
             _resultValue.autoTunedVpusPerGb = autoTunedVpusPerGb;
@@ -584,6 +598,7 @@ public final class GetBootVolumesBootVolume {
             _resultValue.timeCreated = timeCreated;
             _resultValue.volumeGroupId = volumeGroupId;
             _resultValue.vpusPerGb = vpusPerGb;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

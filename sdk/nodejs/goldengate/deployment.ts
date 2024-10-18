@@ -48,6 +48,10 @@ export class Deployment extends pulumi.CustomResource {
     }
 
     /**
+     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     */
+    public /*out*/ readonly category!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -84,6 +88,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    public readonly environmentType!: pulumi.Output<string>;
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
     public readonly fqdn!: pulumi.Output<string>;
@@ -113,7 +121,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly isPublic!: pulumi.Output<boolean>;
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
     public /*out*/ readonly isStorageUtilizationLimitExceeded!: pulumi.Output<boolean>;
     /**
@@ -219,6 +227,7 @@ export class Deployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentState | undefined;
+            resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -228,6 +237,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deploymentUrl"] = state ? state.deploymentUrl : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["environmentType"] = state ? state.environmentType : undefined;
             resourceInputs["fqdn"] = state ? state.fqdn : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
@@ -290,6 +300,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["environmentType"] = args ? args.environmentType : undefined;
             resourceInputs["fqdn"] = args ? args.fqdn : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
@@ -304,6 +315,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["oggData"] = args ? args.oggData : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["category"] = undefined /*out*/;
             resourceInputs["deploymentDiagnosticDatas"] = undefined /*out*/;
             resourceInputs["deploymentUrl"] = undefined /*out*/;
             resourceInputs["ingressIps"] = undefined /*out*/;
@@ -334,6 +346,10 @@ export class Deployment extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Deployment resources.
  */
 export interface DeploymentState {
+    /**
+     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     */
+    category?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -371,6 +387,10 @@ export interface DeploymentState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    environmentType?: pulumi.Input<string>;
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
     fqdn?: pulumi.Input<string>;
@@ -400,7 +420,7 @@ export interface DeploymentState {
      */
     isPublic?: pulumi.Input<boolean>;
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
     isStorageUtilizationLimitExceeded?: pulumi.Input<boolean>;
     /**
@@ -526,6 +546,10 @@ export interface DeploymentArgs {
      * (Updatable) An object's Display Name.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    environmentType?: pulumi.Input<string>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */

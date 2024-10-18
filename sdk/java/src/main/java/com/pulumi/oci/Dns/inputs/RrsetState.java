@@ -18,14 +18,18 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     public static final RrsetState Empty = new RrsetState();
 
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment the resource belongs to.
+     * @return (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -49,7 +53,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     @Import(name="items")
@@ -57,7 +61,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     public Optional<Output<List<RrsetItemArgs>>> items() {
@@ -81,7 +85,6 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      * 
      */
     @Import(name="scope")
@@ -89,7 +92,6 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -97,14 +99,14 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     @Import(name="viewId")
     private @Nullable Output<String> viewId;
 
     /**
-     * @return The OCID of the view the resource is associated with.
+     * @return The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     public Optional<Output<String>> viewId() {
@@ -163,7 +165,9 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the resource belongs to.
+         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
          * 
          * @return builder
          * 
@@ -174,7 +178,9 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment the resource belongs to.
+         * @param compartmentId (Updatable) The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
          * 
          * @return builder
          * 
@@ -206,7 +212,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -218,7 +224,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -229,7 +235,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param items (Updatable)
-         * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+         * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
          * 
          * @return builder
          * 
@@ -261,7 +267,6 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
          * 
          * @return builder
          * 
@@ -273,7 +278,6 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
          * 
          * @return builder
          * 
@@ -283,7 +287,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param viewId The OCID of the view the resource is associated with.
+         * @param viewId The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * 
          * @return builder
          * 
@@ -294,7 +298,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param viewId The OCID of the view the resource is associated with.
+         * @param viewId The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * 
          * @return builder
          * 

@@ -100,6 +100,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
         public readonly string VpusPerGb;
+        public readonly string XrcKmsKeyId;
 
         [OutputConstructor]
         private GetBootVolumesBootVolumeResult(
@@ -149,7 +150,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             string volumeGroupId,
 
-            string vpusPerGb)
+            string vpusPerGb,
+
+            string xrcKmsKeyId)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
             AutotunePolicies = autotunePolicies;
@@ -175,6 +178,7 @@ namespace Pulumi.Oci.Core.Outputs
             TimeCreated = timeCreated;
             VolumeGroupId = volumeGroupId;
             VpusPerGb = vpusPerGb;
+            XrcKmsKeyId = xrcKmsKeyId;
         }
     }
 }

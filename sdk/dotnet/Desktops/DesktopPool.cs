@@ -93,6 +93,19 @@ namespace Pulumi.Oci.Desktops
     ///             NsgIds = desktopPoolPrivateAccessDetailsNsgIds,
     ///             PrivateIp = desktopPoolPrivateAccessDetailsPrivateIp,
     ///         },
+    ///         SessionLifecycleActions = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsArgs
+    ///         {
+    ///             Disconnect = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsDisconnectArgs
+    ///             {
+    ///                 Action = "STOP",
+    ///                 GracePeriodInMinutes = desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes,
+    ///             },
+    ///             Inactivity = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsInactivityArgs
+    ///             {
+    ///                 Action = "DISCONNECT",
+    ///                 GracePeriodInMinutes = desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes,
+    ///             },
+    ///         },
     ///         TimeStartScheduled = desktopPoolTimeStartScheduled,
     ///         TimeStopScheduled = desktopPoolTimeStopScheduled,
     ///         UseDedicatedVmHost = desktopPoolUseDedicatedVmHost,
@@ -213,6 +226,12 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         [Output("privateAccessDetails")]
         public Output<Outputs.DesktopPoolPrivateAccessDetails> PrivateAccessDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The details of action to be triggered in case of inactivity or disconnect
+        /// </summary>
+        [Output("sessionLifecycleActions")]
+        public Output<Outputs.DesktopPoolSessionLifecycleActions?> SessionLifecycleActions { get; private set; } = null!;
 
         /// <summary>
         /// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -439,6 +458,12 @@ namespace Pulumi.Oci.Desktops
         public Input<Inputs.DesktopPoolPrivateAccessDetailsArgs>? PrivateAccessDetails { get; set; }
 
         /// <summary>
+        /// The details of action to be triggered in case of inactivity or disconnect
+        /// </summary>
+        [Input("sessionLifecycleActions")]
+        public Input<Inputs.DesktopPoolSessionLifecycleActionsArgs>? SessionLifecycleActions { get; set; }
+
+        /// <summary>
         /// The compute instance shape configuration requested for each desktop in the desktop pool.
         /// </summary>
         [Input("shapeConfig")]
@@ -617,6 +642,12 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         [Input("privateAccessDetails")]
         public Input<Inputs.DesktopPoolPrivateAccessDetailsGetArgs>? PrivateAccessDetails { get; set; }
+
+        /// <summary>
+        /// The details of action to be triggered in case of inactivity or disconnect
+        /// </summary>
+        [Input("sessionLifecycleActions")]
+        public Input<Inputs.DesktopPoolSessionLifecycleActionsGetArgs>? SessionLifecycleActions { get; set; }
 
         /// <summary>
         /// The compute instance shape configuration requested for each desktop in the desktop pool.

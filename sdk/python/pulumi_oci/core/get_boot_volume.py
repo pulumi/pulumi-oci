@@ -27,7 +27,7 @@ class GetBootVolumeResult:
     """
     A collection of values returned by getBootVolume.
     """
-    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, boot_volume_id=None, boot_volume_replicas=None, boot_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_group_id=None, vpus_per_gb=None):
+    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, boot_volume_id=None, boot_volume_replicas=None, boot_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_group_id=None, vpus_per_gb=None, xrc_kms_key_id=None):
         if auto_tuned_vpus_per_gb and not isinstance(auto_tuned_vpus_per_gb, str):
             raise TypeError("Expected argument 'auto_tuned_vpus_per_gb' to be a str")
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -103,6 +103,9 @@ class GetBootVolumeResult:
         if vpus_per_gb and not isinstance(vpus_per_gb, str):
             raise TypeError("Expected argument 'vpus_per_gb' to be a str")
         pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id and not isinstance(xrc_kms_key_id, str):
+            raise TypeError("Expected argument 'xrc_kms_key_id' to be a str")
+        pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
@@ -293,6 +296,11 @@ class GetBootVolumeResult:
         """
         return pulumi.get(self, "vpus_per_gb")
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> str:
+        return pulumi.get(self, "xrc_kms_key_id")
+
 
 class AwaitableGetBootVolumeResult(GetBootVolumeResult):
     # pylint: disable=using-constant-test
@@ -324,7 +332,8 @@ class AwaitableGetBootVolumeResult(GetBootVolumeResult):
             system_tags=self.system_tags,
             time_created=self.time_created,
             volume_group_id=self.volume_group_id,
-            vpus_per_gb=self.vpus_per_gb)
+            vpus_per_gb=self.vpus_per_gb,
+            xrc_kms_key_id=self.xrc_kms_key_id)
 
 
 def get_boot_volume(boot_volume_id: Optional[str] = None,
@@ -376,7 +385,8 @@ def get_boot_volume(boot_volume_id: Optional[str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
-        vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'))
+        vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'),
+        xrc_kms_key_id=pulumi.get(__ret__, 'xrc_kms_key_id'))
 def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeResult]:
     """
@@ -425,4 +435,5 @@ def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[str]] = None,
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         volume_group_id=pulumi.get(__response__, 'volume_group_id'),
-        vpus_per_gb=pulumi.get(__response__, 'vpus_per_gb')))
+        vpus_per_gb=pulumi.get(__response__, 'vpus_per_gb'),
+        xrc_kms_key_id=pulumi.get(__response__, 'xrc_kms_key_id')))

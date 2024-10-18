@@ -92,7 +92,8 @@ type LookupVolumeResult struct {
 	// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     string                  `pulumi:"sizeInMbs"`
+	SizeInMbs string `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails []GetVolumeSourceDetail `pulumi:"sourceDetails"`
 	// The current state of a volume.
 	State string `pulumi:"state"`
@@ -105,7 +106,8 @@ type LookupVolumeResult struct {
 	VolumeGroupId string `pulumi:"volumeGroupId"`
 	VolumeId      string `pulumi:"volumeId"`
 	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
+	VpusPerGb   string `pulumi:"vpusPerGb"`
+	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
 }
 
 func LookupVolumeOutput(ctx *pulumi.Context, args LookupVolumeOutputArgs, opts ...pulumi.InvokeOption) LookupVolumeResultOutput {
@@ -238,6 +240,7 @@ func (o LookupVolumeResultOutput) SizeInMbs() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.SizeInMbs }).(pulumi.StringOutput)
 }
 
+// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 func (o LookupVolumeResultOutput) SourceDetails() GetVolumeSourceDetailArrayOutput {
 	return o.ApplyT(func(v LookupVolumeResult) []GetVolumeSourceDetail { return v.SourceDetails }).(GetVolumeSourceDetailArrayOutput)
 }
@@ -273,6 +276,10 @@ func (o LookupVolumeResultOutput) VolumeId() pulumi.StringOutput {
 // The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 func (o LookupVolumeResultOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+func (o LookupVolumeResultOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVolumeResult) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 func init() {

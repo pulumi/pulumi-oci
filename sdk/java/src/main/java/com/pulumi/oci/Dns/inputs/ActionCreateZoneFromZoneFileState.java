@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Dns.inputs.ActionCreateZoneFromZoneFileDnssecConfigArgs;
 import com.pulumi.oci.Dns.inputs.ActionCreateZoneFromZoneFileExternalDownstreamArgs;
 import com.pulumi.oci.Dns.inputs.ActionCreateZoneFromZoneFileExternalMasterArgs;
 import com.pulumi.oci.Dns.inputs.ActionCreateZoneFromZoneFileNameserverArgs;
@@ -65,6 +66,20 @@ public final class ActionCreateZoneFromZoneFileState extends com.pulumi.resource
      */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
+    }
+
+    @Import(name="dnssecConfigs")
+    private @Nullable Output<List<ActionCreateZoneFromZoneFileDnssecConfigArgs>> dnssecConfigs;
+
+    public Optional<Output<List<ActionCreateZoneFromZoneFileDnssecConfigArgs>>> dnssecConfigs() {
+        return Optional.ofNullable(this.dnssecConfigs);
+    }
+
+    @Import(name="dnssecState")
+    private @Nullable Output<String> dnssecState;
+
+    public Optional<Output<String>> dnssecState() {
+        return Optional.ofNullable(this.dnssecState);
     }
 
     /**
@@ -304,6 +319,8 @@ public final class ActionCreateZoneFromZoneFileState extends com.pulumi.resource
         this.compartmentId = $.compartmentId;
         this.createZoneFromZoneFileDetails = $.createZoneFromZoneFileDetails;
         this.definedTags = $.definedTags;
+        this.dnssecConfigs = $.dnssecConfigs;
+        this.dnssecState = $.dnssecState;
         this.externalDownstreams = $.externalDownstreams;
         this.externalMasters = $.externalMasters;
         this.freeformTags = $.freeformTags;
@@ -400,6 +417,28 @@ public final class ActionCreateZoneFromZoneFileState extends com.pulumi.resource
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        public Builder dnssecConfigs(@Nullable Output<List<ActionCreateZoneFromZoneFileDnssecConfigArgs>> dnssecConfigs) {
+            $.dnssecConfigs = dnssecConfigs;
+            return this;
+        }
+
+        public Builder dnssecConfigs(List<ActionCreateZoneFromZoneFileDnssecConfigArgs> dnssecConfigs) {
+            return dnssecConfigs(Output.of(dnssecConfigs));
+        }
+
+        public Builder dnssecConfigs(ActionCreateZoneFromZoneFileDnssecConfigArgs... dnssecConfigs) {
+            return dnssecConfigs(List.of(dnssecConfigs));
+        }
+
+        public Builder dnssecState(@Nullable Output<String> dnssecState) {
+            $.dnssecState = dnssecState;
+            return this;
+        }
+
+        public Builder dnssecState(String dnssecState) {
+            return dnssecState(Output.of(dnssecState));
         }
 
         /**

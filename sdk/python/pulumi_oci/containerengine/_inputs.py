@@ -39,6 +39,12 @@ __all__ = [
     'ClusterOptionsAdmissionControllerOptionsArgsDict',
     'ClusterOptionsKubernetesNetworkConfigArgs',
     'ClusterOptionsKubernetesNetworkConfigArgsDict',
+    'ClusterOptionsOpenIdConnectDiscoveryArgs',
+    'ClusterOptionsOpenIdConnectDiscoveryArgsDict',
+    'ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs',
+    'ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict',
+    'ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs',
+    'ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict',
     'ClusterOptionsPersistentVolumeConfigArgs',
     'ClusterOptionsPersistentVolumeConfigArgsDict',
     'ClusterOptionsServiceLbConfigArgs',
@@ -757,6 +763,14 @@ if not MYPY:
         """
         Network configuration for Kubernetes.
         """
+        open_id_connect_discovery: NotRequired[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgsDict']]
+        """
+        (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+        """
+        open_id_connect_token_authentication_config: NotRequired[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict']]
+        """
+        (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        """
         persistent_volume_config: NotRequired[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgsDict']]
         """
         (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
@@ -778,6 +792,8 @@ class ClusterOptionsArgs:
                  add_ons: Optional[pulumi.Input['ClusterOptionsAddOnsArgs']] = None,
                  admission_controller_options: Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']] = None,
                  kubernetes_network_config: Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']] = None,
+                 open_id_connect_discovery: Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']] = None,
+                 open_id_connect_token_authentication_config: Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']] = None,
                  persistent_volume_config: Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']] = None,
                  service_lb_config: Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']] = None,
                  service_lb_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -785,6 +801,8 @@ class ClusterOptionsArgs:
         :param pulumi.Input['ClusterOptionsAddOnsArgs'] add_ons: Configurable cluster add-ons
         :param pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs'] admission_controller_options: (Updatable) Configurable cluster admission controllers
         :param pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs'] kubernetes_network_config: Network configuration for Kubernetes.
+        :param pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs'] open_id_connect_discovery: (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+        :param pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs'] open_id_connect_token_authentication_config: (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
         :param pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs'] persistent_volume_config: (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         :param pulumi.Input['ClusterOptionsServiceLbConfigArgs'] service_lb_config: (Updatable) Configuration to be applied to load balancers created by Kubernetes services
         :param pulumi.Input[Sequence[pulumi.Input[str]]] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
@@ -795,6 +813,10 @@ class ClusterOptionsArgs:
             pulumi.set(__self__, "admission_controller_options", admission_controller_options)
         if kubernetes_network_config is not None:
             pulumi.set(__self__, "kubernetes_network_config", kubernetes_network_config)
+        if open_id_connect_discovery is not None:
+            pulumi.set(__self__, "open_id_connect_discovery", open_id_connect_discovery)
+        if open_id_connect_token_authentication_config is not None:
+            pulumi.set(__self__, "open_id_connect_token_authentication_config", open_id_connect_token_authentication_config)
         if persistent_volume_config is not None:
             pulumi.set(__self__, "persistent_volume_config", persistent_volume_config)
         if service_lb_config is not None:
@@ -837,6 +859,30 @@ class ClusterOptionsArgs:
     @kubernetes_network_config.setter
     def kubernetes_network_config(self, value: Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']]):
         pulumi.set(self, "kubernetes_network_config", value)
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscovery")
+    def open_id_connect_discovery(self) -> Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']]:
+        """
+        (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+        """
+        return pulumi.get(self, "open_id_connect_discovery")
+
+    @open_id_connect_discovery.setter
+    def open_id_connect_discovery(self, value: Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']]):
+        pulumi.set(self, "open_id_connect_discovery", value)
+
+    @property
+    @pulumi.getter(name="openIdConnectTokenAuthenticationConfig")
+    def open_id_connect_token_authentication_config(self) -> Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]:
+        """
+        (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        """
+        return pulumi.get(self, "open_id_connect_token_authentication_config")
+
+    @open_id_connect_token_authentication_config.setter
+    def open_id_connect_token_authentication_config(self, value: Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]):
+        pulumi.set(self, "open_id_connect_token_authentication_config", value)
 
     @property
     @pulumi.getter(name="persistentVolumeConfig")
@@ -1009,6 +1055,301 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     @services_cidr.setter
     def services_cidr(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "services_cidr", value)
+
+
+if not MYPY:
+    class ClusterOptionsOpenIdConnectDiscoveryArgsDict(TypedDict):
+        is_open_id_connect_discovery_enabled: NotRequired[pulumi.Input[bool]]
+        """
+        (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        """
+elif False:
+    ClusterOptionsOpenIdConnectDiscoveryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterOptionsOpenIdConnectDiscoveryArgs:
+    def __init__(__self__, *,
+                 is_open_id_connect_discovery_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_open_id_connect_discovery_enabled: (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        """
+        if is_open_id_connect_discovery_enabled is not None:
+            pulumi.set(__self__, "is_open_id_connect_discovery_enabled", is_open_id_connect_discovery_enabled)
+
+    @property
+    @pulumi.getter(name="isOpenIdConnectDiscoveryEnabled")
+    def is_open_id_connect_discovery_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+        """
+        return pulumi.get(self, "is_open_id_connect_discovery_enabled")
+
+    @is_open_id_connect_discovery_enabled.setter
+    def is_open_id_connect_discovery_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_open_id_connect_discovery_enabled", value)
+
+
+if not MYPY:
+    class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict(TypedDict):
+        is_open_id_connect_auth_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        """
+        ca_certificate: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        """
+        client_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) A client id that all tokens must be issued for.
+        """
+        groups_claim: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        """
+        groups_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        """
+        issuer_url: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        """
+        required_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict']]]]
+        """
+        (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        """
+        signing_algorithms: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        (Updatable) The signing algorithms accepted. Default is ["RS256"].
+        """
+        username_claim: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        """
+        username_prefix: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        """
+elif False:
+    ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
+    def __init__(__self__, *,
+                 is_open_id_connect_auth_enabled: pulumi.Input[bool],
+                 ca_certificate: Optional[pulumi.Input[str]] = None,
+                 client_id: Optional[pulumi.Input[str]] = None,
+                 groups_claim: Optional[pulumi.Input[str]] = None,
+                 groups_prefix: Optional[pulumi.Input[str]] = None,
+                 issuer_url: Optional[pulumi.Input[str]] = None,
+                 required_claims: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]] = None,
+                 signing_algorithms: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 username_claim: Optional[pulumi.Input[str]] = None,
+                 username_prefix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_open_id_connect_auth_enabled: (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        :param pulumi.Input[str] ca_certificate: (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        :param pulumi.Input[str] client_id: (Updatable) A client id that all tokens must be issued for.
+        :param pulumi.Input[str] groups_claim: (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        :param pulumi.Input[str] groups_prefix: (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        :param pulumi.Input[str] issuer_url: (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]] required_claims: (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] signing_algorithms: (Updatable) The signing algorithms accepted. Default is ["RS256"].
+        :param pulumi.Input[str] username_claim: (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        :param pulumi.Input[str] username_prefix: (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        """
+        pulumi.set(__self__, "is_open_id_connect_auth_enabled", is_open_id_connect_auth_enabled)
+        if ca_certificate is not None:
+            pulumi.set(__self__, "ca_certificate", ca_certificate)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if groups_claim is not None:
+            pulumi.set(__self__, "groups_claim", groups_claim)
+        if groups_prefix is not None:
+            pulumi.set(__self__, "groups_prefix", groups_prefix)
+        if issuer_url is not None:
+            pulumi.set(__self__, "issuer_url", issuer_url)
+        if required_claims is not None:
+            pulumi.set(__self__, "required_claims", required_claims)
+        if signing_algorithms is not None:
+            pulumi.set(__self__, "signing_algorithms", signing_algorithms)
+        if username_claim is not None:
+            pulumi.set(__self__, "username_claim", username_claim)
+        if username_prefix is not None:
+            pulumi.set(__self__, "username_prefix", username_prefix)
+
+    @property
+    @pulumi.getter(name="isOpenIdConnectAuthEnabled")
+    def is_open_id_connect_auth_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+        """
+        return pulumi.get(self, "is_open_id_connect_auth_enabled")
+
+    @is_open_id_connect_auth_enabled.setter
+    def is_open_id_connect_auth_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "is_open_id_connect_auth_enabled", value)
+
+    @property
+    @pulumi.getter(name="caCertificate")
+    def ca_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+        """
+        return pulumi.get(self, "ca_certificate")
+
+    @ca_certificate.setter
+    def ca_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ca_certificate", value)
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A client id that all tokens must be issued for.
+        """
+        return pulumi.get(self, "client_id")
+
+    @client_id.setter
+    def client_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_id", value)
+
+    @property
+    @pulumi.getter(name="groupsClaim")
+    def groups_claim(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+        """
+        return pulumi.get(self, "groups_claim")
+
+    @groups_claim.setter
+    def groups_claim(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "groups_claim", value)
+
+    @property
+    @pulumi.getter(name="groupsPrefix")
+    def groups_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+        """
+        return pulumi.get(self, "groups_prefix")
+
+    @groups_prefix.setter
+    def groups_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "groups_prefix", value)
+
+    @property
+    @pulumi.getter(name="issuerUrl")
+    def issuer_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+        """
+        return pulumi.get(self, "issuer_url")
+
+    @issuer_url.setter
+    def issuer_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "issuer_url", value)
+
+    @property
+    @pulumi.getter(name="requiredClaims")
+    def required_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]:
+        """
+        (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+        """
+        return pulumi.get(self, "required_claims")
+
+    @required_claims.setter
+    def required_claims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]):
+        pulumi.set(self, "required_claims", value)
+
+    @property
+    @pulumi.getter(name="signingAlgorithms")
+    def signing_algorithms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The signing algorithms accepted. Default is ["RS256"].
+        """
+        return pulumi.get(self, "signing_algorithms")
+
+    @signing_algorithms.setter
+    def signing_algorithms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "signing_algorithms", value)
+
+    @property
+    @pulumi.getter(name="usernameClaim")
+    def username_claim(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+        """
+        return pulumi.get(self, "username_claim")
+
+    @username_claim.setter
+    def username_claim(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username_claim", value)
+
+    @property
+    @pulumi.getter(name="usernamePrefix")
+    def username_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+        """
+        return pulumi.get(self, "username_prefix")
+
+    @username_prefix.setter
+    def username_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username_prefix", value)
+
+
+if not MYPY:
+    class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The key of the pair.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The value of the pair.
+        """
+elif False:
+    ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] key: (Updatable) The key of the pair.
+        :param pulumi.Input[str] value: (Updatable) The value of the pair.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The key of the pair.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of the pair.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:

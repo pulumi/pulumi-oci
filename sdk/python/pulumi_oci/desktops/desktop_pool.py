@@ -41,6 +41,7 @@ class DesktopPoolArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 session_lifecycle_actions: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']] = None,
                  shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
                  time_start_scheduled: Optional[pulumi.Input[str]] = None,
                  time_stop_scheduled: Optional[pulumi.Input[str]] = None,
@@ -67,6 +68,7 @@ class DesktopPoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsArgs'] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] time_start_scheduled: (Updatable) The start time of the desktop pool.
         :param pulumi.Input[str] time_stop_scheduled: (Updatable) The stop time of the desktop pool.
@@ -101,6 +103,8 @@ class DesktopPoolArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_access_details is not None:
             pulumi.set(__self__, "private_access_details", private_access_details)
+        if session_lifecycle_actions is not None:
+            pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
         if time_start_scheduled is not None:
@@ -351,6 +355,18 @@ class DesktopPoolArgs:
         pulumi.set(self, "private_access_details", value)
 
     @property
+    @pulumi.getter(name="sessionLifecycleActions")
+    def session_lifecycle_actions(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]:
+        """
+        The details of action to be triggered in case of inactivity or disconnect
+        """
+        return pulumi.get(self, "session_lifecycle_actions")
+
+    @session_lifecycle_actions.setter
+    def session_lifecycle_actions(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]):
+        pulumi.set(self, "session_lifecycle_actions", value)
+
+    @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
         """
@@ -423,6 +439,7 @@ class _DesktopPoolState:
                  network_configuration: Optional[pulumi.Input['DesktopPoolNetworkConfigurationArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 session_lifecycle_actions: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']] = None,
                  shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
@@ -452,6 +469,7 @@ class _DesktopPoolState:
         :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsArgs'] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -501,6 +519,8 @@ class _DesktopPoolState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_access_details is not None:
             pulumi.set(__self__, "private_access_details", private_access_details)
+        if session_lifecycle_actions is not None:
+            pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         if shape_config is not None:
             pulumi.set(__self__, "shape_config", shape_config)
         if shape_name is not None:
@@ -727,6 +747,18 @@ class _DesktopPoolState:
         pulumi.set(self, "private_access_details", value)
 
     @property
+    @pulumi.getter(name="sessionLifecycleActions")
+    def session_lifecycle_actions(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]:
+        """
+        The details of action to be triggered in case of inactivity or disconnect
+        """
+        return pulumi.get(self, "session_lifecycle_actions")
+
+    @session_lifecycle_actions.setter
+    def session_lifecycle_actions(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]):
+        pulumi.set(self, "session_lifecycle_actions", value)
+
+    @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
         """
@@ -872,6 +904,7 @@ class DesktopPool(pulumi.CustomResource):
                  network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
                  shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
@@ -950,6 +983,16 @@ class DesktopPool(pulumi.CustomResource):
                 "nsg_ids": desktop_pool_private_access_details_nsg_ids,
                 "private_ip": desktop_pool_private_access_details_private_ip,
             },
+            session_lifecycle_actions={
+                "disconnect": {
+                    "action": "STOP",
+                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                },
+                "inactivity": {
+                    "action": "DISCONNECT",
+                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                },
+            },
             time_start_scheduled=desktop_pool_time_start_scheduled,
             time_stop_scheduled=desktop_pool_time_stop_scheduled,
             use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
@@ -981,6 +1024,7 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -1069,6 +1113,16 @@ class DesktopPool(pulumi.CustomResource):
                 "nsg_ids": desktop_pool_private_access_details_nsg_ids,
                 "private_ip": desktop_pool_private_access_details_private_ip,
             },
+            session_lifecycle_actions={
+                "disconnect": {
+                    "action": "STOP",
+                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                },
+                "inactivity": {
+                    "action": "DISCONNECT",
+                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                },
+            },
             time_start_scheduled=desktop_pool_time_start_scheduled,
             time_stop_scheduled=desktop_pool_time_stop_scheduled,
             use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
@@ -1113,6 +1167,7 @@ class DesktopPool(pulumi.CustomResource):
                  network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
                  shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  standby_size: Optional[pulumi.Input[int]] = None,
@@ -1168,6 +1223,7 @@ class DesktopPool(pulumi.CustomResource):
             __props__.__dict__["network_configuration"] = network_configuration
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_access_details"] = private_access_details
+            __props__.__dict__["session_lifecycle_actions"] = session_lifecycle_actions
             __props__.__dict__["shape_config"] = shape_config
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
@@ -1214,6 +1270,7 @@ class DesktopPool(pulumi.CustomResource):
             network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+            session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
             shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
             standby_size: Optional[pulumi.Input[int]] = None,
@@ -1248,6 +1305,7 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
@@ -1284,6 +1342,7 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["network_configuration"] = network_configuration
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_access_details"] = private_access_details
+        __props__.__dict__["session_lifecycle_actions"] = session_lifecycle_actions
         __props__.__dict__["shape_config"] = shape_config
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["standby_size"] = standby_size
@@ -1431,6 +1490,14 @@ class DesktopPool(pulumi.CustomResource):
         The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
+
+    @property
+    @pulumi.getter(name="sessionLifecycleActions")
+    def session_lifecycle_actions(self) -> pulumi.Output[Optional['outputs.DesktopPoolSessionLifecycleActions']]:
+        """
+        The details of action to be triggered in case of inactivity or disconnect
+        """
+        return pulumi.get(self, "session_lifecycle_actions")
 
     @property
     @pulumi.getter(name="shapeConfig")

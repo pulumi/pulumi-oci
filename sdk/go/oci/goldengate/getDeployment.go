@@ -58,6 +58,8 @@ type LookupDeploymentArgs struct {
 
 // A collection of values returned by getDeployment.
 type LookupDeploymentResult struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
@@ -77,6 +79,8 @@ type LookupDeploymentResult struct {
 	Description string `pulumi:"description"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
+	// Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType string `pulumi:"environmentType"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -94,7 +98,7 @@ type LookupDeploymentResult struct {
 	IsLockOverride  bool `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic bool `pulumi:"isPublic"`
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
@@ -188,6 +192,11 @@ func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutputWithContext(
 	return o
 }
 
+// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+func (o LookupDeploymentResultOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Category }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o LookupDeploymentResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -239,6 +248,11 @@ func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Specifies whether the deployment is used in a production or development/testing environment.
+func (o LookupDeploymentResultOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
 // A three-label Fully Qualified Domain Name (FQDN) for a resource.
 func (o LookupDeploymentResultOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Fqdn }).(pulumi.StringOutput)
@@ -283,7 +297,7 @@ func (o LookupDeploymentResultOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
-// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 func (o LookupDeploymentResultOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
 }

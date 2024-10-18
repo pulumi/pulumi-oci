@@ -26,6 +26,12 @@ namespace Pulumi.Oci.GoldenGate
     public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// </summary>
+        [Output("category")]
+        public Output<string> Category { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
         [Output("compartmentId")]
@@ -80,6 +86,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        /// </summary>
+        [Output("environmentType")]
+        public Output<string> EnvironmentType { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         /// </summary>
         [Output("fqdn")]
@@ -125,7 +137,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> IsPublic { get; private set; } = null!;
 
         /// <summary>
-        /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        /// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
         [Output("isStorageUtilizationLimitExceeded")]
         public Output<bool> IsStorageUtilizationLimitExceeded { get; private set; } = null!;
@@ -360,6 +372,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        /// </summary>
+        [Input("environmentType")]
+        public Input<string>? EnvironmentType { get; set; }
+
+        /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         /// </summary>
         [Input("fqdn")]
@@ -464,6 +482,12 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// </summary>
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
         [Input("compartmentId")]
@@ -530,6 +554,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        /// </summary>
+        [Input("environmentType")]
+        public Input<string>? EnvironmentType { get; set; }
+
+        /// <summary>
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         /// </summary>
         [Input("fqdn")]
@@ -587,7 +617,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? IsPublic { get; set; }
 
         /// <summary>
-        /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        /// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
         [Input("isStorageUtilizationLimitExceeded")]
         public Input<bool>? IsStorageUtilizationLimitExceeded { get; set; }

@@ -46,6 +46,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAddOnsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAdmissionControllerOptionsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsKubernetesNetworkConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsOpenIdConnectDiscoveryArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsPersistentVolumeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsServiceLbConfigArgs;
  * import java.util.List;
@@ -94,6 +96,24 @@ import javax.annotation.Nullable;
  *                 .kubernetesNetworkConfig(ClusterOptionsKubernetesNetworkConfigArgs.builder()
  *                     .podsCidr(clusterOptionsKubernetesNetworkConfigPodsCidr)
  *                     .servicesCidr(clusterOptionsKubernetesNetworkConfigServicesCidr)
+ *                     .build())
+ *                 .openIdConnectTokenAuthenticationConfig(ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs.builder()
+ *                     .isOpenIdConnectAuthEnabled(clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled)
+ *                     .caCertificate(clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate)
+ *                     .clientId(testClient.id())
+ *                     .groupsClaim(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim)
+ *                     .groupsPrefix(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix)
+ *                     .issuerUrl(clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl)
+ *                     .requiredClaims(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs.builder()
+ *                         .key(clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsKey)
+ *                         .value(clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsValue)
+ *                         .build())
+ *                     .signingAlgorithms(clusterOptionsOpenIdConnectTokenAuthenticationConfigSigningAlgorithms)
+ *                     .usernameClaim(clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernameClaim)
+ *                     .usernamePrefix(clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix)
+ *                     .build())
+ *                 .openIdConnectDiscovery(ClusterOptionsOpenIdConnectDiscoveryArgs.builder()
+ *                     .isOpenIdConnectDiscoveryEnabled(clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled)
  *                     .build())
  *                 .persistentVolumeConfig(ClusterOptionsPersistentVolumeConfigArgs.builder()
  *                     .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -306,6 +326,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    @Export(name="openIdConnectDiscoveryEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> openIdConnectDiscoveryEndpoint;
+
+    /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    public Output<String> openIdConnectDiscoveryEndpoint() {
+        return this.openIdConnectDiscoveryEndpoint;
     }
     /**
      * (Updatable) Optional attributes for the cluster.

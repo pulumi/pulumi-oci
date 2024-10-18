@@ -47,6 +47,11 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
      */
     private String id;
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private String kmsKeyId;
+    /**
      * @return The size of the source block volume, in GBs.
      * 
      */
@@ -123,6 +128,13 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
         return this.id;
     }
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return The size of the source block volume, in GBs.
      * 
      */
@@ -174,6 +186,7 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String kmsKeyId;
         private String sizeInGbs;
         private String state;
         private String timeCreated;
@@ -189,6 +202,7 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -253,6 +267,14 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBlockVolumeReplicasBlockVolumeReplica", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             if (sizeInGbs == null) {
               throw new MissingRequiredPropertyException("GetBlockVolumeReplicasBlockVolumeReplica", "sizeInGbs");
@@ -301,6 +323,7 @@ public final class GetBlockVolumeReplicasBlockVolumeReplica {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

@@ -25,6 +25,7 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
      * 
      */
     private String volumeGroupReplicaId;
+    private String xrrKmsKeyId;
 
     private GetVolumeGroupsVolumeGroupVolumeGroupReplica() {}
     /**
@@ -48,6 +49,9 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
     public String volumeGroupReplicaId() {
         return this.volumeGroupReplicaId;
     }
+    public String xrrKmsKeyId() {
+        return this.xrrKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -61,12 +65,14 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
         private String availabilityDomain;
         private String displayName;
         private String volumeGroupReplicaId;
+        private String xrrKmsKeyId;
         public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroupVolumeGroupReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.displayName = defaults.displayName;
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
+    	      this.xrrKmsKeyId = defaults.xrrKmsKeyId;
         }
 
         @CustomType.Setter
@@ -93,11 +99,20 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrrKmsKeyId(String xrrKmsKeyId) {
+            if (xrrKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroupVolumeGroupReplica", "xrrKmsKeyId");
+            }
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
         public GetVolumeGroupsVolumeGroupVolumeGroupReplica build() {
             final var _resultValue = new GetVolumeGroupsVolumeGroupVolumeGroupReplica();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.displayName = displayName;
             _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            _resultValue.xrrKmsKeyId = xrrKmsKeyId;
             return _resultValue;
         }
     }

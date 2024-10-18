@@ -79,6 +79,30 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 PodsCidr = clusterOptionsKubernetesNetworkConfigPodsCidr,
     ///                 ServicesCidr = clusterOptionsKubernetesNetworkConfigServicesCidr,
     ///             },
+    ///             OpenIdConnectTokenAuthenticationConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs
+    ///             {
+    ///                 IsOpenIdConnectAuthEnabled = clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
+    ///                 CaCertificate = clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
+    ///                 ClientId = testClient.Id,
+    ///                 GroupsClaim = clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim,
+    ///                 GroupsPrefix = clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix,
+    ///                 IssuerUrl = clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl,
+    ///                 RequiredClaims = new[]
+    ///                 {
+    ///                     new Oci.ContainerEngine.Inputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs
+    ///                     {
+    ///                         Key = clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsKey,
+    ///                         Value = clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsValue,
+    ///                     },
+    ///                 },
+    ///                 SigningAlgorithms = clusterOptionsOpenIdConnectTokenAuthenticationConfigSigningAlgorithms,
+    ///                 UsernameClaim = clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernameClaim,
+    ///                 UsernamePrefix = clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix,
+    ///             },
+    ///             OpenIdConnectDiscovery = new Oci.ContainerEngine.Inputs.ClusterOptionsOpenIdConnectDiscoveryArgs
+    ///             {
+    ///                 IsOpenIdConnectDiscoveryEnabled = clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled,
+    ///             },
     ///             PersistentVolumeConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsPersistentVolumeConfigArgs
     ///             {
     ///                 DefinedTags = 
@@ -197,6 +221,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// The cluster-specific OpenID Connect Discovery endpoint
+        /// </summary>
+        [Output("openIdConnectDiscoveryEndpoint")]
+        public Output<string> OpenIdConnectDiscoveryEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional attributes for the cluster.
@@ -487,6 +517,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The cluster-specific OpenID Connect Discovery endpoint
+        /// </summary>
+        [Input("openIdConnectDiscoveryEndpoint")]
+        public Input<string>? OpenIdConnectDiscoveryEndpoint { get; set; }
 
         /// <summary>
         /// (Updatable) Optional attributes for the cluster.

@@ -95,7 +95,7 @@ public final class GetVolumesVolume {
      */
     private String sizeInGbs;
     /**
-     * @return The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
+     * @return The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -103,6 +103,10 @@ public final class GetVolumesVolume {
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
     private String sizeInMbs;
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     private List<GetVolumesVolumeSourceDetail> sourceDetails;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -130,6 +134,7 @@ public final class GetVolumesVolume {
      * 
      */
     private String vpusPerGb;
+    private String xrcKmsKeyId;
 
     private GetVolumesVolume() {}
     /**
@@ -243,7 +248,7 @@ public final class GetVolumesVolume {
         return this.sizeInGbs;
     }
     /**
-     * @return The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
+     * @return The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -253,6 +258,10 @@ public final class GetVolumesVolume {
     public String sizeInMbs() {
         return this.sizeInMbs;
     }
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     public List<GetVolumesVolumeSourceDetail> sourceDetails() {
         return this.sourceDetails;
     }
@@ -294,6 +303,9 @@ public final class GetVolumesVolume {
     public String vpusPerGb() {
         return this.vpusPerGb;
     }
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -328,6 +340,7 @@ public final class GetVolumesVolume {
         private String volumeBackupId;
         private String volumeGroupId;
         private String vpusPerGb;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetVolumesVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -355,6 +368,7 @@ public final class GetVolumesVolume {
     	      this.volumeBackupId = defaults.volumeBackupId;
     	      this.volumeGroupId = defaults.volumeGroupId;
     	      this.vpusPerGb = defaults.vpusPerGb;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -558,6 +572,14 @@ public final class GetVolumesVolume {
             this.vpusPerGb = vpusPerGb;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetVolumesVolume build() {
             final var _resultValue = new GetVolumesVolume();
             _resultValue.autoTunedVpusPerGb = autoTunedVpusPerGb;
@@ -584,6 +606,7 @@ public final class GetVolumesVolume {
             _resultValue.volumeBackupId = volumeBackupId;
             _resultValue.volumeGroupId = volumeGroupId;
             _resultValue.vpusPerGb = vpusPerGb;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

@@ -15,7 +15,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetRecordsRecord {
     /**
-     * @return The OCID of the compartment the resource belongs to.
+     * @return The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     private @Nullable String compartmentId;
@@ -58,7 +60,7 @@ public final class GetRecordsRecord {
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
     private String rtype;
     /**
-     * @return The Time To Live for the record, in seconds.
+     * @return The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     private @Nullable Integer ttl;
@@ -74,7 +76,9 @@ public final class GetRecordsRecord {
 
     private GetRecordsRecord() {}
     /**
-     * @return The OCID of the compartment the resource belongs to.
+     * @return The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     public Optional<String> compartmentId() {
@@ -131,7 +135,7 @@ public final class GetRecordsRecord {
         return this.rtype;
     }
     /**
-     * @return The Time To Live for the record, in seconds.
+     * @return The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     public Optional<Integer> ttl() {

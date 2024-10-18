@@ -159,6 +159,9 @@ namespace Pulumi.Oci.Core
         /// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
         /// </summary>
         public readonly string SizeInMbs;
+        /// <summary>
+        /// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeSourceDetailResult> SourceDetails;
         /// <summary>
         /// The current state of a volume.
@@ -182,6 +185,7 @@ namespace Pulumi.Oci.Core
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
         public readonly string VpusPerGb;
+        public readonly string XrcKmsKeyId;
 
         [OutputConstructor]
         private GetVolumeResult(
@@ -233,7 +237,9 @@ namespace Pulumi.Oci.Core
 
             string volumeId,
 
-            string vpusPerGb)
+            string vpusPerGb,
+
+            string xrcKmsKeyId)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
             AutotunePolicies = autotunePolicies;
@@ -260,6 +266,7 @@ namespace Pulumi.Oci.Core
             VolumeGroupId = volumeGroupId;
             VolumeId = volumeId;
             VpusPerGb = vpusPerGb;
+            XrcKmsKeyId = xrcKmsKeyId;
         }
     }
 }

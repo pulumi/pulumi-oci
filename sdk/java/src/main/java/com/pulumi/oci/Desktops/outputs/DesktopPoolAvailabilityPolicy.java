@@ -4,10 +4,11 @@
 package com.pulumi.oci.Desktops.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolAvailabilityPolicyStartSchedule;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolAvailabilityPolicyStopSchedule;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DesktopPoolAvailabilityPolicy {
@@ -15,27 +16,27 @@ public final class DesktopPoolAvailabilityPolicy {
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    private DesktopPoolAvailabilityPolicyStartSchedule startSchedule;
+    private @Nullable DesktopPoolAvailabilityPolicyStartSchedule startSchedule;
     /**
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    private DesktopPoolAvailabilityPolicyStopSchedule stopSchedule;
+    private @Nullable DesktopPoolAvailabilityPolicyStopSchedule stopSchedule;
 
     private DesktopPoolAvailabilityPolicy() {}
     /**
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    public DesktopPoolAvailabilityPolicyStartSchedule startSchedule() {
-        return this.startSchedule;
+    public Optional<DesktopPoolAvailabilityPolicyStartSchedule> startSchedule() {
+        return Optional.ofNullable(this.startSchedule);
     }
     /**
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    public DesktopPoolAvailabilityPolicyStopSchedule stopSchedule() {
-        return this.stopSchedule;
+    public Optional<DesktopPoolAvailabilityPolicyStopSchedule> stopSchedule() {
+        return Optional.ofNullable(this.stopSchedule);
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class DesktopPoolAvailabilityPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private DesktopPoolAvailabilityPolicyStartSchedule startSchedule;
-        private DesktopPoolAvailabilityPolicyStopSchedule stopSchedule;
+        private @Nullable DesktopPoolAvailabilityPolicyStartSchedule startSchedule;
+        private @Nullable DesktopPoolAvailabilityPolicyStopSchedule stopSchedule;
         public Builder() {}
         public Builder(DesktopPoolAvailabilityPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,18 +58,14 @@ public final class DesktopPoolAvailabilityPolicy {
         }
 
         @CustomType.Setter
-        public Builder startSchedule(DesktopPoolAvailabilityPolicyStartSchedule startSchedule) {
-            if (startSchedule == null) {
-              throw new MissingRequiredPropertyException("DesktopPoolAvailabilityPolicy", "startSchedule");
-            }
+        public Builder startSchedule(@Nullable DesktopPoolAvailabilityPolicyStartSchedule startSchedule) {
+
             this.startSchedule = startSchedule;
             return this;
         }
         @CustomType.Setter
-        public Builder stopSchedule(DesktopPoolAvailabilityPolicyStopSchedule stopSchedule) {
-            if (stopSchedule == null) {
-              throw new MissingRequiredPropertyException("DesktopPoolAvailabilityPolicy", "stopSchedule");
-            }
+        public Builder stopSchedule(@Nullable DesktopPoolAvailabilityPolicyStopSchedule stopSchedule) {
+
             this.stopSchedule = stopSchedule;
             return this;
         }

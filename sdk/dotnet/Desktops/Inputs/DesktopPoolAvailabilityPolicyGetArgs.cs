@@ -15,14 +15,14 @@ namespace Pulumi.Oci.Desktops.Inputs
         /// <summary>
         /// (Updatable) Provides the schedule information for a desktop.
         /// </summary>
-        [Input("startSchedule", required: true)]
-        public Input<Inputs.DesktopPoolAvailabilityPolicyStartScheduleGetArgs> StartSchedule { get; set; } = null!;
+        [Input("startSchedule")]
+        public Input<Inputs.DesktopPoolAvailabilityPolicyStartScheduleGetArgs>? StartSchedule { get; set; }
 
         /// <summary>
         /// (Updatable) Provides the schedule information for a desktop.
         /// </summary>
-        [Input("stopSchedule", required: true)]
-        public Input<Inputs.DesktopPoolAvailabilityPolicyStopScheduleGetArgs> StopSchedule { get; set; } = null!;
+        [Input("stopSchedule")]
+        public Input<Inputs.DesktopPoolAvailabilityPolicyStopScheduleGetArgs>? StopSchedule { get; set; }
 
         public DesktopPoolAvailabilityPolicyGetArgs()
         {

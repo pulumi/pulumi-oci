@@ -32,6 +32,21 @@ public final class GetZonesPlainArgs extends com.pulumi.resources.InvokeArgs {
         return this.compartmentId;
     }
 
+    /**
+     * Search for zones that have the given `DnssecState`.
+     * 
+     */
+    @Import(name="dnssecState")
+    private @Nullable String dnssecState;
+
+    /**
+     * @return Search for zones that have the given `DnssecState`.
+     * 
+     */
+    public Optional<String> dnssecState() {
+        return Optional.ofNullable(this.dnssecState);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetZonesFilter> filters;
 
@@ -70,16 +85,14 @@ public final class GetZonesPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     @Import(name="scope")
     private @Nullable String scope;
 
     /**
-     * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     public Optional<String> scope() {
@@ -210,6 +223,7 @@ public final class GetZonesPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetZonesPlainArgs(GetZonesPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dnssecState = $.dnssecState;
         this.filters = $.filters;
         this.name = $.name;
         this.nameContains = $.nameContains;
@@ -253,6 +267,17 @@ public final class GetZonesPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
+        /**
+         * @param dnssecState Search for zones that have the given `DnssecState`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnssecState(@Nullable String dnssecState) {
+            $.dnssecState = dnssecState;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetZonesFilter> filters) {
             $.filters = filters;
             return this;
@@ -285,8 +310,7 @@ public final class GetZonesPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope. This value will be null
-         * for zones in the global DNS and `PRIVATE` when listing private zones.
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
          * @return builder
          * 

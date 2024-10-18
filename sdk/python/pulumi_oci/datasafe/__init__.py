@@ -26,6 +26,7 @@ from .database_security_config import *
 from .database_security_config_management import *
 from .discovery_jobs_result import *
 from .discovery_mod import *
+from .generate_on_prem_connector_configuration import *
 from .get_alert import *
 from .get_alert_analytic import *
 from .get_alert_policies import *

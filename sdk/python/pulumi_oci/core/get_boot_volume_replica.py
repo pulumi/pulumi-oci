@@ -26,7 +26,7 @@ class GetBootVolumeReplicaResult:
     """
     A collection of values returned by getBootVolumeReplica.
     """
-    def __init__(__self__, availability_domain=None, boot_volume_id=None, boot_volume_replica_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, size_in_gbs=None, state=None, time_created=None, time_last_synced=None, volume_group_replica_id=None):
+    def __init__(__self__, availability_domain=None, boot_volume_id=None, boot_volume_replica_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, kms_key_id=None, size_in_gbs=None, state=None, time_created=None, time_last_synced=None, volume_group_replica_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -54,6 +54,9 @@ class GetBootVolumeReplicaResult:
         if image_id and not isinstance(image_id, str):
             raise TypeError("Expected argument 'image_id' to be a str")
         pulumi.set(__self__, "image_id", image_id)
+        if kms_key_id and not isinstance(kms_key_id, str):
+            raise TypeError("Expected argument 'kms_key_id' to be a str")
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs and not isinstance(size_in_gbs, str):
             raise TypeError("Expected argument 'size_in_gbs' to be a str")
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
@@ -140,6 +143,14 @@ class GetBootVolumeReplicaResult:
         return pulumi.get(self, "image_id")
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> str:
         """
@@ -192,6 +203,7 @@ class AwaitableGetBootVolumeReplicaResult(GetBootVolumeReplicaResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             image_id=self.image_id,
+            kms_key_id=self.kms_key_id,
             size_in_gbs=self.size_in_gbs,
             state=self.state,
             time_created=self.time_created,
@@ -233,6 +245,7 @@ def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
+        kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         size_in_gbs=pulumi.get(__ret__, 'size_in_gbs'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -271,6 +284,7 @@ def get_boot_volume_replica_output(boot_volume_replica_id: Optional[pulumi.Input
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         image_id=pulumi.get(__response__, 'image_id'),
+        kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         size_in_gbs=pulumi.get(__response__, 'size_in_gbs'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),

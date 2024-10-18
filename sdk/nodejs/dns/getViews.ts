@@ -9,12 +9,12 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all views within a compartment. The collection can
- * be filtered by display name, id, or lifecycle state. It can be sorted
- * on creation time or displayName both in ASC or DESC order. Note that
- * when no lifecycleState query parameter is provided, the collection
- * does not include views in the DELETED lifecycleState to be consistent
- * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ * Gets a list of all views within a compartment.
+ *
+ * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+ * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+ * query parameter is provided, the collection does not include views in the DELETED
+ * lifecycleState to be consistent with other operations of the API.
  *
  * ## Example Usage
  *
@@ -100,12 +100,12 @@ export interface GetViewsResult {
 /**
  * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all views within a compartment. The collection can
- * be filtered by display name, id, or lifecycle state. It can be sorted
- * on creation time or displayName both in ASC or DESC order. Note that
- * when no lifecycleState query parameter is provided, the collection
- * does not include views in the DELETED lifecycleState to be consistent
- * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ * Gets a list of all views within a compartment.
+ *
+ * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+ * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+ * query parameter is provided, the collection does not include views in the DELETED
+ * lifecycleState to be consistent with other operations of the API.
  *
  * ## Example Usage
  *

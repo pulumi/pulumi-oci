@@ -27,7 +27,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, options=None, state=None, type=None, vcn_id=None):
+    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, options=None, state=None, type=None, vcn_id=None):
         if available_kubernetes_upgrades and not isinstance(available_kubernetes_upgrades, list):
             raise TypeError("Expected argument 'available_kubernetes_upgrades' to be a list")
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -73,6 +73,9 @@ class GetClusterResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if open_id_connect_discovery_endpoint and not isinstance(open_id_connect_discovery_endpoint, str):
+            raise TypeError("Expected argument 'open_id_connect_discovery_endpoint' to be a str")
+        pulumi.set(__self__, "open_id_connect_discovery_endpoint", open_id_connect_discovery_endpoint)
         if options and not isinstance(options, list):
             raise TypeError("Expected argument 'options' to be a list")
         pulumi.set(__self__, "options", options)
@@ -204,6 +207,11 @@ class GetClusterResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="openIdConnectDiscoveryEndpoint")
+    def open_id_connect_discovery_endpoint(self) -> str:
+        return pulumi.get(self, "open_id_connect_discovery_endpoint")
+
+    @property
     @pulumi.getter
     def options(self) -> Sequence['outputs.GetClusterOptionResult']:
         """
@@ -257,6 +265,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             lifecycle_details=self.lifecycle_details,
             metadatas=self.metadatas,
             name=self.name,
+            open_id_connect_discovery_endpoint=self.open_id_connect_discovery_endpoint,
             options=self.options,
             state=self.state,
             type=self.type,
@@ -303,6 +312,7 @@ def get_cluster(cluster_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
+        open_id_connect_discovery_endpoint=pulumi.get(__ret__, 'open_id_connect_discovery_endpoint'),
         options=pulumi.get(__ret__, 'options'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'),
@@ -346,6 +356,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[str]] = None,
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         metadatas=pulumi.get(__response__, 'metadatas'),
         name=pulumi.get(__response__, 'name'),
+        open_id_connect_discovery_endpoint=pulumi.get(__response__, 'open_id_connect_discovery_endpoint'),
         options=pulumi.get(__response__, 'options'),
         state=pulumi.get(__response__, 'state'),
         type=pulumi.get(__response__, 'type'),

@@ -31,6 +31,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DeploymentName;
         /// <summary>
+        /// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentOggDataGroupToRolesMappingResult> GroupToRolesMappings;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         /// </summary>
         public readonly string IdentityDomainId;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string deploymentName,
 
+            ImmutableArray<Outputs.GetDeploymentOggDataGroupToRolesMappingResult> groupToRolesMappings,
+
             string identityDomainId,
 
             string key,
@@ -69,6 +75,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Certificate = certificate;
             CredentialStore = credentialStore;
             DeploymentName = deploymentName;
+            GroupToRolesMappings = groupToRolesMappings;
             IdentityDomainId = identityDomainId;
             Key = key;
             OggVersion = oggVersion;

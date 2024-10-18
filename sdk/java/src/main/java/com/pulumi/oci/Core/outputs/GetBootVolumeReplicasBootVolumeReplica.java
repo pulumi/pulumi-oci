@@ -52,6 +52,11 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
      */
     private String imageId;
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private String kmsKeyId;
+    /**
      * @return The size of the source boot volume, in GBs.
      * 
      */
@@ -135,6 +140,13 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
         return this.imageId;
     }
     /**
+     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return The size of the source boot volume, in GBs.
      * 
      */
@@ -187,6 +199,7 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
         private Map<String,String> freeformTags;
         private String id;
         private String imageId;
+        private String kmsKeyId;
         private String sizeInGbs;
         private String state;
         private String timeCreated;
@@ -203,6 +216,7 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.imageId = defaults.imageId;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -275,6 +289,14 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeReplicasBootVolumeReplica", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             if (sizeInGbs == null) {
               throw new MissingRequiredPropertyException("GetBootVolumeReplicasBootVolumeReplica", "sizeInGbs");
@@ -324,6 +346,7 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.imageId = imageId;
+            _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

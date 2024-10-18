@@ -43,13 +43,13 @@ namespace Pulumi.Oci.Dns.Inputs
         public Input<string>? RrsetVersion { get; set; }
 
         /// <summary>
-        /// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        /// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// </summary>
         [Input("rtype", required: true)]
         public Input<string> Rtype { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Time To Live for the record, in seconds.
+        /// (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         /// </summary>
         [Input("ttl", required: true)]
         public Input<int> Ttl { get; set; } = null!;

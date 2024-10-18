@@ -35,7 +35,8 @@ class BootVolumeArgs:
                  is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BootVolume resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
@@ -53,6 +54,11 @@ class BootVolumeArgs:
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -84,6 +90,8 @@ class BootVolumeArgs:
             pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -262,6 +270,22 @@ class BootVolumeArgs:
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 @pulumi.input_type
 class _BootVolumeState:
@@ -288,7 +312,8 @@ class _BootVolumeState:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  volume_group_id: Optional[pulumi.Input[str]] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BootVolume resources.
         :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
@@ -314,6 +339,11 @@ class _BootVolumeState:
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -364,6 +394,8 @@ class _BootVolumeState:
             pulumi.set(__self__, "volume_group_id", volume_group_id)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
@@ -638,6 +670,22 @@ class _BootVolumeState:
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 class BootVolume(pulumi.CustomResource):
     @overload
@@ -659,6 +707,7 @@ class BootVolume(pulumi.CustomResource):
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict']]] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
@@ -677,8 +726,11 @@ class BootVolume(pulumi.CustomResource):
         test_boot_volume = oci.core.BootVolume("test_boot_volume",
             compartment_id=compartment_id,
             source_details={
-                "id": boot_volume_source_details_id,
                 "type": boot_volume_source_details_type,
+                "change_block_size_in_bytes": boot_volume_source_details_change_block_size_in_bytes,
+                "first_backup_id": test_backup["id"],
+                "id": boot_volume_source_details_id,
+                "second_backup_id": test_backup["id"],
             },
             autotune_policies=[{
                 "autotune_type": boot_volume_autotune_policies_autotune_type,
@@ -689,6 +741,7 @@ class BootVolume(pulumi.CustomResource):
             boot_volume_replicas=[{
                 "availability_domain": boot_volume_boot_volume_replicas_availability_domain,
                 "display_name": boot_volume_boot_volume_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -702,6 +755,7 @@ class BootVolume(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             size_in_gbs=boot_volume_size_in_gbs,
             vpus_per_gb=boot_volume_vpus_per_gb,
+            xrc_kms_key_id=test_key["id"],
             boot_volume_replicas_deletion=True)
         ```
 
@@ -730,6 +784,11 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -754,8 +813,11 @@ class BootVolume(pulumi.CustomResource):
         test_boot_volume = oci.core.BootVolume("test_boot_volume",
             compartment_id=compartment_id,
             source_details={
-                "id": boot_volume_source_details_id,
                 "type": boot_volume_source_details_type,
+                "change_block_size_in_bytes": boot_volume_source_details_change_block_size_in_bytes,
+                "first_backup_id": test_backup["id"],
+                "id": boot_volume_source_details_id,
+                "second_backup_id": test_backup["id"],
             },
             autotune_policies=[{
                 "autotune_type": boot_volume_autotune_policies_autotune_type,
@@ -766,6 +828,7 @@ class BootVolume(pulumi.CustomResource):
             boot_volume_replicas=[{
                 "availability_domain": boot_volume_boot_volume_replicas_availability_domain,
                 "display_name": boot_volume_boot_volume_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -779,6 +842,7 @@ class BootVolume(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             size_in_gbs=boot_volume_size_in_gbs,
             vpus_per_gb=boot_volume_vpus_per_gb,
+            xrc_kms_key_id=test_key["id"],
             boot_volume_replicas_deletion=True)
         ```
 
@@ -820,6 +884,7 @@ class BootVolume(pulumi.CustomResource):
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[Union['BootVolumeSourceDetailsArgs', 'BootVolumeSourceDetailsArgsDict']]] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -850,6 +915,7 @@ class BootVolume(pulumi.CustomResource):
                 raise TypeError("Missing required property 'source_details'")
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["vpus_per_gb"] = vpus_per_gb
+            __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
             __props__.__dict__["auto_tuned_vpus_per_gb"] = None
             __props__.__dict__["image_id"] = None
             __props__.__dict__["is_hydrated"] = None
@@ -890,7 +956,8 @@ class BootVolume(pulumi.CustomResource):
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             volume_group_id: Optional[pulumi.Input[str]] = None,
-            vpus_per_gb: Optional[pulumi.Input[str]] = None) -> 'BootVolume':
+            vpus_per_gb: Optional[pulumi.Input[str]] = None,
+            xrc_kms_key_id: Optional[pulumi.Input[str]] = None) -> 'BootVolume':
         """
         Get an existing BootVolume resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -921,6 +988,11 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -949,6 +1021,7 @@ class BootVolume(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["volume_group_id"] = volume_group_id
         __props__.__dict__["vpus_per_gb"] = vpus_per_gb
+        __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return BootVolume(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1131,4 +1204,16 @@ class BootVolume(pulumi.CustomResource):
         Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
 

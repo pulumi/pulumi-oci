@@ -73,6 +73,8 @@ type GetBlockVolumeReplicaResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the source block volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
 	// The current state of a block volume replica.
@@ -165,6 +167,11 @@ func (o GetBlockVolumeReplicaResultOutput) FreeformTags() pulumi.StringMapOutput
 // The provider-assigned unique ID for this managed resource.
 func (o GetBlockVolumeReplicaResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+func (o GetBlockVolumeReplicaResultOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // The size of the source block volume, in GBs.

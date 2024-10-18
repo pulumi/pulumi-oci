@@ -26,6 +26,14 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly Outputs.ClusterOptionsKubernetesNetworkConfig? KubernetesNetworkConfig;
         /// <summary>
+        /// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+        /// </summary>
+        public readonly Outputs.ClusterOptionsOpenIdConnectDiscovery? OpenIdConnectDiscovery;
+        /// <summary>
+        /// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        /// </summary>
+        public readonly Outputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfig? OpenIdConnectTokenAuthenticationConfig;
+        /// <summary>
         /// (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         /// </summary>
         public readonly Outputs.ClusterOptionsPersistentVolumeConfig? PersistentVolumeConfig;
@@ -46,6 +54,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             Outputs.ClusterOptionsKubernetesNetworkConfig? kubernetesNetworkConfig,
 
+            Outputs.ClusterOptionsOpenIdConnectDiscovery? openIdConnectDiscovery,
+
+            Outputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfig? openIdConnectTokenAuthenticationConfig,
+
             Outputs.ClusterOptionsPersistentVolumeConfig? persistentVolumeConfig,
 
             Outputs.ClusterOptionsServiceLbConfig? serviceLbConfig,
@@ -55,6 +67,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             AddOns = addOns;
             AdmissionControllerOptions = admissionControllerOptions;
             KubernetesNetworkConfig = kubernetesNetworkConfig;
+            OpenIdConnectDiscovery = openIdConnectDiscovery;
+            OpenIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
             PersistentVolumeConfig = persistentVolumeConfig;
             ServiceLbConfig = serviceLbConfig;
             ServiceLbSubnetIds = serviceLbSubnetIds;

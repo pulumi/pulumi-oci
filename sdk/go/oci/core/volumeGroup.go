@@ -48,11 +48,13 @@ import (
 //					&core.VolumeGroupVolumeGroupReplicaArgs{
 //						AvailabilityDomain: pulumi.Any(volumeGroupVolumeGroupReplicasAvailabilityDomain),
 //						DisplayName:        pulumi.Any(volumeGroupVolumeGroupReplicasDisplayName),
+//						XrrKmsKeyId:        pulumi.Any(testKey.Id),
 //					},
 //				},
 //				VolumeIds: pulumi.StringArray{
 //					volumeGroupSourceId,
 //				},
+//				XrcKmsKeyId: pulumi.Any(testKey.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -110,6 +112,8 @@ type VolumeGroup struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeIds pulumi.StringArrayOutput `pulumi:"volumeIds"`
+	// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId pulumi.StringOutput `pulumi:"xrcKmsKeyId"`
 }
 
 // NewVolumeGroup registers a new resource with the given unique name, arguments, and options.
@@ -188,6 +192,8 @@ type volumeGroupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeIds []string `pulumi:"volumeIds"`
+	// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId *string `pulumi:"xrcKmsKeyId"`
 }
 
 type VolumeGroupState struct {
@@ -228,6 +234,8 @@ type VolumeGroupState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeIds pulumi.StringArrayInput
+	// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId pulumi.StringPtrInput
 }
 
 func (VolumeGroupState) ElementType() reflect.Type {
@@ -262,6 +270,8 @@ type volumeGroupArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeIds []string `pulumi:"volumeIds"`
+	// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId *string `pulumi:"xrcKmsKeyId"`
 }
 
 // The set of arguments for constructing a VolumeGroup resource.
@@ -293,6 +303,8 @@ type VolumeGroupArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeIds pulumi.StringArrayInput
+	// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId pulumi.StringPtrInput
 }
 
 func (VolumeGroupArgs) ElementType() reflect.Type {
@@ -468,6 +480,11 @@ func (o VolumeGroupOutput) VolumeGroupReplicasDeletion() pulumi.BoolPtrOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VolumeGroupOutput) VolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringArrayOutput { return v.VolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+func (o VolumeGroupOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 type VolumeGroupArrayOutput struct{ *pulumi.OutputState }

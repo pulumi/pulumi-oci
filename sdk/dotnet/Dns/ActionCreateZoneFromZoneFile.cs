@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Dns
     /// <summary>
     /// This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
     /// 
-    /// Creates a new zone from a zone file in the specified compartment.
+    /// Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
     /// 
     /// After the zone has been created, it should be further managed by importing it to an `oci.Dns.Zone` resource.
     /// 
@@ -65,6 +65,12 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
+
+        [Output("dnssecConfigs")]
+        public Output<ImmutableArray<Outputs.ActionCreateZoneFromZoneFileDnssecConfig>> DnssecConfigs { get; private set; } = null!;
+
+        [Output("dnssecState")]
+        public Output<string> DnssecState { get; private set; } = null!;
 
         /// <summary>
         /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -265,6 +271,17 @@ namespace Pulumi.Oci.Dns
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        [Input("dnssecConfigs")]
+        private InputList<Inputs.ActionCreateZoneFromZoneFileDnssecConfigGetArgs>? _dnssecConfigs;
+        public InputList<Inputs.ActionCreateZoneFromZoneFileDnssecConfigGetArgs> DnssecConfigs
+        {
+            get => _dnssecConfigs ?? (_dnssecConfigs = new InputList<Inputs.ActionCreateZoneFromZoneFileDnssecConfigGetArgs>());
+            set => _dnssecConfigs = value;
+        }
+
+        [Input("dnssecState")]
+        public Input<string>? DnssecState { get; set; }
 
         [Input("externalDownstreams")]
         private InputList<Inputs.ActionCreateZoneFromZoneFileExternalDownstreamGetArgs>? _externalDownstreams;

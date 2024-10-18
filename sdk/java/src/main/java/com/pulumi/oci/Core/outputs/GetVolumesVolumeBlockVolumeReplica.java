@@ -25,6 +25,12 @@ public final class GetVolumesVolumeBlockVolumeReplica {
      * 
      */
     private String displayName;
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the volume.
+     * 
+     */
+    private String kmsKeyId;
+    private String xrrKmsKeyId;
 
     private GetVolumesVolumeBlockVolumeReplica() {}
     /**
@@ -48,6 +54,16 @@ public final class GetVolumesVolumeBlockVolumeReplica {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the volume.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    public String xrrKmsKeyId() {
+        return this.xrrKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -61,12 +77,16 @@ public final class GetVolumesVolumeBlockVolumeReplica {
         private String availabilityDomain;
         private String blockVolumeReplicaId;
         private String displayName;
+        private String kmsKeyId;
+        private String xrrKmsKeyId;
         public Builder() {}
         public Builder(GetVolumesVolumeBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.blockVolumeReplicaId = defaults.blockVolumeReplicaId;
     	      this.displayName = defaults.displayName;
+    	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.xrrKmsKeyId = defaults.xrrKmsKeyId;
         }
 
         @CustomType.Setter
@@ -93,11 +113,29 @@ public final class GetVolumesVolumeBlockVolumeReplica {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolumeBlockVolumeReplica", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder xrrKmsKeyId(String xrrKmsKeyId) {
+            if (xrrKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolumeBlockVolumeReplica", "xrrKmsKeyId");
+            }
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
         public GetVolumesVolumeBlockVolumeReplica build() {
             final var _resultValue = new GetVolumesVolumeBlockVolumeReplica();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.blockVolumeReplicaId = blockVolumeReplicaId;
             _resultValue.displayName = displayName;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.xrrKmsKeyId = xrrKmsKeyId;
             return _resultValue;
         }
     }

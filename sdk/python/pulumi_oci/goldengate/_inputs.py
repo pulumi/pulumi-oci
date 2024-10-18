@@ -37,6 +37,8 @@ __all__ = [
     'DeploymentMaintenanceWindowArgsDict',
     'DeploymentOggDataArgs',
     'DeploymentOggDataArgsDict',
+    'DeploymentOggDataGroupToRolesMappingArgs',
+    'DeploymentOggDataGroupToRolesMappingArgsDict',
     'GetConnectionAssignmentsFilterArgs',
     'GetConnectionAssignmentsFilterArgsDict',
     'GetConnectionsFilterArgs',
@@ -47,6 +49,8 @@ __all__ = [
     'GetDeploymentBackupsFilterArgsDict',
     'GetDeploymentCertificatesFilterArgs',
     'GetDeploymentCertificatesFilterArgsDict',
+    'GetDeploymentEnvironmentsFilterArgs',
+    'GetDeploymentEnvironmentsFilterArgsDict',
     'GetDeploymentTypesFilterArgs',
     'GetDeploymentTypesFilterArgsDict',
     'GetDeploymentUpgradesFilterArgs',
@@ -130,6 +134,7 @@ if not MYPY:
         private_ip: NotRequired[pulumi.Input[str]]
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
 elif False:
@@ -145,6 +150,7 @@ class ConnectionBootstrapServerArgs:
         :param pulumi.Input[str] host: (Updatable) The name or address of a host.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         if host is not None:
@@ -183,6 +189,7 @@ class ConnectionBootstrapServerArgs:
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -845,6 +852,10 @@ if not MYPY:
         """
         (Updatable) The type of credential store for OGG.
         """
+        group_to_roles_mapping: NotRequired[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgsDict']]
+        """
+        (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        """
         identity_domain_id: NotRequired[pulumi.Input[str]]
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
@@ -872,6 +883,7 @@ class DeploymentOggDataArgs:
                  admin_username: Optional[pulumi.Input[str]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_store: Optional[pulumi.Input[str]] = None,
+                 group_to_roles_mapping: Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']] = None,
                  identity_domain_id: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  ogg_version: Optional[pulumi.Input[str]] = None,
@@ -882,6 +894,7 @@ class DeploymentOggDataArgs:
         :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[str] certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] credential_store: (Updatable) The type of credential store for OGG.
+        :param pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs'] group_to_roles_mapping: (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param pulumi.Input[str] identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param pulumi.Input[str] key: (Updatable) The base64 encoded content of the PEM file containing the private key.
         :param pulumi.Input[str] ogg_version: Version of OGG
@@ -896,6 +909,8 @@ class DeploymentOggDataArgs:
             pulumi.set(__self__, "certificate", certificate)
         if credential_store is not None:
             pulumi.set(__self__, "credential_store", credential_store)
+        if group_to_roles_mapping is not None:
+            pulumi.set(__self__, "group_to_roles_mapping", group_to_roles_mapping)
         if identity_domain_id is not None:
             pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
@@ -966,6 +981,18 @@ class DeploymentOggDataArgs:
         pulumi.set(self, "credential_store", value)
 
     @property
+    @pulumi.getter(name="groupToRolesMapping")
+    def group_to_roles_mapping(self) -> Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']]:
+        """
+        (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        """
+        return pulumi.get(self, "group_to_roles_mapping")
+
+    @group_to_roles_mapping.setter
+    def group_to_roles_mapping(self, value: Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']]):
+        pulumi.set(self, "group_to_roles_mapping", value)
+
+    @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1012,6 +1039,97 @@ class DeploymentOggDataArgs:
     @password_secret_id.setter
     def password_secret_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "password_secret_id", value)
+
+
+if not MYPY:
+    class DeploymentOggDataGroupToRolesMappingArgsDict(TypedDict):
+        security_group_id: pulumi.Input[str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        """
+        administrator_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        """
+        operator_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        """
+        user_group_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+elif False:
+    DeploymentOggDataGroupToRolesMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DeploymentOggDataGroupToRolesMappingArgs:
+    def __init__(__self__, *,
+                 security_group_id: pulumi.Input[str],
+                 administrator_group_id: Optional[pulumi.Input[str]] = None,
+                 operator_group_id: Optional[pulumi.Input[str]] = None,
+                 user_group_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] security_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        :param pulumi.Input[str] administrator_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        :param pulumi.Input[str] operator_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        :param pulumi.Input[str] user_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        pulumi.set(__self__, "security_group_id", security_group_id)
+        if administrator_group_id is not None:
+            pulumi.set(__self__, "administrator_group_id", administrator_group_id)
+        if operator_group_id is not None:
+            pulumi.set(__self__, "operator_group_id", operator_group_id)
+        if user_group_id is not None:
+            pulumi.set(__self__, "user_group_id", user_group_id)
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @security_group_id.setter
+    def security_group_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "security_group_id", value)
+
+    @property
+    @pulumi.getter(name="administratorGroupId")
+    def administrator_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        """
+        return pulumi.get(self, "administrator_group_id")
+
+    @administrator_group_id.setter
+    def administrator_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "administrator_group_id", value)
+
+    @property
+    @pulumi.getter(name="operatorGroupId")
+    def operator_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        """
+        return pulumi.get(self, "operator_group_id")
+
+    @operator_group_id.setter
+    def operator_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operator_group_id", value)
+
+    @property
+    @pulumi.getter(name="userGroupId")
+    def user_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        return pulumi.get(self, "user_group_id")
+
+    @user_group_id.setter
+    def user_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_group_id", value)
 
 
 if not MYPY:
@@ -1230,6 +1348,53 @@ elif False:
 
 @pulumi.input_type
 class GetDeploymentCertificatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDeploymentEnvironmentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDeploymentEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDeploymentEnvironmentsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

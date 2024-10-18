@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Dns.ZoneArgs;
 import com.pulumi.oci.Dns.inputs.ZoneState;
+import com.pulumi.oci.Dns.outputs.ZoneDnssecConfig;
 import com.pulumi.oci.Dns.outputs.ZoneExternalDownstream;
 import com.pulumi.oci.Dns.outputs.ZoneExternalMaster;
 import com.pulumi.oci.Dns.outputs.ZoneNameserver;
@@ -25,11 +26,10 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
- * is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
- * not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
- * private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
- * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
+ * Creates a new zone in the specified compartment.
+ * 
+ * Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+ * within the default protected view of a VCN-dedicated resolver is not permitted.
  * 
  * ## Example Usage
  * 
@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .name(zoneName)
  *             .zoneType(zoneZoneType)
  *             .definedTags(zoneDefinedTags)
+ *             .dnssecState(zoneDnssecState)
  *             .externalDownstreams(ZoneExternalDownstreamArgs.builder()
  *                 .address(zoneExternalDownstreamsAddress)
  *                 .port(zoneExternalDownstreamsPort)
@@ -96,14 +97,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Dns/zone:Zone")
 public class Zone extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment containing the zone.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment the resource belongs to.
+     * @return (Updatable) The OCID of the compartment containing the zone.
      * 
      */
     public Output<String> compartmentId() {
@@ -126,6 +127,58 @@ public class Zone extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * DNSSEC configuration data.
+     * 
+     */
+    @Export(name="dnssecConfigs", refs={List.class,ZoneDnssecConfig.class}, tree="[0,1]")
+    private Output<List<ZoneDnssecConfig>> dnssecConfigs;
+
+    /**
+     * @return DNSSEC configuration data.
+     * 
+     */
+    public Output<List<ZoneDnssecConfig>> dnssecConfigs() {
+        return this.dnssecConfigs;
+    }
+    /**
+     * (Updatable) The state of DNSSEC on the zone.
+     * 
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone&#39;s parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+     * 
+     * New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`&#39;s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone&#39;s DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+     * 
+     * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+     * 
+     * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+     * 
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+     * 
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * 
+     */
+    @Export(name="dnssecState", refs={String.class}, tree="[0]")
+    private Output<String> dnssecState;
+
+    /**
+     * @return (Updatable) The state of DNSSEC on the zone.
+     * 
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone&#39;s parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+     * 
+     * New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`&#39;s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone&#39;s DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+     * 
+     * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+     * 
+     * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+     * 
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+     * 
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * 
+     */
+    public Output<String> dnssecState() {
+        return this.dnssecState;
     }
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.

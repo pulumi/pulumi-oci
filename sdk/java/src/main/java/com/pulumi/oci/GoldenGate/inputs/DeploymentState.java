@@ -26,6 +26,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     public static final DeploymentState Empty = new DeploymentState();
 
     /**
+     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -161,6 +176,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    @Import(name="environmentType")
+    private @Nullable Output<String> environmentType;
+
+    /**
+     * @return (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    public Optional<Output<String>> environmentType() {
+        return Optional.ofNullable(this.environmentType);
+    }
+
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -273,14 +303,14 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     @Import(name="isStorageUtilizationLimitExceeded")
     private @Nullable Output<Boolean> isStorageUtilizationLimitExceeded;
 
     /**
-     * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     public Optional<Output<Boolean>> isStorageUtilizationLimitExceeded() {
@@ -627,6 +657,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     private DeploymentState() {}
 
     private DeploymentState(DeploymentState $) {
+        this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.definedTags = $.definedTags;
@@ -636,6 +667,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.deploymentUrl = $.deploymentUrl;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.environmentType = $.environmentType;
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
         this.ingressIps = $.ingressIps;
@@ -686,6 +718,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DeploymentState defaults) {
             $ = new DeploymentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param category The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
         }
 
         /**
@@ -888,6 +941,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param environmentType (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(@Nullable Output<String> environmentType) {
+            $.environmentType = environmentType;
+            return this;
+        }
+
+        /**
+         * @param environmentType (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(String environmentType) {
+            return environmentType(Output.of(environmentType));
+        }
+
+        /**
          * @param fqdn (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
          * 
          * @return builder
@@ -1054,7 +1128,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isStorageUtilizationLimitExceeded Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+         * @param isStorageUtilizationLimitExceeded Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
          * 
          * @return builder
          * 
@@ -1065,7 +1139,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isStorageUtilizationLimitExceeded Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+         * @param isStorageUtilizationLimitExceeded Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
          * 
          * @return builder
          * 

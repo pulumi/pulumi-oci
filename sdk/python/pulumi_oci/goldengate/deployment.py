@@ -31,6 +31,7 @@ class DeploymentArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 environment_type: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[bool]] = None,
@@ -54,6 +55,7 @@ class DeploymentArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
+        :param pulumi.Input[str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
@@ -77,6 +79,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if environment_type is not None:
+            pulumi.set(__self__, "environment_type", environment_type)
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
@@ -221,6 +225,18 @@ class DeploymentArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @environment_type.setter
+    def environment_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "environment_type", value)
+
+    @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
         """
@@ -350,6 +366,7 @@ class DeploymentArgs:
 @pulumi.input_type
 class _DeploymentState:
     def __init__(__self__, *,
+                 category: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -359,6 +376,7 @@ class _DeploymentState:
                  deployment_url: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 environment_type: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]] = None,
@@ -393,6 +411,7 @@ class _DeploymentState:
                  time_upgrade_required: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
+        :param pulumi.Input[str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -402,6 +421,7 @@ class _DeploymentState:
         :param pulumi.Input[str] deployment_url: The URL of a resource.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
+        :param pulumi.Input[str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -409,7 +429,7 @@ class _DeploymentState:
         :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
@@ -433,6 +453,8 @@ class _DeploymentState:
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        if category is not None:
+            pulumi.set(__self__, "category", category)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpu_core_count is not None:
@@ -451,6 +473,8 @@ class _DeploymentState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if environment_type is not None:
+            pulumi.set(__self__, "environment_type", environment_type)
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
@@ -515,6 +539,18 @@ class _DeploymentState:
             pulumi.set(__self__, "time_updated", time_updated)
         if time_upgrade_required is not None:
             pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter
+    def category(self) -> Optional[pulumi.Input[str]]:
+        """
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        """
+        return pulumi.get(self, "category")
+
+    @category.setter
+    def category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "category", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -625,6 +661,18 @@ class _DeploymentState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @environment_type.setter
+    def environment_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "environment_type", value)
+
+    @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
         """
@@ -721,7 +769,7 @@ class _DeploymentState:
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
     def is_storage_utilization_limit_exceeded(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         """
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
@@ -1015,6 +1063,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 environment_type: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1052,6 +1101,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
+        :param pulumi.Input[str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -1106,6 +1156,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 environment_type: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1144,6 +1195,7 @@ class Deployment(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["environment_type"] = environment_type
             __props__.__dict__["fqdn"] = fqdn
             __props__.__dict__["freeform_tags"] = freeform_tags
             if is_auto_scaling_enabled is None and not opts.urn:
@@ -1164,6 +1216,7 @@ class Deployment(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["category"] = None
             __props__.__dict__["deployment_diagnostic_datas"] = None
             __props__.__dict__["deployment_url"] = None
             __props__.__dict__["ingress_ips"] = None
@@ -1194,6 +1247,7 @@ class Deployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            category: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1203,6 +1257,7 @@ class Deployment(pulumi.CustomResource):
             deployment_url: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            environment_type: Optional[pulumi.Input[str]] = None,
             fqdn: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]]] = None,
@@ -1242,6 +1297,7 @@ class Deployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1251,6 +1307,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_url: The URL of a resource.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
+        :param pulumi.Input[str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1258,7 +1315,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
@@ -1286,6 +1343,7 @@ class Deployment(pulumi.CustomResource):
 
         __props__ = _DeploymentState.__new__(_DeploymentState)
 
+        __props__.__dict__["category"] = category
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1295,6 +1353,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["deployment_url"] = deployment_url
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["environment_type"] = environment_type
         __props__.__dict__["fqdn"] = fqdn
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ingress_ips"] = ingress_ips
@@ -1328,6 +1387,14 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["time_upgrade_required"] = time_upgrade_required
         return Deployment(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def category(self) -> pulumi.Output[str]:
+        """
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1402,6 +1469,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @property
     @pulumi.getter
     def fqdn(self) -> pulumi.Output[str]:
         """
@@ -1466,7 +1541,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
     def is_storage_utilization_limit_exceeded(self) -> pulumi.Output[bool]:
         """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         """
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 

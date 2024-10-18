@@ -695,6 +695,14 @@ if not MYPY:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        xrr_kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
 elif False:
     BootVolumeBootVolumeReplicaArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -703,17 +711,25 @@ class BootVolumeBootVolumeReplicaArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 xrr_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] boot_volume_replica_id: The boot volume replica's Oracle ID (OCID).
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param pulumi.Input[str] xrr_kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if boot_volume_replica_id is not None:
             pulumi.set(__self__, "boot_volume_replica_id", boot_volume_replica_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if xrr_kms_key_id is not None:
+            pulumi.set(__self__, "xrr_kms_key_id", xrr_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -751,16 +767,52 @@ class BootVolumeBootVolumeReplicaArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="xrrKmsKeyId")
+    def xrr_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrr_kms_key_id")
+
+    @xrr_kms_key_id.setter
+    def xrr_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrr_kms_key_id", value)
+
 
 if not MYPY:
     class BootVolumeSourceDetailsArgsDict(TypedDict):
-        id: pulumi.Input[str]
+        type: pulumi.Input[str]
+        """
+        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        """
+        change_block_size_in_bytes: NotRequired[pulumi.Input[str]]
+        """
+        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        """
+        first_backup_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the first boot volume backup.
+        """
+        id: NotRequired[pulumi.Input[str]]
         """
         The OCID of the boot volume replica.
         """
-        type: pulumi.Input[str]
+        second_backup_id: NotRequired[pulumi.Input[str]]
         """
-        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+        The OCID of the second boot volume backup.
         """
 elif False:
     BootVolumeSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -768,38 +820,87 @@ elif False:
 @pulumi.input_type
 class BootVolumeSourceDetailsArgs:
     def __init__(__self__, *,
-                 id: pulumi.Input[str],
-                 type: pulumi.Input[str]):
+                 type: pulumi.Input[str],
+                 change_block_size_in_bytes: Optional[pulumi.Input[str]] = None,
+                 first_backup_id: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 second_backup_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
+        :param pulumi.Input[str] change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param pulumi.Input[str] first_backup_id: The OCID of the first boot volume backup.
         :param pulumi.Input[str] id: The OCID of the boot volume replica.
-        :param pulumi.Input[str] type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+        :param pulumi.Input[str] second_backup_id: The OCID of the second boot volume backup.
         """
-        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the boot volume replica.
-        """
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "id", value)
+        if change_block_size_in_bytes is not None:
+            pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
+        if first_backup_id is not None:
+            pulumi.set(__self__, "first_backup_id", first_backup_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if second_backup_id is not None:
+            pulumi.set(__self__, "second_backup_id", second_backup_id)
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+        The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="changeBlockSizeInBytes")
+    def change_block_size_in_bytes(self) -> Optional[pulumi.Input[str]]:
+        """
+        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        """
+        return pulumi.get(self, "change_block_size_in_bytes")
+
+    @change_block_size_in_bytes.setter
+    def change_block_size_in_bytes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "change_block_size_in_bytes", value)
+
+    @property
+    @pulumi.getter(name="firstBackupId")
+    def first_backup_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the first boot volume backup.
+        """
+        return pulumi.get(self, "first_backup_id")
+
+    @first_backup_id.setter
+    def first_backup_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "first_backup_id", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the boot volume replica.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="secondBackupId")
+    def second_backup_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the second boot volume backup.
+        """
+        return pulumi.get(self, "second_backup_id")
+
+    @second_backup_id.setter
+    def second_backup_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "second_backup_id", value)
 
 
 if not MYPY:
@@ -6459,6 +6560,10 @@ if not MYPY:
 
         Allowed values:
         """
+        xrc_kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
 elif False:
     InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -6478,7 +6583,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs']]] autotune_policies: The list of autotune policies enabled for this volume.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
@@ -6495,6 +6601,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
         :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
@@ -6524,6 +6631,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
             pulumi.set(__self__, "source_details", source_details)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autotunePolicies")
@@ -6691,6 +6800,18 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
     @vpus_per_gb.setter
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
 
 
 if not MYPY:
@@ -9378,6 +9499,10 @@ if not MYPY:
 
         Allowed values:
         """
+        xrc_kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
 elif False:
     InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -9397,7 +9522,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  size_in_gbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]] autotune_policies: The list of autotune policies enabled for this volume.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
@@ -9414,6 +9540,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
         :param pulumi.Input[str] vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
@@ -9443,6 +9570,8 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
             pulumi.set(__self__, "source_details", source_details)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autotunePolicies")
@@ -9610,6 +9739,18 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
     @vpus_per_gb.setter
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
 
 
 if not MYPY:
@@ -18744,6 +18885,14 @@ if not MYPY:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+        """
+        xrr_kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
 elif False:
     VolumeBlockVolumeReplicaArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -18752,17 +18901,25 @@ class VolumeBlockVolumeReplicaArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  block_volume_replica_id: Optional[pulumi.Input[str]] = None,
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 xrr_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] block_volume_replica_id: The block volume replica's Oracle ID (OCID).
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+        :param pulumi.Input[str] xrr_kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if block_volume_replica_id is not None:
             pulumi.set(__self__, "block_volume_replica_id", block_volume_replica_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if xrr_kms_key_id is not None:
+            pulumi.set(__self__, "xrr_kms_key_id", xrr_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -18799,6 +18956,30 @@ class VolumeBlockVolumeReplicaArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="xrrKmsKeyId")
+    def xrr_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrr_kms_key_id")
+
+    @xrr_kms_key_id.setter
+    def xrr_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrr_kms_key_id", value)
 
 
 if not MYPY:
@@ -19011,6 +19192,10 @@ if not MYPY:
         """
         The volume group replica's Oracle ID (OCID).
         """
+        xrr_kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group's replicas, which will be used in the destination region to encrypt the volume group's replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
 elif False:
     VolumeGroupVolumeGroupReplicaArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -19019,17 +19204,21 @@ class VolumeGroupVolumeGroupReplicaArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  display_name: Optional[pulumi.Input[str]] = None,
-                 volume_group_replica_id: Optional[pulumi.Input[str]] = None):
+                 volume_group_replica_id: Optional[pulumi.Input[str]] = None,
+                 xrr_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] volume_group_replica_id: The volume group replica's Oracle ID (OCID).
+        :param pulumi.Input[str] xrr_kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group's replicas, which will be used in the destination region to encrypt the volume group's replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if volume_group_replica_id is not None:
             pulumi.set(__self__, "volume_group_replica_id", volume_group_replica_id)
+        if xrr_kms_key_id is not None:
+            pulumi.set(__self__, "xrr_kms_key_id", xrr_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -19067,16 +19256,40 @@ class VolumeGroupVolumeGroupReplicaArgs:
     def volume_group_replica_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "volume_group_replica_id", value)
 
+    @property
+    @pulumi.getter(name="xrrKmsKeyId")
+    def xrr_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group's replicas, which will be used in the destination region to encrypt the volume group's replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrr_kms_key_id")
+
+    @xrr_kms_key_id.setter
+    def xrr_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrr_kms_key_id", value)
+
 
 if not MYPY:
     class VolumeSourceDetailsArgsDict(TypedDict):
-        id: pulumi.Input[str]
+        type: pulumi.Input[str]
+        """
+        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        """
+        change_block_size_in_bytes: NotRequired[pulumi.Input[str]]
+        """
+        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        """
+        first_backup_id: NotRequired[pulumi.Input[str]]
+        """
+        The OCID of the first volume backup.
+        """
+        id: NotRequired[pulumi.Input[str]]
         """
         The OCID of the block volume replica.
         """
-        type: pulumi.Input[str]
+        second_backup_id: NotRequired[pulumi.Input[str]]
         """
-        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+        The OCID of the second volume backup.
         """
 elif False:
     VolumeSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -19084,38 +19297,87 @@ elif False:
 @pulumi.input_type
 class VolumeSourceDetailsArgs:
     def __init__(__self__, *,
-                 id: pulumi.Input[str],
-                 type: pulumi.Input[str]):
+                 type: pulumi.Input[str],
+                 change_block_size_in_bytes: Optional[pulumi.Input[str]] = None,
+                 first_backup_id: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 second_backup_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        :param pulumi.Input[str] change_block_size_in_bytes: Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        :param pulumi.Input[str] first_backup_id: The OCID of the first volume backup.
         :param pulumi.Input[str] id: The OCID of the block volume replica.
-        :param pulumi.Input[str] type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+        :param pulumi.Input[str] second_backup_id: The OCID of the second volume backup.
         """
-        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the block volume replica.
-        """
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "id", value)
+        if change_block_size_in_bytes is not None:
+            pulumi.set(__self__, "change_block_size_in_bytes", change_block_size_in_bytes)
+        if first_backup_id is not None:
+            pulumi.set(__self__, "first_backup_id", first_backup_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if second_backup_id is not None:
+            pulumi.set(__self__, "second_backup_id", second_backup_id)
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+        The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
         """
         return pulumi.get(self, "type")
 
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="changeBlockSizeInBytes")
+    def change_block_size_in_bytes(self) -> Optional[pulumi.Input[str]]:
+        """
+        Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+        """
+        return pulumi.get(self, "change_block_size_in_bytes")
+
+    @change_block_size_in_bytes.setter
+    def change_block_size_in_bytes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "change_block_size_in_bytes", value)
+
+    @property
+    @pulumi.getter(name="firstBackupId")
+    def first_backup_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the first volume backup.
+        """
+        return pulumi.get(self, "first_backup_id")
+
+    @first_backup_id.setter
+    def first_backup_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "first_backup_id", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the block volume replica.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="secondBackupId")
+    def second_backup_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the second volume backup.
+        """
+        return pulumi.get(self, "second_backup_id")
+
+    @second_backup_id.setter
+    def second_backup_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "second_backup_id", value)
 
 
 if not MYPY:

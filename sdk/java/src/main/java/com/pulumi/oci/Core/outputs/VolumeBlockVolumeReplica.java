@@ -27,6 +27,16 @@ public final class VolumeBlockVolumeReplica {
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * 
+     */
+    private @Nullable String kmsKeyId;
+    /**
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private @Nullable String xrrKmsKeyId;
 
     private VolumeBlockVolumeReplica() {}
     /**
@@ -50,6 +60,20 @@ public final class VolumeBlockVolumeReplica {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
+    /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+     * 
+     */
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+    /**
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Optional<String> xrrKmsKeyId() {
+        return Optional.ofNullable(this.xrrKmsKeyId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +87,16 @@ public final class VolumeBlockVolumeReplica {
         private String availabilityDomain;
         private @Nullable String blockVolumeReplicaId;
         private @Nullable String displayName;
+        private @Nullable String kmsKeyId;
+        private @Nullable String xrrKmsKeyId;
         public Builder() {}
         public Builder(VolumeBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.blockVolumeReplicaId = defaults.blockVolumeReplicaId;
     	      this.displayName = defaults.displayName;
+    	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.xrrKmsKeyId = defaults.xrrKmsKeyId;
         }
 
         @CustomType.Setter
@@ -91,11 +119,25 @@ public final class VolumeBlockVolumeReplica {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder xrrKmsKeyId(@Nullable String xrrKmsKeyId) {
+
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
         public VolumeBlockVolumeReplica build() {
             final var _resultValue = new VolumeBlockVolumeReplica();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.blockVolumeReplicaId = blockVolumeReplicaId;
             _resultValue.displayName = displayName;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.xrrKmsKeyId = xrrKmsKeyId;
             return _resultValue;
         }
     }

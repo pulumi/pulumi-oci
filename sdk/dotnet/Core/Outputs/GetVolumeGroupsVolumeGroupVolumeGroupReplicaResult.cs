@@ -25,6 +25,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The volume group replica's Oracle ID (OCID).
         /// </summary>
         public readonly string VolumeGroupReplicaId;
+        public readonly string XrrKmsKeyId;
 
         [OutputConstructor]
         private GetVolumeGroupsVolumeGroupVolumeGroupReplicaResult(
@@ -32,11 +33,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             string displayName,
 
-            string volumeGroupReplicaId)
+            string volumeGroupReplicaId,
+
+            string xrrKmsKeyId)
         {
             AvailabilityDomain = availabilityDomain;
             DisplayName = displayName;
             VolumeGroupReplicaId = volumeGroupReplicaId;
+            XrrKmsKeyId = xrrKmsKeyId;
         }
     }
 }

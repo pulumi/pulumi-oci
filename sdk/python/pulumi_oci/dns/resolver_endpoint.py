@@ -463,7 +463,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         """
         This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
+        Creates a new resolver endpoint in the same compartment as the resolver.
 
         ## Example Usage
 
@@ -523,7 +523,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         """
         This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
+        Creates a new resolver endpoint in the same compartment as the resolver.
 
         ## Example Usage
 

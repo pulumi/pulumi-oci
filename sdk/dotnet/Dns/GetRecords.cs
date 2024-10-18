@@ -16,11 +16,35 @@ namespace Pulumi.Oci.Dns
         /// 
         /// This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-        /// For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        /// For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets all records in the specified zone.
+        /// 
+        /// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+        /// then the viewId query parameter is required.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecords = Oci.Dns.GetRecords.Invoke(new()
+        ///     {
+        ///         ZoneNameOrId = testZoneNameOr.Id,
+        ///         Domain = recordDomain,
+        ///         DomainContains = recordDomainContains,
+        ///         Rtype = recordRtype,
+        ///         ZoneVersion = recordZoneVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetRecordsResult> InvokeAsync(GetRecordsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsArgs(), options.WithDefaults());
@@ -30,11 +54,35 @@ namespace Pulumi.Oci.Dns
         /// 
         /// This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-        /// For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        /// For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets all records in the specified zone.
+        /// 
+        /// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+        /// then the viewId query parameter is required.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testRecords = Oci.Dns.GetRecords.Invoke(new()
+        ///     {
+        ///         ZoneNameOrId = testZoneNameOr.Id,
+        ///         Domain = recordDomain,
+        ///         DomainContains = recordDomainContains,
+        ///         Rtype = recordRtype,
+        ///         ZoneVersion = recordZoneVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRecordsResult> Invoke(GetRecordsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsInvokeArgs(), options.WithDefaults());
@@ -44,7 +92,9 @@ namespace Pulumi.Oci.Dns
     public sealed class GetRecordsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment the resource belongs to.
+        /// The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -108,7 +158,9 @@ namespace Pulumi.Oci.Dns
     public sealed class GetRecordsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment the resource belongs to.
+        /// The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -189,7 +241,7 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRecordsRecordResult> Records;
         /// <summary>
-        /// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        /// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// </summary>
         public readonly string? Rtype;
         public readonly string? SortBy;

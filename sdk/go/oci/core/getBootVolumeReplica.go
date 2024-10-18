@@ -75,6 +75,8 @@ type GetBootVolumeReplicaResult struct {
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume the replica is replicated from.
 	ImageId string `pulumi:"imageId"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the source boot volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
 	// The current state of a boot volume replica.
@@ -172,6 +174,11 @@ func (o GetBootVolumeReplicaResultOutput) Id() pulumi.StringOutput {
 // The image OCID used to create the boot volume the replica is replicated from.
 func (o GetBootVolumeReplicaResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBootVolumeReplicaResult) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the boot volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+func (o GetBootVolumeReplicaResultOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBootVolumeReplicaResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // The size of the source boot volume, in GBs.

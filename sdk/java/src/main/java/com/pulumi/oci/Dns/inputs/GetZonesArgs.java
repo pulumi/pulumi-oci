@@ -33,6 +33,21 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
         return this.compartmentId;
     }
 
+    /**
+     * Search for zones that have the given `DnssecState`.
+     * 
+     */
+    @Import(name="dnssecState")
+    private @Nullable Output<String> dnssecState;
+
+    /**
+     * @return Search for zones that have the given `DnssecState`.
+     * 
+     */
+    public Optional<Output<String>> dnssecState() {
+        return Optional.ofNullable(this.dnssecState);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetZonesFilterArgs>> filters;
 
@@ -71,16 +86,14 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -211,6 +224,7 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetZonesArgs(GetZonesArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dnssecState = $.dnssecState;
         this.filters = $.filters;
         this.name = $.name;
         this.nameContains = $.nameContains;
@@ -262,6 +276,27 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param dnssecState Search for zones that have the given `DnssecState`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnssecState(@Nullable Output<String> dnssecState) {
+            $.dnssecState = dnssecState;
+            return this;
+        }
+
+        /**
+         * @param dnssecState Search for zones that have the given `DnssecState`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnssecState(String dnssecState) {
+            return dnssecState(Output.of(dnssecState));
         }
 
         public Builder filters(@Nullable Output<List<GetZonesFilterArgs>> filters) {
@@ -320,8 +355,7 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope. This value will be null
-         * for zones in the global DNS and `PRIVATE` when listing private zones.
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
          * @return builder
          * 
@@ -332,8 +366,7 @@ public final class GetZonesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param scope Specifies to operate only on resources that have a matching DNS scope. This value will be null
-         * for zones in the global DNS and `PRIVATE` when listing private zones.
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
          * @return builder
          * 

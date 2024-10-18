@@ -14,11 +14,10 @@ import (
 
 // This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 //
-// Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
-// is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
-// not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
-// private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
-// `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
+// Creates a new zone in the specified compartment.
+//
+// Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+// within the default protected view of a VCN-dedicated resolver is not permitted.
 //
 // ## Example Usage
 //
@@ -39,6 +38,7 @@ import (
 //				Name:          pulumi.Any(zoneName),
 //				ZoneType:      pulumi.Any(zoneZoneType),
 //				DefinedTags:   pulumi.Any(zoneDefinedTags),
+//				DnssecState:   pulumi.Any(zoneDnssecState),
 //				ExternalDownstreams: dns.ZoneExternalDownstreamArray{
 //					&dns.ZoneExternalDownstreamArgs{
 //						Address:   pulumi.Any(zoneExternalDownstreamsAddress),
@@ -76,12 +76,28 @@ import (
 type Zone struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment containing the zone.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// DNSSEC configuration data.
+	DnssecConfigs ZoneDnssecConfigArrayOutput `pulumi:"dnssecConfigs"`
+	// (Updatable) The state of DNSSEC on the zone.
+	//
+	// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+	//
+	// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+	//
+	// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+	//
+	// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+	//
+	// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+	//
+	// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+	DnssecState pulumi.StringOutput `pulumi:"dnssecState"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayOutput `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -156,12 +172,28 @@ func GetZone(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Zone resources.
 type zoneState struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment containing the zone.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// DNSSEC configuration data.
+	DnssecConfigs []ZoneDnssecConfig `pulumi:"dnssecConfigs"`
+	// (Updatable) The state of DNSSEC on the zone.
+	//
+	// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+	//
+	// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+	//
+	// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+	//
+	// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+	//
+	// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+	//
+	// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+	DnssecState *string `pulumi:"dnssecState"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -201,12 +233,28 @@ type zoneState struct {
 }
 
 type ZoneState struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment containing the zone.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.StringMapInput
+	// DNSSEC configuration data.
+	DnssecConfigs ZoneDnssecConfigArrayInput
+	// (Updatable) The state of DNSSEC on the zone.
+	//
+	// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+	//
+	// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+	//
+	// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+	//
+	// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+	//
+	// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+	//
+	// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+	DnssecState pulumi.StringPtrInput
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -250,12 +298,26 @@ func (ZoneState) ElementType() reflect.Type {
 }
 
 type zoneArgs struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment containing the zone.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) The state of DNSSEC on the zone.
+	//
+	// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+	//
+	// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+	//
+	// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+	//
+	// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+	//
+	// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+	//
+	// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+	DnssecState *string `pulumi:"dnssecState"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -280,12 +342,26 @@ type zoneArgs struct {
 
 // The set of arguments for constructing a Zone resource.
 type ZoneArgs struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment containing the zone.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) The state of DNSSEC on the zone.
+	//
+	// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+	//
+	// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+	//
+	// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+	//
+	// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+	//
+	// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+	//
+	// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+	DnssecState pulumi.StringPtrInput
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -395,7 +471,7 @@ func (o ZoneOutput) ToZoneOutputWithContext(ctx context.Context) ZoneOutput {
 	return o
 }
 
-// (Updatable) The OCID of the compartment the resource belongs to.
+// (Updatable) The OCID of the compartment containing the zone.
 func (o ZoneOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -405,6 +481,28 @@ func (o ZoneOutput) CompartmentId() pulumi.StringOutput {
 // **Example:** `{"Operations": {"CostCenter": "42"}}`
 func (o ZoneOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// DNSSEC configuration data.
+func (o ZoneOutput) DnssecConfigs() ZoneDnssecConfigArrayOutput {
+	return o.ApplyT(func(v *Zone) ZoneDnssecConfigArrayOutput { return v.DnssecConfigs }).(ZoneDnssecConfigArrayOutput)
+}
+
+// (Updatable) The state of DNSSEC on the zone.
+//
+// For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+//
+// New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+//
+// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+//
+// Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+//
+// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+//
+// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+func (o ZoneOutput) DnssecState() pulumi.StringOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.DnssecState }).(pulumi.StringOutput)
 }
 
 // (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.

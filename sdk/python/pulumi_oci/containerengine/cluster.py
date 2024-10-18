@@ -239,6 +239,7 @@ class _ClusterState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 open_id_connect_discovery_endpoint: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -258,6 +259,7 @@ class _ClusterState:
         :param pulumi.Input[str] lifecycle_details: Details about the state of the cluster masters.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]] metadatas: Metadata about the cluster.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
+        :param pulumi.Input[str] open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] state: The state of the cluster masters.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
@@ -293,6 +295,8 @@ class _ClusterState:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if open_id_connect_discovery_endpoint is not None:
+            pulumi.set(__self__, "open_id_connect_discovery_endpoint", open_id_connect_discovery_endpoint)
         if options is not None:
             pulumi.set(__self__, "options", options)
         if state is not None:
@@ -459,6 +463,18 @@ class _ClusterState:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="openIdConnectDiscoveryEndpoint")
+    def open_id_connect_discovery_endpoint(self) -> Optional[pulumi.Input[str]]:
+        """
+        The cluster-specific OpenID Connect Discovery endpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_endpoint")
+
+    @open_id_connect_discovery_endpoint.setter
+    def open_id_connect_discovery_endpoint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "open_id_connect_discovery_endpoint", value)
+
+    @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input['ClusterOptionsArgs']]:
         """
@@ -578,6 +594,24 @@ class Cluster(pulumi.CustomResource):
                     "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
                 },
+                "open_id_connect_token_authentication_config": {
+                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled,
+                    "ca_certificate": cluster_options_open_id_connect_token_authentication_config_ca_certificate,
+                    "client_id": test_client["id"],
+                    "groups_claim": cluster_options_open_id_connect_token_authentication_config_groups_claim,
+                    "groups_prefix": cluster_options_open_id_connect_token_authentication_config_groups_prefix,
+                    "issuer_url": cluster_options_open_id_connect_token_authentication_config_issuer_url,
+                    "required_claims": [{
+                        "key": cluster_options_open_id_connect_token_authentication_config_required_claims_key,
+                        "value": cluster_options_open_id_connect_token_authentication_config_required_claims_value,
+                    }],
+                    "signing_algorithms": cluster_options_open_id_connect_token_authentication_config_signing_algorithms,
+                    "username_claim": cluster_options_open_id_connect_token_authentication_config_username_claim,
+                    "username_prefix": cluster_options_open_id_connect_token_authentication_config_username_prefix,
+                },
+                "open_id_connect_discovery": {
+                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled,
+                },
                 "persistent_volume_config": {
                     "defined_tags": {
                         "operations__cost_center": "42",
@@ -681,6 +715,24 @@ class Cluster(pulumi.CustomResource):
                     "pods_cidr": cluster_options_kubernetes_network_config_pods_cidr,
                     "services_cidr": cluster_options_kubernetes_network_config_services_cidr,
                 },
+                "open_id_connect_token_authentication_config": {
+                    "is_open_id_connect_auth_enabled": cluster_options_open_id_connect_token_authentication_config_is_open_id_connect_auth_enabled,
+                    "ca_certificate": cluster_options_open_id_connect_token_authentication_config_ca_certificate,
+                    "client_id": test_client["id"],
+                    "groups_claim": cluster_options_open_id_connect_token_authentication_config_groups_claim,
+                    "groups_prefix": cluster_options_open_id_connect_token_authentication_config_groups_prefix,
+                    "issuer_url": cluster_options_open_id_connect_token_authentication_config_issuer_url,
+                    "required_claims": [{
+                        "key": cluster_options_open_id_connect_token_authentication_config_required_claims_key,
+                        "value": cluster_options_open_id_connect_token_authentication_config_required_claims_value,
+                    }],
+                    "signing_algorithms": cluster_options_open_id_connect_token_authentication_config_signing_algorithms,
+                    "username_claim": cluster_options_open_id_connect_token_authentication_config_username_claim,
+                    "username_prefix": cluster_options_open_id_connect_token_authentication_config_username_prefix,
+                },
+                "open_id_connect_discovery": {
+                    "is_open_id_connect_discovery_enabled": cluster_options_open_id_connect_discovery_is_open_id_connect_discovery_enabled,
+                },
                 "persistent_volume_config": {
                     "defined_tags": {
                         "operations__cost_center": "42",
@@ -768,6 +820,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["endpoints"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metadatas"] = None
+            __props__.__dict__["open_id_connect_discovery_endpoint"] = None
             __props__.__dict__["state"] = None
         super(Cluster, __self__).__init__(
             'oci:ContainerEngine/cluster:Cluster',
@@ -792,6 +845,7 @@ class Cluster(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            open_id_connect_discovery_endpoint: Optional[pulumi.Input[str]] = None,
             options: Optional[pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -816,6 +870,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the state of the cluster masters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict']]]] metadatas: Metadata about the cluster.
         :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
+        :param pulumi.Input[str] open_id_connect_discovery_endpoint: The cluster-specific OpenID Connect Discovery endpoint
         :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] state: The state of the cluster masters.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
@@ -842,6 +897,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["name"] = name
+        __props__.__dict__["open_id_connect_discovery_endpoint"] = open_id_connect_discovery_endpoint
         __props__.__dict__["options"] = options
         __props__.__dict__["state"] = state
         __props__.__dict__["type"] = type
@@ -951,6 +1007,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) The name of the cluster. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="openIdConnectDiscoveryEndpoint")
+    def open_id_connect_discovery_endpoint(self) -> pulumi.Output[str]:
+        """
+        The cluster-specific OpenID Connect Discovery endpoint
+        """
+        return pulumi.get(self, "open_id_connect_discovery_endpoint")
 
     @property
     @pulumi.getter

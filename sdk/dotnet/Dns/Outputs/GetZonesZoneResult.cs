@@ -22,6 +22,14 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// DNSSEC configuration data.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetZonesZoneDnssecConfigResult> DnssecConfigs;
+        /// <summary>
+        /// Search for zones that have the given `DnssecState`.
+        /// </summary>
+        public readonly string DnssecState;
+        /// <summary>
         /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> ExternalDownstreams;
@@ -50,8 +58,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneNameserverResult> Nameservers;
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-        /// for zones in the global DNS and `PRIVATE` when listing private zones.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         public readonly string Scope;
         /// <summary>
@@ -93,6 +100,10 @@ namespace Pulumi.Oci.Dns.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            ImmutableArray<Outputs.GetZonesZoneDnssecConfigResult> dnssecConfigs,
+
+            string dnssecState,
+
             ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> externalDownstreams,
 
             ImmutableArray<Outputs.GetZonesZoneExternalMasterResult> externalMasters,
@@ -127,6 +138,8 @@ namespace Pulumi.Oci.Dns.Outputs
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DnssecConfigs = dnssecConfigs;
+            DnssecState = dnssecState;
             ExternalDownstreams = externalDownstreams;
             ExternalMasters = externalMasters;
             FreeformTags = freeformTags;

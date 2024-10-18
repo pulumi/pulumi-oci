@@ -15,11 +15,42 @@ import (
 //
 // This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 //
-// Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-// For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-// For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-// parameter is required.
+// Gets all records in the specified zone.
+//
+// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+// then the viewId query parameter is required.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Dns"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Dns.GetRecords(ctx, &dns.GetRecordsArgs{
+//				ZoneNameOrId:   testZoneNameOr.Id,
+//				Domain:         pulumi.StringRef(recordDomain),
+//				DomainContains: pulumi.StringRef(recordDomainContains),
+//				Rtype:          pulumi.StringRef(recordRtype),
+//				ZoneVersion:    pulumi.StringRef(recordZoneVersion),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetRecords(ctx *pulumi.Context, args *GetRecordsArgs, opts ...pulumi.InvokeOption) (*GetRecordsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRecordsResult
@@ -32,7 +63,9 @@ func GetRecords(ctx *pulumi.Context, args *GetRecordsArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getRecords.
 type GetRecordsArgs struct {
-	// The OCID of the compartment the resource belongs to.
+	// The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
 	Domain *string `pulumi:"domain"`
@@ -64,7 +97,7 @@ type GetRecordsResult struct {
 	Id string `pulumi:"id"`
 	// The list of records.
 	Records []GetRecordsRecord `pulumi:"records"`
-	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+	// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype     *string `pulumi:"rtype"`
 	SortBy    *string `pulumi:"sortBy"`
 	SortOrder *string `pulumi:"sortOrder"`
@@ -96,7 +129,9 @@ func GetRecordsOutput(ctx *pulumi.Context, args GetRecordsOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getRecords.
 type GetRecordsOutputArgs struct {
-	// The OCID of the compartment the resource belongs to.
+	// The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
@@ -163,7 +198,7 @@ func (o GetRecordsResultOutput) Records() GetRecordsRecordArrayOutput {
 	return o.ApplyT(func(v GetRecordsResult) []GetRecordsRecord { return v.Records }).(GetRecordsRecordArrayOutput)
 }
 
-// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 func (o GetRecordsResultOutput) Rtype() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRecordsResult) *string { return v.Rtype }).(pulumi.StringPtrOutput)
 }

@@ -25,6 +25,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// Network configuration for Kubernetes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterOptionKubernetesNetworkConfigResult> KubernetesNetworkConfigs;
+        public readonly ImmutableArray<Outputs.GetClusterOptionOpenIdConnectDiscoveryResult> OpenIdConnectDiscoveries;
+        public readonly ImmutableArray<Outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult> OpenIdConnectTokenAuthenticationConfigs;
         /// <summary>
         /// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         /// </summary>
@@ -46,6 +48,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetClusterOptionKubernetesNetworkConfigResult> kubernetesNetworkConfigs,
 
+            ImmutableArray<Outputs.GetClusterOptionOpenIdConnectDiscoveryResult> openIdConnectDiscoveries,
+
+            ImmutableArray<Outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfigResult> openIdConnectTokenAuthenticationConfigs,
+
             ImmutableArray<Outputs.GetClusterOptionPersistentVolumeConfigResult> persistentVolumeConfigs,
 
             ImmutableArray<Outputs.GetClusterOptionServiceLbConfigResult> serviceLbConfigs,
@@ -55,6 +61,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             AddOns = addOns;
             AdmissionControllerOptions = admissionControllerOptions;
             KubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            OpenIdConnectDiscoveries = openIdConnectDiscoveries;
+            OpenIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
             PersistentVolumeConfigs = persistentVolumeConfigs;
             ServiceLbConfigs = serviceLbConfigs;
             ServiceLbSubnetIds = serviceLbSubnetIds;

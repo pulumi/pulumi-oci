@@ -100,6 +100,7 @@ export interface GetClusterResult {
      * The name of the cluster.
      */
     readonly name: string;
+    readonly openIdConnectDiscoveryEndpoint: string;
     /**
      * Optional attributes for the cluster.
      */

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>

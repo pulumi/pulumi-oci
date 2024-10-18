@@ -102,6 +102,8 @@ class _ActionCreateZoneFromZoneFileState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigArgs']]]] = None,
+                 dnssec_state: Optional[pulumi.Input[str]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -148,6 +150,10 @@ class _ActionCreateZoneFromZoneFileState:
             pulumi.set(__self__, "create_zone_from_zone_file_details", create_zone_from_zone_file_details)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if dnssec_configs is not None:
+            pulumi.set(__self__, "dnssec_configs", dnssec_configs)
+        if dnssec_state is not None:
+            pulumi.set(__self__, "dnssec_state", dnssec_state)
         if external_downstreams is not None:
             pulumi.set(__self__, "external_downstreams", external_downstreams)
         if external_masters is not None:
@@ -214,6 +220,24 @@ class _ActionCreateZoneFromZoneFileState:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dnssecConfigs")
+    def dnssec_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigArgs']]]]:
+        return pulumi.get(self, "dnssec_configs")
+
+    @dnssec_configs.setter
+    def dnssec_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigArgs']]]]):
+        pulumi.set(self, "dnssec_configs", value)
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dnssec_state")
+
+    @dnssec_state.setter
+    def dnssec_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dnssec_state", value)
 
     @property
     @pulumi.getter(name="externalDownstreams")
@@ -413,7 +437,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         """
         This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone from a zone file in the specified compartment.
+        Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
 
         After the zone has been created, it should be further managed by importing it to an `Dns.Zone` resource.
 
@@ -458,7 +482,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         """
         This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone from a zone file in the specified compartment.
+        Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
 
         After the zone has been created, it should be further managed by importing it to an `Dns.Zone` resource.
 
@@ -520,6 +544,8 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             __props__.__dict__["scope"] = scope
             __props__.__dict__["view_id"] = view_id
             __props__.__dict__["defined_tags"] = None
+            __props__.__dict__["dnssec_configs"] = None
+            __props__.__dict__["dnssec_state"] = None
             __props__.__dict__["external_downstreams"] = None
             __props__.__dict__["external_masters"] = None
             __props__.__dict__["freeform_tags"] = None
@@ -546,6 +572,8 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileDnssecConfigArgs', 'ActionCreateZoneFromZoneFileDnssecConfigArgsDict']]]]] = None,
+            dnssec_state: Optional[pulumi.Input[str]] = None,
             external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalDownstreamArgs', 'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict']]]]] = None,
             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalMasterArgs', 'ActionCreateZoneFromZoneFileExternalMasterArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -598,6 +626,8 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["create_zone_from_zone_file_details"] = create_zone_from_zone_file_details
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["dnssec_configs"] = dnssec_configs
+        __props__.__dict__["dnssec_state"] = dnssec_state
         __props__.__dict__["external_downstreams"] = external_downstreams
         __props__.__dict__["external_masters"] = external_masters
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -638,6 +668,16 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnssecConfigs")
+    def dnssec_configs(self) -> pulumi.Output[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfig']]:
+        return pulumi.get(self, "dnssec_configs")
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "dnssec_state")
 
     @property
     @pulumi.getter(name="externalDownstreams")

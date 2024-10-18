@@ -62,8 +62,10 @@ import javax.annotation.Nullable;
  *             .volumeGroupReplicas(VolumeGroupVolumeGroupReplicaArgs.builder()
  *                 .availabilityDomain(volumeGroupVolumeGroupReplicasAvailabilityDomain)
  *                 .displayName(volumeGroupVolumeGroupReplicasDisplayName)
+ *                 .xrrKmsKeyId(testKey.id())
  *                 .build())
  *             .volumeIds(volumeGroupSourceId)
+ *             .xrcKmsKeyId(testKey.id())
  *             .build());
  * 
  *     }
@@ -314,6 +316,20 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> volumeIds() {
         return this.volumeIds;
+    }
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    @Export(name="xrcKmsKeyId", refs={String.class}, tree="[0]")
+    private Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Output<String> xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
     }
 
     /**

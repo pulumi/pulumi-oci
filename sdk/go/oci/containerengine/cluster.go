@@ -72,6 +72,26 @@ import (
 //						PodsCidr:     pulumi.Any(clusterOptionsKubernetesNetworkConfigPodsCidr),
 //						ServicesCidr: pulumi.Any(clusterOptionsKubernetesNetworkConfigServicesCidr),
 //					},
+//					OpenIdConnectTokenAuthenticationConfig: &containerengine.ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs{
+//						IsOpenIdConnectAuthEnabled: pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled),
+//						CaCertificate:              pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate),
+//						ClientId:                   pulumi.Any(testClient.Id),
+//						GroupsClaim:                pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim),
+//						GroupsPrefix:               pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix),
+//						IssuerUrl:                  pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl),
+//						RequiredClaims: containerengine.ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{
+//							&containerengine.ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{
+//								Key:   pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsKey),
+//								Value: pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsValue),
+//							},
+//						},
+//						SigningAlgorithms: pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigSigningAlgorithms),
+//						UsernameClaim:     pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernameClaim),
+//						UsernamePrefix:    pulumi.Any(clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix),
+//					},
+//					OpenIdConnectDiscovery: &containerengine.ClusterOptionsOpenIdConnectDiscoveryArgs{
+//						IsOpenIdConnectDiscoveryEnabled: pulumi.Any(clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled),
+//					},
 //					PersistentVolumeConfig: &containerengine.ClusterOptionsPersistentVolumeConfigArgs{
 //						DefinedTags: pulumi.StringMap{
 //							"Operations.CostCenter": pulumi.String("42"),
@@ -137,6 +157,8 @@ type Cluster struct {
 	Metadatas ClusterMetadataArrayOutput `pulumi:"metadatas"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
+	// The cluster-specific OpenID Connect Discovery endpoint
+	OpenIdConnectDiscoveryEndpoint pulumi.StringOutput `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsOutput `pulumi:"options"`
 	// The state of the cluster masters.
@@ -215,6 +237,8 @@ type clusterState struct {
 	Metadatas []ClusterMetadata `pulumi:"metadatas"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
+	// The cluster-specific OpenID Connect Discovery endpoint
+	OpenIdConnectDiscoveryEndpoint *string `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// (Updatable) Optional attributes for the cluster.
 	Options *ClusterOptions `pulumi:"options"`
 	// The state of the cluster masters.
@@ -255,6 +279,8 @@ type ClusterState struct {
 	Metadatas ClusterMetadataArrayInput
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
+	// The cluster-specific OpenID Connect Discovery endpoint
+	OpenIdConnectDiscoveryEndpoint pulumi.StringPtrInput
 	// (Updatable) Optional attributes for the cluster.
 	Options ClusterOptionsPtrInput
 	// The state of the cluster masters.
@@ -483,6 +509,11 @@ func (o ClusterOutput) Metadatas() ClusterMetadataArrayOutput {
 // (Updatable) The name of the cluster. Avoid entering confidential information.
 func (o ClusterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The cluster-specific OpenID Connect Discovery endpoint
+func (o ClusterOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
 }
 
 // (Updatable) Optional attributes for the cluster.

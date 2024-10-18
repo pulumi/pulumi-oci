@@ -28,10 +28,13 @@ class GetZonesResult:
     """
     A collection of values returned by getZones.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, name=None, name_contains=None, scope=None, sort_by=None, sort_order=None, state=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, tsig_key_id=None, view_id=None, zone_type=None, zones=None):
+    def __init__(__self__, compartment_id=None, dnssec_state=None, filters=None, id=None, name=None, name_contains=None, scope=None, sort_by=None, sort_order=None, state=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, tsig_key_id=None, view_id=None, zone_type=None, zones=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if dnssec_state and not isinstance(dnssec_state, str):
+            raise TypeError("Expected argument 'dnssec_state' to be a str")
+        pulumi.set(__self__, "dnssec_state", dnssec_state)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -82,6 +85,14 @@ class GetZonesResult:
         The OCID of the compartment containing the zone.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> Optional[str]:
+        """
+        The state of DNSSEC on the zone.
+        """
+        return pulumi.get(self, "dnssec_state")
 
     @property
     @pulumi.getter
@@ -185,6 +196,7 @@ class AwaitableGetZonesResult(GetZonesResult):
             yield self
         return GetZonesResult(
             compartment_id=self.compartment_id,
+            dnssec_state=self.dnssec_state,
             filters=self.filters,
             id=self.id,
             name=self.name,
@@ -202,6 +214,7 @@ class AwaitableGetZonesResult(GetZonesResult):
 
 
 def get_zones(compartment_id: Optional[str] = None,
+              dnssec_state: Optional[str] = None,
               filters: Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]] = None,
               name: Optional[str] = None,
               name_contains: Optional[str] = None,
@@ -218,10 +231,10 @@ def get_zones(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all zones in the specified compartment. The collection
-    can be filtered by name, time created, scope, associated view, and zone type.
-    Additionally, for Private DNS, the `scope` query parameter is required when
-    listing private zones.
+    Gets a list of all zones in the specified compartment.
+
+    The collection can be filtered by name, time created, scope, associated view, and zone type.
+    Filtering by view is only supported for private zones.
 
     ## Example Usage
 
@@ -230,6 +243,7 @@ def get_zones(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+        dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,
         scope=zone_scope,
@@ -243,10 +257,10 @@ def get_zones(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str dnssec_state: Search for zones that have the given `DnssecState`.
     :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
     :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-           for zones in the global DNS and `PRIVATE` when listing private zones.
+    :param str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
     :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
     :param str state: The state of a resource.
@@ -258,6 +272,7 @@ def get_zones(compartment_id: Optional[str] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['dnssecState'] = dnssec_state
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['nameContains'] = name_contains
@@ -275,6 +290,7 @@ def get_zones(compartment_id: Optional[str] = None,
 
     return AwaitableGetZonesResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        dnssec_state=pulumi.get(__ret__, 'dnssec_state'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
@@ -290,6 +306,7 @@ def get_zones(compartment_id: Optional[str] = None,
         zone_type=pulumi.get(__ret__, 'zone_type'),
         zones=pulumi.get(__ret__, 'zones'))
 def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
+                     dnssec_state: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      name_contains: Optional[pulumi.Input[Optional[str]]] = None,
@@ -306,10 +323,10 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all zones in the specified compartment. The collection
-    can be filtered by name, time created, scope, associated view, and zone type.
-    Additionally, for Private DNS, the `scope` query parameter is required when
-    listing private zones.
+    Gets a list of all zones in the specified compartment.
+
+    The collection can be filtered by name, time created, scope, associated view, and zone type.
+    Filtering by view is only supported for private zones.
 
     ## Example Usage
 
@@ -318,6 +335,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi_oci as oci
 
     test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+        dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,
         scope=zone_scope,
@@ -331,10 +349,10 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str dnssec_state: Search for zones that have the given `DnssecState`.
     :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
     :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-           for zones in the global DNS and `PRIVATE` when listing private zones.
+    :param str scope: Specifies to operate only on resources that have a matching DNS scope.
     :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
     :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
     :param str state: The state of a resource.
@@ -346,6 +364,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['dnssecState'] = dnssec_state
     __args__['filters'] = filters
     __args__['name'] = name
     __args__['nameContains'] = name_contains
@@ -362,6 +381,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getZones:getZones', __args__, opts=opts, typ=GetZonesResult)
     return __ret__.apply(lambda __response__: GetZonesResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        dnssec_state=pulumi.get(__response__, 'dnssec_state'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         name=pulumi.get(__response__, 'name'),

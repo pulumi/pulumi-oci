@@ -80,14 +80,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+     * (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
      * 
      */
     @Import(name="sourceEndpointName", required=true)
     private Output<String> sourceEndpointName;
 
     /**
-     * @return (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+     * @return (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
      * 
      */
     public Output<String> sourceEndpointName() {
@@ -239,7 +239,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceEndpointName (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+         * @param sourceEndpointName (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceEndpointName (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+         * @param sourceEndpointName (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
          * 
          * @return builder
          * 

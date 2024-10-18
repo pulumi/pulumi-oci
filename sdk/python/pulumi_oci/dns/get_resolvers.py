@@ -127,12 +127,12 @@ def get_resolvers(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all resolvers within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include resolvers in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
+    Gets a list of all resolvers within a compartment.
+
+    The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+    on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+    query parameter is provided, the collection does not include resolvers in the DELETED
+    lifecycleState to be consistent with other operations of the API.
 
     ## Example Usage
 
@@ -182,12 +182,12 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all resolvers within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include resolvers in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
+    Gets a list of all resolvers within a compartment.
+
+    The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+    on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+    query parameter is provided, the collection does not include resolvers in the DELETED
+    lifecycleState to be consistent with other operations of the API.
 
     ## Example Usage
 

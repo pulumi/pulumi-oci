@@ -20,6 +20,11 @@ public final class GetZonesResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The state of DNSSEC on the zone.
+     * 
+     */
+    private @Nullable String dnssecState;
     private @Nullable List<GetZonesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -74,6 +79,13 @@ public final class GetZonesResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The state of DNSSEC on the zone.
+     * 
+     */
+    public Optional<String> dnssecState() {
+        return Optional.ofNullable(this.dnssecState);
     }
     public List<GetZonesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -160,6 +172,7 @@ public final class GetZonesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable String dnssecState;
         private @Nullable List<GetZonesFilter> filters;
         private String id;
         private @Nullable String name;
@@ -178,6 +191,7 @@ public final class GetZonesResult {
         public Builder(GetZonesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dnssecState = defaults.dnssecState;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
@@ -200,6 +214,12 @@ public final class GetZonesResult {
               throw new MissingRequiredPropertyException("GetZonesResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dnssecState(@Nullable String dnssecState) {
+
+            this.dnssecState = dnssecState;
             return this;
         }
         @CustomType.Setter
@@ -299,6 +319,7 @@ public final class GetZonesResult {
         public GetZonesResult build() {
             final var _resultValue = new GetZonesResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.dnssecState = dnssecState;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.name = name;

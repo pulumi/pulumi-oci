@@ -130,6 +130,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    @Import(name="environmentType")
+    private @Nullable Output<String> environmentType;
+
+    /**
+     * @return (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    public Optional<Output<String>> environmentType() {
+        return Optional.ofNullable(this.environmentType);
+    }
+
+    /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -333,6 +348,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.deploymentType = $.deploymentType;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.environmentType = $.environmentType;
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
@@ -512,6 +528,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param environmentType (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(@Nullable Output<String> environmentType) {
+            $.environmentType = environmentType;
+            return this;
+        }
+
+        /**
+         * @param environmentType (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(String environmentType) {
+            return environmentType(Output.of(environmentType));
         }
 
         /**

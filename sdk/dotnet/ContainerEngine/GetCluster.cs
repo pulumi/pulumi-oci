@@ -154,6 +154,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// The name of the cluster.
         /// </summary>
         public readonly string Name;
+        public readonly string OpenIdConnectDiscoveryEndpoint;
         /// <summary>
         /// Optional attributes for the cluster.
         /// </summary>
@@ -203,6 +204,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string name,
 
+            string openIdConnectDiscoveryEndpoint,
+
             ImmutableArray<Outputs.GetClusterOptionResult> options,
 
             string state,
@@ -226,6 +229,7 @@ namespace Pulumi.Oci.ContainerEngine
             LifecycleDetails = lifecycleDetails;
             Metadatas = metadatas;
             Name = name;
+            OpenIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
             Options = options;
             State = state;
             Type = type;

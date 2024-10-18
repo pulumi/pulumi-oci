@@ -37,7 +37,8 @@ class VolumeArgs:
                  size_in_mbs: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input['VolumeSourceDetailsArgs']] = None,
                  volume_backup_id: Optional[pulumi.Input[str]] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Volume resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
@@ -52,11 +53,17 @@ class VolumeArgs:
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
+        :param pulumi.Input['VolumeSourceDetailsArgs'] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -96,6 +103,8 @@ class VolumeArgs:
             pulumi.set(__self__, "volume_backup_id", volume_backup_id)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -256,7 +265,7 @@ class VolumeArgs:
     @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
         """
         return pulumi.get(self, "size_in_mbs")
 
@@ -267,6 +276,9 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeSourceDetailsArgs']]:
+        """
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -299,6 +311,22 @@ class VolumeArgs:
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 @pulumi.input_type
 class _VolumeState:
@@ -325,7 +353,8 @@ class _VolumeState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  volume_backup_id: Optional[pulumi.Input[str]] = None,
                  volume_group_id: Optional[pulumi.Input[str]] = None,
-                 vpus_per_gb: Optional[pulumi.Input[str]] = None):
+                 vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Volume resources.
         :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
@@ -342,7 +371,8 @@ class _VolumeState:
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
+        :param pulumi.Input['VolumeSourceDetailsArgs'] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[str] state: The current state of a volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -351,6 +381,11 @@ class _VolumeState:
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -404,6 +439,8 @@ class _VolumeState:
             pulumi.set(__self__, "volume_group_id", volume_group_id)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
@@ -588,7 +625,7 @@ class _VolumeState:
     @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
         """
         return pulumi.get(self, "size_in_mbs")
 
@@ -599,6 +636,9 @@ class _VolumeState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeSourceDetailsArgs']]:
+        """
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -679,6 +719,22 @@ class _VolumeState:
     def vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vpus_per_gb", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 class Volume(pulumi.CustomResource):
     @overload
@@ -702,6 +758,7 @@ class Volume(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']]] = None,
                  volume_backup_id: Optional[pulumi.Input[str]] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Volume resource in Oracle Cloud Infrastructure Core service.
@@ -738,6 +795,7 @@ class Volume(pulumi.CustomResource):
             block_volume_replicas=[{
                 "availability_domain": volume_block_volume_replicas_availability_domain,
                 "display_name": volume_block_volume_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -752,10 +810,14 @@ class Volume(pulumi.CustomResource):
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,
             source_details={
-                "id": volume_source_details_id,
                 "type": volume_source_details_type,
+                "change_block_size_in_bytes": volume_source_details_change_block_size_in_bytes,
+                "first_backup_id": test_backup["id"],
+                "id": volume_source_details_id,
+                "second_backup_id": test_backup["id"],
             },
             vpus_per_gb=volume_vpus_per_gb,
+            xrc_kms_key_id=test_key["id"],
             block_volume_replicas_deletion=True)
         ```
 
@@ -781,11 +843,17 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
+        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -828,6 +896,7 @@ class Volume(pulumi.CustomResource):
             block_volume_replicas=[{
                 "availability_domain": volume_block_volume_replicas_availability_domain,
                 "display_name": volume_block_volume_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
             cluster_placement_group_id=test_group["id"],
             defined_tags={
@@ -842,10 +911,14 @@ class Volume(pulumi.CustomResource):
             size_in_gbs=volume_size_in_gbs,
             size_in_mbs=volume_size_in_mbs,
             source_details={
-                "id": volume_source_details_id,
                 "type": volume_source_details_type,
+                "change_block_size_in_bytes": volume_source_details_change_block_size_in_bytes,
+                "first_backup_id": test_backup["id"],
+                "id": volume_source_details_id,
+                "second_backup_id": test_backup["id"],
             },
             vpus_per_gb=volume_vpus_per_gb,
+            xrc_kms_key_id=test_key["id"],
             block_volume_replicas_deletion=True)
         ```
 
@@ -889,6 +962,7 @@ class Volume(pulumi.CustomResource):
                  source_details: Optional[pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']]] = None,
                  volume_backup_id: Optional[pulumi.Input[str]] = None,
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -919,6 +993,7 @@ class Volume(pulumi.CustomResource):
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["volume_backup_id"] = volume_backup_id
             __props__.__dict__["vpus_per_gb"] = vpus_per_gb
+            __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
             __props__.__dict__["auto_tuned_vpus_per_gb"] = None
             __props__.__dict__["is_hydrated"] = None
             __props__.__dict__["state"] = None
@@ -957,7 +1032,8 @@ class Volume(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             volume_backup_id: Optional[pulumi.Input[str]] = None,
             volume_group_id: Optional[pulumi.Input[str]] = None,
-            vpus_per_gb: Optional[pulumi.Input[str]] = None) -> 'Volume':
+            vpus_per_gb: Optional[pulumi.Input[str]] = None,
+            xrc_kms_key_id: Optional[pulumi.Input[str]] = None) -> 'Volume':
         """
         Get an existing Volume resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -979,7 +1055,8 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
+        :param pulumi.Input[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict']] source_details: Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
         :param pulumi.Input[str] state: The current state of a volume.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -988,6 +1065,11 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1016,6 +1098,7 @@ class Volume(pulumi.CustomResource):
         __props__.__dict__["volume_backup_id"] = volume_backup_id
         __props__.__dict__["volume_group_id"] = volume_group_id
         __props__.__dict__["vpus_per_gb"] = vpus_per_gb
+        __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return Volume(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1141,13 +1224,16 @@ class Volume(pulumi.CustomResource):
     @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> pulumi.Output[str]:
         """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
         """
         return pulumi.get(self, "size_in_mbs")
 
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output['outputs.VolumeSourceDetails']:
+        """
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        """
         return pulumi.get(self, "source_details")
 
     @property
@@ -1199,4 +1285,16 @@ class Volume(pulumi.CustomResource):
         Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
 

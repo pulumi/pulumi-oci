@@ -14,8 +14,10 @@ import (
 
 // This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
 //
-// Replaces records in the specified RRSet. When the zone name is provided as a path parameter
-// and the zone has a scope of `PRIVATE` then the viewId query parameter is required.
+//	Updates records in the specified RRSet.
+//
+// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+// parameter then the viewId query parameter is required.
 //
 // ## Example Usage
 //
@@ -32,10 +34,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.NewRrset(ctx, "test_rrset", &Dns.RrsetArgs{
-//				Domain:        pulumi.Any(rrsetDomain),
-//				Rtype:         pulumi.Any(rrsetRtype),
-//				ZoneNameOrId:  pulumi.Any(testZone.Id),
-//				CompartmentId: pulumi.Any(compartmentId),
+//				Domain:       pulumi.Any(rrsetDomain),
+//				Rtype:        pulumi.Any(rrsetRtype),
+//				ZoneNameOrId: pulumi.Any(testZone.Id),
 //				Items: dns.RrsetItemArray{
 //					&dns.RrsetItemArgs{
 //						Domain: pulumi.Any(rrsetItemsDomain),
@@ -72,19 +73,20 @@ import (
 type Rrset struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayOutput `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringOutput `pulumi:"rtype"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
-	// The OCID of the view the resource is associated with.
+	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
 	// The name or OCID of the target zone.
 	//
@@ -132,19 +134,20 @@ func GetRrset(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Rrset resources.
 type rrsetState struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain *string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype *string `pulumi:"rtype"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 	Scope *string `pulumi:"scope"`
-	// The OCID of the view the resource is associated with.
+	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
 	// The name or OCID of the target zone.
 	//
@@ -154,19 +157,20 @@ type rrsetState struct {
 }
 
 type RrsetState struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringPtrInput
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringPtrInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 	Scope pulumi.StringPtrInput
-	// The OCID of the view the resource is associated with.
+	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput
 	// The name or OCID of the target zone.
 	//
@@ -180,19 +184,20 @@ func (RrsetState) ElementType() reflect.Type {
 }
 
 type rrsetArgs struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items []RrsetItem `pulumi:"items"`
 	// The type of the target RRSet within the target zone.
 	Rtype string `pulumi:"rtype"`
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 	Scope *string `pulumi:"scope"`
-	// The OCID of the view the resource is associated with.
+	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId *string `pulumi:"viewId"`
 	// The name or OCID of the target zone.
 	//
@@ -203,19 +208,20 @@ type rrsetArgs struct {
 
 // The set of arguments for constructing a Rrset resource.
 type RrsetArgs struct {
-	// (Updatable) The OCID of the compartment the resource belongs to.
+	// (Updatable) The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringPtrInput
 	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput
 	// (Updatable)
-	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+	// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 	Items RrsetItemArrayInput
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringInput
 	// Specifies to operate only on resources that have a matching DNS scope.
-	// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 	Scope pulumi.StringPtrInput
-	// The OCID of the view the resource is associated with.
+	// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 	ViewId pulumi.StringPtrInput
 	// The name or OCID of the target zone.
 	//
@@ -311,7 +317,9 @@ func (o RrsetOutput) ToRrsetOutputWithContext(ctx context.Context) RrsetOutput {
 	return o
 }
 
-// (Updatable) The OCID of the compartment the resource belongs to.
+// (Updatable) The OCID of the compartment the zone belongs to.
+//
+// This parameter is deprecated and should be omitted.
 func (o RrsetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -322,7 +330,7 @@ func (o RrsetOutput) Domain() pulumi.StringOutput {
 }
 
 // (Updatable)
-// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
 func (o RrsetOutput) Items() RrsetItemArrayOutput {
 	return o.ApplyT(func(v *Rrset) RrsetItemArrayOutput { return v.Items }).(RrsetItemArrayOutput)
 }
@@ -333,12 +341,11 @@ func (o RrsetOutput) Rtype() pulumi.StringOutput {
 }
 
 // Specifies to operate only on resources that have a matching DNS scope.
-// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
 func (o RrsetOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the view the resource is associated with.
+// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 func (o RrsetOutput) ViewId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringPtrOutput { return v.ViewId }).(pulumi.StringPtrOutput)
 }

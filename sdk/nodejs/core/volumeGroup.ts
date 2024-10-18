@@ -32,8 +32,10 @@ import * as utilities from "../utilities";
  *     volumeGroupReplicas: [{
  *         availabilityDomain: volumeGroupVolumeGroupReplicasAvailabilityDomain,
  *         displayName: volumeGroupVolumeGroupReplicasDisplayName,
+ *         xrrKmsKeyId: testKey.id,
  *     }],
  *     volumeIds: [volumeGroupSourceId],
+ *     xrcKmsKeyId: testKey.id,
  * });
  * ```
  *
@@ -140,6 +142,10 @@ export class VolumeGroup extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly volumeIds!: pulumi.Output<string[]>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    public readonly xrcKmsKeyId!: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroup resource with the given unique name, arguments, and options.
@@ -171,6 +177,7 @@ export class VolumeGroup extends pulumi.CustomResource {
             resourceInputs["volumeGroupReplicas"] = state ? state.volumeGroupReplicas : undefined;
             resourceInputs["volumeGroupReplicasDeletion"] = state ? state.volumeGroupReplicasDeletion : undefined;
             resourceInputs["volumeIds"] = state ? state.volumeIds : undefined;
+            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
         } else {
             const args = argsOrState as VolumeGroupArgs | undefined;
             if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
@@ -194,6 +201,7 @@ export class VolumeGroup extends pulumi.CustomResource {
             resourceInputs["volumeGroupReplicas"] = args ? args.volumeGroupReplicas : undefined;
             resourceInputs["volumeGroupReplicasDeletion"] = args ? args.volumeGroupReplicasDeletion : undefined;
             resourceInputs["volumeIds"] = args ? args.volumeIds : undefined;
+            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;
             resourceInputs["sizeInMbs"] = undefined /*out*/;
@@ -276,6 +284,10 @@ export interface VolumeGroupState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }
 
 /**
@@ -329,4 +341,8 @@ export interface VolumeGroupArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }

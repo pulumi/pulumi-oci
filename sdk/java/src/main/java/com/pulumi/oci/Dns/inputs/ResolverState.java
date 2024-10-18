@@ -195,7 +195,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers.
+     * Specifies to operate only on resources that have a matching DNS scope.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -205,7 +205,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> scope;
 
     /**
-     * @return If specified, must be `PRIVATE` when creating private name resolvers.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -584,7 +584,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -598,7 +598,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
+         * @param scope Specifies to operate only on resources that have a matching DNS scope.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -634,6 +634,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * 
      * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
@@ -642,6 +643,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * 
      * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
@@ -875,14 +877,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
      * 
      */
     @Import(name="sslCa")
     private @Nullable Output<String> sslCa;
 
     /**
-     * @return (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
      * 
      */
     public Optional<Output<String>> sslCa() {
@@ -890,14 +892,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
      * 
      */
     @Import(name="sslCert")
     private @Nullable Output<String> sslCert;
 
     /**
-     * @return (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
      * 
      */
     public Optional<Output<String>> sslCert() {
@@ -935,14 +937,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      * 
      */
     @Import(name="sslCrl")
     private @Nullable Output<String> sslCrl;
 
     /**
-     * @return (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      * 
      */
     public Optional<Output<String>> sslCrl() {
@@ -950,14 +952,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      * 
      */
     @Import(name="sslKey")
     private @Nullable Output<String> sslKey;
 
     /**
-     * @return (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * @return (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      * 
      */
     public Optional<Output<String>> sslKey() {
@@ -1160,7 +1162,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1170,7 +1172,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> wallet;
 
     /**
-     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2173,6 +2175,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateIp (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+         * 
          * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          * 
          * @return builder
@@ -2185,6 +2188,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateIp (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+         * 
          * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          * 
          * @return builder
@@ -2510,7 +2514,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCa (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
          * 
          * @return builder
          * 
@@ -2521,7 +2525,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCa (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+         * @param sslCa (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
          * 
          * @return builder
          * 
@@ -2531,7 +2535,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2542,7 +2546,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+         * @param sslCert (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2594,7 +2598,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCrl (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
          * 
          * @return builder
          * 
@@ -2605,7 +2609,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCrl (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+         * @param sslCrl (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
          * 
          * @return builder
          * 
@@ -2615,7 +2619,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2626,7 +2630,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslKey (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         * @param sslKey (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
          * 
          * @return builder
          * 
@@ -2909,7 +2913,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2923,7 +2927,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+         * @param wallet (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

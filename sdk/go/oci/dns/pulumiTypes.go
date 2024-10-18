@@ -13,6 +13,564 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ActionCreateZoneFromZoneFileDnssecConfig struct {
+	KskDnssecKeyVersions []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion `pulumi:"kskDnssecKeyVersions"`
+	ZskDnssecKeyVersions []ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion `pulumi:"zskDnssecKeyVersions"`
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigArgs and ActionCreateZoneFromZoneFileDnssecConfigOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigArgs{...}
+type ActionCreateZoneFromZoneFileDnssecConfigInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigOutput() ActionCreateZoneFromZoneFileDnssecConfigOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigArgs struct {
+	KskDnssecKeyVersions ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayInput `pulumi:"kskDnssecKeyVersions"`
+	ZskDnssecKeyVersions ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayInput `pulumi:"zskDnssecKeyVersions"`
+}
+
+func (ActionCreateZoneFromZoneFileDnssecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfig)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigArgs) ToActionCreateZoneFromZoneFileDnssecConfigOutput() ActionCreateZoneFromZoneFileDnssecConfigOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigArgs) ToActionCreateZoneFromZoneFileDnssecConfigOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigOutput)
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigArrayInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigArray and ActionCreateZoneFromZoneFileDnssecConfigArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigArray{ ActionCreateZoneFromZoneFileDnssecConfigArgs{...} }
+type ActionCreateZoneFromZoneFileDnssecConfigArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigArrayOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigArray []ActionCreateZoneFromZoneFileDnssecConfigInput
+
+func (ActionCreateZoneFromZoneFileDnssecConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfig)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigArray) ToActionCreateZoneFromZoneFileDnssecConfigArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigArray) ToActionCreateZoneFromZoneFileDnssecConfigArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfig)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigOutput) ToActionCreateZoneFromZoneFileDnssecConfigOutput() ActionCreateZoneFromZoneFileDnssecConfigOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigOutput) ToActionCreateZoneFromZoneFileDnssecConfigOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigOutput) KskDnssecKeyVersions() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfig) []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion {
+		return v.KskDnssecKeyVersions
+	}).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigOutput) ZskDnssecKeyVersions() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfig) []ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion {
+		return v.ZskDnssecKeyVersions
+	}).(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfig)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileDnssecConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileDnssecConfig {
+		return vs[0].([]ActionCreateZoneFromZoneFileDnssecConfig)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileDnssecConfigOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion struct {
+	Algorithm                       *string                                                             `pulumi:"algorithm"`
+	DsDatas                         []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData `pulumi:"dsDatas"`
+	KeyTag                          *int                                                                `pulumi:"keyTag"`
+	LengthInBytes                   *int                                                                `pulumi:"lengthInBytes"`
+	PredecessorDnssecKeyVersionUuid *string                                                             `pulumi:"predecessorDnssecKeyVersionUuid"`
+	SuccessorDnssecKeyVersionUuid   *string                                                             `pulumi:"successorDnssecKeyVersionUuid"`
+	TimeActivated                   *string                                                             `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated     *string `pulumi:"timeCreated"`
+	TimeExpired     *string `pulumi:"timeExpired"`
+	TimeInactivated *string `pulumi:"timeInactivated"`
+	TimePromoted    *string `pulumi:"timePromoted"`
+	TimePublished   *string `pulumi:"timePublished"`
+	TimeUnpublished *string `pulumi:"timeUnpublished"`
+	Uuid            *string `pulumi:"uuid"`
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs and ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs{...}
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs struct {
+	Algorithm                       pulumi.StringPtrInput                                                       `pulumi:"algorithm"`
+	DsDatas                         ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayInput `pulumi:"dsDatas"`
+	KeyTag                          pulumi.IntPtrInput                                                          `pulumi:"keyTag"`
+	LengthInBytes                   pulumi.IntPtrInput                                                          `pulumi:"lengthInBytes"`
+	PredecessorDnssecKeyVersionUuid pulumi.StringPtrInput                                                       `pulumi:"predecessorDnssecKeyVersionUuid"`
+	SuccessorDnssecKeyVersionUuid   pulumi.StringPtrInput                                                       `pulumi:"successorDnssecKeyVersionUuid"`
+	TimeActivated                   pulumi.StringPtrInput                                                       `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated     pulumi.StringPtrInput `pulumi:"timeCreated"`
+	TimeExpired     pulumi.StringPtrInput `pulumi:"timeExpired"`
+	TimeInactivated pulumi.StringPtrInput `pulumi:"timeInactivated"`
+	TimePromoted    pulumi.StringPtrInput `pulumi:"timePromoted"`
+	TimePublished   pulumi.StringPtrInput `pulumi:"timePublished"`
+	TimeUnpublished pulumi.StringPtrInput `pulumi:"timeUnpublished"`
+	Uuid            pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray and ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray{ ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs{...} }
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionInput
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) DsDatas() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData {
+		return v.DsDatas
+	}).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *int { return v.LengthInBytes }).(pulumi.IntPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string {
+		return v.PredecessorDnssecKeyVersionUuid
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string {
+		return v.SuccessorDnssecKeyVersionUuid
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimeActivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimeActivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimeExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimeExpired }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimeInactivated }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimePromoted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimePromoted }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.TimeUnpublished }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion {
+		return vs[0].([]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData struct {
+	DigestType *string `pulumi:"digestType"`
+	Rdata      *string `pulumi:"rdata"`
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs and ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs{...}
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs struct {
+	DigestType pulumi.StringPtrInput `pulumi:"digestType"`
+	Rdata      pulumi.StringPtrInput `pulumi:"rdata"`
+}
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray and ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray{ ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs{...} }
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray []ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataInput
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput) DigestType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData) *string { return v.DigestType }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput) Rdata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData) *string { return v.Rdata }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData {
+		return vs[0].([]ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion struct {
+	Algorithm                       *string `pulumi:"algorithm"`
+	KeyTag                          *int    `pulumi:"keyTag"`
+	LengthInBytes                   *int    `pulumi:"lengthInBytes"`
+	PredecessorDnssecKeyVersionUuid *string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	SuccessorDnssecKeyVersionUuid   *string `pulumi:"successorDnssecKeyVersionUuid"`
+	TimeActivated                   *string `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated     *string `pulumi:"timeCreated"`
+	TimeExpired     *string `pulumi:"timeExpired"`
+	TimeInactivated *string `pulumi:"timeInactivated"`
+	TimePromoted    *string `pulumi:"timePromoted"`
+	TimePublished   *string `pulumi:"timePublished"`
+	TimeUnpublished *string `pulumi:"timeUnpublished"`
+	Uuid            *string `pulumi:"uuid"`
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs and ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs{...}
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs struct {
+	Algorithm                       pulumi.StringPtrInput `pulumi:"algorithm"`
+	KeyTag                          pulumi.IntPtrInput    `pulumi:"keyTag"`
+	LengthInBytes                   pulumi.IntPtrInput    `pulumi:"lengthInBytes"`
+	PredecessorDnssecKeyVersionUuid pulumi.StringPtrInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	SuccessorDnssecKeyVersionUuid   pulumi.StringPtrInput `pulumi:"successorDnssecKeyVersionUuid"`
+	TimeActivated                   pulumi.StringPtrInput `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated     pulumi.StringPtrInput `pulumi:"timeCreated"`
+	TimeExpired     pulumi.StringPtrInput `pulumi:"timeExpired"`
+	TimeInactivated pulumi.StringPtrInput `pulumi:"timeInactivated"`
+	TimePromoted    pulumi.StringPtrInput `pulumi:"timePromoted"`
+	TimePublished   pulumi.StringPtrInput `pulumi:"timePublished"`
+	TimeUnpublished pulumi.StringPtrInput `pulumi:"timeUnpublished"`
+	Uuid            pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput)
+}
+
+// ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayInput is an input type that accepts ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray and ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayInput` via:
+//
+//	ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray{ ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs{...} }
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput
+	ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray []ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionInput
+
+func (ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return i.ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *int { return v.LengthInBytes }).(pulumi.IntPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string {
+		return v.PredecessorDnssecKeyVersionUuid
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string {
+		return v.SuccessorDnssecKeyVersionUuid
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimeActivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimeActivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimeExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimeExpired }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimeInactivated }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimePromoted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimePromoted }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.TimeUnpublished }).(pulumi.StringPtrOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput() ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput) ToActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion {
+		return vs[0].([]ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion)[vs[1].(int)]
+	}).(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput)
+}
+
 type ActionCreateZoneFromZoneFileExternalDownstream struct {
 	// The server's IP address (IPv4 or IPv6).
 	Address *string `pulumi:"address"`
@@ -767,7 +1325,7 @@ type ResolverRule struct {
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
 	QnameCoverConditions []string `pulumi:"qnameCoverConditions"`
-	// (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+	// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName string `pulumi:"sourceEndpointName"`
 }
 
@@ -792,7 +1350,7 @@ type ResolverRuleArgs struct {
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
 	QnameCoverConditions pulumi.StringArrayInput `pulumi:"qnameCoverConditions"`
-	// (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+	// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 	SourceEndpointName pulumi.StringInput `pulumi:"sourceEndpointName"`
 }
 
@@ -868,7 +1426,7 @@ func (o ResolverRuleOutput) QnameCoverConditions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ResolverRule) []string { return v.QnameCoverConditions }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
 func (o ResolverRuleOutput) SourceEndpointName() pulumi.StringOutput {
 	return o.ApplyT(func(v ResolverRule) string { return v.SourceEndpointName }).(pulumi.StringOutput)
 }
@@ -904,9 +1462,9 @@ type RrsetItem struct {
 	RecordHash *string `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
 	RrsetVersion *string `pulumi:"rrsetVersion"`
-	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+	// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype string `pulumi:"rtype"`
-	// (Updatable) The Time To Live for the record, in seconds.
+	// (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl int `pulumi:"ttl"`
 }
 
@@ -932,9 +1490,9 @@ type RrsetItemArgs struct {
 	RecordHash pulumi.StringPtrInput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
 	RrsetVersion pulumi.StringPtrInput `pulumi:"rrsetVersion"`
-	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+	// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype pulumi.StringInput `pulumi:"rtype"`
-	// (Updatable) The Time To Live for the record, in seconds.
+	// (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl pulumi.IntInput `pulumi:"ttl"`
 }
 
@@ -1014,12 +1572,12 @@ func (o RrsetItemOutput) RrsetVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RrsetItem) *string { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
-// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 func (o RrsetItemOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v RrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
 }
 
-// (Updatable) The Time To Live for the record, in seconds.
+// (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 func (o RrsetItemOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v RrsetItem) int { return v.Ttl }).(pulumi.IntOutput)
 }
@@ -1328,7 +1886,7 @@ func (o SteeringPolicyRuleArrayOutput) Index(i pulumi.IntInput) SteeringPolicyRu
 type SteeringPolicyRuleCase struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas []SteeringPolicyRuleCaseAnswerData `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition *string `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count *int `pulumi:"count"`
@@ -1348,7 +1906,7 @@ type SteeringPolicyRuleCaseInput interface {
 type SteeringPolicyRuleCaseArgs struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas SteeringPolicyRuleCaseAnswerDataArrayInput `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition pulumi.StringPtrInput `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count pulumi.IntPtrInput `pulumi:"count"`
@@ -1410,7 +1968,7 @@ func (o SteeringPolicyRuleCaseOutput) AnswerDatas() SteeringPolicyRuleCaseAnswer
 	return o.ApplyT(func(v SteeringPolicyRuleCase) []SteeringPolicyRuleCaseAnswerData { return v.AnswerDatas }).(SteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 func (o SteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SteeringPolicyRuleCase) *string { return v.CaseCondition }).(pulumi.StringPtrOutput)
 }
@@ -1668,6 +2226,639 @@ func (o SteeringPolicyRuleDefaultAnswerDataArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SteeringPolicyRuleDefaultAnswerData {
 		return vs[0].([]SteeringPolicyRuleDefaultAnswerData)[vs[1].(int)]
 	}).(SteeringPolicyRuleDefaultAnswerDataOutput)
+}
+
+type ZoneDnssecConfig struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions []ZoneDnssecConfigKskDnssecKeyVersion `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions []ZoneDnssecConfigZskDnssecKeyVersion `pulumi:"zskDnssecKeyVersions"`
+}
+
+// ZoneDnssecConfigInput is an input type that accepts ZoneDnssecConfigArgs and ZoneDnssecConfigOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigInput` via:
+//
+//	ZoneDnssecConfigArgs{...}
+type ZoneDnssecConfigInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigOutput() ZoneDnssecConfigOutput
+	ToZoneDnssecConfigOutputWithContext(context.Context) ZoneDnssecConfigOutput
+}
+
+type ZoneDnssecConfigArgs struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions ZoneDnssecConfigKskDnssecKeyVersionArrayInput `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions ZoneDnssecConfigZskDnssecKeyVersionArrayInput `pulumi:"zskDnssecKeyVersions"`
+}
+
+func (ZoneDnssecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigArgs) ToZoneDnssecConfigOutput() ZoneDnssecConfigOutput {
+	return i.ToZoneDnssecConfigOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigArgs) ToZoneDnssecConfigOutputWithContext(ctx context.Context) ZoneDnssecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigOutput)
+}
+
+// ZoneDnssecConfigArrayInput is an input type that accepts ZoneDnssecConfigArray and ZoneDnssecConfigArrayOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigArrayInput` via:
+//
+//	ZoneDnssecConfigArray{ ZoneDnssecConfigArgs{...} }
+type ZoneDnssecConfigArrayInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigArrayOutput() ZoneDnssecConfigArrayOutput
+	ToZoneDnssecConfigArrayOutputWithContext(context.Context) ZoneDnssecConfigArrayOutput
+}
+
+type ZoneDnssecConfigArray []ZoneDnssecConfigInput
+
+func (ZoneDnssecConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigArray) ToZoneDnssecConfigArrayOutput() ZoneDnssecConfigArrayOutput {
+	return i.ToZoneDnssecConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigArray) ToZoneDnssecConfigArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigArrayOutput)
+}
+
+type ZoneDnssecConfigOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigOutput) ToZoneDnssecConfigOutput() ZoneDnssecConfigOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigOutput) ToZoneDnssecConfigOutputWithContext(ctx context.Context) ZoneDnssecConfigOutput {
+	return o
+}
+
+// A read-only array of key signing key (KSK) versions.
+func (o ZoneDnssecConfigOutput) KskDnssecKeyVersions() ZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v ZoneDnssecConfig) []ZoneDnssecConfigKskDnssecKeyVersion { return v.KskDnssecKeyVersions }).(ZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+// A read-only array of zone signing key (ZSK) versions.
+func (o ZoneDnssecConfigOutput) ZskDnssecKeyVersions() ZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v ZoneDnssecConfig) []ZoneDnssecConfigZskDnssecKeyVersion { return v.ZskDnssecKeyVersions }).(ZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type ZoneDnssecConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigArrayOutput) ToZoneDnssecConfigArrayOutput() ZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigArrayOutput) ToZoneDnssecConfigArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigArrayOutput) Index(i pulumi.IntInput) ZoneDnssecConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneDnssecConfig {
+		return vs[0].([]ZoneDnssecConfig)[vs[1].(int)]
+	}).(ZoneDnssecConfigOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm *string `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas []ZoneDnssecConfigKskDnssecKeyVersionDsData `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag *int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes *int `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid *string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid *string `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated *string `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired *string `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated *string `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted *string `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished *string `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished *string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid *string `pulumi:"uuid"`
+}
+
+// ZoneDnssecConfigKskDnssecKeyVersionInput is an input type that accepts ZoneDnssecConfigKskDnssecKeyVersionArgs and ZoneDnssecConfigKskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigKskDnssecKeyVersionInput` via:
+//
+//	ZoneDnssecConfigKskDnssecKeyVersionArgs{...}
+type ZoneDnssecConfigKskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigKskDnssecKeyVersionOutput() ZoneDnssecConfigKskDnssecKeyVersionOutput
+	ToZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Context) ZoneDnssecConfigKskDnssecKeyVersionOutput
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag pulumi.IntPtrInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes pulumi.IntPtrInput `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringPtrInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid pulumi.StringPtrInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated pulumi.StringPtrInput `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired pulumi.StringPtrInput `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated pulumi.StringPtrInput `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted pulumi.StringPtrInput `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished pulumi.StringPtrInput `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished pulumi.StringPtrInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ZoneDnssecConfigKskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionArgs) ToZoneDnssecConfigKskDnssecKeyVersionOutput() ZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return i.ToZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionArgs) ToZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+// ZoneDnssecConfigKskDnssecKeyVersionArrayInput is an input type that accepts ZoneDnssecConfigKskDnssecKeyVersionArray and ZoneDnssecConfigKskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigKskDnssecKeyVersionArrayInput` via:
+//
+//	ZoneDnssecConfigKskDnssecKeyVersionArray{ ZoneDnssecConfigKskDnssecKeyVersionArgs{...} }
+type ZoneDnssecConfigKskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigKskDnssecKeyVersionArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+	ToZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Context) ZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionArray []ZoneDnssecConfigKskDnssecKeyVersionInput
+
+func (ZoneDnssecConfigKskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionArray) ToZoneDnssecConfigKskDnssecKeyVersionArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return i.ToZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionArray) ToZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigKskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) ToZoneDnssecConfigKskDnssecKeyVersionOutput() ZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) ToZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) DsDatas() ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) []ZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return v.DsDatas
+	}).(ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+// The length of the corresponding private key in bytes, expressed as an integer.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *int { return v.LengthInBytes }).(pulumi.IntPtrOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringPtrOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimeActivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimeActivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimeExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimeExpired }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimeInactivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimePromoted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimePromoted }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.TimeUnpublished }).(pulumi.StringPtrOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o ZoneDnssecConfigKskDnssecKeyVersionOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersion) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToZoneDnssecConfigKskDnssecKeyVersionArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) ZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneDnssecConfigKskDnssecKeyVersion {
+		return vs[0].([]ZoneDnssecConfigKskDnssecKeyVersion)[vs[1].(int)]
+	}).(ZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionDsData struct {
+	// The type of the digest associated with the rdata.
+	DigestType *string `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata *string `pulumi:"rdata"`
+}
+
+// ZoneDnssecConfigKskDnssecKeyVersionDsDataInput is an input type that accepts ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs and ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigKskDnssecKeyVersionDsDataInput` via:
+//
+//	ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...}
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+	ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs struct {
+	// The type of the digest associated with the rdata.
+	DigestType pulumi.StringPtrInput `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata pulumi.StringPtrInput `pulumi:"rdata"`
+}
+
+func (ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return i.ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+// ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput is an input type that accepts ZoneDnssecConfigKskDnssecKeyVersionDsDataArray and ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput` via:
+//
+//	ZoneDnssecConfigKskDnssecKeyVersionDsDataArray{ ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...} }
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+	ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataArray []ZoneDnssecConfigKskDnssecKeyVersionDsDataInput
+
+func (ZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return i.ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+// The type of the digest associated with the rdata.
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) DigestType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersionDsData) *string { return v.DigestType }).(pulumi.StringPtrOutput)
+}
+
+// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) Rdata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigKskDnssecKeyVersionDsData) *string { return v.Rdata }).(pulumi.StringPtrOutput)
+}
+
+type ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) Index(i pulumi.IntInput) ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return vs[0].([]ZoneDnssecConfigKskDnssecKeyVersionDsData)[vs[1].(int)]
+	}).(ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+type ZoneDnssecConfigZskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm *string `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag *int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes *int `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid *string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid *string `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated *string `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired *string `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated *string `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted *string `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished *string `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished *string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid *string `pulumi:"uuid"`
+}
+
+// ZoneDnssecConfigZskDnssecKeyVersionInput is an input type that accepts ZoneDnssecConfigZskDnssecKeyVersionArgs and ZoneDnssecConfigZskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigZskDnssecKeyVersionInput` via:
+//
+//	ZoneDnssecConfigZskDnssecKeyVersionArgs{...}
+type ZoneDnssecConfigZskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigZskDnssecKeyVersionOutput() ZoneDnssecConfigZskDnssecKeyVersionOutput
+	ToZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Context) ZoneDnssecConfigZskDnssecKeyVersionOutput
+}
+
+type ZoneDnssecConfigZskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag pulumi.IntPtrInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes pulumi.IntPtrInput `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringPtrInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid pulumi.StringPtrInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated pulumi.StringPtrInput `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired pulumi.StringPtrInput `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated pulumi.StringPtrInput `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted pulumi.StringPtrInput `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished pulumi.StringPtrInput `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished pulumi.StringPtrInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ZoneDnssecConfigZskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigZskDnssecKeyVersionArgs) ToZoneDnssecConfigZskDnssecKeyVersionOutput() ZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return i.ToZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigZskDnssecKeyVersionArgs) ToZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) ZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigZskDnssecKeyVersionOutput)
+}
+
+// ZoneDnssecConfigZskDnssecKeyVersionArrayInput is an input type that accepts ZoneDnssecConfigZskDnssecKeyVersionArray and ZoneDnssecConfigZskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `ZoneDnssecConfigZskDnssecKeyVersionArrayInput` via:
+//
+//	ZoneDnssecConfigZskDnssecKeyVersionArray{ ZoneDnssecConfigZskDnssecKeyVersionArgs{...} }
+type ZoneDnssecConfigZskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToZoneDnssecConfigZskDnssecKeyVersionArrayOutput() ZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+	ToZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Context) ZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+}
+
+type ZoneDnssecConfigZskDnssecKeyVersionArray []ZoneDnssecConfigZskDnssecKeyVersionInput
+
+func (ZoneDnssecConfigZskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i ZoneDnssecConfigZskDnssecKeyVersionArray) ToZoneDnssecConfigZskDnssecKeyVersionArrayOutput() ZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return i.ToZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i ZoneDnssecConfigZskDnssecKeyVersionArray) ToZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type ZoneDnssecConfigZskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigZskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) ToZoneDnssecConfigZskDnssecKeyVersionOutput() ZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) ToZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) ZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) KeyTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *int { return v.KeyTag }).(pulumi.IntPtrOutput)
+}
+
+// The length of the corresponding private key in bytes, expressed as an integer.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *int { return v.LengthInBytes }).(pulumi.IntPtrOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringPtrOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimeActivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimeActivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimeExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimeExpired }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimeInactivated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimePromoted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimePromoted }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.TimeUnpublished }).(pulumi.StringPtrOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o ZoneDnssecConfigZskDnssecKeyVersionOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ZoneDnssecConfigZskDnssecKeyVersion) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ZoneDnssecConfigZskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (ZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o ZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToZoneDnssecConfigZskDnssecKeyVersionArrayOutput() ZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) ZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o ZoneDnssecConfigZskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) ZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ZoneDnssecConfigZskDnssecKeyVersion {
+		return vs[0].([]ZoneDnssecConfigZskDnssecKeyVersion)[vs[1].(int)]
+	}).(ZoneDnssecConfigZskDnssecKeyVersionOutput)
 }
 
 type ZoneExternalDownstream struct {
@@ -2228,7 +3419,9 @@ func (o GetRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetRecordsFilterOu
 }
 
 type GetRecordsRecord struct {
-	// The OCID of the compartment the resource belongs to.
+	// The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
 	//
@@ -2246,7 +3439,7 @@ type GetRecordsRecord struct {
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	Rtype string `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl *int `pulumi:"ttl"`
 	// The name or OCID of the target zone.
 	//
@@ -2266,7 +3459,9 @@ type GetRecordsRecordInput interface {
 }
 
 type GetRecordsRecordArgs struct {
-	// The OCID of the compartment the resource belongs to.
+	// The OCID of the compartment the zone belongs to.
+	//
+	// This parameter is deprecated and should be omitted.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
 	//
@@ -2284,7 +3479,7 @@ type GetRecordsRecordArgs struct {
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	Rtype pulumi.StringInput `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
 	// The name or OCID of the target zone.
 	//
@@ -2343,7 +3538,9 @@ func (o GetRecordsRecordOutput) ToGetRecordsRecordOutputWithContext(ctx context.
 	return o
 }
 
-// The OCID of the compartment the resource belongs to.
+// The OCID of the compartment the zone belongs to.
+//
+// This parameter is deprecated and should be omitted.
 func (o GetRecordsRecordOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRecordsRecord) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -2382,7 +3579,7 @@ func (o GetRecordsRecordOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecordsRecord) string { return v.Rtype }).(pulumi.StringOutput)
 }
 
-// The Time To Live for the record, in seconds.
+// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 func (o GetRecordsRecordOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetRecordsRecord) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
@@ -3910,7 +5107,7 @@ type GetRrsetItem struct {
 	RrsetVersion string `pulumi:"rrsetVersion"`
 	// The type of the target RRSet within the target zone.
 	Rtype string `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl int `pulumi:"ttl"`
 }
 
@@ -3938,7 +5135,7 @@ type GetRrsetItemArgs struct {
 	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
 	// The type of the target RRSet within the target zone.
 	Rtype pulumi.StringInput `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl pulumi.IntInput `pulumi:"ttl"`
 }
 
@@ -4023,7 +5220,7 @@ func (o GetRrsetItemOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
 }
 
-// The Time To Live for the record, in seconds.
+// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 func (o GetRrsetItemOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRrsetItem) int { return v.Ttl }).(pulumi.IntOutput)
 }
@@ -4279,7 +5476,7 @@ type GetRrsetsRrsetItem struct {
 	RrsetVersion string `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype string `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl int `pulumi:"ttl"`
 }
 
@@ -4307,7 +5504,7 @@ type GetRrsetsRrsetItemArgs struct {
 	RrsetVersion pulumi.StringInput `pulumi:"rrsetVersion"`
 	// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype pulumi.StringInput `pulumi:"rtype"`
-	// The Time To Live for the record, in seconds.
+	// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 	Ttl pulumi.IntInput `pulumi:"ttl"`
 }
 
@@ -4392,7 +5589,7 @@ func (o GetRrsetsRrsetItemOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRrsetsRrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
 }
 
-// The Time To Live for the record, in seconds.
+// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 func (o GetRrsetsRrsetItemOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRrsetsRrsetItem) int { return v.Ttl }).(pulumi.IntOutput)
 }
@@ -5019,7 +6216,7 @@ func (o GetSteeringPoliciesSteeringPolicyRuleArrayOutput) Index(i pulumi.IntInpu
 type GetSteeringPoliciesSteeringPolicyRuleCase struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas []GetSteeringPoliciesSteeringPolicyRuleCaseAnswerData `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition string `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count int `pulumi:"count"`
@@ -5039,7 +6236,7 @@ type GetSteeringPoliciesSteeringPolicyRuleCaseInput interface {
 type GetSteeringPoliciesSteeringPolicyRuleCaseArgs struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayInput `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition pulumi.StringInput `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count pulumi.IntInput `pulumi:"count"`
@@ -5103,7 +6300,7 @@ func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) AnswerDatas() GetSteeri
 	}).(GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 func (o GetSteeringPoliciesSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRuleCase) string { return v.CaseCondition }).(pulumi.StringOutput)
 }
@@ -5931,7 +7128,7 @@ func (o GetSteeringPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetSteeringPo
 type GetSteeringPolicyRuleCase struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas []GetSteeringPolicyRuleCaseAnswerData `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition string `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count int `pulumi:"count"`
@@ -5951,7 +7148,7 @@ type GetSteeringPolicyRuleCaseInput interface {
 type GetSteeringPolicyRuleCaseArgs struct {
 	// An array of `SteeringPolicyPriorityAnswerData` objects.
 	AnswerDatas GetSteeringPolicyRuleCaseAnswerDataArrayInput `pulumi:"answerDatas"`
-	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+	// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 	CaseCondition pulumi.StringInput `pulumi:"caseCondition"`
 	// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
 	Count pulumi.IntInput `pulumi:"count"`
@@ -6013,7 +7210,7 @@ func (o GetSteeringPolicyRuleCaseOutput) AnswerDatas() GetSteeringPolicyRuleCase
 	return o.ApplyT(func(v GetSteeringPolicyRuleCase) []GetSteeringPolicyRuleCaseAnswerData { return v.AnswerDatas }).(GetSteeringPolicyRuleCaseAnswerDataArrayOutput)
 }
 
-// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+// An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
 func (o GetSteeringPolicyRuleCaseOutput) CaseCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSteeringPolicyRuleCase) string { return v.CaseCondition }).(pulumi.StringOutput)
 }
@@ -6976,6 +8173,10 @@ type GetZonesZone struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// DNSSEC configuration data.
+	DnssecConfigs []GetZonesZoneDnssecConfig `pulumi:"dnssecConfigs"`
+	// Search for zones that have the given `DnssecState`.
+	DnssecState string `pulumi:"dnssecState"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []GetZonesZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -6990,8 +8191,7 @@ type GetZonesZone struct {
 	Name string `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers []GetZonesZoneNameserver `pulumi:"nameservers"`
-	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
-	// for zones in the global DNS and `PRIVATE` when listing private zones.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
@@ -7027,6 +8227,10 @@ type GetZonesZoneArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// DNSSEC configuration data.
+	DnssecConfigs GetZonesZoneDnssecConfigArrayInput `pulumi:"dnssecConfigs"`
+	// Search for zones that have the given `DnssecState`.
+	DnssecState pulumi.StringInput `pulumi:"dnssecState"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams GetZonesZoneExternalDownstreamArrayInput `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -7041,8 +8245,7 @@ type GetZonesZoneArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers GetZonesZoneNameserverArrayInput `pulumi:"nameservers"`
-	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
-	// for zones in the global DNS and `PRIVATE` when listing private zones.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
@@ -7123,6 +8326,16 @@ func (o GetZonesZoneOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetZonesZone) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// DNSSEC configuration data.
+func (o GetZonesZoneOutput) DnssecConfigs() GetZonesZoneDnssecConfigArrayOutput {
+	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneDnssecConfig { return v.DnssecConfigs }).(GetZonesZoneDnssecConfigArrayOutput)
+}
+
+// Search for zones that have the given `DnssecState`.
+func (o GetZonesZoneOutput) DnssecState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZone) string { return v.DnssecState }).(pulumi.StringOutput)
+}
+
 // External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 func (o GetZonesZoneOutput) ExternalDownstreams() GetZonesZoneExternalDownstreamArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneExternalDownstream { return v.ExternalDownstreams }).(GetZonesZoneExternalDownstreamArrayOutput)
@@ -7158,8 +8371,7 @@ func (o GetZonesZoneOutput) Nameservers() GetZonesZoneNameserverArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneNameserver { return v.Nameservers }).(GetZonesZoneNameserverArrayOutput)
 }
 
-// Specifies to operate only on resources that have a matching DNS scope. This value will be null
-// for zones in the global DNS and `PRIVATE` when listing private zones.
+// Specifies to operate only on resources that have a matching DNS scope.
 func (o GetZonesZoneOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.Scope }).(pulumi.StringOutput)
 }
@@ -7222,6 +8434,643 @@ func (o GetZonesZoneArrayOutput) Index(i pulumi.IntInput) GetZonesZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZone {
 		return vs[0].([]GetZonesZone)[vs[1].(int)]
 	}).(GetZonesZoneOutput)
+}
+
+type GetZonesZoneDnssecConfig struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions []GetZonesZoneDnssecConfigKskDnssecKeyVersion `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions []GetZonesZoneDnssecConfigZskDnssecKeyVersion `pulumi:"zskDnssecKeyVersions"`
+}
+
+// GetZonesZoneDnssecConfigInput is an input type that accepts GetZonesZoneDnssecConfigArgs and GetZonesZoneDnssecConfigOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigInput` via:
+//
+//	GetZonesZoneDnssecConfigArgs{...}
+type GetZonesZoneDnssecConfigInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigOutput() GetZonesZoneDnssecConfigOutput
+	ToGetZonesZoneDnssecConfigOutputWithContext(context.Context) GetZonesZoneDnssecConfigOutput
+}
+
+type GetZonesZoneDnssecConfigArgs struct {
+	// A read-only array of key signing key (KSK) versions.
+	KskDnssecKeyVersions GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayInput `pulumi:"kskDnssecKeyVersions"`
+	// A read-only array of zone signing key (ZSK) versions.
+	ZskDnssecKeyVersions GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayInput `pulumi:"zskDnssecKeyVersions"`
+}
+
+func (GetZonesZoneDnssecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigArgs) ToGetZonesZoneDnssecConfigOutput() GetZonesZoneDnssecConfigOutput {
+	return i.ToGetZonesZoneDnssecConfigOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigArgs) ToGetZonesZoneDnssecConfigOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigOutput)
+}
+
+// GetZonesZoneDnssecConfigArrayInput is an input type that accepts GetZonesZoneDnssecConfigArray and GetZonesZoneDnssecConfigArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigArrayInput` via:
+//
+//	GetZonesZoneDnssecConfigArray{ GetZonesZoneDnssecConfigArgs{...} }
+type GetZonesZoneDnssecConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigArrayOutput() GetZonesZoneDnssecConfigArrayOutput
+	ToGetZonesZoneDnssecConfigArrayOutputWithContext(context.Context) GetZonesZoneDnssecConfigArrayOutput
+}
+
+type GetZonesZoneDnssecConfigArray []GetZonesZoneDnssecConfigInput
+
+func (GetZonesZoneDnssecConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfig)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigArray) ToGetZonesZoneDnssecConfigArrayOutput() GetZonesZoneDnssecConfigArrayOutput {
+	return i.ToGetZonesZoneDnssecConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigArray) ToGetZonesZoneDnssecConfigArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigArrayOutput)
+}
+
+type GetZonesZoneDnssecConfigOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigOutput) ToGetZonesZoneDnssecConfigOutput() GetZonesZoneDnssecConfigOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigOutput) ToGetZonesZoneDnssecConfigOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigOutput {
+	return o
+}
+
+// A read-only array of key signing key (KSK) versions.
+func (o GetZonesZoneDnssecConfigOutput) KskDnssecKeyVersions() GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfig) []GetZonesZoneDnssecConfigKskDnssecKeyVersion {
+		return v.KskDnssecKeyVersions
+	}).(GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+// A read-only array of zone signing key (ZSK) versions.
+func (o GetZonesZoneDnssecConfigOutput) ZskDnssecKeyVersions() GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfig) []GetZonesZoneDnssecConfigZskDnssecKeyVersion {
+		return v.ZskDnssecKeyVersions
+	}).(GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type GetZonesZoneDnssecConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfig)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigArrayOutput) ToGetZonesZoneDnssecConfigArrayOutput() GetZonesZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigArrayOutput) ToGetZonesZoneDnssecConfigArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigArrayOutput) Index(i pulumi.IntInput) GetZonesZoneDnssecConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneDnssecConfig {
+		return vs[0].([]GetZonesZoneDnssecConfig)[vs[1].(int)]
+	}).(GetZonesZoneDnssecConfigOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm string `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas []GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes int `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid string `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired string `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated string `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted string `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished string `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetZonesZoneDnssecConfigKskDnssecKeyVersionInput is an input type that accepts GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs and GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigKskDnssecKeyVersionInput` via:
+//
+//	GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs{...}
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+	DsDatas GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput `pulumi:"dsDatas"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag pulumi.IntInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes pulumi.IntInput `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired pulumi.StringInput `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated pulumi.StringInput `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted pulumi.StringInput `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished pulumi.StringInput `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished pulumi.StringInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return i.ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+// GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayInput is an input type that accepts GetZonesZoneDnssecConfigKskDnssecKeyVersionArray and GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayInput` via:
+//
+//	GetZonesZoneDnssecConfigKskDnssecKeyVersionArray{ GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs{...} }
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionArray []GetZonesZoneDnssecConfigKskDnssecKeyVersionInput
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionArray) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return i.ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionArray) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) DsDatas() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) []GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return v.DsDatas
+	}).(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) KeyTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) int { return v.KeyTag }).(pulumi.IntOutput)
+}
+
+// The length of the corresponding private key in bytes, expressed as an integer.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) int { return v.LengthInBytes }).(pulumi.IntOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimeExpired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeExpired }).(pulumi.StringOutput)
+}
+
+// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeInactivated }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimePromoted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimePromoted }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimePublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimePublished }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.TimeUnpublished }).(pulumi.StringOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersion) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigKskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneDnssecConfigKskDnssecKeyVersion {
+		return vs[0].([]GetZonesZoneDnssecConfigKskDnssecKeyVersion)[vs[1].(int)]
+	}).(GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData struct {
+	// The type of the digest associated with the rdata.
+	DigestType string `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata string `pulumi:"rdata"`
+}
+
+// GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataInput is an input type that accepts GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs and GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataInput` via:
+//
+//	GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...}
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs struct {
+	// The type of the digest associated with the rdata.
+	DigestType pulumi.StringInput `pulumi:"digestType"`
+	// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+	Rdata pulumi.StringInput `pulumi:"rdata"`
+}
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return i.ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+// GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput is an input type that accepts GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray and GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput` via:
+//
+//	GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray{ GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{...} }
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+	ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray []GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataInput
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return i.ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return o
+}
+
+// The type of the digest associated with the rdata.
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) DigestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData) string { return v.DigestType }).(pulumi.StringOutput)
+}
+
+// Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput) Rdata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData) string { return v.Rdata }).(pulumi.StringOutput)
+}
+
+type GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput() GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) ToGetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput) Index(i pulumi.IntInput) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData {
+		return vs[0].([]GetZonesZoneDnssecConfigKskDnssecKeyVersionDsData)[vs[1].(int)]
+	}).(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput)
+}
+
+type GetZonesZoneDnssecConfigZskDnssecKeyVersion struct {
+	// The signing algorithm used for the key.
+	Algorithm string `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag int `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes int `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid string `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid string `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated string `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired string `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated string `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted string `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished string `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished string `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetZonesZoneDnssecConfigZskDnssecKeyVersionInput is an input type that accepts GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs and GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigZskDnssecKeyVersionInput` via:
+//
+//	GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs{...}
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput
+	ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput
+}
+
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs struct {
+	// The signing algorithm used for the key.
+	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+	KeyTag pulumi.IntInput `pulumi:"keyTag"`
+	// The length of the corresponding private key in bytes, expressed as an integer.
+	LengthInBytes pulumi.IntInput `pulumi:"lengthInBytes"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+	PredecessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"predecessorDnssecKeyVersionUuid"`
+	// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+	SuccessorDnssecKeyVersionUuid pulumi.StringInput `pulumi:"successorDnssecKeyVersionUuid"`
+	// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+	TimeActivated pulumi.StringInput `pulumi:"timeActivated"`
+	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+	TimeExpired pulumi.StringInput `pulumi:"timeExpired"`
+	// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeInactivated pulumi.StringInput `pulumi:"timeInactivated"`
+	// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+	TimePromoted pulumi.StringInput `pulumi:"timePromoted"`
+	// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+	TimePublished pulumi.StringInput `pulumi:"timePublished"`
+	// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+	TimeUnpublished pulumi.StringInput `pulumi:"timeUnpublished"`
+	// The UUID of the `DnssecKeyVersion`.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return i.ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput)
+}
+
+// GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayInput is an input type that accepts GetZonesZoneDnssecConfigZskDnssecKeyVersionArray and GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput values.
+// You can construct a concrete instance of `GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayInput` via:
+//
+//	GetZonesZoneDnssecConfigZskDnssecKeyVersionArray{ GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs{...} }
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+	ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput
+}
+
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionArray []GetZonesZoneDnssecConfigZskDnssecKeyVersionInput
+
+func (GetZonesZoneDnssecConfigZskDnssecKeyVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (i GetZonesZoneDnssecConfigZskDnssecKeyVersionArray) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return i.ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetZonesZoneDnssecConfigZskDnssecKeyVersionArray) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput)
+}
+
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetZonesZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return o
+}
+
+// The signing algorithm used for the key.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) Algorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.Algorithm }).(pulumi.StringOutput)
+}
+
+// The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) KeyTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) int { return v.KeyTag }).(pulumi.IntOutput)
+}
+
+// The length of the corresponding private key in bytes, expressed as an integer.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) LengthInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) int { return v.LengthInBytes }).(pulumi.IntOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) PredecessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.PredecessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) SuccessorDnssecKeyVersionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.SuccessorDnssecKeyVersionUuid }).(pulumi.StringOutput)
+}
+
+// The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimeActivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeActivated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimeExpired() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeExpired }).(pulumi.StringOutput)
+}
+
+// The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimeInactivated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeInactivated }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimePromoted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimePromoted }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimePublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimePublished }).(pulumi.StringOutput)
+}
+
+// The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) TimeUnpublished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.TimeUnpublished }).(pulumi.StringOutput)
+}
+
+// The UUID of the `DnssecKeyVersion`.
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetZonesZoneDnssecConfigZskDnssecKeyVersion) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetZonesZoneDnssecConfigZskDnssecKeyVersion)(nil)).Elem()
+}
+
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput() GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput) ToGetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutputWithContext(ctx context.Context) GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput {
+	return o
+}
+
+func (o GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput) Index(i pulumi.IntInput) GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetZonesZoneDnssecConfigZskDnssecKeyVersion {
+		return vs[0].([]GetZonesZoneDnssecConfigZskDnssecKeyVersion)[vs[1].(int)]
+	}).(GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput)
 }
 
 type GetZonesZoneExternalDownstream struct {
@@ -7676,6 +9525,14 @@ func (o GetZonesZoneZoneTransferServerArrayOutput) Index(i pulumi.IntInput) GetZ
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstreamInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalDownstreamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalDownstreamArrayInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalDownstreamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ActionCreateZoneFromZoneFileExternalMasterInput)(nil)).Elem(), ActionCreateZoneFromZoneFileExternalMasterArgs{})
@@ -7702,6 +9559,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleCaseAnswerDataArrayInput)(nil)).Elem(), SteeringPolicyRuleCaseAnswerDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleDefaultAnswerDataInput)(nil)).Elem(), SteeringPolicyRuleDefaultAnswerDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SteeringPolicyRuleDefaultAnswerDataArrayInput)(nil)).Elem(), SteeringPolicyRuleDefaultAnswerDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigInput)(nil)).Elem(), ZoneDnssecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigArrayInput)(nil)).Elem(), ZoneDnssecConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionInput)(nil)).Elem(), ZoneDnssecConfigKskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionArrayInput)(nil)).Elem(), ZoneDnssecConfigKskDnssecKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionDsDataInput)(nil)).Elem(), ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput)(nil)).Elem(), ZoneDnssecConfigKskDnssecKeyVersionDsDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigZskDnssecKeyVersionInput)(nil)).Elem(), ZoneDnssecConfigZskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ZoneDnssecConfigZskDnssecKeyVersionArrayInput)(nil)).Elem(), ZoneDnssecConfigZskDnssecKeyVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalDownstreamInput)(nil)).Elem(), ZoneExternalDownstreamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalDownstreamArrayInput)(nil)).Elem(), ZoneExternalDownstreamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ZoneExternalMasterInput)(nil)).Elem(), ZoneExternalMasterArgs{})
@@ -7782,6 +9647,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesFilterArrayInput)(nil)).Elem(), GetZonesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneInput)(nil)).Elem(), GetZonesZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneArrayInput)(nil)).Elem(), GetZonesZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigInput)(nil)).Elem(), GetZonesZoneDnssecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigArrayInput)(nil)).Elem(), GetZonesZoneDnssecConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionInput)(nil)).Elem(), GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayInput)(nil)).Elem(), GetZonesZoneDnssecConfigKskDnssecKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataInput)(nil)).Elem(), GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayInput)(nil)).Elem(), GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigZskDnssecKeyVersionInput)(nil)).Elem(), GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayInput)(nil)).Elem(), GetZonesZoneDnssecConfigZskDnssecKeyVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalDownstreamInput)(nil)).Elem(), GetZonesZoneExternalDownstreamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalDownstreamArrayInput)(nil)).Elem(), GetZonesZoneExternalDownstreamArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneExternalMasterInput)(nil)).Elem(), GetZonesZoneExternalMasterArgs{})
@@ -7790,6 +9663,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneNameserverArrayInput)(nil)).Elem(), GetZonesZoneNameserverArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneZoneTransferServerInput)(nil)).Elem(), GetZonesZoneZoneTransferServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetZonesZoneZoneTransferServerArrayInput)(nil)).Elem(), GetZonesZoneZoneTransferServerArray{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArrayOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArrayOutput{})
 	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalDownstreamOutput{})
 	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput{})
 	pulumi.RegisterOutputType(ActionCreateZoneFromZoneFileExternalMasterOutput{})
@@ -7816,6 +9697,14 @@ func init() {
 	pulumi.RegisterOutputType(SteeringPolicyRuleCaseAnswerDataArrayOutput{})
 	pulumi.RegisterOutputType(SteeringPolicyRuleDefaultAnswerDataOutput{})
 	pulumi.RegisterOutputType(SteeringPolicyRuleDefaultAnswerDataArrayOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigArrayOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigKskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigKskDnssecKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigKskDnssecKeyVersionDsDataOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigZskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(ZoneDnssecConfigZskDnssecKeyVersionArrayOutput{})
 	pulumi.RegisterOutputType(ZoneExternalDownstreamOutput{})
 	pulumi.RegisterOutputType(ZoneExternalDownstreamArrayOutput{})
 	pulumi.RegisterOutputType(ZoneExternalMasterOutput{})
@@ -7896,6 +9785,14 @@ func init() {
 	pulumi.RegisterOutputType(GetZonesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigKskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigKskDnssecKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArrayOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigZskDnssecKeyVersionOutput{})
+	pulumi.RegisterOutputType(GetZonesZoneDnssecConfigZskDnssecKeyVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneExternalDownstreamOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneExternalDownstreamArrayOutput{})
 	pulumi.RegisterOutputType(GetZonesZoneExternalMasterOutput{})

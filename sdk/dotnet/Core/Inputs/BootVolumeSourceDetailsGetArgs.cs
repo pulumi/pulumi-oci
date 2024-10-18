@@ -13,13 +13,31 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class BootVolumeSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the boot volume replica.
+        /// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
         /// </summary>
-        [Input("id", required: true)]
-        public Input<string> Id { get; set; } = null!;
+        [Input("changeBlockSizeInBytes")]
+        public Input<string>? ChangeBlockSizeInBytes { get; set; }
 
         /// <summary>
-        /// The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+        /// The OCID of the first boot volume backup.
+        /// </summary>
+        [Input("firstBackupId")]
+        public Input<string>? FirstBackupId { get; set; }
+
+        /// <summary>
+        /// The OCID of the boot volume replica.
+        /// </summary>
+        [Input("id")]
+        public Input<string>? Id { get; set; }
+
+        /// <summary>
+        /// The OCID of the second boot volume backup.
+        /// </summary>
+        [Input("secondBackupId")]
+        public Input<string>? SecondBackupId { get; set; }
+
+        /// <summary>
+        /// The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

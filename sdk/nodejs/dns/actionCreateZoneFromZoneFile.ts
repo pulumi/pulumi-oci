@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
  *
- * Creates a new zone from a zone file in the specified compartment.
+ * Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
  *
  * After the zone has been created, it should be further managed by importing it to an `oci.Dns.Zone` resource.
  *
@@ -75,6 +75,8 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    public /*out*/ readonly dnssecConfigs!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig[]>;
+    public /*out*/ readonly dnssecState!: pulumi.Output<string>;
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
@@ -156,6 +158,8 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createZoneFromZoneFileDetails"] = state ? state.createZoneFromZoneFileDetails : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["dnssecConfigs"] = state ? state.dnssecConfigs : undefined;
+            resourceInputs["dnssecState"] = state ? state.dnssecState : undefined;
             resourceInputs["externalDownstreams"] = state ? state.externalDownstreams : undefined;
             resourceInputs["externalMasters"] = state ? state.externalMasters : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -184,6 +188,8 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["viewId"] = args ? args.viewId : undefined;
             resourceInputs["definedTags"] = undefined /*out*/;
+            resourceInputs["dnssecConfigs"] = undefined /*out*/;
+            resourceInputs["dnssecState"] = undefined /*out*/;
             resourceInputs["externalDownstreams"] = undefined /*out*/;
             resourceInputs["externalMasters"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
@@ -219,6 +225,8 @@ export interface ActionCreateZoneFromZoneFileState {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dnssecConfigs?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig>[]>;
+    dnssecState?: pulumi.Input<string>;
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */

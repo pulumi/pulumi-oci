@@ -31,6 +31,18 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<Inputs.ClusterOptionsKubernetesNetworkConfigGetArgs>? KubernetesNetworkConfig { get; set; }
 
         /// <summary>
+        /// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+        /// </summary>
+        [Input("openIdConnectDiscovery")]
+        public Input<Inputs.ClusterOptionsOpenIdConnectDiscoveryGetArgs>? OpenIdConnectDiscovery { get; set; }
+
+        /// <summary>
+        /// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        /// </summary>
+        [Input("openIdConnectTokenAuthenticationConfig")]
+        public Input<Inputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfigGetArgs>? OpenIdConnectTokenAuthenticationConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         /// </summary>
         [Input("persistentVolumeConfig")]

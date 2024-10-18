@@ -15,9 +15,9 @@ var _ = internal.GetEnvOrDefault
 
 type DesktopPoolAvailabilityPolicy struct {
 	// (Updatable) Provides the schedule information for a desktop.
-	StartSchedule DesktopPoolAvailabilityPolicyStartSchedule `pulumi:"startSchedule"`
+	StartSchedule *DesktopPoolAvailabilityPolicyStartSchedule `pulumi:"startSchedule"`
 	// (Updatable) Provides the schedule information for a desktop.
-	StopSchedule DesktopPoolAvailabilityPolicyStopSchedule `pulumi:"stopSchedule"`
+	StopSchedule *DesktopPoolAvailabilityPolicyStopSchedule `pulumi:"stopSchedule"`
 }
 
 // DesktopPoolAvailabilityPolicyInput is an input type that accepts DesktopPoolAvailabilityPolicyArgs and DesktopPoolAvailabilityPolicyOutput values.
@@ -33,9 +33,9 @@ type DesktopPoolAvailabilityPolicyInput interface {
 
 type DesktopPoolAvailabilityPolicyArgs struct {
 	// (Updatable) Provides the schedule information for a desktop.
-	StartSchedule DesktopPoolAvailabilityPolicyStartScheduleInput `pulumi:"startSchedule"`
+	StartSchedule DesktopPoolAvailabilityPolicyStartSchedulePtrInput `pulumi:"startSchedule"`
 	// (Updatable) Provides the schedule information for a desktop.
-	StopSchedule DesktopPoolAvailabilityPolicyStopScheduleInput `pulumi:"stopSchedule"`
+	StopSchedule DesktopPoolAvailabilityPolicyStopSchedulePtrInput `pulumi:"stopSchedule"`
 }
 
 func (DesktopPoolAvailabilityPolicyArgs) ElementType() reflect.Type {
@@ -116,15 +116,17 @@ func (o DesktopPoolAvailabilityPolicyOutput) ToDesktopPoolAvailabilityPolicyPtrO
 }
 
 // (Updatable) Provides the schedule information for a desktop.
-func (o DesktopPoolAvailabilityPolicyOutput) StartSchedule() DesktopPoolAvailabilityPolicyStartScheduleOutput {
-	return o.ApplyT(func(v DesktopPoolAvailabilityPolicy) DesktopPoolAvailabilityPolicyStartSchedule {
+func (o DesktopPoolAvailabilityPolicyOutput) StartSchedule() DesktopPoolAvailabilityPolicyStartSchedulePtrOutput {
+	return o.ApplyT(func(v DesktopPoolAvailabilityPolicy) *DesktopPoolAvailabilityPolicyStartSchedule {
 		return v.StartSchedule
-	}).(DesktopPoolAvailabilityPolicyStartScheduleOutput)
+	}).(DesktopPoolAvailabilityPolicyStartSchedulePtrOutput)
 }
 
 // (Updatable) Provides the schedule information for a desktop.
-func (o DesktopPoolAvailabilityPolicyOutput) StopSchedule() DesktopPoolAvailabilityPolicyStopScheduleOutput {
-	return o.ApplyT(func(v DesktopPoolAvailabilityPolicy) DesktopPoolAvailabilityPolicyStopSchedule { return v.StopSchedule }).(DesktopPoolAvailabilityPolicyStopScheduleOutput)
+func (o DesktopPoolAvailabilityPolicyOutput) StopSchedule() DesktopPoolAvailabilityPolicyStopSchedulePtrOutput {
+	return o.ApplyT(func(v DesktopPoolAvailabilityPolicy) *DesktopPoolAvailabilityPolicyStopSchedule {
+		return v.StopSchedule
+	}).(DesktopPoolAvailabilityPolicyStopSchedulePtrOutput)
 }
 
 type DesktopPoolAvailabilityPolicyPtrOutput struct{ *pulumi.OutputState }
@@ -157,7 +159,7 @@ func (o DesktopPoolAvailabilityPolicyPtrOutput) StartSchedule() DesktopPoolAvail
 		if v == nil {
 			return nil
 		}
-		return &v.StartSchedule
+		return v.StartSchedule
 	}).(DesktopPoolAvailabilityPolicyStartSchedulePtrOutput)
 }
 
@@ -167,7 +169,7 @@ func (o DesktopPoolAvailabilityPolicyPtrOutput) StopSchedule() DesktopPoolAvaila
 		if v == nil {
 			return nil
 		}
-		return &v.StopSchedule
+		return v.StopSchedule
 	}).(DesktopPoolAvailabilityPolicyStopSchedulePtrOutput)
 }
 
@@ -1072,7 +1074,7 @@ type DesktopPoolPrivateAccessDetails struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId *string `pulumi:"vcnId"`
@@ -1096,7 +1098,7 @@ type DesktopPoolPrivateAccessDetailsArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
@@ -1194,7 +1196,7 @@ func (o DesktopPoolPrivateAccessDetailsOutput) PrivateIp() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolPrivateAccessDetailsOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1258,7 +1260,7 @@ func (o DesktopPoolPrivateAccessDetailsPtrOutput) PrivateIp() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolPrivateAccessDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
 		if v == nil {
@@ -1276,6 +1278,478 @@ func (o DesktopPoolPrivateAccessDetailsPtrOutput) VcnId() pulumi.StringPtrOutput
 		}
 		return v.VcnId
 	}).(pulumi.StringPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActions struct {
+	// (Updatable) Action and grace period for disconnect
+	Disconnect *DesktopPoolSessionLifecycleActionsDisconnect `pulumi:"disconnect"`
+	// (Updatable) Action and grace period for inactivity
+	Inactivity *DesktopPoolSessionLifecycleActionsInactivity `pulumi:"inactivity"`
+}
+
+// DesktopPoolSessionLifecycleActionsInput is an input type that accepts DesktopPoolSessionLifecycleActionsArgs and DesktopPoolSessionLifecycleActionsOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsInput` via:
+//
+//	DesktopPoolSessionLifecycleActionsArgs{...}
+type DesktopPoolSessionLifecycleActionsInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsOutput() DesktopPoolSessionLifecycleActionsOutput
+	ToDesktopPoolSessionLifecycleActionsOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsOutput
+}
+
+type DesktopPoolSessionLifecycleActionsArgs struct {
+	// (Updatable) Action and grace period for disconnect
+	Disconnect DesktopPoolSessionLifecycleActionsDisconnectPtrInput `pulumi:"disconnect"`
+	// (Updatable) Action and grace period for inactivity
+	Inactivity DesktopPoolSessionLifecycleActionsInactivityPtrInput `pulumi:"inactivity"`
+}
+
+func (DesktopPoolSessionLifecycleActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActions)(nil)).Elem()
+}
+
+func (i DesktopPoolSessionLifecycleActionsArgs) ToDesktopPoolSessionLifecycleActionsOutput() DesktopPoolSessionLifecycleActionsOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsArgs) ToDesktopPoolSessionLifecycleActionsOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsOutput)
+}
+
+func (i DesktopPoolSessionLifecycleActionsArgs) ToDesktopPoolSessionLifecycleActionsPtrOutput() DesktopPoolSessionLifecycleActionsPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsArgs) ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsOutput).ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(ctx)
+}
+
+// DesktopPoolSessionLifecycleActionsPtrInput is an input type that accepts DesktopPoolSessionLifecycleActionsArgs, DesktopPoolSessionLifecycleActionsPtr and DesktopPoolSessionLifecycleActionsPtrOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsPtrInput` via:
+//
+//	        DesktopPoolSessionLifecycleActionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DesktopPoolSessionLifecycleActionsPtrInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsPtrOutput() DesktopPoolSessionLifecycleActionsPtrOutput
+	ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsPtrOutput
+}
+
+type desktopPoolSessionLifecycleActionsPtrType DesktopPoolSessionLifecycleActionsArgs
+
+func DesktopPoolSessionLifecycleActionsPtr(v *DesktopPoolSessionLifecycleActionsArgs) DesktopPoolSessionLifecycleActionsPtrInput {
+	return (*desktopPoolSessionLifecycleActionsPtrType)(v)
+}
+
+func (*desktopPoolSessionLifecycleActionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActions)(nil)).Elem()
+}
+
+func (i *desktopPoolSessionLifecycleActionsPtrType) ToDesktopPoolSessionLifecycleActionsPtrOutput() DesktopPoolSessionLifecycleActionsPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(context.Background())
+}
+
+func (i *desktopPoolSessionLifecycleActionsPtrType) ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActions)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleActionsOutput() DesktopPoolSessionLifecycleActionsOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleActionsOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleActionsPtrOutput() DesktopPoolSessionLifecycleActionsPtrOutput {
+	return o.ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(context.Background())
+}
+
+func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActions {
+		return &v
+	}).(DesktopPoolSessionLifecycleActionsPtrOutput)
+}
+
+// (Updatable) Action and grace period for disconnect
+func (o DesktopPoolSessionLifecycleActionsOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
+		return v.Disconnect
+	}).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
+}
+
+// (Updatable) Action and grace period for inactivity
+func (o DesktopPoolSessionLifecycleActionsOutput) Inactivity() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsInactivity {
+		return v.Inactivity
+	}).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsPtrOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActions)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsPtrOutput) ToDesktopPoolSessionLifecycleActionsPtrOutput() DesktopPoolSessionLifecycleActionsPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsPtrOutput) ToDesktopPoolSessionLifecycleActionsPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsPtrOutput) Elem() DesktopPoolSessionLifecycleActionsOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActions) DesktopPoolSessionLifecycleActions {
+		if v != nil {
+			return *v
+		}
+		var ret DesktopPoolSessionLifecycleActions
+		return ret
+	}).(DesktopPoolSessionLifecycleActionsOutput)
+}
+
+// (Updatable) Action and grace period for disconnect
+func (o DesktopPoolSessionLifecycleActionsPtrOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
+		if v == nil {
+			return nil
+		}
+		return v.Disconnect
+	}).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
+}
+
+// (Updatable) Action and grace period for inactivity
+func (o DesktopPoolSessionLifecycleActionsPtrOutput) Inactivity() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsInactivity {
+		if v == nil {
+			return nil
+		}
+		return v.Inactivity
+	}).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsDisconnect struct {
+	// (Updatable) a disconnect action to be triggered
+	Action string `pulumi:"action"`
+	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
+}
+
+// DesktopPoolSessionLifecycleActionsDisconnectInput is an input type that accepts DesktopPoolSessionLifecycleActionsDisconnectArgs and DesktopPoolSessionLifecycleActionsDisconnectOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsDisconnectInput` via:
+//
+//	DesktopPoolSessionLifecycleActionsDisconnectArgs{...}
+type DesktopPoolSessionLifecycleActionsDisconnectInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsDisconnectOutput() DesktopPoolSessionLifecycleActionsDisconnectOutput
+	ToDesktopPoolSessionLifecycleActionsDisconnectOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsDisconnectOutput
+}
+
+type DesktopPoolSessionLifecycleActionsDisconnectArgs struct {
+	// (Updatable) a disconnect action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (DesktopPoolSessionLifecycleActionsDisconnectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActionsDisconnect)(nil)).Elem()
+}
+
+func (i DesktopPoolSessionLifecycleActionsDisconnectArgs) ToDesktopPoolSessionLifecycleActionsDisconnectOutput() DesktopPoolSessionLifecycleActionsDisconnectOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsDisconnectOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsDisconnectArgs) ToDesktopPoolSessionLifecycleActionsDisconnectOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsDisconnectOutput)
+}
+
+func (i DesktopPoolSessionLifecycleActionsDisconnectArgs) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutput() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsDisconnectArgs) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsDisconnectOutput).ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(ctx)
+}
+
+// DesktopPoolSessionLifecycleActionsDisconnectPtrInput is an input type that accepts DesktopPoolSessionLifecycleActionsDisconnectArgs, DesktopPoolSessionLifecycleActionsDisconnectPtr and DesktopPoolSessionLifecycleActionsDisconnectPtrOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsDisconnectPtrInput` via:
+//
+//	        DesktopPoolSessionLifecycleActionsDisconnectArgs{...}
+//
+//	or:
+//
+//	        nil
+type DesktopPoolSessionLifecycleActionsDisconnectPtrInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutput() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput
+	ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsDisconnectPtrOutput
+}
+
+type desktopPoolSessionLifecycleActionsDisconnectPtrType DesktopPoolSessionLifecycleActionsDisconnectArgs
+
+func DesktopPoolSessionLifecycleActionsDisconnectPtr(v *DesktopPoolSessionLifecycleActionsDisconnectArgs) DesktopPoolSessionLifecycleActionsDisconnectPtrInput {
+	return (*desktopPoolSessionLifecycleActionsDisconnectPtrType)(v)
+}
+
+func (*desktopPoolSessionLifecycleActionsDisconnectPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActionsDisconnect)(nil)).Elem()
+}
+
+func (i *desktopPoolSessionLifecycleActionsDisconnectPtrType) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutput() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(context.Background())
+}
+
+func (i *desktopPoolSessionLifecycleActionsDisconnectPtrType) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsDisconnectOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsDisconnectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActionsDisconnect)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSessionLifecycleActionsDisconnectOutput() DesktopPoolSessionLifecycleActionsDisconnectOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSessionLifecycleActionsDisconnectOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutput() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o.ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(context.Background())
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DesktopPoolSessionLifecycleActionsDisconnect) *DesktopPoolSessionLifecycleActionsDisconnect {
+		return &v
+	}).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
+}
+
+// (Updatable) a disconnect action to be triggered
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsDisconnect) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) GracePeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsDisconnect) *int { return v.GracePeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsDisconnectPtrOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActionsDisconnect)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutput() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) ToDesktopPoolSessionLifecycleActionsDisconnectPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Elem() DesktopPoolSessionLifecycleActionsDisconnectOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsDisconnect) DesktopPoolSessionLifecycleActionsDisconnect {
+		if v != nil {
+			return *v
+		}
+		var ret DesktopPoolSessionLifecycleActionsDisconnect
+		return ret
+	}).(DesktopPoolSessionLifecycleActionsDisconnectOutput)
+}
+
+// (Updatable) a disconnect action to be triggered
+func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsDisconnect) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Action
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) GracePeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsDisconnect) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GracePeriodInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsInactivity struct {
+	// (Updatable) an inactivity action to be triggered
+	Action string `pulumi:"action"`
+	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
+}
+
+// DesktopPoolSessionLifecycleActionsInactivityInput is an input type that accepts DesktopPoolSessionLifecycleActionsInactivityArgs and DesktopPoolSessionLifecycleActionsInactivityOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsInactivityInput` via:
+//
+//	DesktopPoolSessionLifecycleActionsInactivityArgs{...}
+type DesktopPoolSessionLifecycleActionsInactivityInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsInactivityOutput() DesktopPoolSessionLifecycleActionsInactivityOutput
+	ToDesktopPoolSessionLifecycleActionsInactivityOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsInactivityOutput
+}
+
+type DesktopPoolSessionLifecycleActionsInactivityArgs struct {
+	// (Updatable) an inactivity action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (DesktopPoolSessionLifecycleActionsInactivityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInactivity)(nil)).Elem()
+}
+
+func (i DesktopPoolSessionLifecycleActionsInactivityArgs) ToDesktopPoolSessionLifecycleActionsInactivityOutput() DesktopPoolSessionLifecycleActionsInactivityOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsInactivityOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsInactivityArgs) ToDesktopPoolSessionLifecycleActionsInactivityOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsInactivityOutput)
+}
+
+func (i DesktopPoolSessionLifecycleActionsInactivityArgs) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutput() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(context.Background())
+}
+
+func (i DesktopPoolSessionLifecycleActionsInactivityArgs) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsInactivityOutput).ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(ctx)
+}
+
+// DesktopPoolSessionLifecycleActionsInactivityPtrInput is an input type that accepts DesktopPoolSessionLifecycleActionsInactivityArgs, DesktopPoolSessionLifecycleActionsInactivityPtr and DesktopPoolSessionLifecycleActionsInactivityPtrOutput values.
+// You can construct a concrete instance of `DesktopPoolSessionLifecycleActionsInactivityPtrInput` via:
+//
+//	        DesktopPoolSessionLifecycleActionsInactivityArgs{...}
+//
+//	or:
+//
+//	        nil
+type DesktopPoolSessionLifecycleActionsInactivityPtrInput interface {
+	pulumi.Input
+
+	ToDesktopPoolSessionLifecycleActionsInactivityPtrOutput() DesktopPoolSessionLifecycleActionsInactivityPtrOutput
+	ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(context.Context) DesktopPoolSessionLifecycleActionsInactivityPtrOutput
+}
+
+type desktopPoolSessionLifecycleActionsInactivityPtrType DesktopPoolSessionLifecycleActionsInactivityArgs
+
+func DesktopPoolSessionLifecycleActionsInactivityPtr(v *DesktopPoolSessionLifecycleActionsInactivityArgs) DesktopPoolSessionLifecycleActionsInactivityPtrInput {
+	return (*desktopPoolSessionLifecycleActionsInactivityPtrType)(v)
+}
+
+func (*desktopPoolSessionLifecycleActionsInactivityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActionsInactivity)(nil)).Elem()
+}
+
+func (i *desktopPoolSessionLifecycleActionsInactivityPtrType) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutput() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return i.ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(context.Background())
+}
+
+func (i *desktopPoolSessionLifecycleActionsInactivityPtrType) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsInactivityOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsInactivityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInactivity)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSessionLifecycleActionsInactivityOutput() DesktopPoolSessionLifecycleActionsInactivityOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSessionLifecycleActionsInactivityOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutput() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o.ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(context.Background())
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DesktopPoolSessionLifecycleActionsInactivity) *DesktopPoolSessionLifecycleActionsInactivity {
+		return &v
+	}).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
+}
+
+// (Updatable) an inactivity action to be triggered
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsInactivity) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o DesktopPoolSessionLifecycleActionsInactivityOutput) GracePeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsInactivity) *int { return v.GracePeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type DesktopPoolSessionLifecycleActionsInactivityPtrOutput struct{ *pulumi.OutputState }
+
+func (DesktopPoolSessionLifecycleActionsInactivityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DesktopPoolSessionLifecycleActionsInactivity)(nil)).Elem()
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutput() DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) ToDesktopPoolSessionLifecycleActionsInactivityPtrOutputWithContext(ctx context.Context) DesktopPoolSessionLifecycleActionsInactivityPtrOutput {
+	return o
+}
+
+func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Elem() DesktopPoolSessionLifecycleActionsInactivityOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsInactivity) DesktopPoolSessionLifecycleActionsInactivity {
+		if v != nil {
+			return *v
+		}
+		var ret DesktopPoolSessionLifecycleActionsInactivity
+		return ret
+	}).(DesktopPoolSessionLifecycleActionsInactivityOutput)
+}
+
+// (Updatable) an inactivity action to be triggered
+func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsInactivity) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Action
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) GracePeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsInactivity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GracePeriodInMinutes
+	}).(pulumi.IntPtrOutput)
 }
 
 type DesktopPoolShapeConfig struct {
@@ -2793,7 +3267,7 @@ func (o GetDesktopPoolImageArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolI
 }
 
 type GetDesktopPoolNetworkConfiguration struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -2811,7 +3285,7 @@ type GetDesktopPoolNetworkConfigurationInput interface {
 }
 
 type GetDesktopPoolNetworkConfigurationArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -2868,7 +3342,7 @@ func (o GetDesktopPoolNetworkConfigurationOutput) ToGetDesktopPoolNetworkConfigu
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -2899,13 +3373,13 @@ func (o GetDesktopPoolNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDesktopPoolPrivateAccessDetail struct {
-	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 	EndpointFqdn string `pulumi:"endpointFqdn"`
 	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -2923,13 +3397,13 @@ type GetDesktopPoolPrivateAccessDetailInput interface {
 }
 
 type GetDesktopPoolPrivateAccessDetailArgs struct {
-	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
 	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -2986,7 +3460,7 @@ func (o GetDesktopPoolPrivateAccessDetailOutput) ToGetDesktopPoolPrivateAccessDe
 	return o
 }
 
-// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 func (o GetDesktopPoolPrivateAccessDetailOutput) EndpointFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.EndpointFqdn }).(pulumi.StringOutput)
 }
@@ -3001,7 +3475,7 @@ func (o GetDesktopPoolPrivateAccessDetailOutput) PrivateIp() pulumi.StringOutput
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -3029,6 +3503,328 @@ func (o GetDesktopPoolPrivateAccessDetailArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolPrivateAccessDetail {
 		return vs[0].([]GetDesktopPoolPrivateAccessDetail)[vs[1].(int)]
 	}).(GetDesktopPoolPrivateAccessDetailOutput)
+}
+
+type GetDesktopPoolSessionLifecycleAction struct {
+	// Action and grace period for disconnect
+	Disconnects []GetDesktopPoolSessionLifecycleActionDisconnect `pulumi:"disconnects"`
+	// Action and grace period for inactivity
+	Inactivities []GetDesktopPoolSessionLifecycleActionInactivity `pulumi:"inactivities"`
+}
+
+// GetDesktopPoolSessionLifecycleActionInput is an input type that accepts GetDesktopPoolSessionLifecycleActionArgs and GetDesktopPoolSessionLifecycleActionOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionArgs{...}
+type GetDesktopPoolSessionLifecycleActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionOutput() GetDesktopPoolSessionLifecycleActionOutput
+	ToGetDesktopPoolSessionLifecycleActionOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionArgs struct {
+	// Action and grace period for disconnect
+	Disconnects GetDesktopPoolSessionLifecycleActionDisconnectArrayInput `pulumi:"disconnects"`
+	// Action and grace period for inactivity
+	Inactivities GetDesktopPoolSessionLifecycleActionInactivityArrayInput `pulumi:"inactivities"`
+}
+
+func (GetDesktopPoolSessionLifecycleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionArgs) ToGetDesktopPoolSessionLifecycleActionOutput() GetDesktopPoolSessionLifecycleActionOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionArgs) ToGetDesktopPoolSessionLifecycleActionOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionOutput)
+}
+
+// GetDesktopPoolSessionLifecycleActionArrayInput is an input type that accepts GetDesktopPoolSessionLifecycleActionArray and GetDesktopPoolSessionLifecycleActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionArrayInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionArray{ GetDesktopPoolSessionLifecycleActionArgs{...} }
+type GetDesktopPoolSessionLifecycleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionArrayOutput() GetDesktopPoolSessionLifecycleActionArrayOutput
+	ToGetDesktopPoolSessionLifecycleActionArrayOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionArrayOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionArray []GetDesktopPoolSessionLifecycleActionInput
+
+func (GetDesktopPoolSessionLifecycleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionArray) ToGetDesktopPoolSessionLifecycleActionArrayOutput() GetDesktopPoolSessionLifecycleActionArrayOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionArray) ToGetDesktopPoolSessionLifecycleActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionArrayOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionOutput) ToGetDesktopPoolSessionLifecycleActionOutput() GetDesktopPoolSessionLifecycleActionOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionOutput) ToGetDesktopPoolSessionLifecycleActionOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionOutput {
+	return o
+}
+
+// Action and grace period for disconnect
+func (o GetDesktopPoolSessionLifecycleActionOutput) Disconnects() GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleAction) []GetDesktopPoolSessionLifecycleActionDisconnect {
+		return v.Disconnects
+	}).(GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput)
+}
+
+// Action and grace period for inactivity
+func (o GetDesktopPoolSessionLifecycleActionOutput) Inactivities() GetDesktopPoolSessionLifecycleActionInactivityArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleAction) []GetDesktopPoolSessionLifecycleActionInactivity {
+		return v.Inactivities
+	}).(GetDesktopPoolSessionLifecycleActionInactivityArrayOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionArrayOutput) ToGetDesktopPoolSessionLifecycleActionArrayOutput() GetDesktopPoolSessionLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionArrayOutput) ToGetDesktopPoolSessionLifecycleActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolSessionLifecycleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolSessionLifecycleAction {
+		return vs[0].([]GetDesktopPoolSessionLifecycleAction)[vs[1].(int)]
+	}).(GetDesktopPoolSessionLifecycleActionOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionDisconnect struct {
+	// an inactivity action to be triggered
+	Action string `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes int `pulumi:"gracePeriodInMinutes"`
+}
+
+// GetDesktopPoolSessionLifecycleActionDisconnectInput is an input type that accepts GetDesktopPoolSessionLifecycleActionDisconnectArgs and GetDesktopPoolSessionLifecycleActionDisconnectOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionDisconnectInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionDisconnectArgs{...}
+type GetDesktopPoolSessionLifecycleActionDisconnectInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionDisconnectOutput() GetDesktopPoolSessionLifecycleActionDisconnectOutput
+	ToGetDesktopPoolSessionLifecycleActionDisconnectOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionDisconnectOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionDisconnectArgs struct {
+	// an inactivity action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (GetDesktopPoolSessionLifecycleActionDisconnectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionDisconnectArgs) ToGetDesktopPoolSessionLifecycleActionDisconnectOutput() GetDesktopPoolSessionLifecycleActionDisconnectOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionDisconnectOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionDisconnectArgs) ToGetDesktopPoolSessionLifecycleActionDisconnectOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionDisconnectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionDisconnectOutput)
+}
+
+// GetDesktopPoolSessionLifecycleActionDisconnectArrayInput is an input type that accepts GetDesktopPoolSessionLifecycleActionDisconnectArray and GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionDisconnectArrayInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionDisconnectArray{ GetDesktopPoolSessionLifecycleActionDisconnectArgs{...} }
+type GetDesktopPoolSessionLifecycleActionDisconnectArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput
+	ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionDisconnectArray []GetDesktopPoolSessionLifecycleActionDisconnectInput
+
+func (GetDesktopPoolSessionLifecycleActionDisconnectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionDisconnectArray) ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionDisconnectArray) ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionDisconnectOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionDisconnectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionDisconnectOutput) ToGetDesktopPoolSessionLifecycleActionDisconnectOutput() GetDesktopPoolSessionLifecycleActionDisconnectOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionDisconnectOutput) ToGetDesktopPoolSessionLifecycleActionDisconnectOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionDisconnectOutput {
+	return o
+}
+
+// an inactivity action to be triggered
+func (o GetDesktopPoolSessionLifecycleActionDisconnectOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleActionDisconnect) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o GetDesktopPoolSessionLifecycleActionDisconnectOutput) GracePeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleActionDisconnect) int { return v.GracePeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput) ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput) ToGetDesktopPoolSessionLifecycleActionDisconnectArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolSessionLifecycleActionDisconnectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolSessionLifecycleActionDisconnect {
+		return vs[0].([]GetDesktopPoolSessionLifecycleActionDisconnect)[vs[1].(int)]
+	}).(GetDesktopPoolSessionLifecycleActionDisconnectOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionInactivity struct {
+	// an inactivity action to be triggered
+	Action string `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes int `pulumi:"gracePeriodInMinutes"`
+}
+
+// GetDesktopPoolSessionLifecycleActionInactivityInput is an input type that accepts GetDesktopPoolSessionLifecycleActionInactivityArgs and GetDesktopPoolSessionLifecycleActionInactivityOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionInactivityInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionInactivityArgs{...}
+type GetDesktopPoolSessionLifecycleActionInactivityInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionInactivityOutput() GetDesktopPoolSessionLifecycleActionInactivityOutput
+	ToGetDesktopPoolSessionLifecycleActionInactivityOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionInactivityOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionInactivityArgs struct {
+	// an inactivity action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (GetDesktopPoolSessionLifecycleActionInactivityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionInactivityArgs) ToGetDesktopPoolSessionLifecycleActionInactivityOutput() GetDesktopPoolSessionLifecycleActionInactivityOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionInactivityOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionInactivityArgs) ToGetDesktopPoolSessionLifecycleActionInactivityOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionInactivityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionInactivityOutput)
+}
+
+// GetDesktopPoolSessionLifecycleActionInactivityArrayInput is an input type that accepts GetDesktopPoolSessionLifecycleActionInactivityArray and GetDesktopPoolSessionLifecycleActionInactivityArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolSessionLifecycleActionInactivityArrayInput` via:
+//
+//	GetDesktopPoolSessionLifecycleActionInactivityArray{ GetDesktopPoolSessionLifecycleActionInactivityArgs{...} }
+type GetDesktopPoolSessionLifecycleActionInactivityArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolSessionLifecycleActionInactivityArrayOutput
+	ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutputWithContext(context.Context) GetDesktopPoolSessionLifecycleActionInactivityArrayOutput
+}
+
+type GetDesktopPoolSessionLifecycleActionInactivityArray []GetDesktopPoolSessionLifecycleActionInactivityInput
+
+func (GetDesktopPoolSessionLifecycleActionInactivityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (i GetDesktopPoolSessionLifecycleActionInactivityArray) ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolSessionLifecycleActionInactivityArrayOutput {
+	return i.ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolSessionLifecycleActionInactivityArray) ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionInactivityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolSessionLifecycleActionInactivityArrayOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionInactivityOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionInactivityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionInactivityOutput) ToGetDesktopPoolSessionLifecycleActionInactivityOutput() GetDesktopPoolSessionLifecycleActionInactivityOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionInactivityOutput) ToGetDesktopPoolSessionLifecycleActionInactivityOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionInactivityOutput {
+	return o
+}
+
+// an inactivity action to be triggered
+func (o GetDesktopPoolSessionLifecycleActionInactivityOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleActionInactivity) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o GetDesktopPoolSessionLifecycleActionInactivityOutput) GracePeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDesktopPoolSessionLifecycleActionInactivity) int { return v.GracePeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetDesktopPoolSessionLifecycleActionInactivityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolSessionLifecycleActionInactivityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (o GetDesktopPoolSessionLifecycleActionInactivityArrayOutput) ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolSessionLifecycleActionInactivityArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionInactivityArrayOutput) ToGetDesktopPoolSessionLifecycleActionInactivityArrayOutputWithContext(ctx context.Context) GetDesktopPoolSessionLifecycleActionInactivityArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolSessionLifecycleActionInactivityArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolSessionLifecycleActionInactivityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolSessionLifecycleActionInactivity {
+		return vs[0].([]GetDesktopPoolSessionLifecycleActionInactivity)[vs[1].(int)]
+	}).(GetDesktopPoolSessionLifecycleActionInactivityOutput)
 }
 
 type GetDesktopPoolShapeConfig struct {
@@ -3656,6 +4452,8 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// Action to be triggered on inactivity or disconnect
+	SessionLifecycleActions []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
 	ShapeConfigs []GetDesktopPoolsDesktopPoolCollectionItemShapeConfig `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
@@ -3726,6 +4524,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput `pulumi:"privateAccessDetails"`
+	// Action to be triggered on inactivity or disconnect
+	SessionLifecycleActions GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
 	ShapeConfigs GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
@@ -3897,6 +4697,13 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) PrivateAccessDetails() G
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
 		return v.PrivateAccessDetails
 	}).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput)
+}
+
+// Action to be triggered on inactivity or disconnect
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) SessionLifecycleActions() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction {
+		return v.SessionLifecycleActions
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput)
 }
 
 // The shape configuration used for each desktop compute instance in the desktop pool.
@@ -4568,7 +5375,7 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput) Index(i pulumi
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -4586,7 +5393,7 @@ type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationInput interface
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -4643,7 +5450,7 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) ToGe
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4680,7 +5487,7 @@ type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -4704,7 +5511,7 @@ type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -4776,7 +5583,7 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) Priva
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4804,6 +5611,336 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
 		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail)[vs[1].(int)]
 	}).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction struct {
+	// Action and grace period for disconnect
+	Disconnects []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect `pulumi:"disconnects"`
+	// Action and grace period for inactivity
+	Inactivities []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity `pulumi:"inactivities"`
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs{...}
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs struct {
+	// Action and grace period for disconnect
+	Disconnects GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayInput `pulumi:"disconnects"`
+	// Action and grace period for inactivity
+	Inactivities GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayInput `pulumi:"inactivities"`
+}
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput)
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray{ GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs{...} }
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInput
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput {
+	return o
+}
+
+// Action and grace period for disconnect
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput) Disconnects() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction) []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect {
+		return v.Disconnects
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput)
+}
+
+// Action and grace period for inactivity
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput) Inactivities() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction) []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity {
+		return v.Inactivities
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction {
+		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction)[vs[1].(int)]
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect struct {
+	// an inactivity action to be triggered
+	Action string `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes int `pulumi:"gracePeriodInMinutes"`
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs{...}
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs struct {
+	// an inactivity action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput)
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray{ GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs{...} }
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectInput
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput {
+	return o
+}
+
+// an inactivity action to be triggered
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput) GracePeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect) int {
+		return v.GracePeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect {
+		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnect)[vs[1].(int)]
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity struct {
+	// an inactivity action to be triggered
+	Action string `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes int `pulumi:"gracePeriodInMinutes"`
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs{...}
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs struct {
+	// an inactivity action to be triggered
+	Action pulumi.StringInput `pulumi:"action"`
+	// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+	GracePeriodInMinutes pulumi.IntInput `pulumi:"gracePeriodInMinutes"`
+}
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput)
+}
+
+// GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayInput is an input type that accepts GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray and GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput values.
+// You can construct a concrete instance of `GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayInput` via:
+//
+//	GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray{ GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs{...} }
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput
+	ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutputWithContext(context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityInput
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput {
+	return i.ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput {
+	return o
+}
+
+// an inactivity action to be triggered
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput) GracePeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity) int {
+		return v.GracePeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity)(nil)).Elem()
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput() GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput) ToGetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutputWithContext(ctx context.Context) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput {
+	return o
+}
+
+func (o GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity {
+		return vs[0].([]GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivity)[vs[1].(int)]
+	}).(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput)
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemShapeConfig struct {
@@ -5411,6 +6548,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolNetworkConfigurationPtrInput)(nil)).Elem(), DesktopPoolNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolPrivateAccessDetailsInput)(nil)).Elem(), DesktopPoolPrivateAccessDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolPrivateAccessDetailsPtrInput)(nil)).Elem(), DesktopPoolPrivateAccessDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsPtrInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsDisconnectInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsDisconnectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsDisconnectPtrInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsDisconnectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInactivityInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsInactivityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolSessionLifecycleActionsInactivityPtrInput)(nil)).Elem(), DesktopPoolSessionLifecycleActionsInactivityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DesktopPoolShapeConfigPtrInput)(nil)).Elem(), DesktopPoolShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopDevicePolicyInput)(nil)).Elem(), GetDesktopDevicePolicyArgs{})
@@ -5439,6 +6582,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolNetworkConfigurationArrayInput)(nil)).Elem(), GetDesktopPoolNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolPrivateAccessDetailInput)(nil)).Elem(), GetDesktopPoolPrivateAccessDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolPrivateAccessDetailArrayInput)(nil)).Elem(), GetDesktopPoolPrivateAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionArrayInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionDisconnectInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionDisconnectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionDisconnectArrayInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionDisconnectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionInactivityInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionInactivityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolSessionLifecycleActionInactivityArrayInput)(nil)).Elem(), GetDesktopPoolSessionLifecycleActionInactivityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolShapeConfigInput)(nil)).Elem(), GetDesktopPoolShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolShapeConfigArrayInput)(nil)).Elem(), GetDesktopPoolShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolVolumesDesktopPoolVolumeCollectionInput)(nil)).Elem(), GetDesktopPoolVolumesDesktopPoolVolumeCollectionArgs{})
@@ -5465,6 +6614,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfigInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayInput)(nil)).Elem(), GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopPoolsFilterInput)(nil)).Elem(), GetDesktopPoolsFilterArgs{})
@@ -5489,6 +6644,12 @@ func init() {
 	pulumi.RegisterOutputType(DesktopPoolNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(DesktopPoolPrivateAccessDetailsOutput{})
 	pulumi.RegisterOutputType(DesktopPoolPrivateAccessDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsPtrOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsDisconnectOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsInactivityOutput{})
+	pulumi.RegisterOutputType(DesktopPoolSessionLifecycleActionsInactivityPtrOutput{})
 	pulumi.RegisterOutputType(DesktopPoolShapeConfigOutput{})
 	pulumi.RegisterOutputType(DesktopPoolShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetDesktopDevicePolicyOutput{})
@@ -5517,6 +6678,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopPoolNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolPrivateAccessDetailOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolPrivateAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionDisconnectOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionDisconnectArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionInactivityOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolSessionLifecycleActionInactivityArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolVolumesDesktopPoolVolumeCollectionOutput{})
@@ -5543,6 +6710,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityOutput{})
+	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopPoolsFilterOutput{})

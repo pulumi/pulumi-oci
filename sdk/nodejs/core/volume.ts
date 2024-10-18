@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *     blockVolumeReplicas: [{
  *         availabilityDomain: volumeBlockVolumeReplicasAvailabilityDomain,
  *         displayName: volumeBlockVolumeReplicasDisplayName,
+ *         xrrKmsKeyId: testKey.id,
  *     }],
  *     clusterPlacementGroupId: testGroup.id,
  *     definedTags: {
@@ -55,10 +56,14 @@ import * as utilities from "../utilities";
  *     sizeInGbs: volumeSizeInGbs,
  *     sizeInMbs: volumeSizeInMbs,
  *     sourceDetails: {
- *         id: volumeSourceDetailsId,
  *         type: volumeSourceDetailsType,
+ *         changeBlockSizeInBytes: volumeSourceDetailsChangeBlockSizeInBytes,
+ *         firstBackupId: testBackup.id,
+ *         id: volumeSourceDetailsId,
+ *         secondBackupId: testBackup.id,
  *     },
  *     vpusPerGb: volumeVpusPerGb,
+ *     xrcKmsKeyId: testKey.id,
  *     blockVolumeReplicasDeletion: true,
  * });
  * ```
@@ -159,11 +164,14 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly sizeInGbs!: pulumi.Output<string>;
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
     public readonly sizeInMbs!: pulumi.Output<string>;
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     */
     public readonly sourceDetails!: pulumi.Output<outputs.Core.VolumeSourceDetails>;
     /**
      * The current state of a volume.
@@ -191,6 +199,14 @@ export class Volume extends pulumi.CustomResource {
      * Allowed values:
      */
     public readonly vpusPerGb!: pulumi.Output<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly xrcKmsKeyId!: pulumi.Output<string>;
 
     /**
      * Create a Volume resource with the given unique name, arguments, and options.
@@ -228,6 +244,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["volumeBackupId"] = state ? state.volumeBackupId : undefined;
             resourceInputs["volumeGroupId"] = state ? state.volumeGroupId : undefined;
             resourceInputs["vpusPerGb"] = state ? state.vpusPerGb : undefined;
+            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
         } else {
             const args = argsOrState as VolumeArgs | undefined;
             if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
@@ -253,6 +270,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["volumeBackupId"] = args ? args.volumeBackupId : undefined;
             resourceInputs["vpusPerGb"] = args ? args.vpusPerGb : undefined;
+            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
             resourceInputs["autoTunedVpusPerGb"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -329,11 +347,14 @@ export interface VolumeState {
      */
     sizeInGbs?: pulumi.Input<string>;
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
     sizeInMbs?: pulumi.Input<string>;
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     */
     sourceDetails?: pulumi.Input<inputs.Core.VolumeSourceDetails>;
     /**
      * The current state of a volume.
@@ -361,6 +382,14 @@ export interface VolumeState {
      * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }
 
 /**
@@ -419,11 +448,14 @@ export interface VolumeArgs {
      */
     sizeInGbs?: pulumi.Input<string>;
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
     sizeInMbs?: pulumi.Input<string>;
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     */
     sourceDetails?: pulumi.Input<inputs.Core.VolumeSourceDetails>;
     /**
      * The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
@@ -435,4 +467,12 @@ export interface VolumeArgs {
      * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }

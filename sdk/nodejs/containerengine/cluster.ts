@@ -55,6 +55,24 @@ import * as utilities from "../utilities";
  *             podsCidr: clusterOptionsKubernetesNetworkConfigPodsCidr,
  *             servicesCidr: clusterOptionsKubernetesNetworkConfigServicesCidr,
  *         },
+ *         openIdConnectTokenAuthenticationConfig: {
+ *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
+ *             caCertificate: clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
+ *             clientId: testClient.id,
+ *             groupsClaim: clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsClaim,
+ *             groupsPrefix: clusterOptionsOpenIdConnectTokenAuthenticationConfigGroupsPrefix,
+ *             issuerUrl: clusterOptionsOpenIdConnectTokenAuthenticationConfigIssuerUrl,
+ *             requiredClaims: [{
+ *                 key: clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsKey,
+ *                 value: clusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsValue,
+ *             }],
+ *             signingAlgorithms: clusterOptionsOpenIdConnectTokenAuthenticationConfigSigningAlgorithms,
+ *             usernameClaim: clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernameClaim,
+ *             usernamePrefix: clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix,
+ *         },
+ *         openIdConnectDiscovery: {
+ *             isOpenIdConnectDiscoveryEnabled: clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled,
+ *         },
  *         persistentVolumeConfig: {
  *             definedTags: {
  *                 "Operations.CostCenter": "42",
@@ -166,6 +184,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     */
+    public /*out*/ readonly openIdConnectDiscoveryEndpoint!: pulumi.Output<string>;
+    /**
      * (Updatable) Optional attributes for the cluster.
      */
     public readonly options!: pulumi.Output<outputs.ContainerEngine.ClusterOptions>;
@@ -212,6 +234,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["metadatas"] = state ? state.metadatas : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["openIdConnectDiscoveryEndpoint"] = state ? state.openIdConnectDiscoveryEndpoint : undefined;
             resourceInputs["options"] = state ? state.options : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -243,6 +266,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["endpoints"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
+            resourceInputs["openIdConnectDiscoveryEndpoint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -306,6 +330,10 @@ export interface ClusterState {
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
     name?: pulumi.Input<string>;
+    /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     */
+    openIdConnectDiscoveryEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */

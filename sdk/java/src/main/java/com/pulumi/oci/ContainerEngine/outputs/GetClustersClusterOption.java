@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionAddOn;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionAdmissionControllerOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionKubernetesNetworkConfig;
+import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionOpenIdConnectDiscovery;
+import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionPersistentVolumeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOptionServiceLbConfig;
 import java.lang.String;
@@ -31,6 +33,16 @@ public final class GetClustersClusterOption {
      * 
      */
     private List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+    /**
+     * @return The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    private List<GetClustersClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
+    /**
+     * @return The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    private List<GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
     /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
@@ -70,6 +82,20 @@ public final class GetClustersClusterOption {
         return this.kubernetesNetworkConfigs;
     }
     /**
+     * @return The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    public List<GetClustersClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries() {
+        return this.openIdConnectDiscoveries;
+    }
+    /**
+     * @return The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    public List<GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs() {
+        return this.openIdConnectTokenAuthenticationConfigs;
+    }
+    /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
      */
@@ -103,6 +129,8 @@ public final class GetClustersClusterOption {
         private List<GetClustersClusterOptionAddOn> addOns;
         private List<GetClustersClusterOptionAdmissionControllerOption> admissionControllerOptions;
         private List<GetClustersClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+        private List<GetClustersClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
+        private List<GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
         private List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs;
         private List<GetClustersClusterOptionServiceLbConfig> serviceLbConfigs;
         private List<String> serviceLbSubnetIds;
@@ -112,6 +140,8 @@ public final class GetClustersClusterOption {
     	      this.addOns = defaults.addOns;
     	      this.admissionControllerOptions = defaults.admissionControllerOptions;
     	      this.kubernetesNetworkConfigs = defaults.kubernetesNetworkConfigs;
+    	      this.openIdConnectDiscoveries = defaults.openIdConnectDiscoveries;
+    	      this.openIdConnectTokenAuthenticationConfigs = defaults.openIdConnectTokenAuthenticationConfigs;
     	      this.persistentVolumeConfigs = defaults.persistentVolumeConfigs;
     	      this.serviceLbConfigs = defaults.serviceLbConfigs;
     	      this.serviceLbSubnetIds = defaults.serviceLbSubnetIds;
@@ -151,6 +181,28 @@ public final class GetClustersClusterOption {
             return kubernetesNetworkConfigs(List.of(kubernetesNetworkConfigs));
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveries(List<GetClustersClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries) {
+            if (openIdConnectDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "openIdConnectDiscoveries");
+            }
+            this.openIdConnectDiscoveries = openIdConnectDiscoveries;
+            return this;
+        }
+        public Builder openIdConnectDiscoveries(GetClustersClusterOptionOpenIdConnectDiscovery... openIdConnectDiscoveries) {
+            return openIdConnectDiscoveries(List.of(openIdConnectDiscoveries));
+        }
+        @CustomType.Setter
+        public Builder openIdConnectTokenAuthenticationConfigs(List<GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs) {
+            if (openIdConnectTokenAuthenticationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOption", "openIdConnectTokenAuthenticationConfigs");
+            }
+            this.openIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
+            return this;
+        }
+        public Builder openIdConnectTokenAuthenticationConfigs(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig... openIdConnectTokenAuthenticationConfigs) {
+            return openIdConnectTokenAuthenticationConfigs(List.of(openIdConnectTokenAuthenticationConfigs));
+        }
+        @CustomType.Setter
         public Builder persistentVolumeConfigs(List<GetClustersClusterOptionPersistentVolumeConfig> persistentVolumeConfigs) {
             if (persistentVolumeConfigs == null) {
               throw new MissingRequiredPropertyException("GetClustersClusterOption", "persistentVolumeConfigs");
@@ -188,6 +240,8 @@ public final class GetClustersClusterOption {
             _resultValue.addOns = addOns;
             _resultValue.admissionControllerOptions = admissionControllerOptions;
             _resultValue.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            _resultValue.openIdConnectDiscoveries = openIdConnectDiscoveries;
+            _resultValue.openIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
             _resultValue.persistentVolumeConfigs = persistentVolumeConfigs;
             _resultValue.serviceLbConfigs = serviceLbConfigs;
             _resultValue.serviceLbSubnetIds = serviceLbSubnetIds;

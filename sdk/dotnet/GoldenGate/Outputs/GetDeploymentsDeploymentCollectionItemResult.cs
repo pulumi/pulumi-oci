@@ -14,6 +14,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentsDeploymentCollectionItemResult
     {
         /// <summary>
+        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
         public readonly string CompartmentId;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Specifies whether the deployment is used in a production or development/testing environment.
+        /// </summary>
+        public readonly string EnvironmentType;
+        /// <summary>
         /// A filter to return only the resources that match the 'fqdn' given.
         /// </summary>
         public readonly string Fqdn;
@@ -83,7 +91,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool IsPublic;
         /// <summary>
-        /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        /// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
         public readonly bool IsStorageUtilizationLimitExceeded;
         /// <summary>
@@ -181,6 +189,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
+            string category,
+
             string compartmentId,
 
             int cpuCoreCount,
@@ -198,6 +208,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string description,
 
             string displayName,
+
+            string environmentType,
 
             string fqdn,
 
@@ -265,6 +277,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeUpgradeRequired)
         {
+            Category = category;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             DefinedTags = definedTags;
@@ -274,6 +287,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             DeploymentUrl = deploymentUrl;
             Description = description;
             DisplayName = displayName;
+            EnvironmentType = environmentType;
             Fqdn = fqdn;
             FreeformTags = freeformTags;
             Id = id;

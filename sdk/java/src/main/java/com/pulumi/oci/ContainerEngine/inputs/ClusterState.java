@@ -219,6 +219,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    @Import(name="openIdConnectDiscoveryEndpoint")
+    private @Nullable Output<String> openIdConnectDiscoveryEndpoint;
+
+    /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    public Optional<Output<String>> openIdConnectDiscoveryEndpoint() {
+        return Optional.ofNullable(this.openIdConnectDiscoveryEndpoint);
+    }
+
+    /**
      * (Updatable) Optional attributes for the cluster.
      * 
      */
@@ -300,6 +315,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.metadatas = $.metadatas;
         this.name = $.name;
+        this.openIdConnectDiscoveryEndpoint = $.openIdConnectDiscoveryEndpoint;
         this.options = $.options;
         this.state = $.state;
         this.type = $.type;
@@ -635,6 +651,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param openIdConnectDiscoveryEndpoint The cluster-specific OpenID Connect Discovery endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscoveryEndpoint(@Nullable Output<String> openIdConnectDiscoveryEndpoint) {
+            $.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            return this;
+        }
+
+        /**
+         * @param openIdConnectDiscoveryEndpoint The cluster-specific OpenID Connect Discovery endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscoveryEndpoint(String openIdConnectDiscoveryEndpoint) {
+            return openIdConnectDiscoveryEndpoint(Output.of(openIdConnectDiscoveryEndpoint));
         }
 
         /**

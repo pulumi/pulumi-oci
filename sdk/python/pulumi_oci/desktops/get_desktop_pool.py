@@ -27,7 +27,7 @@ class GetDesktopPoolResult:
     """
     A collection of values returned by getDesktopPool.
     """
-    def __init__(__self__, active_desktops=None, are_privileged_users=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
+    def __init__(__self__, active_desktops=None, are_privileged_users=None, availability_domain=None, availability_policies=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
         if active_desktops and not isinstance(active_desktops, int):
             raise TypeError("Expected argument 'active_desktops' to be a int")
         pulumi.set(__self__, "active_desktops", active_desktops)
@@ -85,6 +85,9 @@ class GetDesktopPoolResult:
         if private_access_details and not isinstance(private_access_details, list):
             raise TypeError("Expected argument 'private_access_details' to be a list")
         pulumi.set(__self__, "private_access_details", private_access_details)
+        if session_lifecycle_actions and not isinstance(session_lifecycle_actions, list):
+            raise TypeError("Expected argument 'session_lifecycle_actions' to be a list")
+        pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         if shape_configs and not isinstance(shape_configs, list):
             raise TypeError("Expected argument 'shape_configs' to be a list")
         pulumi.set(__self__, "shape_configs", shape_configs)
@@ -266,6 +269,14 @@ class GetDesktopPoolResult:
         return pulumi.get(self, "private_access_details")
 
     @property
+    @pulumi.getter(name="sessionLifecycleActions")
+    def session_lifecycle_actions(self) -> Sequence['outputs.GetDesktopPoolSessionLifecycleActionResult']:
+        """
+        Action to be triggered on inactivity or disconnect
+        """
+        return pulumi.get(self, "session_lifecycle_actions")
+
+    @property
     @pulumi.getter(name="shapeConfigs")
     def shape_configs(self) -> Sequence['outputs.GetDesktopPoolShapeConfigResult']:
         """
@@ -342,6 +353,7 @@ class GetDesktopPoolResult:
     def use_dedicated_vm_host(self) -> str:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
+        ---
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 
@@ -371,6 +383,7 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
             network_configurations=self.network_configurations,
             nsg_ids=self.nsg_ids,
             private_access_details=self.private_access_details,
+            session_lifecycle_actions=self.session_lifecycle_actions,
             shape_configs=self.shape_configs,
             shape_name=self.shape_name,
             standby_size=self.standby_size,
@@ -427,6 +440,7 @@ def get_desktop_pool(desktop_pool_id: Optional[str] = None,
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_access_details=pulumi.get(__ret__, 'private_access_details'),
+        session_lifecycle_actions=pulumi.get(__ret__, 'session_lifecycle_actions'),
         shape_configs=pulumi.get(__ret__, 'shape_configs'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         standby_size=pulumi.get(__ret__, 'standby_size'),
@@ -480,6 +494,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[str]] = None,
         network_configurations=pulumi.get(__response__, 'network_configurations'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_access_details=pulumi.get(__response__, 'private_access_details'),
+        session_lifecycle_actions=pulumi.get(__response__, 'session_lifecycle_actions'),
         shape_configs=pulumi.get(__response__, 'shape_configs'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         standby_size=pulumi.get(__response__, 'standby_size'),

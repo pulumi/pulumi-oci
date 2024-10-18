@@ -14,10 +14,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-        /// For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets a list of all rrsets in the specified zone.
+        /// 
+        /// You can optionally filter the results using the listed parameters. When the zone name
+        /// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+        /// the viewId parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -49,10 +50,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-        /// For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets a list of all rrsets in the specified zone.
+        /// 
+        /// You can optionally filter the results using the listed parameters. When the zone name
+        /// is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+        /// the viewId parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -118,7 +120,7 @@ namespace Pulumi.Oci.Dns
         public string? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public string? ViewId { get; set; }
@@ -170,7 +172,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public Input<string>? ViewId { get; set; }

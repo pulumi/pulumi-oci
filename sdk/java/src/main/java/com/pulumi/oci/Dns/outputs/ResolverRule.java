@@ -34,7 +34,7 @@ public final class ResolverRule {
      */
     private @Nullable List<String> qnameCoverConditions;
     /**
-     * @return (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+     * @return (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
      * 
      */
     private String sourceEndpointName;
@@ -70,7 +70,7 @@ public final class ResolverRule {
         return this.qnameCoverConditions == null ? List.of() : this.qnameCoverConditions;
     }
     /**
-     * @return (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+     * @return (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
      * 
      */
     public String sourceEndpointName() {

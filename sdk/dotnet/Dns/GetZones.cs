@@ -14,10 +14,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all zones in the specified compartment. The collection
-        /// can be filtered by name, time created, scope, associated view, and zone type.
-        /// Additionally, for Private DNS, the `scope` query parameter is required when 
-        /// listing private zones.
+        /// Gets a list of all zones in the specified compartment.
+        /// 
+        /// The collection can be filtered by name, time created, scope, associated view, and zone type.
+        /// Filtering by view is only supported for private zones.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -32,6 +33,7 @@ namespace Pulumi.Oci.Dns
         ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         DnssecState = zoneDnssecState,
         ///         Name = zoneName,
         ///         NameContains = zoneNameContains,
         ///         Scope = zoneScope,
@@ -52,10 +54,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all zones in the specified compartment. The collection
-        /// can be filtered by name, time created, scope, associated view, and zone type.
-        /// Additionally, for Private DNS, the `scope` query parameter is required when 
-        /// listing private zones.
+        /// Gets a list of all zones in the specified compartment.
+        /// 
+        /// The collection can be filtered by name, time created, scope, associated view, and zone type.
+        /// Filtering by view is only supported for private zones.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -70,6 +73,7 @@ namespace Pulumi.Oci.Dns
         ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         DnssecState = zoneDnssecState,
         ///         Name = zoneName,
         ///         NameContains = zoneNameContains,
         ///         Scope = zoneScope,
@@ -97,6 +101,12 @@ namespace Pulumi.Oci.Dns
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// Search for zones that have the given `DnssecState`.
+        /// </summary>
+        [Input("dnssecState")]
+        public string? DnssecState { get; set; }
+
         [Input("filters")]
         private List<Inputs.GetZonesFilterArgs>? _filters;
         public List<Inputs.GetZonesFilterArgs> Filters
@@ -118,8 +128,7 @@ namespace Pulumi.Oci.Dns
         public string? NameContains { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-        /// for zones in the global DNS and `PRIVATE` when listing private zones.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
@@ -186,6 +195,12 @@ namespace Pulumi.Oci.Dns
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// Search for zones that have the given `DnssecState`.
+        /// </summary>
+        [Input("dnssecState")]
+        public Input<string>? DnssecState { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetZonesFilterInputArgs>? _filters;
         public InputList<Inputs.GetZonesFilterInputArgs> Filters
@@ -207,8 +222,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? NameContains { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-        /// for zones in the global DNS and `PRIVATE` when listing private zones.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -275,6 +289,10 @@ namespace Pulumi.Oci.Dns
         /// The OCID of the compartment containing the zone.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The state of DNSSEC on the zone.
+        /// </summary>
+        public readonly string? DnssecState;
         public readonly ImmutableArray<Outputs.GetZonesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -318,6 +336,8 @@ namespace Pulumi.Oci.Dns
         private GetZonesResult(
             string compartmentId,
 
+            string? dnssecState,
+
             ImmutableArray<Outputs.GetZonesFilterResult> filters,
 
             string id,
@@ -347,6 +367,7 @@ namespace Pulumi.Oci.Dns
             ImmutableArray<Outputs.GetZonesZoneResult> zones)
         {
             CompartmentId = compartmentId;
+            DnssecState = dnssecState;
             Filters = filters;
             Id = id;
             Name = name;

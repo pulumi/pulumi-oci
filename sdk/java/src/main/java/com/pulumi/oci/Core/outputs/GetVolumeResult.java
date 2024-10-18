@@ -103,6 +103,10 @@ public final class GetVolumeResult {
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
     private String sizeInMbs;
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     private List<GetVolumeSourceDetail> sourceDetails;
     /**
      * @return The current state of a volume.
@@ -131,6 +135,7 @@ public final class GetVolumeResult {
      * 
      */
     private String vpusPerGb;
+    private String xrcKmsKeyId;
 
     private GetVolumeResult() {}
     /**
@@ -254,6 +259,10 @@ public final class GetVolumeResult {
     public String sizeInMbs() {
         return this.sizeInMbs;
     }
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     public List<GetVolumeSourceDetail> sourceDetails() {
         return this.sourceDetails;
     }
@@ -298,6 +307,9 @@ public final class GetVolumeResult {
     public String vpusPerGb() {
         return this.vpusPerGb;
     }
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -333,6 +345,7 @@ public final class GetVolumeResult {
         private String volumeGroupId;
         private String volumeId;
         private String vpusPerGb;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetVolumeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -361,6 +374,7 @@ public final class GetVolumeResult {
     	      this.volumeGroupId = defaults.volumeGroupId;
     	      this.volumeId = defaults.volumeId;
     	      this.vpusPerGb = defaults.vpusPerGb;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -572,6 +586,14 @@ public final class GetVolumeResult {
             this.vpusPerGb = vpusPerGb;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeResult", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetVolumeResult build() {
             final var _resultValue = new GetVolumeResult();
             _resultValue.autoTunedVpusPerGb = autoTunedVpusPerGb;
@@ -599,6 +621,7 @@ public final class GetVolumeResult {
             _resultValue.volumeGroupId = volumeGroupId;
             _resultValue.volumeId = volumeId;
             _resultValue.vpusPerGb = vpusPerGb;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

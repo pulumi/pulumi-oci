@@ -77,6 +77,7 @@ import javax.annotation.Nullable;
  *             .blockVolumeReplicas(VolumeBlockVolumeReplicaArgs.builder()
  *                 .availabilityDomain(volumeBlockVolumeReplicasAvailabilityDomain)
  *                 .displayName(volumeBlockVolumeReplicasDisplayName)
+ *                 .xrrKmsKeyId(testKey.id())
  *                 .build())
  *             .clusterPlacementGroupId(testGroup.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -87,10 +88,14 @@ import javax.annotation.Nullable;
  *             .sizeInGbs(volumeSizeInGbs)
  *             .sizeInMbs(volumeSizeInMbs)
  *             .sourceDetails(VolumeSourceDetailsArgs.builder()
- *                 .id(volumeSourceDetailsId)
  *                 .type(volumeSourceDetailsType)
+ *                 .changeBlockSizeInBytes(volumeSourceDetailsChangeBlockSizeInBytes)
+ *                 .firstBackupId(testBackup.id())
+ *                 .id(volumeSourceDetailsId)
+ *                 .secondBackupId(testBackup.id())
  *                 .build())
  *             .vpusPerGb(volumeVpusPerGb)
+ *             .xrcKmsKeyId(testKey.id())
  *             .blockVolumeReplicasDeletion(true)
  *             .build());
  * 
@@ -318,7 +323,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
         return this.sizeInGbs;
     }
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -329,15 +334,23 @@ public class Volume extends com.pulumi.resources.CustomResource {
     private Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      * 
      */
     public Output<String> sizeInMbs() {
         return this.sizeInMbs;
     }
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     @Export(name="sourceDetails", refs={VolumeSourceDetails.class}, tree="[0]")
     private Output<VolumeSourceDetails> sourceDetails;
 
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     public Output<VolumeSourceDetails> sourceDetails() {
         return this.sourceDetails;
     }
@@ -428,6 +441,26 @@ public class Volume extends com.pulumi.resources.CustomResource {
      */
     public Output<String> vpusPerGb() {
         return this.vpusPerGb;
+    }
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="xrcKmsKeyId", refs={String.class}, tree="[0]")
+    private Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
     }
 
     /**

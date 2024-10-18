@@ -7,30 +7,68 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class BootVolumeSourceDetails {
     /**
+     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    private @Nullable String changeBlockSizeInBytes;
+    /**
+     * @return The OCID of the first boot volume backup.
+     * 
+     */
+    private @Nullable String firstBackupId;
+    /**
      * @return The OCID of the boot volume replica.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
-     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+     * @return The OCID of the second boot volume backup.
+     * 
+     */
+    private @Nullable String secondBackupId;
+    /**
+     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     private String type;
 
     private BootVolumeSourceDetails() {}
     /**
+     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    public Optional<String> changeBlockSizeInBytes() {
+        return Optional.ofNullable(this.changeBlockSizeInBytes);
+    }
+    /**
+     * @return The OCID of the first boot volume backup.
+     * 
+     */
+    public Optional<String> firstBackupId() {
+        return Optional.ofNullable(this.firstBackupId);
+    }
+    /**
      * @return The OCID of the boot volume replica.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
-     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+     * @return The OCID of the second boot volume backup.
+     * 
+     */
+    public Optional<String> secondBackupId() {
+        return Optional.ofNullable(this.secondBackupId);
+    }
+    /**
+     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     public String type() {
@@ -46,21 +84,43 @@ public final class BootVolumeSourceDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String changeBlockSizeInBytes;
+        private @Nullable String firstBackupId;
+        private @Nullable String id;
+        private @Nullable String secondBackupId;
         private String type;
         public Builder() {}
         public Builder(BootVolumeSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.changeBlockSizeInBytes = defaults.changeBlockSizeInBytes;
+    	      this.firstBackupId = defaults.firstBackupId;
     	      this.id = defaults.id;
+    	      this.secondBackupId = defaults.secondBackupId;
     	      this.type = defaults.type;
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("BootVolumeSourceDetails", "id");
-            }
+        public Builder changeBlockSizeInBytes(@Nullable String changeBlockSizeInBytes) {
+
+            this.changeBlockSizeInBytes = changeBlockSizeInBytes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder firstBackupId(@Nullable String firstBackupId) {
+
+            this.firstBackupId = firstBackupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder id(@Nullable String id) {
+
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secondBackupId(@Nullable String secondBackupId) {
+
+            this.secondBackupId = secondBackupId;
             return this;
         }
         @CustomType.Setter
@@ -73,7 +133,10 @@ public final class BootVolumeSourceDetails {
         }
         public BootVolumeSourceDetails build() {
             final var _resultValue = new BootVolumeSourceDetails();
+            _resultValue.changeBlockSizeInBytes = changeBlockSizeInBytes;
+            _resultValue.firstBackupId = firstBackupId;
             _resultValue.id = id;
+            _resultValue.secondBackupId = secondBackupId;
             _resultValue.type = type;
             return _resultValue;
         }

@@ -14,9 +14,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets information about a specific view. Note that attempting to get a
+        /// Gets information about a specific view.
+        /// 
+        /// Note that attempting to get a
         /// view in the DELETED lifecycleState will result in a `404` response to be
-        /// consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        /// consistent with other operations of the API.
         /// 
         /// 
         /// ## Example Usage
@@ -44,9 +46,11 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets information about a specific view. Note that attempting to get a
+        /// Gets information about a specific view.
+        /// 
+        /// Note that attempting to get a
         /// view in the DELETED lifecycleState will result in a `404` response to be
-        /// consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        /// consistent with other operations of the API.
         /// 
         /// 
         /// ## Example Usage

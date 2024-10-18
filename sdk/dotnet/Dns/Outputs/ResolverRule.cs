@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly ImmutableArray<string> QnameCoverConditions;
         /// <summary>
-        /// (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+        /// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         /// </summary>
         public readonly string SourceEndpointName;
 

@@ -34,7 +34,7 @@ public final class GetRecordsResult {
      */
     private List<GetRecordsRecord> records;
     /**
-     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     private @Nullable String rtype;
@@ -83,7 +83,7 @@ public final class GetRecordsResult {
         return this.records;
     }
     /**
-     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     public Optional<String> rtype() {

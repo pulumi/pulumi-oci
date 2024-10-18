@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
 //
-// Creates a new zone from a zone file in the specified compartment.
+// Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
 //
 // After the zone has been created, it should be further managed by importing it to an `Dns.Zone` resource.
 //
@@ -62,7 +62,9 @@ type ActionCreateZoneFromZoneFile struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails pulumi.StringOutput `pulumi:"createZoneFromZoneFileDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	DefinedTags   pulumi.StringMapOutput                              `pulumi:"definedTags"`
+	DnssecConfigs ActionCreateZoneFromZoneFileDnssecConfigArrayOutput `pulumi:"dnssecConfigs"`
+	DnssecState   pulumi.StringOutput                                 `pulumi:"dnssecState"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -139,7 +141,9 @@ type actionCreateZoneFromZoneFileState struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails *string `pulumi:"createZoneFromZoneFileDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags   map[string]string                          `pulumi:"definedTags"`
+	DnssecConfigs []ActionCreateZoneFromZoneFileDnssecConfig `pulumi:"dnssecConfigs"`
+	DnssecState   *string                                    `pulumi:"dnssecState"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ActionCreateZoneFromZoneFileExternalDownstream `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -181,7 +185,9 @@ type ActionCreateZoneFromZoneFileState struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.StringMapInput
+	DefinedTags   pulumi.StringMapInput
+	DnssecConfigs ActionCreateZoneFromZoneFileDnssecConfigArrayInput
+	DnssecState   pulumi.StringPtrInput
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ActionCreateZoneFromZoneFileExternalDownstreamArrayInput
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -350,6 +356,16 @@ func (o ActionCreateZoneFromZoneFileOutput) CreateZoneFromZoneFileDetails() pulu
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 func (o ActionCreateZoneFromZoneFileOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileOutput) DnssecConfigs() ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) ActionCreateZoneFromZoneFileDnssecConfigArrayOutput {
+		return v.DnssecConfigs
+	}).(ActionCreateZoneFromZoneFileDnssecConfigArrayOutput)
+}
+
+func (o ActionCreateZoneFromZoneFileOutput) DnssecState() pulumi.StringOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringOutput { return v.DnssecState }).(pulumi.StringOutput)
 }
 
 // External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.

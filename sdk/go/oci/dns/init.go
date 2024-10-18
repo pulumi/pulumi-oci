@@ -41,6 +41,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &View{}
 	case "oci:Dns/zone:Zone":
 		r = &Zone{}
+	case "oci:Dns/zonePromoteDnssecKeyVersion:ZonePromoteDnssecKeyVersion":
+		r = &ZonePromoteDnssecKeyVersion{}
+	case "oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion":
+		r = &ZoneStageDnssecKeyVersion{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -102,6 +106,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Dns/zone",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Dns/zonePromoteDnssecKeyVersion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Dns/zoneStageDnssecKeyVersion",
 		&module{version},
 	)
 }

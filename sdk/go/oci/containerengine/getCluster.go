@@ -86,7 +86,8 @@ type LookupClusterResult struct {
 	// Metadata about the cluster.
 	Metadatas []GetClusterMetadata `pulumi:"metadatas"`
 	// The name of the cluster.
-	Name string `pulumi:"name"`
+	Name                           string `pulumi:"name"`
+	OpenIdConnectDiscoveryEndpoint string `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// Optional attributes for the cluster.
 	Options []GetClusterOption `pulumi:"options"`
 	// The state of the cluster masters.
@@ -213,6 +214,10 @@ func (o LookupClusterResultOutput) Metadatas() GetClusterMetadataArrayOutput {
 // The name of the cluster.
 func (o LookupClusterResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o LookupClusterResultOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupClusterResult) string { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
 }
 
 // Optional attributes for the cluster.

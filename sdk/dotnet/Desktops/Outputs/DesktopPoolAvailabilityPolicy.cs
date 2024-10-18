@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// <summary>
         /// (Updatable) Provides the schedule information for a desktop.
         /// </summary>
-        public readonly Outputs.DesktopPoolAvailabilityPolicyStartSchedule StartSchedule;
+        public readonly Outputs.DesktopPoolAvailabilityPolicyStartSchedule? StartSchedule;
         /// <summary>
         /// (Updatable) Provides the schedule information for a desktop.
         /// </summary>
-        public readonly Outputs.DesktopPoolAvailabilityPolicyStopSchedule StopSchedule;
+        public readonly Outputs.DesktopPoolAvailabilityPolicyStopSchedule? StopSchedule;
 
         [OutputConstructor]
         private DesktopPoolAvailabilityPolicy(
-            Outputs.DesktopPoolAvailabilityPolicyStartSchedule startSchedule,
+            Outputs.DesktopPoolAvailabilityPolicyStartSchedule? startSchedule,
 
-            Outputs.DesktopPoolAvailabilityPolicyStopSchedule stopSchedule)
+            Outputs.DesktopPoolAvailabilityPolicyStopSchedule? stopSchedule)
         {
             StartSchedule = startSchedule;
             StopSchedule = stopSchedule;

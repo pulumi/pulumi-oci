@@ -29,6 +29,12 @@ __all__ = [
     'DesktopPoolNetworkConfigurationArgsDict',
     'DesktopPoolPrivateAccessDetailsArgs',
     'DesktopPoolPrivateAccessDetailsArgsDict',
+    'DesktopPoolSessionLifecycleActionsArgs',
+    'DesktopPoolSessionLifecycleActionsArgsDict',
+    'DesktopPoolSessionLifecycleActionsDisconnectArgs',
+    'DesktopPoolSessionLifecycleActionsDisconnectArgsDict',
+    'DesktopPoolSessionLifecycleActionsInactivityArgs',
+    'DesktopPoolSessionLifecycleActionsInactivityArgsDict',
     'DesktopPoolShapeConfigArgs',
     'DesktopPoolShapeConfigArgsDict',
     'GetDesktopPoolDesktopsFilterArgs',
@@ -45,11 +51,11 @@ MYPY = False
 
 if not MYPY:
     class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
-        start_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']
+        start_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']]
         """
         (Updatable) Provides the schedule information for a desktop.
         """
-        stop_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']
+        stop_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']]
         """
         (Updatable) Provides the schedule information for a desktop.
         """
@@ -59,37 +65,39 @@ elif False:
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyArgs:
     def __init__(__self__, *,
-                 start_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs'],
-                 stop_schedule: pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']):
+                 start_schedule: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']] = None,
+                 stop_schedule: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']] = None):
         """
         :param pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs'] start_schedule: (Updatable) Provides the schedule information for a desktop.
         :param pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs'] stop_schedule: (Updatable) Provides the schedule information for a desktop.
         """
-        pulumi.set(__self__, "start_schedule", start_schedule)
-        pulumi.set(__self__, "stop_schedule", stop_schedule)
+        if start_schedule is not None:
+            pulumi.set(__self__, "start_schedule", start_schedule)
+        if stop_schedule is not None:
+            pulumi.set(__self__, "stop_schedule", stop_schedule)
 
     @property
     @pulumi.getter(name="startSchedule")
-    def start_schedule(self) -> pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']:
+    def start_schedule(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']]:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
         return pulumi.get(self, "start_schedule")
 
     @start_schedule.setter
-    def start_schedule(self, value: pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']):
+    def start_schedule(self, value: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']]):
         pulumi.set(self, "start_schedule", value)
 
     @property
     @pulumi.getter(name="stopSchedule")
-    def stop_schedule(self) -> pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']:
+    def stop_schedule(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']]:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
         return pulumi.get(self, "stop_schedule")
 
     @stop_schedule.setter
-    def stop_schedule(self, value: pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']):
+    def stop_schedule(self, value: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']]):
         pulumi.set(self, "stop_schedule", value)
 
 
@@ -462,7 +470,7 @@ if not MYPY:
     class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
         subnet_id: pulumi.Input[str]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         endpoint_fqdn: NotRequired[pulumi.Input[str]]
         """
@@ -492,7 +500,7 @@ class DesktopPoolPrivateAccessDetailsArgs:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param pulumi.Input[str] endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
@@ -512,7 +520,7 @@ class DesktopPoolPrivateAccessDetailsArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -567,6 +575,160 @@ class DesktopPoolPrivateAccessDetailsArgs:
     @vcn_id.setter
     def vcn_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vcn_id", value)
+
+
+if not MYPY:
+    class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
+        disconnect: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]
+        """
+        (Updatable) Action and grace period for disconnect
+        """
+        inactivity: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]
+        """
+        (Updatable) Action and grace period for inactivity
+        """
+elif False:
+    DesktopPoolSessionLifecycleActionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DesktopPoolSessionLifecycleActionsArgs:
+    def __init__(__self__, *,
+                 disconnect: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']] = None,
+                 inactivity: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']] = None):
+        """
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs'] inactivity: (Updatable) Action and grace period for inactivity
+        """
+        if disconnect is not None:
+            pulumi.set(__self__, "disconnect", disconnect)
+        if inactivity is not None:
+            pulumi.set(__self__, "inactivity", inactivity)
+
+    @property
+    @pulumi.getter
+    def disconnect(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']]:
+        """
+        (Updatable) Action and grace period for disconnect
+        """
+        return pulumi.get(self, "disconnect")
+
+    @disconnect.setter
+    def disconnect(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']]):
+        pulumi.set(self, "disconnect", value)
+
+    @property
+    @pulumi.getter
+    def inactivity(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']]:
+        """
+        (Updatable) Action and grace period for inactivity
+        """
+        return pulumi.get(self, "inactivity")
+
+    @inactivity.setter
+    def inactivity(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']]):
+        pulumi.set(self, "inactivity", value)
+
+
+if not MYPY:
+    class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
+        action: pulumi.Input[str]
+        """
+        (Updatable) a disconnect action to be triggered
+        """
+        grace_period_in_minutes: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+        """
+elif False:
+    DesktopPoolSessionLifecycleActionsDisconnectArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DesktopPoolSessionLifecycleActionsDisconnectArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[str],
+                 grace_period_in_minutes: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] action: (Updatable) a disconnect action to be triggered
+        :param pulumi.Input[int] grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        if grace_period_in_minutes is not None:
+            pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[str]:
+        """
+        (Updatable) a disconnect action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[str]):
+        pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
+
+    @grace_period_in_minutes.setter
+    def grace_period_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "grace_period_in_minutes", value)
+
+
+if not MYPY:
+    class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
+        action: pulumi.Input[str]
+        """
+        (Updatable) an inactivity action to be triggered
+        """
+        grace_period_in_minutes: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+elif False:
+    DesktopPoolSessionLifecycleActionsInactivityArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DesktopPoolSessionLifecycleActionsInactivityArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[str],
+                 grace_period_in_minutes: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] action: (Updatable) an inactivity action to be triggered
+        :param pulumi.Input[int] grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        if grace_period_in_minutes is not None:
+            pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[str]:
+        """
+        (Updatable) an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[str]):
+        pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
+
+    @grace_period_in_minutes.setter
+    def grace_period_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "grace_period_in_minutes", value)
 
 
 if not MYPY:

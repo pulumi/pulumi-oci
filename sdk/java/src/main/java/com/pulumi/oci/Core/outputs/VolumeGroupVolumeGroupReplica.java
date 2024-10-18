@@ -27,6 +27,11 @@ public final class VolumeGroupVolumeGroupReplica {
      * 
      */
     private @Nullable String volumeGroupReplicaId;
+    /**
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group&#39;s replicas, which will be used in the destination region to encrypt the volume group&#39;s replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private @Nullable String xrrKmsKeyId;
 
     private VolumeGroupVolumeGroupReplica() {}
     /**
@@ -50,6 +55,13 @@ public final class VolumeGroupVolumeGroupReplica {
     public Optional<String> volumeGroupReplicaId() {
         return Optional.ofNullable(this.volumeGroupReplicaId);
     }
+    /**
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group&#39;s replicas, which will be used in the destination region to encrypt the volume group&#39;s replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Optional<String> xrrKmsKeyId() {
+        return Optional.ofNullable(this.xrrKmsKeyId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +75,14 @@ public final class VolumeGroupVolumeGroupReplica {
         private String availabilityDomain;
         private @Nullable String displayName;
         private @Nullable String volumeGroupReplicaId;
+        private @Nullable String xrrKmsKeyId;
         public Builder() {}
         public Builder(VolumeGroupVolumeGroupReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.displayName = defaults.displayName;
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
+    	      this.xrrKmsKeyId = defaults.xrrKmsKeyId;
         }
 
         @CustomType.Setter
@@ -91,11 +105,18 @@ public final class VolumeGroupVolumeGroupReplica {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrrKmsKeyId(@Nullable String xrrKmsKeyId) {
+
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
         public VolumeGroupVolumeGroupReplica build() {
             final var _resultValue = new VolumeGroupVolumeGroupReplica();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.displayName = displayName;
             _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            _resultValue.xrrKmsKeyId = xrrKmsKeyId;
             return _resultValue;
         }
     }

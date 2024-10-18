@@ -126,7 +126,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
     Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
     It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
     query parameter is provided, the collection does not include resolver endpoints in the DELETED
-    lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+    lifecycle state to be consistent with other operations of the API.
 
     ## Example Usage
 
@@ -175,7 +175,7 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
     It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
     query parameter is provided, the collection does not include resolver endpoints in the DELETED
-    lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+    lifecycle state to be consistent with other operations of the API.
 
     ## Example Usage
 

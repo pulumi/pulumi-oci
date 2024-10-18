@@ -55,7 +55,7 @@ type Resolver struct {
 	ResolverId pulumi.StringOutput `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayOutput `pulumi:"rules"`
-	// If specified, must be `PRIVATE` when creating private name resolvers.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,7 +129,7 @@ type resolverState struct {
 	ResolverId *string `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
-	// If specified, must be `PRIVATE` when creating private name resolvers.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,7 +171,7 @@ type ResolverState struct {
 	ResolverId pulumi.StringPtrInput
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
-	// If specified, must be `PRIVATE` when creating private name resolvers.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -209,7 +209,7 @@ type resolverArgs struct {
 	ResolverId string `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
-	// If specified, must be `PRIVATE` when creating private name resolvers.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -236,7 +236,7 @@ type ResolverArgs struct {
 	ResolverId pulumi.StringInput
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
-	// If specified, must be `PRIVATE` when creating private name resolvers.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -389,7 +389,7 @@ func (o ResolverOutput) Rules() ResolverRuleArrayOutput {
 	return o.ApplyT(func(v *Resolver) ResolverRuleArrayOutput { return v.Rules }).(ResolverRuleArrayOutput)
 }
 
-// If specified, must be `PRIVATE` when creating private name resolvers.
+// Specifies to operate only on resources that have a matching DNS scope.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

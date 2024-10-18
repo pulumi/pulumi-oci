@@ -143,6 +143,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
@@ -159,12 +160,12 @@ class ConnectionArgs:
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
         :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-        :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -177,7 +178,8 @@ class ConnectionArgs:
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -840,6 +842,7 @@ class ConnectionArgs:
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -1032,7 +1035,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -1044,7 +1047,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_cert")
 
@@ -1080,7 +1083,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         """
         return pulumi.get(self, "ssl_crl")
 
@@ -1092,7 +1095,7 @@ class ConnectionArgs:
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_key")
 
@@ -1248,7 +1251,8 @@ class ConnectionArgs:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1392,6 +1396,7 @@ class _ConnectionState:
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
@@ -1408,12 +1413,12 @@ class _ConnectionState:
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
         :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-        :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -1431,7 +1436,8 @@ class _ConnectionState:
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2122,6 +2128,7 @@ class _ConnectionState:
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -2314,7 +2321,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -2326,7 +2333,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_cert")
 
@@ -2362,7 +2369,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         """
         return pulumi.get(self, "ssl_crl")
 
@@ -2374,7 +2381,7 @@ class _ConnectionState:
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_key")
 
@@ -2590,7 +2597,8 @@ class _ConnectionState:
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2841,6 +2849,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
@@ -2857,12 +2866,12 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
         :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-        :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -2876,7 +2885,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3337,6 +3347,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param pulumi.Input[str] private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
@@ -3353,12 +3364,12 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-        :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
+        :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
         :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
-        :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-        :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        :param pulumi.Input[str] ssl_key: (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
         :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
@@ -3376,7 +3387,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
         :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param pulumi.Input[str] vault_id: (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3817,6 +3829,7 @@ class Connection(pulumi.CustomResource):
     def private_ip(self) -> pulumi.Output[str]:
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -3945,7 +3958,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> pulumi.Output[str]:
         """
-        (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -3953,7 +3966,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> pulumi.Output[str]:
         """
-        (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_cert")
 
@@ -3977,7 +3990,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> pulumi.Output[str]:
         """
-        (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         """
         return pulumi.get(self, "ssl_crl")
 
@@ -3985,7 +3998,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslKey")
     def ssl_key(self) -> pulumi.Output[str]:
         """
-        (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         """
         return pulumi.get(self, "ssl_key")
 
@@ -4129,7 +4142,8 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def wallet(self) -> pulumi.Output[str]:
         """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

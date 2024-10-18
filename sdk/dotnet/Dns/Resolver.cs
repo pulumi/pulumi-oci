@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ResolverRule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// Specifies to operate only on resources that have a matching DNS scope. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// Specifies to operate only on resources that have a matching DNS scope. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -367,7 +367,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// Specifies to operate only on resources that have a matching DNS scope. 
         /// 
         /// 
         /// ** IMPORTANT **

@@ -11,11 +11,27 @@ import * as utilities from "../utilities";
  *
  * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
  *
- * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
- * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
- * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
- * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
- * parameter is required.
+ * Gets all records in the specified zone.
+ *
+ * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+ * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+ * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+ * then the viewId query parameter is required.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRecords = oci.Dns.getRecords({
+ *     zoneNameOrId: testZoneNameOr.id,
+ *     domain: recordDomain,
+ *     domainContains: recordDomainContains,
+ *     rtype: recordRtype,
+ *     zoneVersion: recordZoneVersion,
+ * });
+ * ```
  */
 export function getRecords(args: GetRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -37,7 +53,9 @@ export function getRecords(args: GetRecordsArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetRecordsArgs {
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: string;
     /**
@@ -93,7 +111,7 @@ export interface GetRecordsResult {
      */
     readonly records: outputs.Dns.GetRecordsRecord[];
     /**
-     * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      */
     readonly rtype?: string;
     readonly sortBy?: string;
@@ -111,11 +129,27 @@ export interface GetRecordsResult {
  *
  * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
  *
- * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
- * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
- * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
- * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
- * parameter is required.
+ * Gets all records in the specified zone.
+ *
+ * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+ * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+ * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+ * then the viewId query parameter is required.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRecords = oci.Dns.getRecords({
+ *     zoneNameOrId: testZoneNameOr.id,
+ *     domain: recordDomain,
+ *     domainContains: recordDomainContains,
+ *     rtype: recordRtype,
+ *     zoneVersion: recordZoneVersion,
+ * });
+ * ```
  */
 export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecordsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -137,7 +171,9 @@ export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.Invok
  */
 export interface GetRecordsOutputArgs {
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: pulumi.Input<string>;
     /**

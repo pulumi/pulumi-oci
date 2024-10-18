@@ -73,6 +73,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// OCIDs for the volumes in this volume group.
         /// </summary>
         public readonly ImmutableArray<string> VolumeIds;
+        public readonly string XrcKmsKeyId;
 
         [OutputConstructor]
         private GetVolumeGroupsVolumeGroupResult(
@@ -110,7 +111,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool volumeGroupReplicasDeletion,
 
-            ImmutableArray<string> volumeIds)
+            ImmutableArray<string> volumeIds,
+
+            string xrcKmsKeyId)
         {
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
@@ -130,6 +133,7 @@ namespace Pulumi.Oci.Core.Outputs
             VolumeGroupReplicas = volumeGroupReplicas;
             VolumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
             VolumeIds = volumeIds;
+            XrcKmsKeyId = xrcKmsKeyId;
         }
     }
 }

@@ -227,6 +227,21 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         return Optional.ofNullable(this.vpusPerGb);
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    @Import(name="xrcKmsKeyId")
+    private @Nullable Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Optional<Output<String>> xrcKmsKeyId() {
+        return Optional.ofNullable(this.xrcKmsKeyId);
+    }
+
     private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs() {}
 
     private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs $) {
@@ -244,6 +259,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         this.sizeInGbs = $.sizeInGbs;
         this.sourceDetails = $.sourceDetails;
         this.vpusPerGb = $.vpusPerGb;
+        this.xrcKmsKeyId = $.xrcKmsKeyId;
     }
 
     public static Builder builder() {
@@ -558,6 +574,27 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
          */
         public Builder vpusPerGb(String vpusPerGb) {
             return vpusPerGb(Output.of(vpusPerGb));
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(@Nullable Output<String> xrcKmsKeyId) {
+            $.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            return xrcKmsKeyId(Output.of(xrcKmsKeyId));
         }
 
         public InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs build() {

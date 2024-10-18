@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        /// </summary>
+        public readonly string KmsKeyId;
+        /// <summary>
         /// The size of the source block volume, in GBs.
         /// </summary>
         public readonly string SizeInGbs;
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            string kmsKeyId,
+
             string sizeInGbs,
 
             string state,
@@ -95,6 +101,7 @@ namespace Pulumi.Oci.Core.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            KmsKeyId = kmsKeyId;
             SizeInGbs = sizeInGbs;
             State = state;
             TimeCreated = timeCreated;

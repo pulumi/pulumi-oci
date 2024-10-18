@@ -32,8 +32,11 @@ namespace Pulumi.Oci.Core
     ///         CompartmentId = compartmentId,
     ///         SourceDetails = new Oci.Core.Inputs.BootVolumeSourceDetailsArgs
     ///         {
-    ///             Id = bootVolumeSourceDetailsId,
     ///             Type = bootVolumeSourceDetailsType,
+    ///             ChangeBlockSizeInBytes = bootVolumeSourceDetailsChangeBlockSizeInBytes,
+    ///             FirstBackupId = testBackup.Id,
+    ///             Id = bootVolumeSourceDetailsId,
+    ///             SecondBackupId = testBackup.Id,
     ///         },
     ///         AutotunePolicies = new[]
     ///         {
@@ -51,6 +54,7 @@ namespace Pulumi.Oci.Core
     ///             {
     ///                 AvailabilityDomain = bootVolumeBootVolumeReplicasAvailabilityDomain,
     ///                 DisplayName = bootVolumeBootVolumeReplicasDisplayName,
+    ///                 XrrKmsKeyId = testKey.Id,
     ///             },
     ///         },
     ///         ClusterPlacementGroupId = testGroup.Id,
@@ -67,6 +71,7 @@ namespace Pulumi.Oci.Core
     ///         KmsKeyId = testKey.Id,
     ///         SizeInGbs = bootVolumeSizeInGbs,
     ///         VpusPerGb = bootVolumeVpusPerGb,
+    ///         XrcKmsKeyId = testKey.Id,
     ///         BootVolumeReplicasDeletion = true,
     ///     });
     /// 
@@ -217,6 +222,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("vpusPerGb")]
         public Output<string> VpusPerGb { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("xrcKmsKeyId")]
+        public Output<string> XrcKmsKeyId { get; private set; } = null!;
 
 
         /// <summary>
@@ -373,6 +388,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("vpusPerGb")]
         public Input<string>? VpusPerGb { get; set; }
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("xrcKmsKeyId")]
+        public Input<string>? XrcKmsKeyId { get; set; }
 
         public BootVolumeArgs()
         {
@@ -545,6 +570,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("vpusPerGb")]
         public Input<string>? VpusPerGb { get; set; }
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("xrcKmsKeyId")]
+        public Input<string>? XrcKmsKeyId { get; set; }
 
         public BootVolumeState()
         {

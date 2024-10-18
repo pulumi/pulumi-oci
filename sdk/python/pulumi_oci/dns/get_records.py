@@ -106,7 +106,7 @@ class GetRecordsResult:
     @pulumi.getter
     def rtype(self) -> Optional[str]:
         """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
         return pulumi.get(self, "rtype")
 
@@ -169,14 +169,30 @@ def get_records(compartment_id: Optional[str] = None,
 
     This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 
-    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets all records in the specified zone.
+
+    The results are sorted by `domain` in alphabetical order by default. For more information about records,
+    see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+    When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+    then the viewId query parameter is required.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+        domain=record_domain,
+        domain_contains=record_domain_contains,
+        rtype=record_rtype,
+        zone_version=record_zone_version)
+    ```
 
 
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str compartment_id: The OCID of the compartment the zone belongs to.
+           
+           This parameter is deprecated and should be omitted.
     :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
     :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
     :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
@@ -225,14 +241,30 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
 
     This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 
-    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets all records in the specified zone.
+
+    The results are sorted by `domain` in alphabetical order by default. For more information about records,
+    see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+    When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+    then the viewId query parameter is required.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_records = oci.Dns.get_records(zone_name_or_id=test_zone_name_or["id"],
+        domain=record_domain,
+        domain_contains=record_domain_contains,
+        rtype=record_rtype,
+        zone_version=record_zone_version)
+    ```
 
 
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str compartment_id: The OCID of the compartment the zone belongs to.
+           
+           This parameter is deprecated and should be omitted.
     :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
     :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
     :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.

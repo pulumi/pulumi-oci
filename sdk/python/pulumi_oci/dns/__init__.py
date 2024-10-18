@@ -31,5 +31,7 @@ from .steering_policy_attachment import *
 from .tsig_key import *
 from .view import *
 from .zone import *
+from .zone_promote_dnssec_key_version import *
+from .zone_stage_dnssec_key_version import *
 from ._inputs import *
 from . import outputs

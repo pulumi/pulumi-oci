@@ -82,6 +82,11 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
      * 
      */
     private String vpusPerGb;
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private String xrcKmsKeyId;
 
     private GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail() {}
     /**
@@ -178,6 +183,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
     public String vpusPerGb() {
         return this.vpusPerGb;
     }
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -202,6 +214,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
         private String sizeInGbs;
         private List<GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail> sourceDetails;
         private String vpusPerGb;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -219,6 +232,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.vpusPerGb = defaults.vpusPerGb;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -342,6 +356,14 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
             this.vpusPerGb = vpusPerGb;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail build() {
             final var _resultValue = new GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail();
             _resultValue.autotunePolicies = autotunePolicies;
@@ -358,6 +380,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sourceDetails = sourceDetails;
             _resultValue.vpusPerGb = vpusPerGb;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core
     ///     {
     ///         AssetId = testVolume.Id,
     ///         PolicyId = testVolumeBackupPolicy.Id,
+    ///         XrcKmsKeyId = testKey.Id,
     ///     });
     /// 
     /// });
@@ -54,10 +55,6 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("policyId")]
         public Output<string> PolicyId { get; private set; } = null!;
@@ -67,6 +64,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("xrcKmsKeyId")]
+        public Output<string> XrcKmsKeyId { get; private set; } = null!;
 
 
         /// <summary>
@@ -122,13 +129,19 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
+        /// </summary>
+        [Input("policyId", required: true)]
+        public Input<string> PolicyId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("policyId", required: true)]
-        public Input<string> PolicyId { get; set; } = null!;
+        [Input("xrcKmsKeyId")]
+        public Input<string>? XrcKmsKeyId { get; set; }
 
         public VolumeBackupPolicyAssignmentArgs()
         {
@@ -146,10 +159,6 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("policyId")]
         public Input<string>? PolicyId { get; set; }
@@ -159,6 +168,16 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("xrcKmsKeyId")]
+        public Input<string>? XrcKmsKeyId { get; set; }
 
         public VolumeBackupPolicyAssignmentState()
         {

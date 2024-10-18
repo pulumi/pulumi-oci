@@ -26199,6 +26199,8 @@ type GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment struct {
 	PolicyId string `pulumi:"policyId"`
 	// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
+	// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
 }
 
 // GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentInput is an input type that accepts GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs and GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput values.
@@ -26221,6 +26223,8 @@ type GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs struct {
 	PolicyId pulumi.StringInput `pulumi:"policyId"`
 	// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId pulumi.StringInput `pulumi:"xrcKmsKeyId"`
 }
 
 func (GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs) ElementType() reflect.Type {
@@ -26292,6 +26296,11 @@ func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) Poli
 // The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 type GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput struct{ *pulumi.OutputState }
@@ -26815,6 +26824,9 @@ type GetVolumeBlockVolumeReplica struct {
 	BlockVolumeReplicaId string `pulumi:"blockVolumeReplicaId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Vault service key which is the master encryption key for the volume.
+	KmsKeyId    string `pulumi:"kmsKeyId"`
+	XrrKmsKeyId string `pulumi:"xrrKmsKeyId"`
 }
 
 // GetVolumeBlockVolumeReplicaInput is an input type that accepts GetVolumeBlockVolumeReplicaArgs and GetVolumeBlockVolumeReplicaOutput values.
@@ -26835,6 +26847,9 @@ type GetVolumeBlockVolumeReplicaArgs struct {
 	BlockVolumeReplicaId pulumi.StringInput `pulumi:"blockVolumeReplicaId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Vault service key which is the master encryption key for the volume.
+	KmsKeyId    pulumi.StringInput `pulumi:"kmsKeyId"`
+	XrrKmsKeyId pulumi.StringInput `pulumi:"xrrKmsKeyId"`
 }
 
 func (GetVolumeBlockVolumeReplicaArgs) ElementType() reflect.Type {
@@ -26901,6 +26916,15 @@ func (o GetVolumeBlockVolumeReplicaOutput) BlockVolumeReplicaId() pulumi.StringO
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetVolumeBlockVolumeReplicaOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBlockVolumeReplica) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key which is the master encryption key for the volume.
+func (o GetVolumeBlockVolumeReplicaOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBlockVolumeReplica) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetVolumeBlockVolumeReplicaOutput) XrrKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeBlockVolumeReplica) string { return v.XrrKmsKeyId }).(pulumi.StringOutput)
 }
 
 type GetVolumeBlockVolumeReplicaArrayOutput struct{ *pulumi.OutputState }
@@ -28048,7 +28072,8 @@ type GetVolumeGroupsVolumeGroup struct {
 	VolumeGroupReplicas         []GetVolumeGroupsVolumeGroupVolumeGroupReplica `pulumi:"volumeGroupReplicas"`
 	VolumeGroupReplicasDeletion bool                                           `pulumi:"volumeGroupReplicasDeletion"`
 	// OCIDs for the volumes in this volume group.
-	VolumeIds []string `pulumi:"volumeIds"`
+	VolumeIds   []string `pulumi:"volumeIds"`
+	XrcKmsKeyId string   `pulumi:"xrcKmsKeyId"`
 }
 
 // GetVolumeGroupsVolumeGroupInput is an input type that accepts GetVolumeGroupsVolumeGroupArgs and GetVolumeGroupsVolumeGroupOutput values.
@@ -28095,7 +28120,8 @@ type GetVolumeGroupsVolumeGroupArgs struct {
 	VolumeGroupReplicas         GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayInput `pulumi:"volumeGroupReplicas"`
 	VolumeGroupReplicasDeletion pulumi.BoolInput                                       `pulumi:"volumeGroupReplicasDeletion"`
 	// OCIDs for the volumes in this volume group.
-	VolumeIds pulumi.StringArrayInput `pulumi:"volumeIds"`
+	VolumeIds   pulumi.StringArrayInput `pulumi:"volumeIds"`
+	XrcKmsKeyId pulumi.StringInput      `pulumi:"xrcKmsKeyId"`
 }
 
 func (GetVolumeGroupsVolumeGroupArgs) ElementType() reflect.Type {
@@ -28236,6 +28262,10 @@ func (o GetVolumeGroupsVolumeGroupOutput) VolumeGroupReplicasDeletion() pulumi.B
 // OCIDs for the volumes in this volume group.
 func (o GetVolumeGroupsVolumeGroupOutput) VolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) []string { return v.VolumeIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetVolumeGroupsVolumeGroupOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 type GetVolumeGroupsVolumeGroupArrayOutput struct{ *pulumi.OutputState }
@@ -28398,6 +28428,7 @@ type GetVolumeGroupsVolumeGroupVolumeGroupReplica struct {
 	DisplayName string `pulumi:"displayName"`
 	// The volume group replica's Oracle ID (OCID).
 	VolumeGroupReplicaId string `pulumi:"volumeGroupReplicaId"`
+	XrrKmsKeyId          string `pulumi:"xrrKmsKeyId"`
 }
 
 // GetVolumeGroupsVolumeGroupVolumeGroupReplicaInput is an input type that accepts GetVolumeGroupsVolumeGroupVolumeGroupReplicaArgs and GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput values.
@@ -28418,6 +28449,7 @@ type GetVolumeGroupsVolumeGroupVolumeGroupReplicaArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The volume group replica's Oracle ID (OCID).
 	VolumeGroupReplicaId pulumi.StringInput `pulumi:"volumeGroupReplicaId"`
+	XrrKmsKeyId          pulumi.StringInput `pulumi:"xrrKmsKeyId"`
 }
 
 func (GetVolumeGroupsVolumeGroupVolumeGroupReplicaArgs) ElementType() reflect.Type {
@@ -28486,6 +28518,10 @@ func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) VolumeGroupReplicaId
 	return o.ApplyT(func(v GetVolumeGroupsVolumeGroupVolumeGroupReplica) string { return v.VolumeGroupReplicaId }).(pulumi.StringOutput)
 }
 
+func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) XrrKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeGroupsVolumeGroupVolumeGroupReplica) string { return v.XrrKmsKeyId }).(pulumi.StringOutput)
+}
+
 type GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) ElementType() reflect.Type {
@@ -28507,9 +28543,15 @@ func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) Index(i pulumi.
 }
 
 type GetVolumeSourceDetail struct {
+	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	ChangeBlockSizeInBytes string `pulumi:"changeBlockSizeInBytes"`
+	// The OCID of the first volume backup.
+	FirstBackupId string `pulumi:"firstBackupId"`
 	// The OCID of the block volume replica.
 	Id string `pulumi:"id"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+	// The OCID of the second volume backup.
+	SecondBackupId string `pulumi:"secondBackupId"`
+	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type string `pulumi:"type"`
 }
 
@@ -28525,9 +28567,15 @@ type GetVolumeSourceDetailInput interface {
 }
 
 type GetVolumeSourceDetailArgs struct {
+	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	ChangeBlockSizeInBytes pulumi.StringInput `pulumi:"changeBlockSizeInBytes"`
+	// The OCID of the first volume backup.
+	FirstBackupId pulumi.StringInput `pulumi:"firstBackupId"`
 	// The OCID of the block volume replica.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+	// The OCID of the second volume backup.
+	SecondBackupId pulumi.StringInput `pulumi:"secondBackupId"`
+	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -28582,12 +28630,27 @@ func (o GetVolumeSourceDetailOutput) ToGetVolumeSourceDetailOutputWithContext(ct
 	return o
 }
 
+// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+func (o GetVolumeSourceDetailOutput) ChangeBlockSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.ChangeBlockSizeInBytes }).(pulumi.StringOutput)
+}
+
+// The OCID of the first volume backup.
+func (o GetVolumeSourceDetailOutput) FirstBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.FirstBackupId }).(pulumi.StringOutput)
+}
+
 // The OCID of the block volume replica.
 func (o GetVolumeSourceDetailOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+// The OCID of the second volume backup.
+func (o GetVolumeSourceDetailOutput) SecondBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.SecondBackupId }).(pulumi.StringOutput)
+}
+
+// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 func (o GetVolumeSourceDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeSourceDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -28750,10 +28813,11 @@ type GetVolumesVolume struct {
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
-	// The size of the volume in MBs. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     string                         `pulumi:"sizeInMbs"`
+	SizeInMbs string `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails []GetVolumesVolumeSourceDetail `pulumi:"sourceDetails"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
@@ -28765,7 +28829,8 @@ type GetVolumesVolume struct {
 	// The OCID of the volume group.
 	VolumeGroupId string `pulumi:"volumeGroupId"`
 	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
+	VpusPerGb   string `pulumi:"vpusPerGb"`
+	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
 }
 
 // GetVolumesVolumeInput is an input type that accepts GetVolumesVolumeArgs and GetVolumesVolumeOutput values.
@@ -28811,10 +28876,11 @@ type GetVolumesVolumeArgs struct {
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
 	SizeInGbs pulumi.StringInput `pulumi:"sizeInGbs"`
-	// The size of the volume in MBs. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     pulumi.StringInput                     `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringInput `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails GetVolumesVolumeSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
@@ -28826,7 +28892,8 @@ type GetVolumesVolumeArgs struct {
 	// The OCID of the volume group.
 	VolumeGroupId pulumi.StringInput `pulumi:"volumeGroupId"`
 	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb pulumi.StringInput `pulumi:"vpusPerGb"`
+	VpusPerGb   pulumi.StringInput `pulumi:"vpusPerGb"`
+	XrcKmsKeyId pulumi.StringInput `pulumi:"xrcKmsKeyId"`
 }
 
 func (GetVolumesVolumeArgs) ElementType() reflect.Type {
@@ -28959,13 +29026,14 @@ func (o GetVolumesVolumeOutput) SizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolume) string { return v.SizeInGbs }).(pulumi.StringOutput)
 }
 
-// The size of the volume in MBs. This field is deprecated. Use `sizeInGbs` instead.
+// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 //
 // Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
 func (o GetVolumesVolumeOutput) SizeInMbs() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolume) string { return v.SizeInMbs }).(pulumi.StringOutput)
 }
 
+// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 func (o GetVolumesVolumeOutput) SourceDetails() GetVolumesVolumeSourceDetailArrayOutput {
 	return o.ApplyT(func(v GetVolumesVolume) []GetVolumesVolumeSourceDetail { return v.SourceDetails }).(GetVolumesVolumeSourceDetailArrayOutput)
 }
@@ -28997,6 +29065,10 @@ func (o GetVolumesVolumeOutput) VolumeGroupId() pulumi.StringOutput {
 // The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 func (o GetVolumesVolumeOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolume) string { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+func (o GetVolumesVolumeOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolume) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 type GetVolumesVolumeArrayOutput struct{ *pulumi.OutputState }
@@ -29132,6 +29204,9 @@ type GetVolumesVolumeBlockVolumeReplica struct {
 	BlockVolumeReplicaId string `pulumi:"blockVolumeReplicaId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// The OCID of the Vault service key which is the master encryption key for the volume.
+	KmsKeyId    string `pulumi:"kmsKeyId"`
+	XrrKmsKeyId string `pulumi:"xrrKmsKeyId"`
 }
 
 // GetVolumesVolumeBlockVolumeReplicaInput is an input type that accepts GetVolumesVolumeBlockVolumeReplicaArgs and GetVolumesVolumeBlockVolumeReplicaOutput values.
@@ -29152,6 +29227,9 @@ type GetVolumesVolumeBlockVolumeReplicaArgs struct {
 	BlockVolumeReplicaId pulumi.StringInput `pulumi:"blockVolumeReplicaId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The OCID of the Vault service key which is the master encryption key for the volume.
+	KmsKeyId    pulumi.StringInput `pulumi:"kmsKeyId"`
+	XrrKmsKeyId pulumi.StringInput `pulumi:"xrrKmsKeyId"`
 }
 
 func (GetVolumesVolumeBlockVolumeReplicaArgs) ElementType() reflect.Type {
@@ -29220,6 +29298,15 @@ func (o GetVolumesVolumeBlockVolumeReplicaOutput) DisplayName() pulumi.StringOut
 	return o.ApplyT(func(v GetVolumesVolumeBlockVolumeReplica) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The OCID of the Vault service key which is the master encryption key for the volume.
+func (o GetVolumesVolumeBlockVolumeReplicaOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolumeBlockVolumeReplica) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetVolumesVolumeBlockVolumeReplicaOutput) XrrKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolumeBlockVolumeReplica) string { return v.XrrKmsKeyId }).(pulumi.StringOutput)
+}
+
 type GetVolumesVolumeBlockVolumeReplicaArrayOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesVolumeBlockVolumeReplicaArrayOutput) ElementType() reflect.Type {
@@ -29241,9 +29328,15 @@ func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetVolumesVolumeSourceDetail struct {
+	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	ChangeBlockSizeInBytes string `pulumi:"changeBlockSizeInBytes"`
+	// The OCID of the first volume backup.
+	FirstBackupId string `pulumi:"firstBackupId"`
 	// The OCID of the block volume replica.
 	Id string `pulumi:"id"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+	// The OCID of the second volume backup.
+	SecondBackupId string `pulumi:"secondBackupId"`
+	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type string `pulumi:"type"`
 }
 
@@ -29259,9 +29352,15 @@ type GetVolumesVolumeSourceDetailInput interface {
 }
 
 type GetVolumesVolumeSourceDetailArgs struct {
+	// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+	ChangeBlockSizeInBytes pulumi.StringInput `pulumi:"changeBlockSizeInBytes"`
+	// The OCID of the first volume backup.
+	FirstBackupId pulumi.StringInput `pulumi:"firstBackupId"`
 	// The OCID of the block volume replica.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+	// The OCID of the second volume backup.
+	SecondBackupId pulumi.StringInput `pulumi:"secondBackupId"`
+	// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -29316,12 +29415,27 @@ func (o GetVolumesVolumeSourceDetailOutput) ToGetVolumesVolumeSourceDetailOutput
 	return o
 }
 
+// Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+func (o GetVolumesVolumeSourceDetailOutput) ChangeBlockSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.ChangeBlockSizeInBytes }).(pulumi.StringOutput)
+}
+
+// The OCID of the first volume backup.
+func (o GetVolumesVolumeSourceDetailOutput) FirstBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.FirstBackupId }).(pulumi.StringOutput)
+}
+
 // The OCID of the block volume replica.
 func (o GetVolumesVolumeSourceDetailOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+// The OCID of the second volume backup.
+func (o GetVolumesVolumeSourceDetailOutput) SecondBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.SecondBackupId }).(pulumi.StringOutput)
+}
+
+// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
 func (o GetVolumesVolumeSourceDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumesVolumeSourceDetail) string { return v.Type }).(pulumi.StringOutput)
 }

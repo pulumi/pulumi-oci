@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Desktops
         /// 
         /// Returns information about the desktop pool including all configuration parameters and the current state.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Desktops
         /// This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
         /// 
         /// Returns information about the desktop pool including all configuration parameters and the current state.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -173,6 +171,10 @@ namespace Pulumi.Oci.Desktops
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolPrivateAccessDetailResult> PrivateAccessDetails;
         /// <summary>
+        /// Action to be triggered on inactivity or disconnect
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolSessionLifecycleActionResult> SessionLifecycleActions;
+        /// <summary>
         /// The shape configuration used for each desktop compute instance in the desktop pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolShapeConfigResult> ShapeConfigs;
@@ -210,6 +212,7 @@ namespace Pulumi.Oci.Desktops
         public readonly string TimeStopScheduled;
         /// <summary>
         /// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+        /// ---
         /// </summary>
         public readonly string UseDedicatedVmHost;
 
@@ -253,6 +256,8 @@ namespace Pulumi.Oci.Desktops
 
             ImmutableArray<Outputs.GetDesktopPoolPrivateAccessDetailResult> privateAccessDetails,
 
+            ImmutableArray<Outputs.GetDesktopPoolSessionLifecycleActionResult> sessionLifecycleActions,
+
             ImmutableArray<Outputs.GetDesktopPoolShapeConfigResult> shapeConfigs,
 
             string shapeName,
@@ -292,6 +297,7 @@ namespace Pulumi.Oci.Desktops
             NetworkConfigurations = networkConfigurations;
             NsgIds = nsgIds;
             PrivateAccessDetails = privateAccessDetails;
+            SessionLifecycleActions = sessionLifecycleActions;
             ShapeConfigs = shapeConfigs;
             ShapeName = shapeName;
             StandbySize = standbySize;

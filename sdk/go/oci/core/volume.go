@@ -57,6 +57,7 @@ import (
 //					&core.VolumeBlockVolumeReplicaArgs{
 //						AvailabilityDomain: pulumi.Any(volumeBlockVolumeReplicasAvailabilityDomain),
 //						DisplayName:        pulumi.Any(volumeBlockVolumeReplicasDisplayName),
+//						XrrKmsKeyId:        pulumi.Any(testKey.Id),
 //					},
 //				},
 //				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
@@ -72,10 +73,14 @@ import (
 //				SizeInGbs:         pulumi.Any(volumeSizeInGbs),
 //				SizeInMbs:         pulumi.Any(volumeSizeInMbs),
 //				SourceDetails: &core.VolumeSourceDetailsArgs{
-//					Id:   pulumi.Any(volumeSourceDetailsId),
-//					Type: pulumi.Any(volumeSourceDetailsType),
+//					Type:                   pulumi.Any(volumeSourceDetailsType),
+//					ChangeBlockSizeInBytes: pulumi.Any(volumeSourceDetailsChangeBlockSizeInBytes),
+//					FirstBackupId:          pulumi.Any(testBackup.Id),
+//					Id:                     pulumi.Any(volumeSourceDetailsId),
+//					SecondBackupId:         pulumi.Any(testBackup.Id),
 //				},
 //				VpusPerGb:                   pulumi.Any(volumeVpusPerGb),
+//				XrcKmsKeyId:                 pulumi.Any(testKey.Id),
 //				BlockVolumeReplicasDeletion: pulumi.Bool(true),
 //			})
 //			if err != nil {
@@ -128,10 +133,11 @@ type Volume struct {
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
-	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     pulumi.StringOutput       `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringOutput `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails VolumeSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of a volume.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -147,6 +153,11 @@ type Volume struct {
 	//
 	// Allowed values:
 	VpusPerGb pulumi.StringOutput `pulumi:"vpusPerGb"`
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	XrcKmsKeyId pulumi.StringOutput `pulumi:"xrcKmsKeyId"`
 }
 
 // NewVolume registers a new resource with the given unique name, arguments, and options.
@@ -216,10 +227,11 @@ type volumeState struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs *string `pulumi:"sizeInGbs"`
-	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     *string              `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails *VolumeSourceDetails `pulumi:"sourceDetails"`
 	// The current state of a volume.
 	State *string `pulumi:"state"`
@@ -235,6 +247,11 @@ type volumeState struct {
 	//
 	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	XrcKmsKeyId *string `pulumi:"xrcKmsKeyId"`
 }
 
 type VolumeState struct {
@@ -269,10 +286,11 @@ type VolumeState struct {
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs pulumi.StringPtrInput
-	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     pulumi.StringPtrInput
+	SizeInMbs pulumi.StringPtrInput
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails VolumeSourceDetailsPtrInput
 	// The current state of a volume.
 	State pulumi.StringPtrInput
@@ -288,6 +306,11 @@ type VolumeState struct {
 	//
 	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	XrcKmsKeyId pulumi.StringPtrInput
 }
 
 func (VolumeState) ElementType() reflect.Type {
@@ -322,10 +345,11 @@ type volumeArgs struct {
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs *string `pulumi:"sizeInGbs"`
-	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     *string              `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails *VolumeSourceDetails `pulumi:"sourceDetails"`
 	// The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
 	VolumeBackupId *string `pulumi:"volumeBackupId"`
@@ -333,6 +357,11 @@ type volumeArgs struct {
 	//
 	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	XrcKmsKeyId *string `pulumi:"xrcKmsKeyId"`
 }
 
 // The set of arguments for constructing a Volume resource.
@@ -364,10 +393,11 @@ type VolumeArgs struct {
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The size of the volume in GBs.
 	SizeInGbs pulumi.StringPtrInput
-	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     pulumi.StringPtrInput
+	SizeInMbs pulumi.StringPtrInput
+	// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 	SourceDetails VolumeSourceDetailsPtrInput
 	// The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
 	VolumeBackupId pulumi.StringPtrInput
@@ -375,6 +405,11 @@ type VolumeArgs struct {
 	//
 	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	XrcKmsKeyId pulumi.StringPtrInput
 }
 
 func (VolumeArgs) ElementType() reflect.Type {
@@ -540,13 +575,14 @@ func (o VolumeOutput) SizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
 }
 
-// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
+// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
 //
 // Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
 func (o VolumeOutput) SizeInMbs() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
 }
 
+// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
 func (o VolumeOutput) SourceDetails() VolumeSourceDetailsOutput {
 	return o.ApplyT(func(v *Volume) VolumeSourceDetailsOutput { return v.SourceDetails }).(VolumeSourceDetailsOutput)
 }
@@ -581,6 +617,14 @@ func (o VolumeOutput) VolumeGroupId() pulumi.StringOutput {
 // Allowed values:
 func (o VolumeOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o VolumeOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 type VolumeArrayOutput struct{ *pulumi.OutputState }

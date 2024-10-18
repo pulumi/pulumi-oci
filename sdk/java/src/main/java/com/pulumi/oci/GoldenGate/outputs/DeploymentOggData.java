@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentOggDataGroupToRolesMapping;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -37,6 +38,11 @@ public final class DeploymentOggData {
      * 
      */
     private String deploymentName;
+    /**
+     * @return (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    private @Nullable DeploymentOggDataGroupToRolesMapping groupToRolesMapping;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
@@ -95,6 +101,13 @@ public final class DeploymentOggData {
         return this.deploymentName;
     }
     /**
+     * @return (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    public Optional<DeploymentOggDataGroupToRolesMapping> groupToRolesMapping() {
+        return Optional.ofNullable(this.groupToRolesMapping);
+    }
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
      */
@@ -137,6 +150,7 @@ public final class DeploymentOggData {
         private @Nullable String certificate;
         private @Nullable String credentialStore;
         private String deploymentName;
+        private @Nullable DeploymentOggDataGroupToRolesMapping groupToRolesMapping;
         private @Nullable String identityDomainId;
         private @Nullable String key;
         private @Nullable String oggVersion;
@@ -149,6 +163,7 @@ public final class DeploymentOggData {
     	      this.certificate = defaults.certificate;
     	      this.credentialStore = defaults.credentialStore;
     	      this.deploymentName = defaults.deploymentName;
+    	      this.groupToRolesMapping = defaults.groupToRolesMapping;
     	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
     	      this.oggVersion = defaults.oggVersion;
@@ -188,6 +203,12 @@ public final class DeploymentOggData {
             return this;
         }
         @CustomType.Setter
+        public Builder groupToRolesMapping(@Nullable DeploymentOggDataGroupToRolesMapping groupToRolesMapping) {
+
+            this.groupToRolesMapping = groupToRolesMapping;
+            return this;
+        }
+        @CustomType.Setter
         public Builder identityDomainId(@Nullable String identityDomainId) {
 
             this.identityDomainId = identityDomainId;
@@ -218,6 +239,7 @@ public final class DeploymentOggData {
             _resultValue.certificate = certificate;
             _resultValue.credentialStore = credentialStore;
             _resultValue.deploymentName = deploymentName;
+            _resultValue.groupToRolesMapping = groupToRolesMapping;
             _resultValue.identityDomainId = identityDomainId;
             _resultValue.key = key;
             _resultValue.oggVersion = oggVersion;

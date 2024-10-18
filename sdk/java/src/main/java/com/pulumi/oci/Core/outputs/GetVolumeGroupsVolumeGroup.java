@@ -95,6 +95,7 @@ public final class GetVolumeGroupsVolumeGroup {
      * 
      */
     private List<String> volumeIds;
+    private String xrcKmsKeyId;
 
     private GetVolumeGroupsVolumeGroup() {}
     /**
@@ -213,6 +214,9 @@ public final class GetVolumeGroupsVolumeGroup {
     public List<String> volumeIds() {
         return this.volumeIds;
     }
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -241,6 +245,7 @@ public final class GetVolumeGroupsVolumeGroup {
         private List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas;
         private Boolean volumeGroupReplicasDeletion;
         private List<String> volumeIds;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -262,6 +267,7 @@ public final class GetVolumeGroupsVolumeGroup {
     	      this.volumeGroupReplicas = defaults.volumeGroupReplicas;
     	      this.volumeGroupReplicasDeletion = defaults.volumeGroupReplicasDeletion;
     	      this.volumeIds = defaults.volumeIds;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -417,6 +423,14 @@ public final class GetVolumeGroupsVolumeGroup {
         public Builder volumeIds(String... volumeIds) {
             return volumeIds(List.of(volumeIds));
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroup", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetVolumeGroupsVolumeGroup build() {
             final var _resultValue = new GetVolumeGroupsVolumeGroup();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -437,6 +451,7 @@ public final class GetVolumeGroupsVolumeGroup {
             _resultValue.volumeGroupReplicas = volumeGroupReplicas;
             _resultValue.volumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
             _resultValue.volumeIds = volumeIds;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testVolumeBackupPolicyAssignment = new oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment", {
  *     assetId: testVolume.id,
  *     policyId: testVolumeBackupPolicy.id,
+ *     xrcKmsKeyId: testKey.id,
  * });
  * ```
  *
@@ -65,16 +66,20 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
     public readonly assetId!: pulumi.Output<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly policyId!: pulumi.Output<string>;
     /**
      * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly xrcKmsKeyId!: pulumi.Output<string>;
 
     /**
      * Create a VolumeBackupPolicyAssignment resource with the given unique name, arguments, and options.
@@ -92,6 +97,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
             resourceInputs["assetId"] = state ? state.assetId : undefined;
             resourceInputs["policyId"] = state ? state.policyId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
         } else {
             const args = argsOrState as VolumeBackupPolicyAssignmentArgs | undefined;
             if ((!args || args.assetId === undefined) && !opts.urn) {
@@ -102,6 +108,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
             }
             resourceInputs["assetId"] = args ? args.assetId : undefined;
             resourceInputs["policyId"] = args ? args.policyId : undefined;
+            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -119,16 +126,20 @@ export interface VolumeBackupPolicyAssignmentState {
     assetId?: pulumi.Input<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     policyId?: pulumi.Input<string>;
     /**
      * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }
 
 /**
@@ -141,10 +152,14 @@ export interface VolumeBackupPolicyAssignmentArgs {
     assetId: pulumi.Input<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
+     */
+    policyId: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    policyId: pulumi.Input<string>;
+    xrcKmsKeyId?: pulumi.Input<string>;
 }

@@ -9,10 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
- * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
- * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
- * parameter is required.
+ * Gets a list of all records in the specified RRSet.
+ *
+ * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+ * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
  *
  * ## Example Usage
  *
@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
- *     compartmentId: compartmentId,
  *     scope: rrsetScope,
  *     viewId: testView.id,
  * });
@@ -48,7 +47,9 @@ export function getRrset(args: GetRrsetArgs, opts?: pulumi.InvokeOptions): Promi
  */
 export interface GetRrsetArgs {
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: string;
     /**
@@ -61,11 +62,10 @@ export interface GetRrsetArgs {
     rtype: string;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
      */
     scope?: string;
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     viewId?: string;
     /**
@@ -101,10 +101,10 @@ export interface GetRrsetResult {
 /**
  * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
- * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
- * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
- * parameter is required.
+ * Gets a list of all records in the specified RRSet.
+ *
+ * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+ * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
  *
  * ## Example Usage
  *
@@ -116,7 +116,6 @@ export interface GetRrsetResult {
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
- *     compartmentId: compartmentId,
  *     scope: rrsetScope,
  *     viewId: testView.id,
  * });
@@ -140,7 +139,9 @@ export function getRrsetOutput(args: GetRrsetOutputArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetRrsetOutputArgs {
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -153,11 +154,10 @@ export interface GetRrsetOutputArgs {
     rtype: pulumi.Input<string>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
      */
     scope?: pulumi.Input<string>;
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     viewId?: pulumi.Input<string>;
     /**

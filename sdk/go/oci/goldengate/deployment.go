@@ -26,6 +26,8 @@ import (
 type Deployment struct {
 	pulumi.CustomResourceState
 
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category pulumi.StringOutput `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -44,6 +46,8 @@ type Deployment struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -59,7 +63,7 @@ type Deployment struct {
 	IsLockOverride  pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// (Updatable) True if this object is publicly available.
 	IsPublic pulumi.BoolOutput `pulumi:"isPublic"`
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded pulumi.BoolOutput `pulumi:"isStorageUtilizationLimitExceeded"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
@@ -159,6 +163,8 @@ func GetDeployment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Deployment resources.
 type deploymentState struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category *string `pulumi:"category"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -177,6 +183,8 @@ type deploymentState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -192,7 +200,7 @@ type deploymentState struct {
 	IsLockOverride  *bool `pulumi:"isLockOverride"`
 	// (Updatable) True if this object is publicly available.
 	IsPublic *bool `pulumi:"isPublic"`
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded *bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -242,6 +250,8 @@ type deploymentState struct {
 }
 
 type DeploymentState struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -260,6 +270,8 @@ type DeploymentState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -275,7 +287,7 @@ type DeploymentState struct {
 	IsLockOverride  pulumi.BoolPtrInput
 	// (Updatable) True if this object is publicly available.
 	IsPublic pulumi.BoolPtrInput
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringPtrInput
@@ -343,6 +355,8 @@ type deploymentArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -387,6 +401,8 @@ type DeploymentArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringInput
+	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -502,6 +518,11 @@ func (o DeploymentOutput) ToDeploymentOutputWithContext(ctx context.Context) Dep
 	return o
 }
 
+// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+func (o DeploymentOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o DeploymentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -547,6 +568,11 @@ func (o DeploymentOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
+func (o DeploymentOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
 // (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 func (o DeploymentOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Fqdn }).(pulumi.StringOutput)
@@ -586,7 +612,7 @@ func (o DeploymentOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.BoolOutput { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
-// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 func (o DeploymentOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.BoolOutput { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
 }

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Dns.ActionCreateZoneFromZoneFileArgs;
 import com.pulumi.oci.Dns.inputs.ActionCreateZoneFromZoneFileState;
+import com.pulumi.oci.Dns.outputs.ActionCreateZoneFromZoneFileDnssecConfig;
 import com.pulumi.oci.Dns.outputs.ActionCreateZoneFromZoneFileExternalDownstream;
 import com.pulumi.oci.Dns.outputs.ActionCreateZoneFromZoneFileExternalMaster;
 import com.pulumi.oci.Dns.outputs.ActionCreateZoneFromZoneFileNameserver;
@@ -23,7 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Creates a new zone from a zone file in the specified compartment.
+ * Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
  * 
  * After the zone has been created, it should be further managed by importing it to an `oci.Dns.Zone` resource.
  * 
@@ -117,6 +118,18 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
+    }
+    @Export(name="dnssecConfigs", refs={List.class,ActionCreateZoneFromZoneFileDnssecConfig.class}, tree="[0,1]")
+    private Output<List<ActionCreateZoneFromZoneFileDnssecConfig>> dnssecConfigs;
+
+    public Output<List<ActionCreateZoneFromZoneFileDnssecConfig>> dnssecConfigs() {
+        return this.dnssecConfigs;
+    }
+    @Export(name="dnssecState", refs={String.class}, tree="[0]")
+    private Output<String> dnssecState;
+
+    public Output<String> dnssecState() {
+        return this.dnssecState;
     }
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.

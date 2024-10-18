@@ -75,6 +75,16 @@ import * as utilities from "../utilities";
  *         nsgIds: desktopPoolPrivateAccessDetailsNsgIds,
  *         privateIp: desktopPoolPrivateAccessDetailsPrivateIp,
  *     },
+ *     sessionLifecycleActions: {
+ *         disconnect: {
+ *             action: "STOP",
+ *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes,
+ *         },
+ *         inactivity: {
+ *             action: "DISCONNECT",
+ *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes,
+ *         },
+ *     },
  *     timeStartScheduled: desktopPoolTimeStartScheduled,
  *     timeStopScheduled: desktopPoolTimeStopScheduled,
  *     useDedicatedVmHost: desktopPoolUseDedicatedVmHost,
@@ -186,6 +196,10 @@ export class DesktopPool extends pulumi.CustomResource {
      */
     public readonly privateAccessDetails!: pulumi.Output<outputs.Desktops.DesktopPoolPrivateAccessDetails>;
     /**
+     * The details of action to be triggered in case of inactivity or disconnect
+     */
+    public readonly sessionLifecycleActions!: pulumi.Output<outputs.Desktops.DesktopPoolSessionLifecycleActions | undefined>;
+    /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      */
     public readonly shapeConfig!: pulumi.Output<outputs.Desktops.DesktopPoolShapeConfig>;
@@ -260,6 +274,7 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateAccessDetails"] = state ? state.privateAccessDetails : undefined;
+            resourceInputs["sessionLifecycleActions"] = state ? state.sessionLifecycleActions : undefined;
             resourceInputs["shapeConfig"] = state ? state.shapeConfig : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["standbySize"] = state ? state.standbySize : undefined;
@@ -333,6 +348,7 @@ export class DesktopPool extends pulumi.CustomResource {
             resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateAccessDetails"] = args ? args.privateAccessDetails : undefined;
+            resourceInputs["sessionLifecycleActions"] = args ? args.sessionLifecycleActions : undefined;
             resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["standbySize"] = args ? args.standbySize : undefined;
@@ -422,6 +438,10 @@ export interface DesktopPoolState {
      * The details of the desktop's private access network connectivity to be set up for the desktop pool.
      */
     privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    /**
+     * The details of action to be triggered in case of inactivity or disconnect
+     */
+    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions>;
     /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      */
@@ -536,6 +556,10 @@ export interface DesktopPoolArgs {
      * The details of the desktop's private access network connectivity to be set up for the desktop pool.
      */
     privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    /**
+     * The details of action to be triggered in case of inactivity or disconnect
+     */
+    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions>;
     /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      */

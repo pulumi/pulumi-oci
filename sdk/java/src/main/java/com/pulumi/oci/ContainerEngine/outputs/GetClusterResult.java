@@ -89,6 +89,7 @@ public final class GetClusterResult {
      * 
      */
     private String name;
+    private String openIdConnectDiscoveryEndpoint;
     /**
      * @return Optional attributes for the cluster.
      * 
@@ -212,6 +213,9 @@ public final class GetClusterResult {
     public String name() {
         return this.name;
     }
+    public String openIdConnectDiscoveryEndpoint() {
+        return this.openIdConnectDiscoveryEndpoint;
+    }
     /**
      * @return Optional attributes for the cluster.
      * 
@@ -265,6 +269,7 @@ public final class GetClusterResult {
         private String lifecycleDetails;
         private List<GetClusterMetadata> metadatas;
         private String name;
+        private String openIdConnectDiscoveryEndpoint;
         private List<GetClusterOption> options;
         private String state;
         private String type;
@@ -287,6 +292,7 @@ public final class GetClusterResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
+    	      this.openIdConnectDiscoveryEndpoint = defaults.openIdConnectDiscoveryEndpoint;
     	      this.options = defaults.options;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -432,6 +438,14 @@ public final class GetClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveryEndpoint(String openIdConnectDiscoveryEndpoint) {
+            if (openIdConnectDiscoveryEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "openIdConnectDiscoveryEndpoint");
+            }
+            this.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder options(List<GetClusterOption> options) {
             if (options == null) {
               throw new MissingRequiredPropertyException("GetClusterResult", "options");
@@ -483,6 +497,7 @@ public final class GetClusterResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
+            _resultValue.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
             _resultValue.options = options;
             _resultValue.state = state;
             _resultValue.type = type;

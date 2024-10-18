@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsAddOns;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsAdmissionControllerOptions;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsKubernetesNetworkConfig;
+import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsOpenIdConnectDiscovery;
+import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsPersistentVolumeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterOptionsServiceLbConfig;
 import java.lang.String;
@@ -32,6 +34,16 @@ public final class ClusterOptions {
      * 
      */
     private @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig;
+    /**
+     * @return (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    private @Nullable ClusterOptionsOpenIdConnectDiscovery openIdConnectDiscovery;
+    /**
+     * @return (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    private @Nullable ClusterOptionsOpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
     /**
      * @return (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
@@ -71,6 +83,20 @@ public final class ClusterOptions {
         return Optional.ofNullable(this.kubernetesNetworkConfig);
     }
     /**
+     * @return (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    public Optional<ClusterOptionsOpenIdConnectDiscovery> openIdConnectDiscovery() {
+        return Optional.ofNullable(this.openIdConnectDiscovery);
+    }
+    /**
+     * @return (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    public Optional<ClusterOptionsOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfig() {
+        return Optional.ofNullable(this.openIdConnectTokenAuthenticationConfig);
+    }
+    /**
      * @return (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
      */
@@ -104,6 +130,8 @@ public final class ClusterOptions {
         private @Nullable ClusterOptionsAddOns addOns;
         private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
         private @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig;
+        private @Nullable ClusterOptionsOpenIdConnectDiscovery openIdConnectDiscovery;
+        private @Nullable ClusterOptionsOpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig;
         private @Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig;
         private @Nullable ClusterOptionsServiceLbConfig serviceLbConfig;
         private @Nullable List<String> serviceLbSubnetIds;
@@ -113,6 +141,8 @@ public final class ClusterOptions {
     	      this.addOns = defaults.addOns;
     	      this.admissionControllerOptions = defaults.admissionControllerOptions;
     	      this.kubernetesNetworkConfig = defaults.kubernetesNetworkConfig;
+    	      this.openIdConnectDiscovery = defaults.openIdConnectDiscovery;
+    	      this.openIdConnectTokenAuthenticationConfig = defaults.openIdConnectTokenAuthenticationConfig;
     	      this.persistentVolumeConfig = defaults.persistentVolumeConfig;
     	      this.serviceLbConfig = defaults.serviceLbConfig;
     	      this.serviceLbSubnetIds = defaults.serviceLbSubnetIds;
@@ -134,6 +164,18 @@ public final class ClusterOptions {
         public Builder kubernetesNetworkConfig(@Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig) {
 
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder openIdConnectDiscovery(@Nullable ClusterOptionsOpenIdConnectDiscovery openIdConnectDiscovery) {
+
+            this.openIdConnectDiscovery = openIdConnectDiscovery;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder openIdConnectTokenAuthenticationConfig(@Nullable ClusterOptionsOpenIdConnectTokenAuthenticationConfig openIdConnectTokenAuthenticationConfig) {
+
+            this.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
             return this;
         }
         @CustomType.Setter
@@ -162,6 +204,8 @@ public final class ClusterOptions {
             _resultValue.addOns = addOns;
             _resultValue.admissionControllerOptions = admissionControllerOptions;
             _resultValue.kubernetesNetworkConfig = kubernetesNetworkConfig;
+            _resultValue.openIdConnectDiscovery = openIdConnectDiscovery;
+            _resultValue.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
             _resultValue.persistentVolumeConfig = persistentVolumeConfig;
             _resultValue.serviceLbConfig = serviceLbConfig;
             _resultValue.serviceLbSubnetIds = serviceLbSubnetIds;

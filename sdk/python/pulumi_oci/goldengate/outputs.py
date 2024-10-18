@@ -27,6 +27,7 @@ __all__ = [
     'DeploymentMaintenanceConfiguration',
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
+    'DeploymentOggDataGroupToRolesMapping',
     'GetConnectionAdditionalAttributeResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionItemResult',
@@ -53,11 +54,15 @@ __all__ = [
     'GetDeploymentCertificatesCertificateCollectionItemResult',
     'GetDeploymentCertificatesFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
+    'GetDeploymentEnvironmentsDeploymentEnvironmentCollectionResult',
+    'GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult',
+    'GetDeploymentEnvironmentsFilterResult',
     'GetDeploymentIngressIpResult',
     'GetDeploymentLockResult',
     'GetDeploymentMaintenanceConfigurationResult',
     'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
+    'GetDeploymentOggDataGroupToRolesMappingResult',
     'GetDeploymentTypeItemResult',
     'GetDeploymentTypesDeploymentTypeCollectionResult',
     'GetDeploymentTypesDeploymentTypeCollectionItemResult',
@@ -76,6 +81,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
+    'GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult',
     'GetDeploymentsFilterResult',
     'GetMessageItemResult',
     'GetMessagesDeploymentMessagesCollectionResult',
@@ -149,6 +155,7 @@ class ConnectionBootstrapServer(dict):
         :param str host: (Updatable) The name or address of a host.
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
         :param str private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         if host is not None:
@@ -179,6 +186,7 @@ class ConnectionBootstrapServer(dict):
     def private_ip(self) -> Optional[str]:
         """
         (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -726,6 +734,8 @@ class DeploymentOggData(dict):
             suggest = "admin_username"
         elif key == "credentialStore":
             suggest = "credential_store"
+        elif key == "groupToRolesMapping":
+            suggest = "group_to_roles_mapping"
         elif key == "identityDomainId":
             suggest = "identity_domain_id"
         elif key == "oggVersion":
@@ -750,6 +760,7 @@ class DeploymentOggData(dict):
                  admin_username: Optional[str] = None,
                  certificate: Optional[str] = None,
                  credential_store: Optional[str] = None,
+                 group_to_roles_mapping: Optional['outputs.DeploymentOggDataGroupToRolesMapping'] = None,
                  identity_domain_id: Optional[str] = None,
                  key: Optional[str] = None,
                  ogg_version: Optional[str] = None,
@@ -760,6 +771,7 @@ class DeploymentOggData(dict):
         :param str admin_username: (Updatable) The GoldenGate deployment console username.
         :param str certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: (Updatable) The type of credential store for OGG.
+        :param 'DeploymentOggDataGroupToRolesMappingArgs' group_to_roles_mapping: (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str key: (Updatable) The base64 encoded content of the PEM file containing the private key.
         :param str ogg_version: Version of OGG
@@ -774,6 +786,8 @@ class DeploymentOggData(dict):
             pulumi.set(__self__, "certificate", certificate)
         if credential_store is not None:
             pulumi.set(__self__, "credential_store", credential_store)
+        if group_to_roles_mapping is not None:
+            pulumi.set(__self__, "group_to_roles_mapping", group_to_roles_mapping)
         if identity_domain_id is not None:
             pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
@@ -824,6 +838,14 @@ class DeploymentOggData(dict):
         return pulumi.get(self, "credential_store")
 
     @property
+    @pulumi.getter(name="groupToRolesMapping")
+    def group_to_roles_mapping(self) -> Optional['outputs.DeploymentOggDataGroupToRolesMapping']:
+        """
+        (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        """
+        return pulumi.get(self, "group_to_roles_mapping")
+
+    @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> Optional[str]:
         """
@@ -854,6 +876,83 @@ class DeploymentOggData(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         return pulumi.get(self, "password_secret_id")
+
+
+@pulumi.output_type
+class DeploymentOggDataGroupToRolesMapping(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "securityGroupId":
+            suggest = "security_group_id"
+        elif key == "administratorGroupId":
+            suggest = "administrator_group_id"
+        elif key == "operatorGroupId":
+            suggest = "operator_group_id"
+        elif key == "userGroupId":
+            suggest = "user_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentOggDataGroupToRolesMapping. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentOggDataGroupToRolesMapping.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentOggDataGroupToRolesMapping.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 security_group_id: str,
+                 administrator_group_id: Optional[str] = None,
+                 operator_group_id: Optional[str] = None,
+                 user_group_id: Optional[str] = None):
+        """
+        :param str security_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        :param str administrator_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        :param str operator_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        :param str user_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        pulumi.set(__self__, "security_group_id", security_group_id)
+        if administrator_group_id is not None:
+            pulumi.set(__self__, "administrator_group_id", administrator_group_id)
+        if operator_group_id is not None:
+            pulumi.set(__self__, "operator_group_id", operator_group_id)
+        if user_group_id is not None:
+            pulumi.set(__self__, "user_group_id", user_group_id)
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @property
+    @pulumi.getter(name="administratorGroupId")
+    def administrator_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        """
+        return pulumi.get(self, "administrator_group_id")
+
+    @property
+    @pulumi.getter(name="operatorGroupId")
+    def operator_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        """
+        return pulumi.get(self, "operator_group_id")
+
+    @property
+    @pulumi.getter(name="userGroupId")
+    def user_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        return pulumi.get(self, "user_group_id")
 
 
 @pulumi.output_type
@@ -3251,6 +3350,168 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult']):
+        """
+        :param Sequence['GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs'] items: Array of DeploymentEnvironmentSummary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult']:
+        """
+        Array of DeploymentEnvironmentSummary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 default_cpu_core_count: int,
+                 display_name: str,
+                 environment_type: str,
+                 is_auto_scaling_enabled_by_default: bool,
+                 max_cpu_core_count: int,
+                 memory_per_ocpu_in_gbs: int,
+                 min_cpu_core_count: int,
+                 network_bandwidth_per_ocpu_in_gbps: int,
+                 storage_usage_limit_per_ocpu_in_gbs: int):
+        """
+        :param str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param int default_cpu_core_count: The default CPU core count.
+        :param str display_name: An object's Display Name.
+        :param str environment_type: Specifies whether the deployment is used in a production or development/testing environment.
+        :param bool is_auto_scaling_enabled_by_default: Specifies whether the "Auto scaling" option should be enabled by default or not.
+        :param int max_cpu_core_count: The maximum CPU core count.
+        :param int memory_per_ocpu_in_gbs: The multiplier value between CPU core count and memory size.
+        :param int min_cpu_core_count: The minimum CPU core count.
+        :param int network_bandwidth_per_ocpu_in_gbps: The multiplier value between CPU core count and network bandwidth.
+        :param int storage_usage_limit_per_ocpu_in_gbs: The multiplier value between CPU core count and storage usage limit size.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "default_cpu_core_count", default_cpu_core_count)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "environment_type", environment_type)
+        pulumi.set(__self__, "is_auto_scaling_enabled_by_default", is_auto_scaling_enabled_by_default)
+        pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
+        pulumi.set(__self__, "memory_per_ocpu_in_gbs", memory_per_ocpu_in_gbs)
+        pulumi.set(__self__, "min_cpu_core_count", min_cpu_core_count)
+        pulumi.set(__self__, "network_bandwidth_per_ocpu_in_gbps", network_bandwidth_per_ocpu_in_gbps)
+        pulumi.set(__self__, "storage_usage_limit_per_ocpu_in_gbs", storage_usage_limit_per_ocpu_in_gbs)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter(name="defaultCpuCoreCount")
+    def default_cpu_core_count(self) -> int:
+        """
+        The default CPU core count.
+        """
+        return pulumi.get(self, "default_cpu_core_count")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> str:
+        """
+        Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @property
+    @pulumi.getter(name="isAutoScalingEnabledByDefault")
+    def is_auto_scaling_enabled_by_default(self) -> bool:
+        """
+        Specifies whether the "Auto scaling" option should be enabled by default or not.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled_by_default")
+
+    @property
+    @pulumi.getter(name="maxCpuCoreCount")
+    def max_cpu_core_count(self) -> int:
+        """
+        The maximum CPU core count.
+        """
+        return pulumi.get(self, "max_cpu_core_count")
+
+    @property
+    @pulumi.getter(name="memoryPerOcpuInGbs")
+    def memory_per_ocpu_in_gbs(self) -> int:
+        """
+        The multiplier value between CPU core count and memory size.
+        """
+        return pulumi.get(self, "memory_per_ocpu_in_gbs")
+
+    @property
+    @pulumi.getter(name="minCpuCoreCount")
+    def min_cpu_core_count(self) -> int:
+        """
+        The minimum CPU core count.
+        """
+        return pulumi.get(self, "min_cpu_core_count")
+
+    @property
+    @pulumi.getter(name="networkBandwidthPerOcpuInGbps")
+    def network_bandwidth_per_ocpu_in_gbps(self) -> int:
+        """
+        The multiplier value between CPU core count and network bandwidth.
+        """
+        return pulumi.get(self, "network_bandwidth_per_ocpu_in_gbps")
+
+    @property
+    @pulumi.getter(name="storageUsageLimitPerOcpuInGbs")
+    def storage_usage_limit_per_ocpu_in_gbs(self) -> int:
+        """
+        The multiplier value between CPU core count and storage usage limit size.
+        """
+        return pulumi.get(self, "storage_usage_limit_per_ocpu_in_gbs")
+
+
+@pulumi.output_type
+class GetDeploymentEnvironmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDeploymentIngressIpResult(dict):
     def __init__(__self__, *,
                  ingress_ip: str):
@@ -3418,6 +3679,7 @@ class GetDeploymentOggDataResult(dict):
                  certificate: str,
                  credential_store: str,
                  deployment_name: str,
+                 group_to_roles_mappings: Sequence['outputs.GetDeploymentOggDataGroupToRolesMappingResult'],
                  identity_domain_id: str,
                  key: str,
                  ogg_version: str,
@@ -3427,6 +3689,7 @@ class GetDeploymentOggDataResult(dict):
         :param str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param Sequence['GetDeploymentOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -3436,6 +3699,7 @@ class GetDeploymentOggDataResult(dict):
         pulumi.set(__self__, "certificate", certificate)
         pulumi.set(__self__, "credential_store", credential_store)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "group_to_roles_mappings", group_to_roles_mappings)
         pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "ogg_version", ogg_version)
@@ -3479,6 +3743,14 @@ class GetDeploymentOggDataResult(dict):
         return pulumi.get(self, "deployment_name")
 
     @property
+    @pulumi.getter(name="groupToRolesMappings")
+    def group_to_roles_mappings(self) -> Sequence['outputs.GetDeploymentOggDataGroupToRolesMappingResult']:
+        """
+        Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        """
+        return pulumi.get(self, "group_to_roles_mappings")
+
+    @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> str:
         """
@@ -3506,6 +3778,57 @@ class GetDeploymentOggDataResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         return pulumi.get(self, "password_secret_id")
+
+
+@pulumi.output_type
+class GetDeploymentOggDataGroupToRolesMappingResult(dict):
+    def __init__(__self__, *,
+                 administrator_group_id: str,
+                 operator_group_id: str,
+                 security_group_id: str,
+                 user_group_id: str):
+        """
+        :param str administrator_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        :param str operator_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        :param str security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        :param str user_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        pulumi.set(__self__, "administrator_group_id", administrator_group_id)
+        pulumi.set(__self__, "operator_group_id", operator_group_id)
+        pulumi.set(__self__, "security_group_id", security_group_id)
+        pulumi.set(__self__, "user_group_id", user_group_id)
+
+    @property
+    @pulumi.getter(name="administratorGroupId")
+    def administrator_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        """
+        return pulumi.get(self, "administrator_group_id")
+
+    @property
+    @pulumi.getter(name="operatorGroupId")
+    def operator_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        """
+        return pulumi.get(self, "operator_group_id")
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @property
+    @pulumi.getter(name="userGroupId")
+    def user_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        return pulumi.get(self, "user_group_id")
 
 
 @pulumi.output_type
@@ -4234,6 +4557,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
+                 category: str,
                  compartment_id: str,
                  cpu_core_count: int,
                  defined_tags: Mapping[str, str],
@@ -4243,6 +4567,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  deployment_url: str,
                  description: str,
                  display_name: str,
+                 environment_type: str,
                  fqdn: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
@@ -4277,6 +4602,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  time_updated: str,
                  time_upgrade_required: str):
         """
+        :param str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
         :param Mapping[str, str] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -4286,6 +4612,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str deployment_url: The URL of a resource.
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str environment_type: Specifies whether the deployment is used in a production or development/testing environment.
         :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
         :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -4294,7 +4621,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param bool is_healthy: True if all of the aggregate resources are working correctly.
         :param bool is_latest_version: Indicates if the resource is the the latest available version.
         :param bool is_public: True if this object is publicly available.
-        :param bool is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        :param bool is_storage_utilization_limit_exceeded: Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         :param str license_model: The Oracle license model that applies to a Deployment.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
@@ -4319,6 +4646,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4328,6 +4656,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "deployment_url", deployment_url)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "environment_type", environment_type)
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -4361,6 +4690,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        """
+        return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4435,6 +4772,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> str:
+        """
+        Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @property
     @pulumi.getter
     def fqdn(self) -> str:
         """
@@ -4507,7 +4852,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
     def is_storage_utilization_limit_exceeded(self) -> bool:
         """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         """
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
@@ -4937,6 +5282,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
                  certificate: str,
                  credential_store: str,
                  deployment_name: str,
+                 group_to_roles_mappings: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult'],
                  identity_domain_id: str,
                  key: str,
                  ogg_version: str,
@@ -4946,6 +5292,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         :param str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -4955,6 +5302,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         pulumi.set(__self__, "certificate", certificate)
         pulumi.set(__self__, "credential_store", credential_store)
         pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "group_to_roles_mappings", group_to_roles_mappings)
         pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "ogg_version", ogg_version)
@@ -4998,6 +5346,14 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         return pulumi.get(self, "deployment_name")
 
     @property
+    @pulumi.getter(name="groupToRolesMappings")
+    def group_to_roles_mappings(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult']:
+        """
+        Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+        """
+        return pulumi.get(self, "group_to_roles_mappings")
+
+    @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> str:
         """
@@ -5025,6 +5381,57 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         return pulumi.get(self, "password_secret_id")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult(dict):
+    def __init__(__self__, *,
+                 administrator_group_id: str,
+                 operator_group_id: str,
+                 security_group_id: str,
+                 user_group_id: str):
+        """
+        :param str administrator_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        :param str operator_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        :param str security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        :param str user_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        pulumi.set(__self__, "administrator_group_id", administrator_group_id)
+        pulumi.set(__self__, "operator_group_id", operator_group_id)
+        pulumi.set(__self__, "security_group_id", security_group_id)
+        pulumi.set(__self__, "user_group_id", user_group_id)
+
+    @property
+    @pulumi.getter(name="administratorGroupId")
+    def administrator_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+        """
+        return pulumi.get(self, "administrator_group_id")
+
+    @property
+    @pulumi.getter(name="operatorGroupId")
+    def operator_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+        """
+        return pulumi.get(self, "operator_group_id")
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @property
+    @pulumi.getter(name="userGroupId")
+    def user_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+        """
+        return pulumi.get(self, "user_group_id")
 
 
 @pulumi.output_type

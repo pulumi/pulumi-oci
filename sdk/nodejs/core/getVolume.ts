@@ -110,6 +110,9 @@ export interface GetVolumeResult {
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
     readonly sizeInMbs: string;
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     */
     readonly sourceDetails: outputs.Core.GetVolumeSourceDetail[];
     /**
      * The current state of a volume.
@@ -133,6 +136,7 @@ export interface GetVolumeResult {
      * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      */
     readonly vpusPerGb: string;
+    readonly xrcKmsKeyId: string;
 }
 /**
  * This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.

@@ -17,14 +17,18 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetRrsetArgs Empty = new GetRrsetArgs();
 
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment the resource belongs to.
+     * @return The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -63,7 +67,6 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
      * 
      */
     @Import(name="scope")
@@ -71,7 +74,6 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -79,14 +81,14 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     @Import(name="viewId")
     private @Nullable Output<String> viewId;
 
     /**
-     * @return The OCID of the view the resource is associated with.
+     * @return The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     public Optional<Output<String>> viewId() {
@@ -154,7 +156,9 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment the resource belongs to.
+         * @param compartmentId The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
          * 
          * @return builder
          * 
@@ -165,7 +169,9 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment the resource belongs to.
+         * @param compartmentId The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
          * 
          * @return builder
          * 
@@ -218,7 +224,6 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
          * 
          * @return builder
          * 
@@ -230,7 +235,6 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param scope Specifies to operate only on resources that have a matching DNS scope.
-         * This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
          * 
          * @return builder
          * 
@@ -240,7 +244,7 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param viewId The OCID of the view the resource is associated with.
+         * @param viewId The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * 
          * @return builder
          * 
@@ -251,7 +255,7 @@ public final class GetRrsetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param viewId The OCID of the view the resource is associated with.
+         * @param viewId The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * 
          * @return builder
          * 

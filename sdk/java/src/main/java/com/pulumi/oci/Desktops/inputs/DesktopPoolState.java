@@ -10,6 +10,7 @@ import com.pulumi.oci.Desktops.inputs.DesktopPoolDevicePolicyArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolImageArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolNetworkConfigurationArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolPrivateAccessDetailsArgs;
+import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolShapeConfigArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -281,6 +282,21 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The details of action to be triggered in case of inactivity or disconnect
+     * 
+     */
+    @Import(name="sessionLifecycleActions")
+    private @Nullable Output<DesktopPoolSessionLifecycleActionsArgs> sessionLifecycleActions;
+
+    /**
+     * @return The details of action to be triggered in case of inactivity or disconnect
+     * 
+     */
+    public Optional<Output<DesktopPoolSessionLifecycleActionsArgs>> sessionLifecycleActions() {
+        return Optional.ofNullable(this.sessionLifecycleActions);
+    }
+
+    /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      * 
      */
@@ -456,6 +472,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         this.networkConfiguration = $.networkConfiguration;
         this.nsgIds = $.nsgIds;
         this.privateAccessDetails = $.privateAccessDetails;
+        this.sessionLifecycleActions = $.sessionLifecycleActions;
         this.shapeConfig = $.shapeConfig;
         this.shapeName = $.shapeName;
         this.standbySize = $.standbySize;
@@ -851,6 +868,27 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateAccessDetails(DesktopPoolPrivateAccessDetailsArgs privateAccessDetails) {
             return privateAccessDetails(Output.of(privateAccessDetails));
+        }
+
+        /**
+         * @param sessionLifecycleActions The details of action to be triggered in case of inactivity or disconnect
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionLifecycleActions(@Nullable Output<DesktopPoolSessionLifecycleActionsArgs> sessionLifecycleActions) {
+            $.sessionLifecycleActions = sessionLifecycleActions;
+            return this;
+        }
+
+        /**
+         * @param sessionLifecycleActions The details of action to be triggered in case of inactivity or disconnect
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sessionLifecycleActions(DesktopPoolSessionLifecycleActionsArgs sessionLifecycleActions) {
+            return sessionLifecycleActions(Output.of(sessionLifecycleActions));
         }
 
         /**

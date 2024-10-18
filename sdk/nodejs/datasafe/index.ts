@@ -110,6 +110,11 @@ export type DiscoveryMod = import("./discoveryMod").DiscoveryMod;
 export const DiscoveryMod: typeof import("./discoveryMod").DiscoveryMod = null as any;
 utilities.lazyLoad(exports, ["DiscoveryMod"], () => require("./discoveryMod"));
 
+export { GenerateOnPremConnectorConfigurationArgs, GenerateOnPremConnectorConfigurationState } from "./generateOnPremConnectorConfiguration";
+export type GenerateOnPremConnectorConfiguration = import("./generateOnPremConnectorConfiguration").GenerateOnPremConnectorConfiguration;
+export const GenerateOnPremConnectorConfiguration: typeof import("./generateOnPremConnectorConfiguration").GenerateOnPremConnectorConfiguration = null as any;
+utilities.lazyLoad(exports, ["GenerateOnPremConnectorConfiguration"], () => require("./generateOnPremConnectorConfiguration"));
+
 export { GetAlertArgs, GetAlertResult, GetAlertOutputArgs } from "./getAlert";
 export const getAlert: typeof import("./getAlert").getAlert = null as any;
 export const getAlertOutput: typeof import("./getAlert").getAlertOutput = null as any;
@@ -957,6 +962,8 @@ const _module = {
                 return new DiscoveryJobsResult(name, <any>undefined, { urn })
             case "oci:DataSafe/discoveryMod:DiscoveryMod":
                 return new DiscoveryMod(name, <any>undefined, { urn })
+            case "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration":
+                return new GenerateOnPremConnectorConfiguration(name, <any>undefined, { urn })
             case "oci:DataSafe/libraryMasingFormat:LibraryMasingFormat":
                 return new LibraryMasingFormat(name, <any>undefined, { urn })
             case "oci:DataSafe/maskData:MaskData":
@@ -1053,6 +1060,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/databaseSecurityConfig", 
 pulumi.runtime.registerResourceModule("oci", "DataSafe/databaseSecurityConfigManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryJobsResult", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/discoveryMod", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/generateOnPremConnectorConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/libraryMasingFormat", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskData", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns", _module)

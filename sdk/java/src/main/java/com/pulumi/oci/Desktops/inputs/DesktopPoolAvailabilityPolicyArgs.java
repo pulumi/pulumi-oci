@@ -5,10 +5,11 @@ package com.pulumi.oci.Desktops.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyStartScheduleArgs;
 import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyStopScheduleArgs;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DesktopPoolAvailabilityPolicyArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,30 +20,30 @@ public final class DesktopPoolAvailabilityPolicyArgs extends com.pulumi.resource
      * (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    @Import(name="startSchedule", required=true)
-    private Output<DesktopPoolAvailabilityPolicyStartScheduleArgs> startSchedule;
+    @Import(name="startSchedule")
+    private @Nullable Output<DesktopPoolAvailabilityPolicyStartScheduleArgs> startSchedule;
 
     /**
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    public Output<DesktopPoolAvailabilityPolicyStartScheduleArgs> startSchedule() {
-        return this.startSchedule;
+    public Optional<Output<DesktopPoolAvailabilityPolicyStartScheduleArgs>> startSchedule() {
+        return Optional.ofNullable(this.startSchedule);
     }
 
     /**
      * (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    @Import(name="stopSchedule", required=true)
-    private Output<DesktopPoolAvailabilityPolicyStopScheduleArgs> stopSchedule;
+    @Import(name="stopSchedule")
+    private @Nullable Output<DesktopPoolAvailabilityPolicyStopScheduleArgs> stopSchedule;
 
     /**
      * @return (Updatable) Provides the schedule information for a desktop.
      * 
      */
-    public Output<DesktopPoolAvailabilityPolicyStopScheduleArgs> stopSchedule() {
-        return this.stopSchedule;
+    public Optional<Output<DesktopPoolAvailabilityPolicyStopScheduleArgs>> stopSchedule() {
+        return Optional.ofNullable(this.stopSchedule);
     }
 
     private DesktopPoolAvailabilityPolicyArgs() {}
@@ -76,7 +77,7 @@ public final class DesktopPoolAvailabilityPolicyArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder startSchedule(Output<DesktopPoolAvailabilityPolicyStartScheduleArgs> startSchedule) {
+        public Builder startSchedule(@Nullable Output<DesktopPoolAvailabilityPolicyStartScheduleArgs> startSchedule) {
             $.startSchedule = startSchedule;
             return this;
         }
@@ -97,7 +98,7 @@ public final class DesktopPoolAvailabilityPolicyArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder stopSchedule(Output<DesktopPoolAvailabilityPolicyStopScheduleArgs> stopSchedule) {
+        public Builder stopSchedule(@Nullable Output<DesktopPoolAvailabilityPolicyStopScheduleArgs> stopSchedule) {
             $.stopSchedule = stopSchedule;
             return this;
         }
@@ -113,12 +114,6 @@ public final class DesktopPoolAvailabilityPolicyArgs extends com.pulumi.resource
         }
 
         public DesktopPoolAvailabilityPolicyArgs build() {
-            if ($.startSchedule == null) {
-                throw new MissingRequiredPropertyException("DesktopPoolAvailabilityPolicyArgs", "startSchedule");
-            }
-            if ($.stopSchedule == null) {
-                throw new MissingRequiredPropertyException("DesktopPoolAvailabilityPolicyArgs", "stopSchedule");
-            }
             return $;
         }
     }

@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDesktopPoolPrivateAccessDetail {
     /**
-     * @return The three-label FQDN to use for the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint&#39;s private IP address to access the service (for example, xyz.oraclecloud.com).
+     * @return The three-label FQDN to use for the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint&#39;s private IP address to access the service (for example, xyz.oraclecloud.com).
      * 
      */
     private String endpointFqdn;
@@ -27,7 +27,7 @@ public final class GetDesktopPoolPrivateAccessDetail {
      */
     private String privateIp;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
      * 
      */
     private String subnetId;
@@ -39,7 +39,7 @@ public final class GetDesktopPoolPrivateAccessDetail {
 
     private GetDesktopPoolPrivateAccessDetail() {}
     /**
-     * @return The three-label FQDN to use for the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint&#39;s private IP address to access the service (for example, xyz.oraclecloud.com).
+     * @return The three-label FQDN to use for the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint&#39;s private IP address to access the service (for example, xyz.oraclecloud.com).
      * 
      */
     public String endpointFqdn() {
@@ -60,7 +60,7 @@ public final class GetDesktopPoolPrivateAccessDetail {
         return this.privateIp;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
      * 
      */
     public String subnetId() {

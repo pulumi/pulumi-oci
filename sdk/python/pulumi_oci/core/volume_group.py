@@ -32,7 +32,8 @@ class VolumeGroupArgs:
                  preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VolumeGroup resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume group.
@@ -48,6 +49,7 @@ class VolumeGroupArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -73,6 +75,8 @@ class VolumeGroupArgs:
             pulumi.set(__self__, "volume_group_replicas_deletion", volume_group_replicas_deletion)
         if volume_ids is not None:
             pulumi.set(__self__, "volume_ids", volume_ids)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -216,6 +220,18 @@ class VolumeGroupArgs:
     def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "volume_ids", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 @pulumi.input_type
 class _VolumeGroupState:
@@ -236,7 +252,8 @@ class _VolumeGroupState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroup resources.
         :param pulumi.Input[str] availability_domain: The availability domain of the volume group.
@@ -257,6 +274,7 @@ class _VolumeGroupState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -295,6 +313,8 @@ class _VolumeGroupState:
             pulumi.set(__self__, "volume_group_replicas_deletion", volume_group_replicas_deletion)
         if volume_ids is not None:
             pulumi.set(__self__, "volume_ids", volume_ids)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -498,6 +518,18 @@ class _VolumeGroupState:
     def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "volume_ids", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 class VolumeGroup(pulumi.CustomResource):
     @overload
@@ -516,6 +548,7 @@ class VolumeGroup(pulumi.CustomResource):
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -543,8 +576,10 @@ class VolumeGroup(pulumi.CustomResource):
             volume_group_replicas=[{
                 "availability_domain": volume_group_volume_group_replicas_availability_domain,
                 "display_name": volume_group_volume_group_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
-            volume_ids=[volume_group_source_id])
+            volume_ids=[volume_group_source_id],
+            xrc_kms_key_id=test_key["id"])
         ```
 
         ## Import
@@ -570,6 +605,7 @@ class VolumeGroup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         ...
     @overload
@@ -603,8 +639,10 @@ class VolumeGroup(pulumi.CustomResource):
             volume_group_replicas=[{
                 "availability_domain": volume_group_volume_group_replicas_availability_domain,
                 "display_name": volume_group_volume_group_replicas_display_name,
+                "xrr_kms_key_id": test_key["id"],
             }],
-            volume_ids=[volume_group_source_id])
+            volume_ids=[volume_group_source_id],
+            xrc_kms_key_id=test_key["id"])
         ```
 
         ## Import
@@ -642,6 +680,7 @@ class VolumeGroup(pulumi.CustomResource):
                  volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
                  volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -669,6 +708,7 @@ class VolumeGroup(pulumi.CustomResource):
             __props__.__dict__["volume_group_replicas"] = volume_group_replicas
             __props__.__dict__["volume_group_replicas_deletion"] = volume_group_replicas_deletion
             __props__.__dict__["volume_ids"] = volume_ids
+            __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
             __props__.__dict__["is_hydrated"] = None
             __props__.__dict__["size_in_gbs"] = None
             __props__.__dict__["size_in_mbs"] = None
@@ -700,7 +740,8 @@ class VolumeGroup(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
             volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
-            volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'VolumeGroup':
+            volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            xrc_kms_key_id: Optional[pulumi.Input[str]] = None) -> 'VolumeGroup':
         """
         Get an existing VolumeGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -726,6 +767,7 @@ class VolumeGroup(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -748,6 +790,7 @@ class VolumeGroup(pulumi.CustomResource):
         __props__.__dict__["volume_group_replicas"] = volume_group_replicas
         __props__.__dict__["volume_group_replicas_deletion"] = volume_group_replicas_deletion
         __props__.__dict__["volume_ids"] = volume_ids
+        __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return VolumeGroup(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -883,4 +926,12 @@ class VolumeGroup(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_ids")
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
 

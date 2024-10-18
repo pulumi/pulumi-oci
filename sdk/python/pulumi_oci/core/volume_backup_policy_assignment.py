@@ -20,11 +20,13 @@ __all__ = ['VolumeBackupPolicyAssignmentArgs', 'VolumeBackupPolicyAssignment']
 class VolumeBackupPolicyAssignmentArgs:
     def __init__(__self__, *,
                  asset_id: pulumi.Input[str],
-                 policy_id: pulumi.Input[str]):
+                 policy_id: pulumi.Input[str],
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
                
                
                ** IMPORTANT **
@@ -32,6 +34,8 @@ class VolumeBackupPolicyAssignmentArgs:
         """
         pulumi.set(__self__, "asset_id", asset_id)
         pulumi.set(__self__, "policy_id", policy_id)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="assetId")
@@ -50,10 +54,6 @@ class VolumeBackupPolicyAssignmentArgs:
     def policy_id(self) -> pulumi.Input[str]:
         """
         The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 
@@ -61,22 +61,40 @@ class VolumeBackupPolicyAssignmentArgs:
     def policy_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "policy_id", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 @pulumi.input_type
 class _VolumeBackupPolicyAssignmentState:
     def __init__(__self__, *,
                  asset_id: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None):
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if asset_id is not None:
             pulumi.set(__self__, "asset_id", asset_id)
@@ -84,6 +102,8 @@ class _VolumeBackupPolicyAssignmentState:
             pulumi.set(__self__, "policy_id", policy_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if xrc_kms_key_id is not None:
+            pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="assetId")
@@ -102,10 +122,6 @@ class _VolumeBackupPolicyAssignmentState:
     def policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 
@@ -125,6 +141,22 @@ class _VolumeBackupPolicyAssignmentState:
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "xrc_kms_key_id", value)
+
 
 class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     @overload
@@ -133,6 +165,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  asset_id: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
@@ -149,7 +182,8 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment",
             asset_id=test_volume["id"],
-            policy_id=test_volume_backup_policy["id"])
+            policy_id=test_volume_backup_policy["id"],
+            xrc_kms_key_id=test_key["id"])
         ```
 
         ## Import
@@ -164,6 +198,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
                
                
                ** IMPORTANT **
@@ -190,7 +225,8 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment",
             asset_id=test_volume["id"],
-            policy_id=test_volume_backup_policy["id"])
+            policy_id=test_volume_backup_policy["id"],
+            xrc_kms_key_id=test_key["id"])
         ```
 
         ## Import
@@ -218,6 +254,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  asset_id: Optional[pulumi.Input[str]] = None,
                  policy_id: Optional[pulumi.Input[str]] = None,
+                 xrc_kms_key_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -233,6 +270,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             if policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'policy_id'")
             __props__.__dict__["policy_id"] = policy_id
+            __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
             __props__.__dict__["time_created"] = None
         super(VolumeBackupPolicyAssignment, __self__).__init__(
             'oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment',
@@ -246,7 +284,8 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             asset_id: Optional[pulumi.Input[str]] = None,
             policy_id: Optional[pulumi.Input[str]] = None,
-            time_created: Optional[pulumi.Input[str]] = None) -> 'VolumeBackupPolicyAssignment':
+            time_created: Optional[pulumi.Input[str]] = None,
+            xrc_kms_key_id: Optional[pulumi.Input[str]] = None) -> 'VolumeBackupPolicyAssignment':
         """
         Get an existing VolumeBackupPolicyAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -256,11 +295,12 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume or volume group to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] xrc_kms_key_id: The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -269,6 +309,7 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         __props__.__dict__["asset_id"] = asset_id
         __props__.__dict__["policy_id"] = policy_id
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return VolumeBackupPolicyAssignment(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -284,10 +325,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def policy_id(self) -> pulumi.Output[str]:
         """
         The OCID of the volume backup policy to assign to the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 
@@ -298,4 +335,16 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "xrc_kms_key_id")
 

@@ -26,6 +26,14 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClustersClusterOptionKubernetesNetworkConfigResult> KubernetesNetworkConfigs;
         /// <summary>
+        /// The property that define the status of the OIDC Discovery feature for a cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClustersClusterOptionOpenIdConnectDiscoveryResult> OpenIdConnectDiscoveries;
+        /// <summary>
+        /// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult> OpenIdConnectTokenAuthenticationConfigs;
+        /// <summary>
         /// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClustersClusterOptionPersistentVolumeConfigResult> PersistentVolumeConfigs;
@@ -46,6 +54,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.GetClustersClusterOptionKubernetesNetworkConfigResult> kubernetesNetworkConfigs,
 
+            ImmutableArray<Outputs.GetClustersClusterOptionOpenIdConnectDiscoveryResult> openIdConnectDiscoveries,
+
+            ImmutableArray<Outputs.GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigResult> openIdConnectTokenAuthenticationConfigs,
+
             ImmutableArray<Outputs.GetClustersClusterOptionPersistentVolumeConfigResult> persistentVolumeConfigs,
 
             ImmutableArray<Outputs.GetClustersClusterOptionServiceLbConfigResult> serviceLbConfigs,
@@ -55,6 +67,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             AddOns = addOns;
             AdmissionControllerOptions = admissionControllerOptions;
             KubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            OpenIdConnectDiscoveries = openIdConnectDiscoveries;
+            OpenIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
             PersistentVolumeConfigs = persistentVolumeConfigs;
             ServiceLbConfigs = serviceLbConfigs;
             ServiceLbSubnetIds = serviceLbSubnetIds;

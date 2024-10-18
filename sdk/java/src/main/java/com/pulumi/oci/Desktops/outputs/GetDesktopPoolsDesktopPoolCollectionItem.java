@@ -10,6 +10,7 @@ import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemD
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemImage;
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration;
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail;
+import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction;
 import com.pulumi.oci.Desktops.outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -110,6 +111,11 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      * 
      */
     private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
+    /**
+     * @return Action to be triggered on inactivity or disconnect
+     * 
+     */
+    private List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions;
     /**
      * @return The shape configuration used for each desktop compute instance in the desktop pool.
      * 
@@ -289,6 +295,13 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         return this.privateAccessDetails;
     }
     /**
+     * @return Action to be triggered on inactivity or disconnect
+     * 
+     */
+    public List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions() {
+        return this.sessionLifecycleActions;
+    }
+    /**
      * @return The shape configuration used for each desktop compute instance in the desktop pool.
      * 
      */
@@ -386,6 +399,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         private List<GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration> networkConfigurations;
         private List<String> nsgIds;
         private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
+        private List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions;
         private List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs;
         private String shapeName;
         private Integer standbySize;
@@ -417,6 +431,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateAccessDetails = defaults.privateAccessDetails;
+    	      this.sessionLifecycleActions = defaults.sessionLifecycleActions;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.shapeName = defaults.shapeName;
     	      this.standbySize = defaults.standbySize;
@@ -592,6 +607,17 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             return privateAccessDetails(List.of(privateAccessDetails));
         }
         @CustomType.Setter
+        public Builder sessionLifecycleActions(List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions) {
+            if (sessionLifecycleActions == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "sessionLifecycleActions");
+            }
+            this.sessionLifecycleActions = sessionLifecycleActions;
+            return this;
+        }
+        public Builder sessionLifecycleActions(GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction... sessionLifecycleActions) {
+            return sessionLifecycleActions(List.of(sessionLifecycleActions));
+        }
+        @CustomType.Setter
         public Builder shapeConfigs(List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs) {
             if (shapeConfigs == null) {
               throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "shapeConfigs");
@@ -694,6 +720,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateAccessDetails = privateAccessDetails;
+            _resultValue.sessionLifecycleActions = sessionLifecycleActions;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.shapeName = shapeName;
             _resultValue.standbySize = standbySize;

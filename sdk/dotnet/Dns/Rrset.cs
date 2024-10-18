@@ -12,8 +12,10 @@ namespace Pulumi.Oci.Dns
     /// <summary>
     /// This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
     /// 
-    /// Replaces records in the specified RRSet. When the zone name is provided as a path parameter
-    /// and the zone has a scope of `PRIVATE` then the viewId query parameter is required.
+    ///   Updates records in the specified RRSet.
+    /// 
+    /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+    /// parameter then the viewId query parameter is required.
     /// 
     /// ## Example Usage
     /// 
@@ -30,7 +32,6 @@ namespace Pulumi.Oci.Dns
     ///         Domain = rrsetDomain,
     ///         Rtype = rrsetRtype,
     ///         ZoneNameOrId = testZone.Id,
-    ///         CompartmentId = compartmentId,
     ///         Items = new[]
     ///         {
     ///             new Oci.Dns.Inputs.RrsetItemArgs
@@ -66,7 +67,9 @@ namespace Pulumi.Oci.Dns
     public partial class Rrset : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment the resource belongs to.
+        /// (Updatable) The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -79,7 +82,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.RrsetItem>> Items { get; private set; } = null!;
@@ -91,14 +94,13 @@ namespace Pulumi.Oci.Dns
         public Output<string> Rtype { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Output("viewId")]
         public Output<string?> ViewId { get; private set; } = null!;
@@ -160,7 +162,9 @@ namespace Pulumi.Oci.Dns
     public sealed class RrsetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment the resource belongs to.
+        /// (Updatable) The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -176,7 +180,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemArgs> Items
         {
@@ -191,14 +195,13 @@ namespace Pulumi.Oci.Dns
         public Input<string> Rtype { get; set; } = null!;
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public Input<string>? ViewId { get; set; }
@@ -222,7 +225,9 @@ namespace Pulumi.Oci.Dns
     public sealed class RrsetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment the resource belongs to.
+        /// (Updatable) The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -238,7 +243,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemGetArgs> Items
         {
@@ -253,14 +258,13 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Rtype { get; set; }
 
         /// <summary>
-        /// Specifies to operate only on resources that have a matching DNS scope. 
-        /// This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+        /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public Input<string>? ViewId { get; set; }

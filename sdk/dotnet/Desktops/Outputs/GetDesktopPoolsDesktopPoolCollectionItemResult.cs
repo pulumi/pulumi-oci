@@ -86,6 +86,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult> PrivateAccessDetails;
         /// <summary>
+        /// Action to be triggered on inactivity or disconnect
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult> SessionLifecycleActions;
+        /// <summary>
         /// The shape configuration used for each desktop compute instance in the desktop pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult> ShapeConfigs;
@@ -164,6 +168,8 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult> privateAccessDetails,
 
+            ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult> sessionLifecycleActions,
+
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult> shapeConfigs,
 
             string shapeName,
@@ -202,6 +208,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             NetworkConfigurations = networkConfigurations;
             NsgIds = nsgIds;
             PrivateAccessDetails = privateAccessDetails;
+            SessionLifecycleActions = sessionLifecycleActions;
             ShapeConfigs = shapeConfigs;
             ShapeName = shapeName;
             StandbySize = standbySize;

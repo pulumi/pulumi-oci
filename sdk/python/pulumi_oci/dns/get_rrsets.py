@@ -143,10 +143,11 @@ def get_rrsets(domain: Optional[str] = None,
     """
     This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets a list of all rrsets in the specified zone.
+
+    You can optionally filter the results using the listed parameters. When the zone name
+    is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+    the viewId parameter is required.
 
     ## Example Usage
 
@@ -167,7 +168,7 @@ def get_rrsets(domain: Optional[str] = None,
     :param str domain_contains: Matches any rrset whose fully-qualified domain name (FQDN) contains the provided value.
     :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
     :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-    :param str view_id: The OCID of the view the resource is associated with.
+    :param str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param str zone_name_or_id: The name or OCID of the target zone.
     """
     __args__ = dict()
@@ -202,10 +203,11 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     """
     This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets a list of all rrsets in the specified zone.
+
+    You can optionally filter the results using the listed parameters. When the zone name
+    is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+    the viewId parameter is required.
 
     ## Example Usage
 
@@ -226,7 +228,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     :param str domain_contains: Matches any rrset whose fully-qualified domain name (FQDN) contains the provided value.
     :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
     :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-    :param str view_id: The OCID of the view the resource is associated with.
+    :param str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param str zone_name_or_id: The name or OCID of the target zone.
     """
     __args__ = dict()

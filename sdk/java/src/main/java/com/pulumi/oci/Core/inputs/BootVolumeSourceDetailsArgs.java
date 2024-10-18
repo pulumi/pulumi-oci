@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,29 +17,74 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
     public static final BootVolumeSourceDetailsArgs Empty = new BootVolumeSourceDetailsArgs();
 
     /**
+     * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    @Import(name="changeBlockSizeInBytes")
+    private @Nullable Output<String> changeBlockSizeInBytes;
+
+    /**
+     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    public Optional<Output<String>> changeBlockSizeInBytes() {
+        return Optional.ofNullable(this.changeBlockSizeInBytes);
+    }
+
+    /**
+     * The OCID of the first boot volume backup.
+     * 
+     */
+    @Import(name="firstBackupId")
+    private @Nullable Output<String> firstBackupId;
+
+    /**
+     * @return The OCID of the first boot volume backup.
+     * 
+     */
+    public Optional<Output<String>> firstBackupId() {
+        return Optional.ofNullable(this.firstBackupId);
+    }
+
+    /**
      * The OCID of the boot volume replica.
      * 
      */
-    @Import(name="id", required=true)
-    private Output<String> id;
+    @Import(name="id")
+    private @Nullable Output<String> id;
 
     /**
      * @return The OCID of the boot volume replica.
      * 
      */
-    public Output<String> id() {
-        return this.id;
+    public Optional<Output<String>> id() {
+        return Optional.ofNullable(this.id);
     }
 
     /**
-     * The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+     * The OCID of the second boot volume backup.
+     * 
+     */
+    @Import(name="secondBackupId")
+    private @Nullable Output<String> secondBackupId;
+
+    /**
+     * @return The OCID of the second boot volume backup.
+     * 
+     */
+    public Optional<Output<String>> secondBackupId() {
+        return Optional.ofNullable(this.secondBackupId);
+    }
+
+    /**
+     * The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+     * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
      * 
      */
     public Output<String> type() {
@@ -47,7 +94,10 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
     private BootVolumeSourceDetailsArgs() {}
 
     private BootVolumeSourceDetailsArgs(BootVolumeSourceDetailsArgs $) {
+        this.changeBlockSizeInBytes = $.changeBlockSizeInBytes;
+        this.firstBackupId = $.firstBackupId;
         this.id = $.id;
+        this.secondBackupId = $.secondBackupId;
         this.type = $.type;
     }
 
@@ -70,12 +120,54 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param changeBlockSizeInBytes Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder changeBlockSizeInBytes(@Nullable Output<String> changeBlockSizeInBytes) {
+            $.changeBlockSizeInBytes = changeBlockSizeInBytes;
+            return this;
+        }
+
+        /**
+         * @param changeBlockSizeInBytes Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder changeBlockSizeInBytes(String changeBlockSizeInBytes) {
+            return changeBlockSizeInBytes(Output.of(changeBlockSizeInBytes));
+        }
+
+        /**
+         * @param firstBackupId The OCID of the first boot volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firstBackupId(@Nullable Output<String> firstBackupId) {
+            $.firstBackupId = firstBackupId;
+            return this;
+        }
+
+        /**
+         * @param firstBackupId The OCID of the first boot volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firstBackupId(String firstBackupId) {
+            return firstBackupId(Output.of(firstBackupId));
+        }
+
+        /**
          * @param id The OCID of the boot volume replica.
          * 
          * @return builder
          * 
          */
-        public Builder id(Output<String> id) {
+        public Builder id(@Nullable Output<String> id) {
             $.id = id;
             return this;
         }
@@ -91,7 +183,28 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+         * @param secondBackupId The OCID of the second boot volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondBackupId(@Nullable Output<String> secondBackupId) {
+            $.secondBackupId = secondBackupId;
+            return this;
+        }
+
+        /**
+         * @param secondBackupId The OCID of the second boot volume backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondBackupId(String secondBackupId) {
+            return secondBackupId(Output.of(secondBackupId));
+        }
+
+        /**
+         * @param type The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
          * 
          * @return builder
          * 
@@ -102,7 +215,7 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+         * @param type The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
          * 
          * @return builder
          * 
@@ -112,9 +225,6 @@ public final class BootVolumeSourceDetailsArgs extends com.pulumi.resources.Reso
         }
 
         public BootVolumeSourceDetailsArgs build() {
-            if ($.id == null) {
-                throw new MissingRequiredPropertyException("BootVolumeSourceDetailsArgs", "id");
-            }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("BootVolumeSourceDetailsArgs", "type");
             }

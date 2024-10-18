@@ -125,6 +125,7 @@ type ConnectionBootstrapServer struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
 }
@@ -146,6 +147,7 @@ type ConnectionBootstrapServerArgs struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 }
@@ -212,6 +214,7 @@ func (o ConnectionBootstrapServerOutput) Port() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+//
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o ConnectionBootstrapServerOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
@@ -1325,6 +1328,8 @@ type DeploymentOggData struct {
 	CredentialStore *string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
+	// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMapping *DeploymentOggDataGroupToRolesMapping `pulumi:"groupToRolesMapping"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId *string `pulumi:"identityDomainId"`
 	// (Updatable) The base64 encoded content of the PEM file containing the private key.
@@ -1357,6 +1362,8 @@ type DeploymentOggDataArgs struct {
 	CredentialStore pulumi.StringPtrInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
+	// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMapping DeploymentOggDataGroupToRolesMappingPtrInput `pulumi:"groupToRolesMapping"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringPtrInput `pulumi:"identityDomainId"`
 	// (Updatable) The base64 encoded content of the PEM file containing the private key.
@@ -1469,6 +1476,11 @@ func (o DeploymentOggDataOutput) DeploymentName() pulumi.StringOutput {
 	return o.ApplyT(func(v DeploymentOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+func (o DeploymentOggDataOutput) GroupToRolesMapping() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *DeploymentOggDataGroupToRolesMapping { return v.GroupToRolesMapping }).(DeploymentOggDataGroupToRolesMappingPtrOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 func (o DeploymentOggDataOutput) IdentityDomainId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.IdentityDomainId }).(pulumi.StringPtrOutput)
@@ -1563,6 +1575,16 @@ func (o DeploymentOggDataPtrOutput) DeploymentName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+func (o DeploymentOggDataPtrOutput) GroupToRolesMapping() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggData) *DeploymentOggDataGroupToRolesMapping {
+		if v == nil {
+			return nil
+		}
+		return v.GroupToRolesMapping
+	}).(DeploymentOggDataGroupToRolesMappingPtrOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 func (o DeploymentOggDataPtrOutput) IdentityDomainId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
@@ -1600,6 +1622,200 @@ func (o DeploymentOggDataPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentOggDataGroupToRolesMapping struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId *string `pulumi:"administratorGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId *string `pulumi:"operatorGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId string `pulumi:"securityGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId *string `pulumi:"userGroupId"`
+}
+
+// DeploymentOggDataGroupToRolesMappingInput is an input type that accepts DeploymentOggDataGroupToRolesMappingArgs and DeploymentOggDataGroupToRolesMappingOutput values.
+// You can construct a concrete instance of `DeploymentOggDataGroupToRolesMappingInput` via:
+//
+//	DeploymentOggDataGroupToRolesMappingArgs{...}
+type DeploymentOggDataGroupToRolesMappingInput interface {
+	pulumi.Input
+
+	ToDeploymentOggDataGroupToRolesMappingOutput() DeploymentOggDataGroupToRolesMappingOutput
+	ToDeploymentOggDataGroupToRolesMappingOutputWithContext(context.Context) DeploymentOggDataGroupToRolesMappingOutput
+}
+
+type DeploymentOggDataGroupToRolesMappingArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId pulumi.StringPtrInput `pulumi:"administratorGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId pulumi.StringPtrInput `pulumi:"operatorGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId pulumi.StringPtrInput `pulumi:"userGroupId"`
+}
+
+func (DeploymentOggDataGroupToRolesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i DeploymentOggDataGroupToRolesMappingArgs) ToDeploymentOggDataGroupToRolesMappingOutput() DeploymentOggDataGroupToRolesMappingOutput {
+	return i.ToDeploymentOggDataGroupToRolesMappingOutputWithContext(context.Background())
+}
+
+func (i DeploymentOggDataGroupToRolesMappingArgs) ToDeploymentOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentOggDataGroupToRolesMappingOutput)
+}
+
+func (i DeploymentOggDataGroupToRolesMappingArgs) ToDeploymentOggDataGroupToRolesMappingPtrOutput() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return i.ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentOggDataGroupToRolesMappingArgs) ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentOggDataGroupToRolesMappingOutput).ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(ctx)
+}
+
+// DeploymentOggDataGroupToRolesMappingPtrInput is an input type that accepts DeploymentOggDataGroupToRolesMappingArgs, DeploymentOggDataGroupToRolesMappingPtr and DeploymentOggDataGroupToRolesMappingPtrOutput values.
+// You can construct a concrete instance of `DeploymentOggDataGroupToRolesMappingPtrInput` via:
+//
+//	        DeploymentOggDataGroupToRolesMappingArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeploymentOggDataGroupToRolesMappingPtrInput interface {
+	pulumi.Input
+
+	ToDeploymentOggDataGroupToRolesMappingPtrOutput() DeploymentOggDataGroupToRolesMappingPtrOutput
+	ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(context.Context) DeploymentOggDataGroupToRolesMappingPtrOutput
+}
+
+type deploymentOggDataGroupToRolesMappingPtrType DeploymentOggDataGroupToRolesMappingArgs
+
+func DeploymentOggDataGroupToRolesMappingPtr(v *DeploymentOggDataGroupToRolesMappingArgs) DeploymentOggDataGroupToRolesMappingPtrInput {
+	return (*deploymentOggDataGroupToRolesMappingPtrType)(v)
+}
+
+func (*deploymentOggDataGroupToRolesMappingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i *deploymentOggDataGroupToRolesMappingPtrType) ToDeploymentOggDataGroupToRolesMappingPtrOutput() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return i.ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentOggDataGroupToRolesMappingPtrType) ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentOggDataGroupToRolesMappingPtrOutput)
+}
+
+type DeploymentOggDataGroupToRolesMappingOutput struct{ *pulumi.OutputState }
+
+func (DeploymentOggDataGroupToRolesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o DeploymentOggDataGroupToRolesMappingOutput) ToDeploymentOggDataGroupToRolesMappingOutput() DeploymentOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+func (o DeploymentOggDataGroupToRolesMappingOutput) ToDeploymentOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+func (o DeploymentOggDataGroupToRolesMappingOutput) ToDeploymentOggDataGroupToRolesMappingPtrOutput() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o.ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentOggDataGroupToRolesMappingOutput) ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentOggDataGroupToRolesMapping) *DeploymentOggDataGroupToRolesMapping {
+		return &v
+	}).(DeploymentOggDataGroupToRolesMappingPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+func (o DeploymentOggDataGroupToRolesMappingOutput) AdministratorGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggDataGroupToRolesMapping) *string { return v.AdministratorGroupId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+func (o DeploymentOggDataGroupToRolesMappingOutput) OperatorGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggDataGroupToRolesMapping) *string { return v.OperatorGroupId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+func (o DeploymentOggDataGroupToRolesMappingOutput) SecurityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentOggDataGroupToRolesMapping) string { return v.SecurityGroupId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+func (o DeploymentOggDataGroupToRolesMappingOutput) UserGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggDataGroupToRolesMapping) *string { return v.UserGroupId }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentOggDataGroupToRolesMappingPtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentOggDataGroupToRolesMappingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) ToDeploymentOggDataGroupToRolesMappingPtrOutput() DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o
+}
+
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) ToDeploymentOggDataGroupToRolesMappingPtrOutputWithContext(ctx context.Context) DeploymentOggDataGroupToRolesMappingPtrOutput {
+	return o
+}
+
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) Elem() DeploymentOggDataGroupToRolesMappingOutput {
+	return o.ApplyT(func(v *DeploymentOggDataGroupToRolesMapping) DeploymentOggDataGroupToRolesMapping {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentOggDataGroupToRolesMapping
+		return ret
+	}).(DeploymentOggDataGroupToRolesMappingOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) AdministratorGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggDataGroupToRolesMapping) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdministratorGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) OperatorGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggDataGroupToRolesMapping) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OperatorGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) SecurityGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggDataGroupToRolesMapping) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SecurityGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+func (o DeploymentOggDataGroupToRolesMappingPtrOutput) UserGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggDataGroupToRolesMapping) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserGroupId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -5774,6 +5990,395 @@ func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInpu
 	}).(GetDeploymentDeploymentDiagnosticDataOutput)
 }
 
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollection struct {
+	// Array of DeploymentEnvironmentSummary objects.
+	Items []GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem `pulumi:"items"`
+}
+
+// GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput is an input type that accepts GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs and GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput` via:
+//
+//	GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs{...}
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutputWithContext(context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs struct {
+	// Array of DeploymentEnvironmentSummary objects.
+	Items GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput {
+	return i.ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput)
+}
+
+// GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayInput is an input type that accepts GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray and GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayInput` via:
+//
+//	GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray{ GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs{...} }
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutputWithContext(context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray []GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsDeploymentEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput {
+	return i.ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput)
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput {
+	return o
+}
+
+// Array of DeploymentEnvironmentSummary objects.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput) Items() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollection) []GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem {
+		return v.Items
+	}).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput)
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsDeploymentEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentEnvironmentsDeploymentEnvironmentCollection {
+		return vs[0].([]GetDeploymentEnvironmentsDeploymentEnvironmentCollection)[vs[1].(int)]
+	}).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput)
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category string `pulumi:"category"`
+	// The default CPU core count.
+	DefaultCpuCoreCount int `pulumi:"defaultCpuCoreCount"`
+	// An object's Display Name.
+	DisplayName string `pulumi:"displayName"`
+	// Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType string `pulumi:"environmentType"`
+	// Specifies whether the "Auto scaling" option should be enabled by default or not.
+	IsAutoScalingEnabledByDefault bool `pulumi:"isAutoScalingEnabledByDefault"`
+	// The maximum CPU core count.
+	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
+	// The multiplier value between CPU core count and memory size.
+	MemoryPerOcpuInGbs int `pulumi:"memoryPerOcpuInGbs"`
+	// The minimum CPU core count.
+	MinCpuCoreCount int `pulumi:"minCpuCoreCount"`
+	// The multiplier value between CPU core count and network bandwidth.
+	NetworkBandwidthPerOcpuInGbps int `pulumi:"networkBandwidthPerOcpuInGbps"`
+	// The multiplier value between CPU core count and storage usage limit size.
+	StorageUsageLimitPerOcpuInGbs int `pulumi:"storageUsageLimitPerOcpuInGbs"`
+}
+
+// GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput is an input type that accepts GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs and GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput` via:
+//
+//	GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs{...}
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutputWithContext(context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category pulumi.StringInput `pulumi:"category"`
+	// The default CPU core count.
+	DefaultCpuCoreCount pulumi.IntInput `pulumi:"defaultCpuCoreCount"`
+	// An object's Display Name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
+	// Specifies whether the "Auto scaling" option should be enabled by default or not.
+	IsAutoScalingEnabledByDefault pulumi.BoolInput `pulumi:"isAutoScalingEnabledByDefault"`
+	// The maximum CPU core count.
+	MaxCpuCoreCount pulumi.IntInput `pulumi:"maxCpuCoreCount"`
+	// The multiplier value between CPU core count and memory size.
+	MemoryPerOcpuInGbs pulumi.IntInput `pulumi:"memoryPerOcpuInGbs"`
+	// The minimum CPU core count.
+	MinCpuCoreCount pulumi.IntInput `pulumi:"minCpuCoreCount"`
+	// The multiplier value between CPU core count and network bandwidth.
+	NetworkBandwidthPerOcpuInGbps pulumi.IntInput `pulumi:"networkBandwidthPerOcpuInGbps"`
+	// The multiplier value between CPU core count and storage usage limit size.
+	StorageUsageLimitPerOcpuInGbs pulumi.IntInput `pulumi:"storageUsageLimitPerOcpuInGbs"`
+}
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput {
+	return i.ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput)
+}
+
+// GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayInput is an input type that accepts GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray and GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayInput` via:
+//
+//	GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray{ GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs{...} }
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput
+	ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutputWithContext(context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray []GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput {
+	return i.ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput)
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput {
+	return o
+}
+
+// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The default CPU core count.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) DefaultCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int { return v.DefaultCpuCoreCount }).(pulumi.IntOutput)
+}
+
+// An object's Display Name.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies whether the deployment is used in a production or development/testing environment.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
+// Specifies whether the "Auto scaling" option should be enabled by default or not.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) IsAutoScalingEnabledByDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) bool {
+		return v.IsAutoScalingEnabledByDefault
+	}).(pulumi.BoolOutput)
+}
+
+// The maximum CPU core count.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) MaxCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The multiplier value between CPU core count and memory size.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) MemoryPerOcpuInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int { return v.MemoryPerOcpuInGbs }).(pulumi.IntOutput)
+}
+
+// The minimum CPU core count.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) MinCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int { return v.MinCpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The multiplier value between CPU core count and network bandwidth.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) NetworkBandwidthPerOcpuInGbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int {
+		return v.NetworkBandwidthPerOcpuInGbps
+	}).(pulumi.IntOutput)
+}
+
+// The multiplier value between CPU core count and storage usage limit size.
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) StorageUsageLimitPerOcpuInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) int {
+		return v.StorageUsageLimitPerOcpuInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput() GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput) ToGetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem {
+		return vs[0].([]GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem)[vs[1].(int)]
+	}).(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput)
+}
+
+type GetDeploymentEnvironmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDeploymentEnvironmentsFilterInput is an input type that accepts GetDeploymentEnvironmentsFilterArgs and GetDeploymentEnvironmentsFilterOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsFilterInput` via:
+//
+//	GetDeploymentEnvironmentsFilterArgs{...}
+type GetDeploymentEnvironmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsFilterOutput() GetDeploymentEnvironmentsFilterOutput
+	ToGetDeploymentEnvironmentsFilterOutputWithContext(context.Context) GetDeploymentEnvironmentsFilterOutput
+}
+
+type GetDeploymentEnvironmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDeploymentEnvironmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsFilterArgs) ToGetDeploymentEnvironmentsFilterOutput() GetDeploymentEnvironmentsFilterOutput {
+	return i.ToGetDeploymentEnvironmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsFilterArgs) ToGetDeploymentEnvironmentsFilterOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsFilterOutput)
+}
+
+// GetDeploymentEnvironmentsFilterArrayInput is an input type that accepts GetDeploymentEnvironmentsFilterArray and GetDeploymentEnvironmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentEnvironmentsFilterArrayInput` via:
+//
+//	GetDeploymentEnvironmentsFilterArray{ GetDeploymentEnvironmentsFilterArgs{...} }
+type GetDeploymentEnvironmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentEnvironmentsFilterArrayOutput() GetDeploymentEnvironmentsFilterArrayOutput
+	ToGetDeploymentEnvironmentsFilterArrayOutputWithContext(context.Context) GetDeploymentEnvironmentsFilterArrayOutput
+}
+
+type GetDeploymentEnvironmentsFilterArray []GetDeploymentEnvironmentsFilterInput
+
+func (GetDeploymentEnvironmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentEnvironmentsFilterArray) ToGetDeploymentEnvironmentsFilterArrayOutput() GetDeploymentEnvironmentsFilterArrayOutput {
+	return i.ToGetDeploymentEnvironmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentEnvironmentsFilterArray) ToGetDeploymentEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentEnvironmentsFilterArrayOutput)
+}
+
+type GetDeploymentEnvironmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsFilterOutput) ToGetDeploymentEnvironmentsFilterOutput() GetDeploymentEnvironmentsFilterOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsFilterOutput) ToGetDeploymentEnvironmentsFilterOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsFilterOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentEnvironmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDeploymentEnvironmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentEnvironmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentEnvironmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentEnvironmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentEnvironmentsFilterArrayOutput) ToGetDeploymentEnvironmentsFilterArrayOutput() GetDeploymentEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsFilterArrayOutput) ToGetDeploymentEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetDeploymentEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetDeploymentEnvironmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentEnvironmentsFilter {
+		return vs[0].([]GetDeploymentEnvironmentsFilter)[vs[1].(int)]
+	}).(GetDeploymentEnvironmentsFilterOutput)
+}
+
 type GetDeploymentIngressIp struct {
 	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
 	IngressIp string `pulumi:"ingressIp"`
@@ -6244,6 +6849,8 @@ type GetDeploymentOggData struct {
 	CredentialStore string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
+	// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMappings []GetDeploymentOggDataGroupToRolesMapping `pulumi:"groupToRolesMappings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId string `pulumi:"identityDomainId"`
 	Key              string `pulumi:"key"`
@@ -6274,6 +6881,8 @@ type GetDeploymentOggDataArgs struct {
 	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
+	// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMappings GetDeploymentOggDataGroupToRolesMappingArrayInput `pulumi:"groupToRolesMappings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
 	Key              pulumi.StringInput `pulumi:"key"`
@@ -6358,6 +6967,11 @@ func (o GetDeploymentOggDataOutput) DeploymentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
 }
 
+// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+func (o GetDeploymentOggDataOutput) GroupToRolesMappings() GetDeploymentOggDataGroupToRolesMappingArrayOutput {
+	return o.ApplyT(func(v GetDeploymentOggData) []GetDeploymentOggDataGroupToRolesMapping { return v.GroupToRolesMappings }).(GetDeploymentOggDataGroupToRolesMappingArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 func (o GetDeploymentOggDataOutput) IdentityDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.IdentityDomainId }).(pulumi.StringOutput)
@@ -6395,6 +7009,130 @@ func (o GetDeploymentOggDataArrayOutput) Index(i pulumi.IntInput) GetDeploymentO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentOggData {
 		return vs[0].([]GetDeploymentOggData)[vs[1].(int)]
 	}).(GetDeploymentOggDataOutput)
+}
+
+type GetDeploymentOggDataGroupToRolesMapping struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId string `pulumi:"administratorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId string `pulumi:"operatorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId string `pulumi:"securityGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId string `pulumi:"userGroupId"`
+}
+
+// GetDeploymentOggDataGroupToRolesMappingInput is an input type that accepts GetDeploymentOggDataGroupToRolesMappingArgs and GetDeploymentOggDataGroupToRolesMappingOutput values.
+// You can construct a concrete instance of `GetDeploymentOggDataGroupToRolesMappingInput` via:
+//
+//	GetDeploymentOggDataGroupToRolesMappingArgs{...}
+type GetDeploymentOggDataGroupToRolesMappingInput interface {
+	pulumi.Input
+
+	ToGetDeploymentOggDataGroupToRolesMappingOutput() GetDeploymentOggDataGroupToRolesMappingOutput
+	ToGetDeploymentOggDataGroupToRolesMappingOutputWithContext(context.Context) GetDeploymentOggDataGroupToRolesMappingOutput
+}
+
+type GetDeploymentOggDataGroupToRolesMappingArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId pulumi.StringInput `pulumi:"administratorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId pulumi.StringInput `pulumi:"operatorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId pulumi.StringInput `pulumi:"userGroupId"`
+}
+
+func (GetDeploymentOggDataGroupToRolesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i GetDeploymentOggDataGroupToRolesMappingArgs) ToGetDeploymentOggDataGroupToRolesMappingOutput() GetDeploymentOggDataGroupToRolesMappingOutput {
+	return i.ToGetDeploymentOggDataGroupToRolesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentOggDataGroupToRolesMappingArgs) ToGetDeploymentOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) GetDeploymentOggDataGroupToRolesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentOggDataGroupToRolesMappingOutput)
+}
+
+// GetDeploymentOggDataGroupToRolesMappingArrayInput is an input type that accepts GetDeploymentOggDataGroupToRolesMappingArray and GetDeploymentOggDataGroupToRolesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentOggDataGroupToRolesMappingArrayInput` via:
+//
+//	GetDeploymentOggDataGroupToRolesMappingArray{ GetDeploymentOggDataGroupToRolesMappingArgs{...} }
+type GetDeploymentOggDataGroupToRolesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentOggDataGroupToRolesMappingArrayOutput() GetDeploymentOggDataGroupToRolesMappingArrayOutput
+	ToGetDeploymentOggDataGroupToRolesMappingArrayOutputWithContext(context.Context) GetDeploymentOggDataGroupToRolesMappingArrayOutput
+}
+
+type GetDeploymentOggDataGroupToRolesMappingArray []GetDeploymentOggDataGroupToRolesMappingInput
+
+func (GetDeploymentOggDataGroupToRolesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i GetDeploymentOggDataGroupToRolesMappingArray) ToGetDeploymentOggDataGroupToRolesMappingArrayOutput() GetDeploymentOggDataGroupToRolesMappingArrayOutput {
+	return i.ToGetDeploymentOggDataGroupToRolesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentOggDataGroupToRolesMappingArray) ToGetDeploymentOggDataGroupToRolesMappingArrayOutputWithContext(ctx context.Context) GetDeploymentOggDataGroupToRolesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentOggDataGroupToRolesMappingArrayOutput)
+}
+
+type GetDeploymentOggDataGroupToRolesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentOggDataGroupToRolesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) ToGetDeploymentOggDataGroupToRolesMappingOutput() GetDeploymentOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) ToGetDeploymentOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) GetDeploymentOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) AdministratorGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggDataGroupToRolesMapping) string { return v.AdministratorGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) OperatorGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggDataGroupToRolesMapping) string { return v.OperatorGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) SecurityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggDataGroupToRolesMapping) string { return v.SecurityGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+func (o GetDeploymentOggDataGroupToRolesMappingOutput) UserGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggDataGroupToRolesMapping) string { return v.UserGroupId }).(pulumi.StringOutput)
+}
+
+type GetDeploymentOggDataGroupToRolesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentOggDataGroupToRolesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o GetDeploymentOggDataGroupToRolesMappingArrayOutput) ToGetDeploymentOggDataGroupToRolesMappingArrayOutput() GetDeploymentOggDataGroupToRolesMappingArrayOutput {
+	return o
+}
+
+func (o GetDeploymentOggDataGroupToRolesMappingArrayOutput) ToGetDeploymentOggDataGroupToRolesMappingArrayOutputWithContext(ctx context.Context) GetDeploymentOggDataGroupToRolesMappingArrayOutput {
+	return o
+}
+
+func (o GetDeploymentOggDataGroupToRolesMappingArrayOutput) Index(i pulumi.IntInput) GetDeploymentOggDataGroupToRolesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentOggDataGroupToRolesMapping {
+		return vs[0].([]GetDeploymentOggDataGroupToRolesMapping)[vs[1].(int)]
+	}).(GetDeploymentOggDataGroupToRolesMappingOutput)
 }
 
 type GetDeploymentTypeItem struct {
@@ -7914,6 +8652,8 @@ func (o GetDeploymentsDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDeploymentsDeploymentCollectionItem struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category string `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
@@ -7932,6 +8672,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
+	// Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType string `pulumi:"environmentType"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -7949,7 +8691,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	IsLockOverride  bool `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic bool `pulumi:"isPublic"`
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded bool `pulumi:"isStorageUtilizationLimitExceeded"`
 	// The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
@@ -8011,6 +8753,8 @@ type GetDeploymentsDeploymentCollectionItemInput interface {
 }
 
 type GetDeploymentsDeploymentCollectionItemArgs struct {
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	Category pulumi.StringInput `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
@@ -8029,6 +8773,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies whether the deployment is used in a production or development/testing environment.
+	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -8046,7 +8792,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	IsLockOverride  pulumi.BoolInput `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
-	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+	// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 	IsStorageUtilizationLimitExceeded pulumi.BoolInput `pulumi:"isStorageUtilizationLimitExceeded"`
 	// The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
@@ -8147,6 +8893,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeployment
 	return o
 }
 
+// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+func (o GetDeploymentsDeploymentCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
 // The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 func (o GetDeploymentsDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -8192,6 +8943,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) Description() pulumi.Strin
 // A filter to return only the resources that match the entire 'displayName' given.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies whether the deployment is used in a production or development/testing environment.
+func (o GetDeploymentsDeploymentCollectionItemOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.EnvironmentType }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the 'fqdn' given.
@@ -8240,7 +8996,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) IsPublic() pulumi.BoolOutp
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
-// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 func (o GetDeploymentsDeploymentCollectionItemOutput) IsStorageUtilizationLimitExceeded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsStorageUtilizationLimitExceeded }).(pulumi.BoolOutput)
 }
@@ -9016,6 +9772,8 @@ type GetDeploymentsDeploymentCollectionItemOggData struct {
 	CredentialStore string `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName string `pulumi:"deploymentName"`
+	// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMappings []GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping `pulumi:"groupToRolesMappings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId string `pulumi:"identityDomainId"`
 	Key              string `pulumi:"key"`
@@ -9046,6 +9804,8 @@ type GetDeploymentsDeploymentCollectionItemOggDataArgs struct {
 	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
 	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
+	// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+	GroupToRolesMappings GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput `pulumi:"groupToRolesMappings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
 	Key              pulumi.StringInput `pulumi:"key"`
@@ -9130,6 +9890,13 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) DeploymentName() pu
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
 }
 
+// Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) GroupToRolesMappings() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) []GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping {
+		return v.GroupToRolesMappings
+	}).(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) IdentityDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.IdentityDomainId }).(pulumi.StringOutput)
@@ -9167,6 +9934,136 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataArrayOutput) Index(i pulumi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemOggData {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemOggData)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemOggDataOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId string `pulumi:"administratorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId string `pulumi:"operatorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId string `pulumi:"securityGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId string `pulumi:"userGroupId"`
+}
+
+// GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput is an input type that accepts GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs and GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs{...}
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput
+	ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+	AdministratorGroupId pulumi.StringInput `pulumi:"administratorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+	OperatorGroupId pulumi.StringInput `pulumi:"operatorGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+	UserGroupId pulumi.StringInput `pulumi:"userGroupId"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray and GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray{ GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs{...} }
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray []GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput
+
+func (GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) AdministratorGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping) string {
+		return v.AdministratorGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) OperatorGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping) string {
+		return v.OperatorGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) SecurityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping) string {
+		return v.SecurityGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput) UserGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping) string { return v.UserGroupId }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput() GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput) ToGetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput)
 }
 
 type GetDeploymentsFilter struct {
@@ -10745,6 +11642,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowPtrInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataPtrInput)(nil)).Elem(), DeploymentOggDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingPtrInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionArgs{})
@@ -10797,6 +11696,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesFilterArrayInput)(nil)).Elem(), GetDeploymentCertificatesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsFilterInput)(nil)).Elem(), GetDeploymentEnvironmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsFilterArrayInput)(nil)).Elem(), GetDeploymentEnvironmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpInput)(nil)).Elem(), GetDeploymentIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpArrayInput)(nil)).Elem(), GetDeploymentIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentLockInput)(nil)).Elem(), GetDeploymentLockArgs{})
@@ -10807,6 +11712,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataInput)(nil)).Elem(), GetDeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataArrayInput)(nil)).Elem(), GetDeploymentOggDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMappingInput)(nil)).Elem(), GetDeploymentOggDataGroupToRolesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataGroupToRolesMappingArrayInput)(nil)).Elem(), GetDeploymentOggDataGroupToRolesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemInput)(nil)).Elem(), GetDeploymentTypeItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemArrayInput)(nil)).Elem(), GetDeploymentTypeItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionArgs{})
@@ -10843,6 +11750,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterInput)(nil)).Elem(), GetDeploymentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterArrayInput)(nil)).Elem(), GetDeploymentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessageItemInput)(nil)).Elem(), GetMessageItemArgs{})
@@ -10891,6 +11800,8 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentMaintenanceWindowPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataPtrOutput{})
+	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingOutput{})
+	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingPtrOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionOutput{})
@@ -10943,6 +11854,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentCertificatesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetDeploymentEnvironmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentIngressIpOutput{})
 	pulumi.RegisterOutputType(GetDeploymentIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentLockOutput{})
@@ -10953,6 +11870,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentOggDataGroupToRolesMappingOutput{})
+	pulumi.RegisterOutputType(GetDeploymentOggDataGroupToRolesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypeItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypeItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionOutput{})
@@ -10989,6 +11908,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMessageItemOutput{})

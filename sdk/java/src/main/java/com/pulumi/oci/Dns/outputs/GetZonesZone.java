@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Dns.outputs.GetZonesZoneDnssecConfig;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalDownstream;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalMaster;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneNameserver;
@@ -28,6 +29,16 @@ public final class GetZonesZone {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return DNSSEC configuration data.
+     * 
+     */
+    private List<GetZonesZoneDnssecConfig> dnssecConfigs;
+    /**
+     * @return Search for zones that have the given `DnssecState`.
+     * 
+     */
+    private String dnssecState;
     /**
      * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
@@ -64,8 +75,7 @@ public final class GetZonesZone {
      */
     private List<GetZonesZoneNameserver> nameservers;
     /**
-     * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     private String scope;
@@ -126,6 +136,20 @@ public final class GetZonesZone {
         return this.definedTags;
     }
     /**
+     * @return DNSSEC configuration data.
+     * 
+     */
+    public List<GetZonesZoneDnssecConfig> dnssecConfigs() {
+        return this.dnssecConfigs;
+    }
+    /**
+     * @return Search for zones that have the given `DnssecState`.
+     * 
+     */
+    public String dnssecState() {
+        return this.dnssecState;
+    }
+    /**
      * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
@@ -175,8 +199,7 @@ public final class GetZonesZone {
         return this.nameservers;
     }
     /**
-     * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     public String scope() {
@@ -250,6 +273,8 @@ public final class GetZonesZone {
     public static final class Builder {
         private String compartmentId;
         private Map<String,String> definedTags;
+        private List<GetZonesZoneDnssecConfig> dnssecConfigs;
+        private String dnssecState;
         private List<GetZonesZoneExternalDownstream> externalDownstreams;
         private List<GetZonesZoneExternalMaster> externalMasters;
         private Map<String,String> freeformTags;
@@ -271,6 +296,8 @@ public final class GetZonesZone {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.dnssecConfigs = defaults.dnssecConfigs;
+    	      this.dnssecState = defaults.dnssecState;
     	      this.externalDownstreams = defaults.externalDownstreams;
     	      this.externalMasters = defaults.externalMasters;
     	      this.freeformTags = defaults.freeformTags;
@@ -303,6 +330,25 @@ public final class GetZonesZone {
               throw new MissingRequiredPropertyException("GetZonesZone", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dnssecConfigs(List<GetZonesZoneDnssecConfig> dnssecConfigs) {
+            if (dnssecConfigs == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "dnssecConfigs");
+            }
+            this.dnssecConfigs = dnssecConfigs;
+            return this;
+        }
+        public Builder dnssecConfigs(GetZonesZoneDnssecConfig... dnssecConfigs) {
+            return dnssecConfigs(List.of(dnssecConfigs));
+        }
+        @CustomType.Setter
+        public Builder dnssecState(String dnssecState) {
+            if (dnssecState == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "dnssecState");
+            }
+            this.dnssecState = dnssecState;
             return this;
         }
         @CustomType.Setter
@@ -449,6 +495,8 @@ public final class GetZonesZone {
             final var _resultValue = new GetZonesZone();
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.dnssecConfigs = dnssecConfigs;
+            _resultValue.dnssecState = dnssecState;
             _resultValue.externalDownstreams = externalDownstreams;
             _resultValue.externalMasters = externalMasters;
             _resultValue.freeformTags = freeformTags;

@@ -88,6 +88,16 @@ import (
 //					NsgIds:    pulumi.Any(desktopPoolPrivateAccessDetailsNsgIds),
 //					PrivateIp: pulumi.Any(desktopPoolPrivateAccessDetailsPrivateIp),
 //				},
+//				SessionLifecycleActions: &desktops.DesktopPoolSessionLifecycleActionsArgs{
+//					Disconnect: &desktops.DesktopPoolSessionLifecycleActionsDisconnectArgs{
+//						Action:               pulumi.String("STOP"),
+//						GracePeriodInMinutes: pulumi.Any(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes),
+//					},
+//					Inactivity: &desktops.DesktopPoolSessionLifecycleActionsInactivityArgs{
+//						Action:               pulumi.String("DISCONNECT"),
+//						GracePeriodInMinutes: pulumi.Any(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes),
+//					},
+//				},
 //				TimeStartScheduled: pulumi.Any(desktopPoolTimeStartScheduled),
 //				TimeStopScheduled:  pulumi.Any(desktopPoolTimeStopScheduled),
 //				UseDedicatedVmHost: pulumi.Any(desktopPoolUseDedicatedVmHost),
@@ -145,6 +155,8 @@ type DesktopPool struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsOutput `pulumi:"privateAccessDetails"`
+	// The details of action to be triggered in case of inactivity or disconnect
+	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrOutput `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
 	ShapeConfig DesktopPoolShapeConfigOutput `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
@@ -279,6 +291,8 @@ type desktopPoolState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// The details of action to be triggered in case of inactivity or disconnect
+	SessionLifecycleActions *DesktopPoolSessionLifecycleActions `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
 	ShapeConfig *DesktopPoolShapeConfig `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
@@ -339,6 +353,8 @@ type DesktopPoolState struct {
 	NsgIds pulumi.StringArrayInput
 	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// The details of action to be triggered in case of inactivity or disconnect
+	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrInput
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
 	ShapeConfig DesktopPoolShapeConfigPtrInput
 	// The shape of the desktop pool.
@@ -401,6 +417,8 @@ type desktopPoolArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// The details of action to be triggered in case of inactivity or disconnect
+	SessionLifecycleActions *DesktopPoolSessionLifecycleActions `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
 	ShapeConfig *DesktopPoolShapeConfig `pulumi:"shapeConfig"`
 	// The shape of the desktop pool.
@@ -456,6 +474,8 @@ type DesktopPoolArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// The details of action to be triggered in case of inactivity or disconnect
+	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrInput
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
 	ShapeConfig DesktopPoolShapeConfigPtrInput
 	// The shape of the desktop pool.
@@ -647,6 +667,11 @@ func (o DesktopPoolOutput) NsgIds() pulumi.StringArrayOutput {
 // The details of the desktop's private access network connectivity to be set up for the desktop pool.
 func (o DesktopPoolOutput) PrivateAccessDetails() DesktopPoolPrivateAccessDetailsOutput {
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolPrivateAccessDetailsOutput { return v.PrivateAccessDetails }).(DesktopPoolPrivateAccessDetailsOutput)
+}
+
+// The details of action to be triggered in case of inactivity or disconnect
+func (o DesktopPoolOutput) SessionLifecycleActions() DesktopPoolSessionLifecycleActionsPtrOutput {
+	return o.ApplyT(func(v *DesktopPool) DesktopPoolSessionLifecycleActionsPtrOutput { return v.SessionLifecycleActions }).(DesktopPoolSessionLifecycleActionsPtrOutput)
 }
 
 // The compute instance shape configuration requested for each desktop in the desktop pool.

@@ -63,6 +63,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DiscoveryJobsResult{}
 	case "oci:DataSafe/discoveryMod:DiscoveryMod":
 		r = &DiscoveryMod{}
+	case "oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration":
+		r = &GenerateOnPremConnectorConfiguration{}
 	case "oci:DataSafe/libraryMasingFormat:LibraryMasingFormat":
 		r = &LibraryMasingFormat{}
 	case "oci:DataSafe/maskData:MaskData":
@@ -249,6 +251,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/discoveryMod",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/generateOnPremConnectorConfiguration",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -9,8 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
  *
- * Replaces records in the specified RRSet. When the zone name is provided as a path parameter
- * and the zone has a scope of `PRIVATE` then the viewId query parameter is required.
+ *   Updates records in the specified RRSet.
+ *
+ * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+ * parameter then the viewId query parameter is required.
  *
  * ## Example Usage
  *
@@ -22,7 +24,6 @@ import * as utilities from "../utilities";
  *     domain: rrsetDomain,
  *     rtype: rrsetRtype,
  *     zoneNameOrId: testZone.id,
- *     compartmentId: compartmentId,
  *     items: [{
  *         domain: rrsetItemsDomain,
  *         rdata: rrsetItemsRdata,
@@ -77,7 +78,9 @@ export class Rrset extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -86,7 +89,7 @@ export class Rrset extends pulumi.CustomResource {
     public readonly domain!: pulumi.Output<string>;
     /**
      * (Updatable) 
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     public readonly items!: pulumi.Output<outputs.Dns.RrsetItem[]>;
     /**
@@ -94,12 +97,11 @@ export class Rrset extends pulumi.CustomResource {
      */
     public readonly rtype!: pulumi.Output<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     public readonly viewId!: pulumi.Output<string | undefined>;
     /**
@@ -160,7 +162,9 @@ export class Rrset extends pulumi.CustomResource {
  */
 export interface RrsetState {
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -169,7 +173,7 @@ export interface RrsetState {
     domain?: pulumi.Input<string>;
     /**
      * (Updatable) 
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
     /**
@@ -177,12 +181,11 @@ export interface RrsetState {
      */
     rtype?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: pulumi.Input<string>;
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     viewId?: pulumi.Input<string>;
     /**
@@ -200,7 +203,9 @@ export interface RrsetState {
  */
 export interface RrsetArgs {
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     *
+     * This parameter is deprecated and should be omitted.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -209,7 +214,7 @@ export interface RrsetArgs {
     domain: pulumi.Input<string>;
     /**
      * (Updatable) 
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[]>;
     /**
@@ -217,12 +222,11 @@ export interface RrsetArgs {
      */
     rtype: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. 
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: pulumi.Input<string>;
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     viewId?: pulumi.Input<string>;
     /**

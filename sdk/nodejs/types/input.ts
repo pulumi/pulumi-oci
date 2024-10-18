@@ -10772,6 +10772,14 @@ export namespace ContainerEngine {
          */
         kubernetesNetworkConfig?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsKubernetesNetworkConfig>;
         /**
+         * (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+         */
+        openIdConnectDiscovery?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsOpenIdConnectDiscovery>;
+        /**
+         * (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+         */
+        openIdConnectTokenAuthenticationConfig?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsOpenIdConnectTokenAuthenticationConfig>;
+        /**
          * (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
          */
         persistentVolumeConfig?: pulumi.Input<inputs.ContainerEngine.ClusterOptionsPersistentVolumeConfig>;
@@ -10812,6 +10820,67 @@ export namespace ContainerEngine {
          * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
          */
         servicesCidr?: pulumi.Input<string>;
+    }
+
+    export interface ClusterOptionsOpenIdConnectDiscovery {
+        /**
+         * (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+         */
+        isOpenIdConnectDiscoveryEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
+        /**
+         * (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+         */
+        caCertificate?: pulumi.Input<string>;
+        /**
+         * (Updatable) A client id that all tokens must be issued for.
+         */
+        clientId?: pulumi.Input<string>;
+        /**
+         * (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+         */
+        groupsClaim?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+         */
+        groupsPrefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+         */
+        isOpenIdConnectAuthEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+         */
+        issuerUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+         */
+        requiredClaims?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim>[]>;
+        /**
+         * (Updatable) The signing algorithms accepted. Default is ["RS256"].
+         */
+        signingAlgorithms?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+         */
+        usernameClaim?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+         */
+        usernamePrefix?: pulumi.Input<string>;
+    }
+
+    export interface ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+        /**
+         * (Updatable) The key of the pair.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the pair.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface ClusterOptionsPersistentVolumeConfig {
@@ -11770,15 +11839,35 @@ export namespace Core {
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        xrrKmsKeyId?: pulumi.Input<string>;
     }
 
     export interface BootVolumeSourceDetails {
         /**
+         * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+         */
+        changeBlockSizeInBytes?: pulumi.Input<string>;
+        /**
+         * The OCID of the first boot volume backup.
+         */
+        firstBackupId?: pulumi.Input<string>;
+        /**
          * The OCID of the boot volume replica.
          */
-        id: pulumi.Input<string>;
+        id?: pulumi.Input<string>;
         /**
-         * The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
+         * The OCID of the second boot volume backup.
+         */
+        secondBackupId?: pulumi.Input<string>;
+        /**
+         * The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeBackupDelta`, `bootVolumeReplica`
          */
         type: pulumi.Input<string>;
     }
@@ -14199,6 +14288,10 @@ export namespace Core {
          * Allowed values:
          */
         vpusPerGb?: pulumi.Input<string>;
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        xrcKmsKeyId?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy {
@@ -14832,6 +14925,10 @@ export namespace Core {
          * Allowed values:
          */
         vpusPerGb?: pulumi.Input<string>;
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        xrcKmsKeyId?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy {
@@ -16802,6 +16899,14 @@ export namespace Core {
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        xrrKmsKeyId?: pulumi.Input<string>;
     }
 
     export interface VolumeGroupBackupSourceDetails {
@@ -16860,15 +16965,31 @@ export namespace Core {
          * The volume group replica's Oracle ID (OCID).
          */
         volumeGroupReplicaId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region volume group's replicas, which will be used in the destination region to encrypt the volume group's replicas encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        xrrKmsKeyId?: pulumi.Input<string>;
     }
 
     export interface VolumeSourceDetails {
         /**
+         * Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+         */
+        changeBlockSizeInBytes?: pulumi.Input<string>;
+        /**
+         * The OCID of the first volume backup.
+         */
+        firstBackupId?: pulumi.Input<string>;
+        /**
          * The OCID of the block volume replica.
          */
-        id: pulumi.Input<string>;
+        id?: pulumi.Input<string>;
         /**
-         * The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+         * The OCID of the second volume backup.
+         */
+        secondBackupId?: pulumi.Input<string>;
+        /**
+         * The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
          */
         type: pulumi.Input<string>;
     }
@@ -31908,11 +32029,11 @@ export namespace Desktops {
         /**
          * (Updatable) Provides the schedule information for a desktop.
          */
-        startSchedule: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStartSchedule>;
+        startSchedule?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStartSchedule>;
         /**
          * (Updatable) Provides the schedule information for a desktop.
          */
-        stopSchedule: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStopSchedule>;
+        stopSchedule?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicyStopSchedule>;
     }
 
     export interface DesktopPoolAvailabilityPolicyStartSchedule {
@@ -32008,13 +32129,46 @@ export namespace Desktops {
          */
         privateIp?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
          */
         subnetId: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
          */
         vcnId?: pulumi.Input<string>;
+    }
+
+    export interface DesktopPoolSessionLifecycleActions {
+        /**
+         * (Updatable) Action and grace period for disconnect
+         */
+        disconnect?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActionsDisconnect>;
+        /**
+         * (Updatable) Action and grace period for inactivity
+         */
+        inactivity?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActionsInactivity>;
+    }
+
+    export interface DesktopPoolSessionLifecycleActionsDisconnect {
+        /**
+         * (Updatable) a disconnect action to be triggered
+         */
+        action: pulumi.Input<string>;
+        /**
+         * (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+         */
+        gracePeriodInMinutes?: pulumi.Input<number>;
+    }
+
+    export interface DesktopPoolSessionLifecycleActionsInactivity {
+        /**
+         * (Updatable) an inactivity action to be triggered
+         */
+        action: pulumi.Input<string>;
+        /**
+         * (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+         */
+        gracePeriodInMinutes?: pulumi.Input<number>;
     }
 
     export interface DesktopPoolShapeConfig {
@@ -34214,6 +34368,55 @@ export namespace DisasterRecovery {
 }
 
 export namespace Dns {
+    export interface ActionCreateZoneFromZoneFileDnssecConfig {
+        kskDnssecKeyVersions?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion>[]>;
+        zskDnssecKeyVersions?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion>[]>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion {
+        algorithm?: pulumi.Input<string>;
+        dsDatas?: pulumi.Input<pulumi.Input<inputs.Dns.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData>[]>;
+        keyTag?: pulumi.Input<number>;
+        lengthInBytes?: pulumi.Input<number>;
+        predecessorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        successorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        timeActivated?: pulumi.Input<string>;
+        /**
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        timeExpired?: pulumi.Input<string>;
+        timeInactivated?: pulumi.Input<string>;
+        timePromoted?: pulumi.Input<string>;
+        timePublished?: pulumi.Input<string>;
+        timeUnpublished?: pulumi.Input<string>;
+        uuid?: pulumi.Input<string>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData {
+        digestType?: pulumi.Input<string>;
+        rdata?: pulumi.Input<string>;
+    }
+
+    export interface ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion {
+        algorithm?: pulumi.Input<string>;
+        keyTag?: pulumi.Input<number>;
+        lengthInBytes?: pulumi.Input<number>;
+        predecessorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        successorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        timeActivated?: pulumi.Input<string>;
+        /**
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        timeExpired?: pulumi.Input<string>;
+        timeInactivated?: pulumi.Input<string>;
+        timePromoted?: pulumi.Input<string>;
+        timePublished?: pulumi.Input<string>;
+        timeUnpublished?: pulumi.Input<string>;
+        uuid?: pulumi.Input<string>;
+    }
+
     export interface ActionCreateZoneFromZoneFileExternalDownstream {
         /**
          * The server's IP address (IPv4 or IPv6).
@@ -34479,7 +34682,7 @@ export namespace Dns {
          */
         qnameCoverConditions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+         * (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
          */
         sourceEndpointName: pulumi.Input<string>;
     }
@@ -34506,11 +34709,11 @@ export namespace Dns {
          */
         rrsetVersion?: pulumi.Input<string>;
         /**
-         * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          */
         rtype: pulumi.Input<string>;
         /**
-         * (Updatable) The Time To Live for the record, in seconds.
+         * (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
          */
         ttl: pulumi.Input<number>;
     }
@@ -34572,7 +34775,7 @@ export namespace Dns {
          */
         answerDatas?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyRuleCaseAnswerData>[]>;
         /**
-         * An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+         * An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
          */
         caseCondition?: pulumi.Input<string>;
         /**
@@ -34609,6 +34812,142 @@ export namespace Dns {
          * The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
          */
         value?: pulumi.Input<number>;
+    }
+
+    export interface ZoneDnssecConfig {
+        /**
+         * A read-only array of key signing key (KSK) versions.
+         */
+        kskDnssecKeyVersions?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneDnssecConfigKskDnssecKeyVersion>[]>;
+        /**
+         * A read-only array of zone signing key (ZSK) versions.
+         */
+        zskDnssecKeyVersions?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneDnssecConfigZskDnssecKeyVersion>[]>;
+    }
+
+    export interface ZoneDnssecConfigKskDnssecKeyVersion {
+        /**
+         * The signing algorithm used for the key.
+         */
+        algorithm?: pulumi.Input<string>;
+        /**
+         * An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+         */
+        dsDatas?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneDnssecConfigKskDnssecKeyVersionDsData>[]>;
+        /**
+         * The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+         */
+        keyTag?: pulumi.Input<number>;
+        /**
+         * The length of the corresponding private key in bytes, expressed as an integer.
+         */
+        lengthInBytes?: pulumi.Input<number>;
+        /**
+         * When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+         */
+        predecessorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        /**
+         * When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+         */
+        successorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        /**
+         * The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+         */
+        timeActivated?: pulumi.Input<string>;
+        /**
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+         */
+        timeExpired?: pulumi.Input<string>;
+        /**
+         * The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+         */
+        timeInactivated?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+         */
+        timePromoted?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+         */
+        timePublished?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+         */
+        timeUnpublished?: pulumi.Input<string>;
+        /**
+         * The UUID of the `DnssecKeyVersion`.
+         */
+        uuid?: pulumi.Input<string>;
+    }
+
+    export interface ZoneDnssecConfigKskDnssecKeyVersionDsData {
+        /**
+         * The type of the digest associated with the rdata.
+         */
+        digestType?: pulumi.Input<string>;
+        /**
+         * Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         */
+        rdata?: pulumi.Input<string>;
+    }
+
+    export interface ZoneDnssecConfigZskDnssecKeyVersion {
+        /**
+         * The signing algorithm used for the key.
+         */
+        algorithm?: pulumi.Input<string>;
+        /**
+         * The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+         */
+        keyTag?: pulumi.Input<number>;
+        /**
+         * The length of the corresponding private key in bytes, expressed as an integer.
+         */
+        lengthInBytes?: pulumi.Input<number>;
+        /**
+         * When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+         */
+        predecessorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        /**
+         * When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+         */
+        successorDnssecKeyVersionUuid?: pulumi.Input<string>;
+        /**
+         * The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+         */
+        timeActivated?: pulumi.Input<string>;
+        /**
+         * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+         */
+        timeExpired?: pulumi.Input<string>;
+        /**
+         * The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+         */
+        timeInactivated?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+         */
+        timePromoted?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+         */
+        timePublished?: pulumi.Input<string>;
+        /**
+         * The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+         */
+        timeUnpublished?: pulumi.Input<string>;
+        /**
+         * The UUID of the `DnssecKeyVersion`.
+         */
+        uuid?: pulumi.Input<string>;
     }
 
     export interface ZoneExternalDownstream {
@@ -36308,275 +36647,6 @@ export namespace GenerativeAi {
     }
 }
 
-export namespace GloballyDistributedDatabase {
-    export interface GetPrivateEndpointsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetPrivateEndpointsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetShardedDatabasesFilter {
-        /**
-         * Name of the shard.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetShardedDatabasesFilterArgs {
-        /**
-         * Name of the shard.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface ShardedDatabaseCatalogDetail {
-        /**
-         * Admin password for the catalog database.
-         */
-        adminPassword: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-         */
-        cloudAutonomousVmClusterId: pulumi.Input<string>;
-        /**
-         * The compute count for the catalog database. It has to be in multiple of 2.
-         */
-        computeCount: pulumi.Input<number>;
-        /**
-         * Identifier of the underlying container database.
-         */
-        containerDatabaseId?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying container database parent.
-         */
-        containerDatabaseParentId?: pulumi.Input<string>;
-        /**
-         * The data disk group size to be allocated in GBs for the catalog database.
-         */
-        dataStorageSizeInGbs: pulumi.Input<number>;
-        /**
-         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-         */
-        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetailEncryptionKeyDetails>;
-        /**
-         * Determines the auto-scaling mode for the catalog database.
-         */
-        isAutoScalingEnabled: pulumi.Input<boolean>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-         */
-        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
-        /**
-         * Name of the shard-group to which the shard belongs.
-         */
-        shardGroup?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseCatalogDetailEncryptionKeyDetails {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
-         */
-        kmsKeyId: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
-         */
-        kmsKeyVersionId?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
-         */
-        vaultId: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseConnectionString {
-        /**
-         * Collection of connection strings.
-         */
-        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    }
-
-    export interface ShardedDatabaseGsm {
-        /**
-         * The compute amount available to the underlying autonomous database associated with shard.
-         */
-        computeCount?: pulumi.Input<number>;
-        /**
-         * The data disk group size to be allocated in GBs.
-         */
-        dataStorageSizeInGbs?: pulumi.Input<number>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabasePatchOperation {
-        /**
-         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
-         */
-        operation: pulumi.Input<string>;
-        /**
-         * (Updatable)
-         */
-        selection: pulumi.Input<string>;
-        /**
-         * (Updatable)
-         */
-        value: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseShardDetail {
-        /**
-         * Admin password for shard database.
-         */
-        adminPassword: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-         */
-        cloudAutonomousVmClusterId: pulumi.Input<string>;
-        /**
-         * The compute count for the shard database. It has to be in multiples of 2.
-         */
-        computeCount: pulumi.Input<number>;
-        /**
-         * Identifier of the underlying container database.
-         */
-        containerDatabaseId?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying container database parent.
-         */
-        containerDatabaseParentId?: pulumi.Input<string>;
-        /**
-         * The data disk group size to be allocated in GBs for the shard database.
-         */
-        dataStorageSizeInGbs: pulumi.Input<number>;
-        /**
-         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-         */
-        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseShardDetailEncryptionKeyDetails>;
-        /**
-         * Determines the auto-scaling mode for the shard database.
-         */
-        isAutoScalingEnabled: pulumi.Input<boolean>;
-        /**
-         * Additional metadata related to shard's underlying supporting resource.
-         */
-        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-        /**
-         * Name of the shard.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
-         */
-        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
-        /**
-         * Name of the shard-group to which the shard belongs.
-         */
-        shardGroup?: pulumi.Input<string>;
-        /**
-         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
-         */
-        shardSpace?: pulumi.Input<string>;
-        /**
-         * Status of shard or catalog or gsm for the sharded database.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Identifier of the underlying supporting resource.
-         */
-        supportingResourceId?: pulumi.Input<string>;
-        /**
-         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
-         */
-        timeCreated?: pulumi.Input<string>;
-        /**
-         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
-         */
-        timeSslCertificateExpires?: pulumi.Input<string>;
-        /**
-         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
-         */
-        timeUpdated?: pulumi.Input<string>;
-    }
-
-    export interface ShardedDatabaseShardDetailEncryptionKeyDetails {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
-         */
-        kmsKeyId: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
-         */
-        kmsKeyVersionId?: pulumi.Input<string>;
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
-         */
-        vaultId: pulumi.Input<string>;
-    }
-}
-
 export namespace GoldenGate {
     export interface ConnectionAdditionalAttribute {
         /**
@@ -36600,6 +36670,7 @@ export namespace GoldenGate {
         port?: pulumi.Input<number>;
         /**
          * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+         *
          * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          */
         privateIp?: pulumi.Input<string>;
@@ -36759,6 +36830,10 @@ export namespace GoldenGate {
          */
         deploymentName: pulumi.Input<string>;
         /**
+         * (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+         */
+        groupToRolesMapping?: pulumi.Input<inputs.GoldenGate.DeploymentOggDataGroupToRolesMapping>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
          */
         identityDomainId?: pulumi.Input<string>;
@@ -36774,6 +36849,25 @@ export namespace GoldenGate {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
          */
         passwordSecretId?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentOggDataGroupToRolesMapping {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+         */
+        administratorGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+         */
+        operatorGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+         */
+        securityGroupId: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+         */
+        userGroupId?: pulumi.Input<string>;
     }
 
     export interface GetConnectionAssignmentsFilter {
@@ -36843,6 +36937,18 @@ export namespace GoldenGate {
     }
 
     export interface GetDeploymentCertificatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDeploymentEnvironmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDeploymentEnvironmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

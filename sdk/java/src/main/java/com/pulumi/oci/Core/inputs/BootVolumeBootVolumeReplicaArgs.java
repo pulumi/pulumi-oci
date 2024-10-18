@@ -61,12 +61,44 @@ public final class BootVolumeBootVolumeReplicaArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
+     * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    @Import(name="xrrKmsKeyId")
+    private @Nullable Output<String> xrrKmsKeyId;
+
+    /**
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Optional<Output<String>> xrrKmsKeyId() {
+        return Optional.ofNullable(this.xrrKmsKeyId);
+    }
+
     private BootVolumeBootVolumeReplicaArgs() {}
 
     private BootVolumeBootVolumeReplicaArgs(BootVolumeBootVolumeReplicaArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.bootVolumeReplicaId = $.bootVolumeReplicaId;
         this.displayName = $.displayName;
+        this.kmsKeyId = $.kmsKeyId;
+        this.xrrKmsKeyId = $.xrrKmsKeyId;
     }
 
     public static Builder builder() {
@@ -148,6 +180,48 @@ public final class BootVolumeBootVolumeReplicaArgs extends com.pulumi.resources.
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
+         * @param xrrKmsKeyId (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrrKmsKeyId(@Nullable Output<String> xrrKmsKeyId) {
+            $.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param xrrKmsKeyId (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrrKmsKeyId(String xrrKmsKeyId) {
+            return xrrKmsKeyId(Output.of(xrrKmsKeyId));
         }
 
         public BootVolumeBootVolumeReplicaArgs build() {

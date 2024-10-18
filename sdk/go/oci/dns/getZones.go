@@ -13,10 +13,10 @@ import (
 
 // This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
 //
-// Gets a list of all zones in the specified compartment. The collection
-// can be filtered by name, time created, scope, associated view, and zone type.
-// Additionally, for Private DNS, the `scope` query parameter is required when
-// listing private zones.
+// Gets a list of all zones in the specified compartment.
+//
+// The collection can be filtered by name, time created, scope, associated view, and zone type.
+// Filtering by view is only supported for private zones.
 //
 // ## Example Usage
 //
@@ -34,6 +34,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetZones(ctx, &dns.GetZonesArgs{
 //				CompartmentId:                   compartmentId,
+//				DnssecState:                     pulumi.StringRef(zoneDnssecState),
 //				Name:                            pulumi.StringRef(zoneName),
 //				NameContains:                    pulumi.StringRef(zoneNameContains),
 //				Scope:                           pulumi.StringRef(zoneScope),
@@ -65,14 +66,15 @@ func GetZones(ctx *pulumi.Context, args *GetZonesArgs, opts ...pulumi.InvokeOpti
 // A collection of arguments for invoking getZones.
 type GetZonesArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId string           `pulumi:"compartmentId"`
-	Filters       []GetZonesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Search for zones that have the given `DnssecState`.
+	DnssecState *string          `pulumi:"dnssecState"`
+	Filters     []GetZonesFilter `pulumi:"filters"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
 	Name *string `pulumi:"name"`
 	// Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
 	NameContains *string `pulumi:"nameContains"`
-	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
-	// for zones in the global DNS and `PRIVATE` when listing private zones.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope *string `pulumi:"scope"`
 	// The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
 	SortBy *string `pulumi:"sortBy"`
@@ -95,8 +97,10 @@ type GetZonesArgs struct {
 // A collection of values returned by getZones.
 type GetZonesResult struct {
 	// The OCID of the compartment containing the zone.
-	CompartmentId string           `pulumi:"compartmentId"`
-	Filters       []GetZonesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The state of DNSSEC on the zone.
+	DnssecState *string          `pulumi:"dnssecState"`
+	Filters     []GetZonesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The name of the zone.
@@ -142,14 +146,15 @@ func GetZonesOutput(ctx *pulumi.Context, args GetZonesOutputArgs, opts ...pulumi
 // A collection of arguments for invoking getZones.
 type GetZonesOutputArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId pulumi.StringInput       `pulumi:"compartmentId"`
-	Filters       GetZonesFilterArrayInput `pulumi:"filters"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Search for zones that have the given `DnssecState`.
+	DnssecState pulumi.StringPtrInput    `pulumi:"dnssecState"`
+	Filters     GetZonesFilterArrayInput `pulumi:"filters"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
 	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
-	// Specifies to operate only on resources that have a matching DNS scope. This value will be null
-	// for zones in the global DNS and `PRIVATE` when listing private zones.
+	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
 	SortBy pulumi.StringPtrInput `pulumi:"sortBy"`
@@ -191,6 +196,11 @@ func (o GetZonesResultOutput) ToGetZonesResultOutputWithContext(ctx context.Cont
 // The OCID of the compartment containing the zone.
 func (o GetZonesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The state of DNSSEC on the zone.
+func (o GetZonesResultOutput) DnssecState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesResult) *string { return v.DnssecState }).(pulumi.StringPtrOutput)
 }
 
 func (o GetZonesResultOutput) Filters() GetZonesFilterArrayOutput {

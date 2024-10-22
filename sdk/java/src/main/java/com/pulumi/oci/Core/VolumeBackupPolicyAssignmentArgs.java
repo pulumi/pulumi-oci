@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources.ResourceArgs {
@@ -32,9 +34,6 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
     /**
      * The OCID of the volume backup policy to assign to the volume.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="policyId", required=true)
     private Output<String> policyId;
@@ -42,12 +41,30 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
     /**
      * @return The OCID of the volume backup policy to assign to the volume.
      * 
+     */
+    public Output<String> policyId() {
+        return this.policyId;
+    }
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> policyId() {
-        return this.policyId;
+    @Import(name="xrcKmsKeyId")
+    private @Nullable Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> xrcKmsKeyId() {
+        return Optional.ofNullable(this.xrcKmsKeyId);
     }
 
     private VolumeBackupPolicyAssignmentArgs() {}
@@ -55,6 +72,7 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
     private VolumeBackupPolicyAssignmentArgs(VolumeBackupPolicyAssignmentArgs $) {
         this.assetId = $.assetId;
         this.policyId = $.policyId;
+        this.xrcKmsKeyId = $.xrcKmsKeyId;
     }
 
     public static Builder builder() {
@@ -99,9 +117,6 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
         /**
          * @param policyId The OCID of the volume backup policy to assign to the volume.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -113,14 +128,38 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
         /**
          * @param policyId The OCID of the volume backup policy to assign to the volume.
          * 
+         * @return builder
+         * 
+         */
+        public Builder policyId(String policyId) {
+            return policyId(Output.of(policyId));
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder policyId(String policyId) {
-            return policyId(Output.of(policyId));
+        public Builder xrcKmsKeyId(@Nullable Output<String> xrcKmsKeyId) {
+            $.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            return xrcKmsKeyId(Output.of(xrcKmsKeyId));
         }
 
         public VolumeBackupPolicyAssignmentArgs build() {

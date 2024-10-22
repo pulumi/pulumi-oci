@@ -59,8 +59,11 @@ import javax.annotation.Nullable;
  *         var testBootVolume = new BootVolume("testBootVolume", BootVolumeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceDetails(BootVolumeSourceDetailsArgs.builder()
- *                 .id(bootVolumeSourceDetailsId)
  *                 .type(bootVolumeSourceDetailsType)
+ *                 .changeBlockSizeInBytes(bootVolumeSourceDetailsChangeBlockSizeInBytes)
+ *                 .firstBackupId(testBackup.id())
+ *                 .id(bootVolumeSourceDetailsId)
+ *                 .secondBackupId(testBackup.id())
  *                 .build())
  *             .autotunePolicies(BootVolumeAutotunePolicyArgs.builder()
  *                 .autotuneType(bootVolumeAutotunePoliciesAutotuneType)
@@ -71,6 +74,7 @@ import javax.annotation.Nullable;
  *             .bootVolumeReplicas(BootVolumeBootVolumeReplicaArgs.builder()
  *                 .availabilityDomain(bootVolumeBootVolumeReplicasAvailabilityDomain)
  *                 .displayName(bootVolumeBootVolumeReplicasDisplayName)
+ *                 .xrrKmsKeyId(testKey.id())
  *                 .build())
  *             .clusterPlacementGroupId(testGroup.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -80,6 +84,7 @@ import javax.annotation.Nullable;
  *             .kmsKeyId(testKey.id())
  *             .sizeInGbs(bootVolumeSizeInGbs)
  *             .vpusPerGb(bootVolumeVpusPerGb)
+ *             .xrcKmsKeyId(testKey.id())
  *             .bootVolumeReplicasDeletion(true)
  *             .build());
  * 
@@ -413,6 +418,26 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      */
     public Output<String> vpusPerGb() {
         return this.vpusPerGb;
+    }
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="xrcKmsKeyId", refs={String.class}, tree="[0]")
+    private Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
     }
 
     /**

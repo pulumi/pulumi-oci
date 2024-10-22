@@ -25,6 +25,12 @@ public final class GetBootVolumeBootVolumeReplica {
      * 
      */
     private String displayName;
+    /**
+     * @return The OCID of the Vault service master encryption key assigned to the boot volume.
+     * 
+     */
+    private String kmsKeyId;
+    private String xrrKmsKeyId;
 
     private GetBootVolumeBootVolumeReplica() {}
     /**
@@ -48,6 +54,16 @@ public final class GetBootVolumeBootVolumeReplica {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return The OCID of the Vault service master encryption key assigned to the boot volume.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    public String xrrKmsKeyId() {
+        return this.xrrKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -61,12 +77,16 @@ public final class GetBootVolumeBootVolumeReplica {
         private String availabilityDomain;
         private String bootVolumeReplicaId;
         private String displayName;
+        private String kmsKeyId;
+        private String xrrKmsKeyId;
         public Builder() {}
         public Builder(GetBootVolumeBootVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.bootVolumeReplicaId = defaults.bootVolumeReplicaId;
     	      this.displayName = defaults.displayName;
+    	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.xrrKmsKeyId = defaults.xrrKmsKeyId;
         }
 
         @CustomType.Setter
@@ -93,11 +113,29 @@ public final class GetBootVolumeBootVolumeReplica {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
+        public Builder kmsKeyId(String kmsKeyId) {
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeBootVolumeReplica", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder xrrKmsKeyId(String xrrKmsKeyId) {
+            if (xrrKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeBootVolumeReplica", "xrrKmsKeyId");
+            }
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            return this;
+        }
         public GetBootVolumeBootVolumeReplica build() {
             final var _resultValue = new GetBootVolumeBootVolumeReplica();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.bootVolumeReplicaId = bootVolumeReplicaId;
             _resultValue.displayName = displayName;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.xrrKmsKeyId = xrrKmsKeyId;
             return _resultValue;
         }
     }

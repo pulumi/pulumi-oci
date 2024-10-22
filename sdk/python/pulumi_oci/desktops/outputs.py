@@ -23,6 +23,9 @@ __all__ = [
     'DesktopPoolImage',
     'DesktopPoolNetworkConfiguration',
     'DesktopPoolPrivateAccessDetails',
+    'DesktopPoolSessionLifecycleActions',
+    'DesktopPoolSessionLifecycleActionsDisconnect',
+    'DesktopPoolSessionLifecycleActionsInactivity',
     'DesktopPoolShapeConfig',
     'GetDesktopDevicePolicyResult',
     'GetDesktopHostingOptionResult',
@@ -37,6 +40,9 @@ __all__ = [
     'GetDesktopPoolImageResult',
     'GetDesktopPoolNetworkConfigurationResult',
     'GetDesktopPoolPrivateAccessDetailResult',
+    'GetDesktopPoolSessionLifecycleActionResult',
+    'GetDesktopPoolSessionLifecycleActionDisconnectResult',
+    'GetDesktopPoolSessionLifecycleActionInactivityResult',
     'GetDesktopPoolShapeConfigResult',
     'GetDesktopPoolVolumesDesktopPoolVolumeCollectionResult',
     'GetDesktopPoolVolumesDesktopPoolVolumeCollectionItemResult',
@@ -50,6 +56,9 @@ __all__ = [
     'GetDesktopPoolsDesktopPoolCollectionItemImageResult',
     'GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult',
     'GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult',
+    'GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult',
+    'GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectResult',
+    'GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityResult',
     'GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult',
     'GetDesktopPoolsFilterResult',
     'GetDesktopsDesktopCollectionResult',
@@ -79,18 +88,20 @@ class DesktopPoolAvailabilityPolicy(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 start_schedule: 'outputs.DesktopPoolAvailabilityPolicyStartSchedule',
-                 stop_schedule: 'outputs.DesktopPoolAvailabilityPolicyStopSchedule'):
+                 start_schedule: Optional['outputs.DesktopPoolAvailabilityPolicyStartSchedule'] = None,
+                 stop_schedule: Optional['outputs.DesktopPoolAvailabilityPolicyStopSchedule'] = None):
         """
         :param 'DesktopPoolAvailabilityPolicyStartScheduleArgs' start_schedule: (Updatable) Provides the schedule information for a desktop.
         :param 'DesktopPoolAvailabilityPolicyStopScheduleArgs' stop_schedule: (Updatable) Provides the schedule information for a desktop.
         """
-        pulumi.set(__self__, "start_schedule", start_schedule)
-        pulumi.set(__self__, "stop_schedule", stop_schedule)
+        if start_schedule is not None:
+            pulumi.set(__self__, "start_schedule", start_schedule)
+        if stop_schedule is not None:
+            pulumi.set(__self__, "stop_schedule", stop_schedule)
 
     @property
     @pulumi.getter(name="startSchedule")
-    def start_schedule(self) -> 'outputs.DesktopPoolAvailabilityPolicyStartSchedule':
+    def start_schedule(self) -> Optional['outputs.DesktopPoolAvailabilityPolicyStartSchedule']:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
@@ -98,7 +109,7 @@ class DesktopPoolAvailabilityPolicy(dict):
 
     @property
     @pulumi.getter(name="stopSchedule")
-    def stop_schedule(self) -> 'outputs.DesktopPoolAvailabilityPolicyStopSchedule':
+    def stop_schedule(self) -> Optional['outputs.DesktopPoolAvailabilityPolicyStopSchedule']:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
@@ -454,7 +465,7 @@ class DesktopPoolPrivateAccessDetails(dict):
                  private_ip: Optional[str] = None,
                  vcn_id: Optional[str] = None):
         """
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[str] nsg_ids: A list of network security groups for the private access.
         :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
@@ -474,7 +485,7 @@ class DesktopPoolPrivateAccessDetails(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -509,6 +520,131 @@ class DesktopPoolPrivateAccessDetails(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class DesktopPoolSessionLifecycleActions(dict):
+    def __init__(__self__, *,
+                 disconnect: Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect'] = None,
+                 inactivity: Optional['outputs.DesktopPoolSessionLifecycleActionsInactivity'] = None):
+        """
+        :param 'DesktopPoolSessionLifecycleActionsDisconnectArgs' disconnect: (Updatable) Action and grace period for disconnect
+        :param 'DesktopPoolSessionLifecycleActionsInactivityArgs' inactivity: (Updatable) Action and grace period for inactivity
+        """
+        if disconnect is not None:
+            pulumi.set(__self__, "disconnect", disconnect)
+        if inactivity is not None:
+            pulumi.set(__self__, "inactivity", inactivity)
+
+    @property
+    @pulumi.getter
+    def disconnect(self) -> Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect']:
+        """
+        (Updatable) Action and grace period for disconnect
+        """
+        return pulumi.get(self, "disconnect")
+
+    @property
+    @pulumi.getter
+    def inactivity(self) -> Optional['outputs.DesktopPoolSessionLifecycleActionsInactivity']:
+        """
+        (Updatable) Action and grace period for inactivity
+        """
+        return pulumi.get(self, "inactivity")
+
+
+@pulumi.output_type
+class DesktopPoolSessionLifecycleActionsDisconnect(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "gracePeriodInMinutes":
+            suggest = "grace_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DesktopPoolSessionLifecycleActionsDisconnect. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DesktopPoolSessionLifecycleActionsDisconnect.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DesktopPoolSessionLifecycleActionsDisconnect.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: Optional[int] = None):
+        """
+        :param str action: (Updatable) a disconnect action to be triggered
+        :param int grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        if grace_period_in_minutes is not None:
+            pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        (Updatable) a disconnect action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> Optional[int]:
+        """
+        (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
+
+
+@pulumi.output_type
+class DesktopPoolSessionLifecycleActionsInactivity(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "gracePeriodInMinutes":
+            suggest = "grace_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DesktopPoolSessionLifecycleActionsInactivity. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DesktopPoolSessionLifecycleActionsInactivity.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DesktopPoolSessionLifecycleActionsInactivity.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: Optional[int] = None):
+        """
+        :param str action: (Updatable) an inactivity action to be triggered
+        :param int grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        if grace_period_in_minutes is not None:
+            pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        (Updatable) an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> Optional[int]:
+        """
+        (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
 
 
 @pulumi.output_type
@@ -1089,7 +1225,7 @@ class GetDesktopPoolNetworkConfigurationResult(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1099,7 +1235,7 @@ class GetDesktopPoolNetworkConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1121,10 +1257,10 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[str] nsg_ids: A list of network security groups for the private access.
         :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
@@ -1137,7 +1273,7 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
     @pulumi.getter(name="endpointFqdn")
     def endpoint_fqdn(self) -> str:
         """
-        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         """
         return pulumi.get(self, "endpoint_fqdn")
 
@@ -1161,7 +1297,7 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1172,6 +1308,93 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolSessionLifecycleActionResult(dict):
+    def __init__(__self__, *,
+                 disconnects: Sequence['outputs.GetDesktopPoolSessionLifecycleActionDisconnectResult'],
+                 inactivities: Sequence['outputs.GetDesktopPoolSessionLifecycleActionInactivityResult']):
+        """
+        :param Sequence['GetDesktopPoolSessionLifecycleActionDisconnectArgs'] disconnects: Action and grace period for disconnect
+        :param Sequence['GetDesktopPoolSessionLifecycleActionInactivityArgs'] inactivities: Action and grace period for inactivity
+        """
+        pulumi.set(__self__, "disconnects", disconnects)
+        pulumi.set(__self__, "inactivities", inactivities)
+
+    @property
+    @pulumi.getter
+    def disconnects(self) -> Sequence['outputs.GetDesktopPoolSessionLifecycleActionDisconnectResult']:
+        """
+        Action and grace period for disconnect
+        """
+        return pulumi.get(self, "disconnects")
+
+    @property
+    @pulumi.getter
+    def inactivities(self) -> Sequence['outputs.GetDesktopPoolSessionLifecycleActionInactivityResult']:
+        """
+        Action and grace period for inactivity
+        """
+        return pulumi.get(self, "inactivities")
+
+
+@pulumi.output_type
+class GetDesktopPoolSessionLifecycleActionDisconnectResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: int):
+        """
+        :param str action: an inactivity action to be triggered
+        :param int grace_period_in_minutes: The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> int:
+        """
+        The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
+
+
+@pulumi.output_type
+class GetDesktopPoolSessionLifecycleActionInactivityResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: int):
+        """
+        :param str action: an inactivity action to be triggered
+        :param int grace_period_in_minutes: The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> int:
+        """
+        The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
 
 
 @pulumi.output_type
@@ -1399,6 +1622,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
                  network_configurations: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult'],
                  nsg_ids: Sequence[str],
                  private_access_details: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult'],
+                 session_lifecycle_actions: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult'],
                  shape_configs: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult'],
                  shape_name: str,
                  standby_size: int,
@@ -1428,6 +1652,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs'] network_configurations: Provides information about the network configuration of the desktop pool.
         :param Sequence[str] nsg_ids: A list of network security groups for the private access.
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs'] private_access_details: The details of the desktop's private access network connectivity that were used to create the pool.
+        :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs'] session_lifecycle_actions: Action to be triggered on inactivity or disconnect
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs'] shape_configs: The shape configuration used for each desktop compute instance in the desktop pool.
         :param str shape_name: The shape of the desktop pool.
         :param int standby_size: The maximum number of standby desktops available in the desktop pool.
@@ -1457,6 +1682,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_access_details", private_access_details)
+        pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "standby_size", standby_size)
@@ -1611,6 +1837,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         The details of the desktop's private access network connectivity that were used to create the pool.
         """
         return pulumi.get(self, "private_access_details")
+
+    @property
+    @pulumi.getter(name="sessionLifecycleActions")
+    def session_lifecycle_actions(self) -> Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult']:
+        """
+        Action to be triggered on inactivity or disconnect
+        """
+        return pulumi.get(self, "session_lifecycle_actions")
 
     @property
     @pulumi.getter(name="shapeConfigs")
@@ -1910,7 +2144,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
                  subnet_id: str,
                  vcn_id: str):
         """
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1920,7 +2154,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1945,7 +2179,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
         :param str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[str] nsg_ids: A list of network security groups for the private access.
         :param str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
@@ -1982,7 +2216,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1993,6 +2227,93 @@ class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult(dict):
+    def __init__(__self__, *,
+                 disconnects: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectResult'],
+                 inactivities: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityResult']):
+        """
+        :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectArgs'] disconnects: Action and grace period for disconnect
+        :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityArgs'] inactivities: Action and grace period for inactivity
+        """
+        pulumi.set(__self__, "disconnects", disconnects)
+        pulumi.set(__self__, "inactivities", inactivities)
+
+    @property
+    @pulumi.getter
+    def disconnects(self) -> Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectResult']:
+        """
+        Action and grace period for disconnect
+        """
+        return pulumi.get(self, "disconnects")
+
+    @property
+    @pulumi.getter
+    def inactivities(self) -> Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityResult']:
+        """
+        Action and grace period for inactivity
+        """
+        return pulumi.get(self, "inactivities")
+
+
+@pulumi.output_type
+class GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionDisconnectResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: int):
+        """
+        :param str action: an inactivity action to be triggered
+        :param int grace_period_in_minutes: The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> int:
+        """
+        The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
+
+
+@pulumi.output_type
+class GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionInactivityResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 grace_period_in_minutes: int):
+        """
+        :param str action: an inactivity action to be triggered
+        :param int grace_period_in_minutes: The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "grace_period_in_minutes", grace_period_in_minutes)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        an inactivity action to be triggered
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="gracePeriodInMinutes")
+    def grace_period_in_minutes(self) -> int:
+        """
+        The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
+        """
+        return pulumi.get(self, "grace_period_in_minutes")
 
 
 @pulumi.output_type

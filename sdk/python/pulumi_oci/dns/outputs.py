@@ -16,6 +16,10 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ActionCreateZoneFromZoneFileDnssecConfig',
+    'ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion',
+    'ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData',
+    'ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion',
     'ActionCreateZoneFromZoneFileExternalDownstream',
     'ActionCreateZoneFromZoneFileExternalMaster',
     'ActionCreateZoneFromZoneFileNameserver',
@@ -29,6 +33,10 @@ __all__ = [
     'SteeringPolicyRuleCase',
     'SteeringPolicyRuleCaseAnswerData',
     'SteeringPolicyRuleDefaultAnswerData',
+    'ZoneDnssecConfig',
+    'ZoneDnssecConfigKskDnssecKeyVersion',
+    'ZoneDnssecConfigKskDnssecKeyVersionDsData',
+    'ZoneDnssecConfigZskDnssecKeyVersion',
     'ZoneExternalDownstream',
     'ZoneExternalMaster',
     'ZoneNameserver',
@@ -69,11 +77,407 @@ __all__ = [
     'GetViewsViewResult',
     'GetZonesFilterResult',
     'GetZonesZoneResult',
+    'GetZonesZoneDnssecConfigResult',
+    'GetZonesZoneDnssecConfigKskDnssecKeyVersionResult',
+    'GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataResult',
+    'GetZonesZoneDnssecConfigZskDnssecKeyVersionResult',
     'GetZonesZoneExternalDownstreamResult',
     'GetZonesZoneExternalMasterResult',
     'GetZonesZoneNameserverResult',
     'GetZonesZoneZoneTransferServerResult',
 ]
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileDnssecConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kskDnssecKeyVersions":
+            suggest = "ksk_dnssec_key_versions"
+        elif key == "zskDnssecKeyVersions":
+            suggest = "zsk_dnssec_key_versions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileDnssecConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ksk_dnssec_key_versions: Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion']] = None,
+                 zsk_dnssec_key_versions: Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion']] = None):
+        if ksk_dnssec_key_versions is not None:
+            pulumi.set(__self__, "ksk_dnssec_key_versions", ksk_dnssec_key_versions)
+        if zsk_dnssec_key_versions is not None:
+            pulumi.set(__self__, "zsk_dnssec_key_versions", zsk_dnssec_key_versions)
+
+    @property
+    @pulumi.getter(name="kskDnssecKeyVersions")
+    def ksk_dnssec_key_versions(self) -> Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion']]:
+        return pulumi.get(self, "ksk_dnssec_key_versions")
+
+    @property
+    @pulumi.getter(name="zskDnssecKeyVersions")
+    def zsk_dnssec_key_versions(self) -> Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion']]:
+        return pulumi.get(self, "zsk_dnssec_key_versions")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dsDatas":
+            suggest = "ds_datas"
+        elif key == "keyTag":
+            suggest = "key_tag"
+        elif key == "lengthInBytes":
+            suggest = "length_in_bytes"
+        elif key == "predecessorDnssecKeyVersionUuid":
+            suggest = "predecessor_dnssec_key_version_uuid"
+        elif key == "successorDnssecKeyVersionUuid":
+            suggest = "successor_dnssec_key_version_uuid"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeExpired":
+            suggest = "time_expired"
+        elif key == "timeInactivated":
+            suggest = "time_inactivated"
+        elif key == "timePromoted":
+            suggest = "time_promoted"
+        elif key == "timePublished":
+            suggest = "time_published"
+        elif key == "timeUnpublished":
+            suggest = "time_unpublished"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[str] = None,
+                 ds_datas: Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData']] = None,
+                 key_tag: Optional[int] = None,
+                 length_in_bytes: Optional[int] = None,
+                 predecessor_dnssec_key_version_uuid: Optional[str] = None,
+                 successor_dnssec_key_version_uuid: Optional[str] = None,
+                 time_activated: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_expired: Optional[str] = None,
+                 time_inactivated: Optional[str] = None,
+                 time_promoted: Optional[str] = None,
+                 time_published: Optional[str] = None,
+                 time_unpublished: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if ds_datas is not None:
+            pulumi.set(__self__, "ds_datas", ds_datas)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+        if length_in_bytes is not None:
+            pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        if predecessor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        if successor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_expired is not None:
+            pulumi.set(__self__, "time_expired", time_expired)
+        if time_inactivated is not None:
+            pulumi.set(__self__, "time_inactivated", time_inactivated)
+        if time_promoted is not None:
+            pulumi.set(__self__, "time_promoted", time_promoted)
+        if time_published is not None:
+            pulumi.set(__self__, "time_published", time_published)
+        if time_unpublished is not None:
+            pulumi.set(__self__, "time_unpublished", time_unpublished)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="dsDatas")
+    def ds_datas(self) -> Optional[Sequence['outputs.ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData']]:
+        return pulumi.get(self, "ds_datas")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> Optional[int]:
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> Optional[str]:
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> Optional[str]:
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> Optional[str]:
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> Optional[str]:
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> Optional[str]:
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> Optional[str]:
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> Optional[str]:
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "digestType":
+            suggest = "digest_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 digest_type: Optional[str] = None,
+                 rdata: Optional[str] = None):
+        if digest_type is not None:
+            pulumi.set(__self__, "digest_type", digest_type)
+        if rdata is not None:
+            pulumi.set(__self__, "rdata", rdata)
+
+    @property
+    @pulumi.getter(name="digestType")
+    def digest_type(self) -> Optional[str]:
+        return pulumi.get(self, "digest_type")
+
+    @property
+    @pulumi.getter
+    def rdata(self) -> Optional[str]:
+        return pulumi.get(self, "rdata")
+
+
+@pulumi.output_type
+class ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keyTag":
+            suggest = "key_tag"
+        elif key == "lengthInBytes":
+            suggest = "length_in_bytes"
+        elif key == "predecessorDnssecKeyVersionUuid":
+            suggest = "predecessor_dnssec_key_version_uuid"
+        elif key == "successorDnssecKeyVersionUuid":
+            suggest = "successor_dnssec_key_version_uuid"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeExpired":
+            suggest = "time_expired"
+        elif key == "timeInactivated":
+            suggest = "time_inactivated"
+        elif key == "timePromoted":
+            suggest = "time_promoted"
+        elif key == "timePublished":
+            suggest = "time_published"
+        elif key == "timeUnpublished":
+            suggest = "time_unpublished"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[str] = None,
+                 key_tag: Optional[int] = None,
+                 length_in_bytes: Optional[int] = None,
+                 predecessor_dnssec_key_version_uuid: Optional[str] = None,
+                 successor_dnssec_key_version_uuid: Optional[str] = None,
+                 time_activated: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_expired: Optional[str] = None,
+                 time_inactivated: Optional[str] = None,
+                 time_promoted: Optional[str] = None,
+                 time_published: Optional[str] = None,
+                 time_unpublished: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+        if length_in_bytes is not None:
+            pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        if predecessor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        if successor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_expired is not None:
+            pulumi.set(__self__, "time_expired", time_expired)
+        if time_inactivated is not None:
+            pulumi.set(__self__, "time_inactivated", time_inactivated)
+        if time_promoted is not None:
+            pulumi.set(__self__, "time_promoted", time_promoted)
+        if time_published is not None:
+            pulumi.set(__self__, "time_published", time_published)
+        if time_unpublished is not None:
+            pulumi.set(__self__, "time_unpublished", time_unpublished)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[str]:
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> Optional[int]:
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> Optional[str]:
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> Optional[str]:
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> Optional[str]:
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> Optional[str]:
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> Optional[str]:
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> Optional[str]:
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> Optional[str]:
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        return pulumi.get(self, "uuid")
+
 
 @pulumi.output_type
 class ActionCreateZoneFromZoneFileExternalDownstream(dict):
@@ -542,7 +946,7 @@ class ResolverRule(dict):
         :param str action: (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
                * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
         :param Sequence[str] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        :param str source_endpoint_name: (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+        :param str source_endpoint_name: (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         :param Sequence[str] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
         :param Sequence[str] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
         """
@@ -575,7 +979,7 @@ class ResolverRule(dict):
     @pulumi.getter(name="sourceEndpointName")
     def source_endpoint_name(self) -> str:
         """
-        (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+        (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         """
         return pulumi.get(self, "source_endpoint_name")
 
@@ -630,8 +1034,8 @@ class RrsetItem(dict):
         """
         :param str domain: The fully qualified domain name where the record can be located.
         :param str rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param str rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        :param int ttl: (Updatable) The Time To Live for the record, in seconds.
+        :param str rtype: The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        :param int ttl: (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
         :param str record_hash: A unique identifier for the record within its zone.
         :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
@@ -667,7 +1071,7 @@ class RrsetItem(dict):
     @pulumi.getter
     def rtype(self) -> str:
         """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+        The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
         return pulumi.get(self, "rtype")
 
@@ -675,7 +1079,7 @@ class RrsetItem(dict):
     @pulumi.getter
     def ttl(self) -> int:
         """
-        (Updatable) The Time To Live for the record, in seconds.
+        (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         return pulumi.get(self, "ttl")
 
@@ -909,7 +1313,7 @@ class SteeringPolicyRuleCase(dict):
                  count: Optional[int] = None):
         """
         :param Sequence['SteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
         """
         if answer_datas is not None:
@@ -931,7 +1335,7 @@ class SteeringPolicyRuleCase(dict):
     @pulumi.getter(name="caseCondition")
     def case_condition(self) -> Optional[str]:
         """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         """
         return pulumi.get(self, "case_condition")
 
@@ -1066,6 +1470,518 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
         The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ZoneDnssecConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kskDnssecKeyVersions":
+            suggest = "ksk_dnssec_key_versions"
+        elif key == "zskDnssecKeyVersions":
+            suggest = "zsk_dnssec_key_versions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneDnssecConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneDnssecConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneDnssecConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ksk_dnssec_key_versions: Optional[Sequence['outputs.ZoneDnssecConfigKskDnssecKeyVersion']] = None,
+                 zsk_dnssec_key_versions: Optional[Sequence['outputs.ZoneDnssecConfigZskDnssecKeyVersion']] = None):
+        """
+        :param Sequence['ZoneDnssecConfigKskDnssecKeyVersionArgs'] ksk_dnssec_key_versions: A read-only array of key signing key (KSK) versions.
+        :param Sequence['ZoneDnssecConfigZskDnssecKeyVersionArgs'] zsk_dnssec_key_versions: A read-only array of zone signing key (ZSK) versions.
+        """
+        if ksk_dnssec_key_versions is not None:
+            pulumi.set(__self__, "ksk_dnssec_key_versions", ksk_dnssec_key_versions)
+        if zsk_dnssec_key_versions is not None:
+            pulumi.set(__self__, "zsk_dnssec_key_versions", zsk_dnssec_key_versions)
+
+    @property
+    @pulumi.getter(name="kskDnssecKeyVersions")
+    def ksk_dnssec_key_versions(self) -> Optional[Sequence['outputs.ZoneDnssecConfigKskDnssecKeyVersion']]:
+        """
+        A read-only array of key signing key (KSK) versions.
+        """
+        return pulumi.get(self, "ksk_dnssec_key_versions")
+
+    @property
+    @pulumi.getter(name="zskDnssecKeyVersions")
+    def zsk_dnssec_key_versions(self) -> Optional[Sequence['outputs.ZoneDnssecConfigZskDnssecKeyVersion']]:
+        """
+        A read-only array of zone signing key (ZSK) versions.
+        """
+        return pulumi.get(self, "zsk_dnssec_key_versions")
+
+
+@pulumi.output_type
+class ZoneDnssecConfigKskDnssecKeyVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dsDatas":
+            suggest = "ds_datas"
+        elif key == "keyTag":
+            suggest = "key_tag"
+        elif key == "lengthInBytes":
+            suggest = "length_in_bytes"
+        elif key == "predecessorDnssecKeyVersionUuid":
+            suggest = "predecessor_dnssec_key_version_uuid"
+        elif key == "successorDnssecKeyVersionUuid":
+            suggest = "successor_dnssec_key_version_uuid"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeExpired":
+            suggest = "time_expired"
+        elif key == "timeInactivated":
+            suggest = "time_inactivated"
+        elif key == "timePromoted":
+            suggest = "time_promoted"
+        elif key == "timePublished":
+            suggest = "time_published"
+        elif key == "timeUnpublished":
+            suggest = "time_unpublished"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneDnssecConfigKskDnssecKeyVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneDnssecConfigKskDnssecKeyVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneDnssecConfigKskDnssecKeyVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[str] = None,
+                 ds_datas: Optional[Sequence['outputs.ZoneDnssecConfigKskDnssecKeyVersionDsData']] = None,
+                 key_tag: Optional[int] = None,
+                 length_in_bytes: Optional[int] = None,
+                 predecessor_dnssec_key_version_uuid: Optional[str] = None,
+                 successor_dnssec_key_version_uuid: Optional[str] = None,
+                 time_activated: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_expired: Optional[str] = None,
+                 time_inactivated: Optional[str] = None,
+                 time_promoted: Optional[str] = None,
+                 time_published: Optional[str] = None,
+                 time_unpublished: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str algorithm: The signing algorithm used for the key.
+        :param Sequence['ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs'] ds_datas: An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        :param int key_tag: The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        :param int length_in_bytes: The length of the corresponding private key in bytes, expressed as an integer.
+        :param str predecessor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        :param str successor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        :param str time_activated: The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param str time_expired: The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        :param str time_inactivated: The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str time_promoted: The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        :param str time_published: The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        :param str time_unpublished: The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if ds_datas is not None:
+            pulumi.set(__self__, "ds_datas", ds_datas)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+        if length_in_bytes is not None:
+            pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        if predecessor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        if successor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_expired is not None:
+            pulumi.set(__self__, "time_expired", time_expired)
+        if time_inactivated is not None:
+            pulumi.set(__self__, "time_inactivated", time_inactivated)
+        if time_promoted is not None:
+            pulumi.set(__self__, "time_promoted", time_promoted)
+        if time_published is not None:
+            pulumi.set(__self__, "time_published", time_published)
+        if time_unpublished is not None:
+            pulumi.set(__self__, "time_unpublished", time_unpublished)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[str]:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="dsDatas")
+    def ds_datas(self) -> Optional[Sequence['outputs.ZoneDnssecConfigKskDnssecKeyVersionDsData']]:
+        """
+        An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        """
+        return pulumi.get(self, "ds_datas")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        """
+        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        """
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> Optional[int]:
+        """
+        The length of the corresponding private key in bytes, expressed as an integer.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> Optional[str]:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> Optional[str]:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        """
+        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> Optional[str]:
+        """
+        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> Optional[str]:
+        """
+        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> Optional[str]:
+        """
+        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> Optional[str]:
+        """
+        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> Optional[str]:
+        """
+        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class ZoneDnssecConfigKskDnssecKeyVersionDsData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "digestType":
+            suggest = "digest_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneDnssecConfigKskDnssecKeyVersionDsData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneDnssecConfigKskDnssecKeyVersionDsData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneDnssecConfigKskDnssecKeyVersionDsData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 digest_type: Optional[str] = None,
+                 rdata: Optional[str] = None):
+        """
+        :param str digest_type: The type of the digest associated with the rdata.
+        :param str rdata: Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        if digest_type is not None:
+            pulumi.set(__self__, "digest_type", digest_type)
+        if rdata is not None:
+            pulumi.set(__self__, "rdata", rdata)
+
+    @property
+    @pulumi.getter(name="digestType")
+    def digest_type(self) -> Optional[str]:
+        """
+        The type of the digest associated with the rdata.
+        """
+        return pulumi.get(self, "digest_type")
+
+    @property
+    @pulumi.getter
+    def rdata(self) -> Optional[str]:
+        """
+        Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        return pulumi.get(self, "rdata")
+
+
+@pulumi.output_type
+class ZoneDnssecConfigZskDnssecKeyVersion(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keyTag":
+            suggest = "key_tag"
+        elif key == "lengthInBytes":
+            suggest = "length_in_bytes"
+        elif key == "predecessorDnssecKeyVersionUuid":
+            suggest = "predecessor_dnssec_key_version_uuid"
+        elif key == "successorDnssecKeyVersionUuid":
+            suggest = "successor_dnssec_key_version_uuid"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeExpired":
+            suggest = "time_expired"
+        elif key == "timeInactivated":
+            suggest = "time_inactivated"
+        elif key == "timePromoted":
+            suggest = "time_promoted"
+        elif key == "timePublished":
+            suggest = "time_published"
+        elif key == "timeUnpublished":
+            suggest = "time_unpublished"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ZoneDnssecConfigZskDnssecKeyVersion. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ZoneDnssecConfigZskDnssecKeyVersion.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ZoneDnssecConfigZskDnssecKeyVersion.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm: Optional[str] = None,
+                 key_tag: Optional[int] = None,
+                 length_in_bytes: Optional[int] = None,
+                 predecessor_dnssec_key_version_uuid: Optional[str] = None,
+                 successor_dnssec_key_version_uuid: Optional[str] = None,
+                 time_activated: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_expired: Optional[str] = None,
+                 time_inactivated: Optional[str] = None,
+                 time_promoted: Optional[str] = None,
+                 time_published: Optional[str] = None,
+                 time_unpublished: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str algorithm: The signing algorithm used for the key.
+        :param int key_tag: The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        :param int length_in_bytes: The length of the corresponding private key in bytes, expressed as an integer.
+        :param str predecessor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        :param str successor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        :param str time_activated: The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param str time_expired: The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        :param str time_inactivated: The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str time_promoted: The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        :param str time_published: The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        :param str time_unpublished: The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if key_tag is not None:
+            pulumi.set(__self__, "key_tag", key_tag)
+        if length_in_bytes is not None:
+            pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        if predecessor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        if successor_dnssec_key_version_uuid is not None:
+            pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_expired is not None:
+            pulumi.set(__self__, "time_expired", time_expired)
+        if time_inactivated is not None:
+            pulumi.set(__self__, "time_inactivated", time_inactivated)
+        if time_promoted is not None:
+            pulumi.set(__self__, "time_promoted", time_promoted)
+        if time_published is not None:
+            pulumi.set(__self__, "time_published", time_published)
+        if time_unpublished is not None:
+            pulumi.set(__self__, "time_unpublished", time_unpublished)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> Optional[str]:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> Optional[int]:
+        """
+        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        """
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> Optional[int]:
+        """
+        The length of the corresponding private key in bytes, expressed as an integer.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> Optional[str]:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> Optional[str]:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        """
+        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> Optional[str]:
+        """
+        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> Optional[str]:
+        """
+        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> Optional[str]:
+        """
+        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> Optional[str]:
+        """
+        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> Optional[str]:
+        """
+        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
 
 
 @pulumi.output_type
@@ -1325,9 +2241,11 @@ class GetRecordsRecordResult(dict):
         :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
         :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
         :param str zone_name_or_id: The name or OCID of the target zone.
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
+        :param str compartment_id: The OCID of the compartment the zone belongs to.
+               
+               This parameter is deprecated and should be omitted.
         :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param int ttl: The Time To Live for the record, in seconds.
+        :param int ttl: The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "is_protected", is_protected)
@@ -1397,7 +2315,9 @@ class GetRecordsRecordResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the compartment the resource belongs to.
+        The OCID of the compartment the zone belongs to.
+
+        This parameter is deprecated and should be omitted.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1413,7 +2333,7 @@ class GetRecordsRecordResult(dict):
     @pulumi.getter
     def ttl(self) -> Optional[int]:
         """
-        The Time To Live for the record, in seconds.
+        The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         return pulumi.get(self, "ttl")
 
@@ -2231,7 +3151,7 @@ class GetRrsetItemResult(dict):
         :param str record_hash: A unique identifier for the record within its zone.
         :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
         :param str rtype: The type of the target RRSet within the target zone.
-        :param int ttl: The Time To Live for the record, in seconds.
+        :param int ttl: The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "is_protected", is_protected)
@@ -2293,7 +3213,7 @@ class GetRrsetItemResult(dict):
     @pulumi.getter
     def ttl(self) -> int:
         """
-        The Time To Live for the record, in seconds.
+        The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         return pulumi.get(self, "ttl")
 
@@ -2378,7 +3298,7 @@ class GetRrsetsRrsetItemResult(dict):
         :param str record_hash: A unique identifier for the record within its zone.
         :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
         :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        :param int ttl: The Time To Live for the record, in seconds.
+        :param int ttl: The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "is_protected", is_protected)
@@ -2440,7 +3360,7 @@ class GetRrsetsRrsetItemResult(dict):
     @pulumi.getter
     def ttl(self) -> int:
         """
-        The Time To Live for the record, in seconds.
+        The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         """
         return pulumi.get(self, "ttl")
 
@@ -2770,7 +3690,7 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseResult(dict):
                  count: int):
         """
         :param Sequence['GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
         """
         pulumi.set(__self__, "answer_datas", answer_datas)
@@ -2789,7 +3709,7 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseResult(dict):
     @pulumi.getter(name="caseCondition")
     def case_condition(self) -> str:
         """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         """
         return pulumi.get(self, "case_condition")
 
@@ -3168,7 +4088,7 @@ class GetSteeringPolicyRuleCaseResult(dict):
                  count: int):
         """
         :param Sequence['GetSteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
         """
         pulumi.set(__self__, "answer_datas", answer_datas)
@@ -3187,7 +4107,7 @@ class GetSteeringPolicyRuleCaseResult(dict):
     @pulumi.getter(name="caseCondition")
     def case_condition(self) -> str:
         """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
+        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
         """
         return pulumi.get(self, "case_condition")
 
@@ -3634,6 +4554,8 @@ class GetZonesZoneResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  defined_tags: Mapping[str, str],
+                 dnssec_configs: Sequence['outputs.GetZonesZoneDnssecConfigResult'],
+                 dnssec_state: str,
                  external_downstreams: Sequence['outputs.GetZonesZoneExternalDownstreamResult'],
                  external_masters: Sequence['outputs.GetZonesZoneExternalMasterResult'],
                  freeform_tags: Mapping[str, str],
@@ -3653,6 +4575,8 @@ class GetZonesZoneResult(dict):
         """
         :param str compartment_id: The OCID of the compartment the resource belongs to.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Sequence['GetZonesZoneDnssecConfigArgs'] dnssec_configs: DNSSEC configuration data.
+        :param str dnssec_state: Search for zones that have the given `DnssecState`.
         :param Sequence['GetZonesZoneExternalDownstreamArgs'] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param Sequence['GetZonesZoneExternalMasterArgs'] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -3660,8 +4584,7 @@ class GetZonesZoneResult(dict):
         :param bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         :param Sequence['GetZonesZoneNameserverArgs'] nameservers: The authoritative nameservers for the zone.
-        :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-               for zones in the global DNS and `PRIVATE` when listing private zones.
+        :param str scope: Specifies to operate only on resources that have a matching DNS scope.
         :param str self: The canonical absolute URL of the resource.
         :param int serial: The current serial of the zone. As seen in the zone's SOA record.
         :param str state: The state of a resource.
@@ -3673,6 +4596,8 @@ class GetZonesZoneResult(dict):
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "dnssec_configs", dnssec_configs)
+        pulumi.set(__self__, "dnssec_state", dnssec_state)
         pulumi.set(__self__, "external_downstreams", external_downstreams)
         pulumi.set(__self__, "external_masters", external_masters)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -3705,6 +4630,22 @@ class GetZonesZoneResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnssecConfigs")
+    def dnssec_configs(self) -> Sequence['outputs.GetZonesZoneDnssecConfigResult']:
+        """
+        DNSSEC configuration data.
+        """
+        return pulumi.get(self, "dnssec_configs")
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> str:
+        """
+        Search for zones that have the given `DnssecState`.
+        """
+        return pulumi.get(self, "dnssec_state")
 
     @property
     @pulumi.getter(name="externalDownstreams")
@@ -3766,8 +4707,7 @@ class GetZonesZoneResult(dict):
     @pulumi.getter
     def scope(self) -> str:
         """
-        Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-        for zones in the global DNS and `PRIVATE` when listing private zones.
+        Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
@@ -3834,6 +4774,375 @@ class GetZonesZoneResult(dict):
         Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         """
         return pulumi.get(self, "zone_type")
+
+
+@pulumi.output_type
+class GetZonesZoneDnssecConfigResult(dict):
+    def __init__(__self__, *,
+                 ksk_dnssec_key_versions: Sequence['outputs.GetZonesZoneDnssecConfigKskDnssecKeyVersionResult'],
+                 zsk_dnssec_key_versions: Sequence['outputs.GetZonesZoneDnssecConfigZskDnssecKeyVersionResult']):
+        """
+        :param Sequence['GetZonesZoneDnssecConfigKskDnssecKeyVersionArgs'] ksk_dnssec_key_versions: A read-only array of key signing key (KSK) versions.
+        :param Sequence['GetZonesZoneDnssecConfigZskDnssecKeyVersionArgs'] zsk_dnssec_key_versions: A read-only array of zone signing key (ZSK) versions.
+        """
+        pulumi.set(__self__, "ksk_dnssec_key_versions", ksk_dnssec_key_versions)
+        pulumi.set(__self__, "zsk_dnssec_key_versions", zsk_dnssec_key_versions)
+
+    @property
+    @pulumi.getter(name="kskDnssecKeyVersions")
+    def ksk_dnssec_key_versions(self) -> Sequence['outputs.GetZonesZoneDnssecConfigKskDnssecKeyVersionResult']:
+        """
+        A read-only array of key signing key (KSK) versions.
+        """
+        return pulumi.get(self, "ksk_dnssec_key_versions")
+
+    @property
+    @pulumi.getter(name="zskDnssecKeyVersions")
+    def zsk_dnssec_key_versions(self) -> Sequence['outputs.GetZonesZoneDnssecConfigZskDnssecKeyVersionResult']:
+        """
+        A read-only array of zone signing key (ZSK) versions.
+        """
+        return pulumi.get(self, "zsk_dnssec_key_versions")
+
+
+@pulumi.output_type
+class GetZonesZoneDnssecConfigKskDnssecKeyVersionResult(dict):
+    def __init__(__self__, *,
+                 algorithm: str,
+                 ds_datas: Sequence['outputs.GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataResult'],
+                 key_tag: int,
+                 length_in_bytes: int,
+                 predecessor_dnssec_key_version_uuid: str,
+                 successor_dnssec_key_version_uuid: str,
+                 time_activated: str,
+                 time_created: str,
+                 time_expired: str,
+                 time_inactivated: str,
+                 time_promoted: str,
+                 time_published: str,
+                 time_unpublished: str,
+                 uuid: str):
+        """
+        :param str algorithm: The signing algorithm used for the key.
+        :param Sequence['GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataArgs'] ds_datas: An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        :param int key_tag: The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        :param int length_in_bytes: The length of the corresponding private key in bytes, expressed as an integer.
+        :param str predecessor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        :param str successor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        :param str time_activated: The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param str time_expired: The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        :param str time_inactivated: The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str time_promoted: The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        :param str time_published: The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        :param str time_unpublished: The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "ds_datas", ds_datas)
+        pulumi.set(__self__, "key_tag", key_tag)
+        pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_expired", time_expired)
+        pulumi.set(__self__, "time_inactivated", time_inactivated)
+        pulumi.set(__self__, "time_promoted", time_promoted)
+        pulumi.set(__self__, "time_published", time_published)
+        pulumi.set(__self__, "time_unpublished", time_unpublished)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> str:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="dsDatas")
+    def ds_datas(self) -> Sequence['outputs.GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataResult']:
+        """
+        An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+        """
+        return pulumi.get(self, "ds_datas")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> int:
+        """
+        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        """
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> int:
+        """
+        The length of the corresponding private key in bytes, expressed as an integer.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> str:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> str:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> str:
+        """
+        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> str:
+        """
+        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> str:
+        """
+        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> str:
+        """
+        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> str:
+        """
+        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> str:
+        """
+        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class GetZonesZoneDnssecConfigKskDnssecKeyVersionDsDataResult(dict):
+    def __init__(__self__, *,
+                 digest_type: str,
+                 rdata: str):
+        """
+        :param str digest_type: The type of the digest associated with the rdata.
+        :param str rdata: Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        pulumi.set(__self__, "digest_type", digest_type)
+        pulumi.set(__self__, "rdata", rdata)
+
+    @property
+    @pulumi.getter(name="digestType")
+    def digest_type(self) -> str:
+        """
+        The type of the digest associated with the rdata.
+        """
+        return pulumi.get(self, "digest_type")
+
+    @property
+    @pulumi.getter
+    def rdata(self) -> str:
+        """
+        Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+        """
+        return pulumi.get(self, "rdata")
+
+
+@pulumi.output_type
+class GetZonesZoneDnssecConfigZskDnssecKeyVersionResult(dict):
+    def __init__(__self__, *,
+                 algorithm: str,
+                 key_tag: int,
+                 length_in_bytes: int,
+                 predecessor_dnssec_key_version_uuid: str,
+                 successor_dnssec_key_version_uuid: str,
+                 time_activated: str,
+                 time_created: str,
+                 time_expired: str,
+                 time_inactivated: str,
+                 time_promoted: str,
+                 time_published: str,
+                 time_unpublished: str,
+                 uuid: str):
+        """
+        :param str algorithm: The signing algorithm used for the key.
+        :param int key_tag: The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        :param int length_in_bytes: The length of the corresponding private key in bytes, expressed as an integer.
+        :param str predecessor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        :param str successor_dnssec_key_version_uuid: When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        :param str time_activated: The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param str time_expired: The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        :param str time_inactivated: The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str time_promoted: The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        :param str time_published: The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        :param str time_unpublished: The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        :param str uuid: The UUID of the `DnssecKeyVersion`.
+        """
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "key_tag", key_tag)
+        pulumi.set(__self__, "length_in_bytes", length_in_bytes)
+        pulumi.set(__self__, "predecessor_dnssec_key_version_uuid", predecessor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "successor_dnssec_key_version_uuid", successor_dnssec_key_version_uuid)
+        pulumi.set(__self__, "time_activated", time_activated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_expired", time_expired)
+        pulumi.set(__self__, "time_inactivated", time_inactivated)
+        pulumi.set(__self__, "time_promoted", time_promoted)
+        pulumi.set(__self__, "time_published", time_published)
+        pulumi.set(__self__, "time_unpublished", time_unpublished)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def algorithm(self) -> str:
+        """
+        The signing algorithm used for the key.
+        """
+        return pulumi.get(self, "algorithm")
+
+    @property
+    @pulumi.getter(name="keyTag")
+    def key_tag(self) -> int:
+        """
+        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+        """
+        return pulumi.get(self, "key_tag")
+
+    @property
+    @pulumi.getter(name="lengthInBytes")
+    def length_in_bytes(self) -> int:
+        """
+        The length of the corresponding private key in bytes, expressed as an integer.
+        """
+        return pulumi.get(self, "length_in_bytes")
+
+    @property
+    @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
+    def predecessor_dnssec_key_version_uuid(self) -> str:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+        """
+        return pulumi.get(self, "predecessor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="successorDnssecKeyVersionUuid")
+    def successor_dnssec_key_version_uuid(self) -> str:
+        """
+        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "successor_dnssec_key_version_uuid")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> str:
+        """
+        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpired")
+    def time_expired(self) -> str:
+        """
+        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+        """
+        return pulumi.get(self, "time_expired")
+
+    @property
+    @pulumi.getter(name="timeInactivated")
+    def time_inactivated(self) -> str:
+        """
+        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_inactivated")
+
+    @property
+    @pulumi.getter(name="timePromoted")
+    def time_promoted(self) -> str:
+        """
+        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+        """
+        return pulumi.get(self, "time_promoted")
+
+    @property
+    @pulumi.getter(name="timePublished")
+    def time_published(self) -> str:
+        """
+        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+        """
+        return pulumi.get(self, "time_published")
+
+    @property
+    @pulumi.getter(name="timeUnpublished")
+    def time_unpublished(self) -> str:
+        """
+        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "time_unpublished")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID of the `DnssecKeyVersion`.
+        """
+        return pulumi.get(self, "uuid")
 
 
 @pulumi.output_type

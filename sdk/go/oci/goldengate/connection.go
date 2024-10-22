@@ -234,6 +234,7 @@ type Connection struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -266,17 +267,17 @@ type Connection struct {
 	ShouldUseJndi pulumi.BoolOutput `pulumi:"shouldUseJndi"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolOutput `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 	SslCa pulumi.StringOutput `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringOutput `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash pulumi.StringOutput `pulumi:"sslClientKeystash"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb pulumi.StringOutput `pulumi:"sslClientKeystoredb"`
-	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
-	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringOutput `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringOutput `pulumi:"sslKeyPassword"`
@@ -312,7 +313,7 @@ type Connection struct {
 	Username pulumi.StringOutput `pulumi:"username"`
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
-	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -475,6 +476,7 @@ type connectionState struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -507,17 +509,17 @@ type connectionState struct {
 	ShouldUseJndi *bool `pulumi:"shouldUseJndi"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate *bool `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 	SslCa *string `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
-	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
@@ -553,7 +555,7 @@ type connectionState struct {
 	Username *string `pulumi:"username"`
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId *string `pulumi:"vaultId"`
-	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -648,6 +650,7 @@ type ConnectionState struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -680,17 +683,17 @@ type ConnectionState struct {
 	ShouldUseJndi pulumi.BoolPtrInput
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolPtrInput
-	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 	SslCa pulumi.StringPtrInput
-	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb pulumi.StringPtrInput
-	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
@@ -726,7 +729,7 @@ type ConnectionState struct {
 	Username pulumi.StringPtrInput
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringPtrInput
-	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -821,6 +824,7 @@ type connectionArgs struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -853,17 +857,17 @@ type connectionArgs struct {
 	ShouldUseJndi *bool `pulumi:"shouldUseJndi"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate *bool `pulumi:"shouldValidateServerCertificate"`
-	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 	SslCa *string `pulumi:"sslCa"`
-	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert *string `pulumi:"sslCert"`
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash *string `pulumi:"sslClientKeystash"`
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
-	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
-	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey *string `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
@@ -891,7 +895,7 @@ type connectionArgs struct {
 	Username *string `pulumi:"username"`
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId *string `pulumi:"vaultId"`
-	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -983,6 +987,7 @@ type ConnectionArgs struct {
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput
 	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	//
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -1015,17 +1020,17 @@ type ConnectionArgs struct {
 	ShouldUseJndi pulumi.BoolPtrInput
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolPtrInput
-	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+	// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 	SslCa pulumi.StringPtrInput
-	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+	// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
 	SslClientKeystash pulumi.StringPtrInput
 	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
 	SslClientKeystoredb pulumi.StringPtrInput
-	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+	// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
-	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+	// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 	SslKey pulumi.StringPtrInput
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
 	SslKeyPassword pulumi.StringPtrInput
@@ -1053,7 +1058,7 @@ type ConnectionArgs struct {
 	Username pulumi.StringPtrInput
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
 	VaultId pulumi.StringPtrInput
-	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1363,6 +1368,7 @@ func (o ConnectionOutput) Port() pulumi.IntOutput {
 }
 
 // (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+//
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o ConnectionOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
@@ -1443,12 +1449,12 @@ func (o ConnectionOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
 func (o ConnectionOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCa }).(pulumi.StringOutput)
 }
 
-// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
 func (o ConnectionOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCert }).(pulumi.StringOutput)
 }
@@ -1463,12 +1469,12 @@ func (o ConnectionOutput) SslClientKeystoredb() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslClientKeystoredb }).(pulumi.StringOutput)
 }
 
-// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
 }
 
-// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 func (o ConnectionOutput) SslKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslKey }).(pulumi.StringOutput)
 }
@@ -1558,7 +1564,7 @@ func (o ConnectionOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

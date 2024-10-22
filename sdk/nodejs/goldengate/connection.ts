@@ -319,6 +319,7 @@ export class Connection extends pulumi.CustomResource {
     public readonly port!: pulumi.Output<number>;
     /**
      * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     *
      * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     public readonly privateIp!: pulumi.Output<string>;
@@ -383,11 +384,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly shouldValidateServerCertificate!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
      */
     public readonly sslCa!: pulumi.Output<string>;
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
      */
     public readonly sslCert!: pulumi.Output<string>;
     /**
@@ -399,11 +400,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sslClientKeystoredb!: pulumi.Output<string>;
     /**
-     * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      */
     public readonly sslCrl!: pulumi.Output<string>;
     /**
-     * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     public readonly sslKey!: pulumi.Output<string>;
     /**
@@ -475,7 +476,8 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -859,6 +861,7 @@ export interface ConnectionState {
     port?: pulumi.Input<number>;
     /**
      * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     *
      * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     privateIp?: pulumi.Input<string>;
@@ -923,11 +926,11 @@ export interface ConnectionState {
      */
     shouldValidateServerCertificate?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
      */
     sslCa?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
      */
     sslCert?: pulumi.Input<string>;
     /**
@@ -939,11 +942,11 @@ export interface ConnectionState {
      */
     sslClientKeystoredb?: pulumi.Input<string>;
     /**
-     * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      */
     sslCrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     sslKey?: pulumi.Input<string>;
     /**
@@ -1015,7 +1018,8 @@ export interface ConnectionState {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1191,6 +1195,7 @@ export interface ConnectionArgs {
     port?: pulumi.Input<number>;
     /**
      * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     *
      * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     privateIp?: pulumi.Input<string>;
@@ -1255,11 +1260,11 @@ export interface ConnectionArgs {
      */
     shouldValidateServerCertificate?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
      */
     sslCa?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
      */
     sslCert?: pulumi.Input<string>;
     /**
@@ -1271,11 +1276,11 @@ export interface ConnectionArgs {
      */
     sslClientKeystoredb?: pulumi.Input<string>;
     /**
-     * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      */
     sslCrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      */
     sslKey?: pulumi.Input<string>;
     /**
@@ -1331,7 +1336,8 @@ export interface ConnectionArgs {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

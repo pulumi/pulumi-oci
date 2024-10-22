@@ -404,6 +404,7 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+        /// 
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
         [Output("privateIp")]
@@ -500,13 +501,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> ShouldValidateServerCertificate { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         /// </summary>
         [Output("sslCa")]
         public Output<string> SslCa { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         /// </summary>
         [Output("sslCert")]
         public Output<string> SslCert { get; private set; } = null!;
@@ -524,13 +525,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslClientKeystoredb { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Output("sslCrl")]
         public Output<string> SslCrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         [Output("sslKey")]
         public Output<string> SslKey { get; private set; } = null!;
@@ -638,7 +639,8 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1003,6 +1005,7 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+        /// 
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
         [Input("privateIp")]
@@ -1119,13 +1122,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldValidateServerCertificate { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         /// </summary>
         [Input("sslCert")]
         public Input<string>? SslCert { get; set; }
@@ -1143,13 +1146,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslClientKeystoredb { get; set; }
 
         /// <summary>
-        /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Input("sslCrl")]
         public Input<string>? SslCrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         [Input("sslKey")]
         public Input<string>? SslKey { get; set; }
@@ -1253,7 +1256,8 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1589,6 +1593,7 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+        /// 
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
         [Input("privateIp")]
@@ -1705,13 +1710,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldValidateServerCertificate { get; set; }
 
         /// <summary>
-        /// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
+        /// (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt.
         /// </summary>
         [Input("sslCa")]
         public Input<string>? SslCa { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        /// (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file. containing the client public key (for 2-way SSL).
         /// </summary>
         [Input("sslCert")]
         public Input<string>? SslCert { get; set; }
@@ -1729,13 +1734,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslClientKeystoredb { get; set; }
 
         /// <summary>
-        /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        /// (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Input("sslCrl")]
         public Input<string>? SslCrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        /// (Updatable) Client Key – The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
         /// </summary>
         [Input("sslKey")]
         public Input<string>? SslKey { get; set; }
@@ -1869,7 +1874,8 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. 
+        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

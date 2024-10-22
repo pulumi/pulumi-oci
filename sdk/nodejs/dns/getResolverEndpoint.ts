@@ -7,9 +7,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
  *
- * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
- * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
- * API. Requires a `PRIVATE` scope query parameter.
+ * Gets information about a specific resolver endpoint.
+ *
+ * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+ * in a `404` response to be consistent with other operations of the API.
  *
  * ## Example Usage
  *
@@ -115,9 +116,10 @@ export interface GetResolverEndpointResult {
 /**
  * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
  *
- * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
- * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
- * API. Requires a `PRIVATE` scope query parameter.
+ * Gets information about a specific resolver endpoint.
+ *
+ * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+ * in a `404` response to be consistent with other operations of the API.
  *
  * ## Example Usage
  *

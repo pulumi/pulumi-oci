@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAddOnsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAdmissionControllerOptionsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsKubernetesNetworkConfigArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsOpenIdConnectDiscoveryArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsPersistentVolumeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsServiceLbConfigArgs;
 import java.lang.String;
@@ -67,6 +69,36 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    @Import(name="openIdConnectDiscovery")
+    private @Nullable Output<ClusterOptionsOpenIdConnectDiscoveryArgs> openIdConnectDiscovery;
+
+    /**
+     * @return (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+     * 
+     */
+    public Optional<Output<ClusterOptionsOpenIdConnectDiscoveryArgs>> openIdConnectDiscovery() {
+        return Optional.ofNullable(this.openIdConnectDiscovery);
+    }
+
+    /**
+     * (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    @Import(name="openIdConnectTokenAuthenticationConfig")
+    private @Nullable Output<ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs> openIdConnectTokenAuthenticationConfig;
+
+    /**
+     * @return (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+     * 
+     */
+    public Optional<Output<ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs>> openIdConnectTokenAuthenticationConfig() {
+        return Optional.ofNullable(this.openIdConnectTokenAuthenticationConfig);
+    }
+
+    /**
      * (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
      */
@@ -117,6 +149,8 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
         this.addOns = $.addOns;
         this.admissionControllerOptions = $.admissionControllerOptions;
         this.kubernetesNetworkConfig = $.kubernetesNetworkConfig;
+        this.openIdConnectDiscovery = $.openIdConnectDiscovery;
+        this.openIdConnectTokenAuthenticationConfig = $.openIdConnectTokenAuthenticationConfig;
         this.persistentVolumeConfig = $.persistentVolumeConfig;
         this.serviceLbConfig = $.serviceLbConfig;
         this.serviceLbSubnetIds = $.serviceLbSubnetIds;
@@ -201,6 +235,48 @@ public final class ClusterOptionsArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder kubernetesNetworkConfig(ClusterOptionsKubernetesNetworkConfigArgs kubernetesNetworkConfig) {
             return kubernetesNetworkConfig(Output.of(kubernetesNetworkConfig));
+        }
+
+        /**
+         * @param openIdConnectDiscovery (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscovery(@Nullable Output<ClusterOptionsOpenIdConnectDiscoveryArgs> openIdConnectDiscovery) {
+            $.openIdConnectDiscovery = openIdConnectDiscovery;
+            return this;
+        }
+
+        /**
+         * @param openIdConnectDiscovery (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectDiscovery(ClusterOptionsOpenIdConnectDiscoveryArgs openIdConnectDiscovery) {
+            return openIdConnectDiscovery(Output.of(openIdConnectDiscovery));
+        }
+
+        /**
+         * @param openIdConnectTokenAuthenticationConfig (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectTokenAuthenticationConfig(@Nullable Output<ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs> openIdConnectTokenAuthenticationConfig) {
+            $.openIdConnectTokenAuthenticationConfig = openIdConnectTokenAuthenticationConfig;
+            return this;
+        }
+
+        /**
+         * @param openIdConnectTokenAuthenticationConfig (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder openIdConnectTokenAuthenticationConfig(ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs openIdConnectTokenAuthenticationConfig) {
+            return openIdConnectTokenAuthenticationConfig(Output.of(openIdConnectTokenAuthenticationConfig));
         }
 
         /**

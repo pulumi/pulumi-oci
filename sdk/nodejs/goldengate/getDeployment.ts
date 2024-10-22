@@ -44,6 +44,10 @@ export interface GetDeploymentArgs {
  */
 export interface GetDeploymentResult {
     /**
+     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     */
+    readonly category: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     readonly compartmentId: string;
@@ -81,6 +85,10 @@ export interface GetDeploymentResult {
      */
     readonly displayName: string;
     /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    readonly environmentType: string;
+    /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
     readonly fqdn: string;
@@ -114,7 +122,7 @@ export interface GetDeploymentResult {
      */
     readonly isPublic: boolean;
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
     readonly isStorageUtilizationLimitExceeded: boolean;
     /**

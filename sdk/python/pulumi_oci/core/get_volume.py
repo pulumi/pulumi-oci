@@ -27,7 +27,7 @@ class GetVolumeResult:
     """
     A collection of values returned by getVolume.
     """
-    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None):
+    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None, xrc_kms_key_id=None):
         if auto_tuned_vpus_per_gb and not isinstance(auto_tuned_vpus_per_gb, str):
             raise TypeError("Expected argument 'auto_tuned_vpus_per_gb' to be a str")
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -103,6 +103,9 @@ class GetVolumeResult:
         if vpus_per_gb and not isinstance(vpus_per_gb, str):
             raise TypeError("Expected argument 'vpus_per_gb' to be a str")
         pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+        if xrc_kms_key_id and not isinstance(xrc_kms_key_id, str):
+            raise TypeError("Expected argument 'xrc_kms_key_id' to be a str")
+        pulumi.set(__self__, "xrc_kms_key_id", xrc_kms_key_id)
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
@@ -239,6 +242,9 @@ class GetVolumeResult:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Sequence['outputs.GetVolumeSourceDetailResult']:
+        """
+        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        """
         return pulumi.get(self, "source_details")
 
     @property
@@ -291,6 +297,11 @@ class GetVolumeResult:
         """
         return pulumi.get(self, "vpus_per_gb")
 
+    @property
+    @pulumi.getter(name="xrcKmsKeyId")
+    def xrc_kms_key_id(self) -> str:
+        return pulumi.get(self, "xrc_kms_key_id")
+
 
 class AwaitableGetVolumeResult(GetVolumeResult):
     # pylint: disable=using-constant-test
@@ -322,7 +333,8 @@ class AwaitableGetVolumeResult(GetVolumeResult):
             volume_backup_id=self.volume_backup_id,
             volume_group_id=self.volume_group_id,
             volume_id=self.volume_id,
-            vpus_per_gb=self.vpus_per_gb)
+            vpus_per_gb=self.vpus_per_gb,
+            xrc_kms_key_id=self.xrc_kms_key_id)
 
 
 def get_volume(volume_id: Optional[str] = None,
@@ -374,7 +386,8 @@ def get_volume(volume_id: Optional[str] = None,
         volume_backup_id=pulumi.get(__ret__, 'volume_backup_id'),
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
         volume_id=pulumi.get(__ret__, 'volume_id'),
-        vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'))
+        vpus_per_gb=pulumi.get(__ret__, 'vpus_per_gb'),
+        xrc_kms_key_id=pulumi.get(__ret__, 'xrc_kms_key_id'))
 def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeResult]:
     """
@@ -423,4 +436,5 @@ def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
         volume_backup_id=pulumi.get(__response__, 'volume_backup_id'),
         volume_group_id=pulumi.get(__response__, 'volume_group_id'),
         volume_id=pulumi.get(__response__, 'volume_id'),
-        vpus_per_gb=pulumi.get(__response__, 'vpus_per_gb')))
+        vpus_per_gb=pulumi.get(__response__, 'vpus_per_gb'),
+        xrc_kms_key_id=pulumi.get(__response__, 'xrc_kms_key_id')))

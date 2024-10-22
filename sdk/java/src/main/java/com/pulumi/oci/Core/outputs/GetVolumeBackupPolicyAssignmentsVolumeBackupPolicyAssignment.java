@@ -30,6 +30,11 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
      * 
      */
     private String timeCreated;
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    private String xrcKmsKeyId;
 
     private GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment() {}
     /**
@@ -60,6 +65,13 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -74,6 +86,7 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
         private String id;
         private String policyId;
         private String timeCreated;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -81,6 +94,7 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
     	      this.id = defaults.id;
     	      this.policyId = defaults.policyId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -115,12 +129,21 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment build() {
             final var _resultValue = new GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment();
             _resultValue.assetId = assetId;
             _resultValue.id = id;
             _resultValue.policyId = policyId;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

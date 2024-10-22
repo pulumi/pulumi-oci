@@ -89,6 +89,11 @@ public final class GetClustersCluster {
      */
     private String name;
     /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    private String openIdConnectDiscoveryEndpoint;
+    /**
      * @return Optional attributes for the cluster.
      * 
      */
@@ -209,6 +214,13 @@ public final class GetClustersCluster {
         return this.name;
     }
     /**
+     * @return The cluster-specific OpenID Connect Discovery endpoint
+     * 
+     */
+    public String openIdConnectDiscoveryEndpoint() {
+        return this.openIdConnectDiscoveryEndpoint;
+    }
+    /**
      * @return Optional attributes for the cluster.
      * 
      */
@@ -260,6 +272,7 @@ public final class GetClustersCluster {
         private String lifecycleDetails;
         private List<GetClustersClusterMetadata> metadatas;
         private String name;
+        private String openIdConnectDiscoveryEndpoint;
         private List<GetClustersClusterOption> options;
         private String state;
         private String type;
@@ -281,6 +294,7 @@ public final class GetClustersCluster {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
+    	      this.openIdConnectDiscoveryEndpoint = defaults.openIdConnectDiscoveryEndpoint;
     	      this.options = defaults.options;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -418,6 +432,14 @@ public final class GetClustersCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveryEndpoint(String openIdConnectDiscoveryEndpoint) {
+            if (openIdConnectDiscoveryEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetClustersCluster", "openIdConnectDiscoveryEndpoint");
+            }
+            this.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder options(List<GetClustersClusterOption> options) {
             if (options == null) {
               throw new MissingRequiredPropertyException("GetClustersCluster", "options");
@@ -468,6 +490,7 @@ public final class GetClustersCluster {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
+            _resultValue.openIdConnectDiscoveryEndpoint = openIdConnectDiscoveryEndpoint;
             _resultValue.options = options;
             _resultValue.state = state;
             _resultValue.type = type;

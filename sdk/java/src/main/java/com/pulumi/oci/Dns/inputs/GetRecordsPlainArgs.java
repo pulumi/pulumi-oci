@@ -18,14 +18,18 @@ public final class GetRecordsPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetRecordsPlainArgs Empty = new GetRecordsPlainArgs();
 
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment the resource belongs to.
+     * @return The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     public Optional<String> compartmentId() {
@@ -185,7 +189,9 @@ public final class GetRecordsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment the resource belongs to.
+         * @param compartmentId The OCID of the compartment the zone belongs to.
+         * 
+         * This parameter is deprecated and should be omitted.
          * 
          * @return builder
          * 

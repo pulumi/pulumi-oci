@@ -27,7 +27,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
      */
     private String privateIp;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
      * 
      */
     private String subnetId;
@@ -60,7 +60,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
         return this.privateIp;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
      * 
      */
     public String subnetId() {

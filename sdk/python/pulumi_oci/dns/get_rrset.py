@@ -136,10 +136,10 @@ def get_rrset(compartment_id: Optional[str] = None,
     """
     This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-    private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets a list of all records in the specified RRSet.
+
+    The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+    and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
 
     ## Example Usage
 
@@ -150,18 +150,18 @@ def get_rrset(compartment_id: Optional[str] = None,
     test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
-        compartment_id=compartment_id,
         scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
 
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str compartment_id: The OCID of the compartment the zone belongs to.
+           
+           This parameter is deprecated and should be omitted.
     :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param str rtype: The type of the target RRSet within the target zone.
     :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-           This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
-    :param str view_id: The OCID of the view the resource is associated with.
+    :param str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param str zone_name_or_id: The name or OCID of the target zone.
     :param str zone_version: The version of the zone for which data is requested.
     """
@@ -197,10 +197,10 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
     """
     This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
 
-    Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-    private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
+    Gets a list of all records in the specified RRSet.
+
+    The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+    and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
 
     ## Example Usage
 
@@ -211,18 +211,18 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
     test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
-        compartment_id=compartment_id,
         scope=rrset_scope,
         view_id=test_view["id"])
     ```
 
 
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
+    :param str compartment_id: The OCID of the compartment the zone belongs to.
+           
+           This parameter is deprecated and should be omitted.
     :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
     :param str rtype: The type of the target RRSet within the target zone.
     :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-           This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
-    :param str view_id: The OCID of the view the resource is associated with.
+    :param str view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
     :param str zone_name_or_id: The name or OCID of the target zone.
     :param str zone_version: The version of the zone for which data is requested.
     """

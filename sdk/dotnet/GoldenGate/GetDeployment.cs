@@ -100,6 +100,10 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentResult
     {
         /// <summary>
+        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
         public readonly string CompartmentId;
@@ -137,6 +141,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Specifies whether the deployment is used in a production or development/testing environment.
+        /// </summary>
+        public readonly string EnvironmentType;
+        /// <summary>
         /// A three-label Fully Qualified Domain Name (FQDN) for a resource.
         /// </summary>
         public readonly string Fqdn;
@@ -170,7 +178,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly bool IsPublic;
         /// <summary>
-        /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        /// Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
         public readonly bool IsStorageUtilizationLimitExceeded;
         /// <summary>
@@ -268,6 +276,8 @@ namespace Pulumi.Oci.GoldenGate
 
         [OutputConstructor]
         private GetDeploymentResult(
+            string category,
+
             string compartmentId,
 
             int cpuCoreCount,
@@ -287,6 +297,8 @@ namespace Pulumi.Oci.GoldenGate
             string description,
 
             string displayName,
+
+            string environmentType,
 
             string fqdn,
 
@@ -354,6 +366,7 @@ namespace Pulumi.Oci.GoldenGate
 
             string timeUpgradeRequired)
         {
+            Category = category;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             DefinedTags = definedTags;
@@ -364,6 +377,7 @@ namespace Pulumi.Oci.GoldenGate
             DeploymentUrl = deploymentUrl;
             Description = description;
             DisplayName = displayName;
+            EnvironmentType = environmentType;
             Fqdn = fqdn;
             FreeformTags = freeformTags;
             Id = id;

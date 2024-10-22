@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Dns.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+        /// (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         /// </summary>
         [Input("sourceEndpointName", required: true)]
         public Input<string> SourceEndpointName { get; set; } = null!;

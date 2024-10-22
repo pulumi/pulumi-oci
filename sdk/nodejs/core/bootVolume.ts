@@ -23,8 +23,11 @@ import * as utilities from "../utilities";
  * const testBootVolume = new oci.core.BootVolume("test_boot_volume", {
  *     compartmentId: compartmentId,
  *     sourceDetails: {
- *         id: bootVolumeSourceDetailsId,
  *         type: bootVolumeSourceDetailsType,
+ *         changeBlockSizeInBytes: bootVolumeSourceDetailsChangeBlockSizeInBytes,
+ *         firstBackupId: testBackup.id,
+ *         id: bootVolumeSourceDetailsId,
+ *         secondBackupId: testBackup.id,
  *     },
  *     autotunePolicies: [{
  *         autotuneType: bootVolumeAutotunePoliciesAutotuneType,
@@ -35,6 +38,7 @@ import * as utilities from "../utilities";
  *     bootVolumeReplicas: [{
  *         availabilityDomain: bootVolumeBootVolumeReplicasAvailabilityDomain,
  *         displayName: bootVolumeBootVolumeReplicasDisplayName,
+ *         xrrKmsKeyId: testKey.id,
  *     }],
  *     clusterPlacementGroupId: testGroup.id,
  *     definedTags: {
@@ -48,6 +52,7 @@ import * as utilities from "../utilities";
  *     kmsKeyId: testKey.id,
  *     sizeInGbs: bootVolumeSizeInGbs,
  *     vpusPerGb: bootVolumeVpusPerGb,
+ *     xrcKmsKeyId: testKey.id,
  *     bootVolumeReplicasDeletion: true,
  * });
  * ```
@@ -178,6 +183,14 @@ export class BootVolume extends pulumi.CustomResource {
      * Allowed values:
      */
     public readonly vpusPerGb!: pulumi.Output<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly xrcKmsKeyId!: pulumi.Output<string>;
 
     /**
      * Create a BootVolume resource with the given unique name, arguments, and options.
@@ -215,6 +228,7 @@ export class BootVolume extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["volumeGroupId"] = state ? state.volumeGroupId : undefined;
             resourceInputs["vpusPerGb"] = state ? state.vpusPerGb : undefined;
+            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
         } else {
             const args = argsOrState as BootVolumeArgs | undefined;
             if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
@@ -241,6 +255,7 @@ export class BootVolume extends pulumi.CustomResource {
             resourceInputs["sizeInGbs"] = args ? args.sizeInGbs : undefined;
             resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["vpusPerGb"] = args ? args.vpusPerGb : undefined;
+            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
             resourceInputs["autoTunedVpusPerGb"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;
@@ -349,6 +364,14 @@ export interface BootVolumeState {
      * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }
 
 /**
@@ -413,4 +436,12 @@ export interface BootVolumeArgs {
      * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    xrcKmsKeyId?: pulumi.Input<string>;
 }

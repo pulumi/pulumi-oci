@@ -236,9 +236,10 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
     """
     This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
 
-    Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-    in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-    API. Requires a `PRIVATE` scope query parameter.
+    Gets information about a specific resolver endpoint.
+
+    Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+    in a `404` response to be consistent with other operations of the API.
 
     ## Example Usage
 
@@ -288,9 +289,10 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
 
-    Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-    in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-    API. Requires a `PRIVATE` scope query parameter.
+    Gets information about a specific resolver endpoint.
+
+    Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+    in a `404` response to be consistent with other operations of the API.
 
     ## Example Usage
 

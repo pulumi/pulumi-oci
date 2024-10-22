@@ -202,7 +202,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.rules);
     }
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers.
+     * Specifies to operate only on resources that have a matching DNS scope.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +212,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> scope;
 
     /**
-     * @return If specified, must be `PRIVATE` when creating private name resolvers.
+     * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -95,6 +95,8 @@ type LookupDesktopPoolResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails []GetDesktopPoolPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// Action to be triggered on inactivity or disconnect
+	SessionLifecycleActions []GetDesktopPoolSessionLifecycleAction `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
 	ShapeConfigs []GetDesktopPoolShapeConfig `pulumi:"shapeConfigs"`
 	// The shape of the desktop pool.
@@ -114,6 +116,7 @@ type LookupDesktopPoolResult struct {
 	// The stop time of the desktop pool.
 	TimeStopScheduled string `pulumi:"timeStopScheduled"`
 	// Indicates whether the desktop pool uses dedicated virtual machine hosts.
+	// ---
 	UseDedicatedVmHost string `pulumi:"useDedicatedVmHost"`
 }
 
@@ -255,6 +258,13 @@ func (o LookupDesktopPoolResultOutput) PrivateAccessDetails() GetDesktopPoolPriv
 	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolPrivateAccessDetail { return v.PrivateAccessDetails }).(GetDesktopPoolPrivateAccessDetailArrayOutput)
 }
 
+// Action to be triggered on inactivity or disconnect
+func (o LookupDesktopPoolResultOutput) SessionLifecycleActions() GetDesktopPoolSessionLifecycleActionArrayOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolSessionLifecycleAction {
+		return v.SessionLifecycleActions
+	}).(GetDesktopPoolSessionLifecycleActionArrayOutput)
+}
+
 // The shape configuration used for each desktop compute instance in the desktop pool.
 func (o LookupDesktopPoolResultOutput) ShapeConfigs() GetDesktopPoolShapeConfigArrayOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolShapeConfig { return v.ShapeConfigs }).(GetDesktopPoolShapeConfigArrayOutput)
@@ -301,6 +311,7 @@ func (o LookupDesktopPoolResultOutput) TimeStopScheduled() pulumi.StringOutput {
 }
 
 // Indicates whether the desktop pool uses dedicated virtual machine hosts.
+// ---
 func (o LookupDesktopPoolResultOutput) UseDedicatedVmHost() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) string { return v.UseDedicatedVmHost }).(pulumi.StringOutput)
 }

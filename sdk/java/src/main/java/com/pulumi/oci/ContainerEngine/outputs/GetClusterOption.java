@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionAddOn;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionAdmissionControllerOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionKubernetesNetworkConfig;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionOpenIdConnectDiscovery;
+import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionOpenIdConnectTokenAuthenticationConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionPersistentVolumeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionServiceLbConfig;
 import java.lang.String;
@@ -31,6 +33,8 @@ public final class GetClusterOption {
      * 
      */
     private List<GetClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+    private List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
+    private List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
     /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
@@ -69,6 +73,12 @@ public final class GetClusterOption {
     public List<GetClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs() {
         return this.kubernetesNetworkConfigs;
     }
+    public List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries() {
+        return this.openIdConnectDiscoveries;
+    }
+    public List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs() {
+        return this.openIdConnectTokenAuthenticationConfigs;
+    }
     /**
      * @return Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
@@ -103,6 +113,8 @@ public final class GetClusterOption {
         private List<GetClusterOptionAddOn> addOns;
         private List<GetClusterOptionAdmissionControllerOption> admissionControllerOptions;
         private List<GetClusterOptionKubernetesNetworkConfig> kubernetesNetworkConfigs;
+        private List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries;
+        private List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs;
         private List<GetClusterOptionPersistentVolumeConfig> persistentVolumeConfigs;
         private List<GetClusterOptionServiceLbConfig> serviceLbConfigs;
         private List<String> serviceLbSubnetIds;
@@ -112,6 +124,8 @@ public final class GetClusterOption {
     	      this.addOns = defaults.addOns;
     	      this.admissionControllerOptions = defaults.admissionControllerOptions;
     	      this.kubernetesNetworkConfigs = defaults.kubernetesNetworkConfigs;
+    	      this.openIdConnectDiscoveries = defaults.openIdConnectDiscoveries;
+    	      this.openIdConnectTokenAuthenticationConfigs = defaults.openIdConnectTokenAuthenticationConfigs;
     	      this.persistentVolumeConfigs = defaults.persistentVolumeConfigs;
     	      this.serviceLbConfigs = defaults.serviceLbConfigs;
     	      this.serviceLbSubnetIds = defaults.serviceLbSubnetIds;
@@ -151,6 +165,28 @@ public final class GetClusterOption {
             return kubernetesNetworkConfigs(List.of(kubernetesNetworkConfigs));
         }
         @CustomType.Setter
+        public Builder openIdConnectDiscoveries(List<GetClusterOptionOpenIdConnectDiscovery> openIdConnectDiscoveries) {
+            if (openIdConnectDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetClusterOption", "openIdConnectDiscoveries");
+            }
+            this.openIdConnectDiscoveries = openIdConnectDiscoveries;
+            return this;
+        }
+        public Builder openIdConnectDiscoveries(GetClusterOptionOpenIdConnectDiscovery... openIdConnectDiscoveries) {
+            return openIdConnectDiscoveries(List.of(openIdConnectDiscoveries));
+        }
+        @CustomType.Setter
+        public Builder openIdConnectTokenAuthenticationConfigs(List<GetClusterOptionOpenIdConnectTokenAuthenticationConfig> openIdConnectTokenAuthenticationConfigs) {
+            if (openIdConnectTokenAuthenticationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetClusterOption", "openIdConnectTokenAuthenticationConfigs");
+            }
+            this.openIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
+            return this;
+        }
+        public Builder openIdConnectTokenAuthenticationConfigs(GetClusterOptionOpenIdConnectTokenAuthenticationConfig... openIdConnectTokenAuthenticationConfigs) {
+            return openIdConnectTokenAuthenticationConfigs(List.of(openIdConnectTokenAuthenticationConfigs));
+        }
+        @CustomType.Setter
         public Builder persistentVolumeConfigs(List<GetClusterOptionPersistentVolumeConfig> persistentVolumeConfigs) {
             if (persistentVolumeConfigs == null) {
               throw new MissingRequiredPropertyException("GetClusterOption", "persistentVolumeConfigs");
@@ -188,6 +224,8 @@ public final class GetClusterOption {
             _resultValue.addOns = addOns;
             _resultValue.admissionControllerOptions = admissionControllerOptions;
             _resultValue.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            _resultValue.openIdConnectDiscoveries = openIdConnectDiscoveries;
+            _resultValue.openIdConnectTokenAuthenticationConfigs = openIdConnectTokenAuthenticationConfigs;
             _resultValue.persistentVolumeConfigs = persistentVolumeConfigs;
             _resultValue.serviceLbConfigs = serviceLbConfigs;
             _resultValue.serviceLbSubnetIds = serviceLbSubnetIds;

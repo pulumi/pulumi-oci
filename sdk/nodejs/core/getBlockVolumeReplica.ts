@@ -71,6 +71,10 @@ export interface GetBlockVolumeReplicaResult {
      */
     readonly id: string;
     /**
+     * The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    readonly kmsKeyId: string;
+    /**
      * The size of the source block volume, in GBs.
      */
     readonly sizeInGbs: string;

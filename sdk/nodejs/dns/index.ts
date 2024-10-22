@@ -135,6 +135,16 @@ export type Zone = import("./zone").Zone;
 export const Zone: typeof import("./zone").Zone = null as any;
 utilities.lazyLoad(exports, ["Zone"], () => require("./zone"));
 
+export { ZonePromoteDnssecKeyVersionArgs, ZonePromoteDnssecKeyVersionState } from "./zonePromoteDnssecKeyVersion";
+export type ZonePromoteDnssecKeyVersion = import("./zonePromoteDnssecKeyVersion").ZonePromoteDnssecKeyVersion;
+export const ZonePromoteDnssecKeyVersion: typeof import("./zonePromoteDnssecKeyVersion").ZonePromoteDnssecKeyVersion = null as any;
+utilities.lazyLoad(exports, ["ZonePromoteDnssecKeyVersion"], () => require("./zonePromoteDnssecKeyVersion"));
+
+export { ZoneStageDnssecKeyVersionArgs, ZoneStageDnssecKeyVersionState } from "./zoneStageDnssecKeyVersion";
+export type ZoneStageDnssecKeyVersion = import("./zoneStageDnssecKeyVersion").ZoneStageDnssecKeyVersion;
+export const ZoneStageDnssecKeyVersion: typeof import("./zoneStageDnssecKeyVersion").ZoneStageDnssecKeyVersion = null as any;
+utilities.lazyLoad(exports, ["ZoneStageDnssecKeyVersion"], () => require("./zoneStageDnssecKeyVersion"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -160,6 +170,10 @@ const _module = {
                 return new View(name, <any>undefined, { urn })
             case "oci:Dns/zone:Zone":
                 return new Zone(name, <any>undefined, { urn })
+            case "oci:Dns/zonePromoteDnssecKeyVersion:ZonePromoteDnssecKeyVersion":
+                return new ZonePromoteDnssecKeyVersion(name, <any>undefined, { urn })
+            case "oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion":
+                return new ZoneStageDnssecKeyVersion(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -175,3 +189,5 @@ pulumi.runtime.registerResourceModule("oci", "Dns/steeringPolicyAttachment", _mo
 pulumi.runtime.registerResourceModule("oci", "Dns/tsigKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Dns/view", _module)
 pulumi.runtime.registerResourceModule("oci", "Dns/zone", _module)
+pulumi.runtime.registerResourceModule("oci", "Dns/zonePromoteDnssecKeyVersion", _module)
+pulumi.runtime.registerResourceModule("oci", "Dns/zoneStageDnssecKeyVersion", _module)

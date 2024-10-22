@@ -104,7 +104,8 @@ type LookupBootVolumeResult struct {
 	// The OCID of the source volume group.
 	VolumeGroupId string `pulumi:"volumeGroupId"`
 	// The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
+	VpusPerGb   string `pulumi:"vpusPerGb"`
+	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
 }
 
 func LookupBootVolumeOutput(ctx *pulumi.Context, args LookupBootVolumeOutputArgs, opts ...pulumi.InvokeOption) LookupBootVolumeResultOutput {
@@ -271,6 +272,10 @@ func (o LookupBootVolumeResultOutput) VolumeGroupId() pulumi.StringOutput {
 // The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 func (o LookupBootVolumeResultOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.VpusPerGb }).(pulumi.StringOutput)
+}
+
+func (o LookupBootVolumeResultOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.XrcKmsKeyId }).(pulumi.StringOutput)
 }
 
 func init() {

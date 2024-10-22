@@ -85,14 +85,14 @@ public final class GetRrsetsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     @Import(name="viewId")
     private @Nullable String viewId;
 
     /**
-     * @return The OCID of the view the resource is associated with.
+     * @return The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     public Optional<String> viewId() {
@@ -198,7 +198,7 @@ public final class GetRrsetsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param viewId The OCID of the view the resource is associated with.
+         * @param viewId The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * 
          * @return builder
          * 

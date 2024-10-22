@@ -11,17 +11,46 @@ import java.util.Objects;
 @CustomType
 public final class GetVolumeSourceDetail {
     /**
+     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    private String changeBlockSizeInBytes;
+    /**
+     * @return The OCID of the first volume backup.
+     * 
+     */
+    private String firstBackupId;
+    /**
      * @return The OCID of the block volume replica.
      * 
      */
     private String id;
     /**
-     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+     * @return The OCID of the second volume backup.
+     * 
+     */
+    private String secondBackupId;
+    /**
+     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
      * 
      */
     private String type;
 
     private GetVolumeSourceDetail() {}
+    /**
+     * @return Block size in bytes to be considered while performing volume restore. The value must be a power of 2; ranging from 4KB (4096 bytes) to 1MB (1048576 bytes). If omitted, defaults to 4,096 bytes (4 KiB).
+     * 
+     */
+    public String changeBlockSizeInBytes() {
+        return this.changeBlockSizeInBytes;
+    }
+    /**
+     * @return The OCID of the first volume backup.
+     * 
+     */
+    public String firstBackupId() {
+        return this.firstBackupId;
+    }
     /**
      * @return The OCID of the block volume replica.
      * 
@@ -30,7 +59,14 @@ public final class GetVolumeSourceDetail {
         return this.id;
     }
     /**
-     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
+     * @return The OCID of the second volume backup.
+     * 
+     */
+    public String secondBackupId() {
+        return this.secondBackupId;
+    }
+    /**
+     * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
      * 
      */
     public String type() {
@@ -46,21 +82,51 @@ public final class GetVolumeSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String changeBlockSizeInBytes;
+        private String firstBackupId;
         private String id;
+        private String secondBackupId;
         private String type;
         public Builder() {}
         public Builder(GetVolumeSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.changeBlockSizeInBytes = defaults.changeBlockSizeInBytes;
+    	      this.firstBackupId = defaults.firstBackupId;
     	      this.id = defaults.id;
+    	      this.secondBackupId = defaults.secondBackupId;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder changeBlockSizeInBytes(String changeBlockSizeInBytes) {
+            if (changeBlockSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetVolumeSourceDetail", "changeBlockSizeInBytes");
+            }
+            this.changeBlockSizeInBytes = changeBlockSizeInBytes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder firstBackupId(String firstBackupId) {
+            if (firstBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeSourceDetail", "firstBackupId");
+            }
+            this.firstBackupId = firstBackupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetVolumeSourceDetail", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secondBackupId(String secondBackupId) {
+            if (secondBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeSourceDetail", "secondBackupId");
+            }
+            this.secondBackupId = secondBackupId;
             return this;
         }
         @CustomType.Setter
@@ -73,7 +139,10 @@ public final class GetVolumeSourceDetail {
         }
         public GetVolumeSourceDetail build() {
             final var _resultValue = new GetVolumeSourceDetail();
+            _resultValue.changeBlockSizeInBytes = changeBlockSizeInBytes;
+            _resultValue.firstBackupId = firstBackupId;
             _resultValue.id = id;
+            _resultValue.secondBackupId = secondBackupId;
             _resultValue.type = type;
             return _resultValue;
         }

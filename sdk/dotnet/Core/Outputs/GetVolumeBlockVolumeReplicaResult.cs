@@ -25,6 +25,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// The OCID of the Vault service key which is the master encryption key for the volume.
+        /// </summary>
+        public readonly string KmsKeyId;
+        public readonly string XrrKmsKeyId;
 
         [OutputConstructor]
         private GetVolumeBlockVolumeReplicaResult(
@@ -32,11 +37,17 @@ namespace Pulumi.Oci.Core.Outputs
 
             string blockVolumeReplicaId,
 
-            string displayName)
+            string displayName,
+
+            string kmsKeyId,
+
+            string xrrKmsKeyId)
         {
             AvailabilityDomain = availabilityDomain;
             BlockVolumeReplicaId = blockVolumeReplicaId;
             DisplayName = displayName;
+            KmsKeyId = kmsKeyId;
+            XrrKmsKeyId = xrrKmsKeyId;
         }
     }
 }

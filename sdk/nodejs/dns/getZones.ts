@@ -9,10 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all zones in the specified compartment. The collection
- * can be filtered by name, time created, scope, associated view, and zone type.
- * Additionally, for Private DNS, the `scope` query parameter is required when
- * listing private zones.
+ * Gets a list of all zones in the specified compartment.
+ *
+ * The collection can be filtered by name, time created, scope, associated view, and zone type.
+ * Filtering by view is only supported for private zones.
  *
  * ## Example Usage
  *
@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testZones = oci.Dns.getZones({
  *     compartmentId: compartmentId,
+ *     dnssecState: zoneDnssecState,
  *     name: zoneName,
  *     nameContains: zoneNameContains,
  *     scope: zoneScope,
@@ -38,6 +39,7 @@ export function getZones(args: GetZonesArgs, opts?: pulumi.InvokeOptions): Promi
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getZones:getZones", {
         "compartmentId": args.compartmentId,
+        "dnssecState": args.dnssecState,
         "filters": args.filters,
         "name": args.name,
         "nameContains": args.nameContains,
@@ -61,6 +63,10 @@ export interface GetZonesArgs {
      * The OCID of the compartment the resource belongs to.
      */
     compartmentId: string;
+    /**
+     * Search for zones that have the given `DnssecState`.
+     */
+    dnssecState?: string;
     filters?: inputs.Dns.GetZonesFilter[];
     /**
      * A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
@@ -71,8 +77,7 @@ export interface GetZonesArgs {
      */
     nameContains?: string;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: string;
     /**
@@ -117,6 +122,10 @@ export interface GetZonesResult {
      * The OCID of the compartment containing the zone.
      */
     readonly compartmentId: string;
+    /**
+     * The state of DNSSEC on the zone.
+     */
+    readonly dnssecState?: string;
     readonly filters?: outputs.Dns.GetZonesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -159,10 +168,10 @@ export interface GetZonesResult {
 /**
  * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
  *
- * Gets a list of all zones in the specified compartment. The collection
- * can be filtered by name, time created, scope, associated view, and zone type.
- * Additionally, for Private DNS, the `scope` query parameter is required when
- * listing private zones.
+ * Gets a list of all zones in the specified compartment.
+ *
+ * The collection can be filtered by name, time created, scope, associated view, and zone type.
+ * Filtering by view is only supported for private zones.
  *
  * ## Example Usage
  *
@@ -172,6 +181,7 @@ export interface GetZonesResult {
  *
  * const testZones = oci.Dns.getZones({
  *     compartmentId: compartmentId,
+ *     dnssecState: zoneDnssecState,
  *     name: zoneName,
  *     nameContains: zoneNameContains,
  *     scope: zoneScope,
@@ -188,6 +198,7 @@ export function getZonesOutput(args: GetZonesOutputArgs, opts?: pulumi.InvokeOpt
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Dns/getZones:getZones", {
         "compartmentId": args.compartmentId,
+        "dnssecState": args.dnssecState,
         "filters": args.filters,
         "name": args.name,
         "nameContains": args.nameContains,
@@ -211,6 +222,10 @@ export interface GetZonesOutputArgs {
      * The OCID of the compartment the resource belongs to.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * Search for zones that have the given `DnssecState`.
+     */
+    dnssecState?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetZonesFilterArgs>[]>;
     /**
      * A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
@@ -221,8 +236,7 @@ export interface GetZonesOutputArgs {
      */
     nameContains?: pulumi.Input<string>;
     /**
-     * Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-     * for zones in the global DNS and `PRIVATE` when listing private zones.
+     * Specifies to operate only on resources that have a matching DNS scope.
      */
     scope?: pulumi.Input<string>;
     /**

@@ -19,8 +19,10 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Replaces records in the specified RRSet. When the zone name is provided as a path parameter
- * and the zone has a scope of `PRIVATE` then the viewId query parameter is required.
+ *   Updates records in the specified RRSet.
+ * 
+ * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+ * parameter then the viewId query parameter is required.
  * 
  * ## Example Usage
  * 
@@ -52,7 +54,6 @@ import javax.annotation.Nullable;
  *             .domain(rrsetDomain)
  *             .rtype(rrsetRtype)
  *             .zoneNameOrId(testZone.id())
- *             .compartmentId(compartmentId)
  *             .items(RrsetItemArgs.builder()
  *                 .domain(rrsetItemsDomain)
  *                 .rdata(rrsetItemsRdata)
@@ -87,14 +88,18 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Dns/rrset:Rrset")
 public class Rrset extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment the resource belongs to.
+     * (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment the resource belongs to.
+     * @return (Updatable) The OCID of the compartment the zone belongs to.
+     * 
+     * This parameter is deprecated and should be omitted.
      * 
      */
     public Output<String> compartmentId() {
@@ -116,7 +121,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable)
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     @Export(name="items", refs={List.class,RrsetItem.class}, tree="[0,1]")
@@ -124,7 +129,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable)
-     * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
+     * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      * 
      */
     public Output<List<RrsetItem>> items() {
@@ -146,7 +151,6 @@ public class Rrset extends com.pulumi.resources.CustomResource {
     }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
@@ -154,21 +158,20 @@ public class Rrset extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
-     * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      * 
      */
     public Output<Optional<String>> scope() {
         return Codegen.optional(this.scope);
     }
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     @Export(name="viewId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> viewId;
 
     /**
-     * @return The OCID of the view the resource is associated with.
+     * @return The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      * 
      */
     public Output<Optional<String>> viewId() {

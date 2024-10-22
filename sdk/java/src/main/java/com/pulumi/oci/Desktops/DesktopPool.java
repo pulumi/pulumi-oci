@@ -14,6 +14,7 @@ import com.pulumi.oci.Desktops.outputs.DesktopPoolDevicePolicy;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolImage;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolNetworkConfiguration;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolPrivateAccessDetails;
+import com.pulumi.oci.Desktops.outputs.DesktopPoolSessionLifecycleActions;
 import com.pulumi.oci.Desktops.outputs.DesktopPoolShapeConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -49,6 +50,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolNetworkConfigurationArgs;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolShapeConfigArgs;
  * import com.pulumi.oci.Desktops.inputs.DesktopPoolPrivateAccessDetailsArgs;
+ * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsArgs;
+ * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsDisconnectArgs;
+ * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsInactivityArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -115,6 +119,16 @@ import javax.annotation.Nullable;
  *                 .subnetId(testSubnet.id())
  *                 .nsgIds(desktopPoolPrivateAccessDetailsNsgIds)
  *                 .privateIp(desktopPoolPrivateAccessDetailsPrivateIp)
+ *                 .build())
+ *             .sessionLifecycleActions(DesktopPoolSessionLifecycleActionsArgs.builder()
+ *                 .disconnect(DesktopPoolSessionLifecycleActionsDisconnectArgs.builder()
+ *                     .action("STOP")
+ *                     .gracePeriodInMinutes(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes)
+ *                     .build())
+ *                 .inactivity(DesktopPoolSessionLifecycleActionsInactivityArgs.builder()
+ *                     .action("DISCONNECT")
+ *                     .gracePeriodInMinutes(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes)
+ *                     .build())
  *                 .build())
  *             .timeStartScheduled(desktopPoolTimeStartScheduled)
  *             .timeStopScheduled(desktopPoolTimeStopScheduled)
@@ -375,6 +389,20 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
      */
     public Output<DesktopPoolPrivateAccessDetails> privateAccessDetails() {
         return this.privateAccessDetails;
+    }
+    /**
+     * The details of action to be triggered in case of inactivity or disconnect
+     * 
+     */
+    @Export(name="sessionLifecycleActions", refs={DesktopPoolSessionLifecycleActions.class}, tree="[0]")
+    private Output</* @Nullable */ DesktopPoolSessionLifecycleActions> sessionLifecycleActions;
+
+    /**
+     * @return The details of action to be triggered in case of inactivity or disconnect
+     * 
+     */
+    public Output<Optional<DesktopPoolSessionLifecycleActions>> sessionLifecycleActions() {
+        return Codegen.optional(this.sessionLifecycleActions);
     }
     /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.

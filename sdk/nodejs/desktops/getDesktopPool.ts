@@ -117,6 +117,10 @@ export interface GetDesktopPoolResult {
      */
     readonly privateAccessDetails: outputs.Desktops.GetDesktopPoolPrivateAccessDetail[];
     /**
+     * Action to be triggered on inactivity or disconnect
+     */
+    readonly sessionLifecycleActions: outputs.Desktops.GetDesktopPoolSessionLifecycleAction[];
+    /**
      * The shape configuration used for each desktop compute instance in the desktop pool.
      */
     readonly shapeConfigs: outputs.Desktops.GetDesktopPoolShapeConfig[];
@@ -154,6 +158,7 @@ export interface GetDesktopPoolResult {
     readonly timeStopScheduled: string;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * ---
      */
     readonly useDedicatedVmHost: string;
 }

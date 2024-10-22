@@ -218,7 +218,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -229,7 +229,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -240,9 +240,17 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sizeInMbs);
     }
 
+    /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     @Import(name="sourceDetails")
     private @Nullable Output<VolumeSourceDetailsArgs> sourceDetails;
 
+    /**
+     * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+     * 
+     */
     public Optional<Output<VolumeSourceDetailsArgs>> sourceDetails() {
         return Optional.ofNullable(this.sourceDetails);
     }
@@ -281,6 +289,27 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.vpusPerGb);
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="xrcKmsKeyId")
+    private @Nullable Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> xrcKmsKeyId() {
+        return Optional.ofNullable(this.xrcKmsKeyId);
+    }
+
     private VolumeArgs() {}
 
     private VolumeArgs(VolumeArgs $) {
@@ -301,6 +330,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         this.sourceDetails = $.sourceDetails;
         this.volumeBackupId = $.volumeBackupId;
         this.vpusPerGb = $.vpusPerGb;
+        this.xrcKmsKeyId = $.xrcKmsKeyId;
     }
 
     public static Builder builder() {
@@ -611,7 +641,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
          * 
          * @return builder
          * 
@@ -626,7 +656,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
          * 
          * @return builder
          * 
@@ -639,11 +669,23 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
             return sizeInMbs(Output.of(sizeInMbs));
         }
 
+        /**
+         * @param sourceDetails Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(@Nullable Output<VolumeSourceDetailsArgs> sourceDetails) {
             $.sourceDetails = sourceDetails;
             return this;
         }
 
+        /**
+         * @param sourceDetails Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(VolumeSourceDetailsArgs sourceDetails) {
             return sourceDetails(Output.of(sourceDetails));
         }
@@ -692,6 +734,33 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder vpusPerGb(String vpusPerGb) {
             return vpusPerGb(Output.of(vpusPerGb));
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(@Nullable Output<String> xrcKmsKeyId) {
+            $.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            return xrcKmsKeyId(Output.of(xrcKmsKeyId));
         }
 
         public VolumeArgs build() {

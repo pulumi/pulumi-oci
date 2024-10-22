@@ -24,6 +24,7 @@ class ZoneArgs:
                  compartment_id: pulumi.Input[str],
                  zone_type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 dnssec_state: Optional[pulumi.Input[str]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -32,7 +33,7 @@ class ZoneArgs:
                  view_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Zone resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
                
@@ -41,6 +42,19 @@ class ZoneArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[str] dnssec_state: (Updatable) The state of DNSSEC on the zone.
+               
+               For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+               
+               New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+               
+               To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+               
+               Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+               
+               Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+               
+               For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -55,6 +69,8 @@ class ZoneArgs:
         pulumi.set(__self__, "zone_type", zone_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if dnssec_state is not None:
+            pulumi.set(__self__, "dnssec_state", dnssec_state)
         if external_downstreams is not None:
             pulumi.set(__self__, "external_downstreams", external_downstreams)
         if external_masters is not None:
@@ -72,7 +88,7 @@ class ZoneArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment the resource belongs to.
+        (Updatable) The OCID of the compartment containing the zone.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -109,6 +125,30 @@ class ZoneArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+
+        For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+        """
+        return pulumi.get(self, "dnssec_state")
+
+    @dnssec_state.setter
+    def dnssec_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dnssec_state", value)
 
     @property
     @pulumi.getter(name="externalDownstreams")
@@ -191,6 +231,8 @@ class _ZoneState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]] = None,
+                 dnssec_state: Optional[pulumi.Input[str]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -208,10 +250,24 @@ class _ZoneState:
                  zone_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Zone resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]] dnssec_configs: DNSSEC configuration data.
+        :param pulumi.Input[str] dnssec_state: (Updatable) The state of DNSSEC on the zone.
+               
+               For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+               
+               New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+               
+               To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+               
+               Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+               
+               Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+               
+               For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -239,6 +295,10 @@ class _ZoneState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if dnssec_configs is not None:
+            pulumi.set(__self__, "dnssec_configs", dnssec_configs)
+        if dnssec_state is not None:
+            pulumi.set(__self__, "dnssec_state", dnssec_state)
         if external_downstreams is not None:
             pulumi.set(__self__, "external_downstreams", external_downstreams)
         if external_masters is not None:
@@ -274,7 +334,7 @@ class _ZoneState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment the resource belongs to.
+        (Updatable) The OCID of the compartment containing the zone.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -295,6 +355,42 @@ class _ZoneState:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dnssecConfigs")
+    def dnssec_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]:
+        """
+        DNSSEC configuration data.
+        """
+        return pulumi.get(self, "dnssec_configs")
+
+    @dnssec_configs.setter
+    def dnssec_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigArgs']]]]):
+        pulumi.set(self, "dnssec_configs", value)
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+
+        For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+        """
+        return pulumi.get(self, "dnssec_state")
+
+    @dnssec_state.setter
+    def dnssec_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dnssec_state", value)
 
     @property
     @pulumi.getter(name="externalDownstreams")
@@ -491,6 +587,7 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 dnssec_state: Optional[pulumi.Input[str]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -502,11 +599,10 @@ class Zone(pulumi.CustomResource):
         """
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
-        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
-        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
-        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
-        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
+        Creates a new zone in the specified compartment.
+
+        Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+        within the default protected view of a VCN-dedicated resolver is not permitted.
 
         ## Example Usage
 
@@ -519,6 +615,7 @@ class Zone(pulumi.CustomResource):
             name=zone_name,
             zone_type=zone_zone_type,
             defined_tags=zone_defined_tags,
+            dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
                 "port": zone_external_downstreams_port,
@@ -544,10 +641,23 @@ class Zone(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[str] dnssec_state: (Updatable) The state of DNSSEC on the zone.
+               
+               For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+               
+               New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+               
+               To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+               
+               Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+               
+               Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+               
+               For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -572,11 +682,10 @@ class Zone(pulumi.CustomResource):
         """
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
-        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
-        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
-        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
-        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
+        Creates a new zone in the specified compartment.
+
+        Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+        within the default protected view of a VCN-dedicated resolver is not permitted.
 
         ## Example Usage
 
@@ -589,6 +698,7 @@ class Zone(pulumi.CustomResource):
             name=zone_name,
             zone_type=zone_zone_type,
             defined_tags=zone_defined_tags,
+            dnssec_state=zone_dnssec_state,
             external_downstreams=[{
                 "address": zone_external_downstreams_address,
                 "port": zone_external_downstreams_port,
@@ -629,6 +739,7 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 dnssec_state: Optional[pulumi.Input[str]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -649,6 +760,7 @@ class Zone(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["dnssec_state"] = dnssec_state
             __props__.__dict__["external_downstreams"] = external_downstreams
             __props__.__dict__["external_masters"] = external_masters
             __props__.__dict__["freeform_tags"] = freeform_tags
@@ -658,6 +770,7 @@ class Zone(pulumi.CustomResource):
             if zone_type is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_type'")
             __props__.__dict__["zone_type"] = zone_type
+            __props__.__dict__["dnssec_configs"] = None
             __props__.__dict__["is_protected"] = None
             __props__.__dict__["nameservers"] = None
             __props__.__dict__["self"] = None
@@ -678,6 +791,8 @@ class Zone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            dnssec_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]]] = None,
+            dnssec_state: Optional[pulumi.Input[str]] = None,
             external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]]] = None,
             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -700,10 +815,24 @@ class Zone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
                **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict']]]] dnssec_configs: DNSSEC configuration data.
+        :param pulumi.Input[str] dnssec_state: (Updatable) The state of DNSSEC on the zone.
+               
+               For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+               
+               New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+               
+               To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+               
+               Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+               
+               Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+               
+               For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -733,6 +862,8 @@ class Zone(pulumi.CustomResource):
 
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["dnssec_configs"] = dnssec_configs
+        __props__.__dict__["dnssec_state"] = dnssec_state
         __props__.__dict__["external_downstreams"] = external_downstreams
         __props__.__dict__["external_masters"] = external_masters
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -754,7 +885,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment the resource belongs to.
+        (Updatable) The OCID of the compartment containing the zone.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -767,6 +898,34 @@ class Zone(pulumi.CustomResource):
         **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnssecConfigs")
+    def dnssec_configs(self) -> pulumi.Output[Sequence['outputs.ZoneDnssecConfig']]:
+        """
+        DNSSEC configuration data.
+        """
+        return pulumi.get(self, "dnssec_configs")
+
+    @property
+    @pulumi.getter(name="dnssecState")
+    def dnssec_state(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`. Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration. To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
+
+        For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+        """
+        return pulumi.get(self, "dnssec_state")
 
     @property
     @pulumi.getter(name="externalDownstreams")

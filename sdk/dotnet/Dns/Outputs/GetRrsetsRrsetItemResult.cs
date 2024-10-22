@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string Rtype;
         /// <summary>
-        /// The Time To Live for the record, in seconds.
+        /// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         /// </summary>
         public readonly int Ttl;
 

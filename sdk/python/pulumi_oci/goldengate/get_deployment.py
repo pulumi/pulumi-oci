@@ -27,7 +27,10 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +61,9 @@ class GetDeploymentResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if environment_type and not isinstance(environment_type, str):
+            raise TypeError("Expected argument 'environment_type' to be a str")
+        pulumi.set(__self__, "environment_type", environment_type)
         if fqdn and not isinstance(fqdn, str):
             raise TypeError("Expected argument 'fqdn' to be a str")
         pulumi.set(__self__, "fqdn", fqdn)
@@ -159,6 +165,14 @@ class GetDeploymentResult:
         pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        """
+        return pulumi.get(self, "category")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -236,6 +250,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> str:
+        """
+        Specifies whether the deployment is used in a production or development/testing environment.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @property
     @pulumi.getter
     def fqdn(self) -> str:
         """
@@ -308,7 +330,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
     def is_storage_utilization_limit_exceeded(self) -> bool:
         """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         """
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
@@ -503,6 +525,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
         if False:
             yield self
         return GetDeploymentResult(
+            category=self.category,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             defined_tags=self.defined_tags,
@@ -513,6 +536,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             deployment_url=self.deployment_url,
             description=self.description,
             display_name=self.display_name,
+            environment_type=self.environment_type,
             fqdn=self.fqdn,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -573,6 +597,7 @@ def get_deployment(deployment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult).value
 
     return AwaitableGetDeploymentResult(
+        category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -583,6 +608,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         deployment_url=pulumi.get(__ret__, 'deployment_url'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        environment_type=pulumi.get(__ret__, 'environment_type'),
         fqdn=pulumi.get(__ret__, 'fqdn'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -640,6 +666,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GoldenGate/getDeployment:getDeployment', __args__, opts=opts, typ=GetDeploymentResult)
     return __ret__.apply(lambda __response__: GetDeploymentResult(
+        category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -650,6 +677,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
         deployment_url=pulumi.get(__response__, 'deployment_url'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        environment_type=pulumi.get(__response__, 'environment_type'),
         fqdn=pulumi.get(__response__, 'fqdn'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

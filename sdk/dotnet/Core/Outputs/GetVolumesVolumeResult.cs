@@ -72,9 +72,12 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string SizeInGbs;
         /// <summary>
-        /// The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
+        /// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
         /// </summary>
         public readonly string SizeInMbs;
+        /// <summary>
+        /// Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumesVolumeSourceDetailResult> SourceDetails;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -97,6 +100,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
         public readonly string VpusPerGb;
+        public readonly string XrcKmsKeyId;
 
         [OutputConstructor]
         private GetVolumesVolumeResult(
@@ -146,7 +150,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             string volumeGroupId,
 
-            string vpusPerGb)
+            string vpusPerGb,
+
+            string xrcKmsKeyId)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
             AutotunePolicies = autotunePolicies;
@@ -172,6 +178,7 @@ namespace Pulumi.Oci.Core.Outputs
             VolumeBackupId = volumeBackupId;
             VolumeGroupId = volumeGroupId;
             VpusPerGb = vpusPerGb;
+            XrcKmsKeyId = xrcKmsKeyId;
         }
     }
 }

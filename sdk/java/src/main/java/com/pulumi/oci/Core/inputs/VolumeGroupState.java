@@ -273,6 +273,21 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.volumeIds);
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    @Import(name="xrcKmsKeyId")
+    private @Nullable Output<String> xrcKmsKeyId;
+
+    /**
+     * @return The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * 
+     */
+    public Optional<Output<String>> xrcKmsKeyId() {
+        return Optional.ofNullable(this.xrcKmsKeyId);
+    }
+
     private VolumeGroupState() {}
 
     private VolumeGroupState(VolumeGroupState $) {
@@ -293,6 +308,7 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
         this.volumeGroupReplicas = $.volumeGroupReplicas;
         this.volumeGroupReplicasDeletion = $.volumeGroupReplicasDeletion;
         this.volumeIds = $.volumeIds;
+        this.xrcKmsKeyId = $.xrcKmsKeyId;
     }
 
     public static Builder builder() {
@@ -681,6 +697,27 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder volumeIds(String... volumeIds) {
             return volumeIds(List.of(volumeIds));
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(@Nullable Output<String> xrcKmsKeyId) {
+            $.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param xrcKmsKeyId The OCID of the Vault service key which is the master encryption key for the volume&#39;s cross region backups, which will be used in the destination region to encrypt the backup&#39;s encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            return xrcKmsKeyId(Output.of(xrcKmsKeyId));
         }
 
         public VolumeGroupState build() {

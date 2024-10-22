@@ -40,12 +40,12 @@ public final class RrsetItem {
      */
     private @Nullable String rrsetVersion;
     /**
-     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     private String rtype;
     /**
-     * @return (Updatable) The Time To Live for the record, in seconds.
+     * @return (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     private Integer ttl;
@@ -87,14 +87,14 @@ public final class RrsetItem {
         return Optional.ofNullable(this.rrsetVersion);
     }
     /**
-     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     public String rtype() {
         return this.rtype;
     }
     /**
-     * @return (Updatable) The Time To Live for the record, in seconds.
+     * @return (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     public Integer ttl() {

@@ -5,7 +5,9 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -31,6 +33,11 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
      * 
      */
     private String deploymentName;
+    /**
+     * @return Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping> groupToRolesMappings;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
@@ -81,6 +88,13 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         return this.deploymentName;
     }
     /**
+     * @return Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping> groupToRolesMappings() {
+        return this.groupToRolesMappings;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
      */
@@ -119,6 +133,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         private String certificate;
         private String credentialStore;
         private String deploymentName;
+        private List<GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping> groupToRolesMappings;
         private String identityDomainId;
         private String key;
         private String oggVersion;
@@ -131,6 +146,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
     	      this.certificate = defaults.certificate;
     	      this.credentialStore = defaults.credentialStore;
     	      this.deploymentName = defaults.deploymentName;
+    	      this.groupToRolesMappings = defaults.groupToRolesMappings;
     	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
     	      this.oggVersion = defaults.oggVersion;
@@ -178,6 +194,17 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             return this;
         }
         @CustomType.Setter
+        public Builder groupToRolesMappings(List<GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping> groupToRolesMappings) {
+            if (groupToRolesMappings == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "groupToRolesMappings");
+            }
+            this.groupToRolesMappings = groupToRolesMappings;
+            return this;
+        }
+        public Builder groupToRolesMappings(GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping... groupToRolesMappings) {
+            return groupToRolesMappings(List.of(groupToRolesMappings));
+        }
+        @CustomType.Setter
         public Builder identityDomainId(String identityDomainId) {
             if (identityDomainId == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "identityDomainId");
@@ -216,6 +243,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             _resultValue.certificate = certificate;
             _resultValue.credentialStore = credentialStore;
             _resultValue.deploymentName = deploymentName;
+            _resultValue.groupToRolesMappings = groupToRolesMappings;
             _resultValue.identityDomainId = identityDomainId;
             _resultValue.key = key;
             _resultValue.oggVersion = oggVersion;

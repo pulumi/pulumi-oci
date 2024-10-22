@@ -21,6 +21,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentResult {
     /**
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    private String category;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -67,6 +72,11 @@ public final class GetDeploymentResult {
      */
     private String displayName;
     /**
+     * @return Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    private String environmentType;
+    /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -108,7 +118,7 @@ public final class GetDeploymentResult {
      */
     private Boolean isPublic;
     /**
-     * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     private Boolean isStorageUtilizationLimitExceeded;
@@ -230,6 +240,13 @@ public final class GetDeploymentResult {
 
     private GetDeploymentResult() {}
     /**
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * 
+     */
+    public String category() {
+        return this.category;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -296,6 +313,13 @@ public final class GetDeploymentResult {
         return this.displayName;
     }
     /**
+     * @return Specifies whether the deployment is used in a production or development/testing environment.
+     * 
+     */
+    public String environmentType() {
+        return this.environmentType;
+    }
+    /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
@@ -355,7 +379,7 @@ public final class GetDeploymentResult {
         return this.isPublic;
     }
     /**
-     * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
+     * @return Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     public Boolean isStorageUtilizationLimitExceeded() {
@@ -532,6 +556,7 @@ public final class GetDeploymentResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String category;
         private String compartmentId;
         private Integer cpuCoreCount;
         private Map<String,String> definedTags;
@@ -542,6 +567,7 @@ public final class GetDeploymentResult {
         private String deploymentUrl;
         private String description;
         private String displayName;
+        private String environmentType;
         private String fqdn;
         private Map<String,String> freeformTags;
         private String id;
@@ -578,6 +604,7 @@ public final class GetDeploymentResult {
         public Builder() {}
         public Builder(GetDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.definedTags = defaults.definedTags;
@@ -588,6 +615,7 @@ public final class GetDeploymentResult {
     	      this.deploymentUrl = defaults.deploymentUrl;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.environmentType = defaults.environmentType;
     	      this.fqdn = defaults.fqdn;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -623,6 +651,14 @@ public final class GetDeploymentResult {
     	      this.timeUpgradeRequired = defaults.timeUpgradeRequired;
         }
 
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "category");
+            }
+            this.category = category;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -704,6 +740,14 @@ public final class GetDeploymentResult {
               throw new MissingRequiredPropertyException("GetDeploymentResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder environmentType(String environmentType) {
+            if (environmentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "environmentType");
+            }
+            this.environmentType = environmentType;
             return this;
         }
         @CustomType.Setter
@@ -990,6 +1034,7 @@ public final class GetDeploymentResult {
         }
         public GetDeploymentResult build() {
             final var _resultValue = new GetDeploymentResult();
+            _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.definedTags = definedTags;
@@ -1000,6 +1045,7 @@ public final class GetDeploymentResult {
             _resultValue.deploymentUrl = deploymentUrl;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.environmentType = environmentType;
             _resultValue.fqdn = fqdn;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

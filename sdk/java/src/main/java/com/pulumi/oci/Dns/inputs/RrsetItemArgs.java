@@ -94,14 +94,14 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     @Import(name="rtype", required=true)
     private Output<String> rtype;
 
     /**
-     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     public Output<String> rtype() {
@@ -109,14 +109,14 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The Time To Live for the record, in seconds.
+     * (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     @Import(name="ttl", required=true)
     private Output<Integer> ttl;
 
     /**
-     * @return (Updatable) The Time To Live for the record, in seconds.
+     * @return (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
      * 
      */
     public Output<Integer> ttl() {
@@ -259,7 +259,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rtype The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         * @param rtype The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rtype The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         * @param rtype The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl (Updatable) The Time To Live for the record, in seconds.
+         * @param ttl (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ttl (Updatable) The Time To Live for the record, in seconds.
+         * @param ttl (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
          * 
          * @return builder
          * 

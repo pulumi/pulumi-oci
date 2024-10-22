@@ -16,11 +16,12 @@ import (
 //
 // This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
 //
-// Replaces records in the specified zone with the records specified in the
-// request body. If a specified record does not exist, it will be created.
-// If the record exists, then it will be updated to represent the record in
-// the body of the request. If a record in the zone does not exist in the
-// request body, the record will be removed from the zone.
+//	Updates a collection of records in the specified zone.
+//
+// You can update one record or all records for the specified zone depending on the changes provided in the
+// request body. You can also add or remove records using this function. When the zone name is provided as
+// a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+// required.
 //
 // ## Example Usage
 //
@@ -37,12 +38,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.NewRecord(ctx, "test_record", &Dns.RecordArgs{
-//				ZoneNameOrId:  pulumi.Any(testZoneNameOr.Id),
-//				Domain:        pulumi.Any(recordItemsDomain),
-//				Rtype:         pulumi.Any(recordItemsRtype),
-//				CompartmentId: pulumi.Any(compartmentId),
-//				Rdata:         pulumi.Any(recordItemsRdata),
-//				Ttl:           pulumi.Any(recordItemsTtl),
+//				ZoneNameOrId: pulumi.Any(testZoneNameOr.Id),
+//				Domain:       pulumi.Any(recordItemsDomain),
+//				Rtype:        pulumi.Any(recordItemsRtype),
+//				Rdata:        pulumi.Any(recordItemsRdata),
+//				Ttl:          pulumi.Any(recordItemsTtl),
 //			})
 //			if err != nil {
 //				return err

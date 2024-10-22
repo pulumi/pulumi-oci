@@ -64,11 +64,12 @@ public final class DnsFunctions {
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-     * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets all records in the specified zone.
+     * 
+     * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+     * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+     * then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -97,12 +98,9 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
      *             .zoneNameOrId(testZoneNameOr.id())
-     *             .compartmentId(compartmentId)
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
-     *             .scope(recordScope)
-     *             .viewId(testView.id())
      *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
@@ -121,11 +119,12 @@ public final class DnsFunctions {
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-     * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets all records in the specified zone.
+     * 
+     * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+     * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+     * then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -154,12 +153,9 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
      *             .zoneNameOrId(testZoneNameOr.id())
-     *             .compartmentId(compartmentId)
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
-     *             .scope(recordScope)
-     *             .viewId(testView.id())
      *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
@@ -178,11 +174,12 @@ public final class DnsFunctions {
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-     * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets all records in the specified zone.
+     * 
+     * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+     * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+     * then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -211,12 +208,9 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
      *             .zoneNameOrId(testZoneNameOr.id())
-     *             .compartmentId(compartmentId)
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
-     *             .scope(recordScope)
-     *             .viewId(testView.id())
      *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
@@ -235,11 +229,12 @@ public final class DnsFunctions {
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-     * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets all records in the specified zone.
+     * 
+     * The results are sorted by `domain` in alphabetical order by default. For more information about records,
+     * see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+     * then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -268,12 +263,9 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
      *             .zoneNameOrId(testZoneNameOr.id())
-     *             .compartmentId(compartmentId)
      *             .domain(recordDomain)
      *             .domainContains(recordDomainContains)
      *             .rtype(recordRtype)
-     *             .scope(recordScope)
-     *             .viewId(testView.id())
      *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
@@ -290,9 +282,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver. Note that attempting to get a
-     * resolver in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver.
+     * 
+     * Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -337,9 +330,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver. Note that attempting to get a
-     * resolver in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver.
+     * 
+     * Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -384,9 +378,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver. Note that attempting to get a
-     * resolver in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver.
+     * 
+     * Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -431,9 +426,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver. Note that attempting to get a
-     * resolver in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver.
+     * 
+     * Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
+     * response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -478,9 +474,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-     * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-     * API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver endpoint.
+     * 
+     * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+     * in a `404` response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -526,9 +523,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-     * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-     * API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver endpoint.
+     * 
+     * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+     * in a `404` response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -574,9 +572,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-     * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-     * API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver endpoint.
+     * 
+     * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+     * in a `404` response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -622,9 +621,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-     * in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-     * API. Requires a `PRIVATE` scope query parameter.
+     * Gets information about a specific resolver endpoint.
+     * 
+     * Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+     * in a `404` response to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -673,7 +673,7 @@ public final class DnsFunctions {
      * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
      * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * lifecycle state to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -723,7 +723,7 @@ public final class DnsFunctions {
      * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
      * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * lifecycle state to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -773,7 +773,7 @@ public final class DnsFunctions {
      * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
      * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * lifecycle state to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -823,7 +823,7 @@ public final class DnsFunctions {
      * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
      * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
      * query parameter is provided, the collection does not include resolver endpoints in the DELETED
-     * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * lifecycle state to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -870,12 +870,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all resolvers within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include resolvers in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all resolvers within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include resolvers in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -923,12 +923,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all resolvers within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include resolvers in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all resolvers within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include resolvers in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -976,12 +976,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all resolvers within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include resolvers in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all resolvers within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include resolvers in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -1029,12 +1029,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all resolvers within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include resolvers in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all resolvers within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include resolvers in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -1082,10 +1082,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-     * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all records in the specified RRSet.
+     * 
+     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1116,7 +1116,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .compartmentId(compartmentId)
      *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
@@ -1134,10 +1133,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-     * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all records in the specified RRSet.
+     * 
+     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1168,7 +1167,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .compartmentId(compartmentId)
      *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
@@ -1186,10 +1184,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-     * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all records in the specified RRSet.
+     * 
+     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1220,7 +1218,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .compartmentId(compartmentId)
      *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
@@ -1238,10 +1235,10 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-     * private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all records in the specified RRSet.
+     * 
+     * The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+     * and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1272,7 +1269,6 @@ public final class DnsFunctions {
      *             .domain(rrsetDomain)
      *             .rtype(rrsetRtype)
      *             .zoneNameOrId(testZone.id())
-     *             .compartmentId(compartmentId)
      *             .scope(rrsetScope)
      *             .viewId(testView.id())
      *             .build());
@@ -1290,10 +1286,11 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all rrsets in the specified zone.
+     * 
+     * You can optionally filter the results using the listed parameters. When the zone name
+     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1342,10 +1339,11 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all rrsets in the specified zone.
+     * 
+     * You can optionally filter the results using the listed parameters. When the zone name
+     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1394,10 +1392,11 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all rrsets in the specified zone.
+     * 
+     * You can optionally filter the results using the listed parameters. When the zone name
+     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId parameter is required.
      * 
      * ## Example Usage
      * 
@@ -1446,10 +1445,11 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
-     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-     * parameter is required.
+     * Gets a list of all rrsets in the specified zone.
+     * 
+     * You can optionally filter the results using the listed parameters. When the zone name
+     * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId parameter is required.
      * 
      * ## Example Usage
      * 
@@ -2634,9 +2634,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2681,9 +2683,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2728,9 +2732,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2775,9 +2781,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2822,9 +2830,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2869,9 +2879,11 @@ public final class DnsFunctions {
     /**
      * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets information about a specific view. Note that attempting to get a
+     * Gets information about a specific view.
+     * 
+     * Note that attempting to get a
      * view in the DELETED lifecycleState will result in a `404` response to be
-     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2916,12 +2928,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all views within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include views in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all views within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include views in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -2969,12 +2981,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all views within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include views in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all views within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include views in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -3022,12 +3034,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all views within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include views in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all views within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include views in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -3075,12 +3087,12 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all views within a compartment. The collection can
-     * be filtered by display name, id, or lifecycle state. It can be sorted
-     * on creation time or displayName both in ASC or DESC order. Note that
-     * when no lifecycleState query parameter is provided, the collection
-     * does not include views in the DELETED lifecycleState to be consistent
-     * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * Gets a list of all views within a compartment.
+     * 
+     * The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided, the collection does not include views in the DELETED
+     * lifecycleState to be consistent with other operations of the API.
      * 
      * ## Example Usage
      * 
@@ -3128,10 +3140,10 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, scope, associated view, and zone type.
-     * Additionally, for Private DNS, the `scope` query parameter is required when
-     * listing private zones.
+     * Gets a list of all zones in the specified compartment.
+     * 
+     * The collection can be filtered by name, time created, scope, associated view, and zone type.
+     * Filtering by view is only supported for private zones.
      * 
      * ## Example Usage
      * 
@@ -3160,6 +3172,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dnssecState(zoneDnssecState)
      *             .name(zoneName)
      *             .nameContains(zoneNameContains)
      *             .scope(zoneScope)
@@ -3184,10 +3197,10 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, scope, associated view, and zone type.
-     * Additionally, for Private DNS, the `scope` query parameter is required when
-     * listing private zones.
+     * Gets a list of all zones in the specified compartment.
+     * 
+     * The collection can be filtered by name, time created, scope, associated view, and zone type.
+     * Filtering by view is only supported for private zones.
      * 
      * ## Example Usage
      * 
@@ -3216,6 +3229,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dnssecState(zoneDnssecState)
      *             .name(zoneName)
      *             .nameContains(zoneNameContains)
      *             .scope(zoneScope)
@@ -3240,10 +3254,10 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, scope, associated view, and zone type.
-     * Additionally, for Private DNS, the `scope` query parameter is required when
-     * listing private zones.
+     * Gets a list of all zones in the specified compartment.
+     * 
+     * The collection can be filtered by name, time created, scope, associated view, and zone type.
+     * Filtering by view is only supported for private zones.
      * 
      * ## Example Usage
      * 
@@ -3272,6 +3286,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dnssecState(zoneDnssecState)
      *             .name(zoneName)
      *             .nameContains(zoneNameContains)
      *             .scope(zoneScope)
@@ -3296,10 +3311,10 @@ public final class DnsFunctions {
     /**
      * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
      * 
-     * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, scope, associated view, and zone type.
-     * Additionally, for Private DNS, the `scope` query parameter is required when
-     * listing private zones.
+     * Gets a list of all zones in the specified compartment.
+     * 
+     * The collection can be filtered by name, time created, scope, associated view, and zone type.
+     * Filtering by view is only supported for private zones.
      * 
      * ## Example Usage
      * 
@@ -3328,6 +3343,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .dnssecState(zoneDnssecState)
      *             .name(zoneName)
      *             .nameContains(zoneNameContains)
      *             .scope(zoneScope)

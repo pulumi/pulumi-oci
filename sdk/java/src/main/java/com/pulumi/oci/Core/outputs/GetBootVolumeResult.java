@@ -131,6 +131,7 @@ public final class GetBootVolumeResult {
      * 
      */
     private String vpusPerGb;
+    private String xrcKmsKeyId;
 
     private GetBootVolumeResult() {}
     /**
@@ -298,6 +299,9 @@ public final class GetBootVolumeResult {
     public String vpusPerGb() {
         return this.vpusPerGb;
     }
+    public String xrcKmsKeyId() {
+        return this.xrcKmsKeyId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -333,6 +337,7 @@ public final class GetBootVolumeResult {
         private String timeCreated;
         private String volumeGroupId;
         private String vpusPerGb;
+        private String xrcKmsKeyId;
         public Builder() {}
         public Builder(GetBootVolumeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -361,6 +366,7 @@ public final class GetBootVolumeResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.volumeGroupId = defaults.volumeGroupId;
     	      this.vpusPerGb = defaults.vpusPerGb;
+    	      this.xrcKmsKeyId = defaults.xrcKmsKeyId;
         }
 
         @CustomType.Setter
@@ -572,6 +578,14 @@ public final class GetBootVolumeResult {
             this.vpusPerGb = vpusPerGb;
             return this;
         }
+        @CustomType.Setter
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            if (xrcKmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeResult", "xrcKmsKeyId");
+            }
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            return this;
+        }
         public GetBootVolumeResult build() {
             final var _resultValue = new GetBootVolumeResult();
             _resultValue.autoTunedVpusPerGb = autoTunedVpusPerGb;
@@ -599,6 +613,7 @@ public final class GetBootVolumeResult {
             _resultValue.timeCreated = timeCreated;
             _resultValue.volumeGroupId = volumeGroupId;
             _resultValue.vpusPerGb = vpusPerGb;
+            _resultValue.xrcKmsKeyId = xrcKmsKeyId;
             return _resultValue;
         }
     }

@@ -1068,6 +1068,10 @@ type ClusterOptions struct {
 	AdmissionControllerOptions *ClusterOptionsAdmissionControllerOptions `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig *ClusterOptionsKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfig"`
+	// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscovery *ClusterOptionsOpenIdConnectDiscovery `pulumi:"openIdConnectDiscovery"`
+	// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+	OpenIdConnectTokenAuthenticationConfig *ClusterOptionsOpenIdConnectTokenAuthenticationConfig `pulumi:"openIdConnectTokenAuthenticationConfig"`
 	// (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfig *ClusterOptionsPersistentVolumeConfig `pulumi:"persistentVolumeConfig"`
 	// (Updatable) Configuration to be applied to load balancers created by Kubernetes services
@@ -1094,6 +1098,10 @@ type ClusterOptionsArgs struct {
 	AdmissionControllerOptions ClusterOptionsAdmissionControllerOptionsPtrInput `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfig ClusterOptionsKubernetesNetworkConfigPtrInput `pulumi:"kubernetesNetworkConfig"`
+	// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscovery ClusterOptionsOpenIdConnectDiscoveryPtrInput `pulumi:"openIdConnectDiscovery"`
+	// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+	OpenIdConnectTokenAuthenticationConfig ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput `pulumi:"openIdConnectTokenAuthenticationConfig"`
 	// (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfig ClusterOptionsPersistentVolumeConfigPtrInput `pulumi:"persistentVolumeConfig"`
 	// (Updatable) Configuration to be applied to load balancers created by Kubernetes services
@@ -1194,6 +1202,18 @@ func (o ClusterOptionsOutput) KubernetesNetworkConfig() ClusterOptionsKubernetes
 	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsKubernetesNetworkConfig { return v.KubernetesNetworkConfig }).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
+// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+func (o ClusterOptionsOutput) OpenIdConnectDiscovery() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsOpenIdConnectDiscovery { return v.OpenIdConnectDiscovery }).(ClusterOptionsOpenIdConnectDiscoveryPtrOutput)
+}
+
+// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+func (o ClusterOptionsOutput) OpenIdConnectTokenAuthenticationConfig() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
+		return v.OpenIdConnectTokenAuthenticationConfig
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput)
+}
+
 // (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 func (o ClusterOptionsOutput) PersistentVolumeConfig() ClusterOptionsPersistentVolumeConfigPtrOutput {
 	return o.ApplyT(func(v ClusterOptions) *ClusterOptionsPersistentVolumeConfig { return v.PersistentVolumeConfig }).(ClusterOptionsPersistentVolumeConfigPtrOutput)
@@ -1261,6 +1281,26 @@ func (o ClusterOptionsPtrOutput) KubernetesNetworkConfig() ClusterOptionsKuberne
 		}
 		return v.KubernetesNetworkConfig
 	}).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
+}
+
+// (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
+func (o ClusterOptionsPtrOutput) OpenIdConnectDiscovery() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o.ApplyT(func(v *ClusterOptions) *ClusterOptionsOpenIdConnectDiscovery {
+		if v == nil {
+			return nil
+		}
+		return v.OpenIdConnectDiscovery
+	}).(ClusterOptionsOpenIdConnectDiscoveryPtrOutput)
+}
+
+// (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+func (o ClusterOptionsPtrOutput) OpenIdConnectTokenAuthenticationConfig() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o.ApplyT(func(v *ClusterOptions) *ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
+		if v == nil {
+			return nil
+		}
+		return v.OpenIdConnectTokenAuthenticationConfig
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput)
 }
 
 // (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
@@ -1740,6 +1780,559 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ServicesCidr() pulumi.St
 		}
 		return v.ServicesCidr
 	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectDiscovery struct {
+	// (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+	IsOpenIdConnectDiscoveryEnabled *bool `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+// ClusterOptionsOpenIdConnectDiscoveryInput is an input type that accepts ClusterOptionsOpenIdConnectDiscoveryArgs and ClusterOptionsOpenIdConnectDiscoveryOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectDiscoveryInput` via:
+//
+//	ClusterOptionsOpenIdConnectDiscoveryArgs{...}
+type ClusterOptionsOpenIdConnectDiscoveryInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectDiscoveryOutput() ClusterOptionsOpenIdConnectDiscoveryOutput
+	ToClusterOptionsOpenIdConnectDiscoveryOutputWithContext(context.Context) ClusterOptionsOpenIdConnectDiscoveryOutput
+}
+
+type ClusterOptionsOpenIdConnectDiscoveryArgs struct {
+	// (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+	IsOpenIdConnectDiscoveryEnabled pulumi.BoolPtrInput `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+func (ClusterOptionsOpenIdConnectDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i ClusterOptionsOpenIdConnectDiscoveryArgs) ToClusterOptionsOpenIdConnectDiscoveryOutput() ClusterOptionsOpenIdConnectDiscoveryOutput {
+	return i.ToClusterOptionsOpenIdConnectDiscoveryOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectDiscoveryArgs) ToClusterOptionsOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectDiscoveryOutput)
+}
+
+func (i ClusterOptionsOpenIdConnectDiscoveryArgs) ToClusterOptionsOpenIdConnectDiscoveryPtrOutput() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return i.ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectDiscoveryArgs) ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectDiscoveryOutput).ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(ctx)
+}
+
+// ClusterOptionsOpenIdConnectDiscoveryPtrInput is an input type that accepts ClusterOptionsOpenIdConnectDiscoveryArgs, ClusterOptionsOpenIdConnectDiscoveryPtr and ClusterOptionsOpenIdConnectDiscoveryPtrOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectDiscoveryPtrInput` via:
+//
+//	        ClusterOptionsOpenIdConnectDiscoveryArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterOptionsOpenIdConnectDiscoveryPtrInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectDiscoveryPtrOutput() ClusterOptionsOpenIdConnectDiscoveryPtrOutput
+	ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(context.Context) ClusterOptionsOpenIdConnectDiscoveryPtrOutput
+}
+
+type clusterOptionsOpenIdConnectDiscoveryPtrType ClusterOptionsOpenIdConnectDiscoveryArgs
+
+func ClusterOptionsOpenIdConnectDiscoveryPtr(v *ClusterOptionsOpenIdConnectDiscoveryArgs) ClusterOptionsOpenIdConnectDiscoveryPtrInput {
+	return (*clusterOptionsOpenIdConnectDiscoveryPtrType)(v)
+}
+
+func (*clusterOptionsOpenIdConnectDiscoveryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOptionsOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i *clusterOptionsOpenIdConnectDiscoveryPtrType) ToClusterOptionsOpenIdConnectDiscoveryPtrOutput() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return i.ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterOptionsOpenIdConnectDiscoveryPtrType) ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectDiscoveryPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryOutput) ToClusterOptionsOpenIdConnectDiscoveryOutput() ClusterOptionsOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryOutput) ToClusterOptionsOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryOutput) ToClusterOptionsOpenIdConnectDiscoveryPtrOutput() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o.ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryOutput) ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterOptionsOpenIdConnectDiscovery) *ClusterOptionsOpenIdConnectDiscovery {
+		return &v
+	}).(ClusterOptionsOpenIdConnectDiscoveryPtrOutput)
+}
+
+// (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+func (o ClusterOptionsOpenIdConnectDiscoveryOutput) IsOpenIdConnectDiscoveryEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectDiscovery) *bool { return v.IsOpenIdConnectDiscoveryEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectDiscoveryPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectDiscoveryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOptionsOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryPtrOutput) ToClusterOptionsOpenIdConnectDiscoveryPtrOutput() ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryPtrOutput) ToClusterOptionsOpenIdConnectDiscoveryPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectDiscoveryPtrOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectDiscoveryPtrOutput) Elem() ClusterOptionsOpenIdConnectDiscoveryOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectDiscovery) ClusterOptionsOpenIdConnectDiscovery {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterOptionsOpenIdConnectDiscovery
+		return ret
+	}).(ClusterOptionsOpenIdConnectDiscoveryOutput)
+}
+
+// (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+func (o ClusterOptionsOpenIdConnectDiscoveryPtrOutput) IsOpenIdConnectDiscoveryEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectDiscovery) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsOpenIdConnectDiscoveryEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfig struct {
+	// (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate *string `pulumi:"caCertificate"`
+	// (Updatable) A client id that all tokens must be issued for.
+	ClientId *string `pulumi:"clientId"`
+	// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim *string `pulumi:"groupsClaim"`
+	// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix *string `pulumi:"groupsPrefix"`
+	// (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled bool `pulumi:"isOpenIdConnectAuthEnabled"`
+	// (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl *string `pulumi:"issuerUrl"`
+	// (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims []ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim `pulumi:"requiredClaims"`
+	// (Updatable) The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms []string `pulumi:"signingAlgorithms"`
+	// (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim *string `pulumi:"usernameClaim"`
+	// (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix *string `pulumi:"usernamePrefix"`
+}
+
+// ClusterOptionsOpenIdConnectTokenAuthenticationConfigInput is an input type that accepts ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs and ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectTokenAuthenticationConfigInput` via:
+//
+//	ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs{...}
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs struct {
+	// (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate pulumi.StringPtrInput `pulumi:"caCertificate"`
+	// (Updatable) A client id that all tokens must be issued for.
+	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim pulumi.StringPtrInput `pulumi:"groupsClaim"`
+	// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix pulumi.StringPtrInput `pulumi:"groupsPrefix"`
+	// (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectAuthEnabled"`
+	// (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl pulumi.StringPtrInput `pulumi:"issuerUrl"`
+	// (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput `pulumi:"requiredClaims"`
+	// (Updatable) The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms pulumi.StringArrayInput `pulumi:"signingAlgorithms"`
+	// (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim pulumi.StringPtrInput `pulumi:"usernameClaim"`
+	// (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix pulumi.StringPtrInput `pulumi:"usernamePrefix"`
+}
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput {
+	return i.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return i.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput).ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput is an input type that accepts ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs, ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtr and ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput` via:
+//
+//	        ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput
+}
+
+type clusterOptionsOpenIdConnectTokenAuthenticationConfigPtrType ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs
+
+func ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtr(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput {
+	return (*clusterOptionsOpenIdConnectTokenAuthenticationConfigPtrType)(v)
+}
+
+func (*clusterOptionsOpenIdConnectTokenAuthenticationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOptionsOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i *clusterOptionsOpenIdConnectTokenAuthenticationConfigPtrType) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return i.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterOptionsOpenIdConnectTokenAuthenticationConfigPtrType) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
+		return &v
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput)
+}
+
+// (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) CaCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.CaCertificate }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A client id that all tokens must be issued for.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) GroupsClaim() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.GroupsClaim }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) GroupsPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.GroupsPrefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) IsOpenIdConnectAuthEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) bool { return v.IsOpenIdConnectAuthEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) IssuerUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.IssuerUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) RequiredClaims() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) []ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return v.RequiredClaims
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+// (Updatable) The signing algorithms accepted. Default is ["RS256"].
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) SigningAlgorithms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) []string { return v.SigningAlgorithms }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) UsernameClaim() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.UsernameClaim }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput) UsernamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string { return v.UsernamePrefix }).(pulumi.StringPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterOptionsOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) Elem() ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) ClusterOptionsOpenIdConnectTokenAuthenticationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterOptionsOpenIdConnectTokenAuthenticationConfig
+		return ret
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+// (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) CaCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaCertificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A client id that all tokens must be issued for.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) GroupsClaim() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupsClaim
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) GroupsPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupsPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) IsOpenIdConnectAuthEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsOpenIdConnectAuthEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) IssuerUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IssuerUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) RequiredClaims() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) []ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		if v == nil {
+			return nil
+		}
+		return v.RequiredClaims
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+// (Updatable) The signing algorithms accepted. Default is ["RS256"].
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) SigningAlgorithms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SigningAlgorithms
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) UsernameClaim() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UsernameClaim
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput) UsernamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterOptionsOpenIdConnectTokenAuthenticationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UsernamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim struct {
+	// (Updatable) The key of the pair.
+	Key *string `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value *string `pulumi:"value"`
+}
+
+// ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimInput is an input type that accepts ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs and ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimInput` via:
+//
+//	ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...}
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs struct {
+	// (Updatable) The key of the pair.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The value of the pair.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return i.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
+}
+
+// ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput is an input type that accepts ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray and ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput values.
+// You can construct a concrete instance of `ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput` via:
+//
+//	ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{ ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...} }
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput interface {
+	pulumi.Input
+
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+	ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray []ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimInput
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return i.ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+// (Updatable) The key of the pair.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the pair.
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) Index(i pulumi.IntInput) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return vs[0].([]ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaim)[vs[1].(int)]
+	}).(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
 }
 
 type ClusterOptionsPersistentVolumeConfig struct {
@@ -9272,7 +9865,9 @@ type GetClusterOption struct {
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions []GetClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
-	KubernetesNetworkConfigs []GetClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
+	KubernetesNetworkConfigs                []GetClusterOptionKubernetesNetworkConfig                `pulumi:"kubernetesNetworkConfigs"`
+	OpenIdConnectDiscoveries                []GetClusterOptionOpenIdConnectDiscovery                 `pulumi:"openIdConnectDiscoveries"`
+	OpenIdConnectTokenAuthenticationConfigs []GetClusterOptionOpenIdConnectTokenAuthenticationConfig `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs []GetClusterOptionPersistentVolumeConfig `pulumi:"persistentVolumeConfigs"`
 	// Configuration to be applied to load balancers created by Kubernetes services
@@ -9298,7 +9893,9 @@ type GetClusterOptionArgs struct {
 	// Configurable cluster admission controllers
 	AdmissionControllerOptions GetClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
-	KubernetesNetworkConfigs GetClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
+	KubernetesNetworkConfigs                GetClusterOptionKubernetesNetworkConfigArrayInput                `pulumi:"kubernetesNetworkConfigs"`
+	OpenIdConnectDiscoveries                GetClusterOptionOpenIdConnectDiscoveryArrayInput                 `pulumi:"openIdConnectDiscoveries"`
+	OpenIdConnectTokenAuthenticationConfigs GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs GetClusterOptionPersistentVolumeConfigArrayInput `pulumi:"persistentVolumeConfigs"`
 	// Configuration to be applied to load balancers created by Kubernetes services
@@ -9373,6 +9970,16 @@ func (o GetClusterOptionOutput) AdmissionControllerOptions() GetClusterOptionAdm
 // Network configuration for Kubernetes.
 func (o GetClusterOptionOutput) KubernetesNetworkConfigs() GetClusterOptionKubernetesNetworkConfigArrayOutput {
 	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionKubernetesNetworkConfig { return v.KubernetesNetworkConfigs }).(GetClusterOptionKubernetesNetworkConfigArrayOutput)
+}
+
+func (o GetClusterOptionOutput) OpenIdConnectDiscoveries() GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionOpenIdConnectDiscovery { return v.OpenIdConnectDiscoveries }).(GetClusterOptionOpenIdConnectDiscoveryArrayOutput)
+}
+
+func (o GetClusterOptionOutput) OpenIdConnectTokenAuthenticationConfigs() GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o.ApplyT(func(v GetClusterOption) []GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
+		return v.OpenIdConnectTokenAuthenticationConfigs
+	}).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput)
 }
 
 // Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
@@ -9814,6 +10421,352 @@ func (o GetClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionKubernetesNetworkConfig {
 		return vs[0].([]GetClusterOptionKubernetesNetworkConfig)[vs[1].(int)]
 	}).(GetClusterOptionKubernetesNetworkConfigOutput)
+}
+
+type GetClusterOptionOpenIdConnectDiscovery struct {
+	IsOpenIdConnectDiscoveryEnabled bool `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+// GetClusterOptionOpenIdConnectDiscoveryInput is an input type that accepts GetClusterOptionOpenIdConnectDiscoveryArgs and GetClusterOptionOpenIdConnectDiscoveryOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectDiscoveryInput` via:
+//
+//	GetClusterOptionOpenIdConnectDiscoveryArgs{...}
+type GetClusterOptionOpenIdConnectDiscoveryInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectDiscoveryOutput() GetClusterOptionOpenIdConnectDiscoveryOutput
+	ToGetClusterOptionOpenIdConnectDiscoveryOutputWithContext(context.Context) GetClusterOptionOpenIdConnectDiscoveryOutput
+}
+
+type GetClusterOptionOpenIdConnectDiscoveryArgs struct {
+	IsOpenIdConnectDiscoveryEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+func (GetClusterOptionOpenIdConnectDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectDiscoveryArgs) ToGetClusterOptionOpenIdConnectDiscoveryOutput() GetClusterOptionOpenIdConnectDiscoveryOutput {
+	return i.ToGetClusterOptionOpenIdConnectDiscoveryOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectDiscoveryArgs) ToGetClusterOptionOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectDiscoveryOutput)
+}
+
+// GetClusterOptionOpenIdConnectDiscoveryArrayInput is an input type that accepts GetClusterOptionOpenIdConnectDiscoveryArray and GetClusterOptionOpenIdConnectDiscoveryArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectDiscoveryArrayInput` via:
+//
+//	GetClusterOptionOpenIdConnectDiscoveryArray{ GetClusterOptionOpenIdConnectDiscoveryArgs{...} }
+type GetClusterOptionOpenIdConnectDiscoveryArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClusterOptionOpenIdConnectDiscoveryArrayOutput
+	ToGetClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(context.Context) GetClusterOptionOpenIdConnectDiscoveryArrayOutput
+}
+
+type GetClusterOptionOpenIdConnectDiscoveryArray []GetClusterOptionOpenIdConnectDiscoveryInput
+
+func (GetClusterOptionOpenIdConnectDiscoveryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectDiscoveryArray) ToGetClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return i.ToGetClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectDiscoveryArray) ToGetClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectDiscoveryArrayOutput)
+}
+
+type GetClusterOptionOpenIdConnectDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryOutput) ToGetClusterOptionOpenIdConnectDiscoveryOutput() GetClusterOptionOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryOutput) ToGetClusterOptionOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryOutput) IsOpenIdConnectDiscoveryEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectDiscovery) bool { return v.IsOpenIdConnectDiscoveryEnabled }).(pulumi.BoolOutput)
+}
+
+type GetClusterOptionOpenIdConnectDiscoveryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectDiscoveryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryArrayOutput) ToGetClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryArrayOutput) ToGetClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectDiscoveryArrayOutput) Index(i pulumi.IntInput) GetClusterOptionOpenIdConnectDiscoveryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionOpenIdConnectDiscovery {
+		return vs[0].([]GetClusterOptionOpenIdConnectDiscovery)[vs[1].(int)]
+	}).(GetClusterOptionOpenIdConnectDiscoveryOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfig struct {
+	CaCertificate              string                                                                `pulumi:"caCertificate"`
+	ClientId                   string                                                                `pulumi:"clientId"`
+	GroupsClaim                string                                                                `pulumi:"groupsClaim"`
+	GroupsPrefix               string                                                                `pulumi:"groupsPrefix"`
+	IsOpenIdConnectAuthEnabled bool                                                                  `pulumi:"isOpenIdConnectAuthEnabled"`
+	IssuerUrl                  string                                                                `pulumi:"issuerUrl"`
+	RequiredClaims             []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim `pulumi:"requiredClaims"`
+	SigningAlgorithms          []string                                                              `pulumi:"signingAlgorithms"`
+	UsernameClaim              string                                                                `pulumi:"usernameClaim"`
+	UsernamePrefix             string                                                                `pulumi:"usernamePrefix"`
+}
+
+// GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput is an input type that accepts GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs and GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput` via:
+//
+//	GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{...}
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs struct {
+	CaCertificate              pulumi.StringInput                                                            `pulumi:"caCertificate"`
+	ClientId                   pulumi.StringInput                                                            `pulumi:"clientId"`
+	GroupsClaim                pulumi.StringInput                                                            `pulumi:"groupsClaim"`
+	GroupsPrefix               pulumi.StringInput                                                            `pulumi:"groupsPrefix"`
+	IsOpenIdConnectAuthEnabled pulumi.BoolInput                                                              `pulumi:"isOpenIdConnectAuthEnabled"`
+	IssuerUrl                  pulumi.StringInput                                                            `pulumi:"issuerUrl"`
+	RequiredClaims             GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput `pulumi:"requiredClaims"`
+	SigningAlgorithms          pulumi.StringArrayInput                                                       `pulumi:"signingAlgorithms"`
+	UsernameClaim              pulumi.StringInput                                                            `pulumi:"usernameClaim"`
+	UsernamePrefix             pulumi.StringInput                                                            `pulumi:"usernamePrefix"`
+}
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return i.ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+// GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput is an input type that accepts GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray and GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput` via:
+//
+//	GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray{ GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{...} }
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray []GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return i.ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) CaCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.CaCertificate }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsClaim() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsClaim }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsPrefix }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IsOpenIdConnectAuthEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) bool {
+		return v.IsOpenIdConnectAuthEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IssuerUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.IssuerUrl }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) RequiredClaims() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return v.RequiredClaims
+	}).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) SigningAlgorithms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) []string { return v.SigningAlgorithms }).(pulumi.StringArrayOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernameClaim() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernameClaim }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernamePrefix }).(pulumi.StringOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) Index(i pulumi.IntInput) GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionOpenIdConnectTokenAuthenticationConfig {
+		return vs[0].([]GetClusterOptionOpenIdConnectTokenAuthenticationConfig)[vs[1].(int)]
+	}).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput is an input type that accepts GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs and GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput` via:
+//
+//	GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...}
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return i.ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
+}
+
+// GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput is an input type that accepts GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray and GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput` via:
+//
+//	GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{ GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...} }
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+	ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray []GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return i.ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToGetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) Index(i pulumi.IntInput) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return vs[0].([]GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)[vs[1].(int)]
+	}).(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
 }
 
 type GetClusterOptionPersistentVolumeConfig struct {
@@ -10332,6 +11285,8 @@ type GetClustersCluster struct {
 	Metadatas []GetClustersClusterMetadata `pulumi:"metadatas"`
 	// The name to filter on.
 	Name string `pulumi:"name"`
+	// The cluster-specific OpenID Connect Discovery endpoint
+	OpenIdConnectDiscoveryEndpoint string `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// Optional attributes for the cluster.
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
@@ -10382,6 +11337,8 @@ type GetClustersClusterArgs struct {
 	Metadatas GetClustersClusterMetadataArrayInput `pulumi:"metadatas"`
 	// The name to filter on.
 	Name pulumi.StringInput `pulumi:"name"`
+	// The cluster-specific OpenID Connect Discovery endpoint
+	OpenIdConnectDiscoveryEndpoint pulumi.StringInput `pulumi:"openIdConnectDiscoveryEndpoint"`
 	// Optional attributes for the cluster.
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
@@ -10513,6 +11470,11 @@ func (o GetClustersClusterOutput) Metadatas() GetClustersClusterMetadataArrayOut
 // The name to filter on.
 func (o GetClustersClusterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The cluster-specific OpenID Connect Discovery endpoint
+func (o GetClustersClusterOutput) OpenIdConnectDiscoveryEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersCluster) string { return v.OpenIdConnectDiscoveryEndpoint }).(pulumi.StringOutput)
 }
 
 // Optional attributes for the cluster.
@@ -11281,6 +12243,10 @@ type GetClustersClusterOption struct {
 	AdmissionControllerOptions []GetClustersClusterOptionAdmissionControllerOption `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs []GetClustersClusterOptionKubernetesNetworkConfig `pulumi:"kubernetesNetworkConfigs"`
+	// The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscoveries []GetClustersClusterOptionOpenIdConnectDiscovery `pulumi:"openIdConnectDiscoveries"`
+	// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+	OpenIdConnectTokenAuthenticationConfigs []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs []GetClustersClusterOptionPersistentVolumeConfig `pulumi:"persistentVolumeConfigs"`
 	// Configuration to be applied to load balancers created by Kubernetes services
@@ -11307,6 +12273,10 @@ type GetClustersClusterOptionArgs struct {
 	AdmissionControllerOptions GetClustersClusterOptionAdmissionControllerOptionArrayInput `pulumi:"admissionControllerOptions"`
 	// Network configuration for Kubernetes.
 	KubernetesNetworkConfigs GetClustersClusterOptionKubernetesNetworkConfigArrayInput `pulumi:"kubernetesNetworkConfigs"`
+	// The property that define the status of the OIDC Discovery feature for a cluster.
+	OpenIdConnectDiscoveries GetClustersClusterOptionOpenIdConnectDiscoveryArrayInput `pulumi:"openIdConnectDiscoveries"`
+	// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+	OpenIdConnectTokenAuthenticationConfigs GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput `pulumi:"openIdConnectTokenAuthenticationConfigs"`
 	// Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
 	PersistentVolumeConfigs GetClustersClusterOptionPersistentVolumeConfigArrayInput `pulumi:"persistentVolumeConfigs"`
 	// Configuration to be applied to load balancers created by Kubernetes services
@@ -11383,6 +12353,20 @@ func (o GetClustersClusterOptionOutput) KubernetesNetworkConfigs() GetClustersCl
 	return o.ApplyT(func(v GetClustersClusterOption) []GetClustersClusterOptionKubernetesNetworkConfig {
 		return v.KubernetesNetworkConfigs
 	}).(GetClustersClusterOptionKubernetesNetworkConfigArrayOutput)
+}
+
+// The property that define the status of the OIDC Discovery feature for a cluster.
+func (o GetClustersClusterOptionOutput) OpenIdConnectDiscoveries() GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOption) []GetClustersClusterOptionOpenIdConnectDiscovery {
+		return v.OpenIdConnectDiscoveries
+	}).(GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput)
+}
+
+// The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+func (o GetClustersClusterOptionOutput) OpenIdConnectTokenAuthenticationConfigs() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOption) []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig {
+		return v.OpenIdConnectTokenAuthenticationConfigs
+	}).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput)
 }
 
 // Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
@@ -11729,6 +12713,397 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionKubernetesNetworkConfig {
 		return vs[0].([]GetClustersClusterOptionKubernetesNetworkConfig)[vs[1].(int)]
 	}).(GetClustersClusterOptionKubernetesNetworkConfigOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectDiscovery struct {
+	// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+	IsOpenIdConnectDiscoveryEnabled bool `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+// GetClustersClusterOptionOpenIdConnectDiscoveryInput is an input type that accepts GetClustersClusterOptionOpenIdConnectDiscoveryArgs and GetClustersClusterOptionOpenIdConnectDiscoveryOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectDiscoveryInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectDiscoveryArgs{...}
+type GetClustersClusterOptionOpenIdConnectDiscoveryInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectDiscoveryOutput() GetClustersClusterOptionOpenIdConnectDiscoveryOutput
+	ToGetClustersClusterOptionOpenIdConnectDiscoveryOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectDiscoveryArgs struct {
+	// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+	IsOpenIdConnectDiscoveryEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectDiscoveryEnabled"`
+}
+
+func (GetClustersClusterOptionOpenIdConnectDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectDiscoveryArgs) ToGetClustersClusterOptionOpenIdConnectDiscoveryOutput() GetClustersClusterOptionOpenIdConnectDiscoveryOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectDiscoveryOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectDiscoveryArgs) ToGetClustersClusterOptionOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectDiscoveryOutput)
+}
+
+// GetClustersClusterOptionOpenIdConnectDiscoveryArrayInput is an input type that accepts GetClustersClusterOptionOpenIdConnectDiscoveryArray and GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectDiscoveryArrayInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectDiscoveryArray{ GetClustersClusterOptionOpenIdConnectDiscoveryArgs{...} }
+type GetClustersClusterOptionOpenIdConnectDiscoveryArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput
+	ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectDiscoveryArray []GetClustersClusterOptionOpenIdConnectDiscoveryInput
+
+func (GetClustersClusterOptionOpenIdConnectDiscoveryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectDiscoveryArray) ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectDiscoveryArray) ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryOutput) ToGetClustersClusterOptionOpenIdConnectDiscoveryOutput() GetClustersClusterOptionOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryOutput) ToGetClustersClusterOptionOpenIdConnectDiscoveryOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryOutput {
+	return o
+}
+
+// Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryOutput) IsOpenIdConnectDiscoveryEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectDiscovery) bool { return v.IsOpenIdConnectDiscoveryEnabled }).(pulumi.BoolOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectDiscovery)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput) ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput() GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput) ToGetClustersClusterOptionOpenIdConnectDiscoveryArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionOpenIdConnectDiscoveryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionOpenIdConnectDiscovery {
+		return vs[0].([]GetClustersClusterOptionOpenIdConnectDiscovery)[vs[1].(int)]
+	}).(GetClustersClusterOptionOpenIdConnectDiscoveryOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig struct {
+	// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate string `pulumi:"caCertificate"`
+	// A client id that all tokens must be issued for.
+	ClientId string `pulumi:"clientId"`
+	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim string `pulumi:"groupsClaim"`
+	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix string `pulumi:"groupsPrefix"`
+	// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled bool `pulumi:"isOpenIdConnectAuthEnabled"`
+	// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl string `pulumi:"issuerUrl"`
+	// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim `pulumi:"requiredClaims"`
+	// The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms []string `pulumi:"signingAlgorithms"`
+	// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim string `pulumi:"usernameClaim"`
+	// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix string `pulumi:"usernamePrefix"`
+}
+
+// GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigInput is an input type that accepts GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs and GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{...}
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs struct {
+	// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+	CaCertificate pulumi.StringInput `pulumi:"caCertificate"`
+	// A client id that all tokens must be issued for.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+	GroupsClaim pulumi.StringInput `pulumi:"groupsClaim"`
+	// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+	GroupsPrefix pulumi.StringInput `pulumi:"groupsPrefix"`
+	// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+	IsOpenIdConnectAuthEnabled pulumi.BoolInput `pulumi:"isOpenIdConnectAuthEnabled"`
+	// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+	IssuerUrl pulumi.StringInput `pulumi:"issuerUrl"`
+	// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+	RequiredClaims GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput `pulumi:"requiredClaims"`
+	// The signing algorithms accepted. Default is ["RS256"].
+	SigningAlgorithms pulumi.StringArrayInput `pulumi:"signingAlgorithms"`
+	// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+	UsernameClaim pulumi.StringInput `pulumi:"usernameClaim"`
+	// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+	UsernamePrefix pulumi.StringInput `pulumi:"usernamePrefix"`
+}
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+// GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput is an input type that accepts GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray and GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray{ GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{...} }
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigInput
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return o
+}
+
+// A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) CaCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.CaCertificate }).(pulumi.StringOutput)
+}
+
+// A client id that all tokens must be issued for.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsClaim() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsClaim }).(pulumi.StringOutput)
+}
+
+// Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) GroupsPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.GroupsPrefix }).(pulumi.StringOutput)
+}
+
+// Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IsOpenIdConnectAuthEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) bool {
+		return v.IsOpenIdConnectAuthEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) IssuerUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.IssuerUrl }).(pulumi.StringOutput)
+}
+
+// A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) RequiredClaims() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return v.RequiredClaims
+	}).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+// The signing algorithms accepted. Default is ["RS256"].
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) SigningAlgorithms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) []string {
+		return v.SigningAlgorithms
+	}).(pulumi.StringArrayOutput)
+}
+
+// JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernameClaim() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernameClaim }).(pulumi.StringOutput)
+}
+
+// Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput) UsernamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig) string { return v.UsernamePrefix }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig {
+		return vs[0].([]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfig)[vs[1].(int)]
+	}).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim struct {
+	// The key of the pair.
+	Key string `pulumi:"key"`
+	// The value of the pair.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput is an input type that accepts GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs and GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...}
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs struct {
+	// The key of the pair.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of the pair.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
+}
+
+// GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput is an input type that accepts GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray and GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput` via:
+//
+//	GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{ GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{...} }
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+	ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray []GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return i.ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return o
+}
+
+// The key of the pair.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The value of the pair.
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)(nil)).Elem()
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput() GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) ToGetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim {
+		return vs[0].([]GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaim)[vs[1].(int)]
+	}).(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput)
 }
 
 type GetClustersClusterOptionPersistentVolumeConfig struct {
@@ -18771,6 +20146,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsAdmissionControllerOptionsPtrInput)(nil)).Elem(), ClusterOptionsAdmissionControllerOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsKubernetesNetworkConfigInput)(nil)).Elem(), ClusterOptionsKubernetesNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsKubernetesNetworkConfigPtrInput)(nil)).Elem(), ClusterOptionsKubernetesNetworkConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectDiscoveryInput)(nil)).Elem(), ClusterOptionsOpenIdConnectDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectDiscoveryPtrInput)(nil)).Elem(), ClusterOptionsOpenIdConnectDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigInput)(nil)).Elem(), ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrInput)(nil)).Elem(), ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimInput)(nil)).Elem(), ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput)(nil)).Elem(), ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsPersistentVolumeConfigInput)(nil)).Elem(), ClusterOptionsPersistentVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsPersistentVolumeConfigPtrInput)(nil)).Elem(), ClusterOptionsPersistentVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOptionsServiceLbConfigInput)(nil)).Elem(), ClusterOptionsServiceLbConfigArgs{})
@@ -18881,6 +20262,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfigInput)(nil)).Elem(), GetClusterOptionKubernetesNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionKubernetesNetworkConfigArrayInput)(nil)).Elem(), GetClusterOptionKubernetesNetworkConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectDiscoveryInput)(nil)).Elem(), GetClusterOptionOpenIdConnectDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectDiscoveryArrayInput)(nil)).Elem(), GetClusterOptionOpenIdConnectDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigInput)(nil)).Elem(), GetClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput)(nil)).Elem(), GetClusterOptionOpenIdConnectTokenAuthenticationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput)(nil)).Elem(), GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput)(nil)).Elem(), GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionPersistentVolumeConfigInput)(nil)).Elem(), GetClusterOptionPersistentVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionPersistentVolumeConfigArrayInput)(nil)).Elem(), GetClusterOptionPersistentVolumeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionServiceLbConfigInput)(nil)).Elem(), GetClusterOptionServiceLbConfigArgs{})
@@ -18911,6 +20298,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionAdmissionControllerOptionArrayInput)(nil)).Elem(), GetClustersClusterOptionAdmissionControllerOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionKubernetesNetworkConfigInput)(nil)).Elem(), GetClustersClusterOptionKubernetesNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionKubernetesNetworkConfigArrayInput)(nil)).Elem(), GetClustersClusterOptionKubernetesNetworkConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectDiscoveryInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectDiscoveryArrayInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayInput)(nil)).Elem(), GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionPersistentVolumeConfigInput)(nil)).Elem(), GetClustersClusterOptionPersistentVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionPersistentVolumeConfigArrayInput)(nil)).Elem(), GetClustersClusterOptionPersistentVolumeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterOptionServiceLbConfigInput)(nil)).Elem(), GetClustersClusterOptionServiceLbConfigArgs{})
@@ -19047,6 +20440,12 @@ func init() {
 	pulumi.RegisterOutputType(ClusterOptionsAdmissionControllerOptionsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsKubernetesNetworkConfigOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsKubernetesNetworkConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectDiscoveryOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectDiscoveryPtrOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectTokenAuthenticationConfigOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectTokenAuthenticationConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput{})
+	pulumi.RegisterOutputType(ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsPersistentVolumeConfigOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsPersistentVolumeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOptionsServiceLbConfigOutput{})
@@ -19157,6 +20556,12 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionKubernetesNetworkConfigOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionKubernetesNetworkConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectDiscoveryOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectTokenAuthenticationConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionPersistentVolumeConfigOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionPersistentVolumeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterOptionServiceLbConfigOutput{})
@@ -19187,6 +20592,12 @@ func init() {
 	pulumi.RegisterOutputType(GetClustersClusterOptionAdmissionControllerOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOptionKubernetesNetworkConfigOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOptionKubernetesNetworkConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectDiscoveryOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterOptionOpenIdConnectTokenAuthenticationConfigRequiredClaimArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOptionPersistentVolumeConfigOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOptionPersistentVolumeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOptionServiceLbConfigOutput{})

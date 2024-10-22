@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataGroupToRolesMappingArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,6 +93,21 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    @Import(name="groupToRolesMapping")
+    private @Nullable Output<DeploymentOggDataGroupToRolesMappingArgs> groupToRolesMapping;
+
+    /**
+     * @return (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+     * 
+     */
+    public Optional<Output<DeploymentOggDataGroupToRolesMappingArgs>> groupToRolesMapping() {
+        return Optional.ofNullable(this.groupToRolesMapping);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      * 
      */
@@ -159,6 +175,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         this.certificate = $.certificate;
         this.credentialStore = $.credentialStore;
         this.deploymentName = $.deploymentName;
+        this.groupToRolesMapping = $.groupToRolesMapping;
         this.identityDomainId = $.identityDomainId;
         this.key = $.key;
         this.oggVersion = $.oggVersion;
@@ -286,6 +303,27 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder deploymentName(String deploymentName) {
             return deploymentName(Output.of(deploymentName));
+        }
+
+        /**
+         * @param groupToRolesMapping (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupToRolesMapping(@Nullable Output<DeploymentOggDataGroupToRolesMappingArgs> groupToRolesMapping) {
+            $.groupToRolesMapping = groupToRolesMapping;
+            return this;
+        }
+
+        /**
+         * @param groupToRolesMapping (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder groupToRolesMapping(DeploymentOggDataGroupToRolesMappingArgs groupToRolesMapping) {
+            return groupToRolesMapping(Output.of(groupToRolesMapping));
         }
 
         /**

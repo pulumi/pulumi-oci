@@ -14,10 +14,10 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-        /// private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets a list of all records in the specified RRSet.
+        /// 
+        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -35,7 +35,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         Rtype = rrsetRtype,
         ///         ZoneNameOrId = testZone.Id,
-        ///         CompartmentId = compartmentId,
         ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
@@ -49,10 +48,10 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
         /// 
-        /// Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-        /// private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        /// provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        /// parameter is required.
+        /// Gets a list of all records in the specified RRSet.
+        /// 
+        /// The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+        /// and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
         /// 
         /// 
         /// ## Example Usage
@@ -70,7 +69,6 @@ namespace Pulumi.Oci.Dns
         ///         Domain = rrsetDomain,
         ///         Rtype = rrsetRtype,
         ///         ZoneNameOrId = testZone.Id,
-        ///         CompartmentId = compartmentId,
         ///         Scope = rrsetScope,
         ///         ViewId = testView.Id,
         ///     });
@@ -86,7 +84,9 @@ namespace Pulumi.Oci.Dns
     public sealed class GetRrsetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment the resource belongs to.
+        /// The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -105,13 +105,12 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// Specifies to operate only on resources that have a matching DNS scope.
-        /// This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
         /// </summary>
         [Input("scope")]
         public string? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public string? ViewId { get; set; }
@@ -137,7 +136,9 @@ namespace Pulumi.Oci.Dns
     public sealed class GetRrsetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment the resource belongs to.
+        /// The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -156,13 +157,12 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// Specifies to operate only on resources that have a matching DNS scope.
-        /// This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// The OCID of the view the resource is associated with.
+        /// The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         /// </summary>
         [Input("viewId")]
         public Input<string>? ViewId { get; set; }

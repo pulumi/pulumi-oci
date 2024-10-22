@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Dns.Outputs
     public sealed class GetRecordsRecordResult
     {
         /// <summary>
-        /// The OCID of the compartment the resource belongs to.
+        /// The OCID of the compartment the zone belongs to.
+        /// 
+        /// This parameter is deprecated and should be omitted.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -42,7 +44,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string Rtype;
         /// <summary>
-        /// The Time To Live for the record, in seconds.
+        /// The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
         /// </summary>
         public readonly int? Ttl;
         /// <summary>

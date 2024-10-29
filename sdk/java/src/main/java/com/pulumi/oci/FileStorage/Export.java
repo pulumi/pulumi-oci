@@ -9,6 +9,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.ExportArgs;
 import com.pulumi.oci.FileStorage.inputs.ExportState;
 import com.pulumi.oci.FileStorage.outputs.ExportExportOption;
+import com.pulumi.oci.FileStorage.outputs.ExportLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -34,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FileStorage.Export;
  * import com.pulumi.oci.FileStorage.ExportArgs;
  * import com.pulumi.oci.FileStorage.inputs.ExportExportOptionArgs;
+ * import com.pulumi.oci.FileStorage.inputs.ExportLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -62,6 +64,12 @@ import javax.annotation.Nullable;
  *                 .requirePrivilegedSourcePort(exportExportOptionsRequirePrivilegedSourcePort)
  *                 .build())
  *             .isIdmapGroupsForSysAuth(exportIsIdmapGroupsForSysAuth)
+ *             .locks(ExportLockArgs.builder()
+ *                 .type(exportLocksType)
+ *                 .message(exportLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(exportLocksTimeCreated)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -156,6 +164,26 @@ public class Export extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isIdmapGroupsForSysAuth() {
         return this.isIdmapGroupsForSysAuth;
+    }
+    @com.pulumi.core.annotations.Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @com.pulumi.core.annotations.Export(name="locks", refs={List.class,ExportLock.class}, tree="[0,1]")
+    private Output<List<ExportLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<ExportLock>> locks() {
+        return this.locks;
     }
     /**
      * Path used to access the associated file system.

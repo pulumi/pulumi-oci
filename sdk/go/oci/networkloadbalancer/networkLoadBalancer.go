@@ -73,6 +73,8 @@ type NetworkLoadBalancer struct {
 	NlbIpVersion pulumi.StringOutput `pulumi:"nlbIpVersion"`
 	// An array of reserved Ips.
 	ReservedIps NetworkLoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
+	// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the network load balancer.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -176,6 +178,8 @@ type networkLoadBalancerState struct {
 	NlbIpVersion *string `pulumi:"nlbIpVersion"`
 	// An array of reserved Ips.
 	ReservedIps []NetworkLoadBalancerReservedIp `pulumi:"reservedIps"`
+	// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the network load balancer.
 	State *string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -241,6 +245,8 @@ type NetworkLoadBalancerState struct {
 	NlbIpVersion pulumi.StringPtrInput
 	// An array of reserved Ips.
 	ReservedIps NetworkLoadBalancerReservedIpArrayInput
+	// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the network load balancer.
 	State pulumi.StringPtrInput
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -306,6 +312,8 @@ type networkLoadBalancerArgs struct {
 	NlbIpVersion *string `pulumi:"nlbIpVersion"`
 	// An array of reserved Ips.
 	ReservedIps []NetworkLoadBalancerReservedIp `pulumi:"reservedIps"`
+	// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetId string `pulumi:"subnetId"`
 	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -360,6 +368,8 @@ type NetworkLoadBalancerArgs struct {
 	NlbIpVersion pulumi.StringPtrInput
 	// An array of reserved Ips.
 	ReservedIps NetworkLoadBalancerReservedIpArrayInput
+	// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetId pulumi.StringInput
 	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -543,6 +553,11 @@ func (o NetworkLoadBalancerOutput) NlbIpVersion() pulumi.StringOutput {
 // An array of reserved Ips.
 func (o NetworkLoadBalancerOutput) ReservedIps() NetworkLoadBalancerReservedIpArrayOutput {
 	return o.ApplyT(func(v *NetworkLoadBalancer) NetworkLoadBalancerReservedIpArrayOutput { return v.ReservedIps }).(NetworkLoadBalancerReservedIpArrayOutput)
+}
+
+// (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+func (o NetworkLoadBalancerOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the network load balancer.

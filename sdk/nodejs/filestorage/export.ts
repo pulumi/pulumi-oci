@@ -33,6 +33,12 @@ import * as utilities from "../utilities";
  *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort,
  *     }],
  *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth,
+ *     locks: [{
+ *         type: exportLocksType,
+ *         message: exportLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: exportLocksTimeCreated,
+ *     }],
  * });
  * ```
  *
@@ -98,6 +104,11 @@ export class Export extends pulumi.CustomResource {
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
     public readonly isIdmapGroupsForSysAuth!: pulumi.Output<boolean>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.FileStorage.ExportLock[]>;
     /**
      * Path used to access the associated file system.
      *
@@ -136,6 +147,8 @@ export class Export extends pulumi.CustomResource {
             resourceInputs["exportSetId"] = state ? state.exportSetId : undefined;
             resourceInputs["fileSystemId"] = state ? state.fileSystemId : undefined;
             resourceInputs["isIdmapGroupsForSysAuth"] = state ? state.isIdmapGroupsForSysAuth : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["path"] = state ? state.path : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -154,6 +167,8 @@ export class Export extends pulumi.CustomResource {
             resourceInputs["exportSetId"] = args ? args.exportSetId : undefined;
             resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
             resourceInputs["isIdmapGroupsForSysAuth"] = args ? args.isIdmapGroupsForSysAuth : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["path"] = args ? args.path : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -193,6 +208,11 @@ export interface ExportState {
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
     isIdmapGroupsForSysAuth?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[]>;
     /**
      * Path used to access the associated file system.
      *
@@ -245,6 +265,11 @@ export interface ExportArgs {
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
     isIdmapGroupsForSysAuth?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[]>;
     /**
      * Path used to access the associated file system.
      *

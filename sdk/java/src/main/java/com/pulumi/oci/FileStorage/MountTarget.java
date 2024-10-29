@@ -11,7 +11,9 @@ import com.pulumi.oci.FileStorage.MountTargetArgs;
 import com.pulumi.oci.FileStorage.inputs.MountTargetState;
 import com.pulumi.oci.FileStorage.outputs.MountTargetKerberos;
 import com.pulumi.oci.FileStorage.outputs.MountTargetLdapIdmap;
+import com.pulumi.oci.FileStorage.outputs.MountTargetLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +70,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FileStorage.MountTargetArgs;
  * import com.pulumi.oci.FileStorage.inputs.MountTargetKerberosArgs;
  * import com.pulumi.oci.FileStorage.inputs.MountTargetLdapIdmapArgs;
+ * import com.pulumi.oci.FileStorage.inputs.MountTargetLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -91,6 +94,7 @@ import javax.annotation.Nullable;
  *             .hostnameLabel(mountTargetHostnameLabel)
  *             .idmapType(mountTargetIdmapType)
  *             .ipAddress(mountTargetIpAddress)
+ *             .isLockOverride(mountTargetIsLockOverride)
  *             .kerberos(MountTargetKerberosArgs.builder()
  *                 .kerberosRealm(mountTargetKerberosKerberosRealm)
  *                 .backupKeyTabSecretVersion(mountTargetKerberosBackupKeyTabSecretVersion)
@@ -107,6 +111,12 @@ import javax.annotation.Nullable;
  *                 .outboundConnector2id(testOutboundConnector2.id())
  *                 .schemaType(mountTargetLdapIdmapSchemaType)
  *                 .userSearchBase(mountTargetLdapIdmapUserSearchBase)
+ *                 .build())
+ *             .locks(MountTargetLockArgs.builder()
+ *                 .type(mountTargetLocksType)
+ *                 .message(mountTargetLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(mountTargetLocksTimeCreated)
  *                 .build())
  *             .nsgIds(mountTargetNsgIds)
  *             .requestedThroughput(mountTargetRequestedThroughput)
@@ -268,6 +278,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
         return this.ipAddress;
     }
     /**
+     * (Updatable) Whether to override locks (if any exist).
+     * 
+     */
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    /**
+     * @return (Updatable) Whether to override locks (if any exist).
+     * 
+     */
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
      * (Updatable) Kerberos details needed to create configuration.
      * 
      */
@@ -308,6 +332,20 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,MountTargetLock.class}, tree="[0,1]")
+    private Output<List<MountTargetLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<MountTargetLock>> locks() {
+        return this.locks;
     }
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).

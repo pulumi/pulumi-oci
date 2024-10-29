@@ -304,7 +304,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> int:
         """
-        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -341,7 +341,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> str:
         """
-        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -673,7 +673,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="vmFailoverReservation")
     def vm_failover_reservation(self) -> int:
         """
-        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 

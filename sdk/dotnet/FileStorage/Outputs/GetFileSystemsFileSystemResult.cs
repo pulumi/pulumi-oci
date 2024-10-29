@@ -58,6 +58,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
         /// </summary>
         public readonly bool IsHydrated;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         /// </summary>
@@ -70,6 +71,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFileSystemsFileSystemLockResult> Locks;
         /// <summary>
         /// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         /// </summary>
@@ -121,11 +126,15 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             bool isHydrated,
 
+            bool isLockOverride,
+
             bool isTargetable,
 
             string kmsKeyId,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetFileSystemsFileSystemLockResult> locks,
 
             string meteredBytes,
 
@@ -151,9 +160,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
             Id = id;
             IsCloneParent = isCloneParent;
             IsHydrated = isHydrated;
+            IsLockOverride = isLockOverride;
             IsTargetable = isTargetable;
             KmsKeyId = kmsKeyId;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             MeteredBytes = meteredBytes;
             ReplicationTargetId = replicationTargetId;
             SourceDetails = sourceDetails;

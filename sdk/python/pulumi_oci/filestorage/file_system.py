@@ -29,7 +29,9 @@ class FileSystemArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a FileSystem resource.
@@ -48,6 +50,7 @@ class FileSystemArgs:
                May be unset as a blank value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
+        :param pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -64,8 +67,12 @@ class FileSystemArgs:
             pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if source_snapshot_id is not None:
             pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
 
@@ -172,6 +179,15 @@ class FileSystemArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -182,6 +198,18 @@ class FileSystemArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="sourceSnapshotId")
@@ -210,9 +238,11 @@ class _FileSystemState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_clone_parent: Optional[pulumi.Input[bool]] = None,
                  is_hydrated: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  is_targetable: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]] = None,
                  metered_bytes: Optional[pulumi.Input[str]] = None,
                  replication_target_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]]] = None,
@@ -241,6 +271,7 @@ class _FileSystemState:
         :param pulumi.Input[bool] is_targetable: Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]] source_details: Source information for the file system.
@@ -270,12 +301,16 @@ class _FileSystemState:
             pulumi.set(__self__, "is_clone_parent", is_clone_parent)
         if is_hydrated is not None:
             pulumi.set(__self__, "is_hydrated", is_hydrated)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_targetable is not None:
             pulumi.set(__self__, "is_targetable", is_targetable)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if metered_bytes is not None:
             pulumi.set(__self__, "metered_bytes", metered_bytes)
         if replication_target_id is not None:
@@ -428,6 +463,15 @@ class _FileSystemState:
         pulumi.set(self, "is_hydrated", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="isTargetable")
     def is_targetable(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -462,6 +506,18 @@ class _FileSystemState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="meteredBytes")
@@ -549,7 +605,9 @@ class FileSystem(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -604,6 +662,12 @@ class FileSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
+            locks=[{
+                "type": file_system_locks_type,
+                "message": file_system_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": file_system_locks_time_created,
+            }],
             source_snapshot_id=test_snapshot["id"])
         ```
 
@@ -632,6 +696,7 @@ class FileSystem(pulumi.CustomResource):
                May be unset as a blank value.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         ...
@@ -692,6 +757,12 @@ class FileSystem(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kms_key_id=test_key["id"],
+            locks=[{
+                "type": file_system_locks_type,
+                "message": file_system_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": file_system_locks_time_created,
+            }],
             source_snapshot_id=test_snapshot["id"])
         ```
 
@@ -726,7 +797,9 @@ class FileSystem(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -749,7 +822,9 @@ class FileSystem(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["filesystem_snapshot_policy_id"] = filesystem_snapshot_policy_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["kms_key_id"] = kms_key_id
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["source_snapshot_id"] = source_snapshot_id
             __props__.__dict__["clone_count"] = None
             __props__.__dict__["is_clone_parent"] = None
@@ -782,9 +857,11 @@ class FileSystem(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_clone_parent: Optional[pulumi.Input[bool]] = None,
             is_hydrated: Optional[pulumi.Input[bool]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             is_targetable: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]]] = None,
             metered_bytes: Optional[pulumi.Input[str]] = None,
             replication_target_id: Optional[pulumi.Input[str]] = None,
             source_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]]] = None,
@@ -818,6 +895,7 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[bool] is_targetable: Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemLockArgs', 'FileSystemLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileSystemSourceDetailArgs', 'FileSystemSourceDetailArgsDict']]]] source_details: Source information for the file system.
@@ -840,9 +918,11 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_clone_parent"] = is_clone_parent
         __props__.__dict__["is_hydrated"] = is_hydrated
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["is_targetable"] = is_targetable
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["metered_bytes"] = metered_bytes
         __props__.__dict__["replication_target_id"] = replication_target_id
         __props__.__dict__["source_details"] = source_details
@@ -946,6 +1026,11 @@ class FileSystem(pulumi.CustomResource):
         return pulumi.get(self, "is_hydrated")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="isTargetable")
     def is_targetable(self) -> pulumi.Output[bool]:
         """
@@ -968,6 +1053,14 @@ class FileSystem(pulumi.CustomResource):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.FileSystemLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="meteredBytes")

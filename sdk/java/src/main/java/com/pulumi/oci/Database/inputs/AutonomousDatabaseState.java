@@ -11,6 +11,8 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionUrlArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseEncryptionKeyArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseEncryptionKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLocalStandbyDbArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
@@ -678,6 +680,36 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    @Import(name="encryptionKey")
+    private @Nullable Output<AutonomousDatabaseEncryptionKeyArgs> encryptionKey;
+
+    /**
+     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseEncryptionKeyArgs>> encryptionKey() {
+        return Optional.ofNullable(this.encryptionKey);
+    }
+
+    /**
+     * Key History Entry.
+     * 
+     */
+    @Import(name="encryptionKeyHistoryEntries")
+    private @Nullable Output<List<AutonomousDatabaseEncryptionKeyHistoryEntryArgs>> encryptionKeyHistoryEntries;
+
+    /**
+     * @return Key History Entry.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabaseEncryptionKeyHistoryEntryArgs>>> encryptionKeyHistoryEntries() {
+        return Optional.ofNullable(this.encryptionKeyHistoryEntries);
     }
 
     /**
@@ -2277,6 +2309,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.disasterRecoveryRegionType = $.disasterRecoveryRegionType;
         this.disasterRecoveryType = $.disasterRecoveryType;
         this.displayName = $.displayName;
+        this.encryptionKey = $.encryptionKey;
+        this.encryptionKeyHistoryEntries = $.encryptionKeyHistoryEntries;
         this.failedDataRecoveryInSeconds = $.failedDataRecoveryInSeconds;
         this.freeformTags = $.freeformTags;
         this.inMemoryAreaInGbs = $.inMemoryAreaInGbs;
@@ -3347,6 +3381,58 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptionKey (Updatable) Details of the Autonomous Database encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKey(@Nullable Output<AutonomousDatabaseEncryptionKeyArgs> encryptionKey) {
+            $.encryptionKey = encryptionKey;
+            return this;
+        }
+
+        /**
+         * @param encryptionKey (Updatable) Details of the Autonomous Database encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyArgs encryptionKey) {
+            return encryptionKey(Output.of(encryptionKey));
+        }
+
+        /**
+         * @param encryptionKeyHistoryEntries Key History Entry.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyHistoryEntries(@Nullable Output<List<AutonomousDatabaseEncryptionKeyHistoryEntryArgs>> encryptionKeyHistoryEntries) {
+            $.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyHistoryEntries Key History Entry.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyHistoryEntries(List<AutonomousDatabaseEncryptionKeyHistoryEntryArgs> encryptionKeyHistoryEntries) {
+            return encryptionKeyHistoryEntries(Output.of(encryptionKeyHistoryEntries));
+        }
+
+        /**
+         * @param encryptionKeyHistoryEntries Key History Entry.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyHistoryEntries(AutonomousDatabaseEncryptionKeyHistoryEntryArgs... encryptionKeyHistoryEntries) {
+            return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
         }
 
         /**

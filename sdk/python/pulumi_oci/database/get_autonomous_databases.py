@@ -279,20 +279,17 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str db_version: A valid Oracle Database version for Autonomous Database.
-    :param str db_workload: The Autonomous Database workload type. The following values are valid:
-           * OLTP - indicates an Autonomous Transaction Processing database
-           * DW - indicates an Autonomous Data Warehouse database
-           * AJD - indicates an Autonomous JSON Database
-           * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-    :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
-    :param str infrastructure_type: The infrastructure type this resource belongs to.
-    :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-    :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-    :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
-    :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: The current state of the Autonomous Database.
+    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
+    :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+    :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
+    :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+    :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+    :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -385,20 +382,17 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str db_version: A valid Oracle Database version for Autonomous Database.
-    :param str db_workload: The Autonomous Database workload type. The following values are valid:
-           * OLTP - indicates an Autonomous Transaction Processing database
-           * DW - indicates an Autonomous Data Warehouse database
-           * AJD - indicates an Autonomous JSON Database
-           * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-    :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
-    :param str infrastructure_type: The infrastructure type this resource belongs to.
-    :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-    :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
-    :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
-    :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: The current state of the Autonomous Database.
+    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
+    :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
+    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+    :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
+    :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+    :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+    :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id

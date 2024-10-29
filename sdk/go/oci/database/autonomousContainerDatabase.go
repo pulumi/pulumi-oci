@@ -46,7 +46,7 @@ type AutonomousContainerDatabase struct {
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName pulumi.StringOutput `pulumi:"dbName"`
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntOutput    `pulumi:"dbSplitThreshold"`
 	DbUniqueName     pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
@@ -55,7 +55,7 @@ type AutonomousContainerDatabase struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity pulumi.StringOutput `pulumi:"distributionAffinity"`
 	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringOutput `pulumi:"dstFileVersion"`
@@ -210,7 +210,7 @@ type autonomousContainerDatabaseState struct {
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName *string `pulumi:"dbName"`
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
 	DbUniqueName     *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
@@ -219,7 +219,7 @@ type autonomousContainerDatabaseState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName *string `pulumi:"displayName"`
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity *string `pulumi:"distributionAffinity"`
 	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion *string `pulumi:"dstFileVersion"`
@@ -339,7 +339,7 @@ type AutonomousContainerDatabaseState struct {
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName pulumi.StringPtrInput
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntPtrInput
 	DbUniqueName     pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
@@ -348,7 +348,7 @@ type AutonomousContainerDatabaseState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringPtrInput
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity pulumi.StringPtrInput
 	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringPtrInput
@@ -466,7 +466,7 @@ type autonomousContainerDatabaseArgs struct {
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName *string `pulumi:"dbName"`
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
 	DbUniqueName     *string `pulumi:"dbUniqueName"`
 	// The base version for the Autonomous Container Database.
@@ -475,7 +475,7 @@ type autonomousContainerDatabaseArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity *string `pulumi:"distributionAffinity"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
@@ -542,7 +542,7 @@ type AutonomousContainerDatabaseArgs struct {
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName pulumi.StringPtrInput
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntPtrInput
 	DbUniqueName     pulumi.StringPtrInput
 	// The base version for the Autonomous Container Database.
@@ -551,7 +551,7 @@ type AutonomousContainerDatabaseArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringInput
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity pulumi.StringPtrInput
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
@@ -741,7 +741,7 @@ func (o AutonomousContainerDatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
 }
 
-// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 func (o AutonomousContainerDatabaseOutput) DbSplitThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntOutput { return v.DbSplitThreshold }).(pulumi.IntOutput)
 }
@@ -765,7 +765,7 @@ func (o AutonomousContainerDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+// Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 func (o AutonomousContainerDatabaseOutput) DistributionAffinity() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DistributionAffinity }).(pulumi.StringOutput)
 }

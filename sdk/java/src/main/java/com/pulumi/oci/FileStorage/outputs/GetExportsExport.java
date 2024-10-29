@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetExportsExportExportOption;
+import com.pulumi.oci.FileStorage.outputs.GetExportsExportLock;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -38,6 +39,12 @@ public final class GetExportsExport {
      * 
      */
     private Boolean isIdmapGroupsForSysAuth;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetExportsExportLock> locks;
     /**
      * @return Path used to access the associated file system.
      * 
@@ -90,6 +97,16 @@ public final class GetExportsExport {
     public Boolean isIdmapGroupsForSysAuth() {
         return this.isIdmapGroupsForSysAuth;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetExportsExportLock> locks() {
+        return this.locks;
+    }
     /**
      * @return Path used to access the associated file system.
      * 
@@ -126,6 +143,8 @@ public final class GetExportsExport {
         private String fileSystemId;
         private String id;
         private Boolean isIdmapGroupsForSysAuth;
+        private Boolean isLockOverride;
+        private List<GetExportsExportLock> locks;
         private String path;
         private String state;
         private String timeCreated;
@@ -137,6 +156,8 @@ public final class GetExportsExport {
     	      this.fileSystemId = defaults.fileSystemId;
     	      this.id = defaults.id;
     	      this.isIdmapGroupsForSysAuth = defaults.isIdmapGroupsForSysAuth;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.path = defaults.path;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -186,6 +207,25 @@ public final class GetExportsExport {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetExportsExportLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetExportsExport", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetExportsExportLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder path(String path) {
             if (path == null) {
               throw new MissingRequiredPropertyException("GetExportsExport", "path");
@@ -216,6 +256,8 @@ public final class GetExportsExport {
             _resultValue.fileSystemId = fileSystemId;
             _resultValue.id = id;
             _resultValue.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.path = path;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

@@ -18,6 +18,14 @@ namespace Pulumi.Oci.DataScience.Outputs
         public readonly string ArtifactContentMd5;
         public readonly string ArtifactLastModified;
         /// <summary>
+        /// Backup operation details of the model.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelsModelBackupOperationDetailResult> BackupOperationDetails;
+        /// <summary>
+        /// Back up setting details of the model.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelsModelBackupSettingResult> BackupSettings;
+        /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -58,7 +66,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Input schema file content in String format
         /// </summary>
         public readonly string InputSchema;
+        /// <summary>
+        /// Details about the lifecycle state of the model.
+        /// </summary>
+        public readonly string LifecycleDetails;
         public readonly string ModelArtifact;
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
+        public readonly string ModelVersionSetName;
         /// <summary>
         /// Output schema file content in String format
         /// </summary>
@@ -67,6 +83,14 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         /// </summary>
         public readonly string ProjectId;
+        /// <summary>
+        /// Retention operation details for the model.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelsModelRetentionOperationDetailResult> RetentionOperationDetails;
+        /// <summary>
+        /// Retention setting details of the model.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelsModelRetentionSettingResult> RetentionSettings;
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
@@ -85,6 +109,10 @@ namespace Pulumi.Oci.DataScience.Outputs
             string artifactContentMd5,
 
             string artifactLastModified,
+
+            ImmutableArray<Outputs.GetModelsModelBackupOperationDetailResult> backupOperationDetails,
+
+            ImmutableArray<Outputs.GetModelsModelBackupSettingResult> backupSettings,
 
             string compartmentId,
 
@@ -108,11 +136,19 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string inputSchema,
 
+            string lifecycleDetails,
+
             string modelArtifact,
+
+            string modelVersionSetName,
 
             string outputSchema,
 
             string projectId,
+
+            ImmutableArray<Outputs.GetModelsModelRetentionOperationDetailResult> retentionOperationDetails,
+
+            ImmutableArray<Outputs.GetModelsModelRetentionSettingResult> retentionSettings,
 
             string state,
 
@@ -122,6 +158,8 @@ namespace Pulumi.Oci.DataScience.Outputs
             ArtifactContentLength = artifactContentLength;
             ArtifactContentMd5 = artifactContentMd5;
             ArtifactLastModified = artifactLastModified;
+            BackupOperationDetails = backupOperationDetails;
+            BackupSettings = backupSettings;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             CustomMetadataLists = customMetadataLists;
@@ -133,9 +171,13 @@ namespace Pulumi.Oci.DataScience.Outputs
             FreeformTags = freeformTags;
             Id = id;
             InputSchema = inputSchema;
+            LifecycleDetails = lifecycleDetails;
             ModelArtifact = modelArtifact;
+            ModelVersionSetName = modelVersionSetName;
             OutputSchema = outputSchema;
             ProjectId = projectId;
+            RetentionOperationDetails = retentionOperationDetails;
+            RetentionSettings = retentionSettings;
             State = state;
             TimeCreated = timeCreated;
         }

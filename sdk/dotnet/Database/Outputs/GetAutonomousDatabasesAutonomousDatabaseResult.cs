@@ -43,9 +43,6 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         public readonly string AutonomousDatabaseBackupId;
-        /// <summary>
-        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// </summary>
         public readonly string AutonomousDatabaseId;
         /// <summary>
         /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -78,7 +75,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ClusterPlacementGroupId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -138,15 +135,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailResult> DbToolsDetails;
         /// <summary>
-        /// A valid Oracle Database version for Autonomous Database.
+        /// A filter to return only autonomous database resources that match the specified dbVersion.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
-        /// The Autonomous Database workload type. The following values are valid:
-        /// * OLTP - indicates an Autonomous Transaction Processing database
-        /// * DW - indicates an Autonomous Data Warehouse database
-        /// * AJD - indicates an Autonomous JSON Database
-        /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        /// A filter to return only autonomous database resources that match the specified workload type.
         /// </summary>
         public readonly string DbWorkload;
         /// <summary>
@@ -162,9 +155,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DisasterRecoveryType;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Key History Entry.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
+        /// <summary>
+        /// Details of the Autonomous Database encryption key.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult> EncryptionKeys;
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
@@ -186,7 +187,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int InMemoryPercentage;
         /// <summary>
-        /// The infrastructure type this resource belongs to.
+        /// A filter to return only resources that match the given Infrastructure Type.
         /// </summary>
         public readonly string InfrastructureType;
         /// <summary>
@@ -202,7 +203,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsAutoScalingForStorageEnabled;
         /// <summary>
-        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// A filter to return only resources that have Data Guard enabled.
         /// </summary>
         public readonly bool IsDataGuardEnabled;
         /// <summary>
@@ -214,7 +215,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsDevTier;
         /// <summary>
-        /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        /// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         /// </summary>
         public readonly bool IsFreeTier;
         /// <summary>
@@ -235,7 +236,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsReconnectCloneEnabled;
         /// <summary>
-        /// Indicates if the Autonomous Database is a refreshable clone.
+        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         /// </summary>
         public readonly bool IsRefreshableClone;
         /// <summary>
@@ -378,7 +379,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> RemoteDisasterRecoveryConfigurations;
         public readonly string RemoteDisasterRecoveryType;
         /// <summary>
-        /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
         /// </summary>
         public readonly string ResourcePoolLeaderId;
         /// <summary>
@@ -415,7 +416,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> StandbyWhitelistedIps;
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -609,6 +610,10 @@ namespace Pulumi.Oci.Database.Outputs
             string disasterRecoveryType,
 
             string displayName,
+
+            ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
+
+            ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
 
             int failedDataRecoveryInSeconds,
 
@@ -848,6 +853,8 @@ namespace Pulumi.Oci.Database.Outputs
             DisasterRecoveryRegionType = disasterRecoveryRegionType;
             DisasterRecoveryType = disasterRecoveryType;
             DisplayName = displayName;
+            EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
             Id = id;

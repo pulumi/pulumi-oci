@@ -11,6 +11,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseC
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKey;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule;
@@ -66,10 +68,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String autonomousContainerDatabaseId;
     private String autonomousDatabaseBackupId;
-    /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
     private String autonomousDatabaseId;
     /**
      * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -109,7 +107,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String clusterPlacementGroupId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
@@ -184,16 +182,12 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A filter to return only autonomous database resources that match the specified dbVersion.
      * 
      */
     private String dbVersion;
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
     private String dbWorkload;
@@ -213,10 +207,20 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String disasterRecoveryType;
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     private String displayName;
+    /**
+     * @return Key History Entry.
+     * 
+     */
+    private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    /**
+     * @return Details of the Autonomous Database encryption key.
+     * 
+     */
+    private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys;
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
@@ -243,7 +247,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer inMemoryPercentage;
     /**
-     * @return The infrastructure type this resource belongs to.
+     * @return A filter to return only resources that match the given Infrastructure Type.
      * 
      */
     private String infrastructureType;
@@ -263,7 +267,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isAutoScalingForStorageEnabled;
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return A filter to return only resources that have Data Guard enabled.
      * 
      */
     private Boolean isDataGuardEnabled;
@@ -278,7 +282,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isDevTier;
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
     private Boolean isFreeTier;
@@ -304,7 +308,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isReconnectCloneEnabled;
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      * 
      */
     private Boolean isRefreshableClone;
@@ -488,7 +492,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private List<GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
     private String remoteDisasterRecoveryType;
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
      * 
      */
     private String resourcePoolLeaderId;
@@ -533,7 +537,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<String> standbyWhitelistedIps;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     private String state;
@@ -729,10 +733,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String autonomousDatabaseBackupId() {
         return this.autonomousDatabaseBackupId;
     }
-    /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
@@ -792,7 +792,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.clusterPlacementGroupId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {
@@ -897,18 +897,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.dbToolsDetails;
     }
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A filter to return only autonomous database resources that match the specified dbVersion.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
     public String dbWorkload() {
@@ -936,11 +932,25 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.disasterRecoveryType;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Key History Entry.
+     * 
+     */
+    public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries() {
+        return this.encryptionKeyHistoryEntries;
+    }
+    /**
+     * @return Details of the Autonomous Database encryption key.
+     * 
+     */
+    public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys() {
+        return this.encryptionKeys;
     }
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
@@ -978,7 +988,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.inMemoryPercentage;
     }
     /**
-     * @return The infrastructure type this resource belongs to.
+     * @return A filter to return only resources that match the given Infrastructure Type.
      * 
      */
     public String infrastructureType() {
@@ -1006,7 +1016,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return A filter to return only resources that have Data Guard enabled.
      * 
      */
     public Boolean isDataGuardEnabled() {
@@ -1027,7 +1037,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isDevTier;
     }
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
     public Boolean isFreeTier() {
@@ -1065,7 +1075,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isReconnectCloneEnabled;
     }
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      * 
      */
     public Boolean isRefreshableClone() {
@@ -1323,7 +1333,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.remoteDisasterRecoveryType;
     }
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
      * 
      */
     public String resourcePoolLeaderId() {
@@ -1394,7 +1404,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.standbyWhitelistedIps;
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     public String state() {
@@ -1645,6 +1655,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String disasterRecoveryRegionType;
         private String disasterRecoveryType;
         private String displayName;
+        private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+        private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
         private String id;
@@ -1787,6 +1799,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
     	      this.disasterRecoveryType = defaults.disasterRecoveryType;
     	      this.displayName = defaults.displayName;
+    	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
+    	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -2228,6 +2242,28 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyHistoryEntries(List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries) {
+            if (encryptionKeyHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "encryptionKeyHistoryEntries");
+            }
+            this.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            return this;
+        }
+        public Builder encryptionKeyHistoryEntries(GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry... encryptionKeyHistoryEntries) {
+            return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
+        }
+        @CustomType.Setter
+        public Builder encryptionKeys(List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys) {
+            if (encryptionKeys == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "encryptionKeys");
+            }
+            this.encryptionKeys = encryptionKeys;
+            return this;
+        }
+        public Builder encryptionKeys(GetAutonomousDatabasesAutonomousDatabaseEncryptionKey... encryptionKeys) {
+            return encryptionKeys(List.of(encryptionKeys));
         }
         @CustomType.Setter
         public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
@@ -3105,6 +3141,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.disasterRecoveryRegionType = disasterRecoveryRegionType;
             _resultValue.disasterRecoveryType = disasterRecoveryType;
             _resultValue.displayName = displayName;
+            _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

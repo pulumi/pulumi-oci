@@ -72,6 +72,7 @@ namespace Pulumi.Oci.FileStorage
     ///         HostnameLabel = mountTargetHostnameLabel,
     ///         IdmapType = mountTargetIdmapType,
     ///         IpAddress = mountTargetIpAddress,
+    ///         IsLockOverride = mountTargetIsLockOverride,
     ///         Kerberos = new Oci.FileStorage.Inputs.MountTargetKerberosArgs
     ///         {
     ///             KerberosRealm = mountTargetKerberosKerberosRealm,
@@ -90,6 +91,16 @@ namespace Pulumi.Oci.FileStorage
     ///             OutboundConnector2id = testOutboundConnector2.Id,
     ///             SchemaType = mountTargetLdapIdmapSchemaType,
     ///             UserSearchBase = mountTargetLdapIdmapUserSearchBase,
+    ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.MountTargetLockArgs
+    ///             {
+    ///                 Type = mountTargetLocksType,
+    ///                 Message = mountTargetLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = mountTargetLocksTimeCreated,
+    ///             },
     ///         },
     ///         NsgIds = mountTargetNsgIds,
     ///         RequestedThroughput = mountTargetRequestedThroughput,
@@ -170,6 +181,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Whether to override locks (if any exist).
+        /// </summary>
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Kerberos details needed to create configuration.
         /// </summary>
         [Output("kerberos")]
@@ -186,6 +203,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.MountTargetLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -358,6 +381,12 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether to override locks (if any exist).
+        /// </summary>
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        /// <summary>
         /// (Updatable) Kerberos details needed to create configuration.
         /// </summary>
         [Input("kerberos")]
@@ -368,6 +397,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("ldapIdmap")]
         public Input<Inputs.MountTargetLdapIdmapArgs>? LdapIdmap { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MountTargetLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MountTargetLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MountTargetLockArgs>());
+            set => _locks = value;
+        }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
@@ -478,6 +519,12 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether to override locks (if any exist).
+        /// </summary>
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        /// <summary>
         /// (Updatable) Kerberos details needed to create configuration.
         /// </summary>
         [Input("kerberos")]
@@ -494,6 +541,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.MountTargetLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.MountTargetLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.MountTargetLockGetArgs>());
+            set => _locks = value;
+        }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;

@@ -27,7 +27,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
      */
     private String lifecycleDetails;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     private String state;
@@ -65,7 +65,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
         return this.lifecycleDetails;
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     public String state() {

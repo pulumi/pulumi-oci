@@ -30,8 +30,10 @@ class MountTargetArgs:
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
                  ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[str]] = None):
         """
@@ -55,8 +57,10 @@ class MountTargetArgs:
                Example: `files-1`
         :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
         :param pulumi.Input['MountTargetKerberosArgs'] kerberos: (Updatable) Kerberos details needed to create configuration.
         :param pulumi.Input['MountTargetLdapIdmapArgs'] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
@@ -75,10 +79,14 @@ class MountTargetArgs:
             pulumi.set(__self__, "idmap_type", idmap_type)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if kerberos is not None:
             pulumi.set(__self__, "kerberos", kerberos)
         if ldap_idmap is not None:
             pulumi.set(__self__, "ldap_idmap", ldap_idmap)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if requested_throughput is not None:
@@ -203,6 +211,18 @@ class MountTargetArgs:
         pulumi.set(self, "ip_address", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter
     def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
         """
@@ -225,6 +245,18 @@ class MountTargetArgs:
     @ldap_idmap.setter
     def ldap_idmap(self, value: Optional[pulumi.Input['MountTargetLdapIdmapArgs']]):
         pulumi.set(self, "ldap_idmap", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -263,9 +295,11 @@ class _MountTargetState:
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
                  ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  observed_throughput: Optional[pulumi.Input[str]] = None,
                  private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -292,9 +326,11 @@ class _MountTargetState:
                Example: `files-1`
         :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
         :param pulumi.Input['MountTargetKerberosArgs'] kerberos: (Updatable) Kerberos details needed to create configuration.
         :param pulumi.Input['MountTargetLdapIdmapArgs'] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[str] observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
@@ -327,12 +363,16 @@ class _MountTargetState:
             pulumi.set(__self__, "idmap_type", idmap_type)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if kerberos is not None:
             pulumi.set(__self__, "kerberos", kerberos)
         if ldap_idmap is not None:
             pulumi.set(__self__, "ldap_idmap", ldap_idmap)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if observed_throughput is not None:
@@ -467,6 +507,18 @@ class _MountTargetState:
         pulumi.set(self, "ip_address", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter
     def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
         """
@@ -501,6 +553,18 @@ class _MountTargetState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -628,8 +692,10 @@ class MountTarget(pulumi.CustomResource):
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
                  ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -690,6 +756,7 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
+            is_lock_override=mount_target_is_lock_override,
             kerberos={
                 "kerberos_realm": mount_target_kerberos_kerberos_realm,
                 "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
@@ -707,6 +774,12 @@ class MountTarget(pulumi.CustomResource):
                 "schema_type": mount_target_ldap_idmap_schema_type,
                 "user_search_base": mount_target_ldap_idmap_user_search_base,
             },
+            locks=[{
+                "type": mount_target_locks_type,
+                "message": mount_target_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": mount_target_locks_time_created,
+            }],
             nsg_ids=mount_target_nsg_ids,
             requested_throughput=mount_target_requested_throughput)
         ```
@@ -735,8 +808,10 @@ class MountTarget(pulumi.CustomResource):
                Example: `files-1`
         :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
         :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
         :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
@@ -807,6 +882,7 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
+            is_lock_override=mount_target_is_lock_override,
             kerberos={
                 "kerberos_realm": mount_target_kerberos_kerberos_realm,
                 "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
@@ -824,6 +900,12 @@ class MountTarget(pulumi.CustomResource):
                 "schema_type": mount_target_ldap_idmap_schema_type,
                 "user_search_base": mount_target_ldap_idmap_user_search_base,
             },
+            locks=[{
+                "type": mount_target_locks_type,
+                "message": mount_target_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": mount_target_locks_time_created,
+            }],
             nsg_ids=mount_target_nsg_ids,
             requested_throughput=mount_target_requested_throughput)
         ```
@@ -859,8 +941,10 @@ class MountTarget(pulumi.CustomResource):
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  idmap_type: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
                  ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -885,8 +969,10 @@ class MountTarget(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["idmap_type"] = idmap_type
             __props__.__dict__["ip_address"] = ip_address
+            __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["kerberos"] = kerberos
             __props__.__dict__["ldap_idmap"] = ldap_idmap
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["requested_throughput"] = requested_throughput
             if subnet_id is None and not opts.urn:
@@ -919,9 +1005,11 @@ class MountTarget(pulumi.CustomResource):
             hostname_label: Optional[pulumi.Input[str]] = None,
             idmap_type: Optional[pulumi.Input[str]] = None,
             ip_address: Optional[pulumi.Input[str]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
             ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             observed_throughput: Optional[pulumi.Input[str]] = None,
             private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -953,9 +1041,11 @@ class MountTarget(pulumi.CustomResource):
                Example: `files-1`
         :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
         :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[bool] is_lock_override: (Updatable) Whether to override locks (if any exist).
         :param pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']] kerberos: (Updatable) Kerberos details needed to create configuration.
         :param pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[str] observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
@@ -983,9 +1073,11 @@ class MountTarget(pulumi.CustomResource):
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["idmap_type"] = idmap_type
         __props__.__dict__["ip_address"] = ip_address
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["kerberos"] = kerberos
         __props__.__dict__["ldap_idmap"] = ldap_idmap
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["observed_throughput"] = observed_throughput
         __props__.__dict__["private_ip_ids"] = private_ip_ids
@@ -1076,6 +1168,14 @@ class MountTarget(pulumi.CustomResource):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter
     def kerberos(self) -> pulumi.Output[Optional['outputs.MountTargetKerberos']]:
         """
@@ -1098,6 +1198,14 @@ class MountTarget(pulumi.CustomResource):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.MountTargetLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="nsgIds")

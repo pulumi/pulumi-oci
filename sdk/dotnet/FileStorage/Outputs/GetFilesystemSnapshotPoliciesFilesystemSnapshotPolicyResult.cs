@@ -37,6 +37,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult> Locks;
         /// <summary>
         /// The prefix to apply to all snapshots created by this policy.  Example: `acme`
         /// </summary>
@@ -68,6 +73,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult> locks,
+
             string policyPrefix,
 
             ImmutableArray<Outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult> schedules,
@@ -82,6 +91,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             PolicyPrefix = policyPrefix;
             Schedules = schedules;
             State = state;

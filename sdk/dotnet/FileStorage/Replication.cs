@@ -64,6 +64,16 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.ReplicationLockArgs
+    ///             {
+    ///                 Type = replicationLocksType,
+    ///                 Message = replicationLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = replicationLocksTimeCreated,
+    ///             },
+    ///         },
     ///         ReplicationInterval = replicationReplicationInterval,
     ///     });
     /// 
@@ -123,6 +133,9 @@ namespace Pulumi.Oci.FileStorage
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         /// </summary>
@@ -134,6 +147,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ReplicationLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
@@ -263,6 +282,21 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ReplicationLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ReplicationLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ReplicationLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// (Updatable) Duration in minutes between replication snapshots.
         /// </summary>
@@ -347,6 +381,9 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         /// </summary>
@@ -358,6 +395,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ReplicationLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ReplicationLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ReplicationLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`

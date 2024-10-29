@@ -96,6 +96,10 @@ export interface GetNetworkLoadBalancerResult {
     readonly nlbIpVersion: string;
     readonly reservedIps: outputs.NetworkLoadBalancer.GetNetworkLoadBalancerReservedIp[];
     /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The current state of the network load balancer.
      */
     readonly state: string;

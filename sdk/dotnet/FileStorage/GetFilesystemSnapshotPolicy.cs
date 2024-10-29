@@ -122,6 +122,11 @@ namespace Pulumi.Oci.FileStorage
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFilesystemSnapshotPolicyLockResult> Locks;
         /// <summary>
         /// The prefix to apply to all snapshots created by this policy.  Example: `acme`
         /// </summary>
@@ -155,6 +160,10 @@ namespace Pulumi.Oci.FileStorage
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetFilesystemSnapshotPolicyLockResult> locks,
+
             string policyPrefix,
 
             ImmutableArray<Outputs.GetFilesystemSnapshotPolicyScheduleResult> schedules,
@@ -170,6 +179,8 @@ namespace Pulumi.Oci.FileStorage
             FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             PolicyPrefix = policyPrefix;
             Schedules = schedules;
             State = state;

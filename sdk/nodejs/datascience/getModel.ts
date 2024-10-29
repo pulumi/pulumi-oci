@@ -48,6 +48,14 @@ export interface GetModelResult {
     readonly artifactContentMd5: string;
     readonly artifactLastModified: string;
     /**
+     * Backup operation details of the model.
+     */
+    readonly backupOperationDetails: outputs.DataScience.GetModelBackupOperationDetail[];
+    /**
+     * Back up setting details of the model.
+     */
+    readonly backupSettings: outputs.DataScience.GetModelBackupSetting[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
      */
     readonly compartmentId: string;
@@ -88,8 +96,16 @@ export interface GetModelResult {
      * Input schema file content in String format
      */
     readonly inputSchema: string;
+    /**
+     * Details about the lifecycle state of the model.
+     */
+    readonly lifecycleDetails: string;
     readonly modelArtifact: string;
     readonly modelId: string;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
+    readonly modelVersionSetName: string;
     /**
      * Output schema file content in String format
      */
@@ -98,6 +114,14 @@ export interface GetModelResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      */
     readonly projectId: string;
+    /**
+     * Retention operation details for the model.
+     */
+    readonly retentionOperationDetails: outputs.DataScience.GetModelRetentionOperationDetail[];
+    /**
+     * Retention setting details of the model.
+     */
+    readonly retentionSettings: outputs.DataScience.GetModelRetentionSetting[];
     /**
      * The state of the model.
      */

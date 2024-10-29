@@ -5,7 +5,9 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyLockArgs;
 import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -93,6 +95,28 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<FilesystemSnapshotPolicyLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<FilesystemSnapshotPolicyLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
@@ -171,6 +195,8 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.policyPrefix = $.policyPrefix;
         this.schedules = $.schedules;
         this.state = $.state;
@@ -298,6 +324,46 @@ public final class FilesystemSnapshotPolicyState extends com.pulumi.resources.Re
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<FilesystemSnapshotPolicyLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<FilesystemSnapshotPolicyLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(FilesystemSnapshotPolicyLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

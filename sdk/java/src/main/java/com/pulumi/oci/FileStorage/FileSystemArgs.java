@@ -6,8 +6,11 @@ package com.pulumi.oci.FileStorage;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.inputs.FileSystemLockArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -148,6 +151,13 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      * 
@@ -161,6 +171,21 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<FileSystemLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<FileSystemLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -189,7 +214,9 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
         this.kmsKeyId = $.kmsKeyId;
+        this.locks = $.locks;
         this.sourceSnapshotId = $.sourceSnapshotId;
     }
 
@@ -389,6 +416,15 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param kmsKeyId (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
          * 
@@ -408,6 +444,37 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder kmsKeyId(String kmsKeyId) {
             return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<FileSystemLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<FileSystemLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(FileSystemLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

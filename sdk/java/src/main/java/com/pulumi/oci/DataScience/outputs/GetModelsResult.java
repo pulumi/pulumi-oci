@@ -36,6 +36,10 @@ public final class GetModelsResult {
      * 
      */
     private @Nullable String id;
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
     private String modelVersionSetName;
     /**
      * @return The list of models.
@@ -86,6 +90,10 @@ public final class GetModelsResult {
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
     public String modelVersionSetName() {
         return this.modelVersionSetName;
     }

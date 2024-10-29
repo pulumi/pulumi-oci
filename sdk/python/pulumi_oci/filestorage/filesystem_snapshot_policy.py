@@ -26,6 +26,8 @@ class FilesystemSnapshotPolicyArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None):
@@ -36,6 +38,7 @@ class FilesystemSnapshotPolicyArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
@@ -54,6 +57,10 @@ class FilesystemSnapshotPolicyArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if policy_prefix is not None:
             pulumi.set(__self__, "policy_prefix", policy_prefix)
         if schedules is not None:
@@ -122,6 +129,27 @@ class FilesystemSnapshotPolicyArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> Optional[pulumi.Input[str]]:
         """
@@ -172,6 +200,8 @@ class _FilesystemSnapshotPolicyState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -183,6 +213,7 @@ class _FilesystemSnapshotPolicyState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
@@ -204,6 +235,10 @@ class _FilesystemSnapshotPolicyState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if policy_prefix is not None:
             pulumi.set(__self__, "policy_prefix", policy_prefix)
         if schedules is not None:
@@ -274,6 +309,27 @@ class _FilesystemSnapshotPolicyState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> Optional[pulumi.Input[str]]:
         """
@@ -338,6 +394,8 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -367,6 +425,12 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": filesystem_snapshot_policy_locks_type,
+                "message": filesystem_snapshot_policy_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": filesystem_snapshot_policy_locks_time_created,
+            }],
             policy_prefix=filesystem_snapshot_policy_policy_prefix,
             schedules=[{
                 "period": filesystem_snapshot_policy_schedules_period,
@@ -396,6 +460,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
@@ -437,6 +502,12 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": filesystem_snapshot_policy_locks_type,
+                "message": filesystem_snapshot_policy_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": filesystem_snapshot_policy_locks_time_created,
+            }],
             policy_prefix=filesystem_snapshot_policy_policy_prefix,
             schedules=[{
                 "period": filesystem_snapshot_policy_schedules_period,
@@ -479,6 +550,8 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
                  policy_prefix: Optional[pulumi.Input[str]] = None,
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -500,6 +573,8 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["policy_prefix"] = policy_prefix
             __props__.__dict__["schedules"] = schedules
             __props__.__dict__["state"] = state
@@ -519,6 +594,8 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]]] = None,
             policy_prefix: Optional[pulumi.Input[str]] = None,
             schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -535,6 +612,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyLockArgs', 'FilesystemSnapshotPolicyLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param pulumi.Input[Sequence[pulumi.Input[Union['FilesystemSnapshotPolicyScheduleArgs', 'FilesystemSnapshotPolicyScheduleArgsDict']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
                
@@ -555,6 +633,8 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["policy_prefix"] = policy_prefix
         __props__.__dict__["schedules"] = schedules
         __props__.__dict__["state"] = state
@@ -600,6 +680,19 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.FilesystemSnapshotPolicyLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="policyPrefix")

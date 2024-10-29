@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetKerbero;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetLdapIdmap;
+import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +58,7 @@ public final class GetMountTargetsMountTarget {
      */
     private String idmapType;
     private String ipAddress;
+    private Boolean isLockOverride;
     /**
      * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
      * 
@@ -71,6 +74,11 @@ public final class GetMountTargetsMountTarget {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetMountTargetsMountTargetLock> locks;
     /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
@@ -180,6 +188,9 @@ public final class GetMountTargetsMountTarget {
     public String ipAddress() {
         return this.ipAddress;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
      * 
@@ -200,6 +211,13 @@ public final class GetMountTargetsMountTarget {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetMountTargetsMountTargetLock> locks() {
+        return this.locks;
     }
     /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -284,9 +302,11 @@ public final class GetMountTargetsMountTarget {
         private String id;
         private String idmapType;
         private String ipAddress;
+        private Boolean isLockOverride;
         private List<GetMountTargetsMountTargetKerbero> kerberos;
         private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
         private String lifecycleDetails;
+        private List<GetMountTargetsMountTargetLock> locks;
         private List<String> nsgIds;
         private String observedThroughput;
         private List<String> privateIpIds;
@@ -309,9 +329,11 @@ public final class GetMountTargetsMountTarget {
     	      this.id = defaults.id;
     	      this.idmapType = defaults.idmapType;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.kerberos = defaults.kerberos;
     	      this.ldapIdmaps = defaults.ldapIdmaps;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.nsgIds = defaults.nsgIds;
     	      this.observedThroughput = defaults.observedThroughput;
     	      this.privateIpIds = defaults.privateIpIds;
@@ -404,6 +426,14 @@ public final class GetMountTargetsMountTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kerberos(List<GetMountTargetsMountTargetKerbero> kerberos) {
             if (kerberos == null) {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "kerberos");
@@ -432,6 +462,17 @@ public final class GetMountTargetsMountTarget {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetMountTargetsMountTargetLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetMountTargetsMountTargetLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
@@ -523,9 +564,11 @@ public final class GetMountTargetsMountTarget {
             _resultValue.id = id;
             _resultValue.idmapType = idmapType;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.kerberos = kerberos;
             _resultValue.ldapIdmaps = ldapIdmaps;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.nsgIds = nsgIds;
             _resultValue.observedThroughput = observedThroughput;
             _resultValue.privateIpIds = privateIpIds;

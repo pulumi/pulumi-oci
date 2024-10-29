@@ -41,6 +41,10 @@ __all__ = [
     'JobRunJobStorageMountConfigurationDetailsListArgsDict',
     'JobRunLogDetailArgs',
     'JobRunLogDetailArgsDict',
+    'ModelBackupOperationDetailArgs',
+    'ModelBackupOperationDetailArgsDict',
+    'ModelBackupSettingArgs',
+    'ModelBackupSettingArgsDict',
     'ModelCustomMetadataListArgs',
     'ModelCustomMetadataListArgsDict',
     'ModelDefinedMetadataListArgs',
@@ -73,6 +77,10 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict',
     'ModelDeploymentModelDeploymentSystemDataArgs',
     'ModelDeploymentModelDeploymentSystemDataArgsDict',
+    'ModelRetentionOperationDetailArgs',
+    'ModelRetentionOperationDetailArgsDict',
+    'ModelRetentionSettingArgs',
+    'ModelRetentionSettingArgsDict',
     'NotebookSessionNotebookSessionConfigDetailsArgs',
     'NotebookSessionNotebookSessionConfigDetailsArgsDict',
     'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs',
@@ -1500,6 +1508,148 @@ class JobRunLogDetailArgs:
     @log_id.setter
     def log_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_id", value)
+
+
+if not MYPY:
+    class ModelBackupOperationDetailArgsDict(TypedDict):
+        backup_state: NotRequired[pulumi.Input[str]]
+        """
+        The backup status of the model.
+        """
+        backup_state_details: NotRequired[pulumi.Input[str]]
+        """
+        The backup execution status details of the model.
+        """
+        time_last_backup: NotRequired[pulumi.Input[str]]
+        """
+        The last backup execution time of the model.
+        """
+elif False:
+    ModelBackupOperationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelBackupOperationDetailArgs:
+    def __init__(__self__, *,
+                 backup_state: Optional[pulumi.Input[str]] = None,
+                 backup_state_details: Optional[pulumi.Input[str]] = None,
+                 time_last_backup: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_state: The backup status of the model.
+        :param pulumi.Input[str] backup_state_details: The backup execution status details of the model.
+        :param pulumi.Input[str] time_last_backup: The last backup execution time of the model.
+        """
+        if backup_state is not None:
+            pulumi.set(__self__, "backup_state", backup_state)
+        if backup_state_details is not None:
+            pulumi.set(__self__, "backup_state_details", backup_state_details)
+        if time_last_backup is not None:
+            pulumi.set(__self__, "time_last_backup", time_last_backup)
+
+    @property
+    @pulumi.getter(name="backupState")
+    def backup_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The backup status of the model.
+        """
+        return pulumi.get(self, "backup_state")
+
+    @backup_state.setter
+    def backup_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_state", value)
+
+    @property
+    @pulumi.getter(name="backupStateDetails")
+    def backup_state_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The backup execution status details of the model.
+        """
+        return pulumi.get(self, "backup_state_details")
+
+    @backup_state_details.setter
+    def backup_state_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backup_state_details", value)
+
+    @property
+    @pulumi.getter(name="timeLastBackup")
+    def time_last_backup(self) -> Optional[pulumi.Input[str]]:
+        """
+        The last backup execution time of the model.
+        """
+        return pulumi.get(self, "time_last_backup")
+
+    @time_last_backup.setter
+    def time_last_backup(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_last_backup", value)
+
+
+if not MYPY:
+    class ModelBackupSettingArgsDict(TypedDict):
+        backup_region: pulumi.Input[str]
+        """
+        (Updatable) Oracle Cloud Infrastructure backup region for the model.
+        """
+        is_backup_enabled: pulumi.Input[bool]
+        """
+        (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+        """
+        customer_notification_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Customer notification on backup success/failure events.
+        """
+elif False:
+    ModelBackupSettingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelBackupSettingArgs:
+    def __init__(__self__, *,
+                 backup_region: pulumi.Input[str],
+                 is_backup_enabled: pulumi.Input[bool],
+                 customer_notification_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backup_region: (Updatable) Oracle Cloud Infrastructure backup region for the model.
+        :param pulumi.Input[bool] is_backup_enabled: (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+        :param pulumi.Input[str] customer_notification_type: (Updatable) Customer notification on backup success/failure events.
+        """
+        pulumi.set(__self__, "backup_region", backup_region)
+        pulumi.set(__self__, "is_backup_enabled", is_backup_enabled)
+        if customer_notification_type is not None:
+            pulumi.set(__self__, "customer_notification_type", customer_notification_type)
+
+    @property
+    @pulumi.getter(name="backupRegion")
+    def backup_region(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure backup region for the model.
+        """
+        return pulumi.get(self, "backup_region")
+
+    @backup_region.setter
+    def backup_region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "backup_region", value)
+
+    @property
+    @pulumi.getter(name="isBackupEnabled")
+    def is_backup_enabled(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+        """
+        return pulumi.get(self, "is_backup_enabled")
+
+    @is_backup_enabled.setter
+    def is_backup_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "is_backup_enabled", value)
+
+    @property
+    @pulumi.getter(name="customerNotificationType")
+    def customer_notification_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Customer notification on backup success/failure events.
+        """
+        return pulumi.get(self, "customer_notification_type")
+
+    @customer_notification_type.setter
+    def customer_notification_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "customer_notification_type", value)
 
 
 if not MYPY:
@@ -3033,6 +3183,209 @@ class ModelDeploymentModelDeploymentSystemDataArgs:
     @system_infra_type.setter
     def system_infra_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "system_infra_type", value)
+
+
+if not MYPY:
+    class ModelRetentionOperationDetailArgsDict(TypedDict):
+        archive_state: NotRequired[pulumi.Input[str]]
+        """
+        The archival status of model.
+        """
+        archive_state_details: NotRequired[pulumi.Input[str]]
+        """
+        The archival state details of the model.
+        """
+        delete_state: NotRequired[pulumi.Input[str]]
+        """
+        The deletion status of the archived model.
+        """
+        delete_state_details: NotRequired[pulumi.Input[str]]
+        """
+        The deletion status details of the archived model.
+        """
+        time_archival_scheduled: NotRequired[pulumi.Input[str]]
+        """
+        The estimated archival time of the model based on the provided retention setting.
+        """
+        time_deletion_scheduled: NotRequired[pulumi.Input[str]]
+        """
+        The estimated deletion time of the model based on the provided retention setting.
+        """
+elif False:
+    ModelRetentionOperationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelRetentionOperationDetailArgs:
+    def __init__(__self__, *,
+                 archive_state: Optional[pulumi.Input[str]] = None,
+                 archive_state_details: Optional[pulumi.Input[str]] = None,
+                 delete_state: Optional[pulumi.Input[str]] = None,
+                 delete_state_details: Optional[pulumi.Input[str]] = None,
+                 time_archival_scheduled: Optional[pulumi.Input[str]] = None,
+                 time_deletion_scheduled: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] archive_state: The archival status of model.
+        :param pulumi.Input[str] archive_state_details: The archival state details of the model.
+        :param pulumi.Input[str] delete_state: The deletion status of the archived model.
+        :param pulumi.Input[str] delete_state_details: The deletion status details of the archived model.
+        :param pulumi.Input[str] time_archival_scheduled: The estimated archival time of the model based on the provided retention setting.
+        :param pulumi.Input[str] time_deletion_scheduled: The estimated deletion time of the model based on the provided retention setting.
+        """
+        if archive_state is not None:
+            pulumi.set(__self__, "archive_state", archive_state)
+        if archive_state_details is not None:
+            pulumi.set(__self__, "archive_state_details", archive_state_details)
+        if delete_state is not None:
+            pulumi.set(__self__, "delete_state", delete_state)
+        if delete_state_details is not None:
+            pulumi.set(__self__, "delete_state_details", delete_state_details)
+        if time_archival_scheduled is not None:
+            pulumi.set(__self__, "time_archival_scheduled", time_archival_scheduled)
+        if time_deletion_scheduled is not None:
+            pulumi.set(__self__, "time_deletion_scheduled", time_deletion_scheduled)
+
+    @property
+    @pulumi.getter(name="archiveState")
+    def archive_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The archival status of model.
+        """
+        return pulumi.get(self, "archive_state")
+
+    @archive_state.setter
+    def archive_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "archive_state", value)
+
+    @property
+    @pulumi.getter(name="archiveStateDetails")
+    def archive_state_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The archival state details of the model.
+        """
+        return pulumi.get(self, "archive_state_details")
+
+    @archive_state_details.setter
+    def archive_state_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "archive_state_details", value)
+
+    @property
+    @pulumi.getter(name="deleteState")
+    def delete_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The deletion status of the archived model.
+        """
+        return pulumi.get(self, "delete_state")
+
+    @delete_state.setter
+    def delete_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "delete_state", value)
+
+    @property
+    @pulumi.getter(name="deleteStateDetails")
+    def delete_state_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The deletion status details of the archived model.
+        """
+        return pulumi.get(self, "delete_state_details")
+
+    @delete_state_details.setter
+    def delete_state_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "delete_state_details", value)
+
+    @property
+    @pulumi.getter(name="timeArchivalScheduled")
+    def time_archival_scheduled(self) -> Optional[pulumi.Input[str]]:
+        """
+        The estimated archival time of the model based on the provided retention setting.
+        """
+        return pulumi.get(self, "time_archival_scheduled")
+
+    @time_archival_scheduled.setter
+    def time_archival_scheduled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_archival_scheduled", value)
+
+    @property
+    @pulumi.getter(name="timeDeletionScheduled")
+    def time_deletion_scheduled(self) -> Optional[pulumi.Input[str]]:
+        """
+        The estimated deletion time of the model based on the provided retention setting.
+        """
+        return pulumi.get(self, "time_deletion_scheduled")
+
+    @time_deletion_scheduled.setter
+    def time_deletion_scheduled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_deletion_scheduled", value)
+
+
+if not MYPY:
+    class ModelRetentionSettingArgsDict(TypedDict):
+        archive_after_days: pulumi.Input[int]
+        """
+        (Updatable) Number of days after which the model will be archived.
+        """
+        customer_notification_type: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Customer notification options on success/failure of archival, deletion events.
+        """
+        delete_after_days: NotRequired[pulumi.Input[int]]
+        """
+        (Updatable) Number of days after which the archived model will be deleted.
+        """
+elif False:
+    ModelRetentionSettingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelRetentionSettingArgs:
+    def __init__(__self__, *,
+                 archive_after_days: pulumi.Input[int],
+                 customer_notification_type: Optional[pulumi.Input[str]] = None,
+                 delete_after_days: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] archive_after_days: (Updatable) Number of days after which the model will be archived.
+        :param pulumi.Input[str] customer_notification_type: (Updatable) Customer notification options on success/failure of archival, deletion events.
+        :param pulumi.Input[int] delete_after_days: (Updatable) Number of days after which the archived model will be deleted.
+        """
+        pulumi.set(__self__, "archive_after_days", archive_after_days)
+        if customer_notification_type is not None:
+            pulumi.set(__self__, "customer_notification_type", customer_notification_type)
+        if delete_after_days is not None:
+            pulumi.set(__self__, "delete_after_days", delete_after_days)
+
+    @property
+    @pulumi.getter(name="archiveAfterDays")
+    def archive_after_days(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Number of days after which the model will be archived.
+        """
+        return pulumi.get(self, "archive_after_days")
+
+    @archive_after_days.setter
+    def archive_after_days(self, value: pulumi.Input[int]):
+        pulumi.set(self, "archive_after_days", value)
+
+    @property
+    @pulumi.getter(name="customerNotificationType")
+    def customer_notification_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Customer notification options on success/failure of archival, deletion events.
+        """
+        return pulumi.get(self, "customer_notification_type")
+
+    @customer_notification_type.setter
+    def customer_notification_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "customer_notification_type", value)
+
+    @property
+    @pulumi.getter(name="deleteAfterDays")
+    def delete_after_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Number of days after which the archived model will be deleted.
+        """
+        return pulumi.get(self, "delete_after_days")
+
+    @delete_after_days.setter
+    def delete_after_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "delete_after_days", value)
 
 
 if not MYPY:

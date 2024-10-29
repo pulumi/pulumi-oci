@@ -277,6 +277,12 @@ namespace Pulumi.Oci.Core
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
+        /// <summary>
+        /// Redundancy level details of the virtual circuit
+        /// </summary>
+        [Output("virtualCircuitRedundancyMetadatas")]
+        public Output<ImmutableArray<Outputs.VirtualCircuitVirtualCircuitRedundancyMetadata>> VirtualCircuitRedundancyMetadatas { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a VirtualCircuit resource with the given unique name, arguments, and options.
@@ -680,6 +686,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
+
+        [Input("virtualCircuitRedundancyMetadatas")]
+        private InputList<Inputs.VirtualCircuitVirtualCircuitRedundancyMetadataGetArgs>? _virtualCircuitRedundancyMetadatas;
+
+        /// <summary>
+        /// Redundancy level details of the virtual circuit
+        /// </summary>
+        public InputList<Inputs.VirtualCircuitVirtualCircuitRedundancyMetadataGetArgs> VirtualCircuitRedundancyMetadatas
+        {
+            get => _virtualCircuitRedundancyMetadatas ?? (_virtualCircuitRedundancyMetadatas = new InputList<Inputs.VirtualCircuitVirtualCircuitRedundancyMetadataGetArgs>());
+            set => _virtualCircuitRedundancyMetadatas = value;
+        }
 
         public VirtualCircuitState()
         {

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
         /// <summary>

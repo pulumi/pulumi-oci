@@ -66,8 +66,9 @@ type GetModelsArgs struct {
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-	Id                  *string `pulumi:"id"`
-	ModelVersionSetName string  `pulumi:"modelVersionSetName"`
+	Id *string `pulumi:"id"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId *string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -85,8 +86,9 @@ type GetModelsResult struct {
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-	Id                  *string `pulumi:"id"`
-	ModelVersionSetName string  `pulumi:"modelVersionSetName"`
+	Id *string `pulumi:"id"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// The list of models.
 	Models []GetModelsModel `pulumi:"models"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
@@ -125,8 +127,9 @@ type GetModelsOutputArgs struct {
 	DisplayName pulumi.StringPtrInput     `pulumi:"displayName"`
 	Filters     GetModelsFilterArrayInput `pulumi:"filters"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-	Id                  pulumi.StringPtrInput `pulumi:"id"`
-	ModelVersionSetName pulumi.StringInput    `pulumi:"modelVersionSetName"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName pulumi.StringInput `pulumi:"modelVersionSetName"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -177,6 +180,7 @@ func (o GetModelsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// The name of the model version set that the model is associated to.
 func (o GetModelsResultOutput) ModelVersionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsResult) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
 }

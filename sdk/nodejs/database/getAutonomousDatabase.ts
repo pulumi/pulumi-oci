@@ -193,6 +193,14 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly displayName: string;
     /**
+     * Key History Entry.
+     */
+    readonly encryptionKeyHistoryEntries: outputs.Database.GetAutonomousDatabaseEncryptionKeyHistoryEntry[];
+    /**
+     * Details of the Autonomous Database encryption key.
+     */
+    readonly encryptionKeys: outputs.Database.GetAutonomousDatabaseEncryptionKey[];
+    /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
     readonly failedDataRecoveryInSeconds: number;

@@ -4524,6 +4524,8 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 	// IP version associated with the NLB.
 	NlbIpVersion string                                                               `pulumi:"nlbIpVersion"`
 	ReservedIps  []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp `pulumi:"reservedIps"`
+	// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A filter to return only resources that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
@@ -4575,6 +4577,8 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs struct {
 	// IP version associated with the NLB.
 	NlbIpVersion pulumi.StringInput                                                           `pulumi:"nlbIpVersion"`
 	ReservedIps  GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput `pulumi:"reservedIps"`
+	// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A filter to return only resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
@@ -4720,6 +4724,13 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Reserved
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp {
 		return v.ReservedIps
 	}).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput)
+}
+
+// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state.

@@ -5,8 +5,12 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataScience.inputs.ModelBackupOperationDetailArgs;
+import com.pulumi.oci.DataScience.inputs.ModelBackupSettingArgs;
 import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
+import com.pulumi.oci.DataScience.inputs.ModelRetentionOperationDetailArgs;
+import com.pulumi.oci.DataScience.inputs.ModelRetentionSettingArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -68,6 +72,36 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<String>> artifactLastModified() {
         return Optional.ofNullable(this.artifactLastModified);
+    }
+
+    /**
+     * Backup operation details of the model.
+     * 
+     */
+    @Import(name="backupOperationDetails")
+    private @Nullable Output<List<ModelBackupOperationDetailArgs>> backupOperationDetails;
+
+    /**
+     * @return Backup operation details of the model.
+     * 
+     */
+    public Optional<Output<List<ModelBackupOperationDetailArgs>>> backupOperationDetails() {
+        return Optional.ofNullable(this.backupOperationDetails);
+    }
+
+    /**
+     * (Updatable) Back up setting details of the model.
+     * 
+     */
+    @Import(name="backupSetting")
+    private @Nullable Output<ModelBackupSettingArgs> backupSetting;
+
+    /**
+     * @return (Updatable) Back up setting details of the model.
+     * 
+     */
+    public Optional<Output<ModelBackupSettingArgs>> backupSetting() {
+        return Optional.ofNullable(this.backupSetting);
     }
 
     /**
@@ -213,6 +247,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details about the lifecycle state of the model.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the lifecycle state of the model.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
      * 
      */
@@ -225,6 +274,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> modelArtifact() {
         return Optional.ofNullable(this.modelArtifact);
+    }
+
+    /**
+     * The name of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetName")
+    private @Nullable Output<String> modelVersionSetName;
+
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<Output<String>> modelVersionSetName() {
+        return Optional.ofNullable(this.modelVersionSetName);
     }
 
     /**
@@ -255,6 +319,36 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> projectId() {
         return Optional.ofNullable(this.projectId);
+    }
+
+    /**
+     * Retention operation details for the model.
+     * 
+     */
+    @Import(name="retentionOperationDetails")
+    private @Nullable Output<List<ModelRetentionOperationDetailArgs>> retentionOperationDetails;
+
+    /**
+     * @return Retention operation details for the model.
+     * 
+     */
+    public Optional<Output<List<ModelRetentionOperationDetailArgs>>> retentionOperationDetails() {
+        return Optional.ofNullable(this.retentionOperationDetails);
+    }
+
+    /**
+     * (Updatable) Retention setting details of the model.
+     * 
+     */
+    @Import(name="retentionSetting")
+    private @Nullable Output<ModelRetentionSettingArgs> retentionSetting;
+
+    /**
+     * @return (Updatable) Retention setting details of the model.
+     * 
+     */
+    public Optional<Output<ModelRetentionSettingArgs>> retentionSetting() {
+        return Optional.ofNullable(this.retentionSetting);
     }
 
     /**
@@ -294,6 +388,8 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.artifactContentLength = $.artifactContentLength;
         this.artifactContentMd5 = $.artifactContentMd5;
         this.artifactLastModified = $.artifactLastModified;
+        this.backupOperationDetails = $.backupOperationDetails;
+        this.backupSetting = $.backupSetting;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.customMetadataLists = $.customMetadataLists;
@@ -304,9 +400,13 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.emptyModel = $.emptyModel;
         this.freeformTags = $.freeformTags;
         this.inputSchema = $.inputSchema;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.modelArtifact = $.modelArtifact;
+        this.modelVersionSetName = $.modelVersionSetName;
         this.outputSchema = $.outputSchema;
         this.projectId = $.projectId;
+        this.retentionOperationDetails = $.retentionOperationDetails;
+        this.retentionSetting = $.retentionSetting;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
     }
@@ -393,6 +493,58 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
         public Builder artifactLastModified(String artifactLastModified) {
             return artifactLastModified(Output.of(artifactLastModified));
+        }
+
+        /**
+         * @param backupOperationDetails Backup operation details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupOperationDetails(@Nullable Output<List<ModelBackupOperationDetailArgs>> backupOperationDetails) {
+            $.backupOperationDetails = backupOperationDetails;
+            return this;
+        }
+
+        /**
+         * @param backupOperationDetails Backup operation details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupOperationDetails(List<ModelBackupOperationDetailArgs> backupOperationDetails) {
+            return backupOperationDetails(Output.of(backupOperationDetails));
+        }
+
+        /**
+         * @param backupOperationDetails Backup operation details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupOperationDetails(ModelBackupOperationDetailArgs... backupOperationDetails) {
+            return backupOperationDetails(List.of(backupOperationDetails));
+        }
+
+        /**
+         * @param backupSetting (Updatable) Back up setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSetting(@Nullable Output<ModelBackupSettingArgs> backupSetting) {
+            $.backupSetting = backupSetting;
+            return this;
+        }
+
+        /**
+         * @param backupSetting (Updatable) Back up setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSetting(ModelBackupSettingArgs backupSetting) {
+            return backupSetting(Output.of(backupSetting));
         }
 
         /**
@@ -614,6 +766,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param lifecycleDetails Details about the lifecycle state of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Details about the lifecycle state of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
          * @param modelArtifact The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
          * 
          * @return builder
@@ -632,6 +805,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder modelArtifact(String modelArtifact) {
             return modelArtifact(Output.of(modelArtifact));
+        }
+
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetName(@Nullable Output<String> modelVersionSetName) {
+            $.modelVersionSetName = modelVersionSetName;
+            return this;
+        }
+
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            return modelVersionSetName(Output.of(modelVersionSetName));
         }
 
         /**
@@ -674,6 +868,58 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
+        }
+
+        /**
+         * @param retentionOperationDetails Retention operation details for the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionOperationDetails(@Nullable Output<List<ModelRetentionOperationDetailArgs>> retentionOperationDetails) {
+            $.retentionOperationDetails = retentionOperationDetails;
+            return this;
+        }
+
+        /**
+         * @param retentionOperationDetails Retention operation details for the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionOperationDetails(List<ModelRetentionOperationDetailArgs> retentionOperationDetails) {
+            return retentionOperationDetails(Output.of(retentionOperationDetails));
+        }
+
+        /**
+         * @param retentionOperationDetails Retention operation details for the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionOperationDetails(ModelRetentionOperationDetailArgs... retentionOperationDetails) {
+            return retentionOperationDetails(List.of(retentionOperationDetails));
+        }
+
+        /**
+         * @param retentionSetting (Updatable) Retention setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionSetting(@Nullable Output<ModelRetentionSettingArgs> retentionSetting) {
+            $.retentionSetting = retentionSetting;
+            return this;
+        }
+
+        /**
+         * @param retentionSetting (Updatable) Retention setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionSetting(ModelRetentionSettingArgs retentionSetting) {
+            return retentionSetting(Output.of(retentionSetting));
         }
 
         /**

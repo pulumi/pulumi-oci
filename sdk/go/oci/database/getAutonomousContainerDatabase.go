@@ -78,7 +78,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName string `pulumi:"dbName"`
-	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+	// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold int    `pulumi:"dbSplitThreshold"`
 	DbUniqueName     string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
@@ -87,7 +87,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
-	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+	// Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity string `pulumi:"distributionAffinity"`
 	// DST Time-zone File version of the Autonomous Container Database.
 	DstFileVersion                     string `pulumi:"dstFileVersion"`
@@ -167,7 +167,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	VaultId string `pulumi:"vaultId"`
 	// The next maintenance version preference.
 	VersionPreference string `pulumi:"versionPreference"`
-	// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
 	VmFailoverReservation int `pulumi:"vmFailoverReservation"`
 }
 
@@ -270,7 +270,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringOut
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
 }
 
-// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+// The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 func (o LookupAutonomousContainerDatabaseResultOutput) DbSplitThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.DbSplitThreshold }).(pulumi.IntOutput)
 }
@@ -294,7 +294,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DisplayName() pulumi.Stri
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+// Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 func (o LookupAutonomousContainerDatabaseResultOutput) DistributionAffinity() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DistributionAffinity }).(pulumi.StringOutput)
 }
@@ -526,7 +526,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) VersionPreference() pulum
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VersionPreference }).(pulumi.StringOutput)
 }
 
-// The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
 func (o LookupAutonomousContainerDatabaseResultOutput) VmFailoverReservation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.VmFailoverReservation }).(pulumi.IntOutput)
 }

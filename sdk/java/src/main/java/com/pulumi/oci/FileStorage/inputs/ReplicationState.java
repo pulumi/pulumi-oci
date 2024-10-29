@@ -5,7 +5,10 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FileStorage.inputs.ReplicationLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -121,6 +124,13 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
@@ -149,6 +159,21 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<ReplicationLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<ReplicationLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -272,8 +297,10 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
         this.deltaStatus = $.deltaStatus;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
         this.lastSnapshotId = $.lastSnapshotId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.recoveryPointTime = $.recoveryPointTime;
         this.replicationInterval = $.replicationInterval;
         this.replicationTargetId = $.replicationTargetId;
@@ -448,6 +475,15 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lastSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
          * 
@@ -488,6 +524,37 @@ public final class ReplicationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<ReplicationLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<ReplicationLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(ReplicationLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

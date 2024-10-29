@@ -135,7 +135,7 @@ type LookupInstanceResult struct {
 	PublicIp string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region string `pulumi:"region"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The lifecycle state of the `securityAttributes`
 	SecurityAttributesState string `pulumi:"securityAttributesState"`
@@ -385,7 +385,7 @@ func (o LookupInstanceResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 func (o LookupInstanceResultOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }

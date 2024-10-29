@@ -230,6 +230,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * Redundancy level details of the virtual circuit
+     */
+    public /*out*/ readonly virtualCircuitRedundancyMetadatas!: pulumi.Output<outputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata[]>;
 
     /**
      * Create a VirtualCircuit resource with the given unique name, arguments, and options.
@@ -272,6 +276,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["virtualCircuitRedundancyMetadatas"] = state ? state.virtualCircuitRedundancyMetadatas : undefined;
         } else {
             const args = argsOrState as VirtualCircuitArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -308,6 +313,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["serviceType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["virtualCircuitRedundancyMetadatas"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VirtualCircuit.__pulumiType, name, resourceInputs, opts);
@@ -438,6 +444,10 @@ export interface VirtualCircuitState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type?: pulumi.Input<string>;
+    /**
+     * Redundancy level details of the virtual circuit
+     */
+    virtualCircuitRedundancyMetadatas?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata>[]>;
 }
 
 /**

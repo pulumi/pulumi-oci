@@ -145,7 +145,7 @@ class InstanceArgs:
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -634,7 +634,7 @@ class InstanceArgs:
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -869,7 +869,7 @@ class _InstanceState:
         :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[str] security_attributes_state: The lifecycle state of the `securityAttributes`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
@@ -1460,7 +1460,7 @@ class _InstanceState:
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
-        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -1787,7 +1787,7 @@ class Instance(pulumi.CustomResource):
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -2137,7 +2137,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
-        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[str] security_attributes_state: The lifecycle state of the `securityAttributes`
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
@@ -2543,7 +2543,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
         """
-        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 

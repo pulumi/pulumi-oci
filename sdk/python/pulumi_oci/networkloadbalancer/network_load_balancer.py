@@ -34,6 +34,7 @@ class NetworkLoadBalancerArgs:
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_ipv6cidr: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancer resource.
@@ -69,6 +70,7 @@ class NetworkLoadBalancerArgs:
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
                
@@ -98,6 +100,8 @@ class NetworkLoadBalancerArgs:
             pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if subnet_ipv6cidr is not None:
             pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
 
@@ -277,6 +281,18 @@ class NetworkLoadBalancerArgs:
         pulumi.set(self, "reserved_ips", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="subnetIpv6cidr")
     def subnet_ipv6cidr(self) -> Optional[pulumi.Input[str]]:
         """
@@ -310,6 +326,7 @@ class _NetworkLoadBalancerState:
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
@@ -351,6 +368,7 @@ class _NetworkLoadBalancerState:
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -390,6 +408,8 @@ class _NetworkLoadBalancerState:
             pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -591,6 +611,18 @@ class _NetworkLoadBalancerState:
         pulumi.set(self, "reserved_ips", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -684,6 +716,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -733,6 +766,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
@@ -786,6 +820,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -813,6 +848,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["nlb_ip_version"] = nlb_ip_version
             __props__.__dict__["reserved_ips"] = reserved_ips
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -847,6 +883,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             nlb_ip_version: Optional[pulumi.Input[str]] = None,
             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
@@ -893,6 +930,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -922,6 +960,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["nlb_ip_version"] = nlb_ip_version
         __props__.__dict__["reserved_ips"] = reserved_ips
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["subnet_ipv6cidr"] = subnet_ipv6cidr
@@ -1060,6 +1099,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         An array of reserved Ips.
         """
         return pulumi.get(self, "reserved_ips")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

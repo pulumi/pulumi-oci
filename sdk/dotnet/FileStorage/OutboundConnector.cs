@@ -66,6 +66,16 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.OutboundConnectorLockArgs
+    ///             {
+    ///                 Type = outboundConnectorLocksType,
+    ///                 Message = outboundConnectorLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = outboundConnectorLocksTimeCreated,
+    ///             },
+    ///         },
     ///         PasswordSecretId = testSecret.Id,
     ///         PasswordSecretVersion = outboundConnectorPasswordSecretVersion,
     ///     });
@@ -131,6 +141,15 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.OutboundConnectorLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
@@ -272,6 +291,21 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.OutboundConnectorLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.OutboundConnectorLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.OutboundConnectorLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         /// </summary>
@@ -360,6 +394,21 @@ namespace Pulumi.Oci.FileStorage
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.OutboundConnectorLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.OutboundConnectorLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.OutboundConnectorLockGetArgs>());
+            set => _locks = value;
         }
 
         /// <summary>

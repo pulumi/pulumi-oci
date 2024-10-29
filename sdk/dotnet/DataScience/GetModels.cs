@@ -111,6 +111,9 @@ namespace Pulumi.Oci.DataScience
         [Input("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
         [Input("modelVersionSetName", required: true)]
         public string ModelVersionSetName { get; set; } = null!;
 
@@ -169,6 +172,9 @@ namespace Pulumi.Oci.DataScience
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
         [Input("modelVersionSetName", required: true)]
         public Input<string> ModelVersionSetName { get; set; } = null!;
 
@@ -214,6 +220,9 @@ namespace Pulumi.Oci.DataScience
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
         public readonly string ModelVersionSetName;
         /// <summary>
         /// The list of models.

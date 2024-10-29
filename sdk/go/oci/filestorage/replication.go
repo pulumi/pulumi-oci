@@ -67,6 +67,14 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: filestorage.ReplicationLockArray{
+//					&filestorage.ReplicationLockArgs{
+//						Type:              pulumi.Any(replicationLocksType),
+//						Message:           pulumi.Any(replicationLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(replicationLocksTimeCreated),
+//					},
+//				},
 //				ReplicationInterval: pulumi.Any(replicationReplicationInterval),
 //			})
 //			if err != nil {
@@ -101,11 +109,14 @@ type Replication struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId pulumi.StringOutput `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks ReplicationLockArrayOutput `pulumi:"locks"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime pulumi.StringOutput `pulumi:"recoveryPointTime"`
 	// (Updatable) Duration in minutes between replication snapshots.
@@ -177,11 +188,14 @@ type replicationState struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId *string `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []ReplicationLock `pulumi:"locks"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime *string `pulumi:"recoveryPointTime"`
 	// (Updatable) Duration in minutes between replication snapshots.
@@ -215,11 +229,14 @@ type ReplicationState struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId pulumi.StringPtrInput
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ReplicationLockArrayInput
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime pulumi.StringPtrInput
 	// (Updatable) Duration in minutes between replication snapshots.
@@ -251,7 +268,10 @@ type replicationArgs struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []ReplicationLock `pulumi:"locks"`
 	// (Updatable) Duration in minutes between replication snapshots.
 	ReplicationInterval *string `pulumi:"replicationInterval"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
@@ -272,7 +292,10 @@ type ReplicationArgs struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks ReplicationLockArrayInput
 	// (Updatable) Duration in minutes between replication snapshots.
 	ReplicationInterval pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
@@ -406,6 +429,10 @@ func (o ReplicationOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Replication) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+func (o ReplicationOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Replication) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 func (o ReplicationOutput) LastSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.LastSnapshotId }).(pulumi.StringOutput)
@@ -414,6 +441,11 @@ func (o ReplicationOutput) LastSnapshotId() pulumi.StringOutput {
 // Additional information about the current 'lifecycleState'.
 func (o ReplicationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o ReplicationOutput) Locks() ReplicationLockArrayOutput {
+	return o.ApplyT(func(v *Replication) ReplicationLockArrayOutput { return v.Locks }).(ReplicationLockArrayOutput)
 }
 
 // The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`

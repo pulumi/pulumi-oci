@@ -15,6 +15,8 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseDbToolsDetail;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseEncryptionKey;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseEncryptionKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
@@ -656,6 +658,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    @Export(name="encryptionKey", refs={AutonomousDatabaseEncryptionKey.class}, tree="[0]")
+    private Output<AutonomousDatabaseEncryptionKey> encryptionKey;
+
+    /**
+     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    public Output<AutonomousDatabaseEncryptionKey> encryptionKey() {
+        return this.encryptionKey;
+    }
+    /**
+     * Key History Entry.
+     * 
+     */
+    @Export(name="encryptionKeyHistoryEntries", refs={List.class,AutonomousDatabaseEncryptionKeyHistoryEntry.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseEncryptionKeyHistoryEntry>> encryptionKeyHistoryEntries;
+
+    /**
+     * @return Key History Entry.
+     * 
+     */
+    public Output<List<AutonomousDatabaseEncryptionKeyHistoryEntry>> encryptionKeyHistoryEntries() {
+        return this.encryptionKeyHistoryEntries;
     }
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.

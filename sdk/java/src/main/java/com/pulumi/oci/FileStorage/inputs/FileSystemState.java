@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FileStorage.inputs.FileSystemLockArgs;
 import com.pulumi.oci.FileStorage.inputs.FileSystemSourceDetailArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -195,6 +196,13 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isHydrated);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
@@ -238,6 +246,21 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<FileSystemLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<FileSystemLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -344,9 +367,11 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.isCloneParent = $.isCloneParent;
         this.isHydrated = $.isHydrated;
+        this.isLockOverride = $.isLockOverride;
         this.isTargetable = $.isTargetable;
         this.kmsKeyId = $.kmsKeyId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.meteredBytes = $.meteredBytes;
         this.replicationTargetId = $.replicationTargetId;
         this.sourceDetails = $.sourceDetails;
@@ -614,6 +639,15 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
             return isHydrated(Output.of(isHydrated));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param isTargetable Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          * 
@@ -675,6 +709,37 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<FileSystemLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<FileSystemLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(FileSystemLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

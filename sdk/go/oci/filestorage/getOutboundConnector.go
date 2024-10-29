@@ -75,8 +75,11 @@ type LookupOutboundConnectorResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
-	Id                  string `pulumi:"id"`
-	OutboundConnectorId string `pulumi:"outboundConnectorId"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks               []GetOutboundConnectorLock `pulumi:"locks"`
+	OutboundConnectorId string                     `pulumi:"outboundConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -174,6 +177,15 @@ func (o LookupOutboundConnectorResultOutput) FreeformTags() pulumi.StringMapOutp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
 func (o LookupOutboundConnectorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupOutboundConnectorResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupOutboundConnectorResultOutput) Locks() GetOutboundConnectorLockArrayOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) []GetOutboundConnectorLock { return v.Locks }).(GetOutboundConnectorLockArrayOutput)
 }
 
 func (o LookupOutboundConnectorResultOutput) OutboundConnectorId() pulumi.StringOutput {

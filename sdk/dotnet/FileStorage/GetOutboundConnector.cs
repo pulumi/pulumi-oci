@@ -133,6 +133,11 @@ namespace Pulumi.Oci.FileStorage
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOutboundConnectorLockResult> Locks;
         public readonly string OutboundConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
@@ -171,6 +176,10 @@ namespace Pulumi.Oci.FileStorage
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetOutboundConnectorLockResult> locks,
+
             string outboundConnectorId,
 
             string passwordSecretId,
@@ -190,6 +199,8 @@ namespace Pulumi.Oci.FileStorage
             Endpoints = endpoints;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             OutboundConnectorId = outboundConnectorId;
             PasswordSecretId = passwordSecretId;
             PasswordSecretVersion = passwordSecretVersion;

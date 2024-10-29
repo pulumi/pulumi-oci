@@ -130,6 +130,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Type;
         public readonly string VirtualCircuitId;
+        /// <summary>
+        /// Redundancy level details of the virtual circuit
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult> VirtualCircuitRedundancyMetadatas;
 
         [OutputConstructor]
         private GetVirtualCircuitsVirtualCircuitResult(
@@ -191,7 +195,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             string type,
 
-            string virtualCircuitId)
+            string virtualCircuitId,
+
+            ImmutableArray<Outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult> virtualCircuitRedundancyMetadatas)
         {
             BandwidthShapeName = bandwidthShapeName;
             BgpAdminState = bgpAdminState;
@@ -223,6 +229,7 @@ namespace Pulumi.Oci.Core.Outputs
             TimeCreated = timeCreated;
             Type = type;
             VirtualCircuitId = virtualCircuitId;
+            VirtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;
         }
     }
 }

@@ -31,6 +31,12 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     locks: [{
+ *         type: filesystemSnapshotPolicyLocksType,
+ *         message: filesystemSnapshotPolicyLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: filesystemSnapshotPolicyLocksTimeCreated,
+ *     }],
  *     policyPrefix: filesystemSnapshotPolicyPolicyPrefix,
  *     schedules: [{
  *         period: filesystemSnapshotPolicySchedulesPeriod,
@@ -102,6 +108,11 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicyLock[]>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
@@ -143,6 +154,8 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["policyPrefix"] = state ? state.policyPrefix : undefined;
             resourceInputs["schedules"] = state ? state.schedules : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -160,6 +173,8 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["policyPrefix"] = args ? args.policyPrefix : undefined;
             resourceInputs["schedules"] = args ? args.schedules : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
@@ -194,6 +209,11 @@ export interface FilesystemSnapshotPolicyState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[]>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
@@ -242,6 +262,11 @@ export interface FilesystemSnapshotPolicyArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FilesystemSnapshotPolicyLock>[]>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */

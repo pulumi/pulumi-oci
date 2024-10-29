@@ -347,6 +347,8 @@ __all__ = [
     'VirtualCircuitCrossConnectMappingArgsDict',
     'VirtualCircuitPublicPrefixArgs',
     'VirtualCircuitPublicPrefixArgsDict',
+    'VirtualCircuitVirtualCircuitRedundancyMetadataArgs',
+    'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict',
     'VirtualNetworkByoipv6cidrDetailArgs',
     'VirtualNetworkByoipv6cidrDetailArgsDict',
     'VnicAttachmentCreateVnicDetailsArgs',
@@ -17934,6 +17936,78 @@ class VirtualCircuitPublicPrefixArgs:
     @cidr_block.setter
     def cidr_block(self, value: pulumi.Input[str]):
         pulumi.set(self, "cidr_block", value)
+
+
+if not MYPY:
+    class VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict(TypedDict):
+        configured_redundancy_level: NotRequired[pulumi.Input[str]]
+        """
+        The configured redundancy level of the virtual circuit
+        """
+        ipv4bgp_session_redundancy_status: NotRequired[pulumi.Input[str]]
+        """
+        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        ipv6bgp_session_redundancy_status: NotRequired[pulumi.Input[str]]
+        """
+        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+elif False:
+    VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VirtualCircuitVirtualCircuitRedundancyMetadataArgs:
+    def __init__(__self__, *,
+                 configured_redundancy_level: Optional[pulumi.Input[str]] = None,
+                 ipv4bgp_session_redundancy_status: Optional[pulumi.Input[str]] = None,
+                 ipv6bgp_session_redundancy_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] configured_redundancy_level: The configured redundancy level of the virtual circuit
+        :param pulumi.Input[str] ipv4bgp_session_redundancy_status: IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        :param pulumi.Input[str] ipv6bgp_session_redundancy_status: IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        if configured_redundancy_level is not None:
+            pulumi.set(__self__, "configured_redundancy_level", configured_redundancy_level)
+        if ipv4bgp_session_redundancy_status is not None:
+            pulumi.set(__self__, "ipv4bgp_session_redundancy_status", ipv4bgp_session_redundancy_status)
+        if ipv6bgp_session_redundancy_status is not None:
+            pulumi.set(__self__, "ipv6bgp_session_redundancy_status", ipv6bgp_session_redundancy_status)
+
+    @property
+    @pulumi.getter(name="configuredRedundancyLevel")
+    def configured_redundancy_level(self) -> Optional[pulumi.Input[str]]:
+        """
+        The configured redundancy level of the virtual circuit
+        """
+        return pulumi.get(self, "configured_redundancy_level")
+
+    @configured_redundancy_level.setter
+    def configured_redundancy_level(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "configured_redundancy_level", value)
+
+    @property
+    @pulumi.getter(name="ipv4bgpSessionRedundancyStatus")
+    def ipv4bgp_session_redundancy_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv4bgp_session_redundancy_status")
+
+    @ipv4bgp_session_redundancy_status.setter
+    def ipv4bgp_session_redundancy_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv4bgp_session_redundancy_status", value)
+
+    @property
+    @pulumi.getter(name="ipv6bgpSessionRedundancyStatus")
+    def ipv6bgp_session_redundancy_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv6bgp_session_redundancy_status")
+
+    @ipv6bgp_session_redundancy_status.setter
+    def ipv6bgp_session_redundancy_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ipv6bgp_session_redundancy_status", value)
 
 
 if not MYPY:

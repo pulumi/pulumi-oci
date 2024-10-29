@@ -150,6 +150,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public readonly string NlbIpVersion;
         public readonly ImmutableArray<Outputs.GetNetworkLoadBalancerReservedIpResult> ReservedIps;
         /// <summary>
+        /// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the network load balancer.
         /// </summary>
         public readonly string State;
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<Outputs.GetNetworkLoadBalancerReservedIpResult> reservedIps,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -233,6 +239,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             NlbIpVersion = nlbIpVersion;
             ReservedIps = reservedIps;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SubnetIpv6cidr = subnetIpv6cidr;

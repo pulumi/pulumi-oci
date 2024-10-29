@@ -86,6 +86,8 @@ type LookupNetworkLoadBalancerResult struct {
 	// IP version associated with the NLB.
 	NlbIpVersion string                             `pulumi:"nlbIpVersion"`
 	ReservedIps  []GetNetworkLoadBalancerReservedIp `pulumi:"reservedIps"`
+	// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the network load balancer.
 	State string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
@@ -217,6 +219,11 @@ func (o LookupNetworkLoadBalancerResultOutput) NlbIpVersion() pulumi.StringOutpu
 
 func (o LookupNetworkLoadBalancerResultOutput) ReservedIps() GetNetworkLoadBalancerReservedIpArrayOutput {
 	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) []GetNetworkLoadBalancerReservedIp { return v.ReservedIps }).(GetNetworkLoadBalancerReservedIpArrayOutput)
+}
+
+// ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+func (o LookupNetworkLoadBalancerResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the network load balancer.

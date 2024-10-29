@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseEncryptionKeyArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
@@ -505,6 +506,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    @Import(name="encryptionKey")
+    private @Nullable Output<AutonomousDatabaseEncryptionKeyArgs> encryptionKey;
+
+    /**
+     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseEncryptionKeyArgs>> encryptionKey() {
+        return Optional.ofNullable(this.encryptionKey);
     }
 
     /**
@@ -1389,6 +1405,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.definedTags = $.definedTags;
         this.disasterRecoveryType = $.disasterRecoveryType;
         this.displayName = $.displayName;
+        this.encryptionKey = $.encryptionKey;
         this.freeformTags = $.freeformTags;
         this.inMemoryPercentage = $.inMemoryPercentage;
         this.isAccessControlEnabled = $.isAccessControlEnabled;
@@ -2130,6 +2147,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptionKey (Updatable) Details of the Autonomous Database encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKey(@Nullable Output<AutonomousDatabaseEncryptionKeyArgs> encryptionKey) {
+            $.encryptionKey = encryptionKey;
+            return this;
+        }
+
+        /**
+         * @param encryptionKey (Updatable) Details of the Autonomous Database encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyArgs encryptionKey) {
+            return encryptionKey(Output.of(encryptionKey));
         }
 
         /**

@@ -62,6 +62,10 @@ type LookupModelResult struct {
 	ArtifactContentLength      string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5         string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       string `pulumi:"artifactLastModified"`
+	// Backup operation details of the model.
+	BackupOperationDetails []GetModelBackupOperationDetail `pulumi:"backupOperationDetails"`
+	// Back up setting details of the model.
+	BackupSettings []GetModelBackupSetting `pulumi:"backupSettings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -82,13 +86,21 @@ type LookupModelResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
-	InputSchema   string `pulumi:"inputSchema"`
-	ModelArtifact string `pulumi:"modelArtifact"`
-	ModelId       string `pulumi:"modelId"`
+	InputSchema string `pulumi:"inputSchema"`
+	// Details about the lifecycle state of the model.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	ModelArtifact    string `pulumi:"modelArtifact"`
+	ModelId          string `pulumi:"modelId"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
 	ProjectId string `pulumi:"projectId"`
+	// Retention operation details for the model.
+	RetentionOperationDetails []GetModelRetentionOperationDetail `pulumi:"retentionOperationDetails"`
+	// Retention setting details of the model.
+	RetentionSettings []GetModelRetentionSetting `pulumi:"retentionSettings"`
 	// The state of the model.
 	State string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -155,6 +167,16 @@ func (o LookupModelResultOutput) ArtifactLastModified() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ArtifactLastModified }).(pulumi.StringOutput)
 }
 
+// Backup operation details of the model.
+func (o LookupModelResultOutput) BackupOperationDetails() GetModelBackupOperationDetailArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelBackupOperationDetail { return v.BackupOperationDetails }).(GetModelBackupOperationDetailArrayOutput)
+}
+
+// Back up setting details of the model.
+func (o LookupModelResultOutput) BackupSettings() GetModelBackupSettingArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelBackupSetting { return v.BackupSettings }).(GetModelBackupSettingArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
 func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -209,12 +231,22 @@ func (o LookupModelResultOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.InputSchema }).(pulumi.StringOutput)
 }
 
+// Details about the lifecycle state of the model.
+func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 func (o LookupModelResultOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelArtifact }).(pulumi.StringOutput)
 }
 
 func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The name of the model version set that the model is associated to.
+func (o LookupModelResultOutput) ModelVersionSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
 }
 
 // Output schema file content in String format
@@ -225,6 +257,16 @@ func (o LookupModelResultOutput) OutputSchema() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
 func (o LookupModelResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Retention operation details for the model.
+func (o LookupModelResultOutput) RetentionOperationDetails() GetModelRetentionOperationDetailArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelRetentionOperationDetail { return v.RetentionOperationDetails }).(GetModelRetentionOperationDetailArrayOutput)
+}
+
+// Retention setting details of the model.
+func (o LookupModelResultOutput) RetentionSettings() GetModelRetentionSettingArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelRetentionSetting { return v.RetentionSettings }).(GetModelRetentionSettingArrayOutput)
 }
 
 // The state of the model.

@@ -171,6 +171,8 @@ type VirtualCircuit struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
 // NewVirtualCircuit registers a new resource with the given unique name, arguments, and options.
@@ -272,6 +274,8 @@ type virtualCircuitState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas []VirtualCircuitVirtualCircuitRedundancyMetadata `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
 type VirtualCircuitState struct {
@@ -338,6 +342,8 @@ type VirtualCircuitState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas VirtualCircuitVirtualCircuitRedundancyMetadataArrayInput
 }
 
 func (VirtualCircuitState) ElementType() reflect.Type {
@@ -669,6 +675,13 @@ func (o VirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualCircuitOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// Redundancy level details of the virtual circuit
+func (o VirtualCircuitOutput) VirtualCircuitRedundancyMetadatas() VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o.ApplyT(func(v *VirtualCircuit) VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+		return v.VirtualCircuitRedundancyMetadatas
+	}).(VirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput)
 }
 
 type VirtualCircuitArrayOutput struct{ *pulumi.OutputState }

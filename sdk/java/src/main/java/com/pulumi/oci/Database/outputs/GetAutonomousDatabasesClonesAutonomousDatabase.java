@@ -11,6 +11,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDat
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule;
@@ -200,6 +202,16 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private String displayName;
+    /**
+     * @return Key History Entry.
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    /**
+     * @return Details of the Autonomous Database encryption key.
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys;
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
@@ -864,6 +876,20 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.displayName;
     }
     /**
+     * @return Key History Entry.
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries() {
+        return this.encryptionKeyHistoryEntries;
+    }
+    /**
+     * @return Details of the Autonomous Database encryption key.
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys() {
+        return this.encryptionKeys;
+    }
+    /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
@@ -1496,6 +1522,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Map<String,String> definedTags;
         private String disasterRecoveryRegionType;
         private String displayName;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
         private String id;
@@ -1618,6 +1646,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
     	      this.displayName = defaults.displayName;
+    	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
+    	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -2004,6 +2034,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyHistoryEntries(List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries) {
+            if (encryptionKeyHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "encryptionKeyHistoryEntries");
+            }
+            this.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            return this;
+        }
+        public Builder encryptionKeyHistoryEntries(GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry... encryptionKeyHistoryEntries) {
+            return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
+        }
+        @CustomType.Setter
+        public Builder encryptionKeys(List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys) {
+            if (encryptionKeys == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "encryptionKeys");
+            }
+            this.encryptionKeys = encryptionKeys;
+            return this;
+        }
+        public Builder encryptionKeys(GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey... encryptionKeys) {
+            return encryptionKeys(List.of(encryptionKeys));
         }
         @CustomType.Setter
         public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
@@ -2756,6 +2808,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.disasterRecoveryRegionType = disasterRecoveryRegionType;
             _resultValue.displayName = displayName;
+            _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

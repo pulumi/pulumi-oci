@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitCrossConnectMapping;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitPublicPrefix;
+import com.pulumi.oci.Core.outputs.GetVirtualCircuitVirtualCircuitRedundancyMetadata;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -170,6 +171,11 @@ public final class GetVirtualCircuitResult {
      */
     private String type;
     private String virtualCircuitId;
+    /**
+     * @return Redundancy level details of the virtual circuit
+     * 
+     */
+    private List<GetVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas;
 
     private GetVirtualCircuitResult() {}
     /**
@@ -386,6 +392,13 @@ public final class GetVirtualCircuitResult {
     public String virtualCircuitId() {
         return this.virtualCircuitId;
     }
+    /**
+     * @return Redundancy level details of the virtual circuit
+     * 
+     */
+    public List<GetVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas() {
+        return this.virtualCircuitRedundancyMetadatas;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -426,6 +439,7 @@ public final class GetVirtualCircuitResult {
         private String timeCreated;
         private String type;
         private String virtualCircuitId;
+        private List<GetVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas;
         public Builder() {}
         public Builder(GetVirtualCircuitResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -459,6 +473,7 @@ public final class GetVirtualCircuitResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.type = defaults.type;
     	      this.virtualCircuitId = defaults.virtualCircuitId;
+    	      this.virtualCircuitRedundancyMetadatas = defaults.virtualCircuitRedundancyMetadatas;
         }
 
         @CustomType.Setter
@@ -710,6 +725,17 @@ public final class GetVirtualCircuitResult {
             this.virtualCircuitId = virtualCircuitId;
             return this;
         }
+        @CustomType.Setter
+        public Builder virtualCircuitRedundancyMetadatas(List<GetVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas) {
+            if (virtualCircuitRedundancyMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitResult", "virtualCircuitRedundancyMetadatas");
+            }
+            this.virtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;
+            return this;
+        }
+        public Builder virtualCircuitRedundancyMetadatas(GetVirtualCircuitVirtualCircuitRedundancyMetadata... virtualCircuitRedundancyMetadatas) {
+            return virtualCircuitRedundancyMetadatas(List.of(virtualCircuitRedundancyMetadatas));
+        }
         public GetVirtualCircuitResult build() {
             final var _resultValue = new GetVirtualCircuitResult();
             _resultValue.bandwidthShapeName = bandwidthShapeName;
@@ -742,6 +768,7 @@ public final class GetVirtualCircuitResult {
             _resultValue.timeCreated = timeCreated;
             _resultValue.type = type;
             _resultValue.virtualCircuitId = virtualCircuitId;
+            _resultValue.virtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;
             return _resultValue;
         }
     }

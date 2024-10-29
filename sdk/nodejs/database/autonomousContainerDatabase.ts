@@ -88,7 +88,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly dbName!: pulumi.Output<string>;
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     public readonly dbSplitThreshold!: pulumi.Output<number>;
     public readonly dbUniqueName!: pulumi.Output<string>;
@@ -105,7 +105,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     public readonly distributionAffinity!: pulumi.Output<string>;
     /**
@@ -485,7 +485,7 @@ export interface AutonomousContainerDatabaseState {
      */
     dbName?: pulumi.Input<string>;
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
@@ -502,7 +502,7 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
     /**
@@ -722,7 +722,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     dbName?: pulumi.Input<string>;
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
     dbUniqueName?: pulumi.Input<string>;
@@ -739,7 +739,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
     /**

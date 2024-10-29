@@ -2291,6 +2291,296 @@ func (o JobRunLogDetailArrayOutput) Index(i pulumi.IntInput) JobRunLogDetailOutp
 	}).(JobRunLogDetailOutput)
 }
 
+type ModelBackupOperationDetail struct {
+	// The backup status of the model.
+	BackupState *string `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails *string `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup *string `pulumi:"timeLastBackup"`
+}
+
+// ModelBackupOperationDetailInput is an input type that accepts ModelBackupOperationDetailArgs and ModelBackupOperationDetailOutput values.
+// You can construct a concrete instance of `ModelBackupOperationDetailInput` via:
+//
+//	ModelBackupOperationDetailArgs{...}
+type ModelBackupOperationDetailInput interface {
+	pulumi.Input
+
+	ToModelBackupOperationDetailOutput() ModelBackupOperationDetailOutput
+	ToModelBackupOperationDetailOutputWithContext(context.Context) ModelBackupOperationDetailOutput
+}
+
+type ModelBackupOperationDetailArgs struct {
+	// The backup status of the model.
+	BackupState pulumi.StringPtrInput `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails pulumi.StringPtrInput `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup pulumi.StringPtrInput `pulumi:"timeLastBackup"`
+}
+
+func (ModelBackupOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i ModelBackupOperationDetailArgs) ToModelBackupOperationDetailOutput() ModelBackupOperationDetailOutput {
+	return i.ToModelBackupOperationDetailOutputWithContext(context.Background())
+}
+
+func (i ModelBackupOperationDetailArgs) ToModelBackupOperationDetailOutputWithContext(ctx context.Context) ModelBackupOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelBackupOperationDetailOutput)
+}
+
+// ModelBackupOperationDetailArrayInput is an input type that accepts ModelBackupOperationDetailArray and ModelBackupOperationDetailArrayOutput values.
+// You can construct a concrete instance of `ModelBackupOperationDetailArrayInput` via:
+//
+//	ModelBackupOperationDetailArray{ ModelBackupOperationDetailArgs{...} }
+type ModelBackupOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToModelBackupOperationDetailArrayOutput() ModelBackupOperationDetailArrayOutput
+	ToModelBackupOperationDetailArrayOutputWithContext(context.Context) ModelBackupOperationDetailArrayOutput
+}
+
+type ModelBackupOperationDetailArray []ModelBackupOperationDetailInput
+
+func (ModelBackupOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i ModelBackupOperationDetailArray) ToModelBackupOperationDetailArrayOutput() ModelBackupOperationDetailArrayOutput {
+	return i.ToModelBackupOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ModelBackupOperationDetailArray) ToModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) ModelBackupOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelBackupOperationDetailArrayOutput)
+}
+
+type ModelBackupOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (ModelBackupOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o ModelBackupOperationDetailOutput) ToModelBackupOperationDetailOutput() ModelBackupOperationDetailOutput {
+	return o
+}
+
+func (o ModelBackupOperationDetailOutput) ToModelBackupOperationDetailOutputWithContext(ctx context.Context) ModelBackupOperationDetailOutput {
+	return o
+}
+
+// The backup status of the model.
+func (o ModelBackupOperationDetailOutput) BackupState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelBackupOperationDetail) *string { return v.BackupState }).(pulumi.StringPtrOutput)
+}
+
+// The backup execution status details of the model.
+func (o ModelBackupOperationDetailOutput) BackupStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelBackupOperationDetail) *string { return v.BackupStateDetails }).(pulumi.StringPtrOutput)
+}
+
+// The last backup execution time of the model.
+func (o ModelBackupOperationDetailOutput) TimeLastBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelBackupOperationDetail) *string { return v.TimeLastBackup }).(pulumi.StringPtrOutput)
+}
+
+type ModelBackupOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelBackupOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o ModelBackupOperationDetailArrayOutput) ToModelBackupOperationDetailArrayOutput() ModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o ModelBackupOperationDetailArrayOutput) ToModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) ModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o ModelBackupOperationDetailArrayOutput) Index(i pulumi.IntInput) ModelBackupOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelBackupOperationDetail {
+		return vs[0].([]ModelBackupOperationDetail)[vs[1].(int)]
+	}).(ModelBackupOperationDetailOutput)
+}
+
+type ModelBackupSetting struct {
+	// (Updatable) Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion string `pulumi:"backupRegion"`
+	// (Updatable) Customer notification on backup success/failure events.
+	CustomerNotificationType *string `pulumi:"customerNotificationType"`
+	// (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled bool `pulumi:"isBackupEnabled"`
+}
+
+// ModelBackupSettingInput is an input type that accepts ModelBackupSettingArgs and ModelBackupSettingOutput values.
+// You can construct a concrete instance of `ModelBackupSettingInput` via:
+//
+//	ModelBackupSettingArgs{...}
+type ModelBackupSettingInput interface {
+	pulumi.Input
+
+	ToModelBackupSettingOutput() ModelBackupSettingOutput
+	ToModelBackupSettingOutputWithContext(context.Context) ModelBackupSettingOutput
+}
+
+type ModelBackupSettingArgs struct {
+	// (Updatable) Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion pulumi.StringInput `pulumi:"backupRegion"`
+	// (Updatable) Customer notification on backup success/failure events.
+	CustomerNotificationType pulumi.StringPtrInput `pulumi:"customerNotificationType"`
+	// (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled pulumi.BoolInput `pulumi:"isBackupEnabled"`
+}
+
+func (ModelBackupSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelBackupSetting)(nil)).Elem()
+}
+
+func (i ModelBackupSettingArgs) ToModelBackupSettingOutput() ModelBackupSettingOutput {
+	return i.ToModelBackupSettingOutputWithContext(context.Background())
+}
+
+func (i ModelBackupSettingArgs) ToModelBackupSettingOutputWithContext(ctx context.Context) ModelBackupSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelBackupSettingOutput)
+}
+
+func (i ModelBackupSettingArgs) ToModelBackupSettingPtrOutput() ModelBackupSettingPtrOutput {
+	return i.ToModelBackupSettingPtrOutputWithContext(context.Background())
+}
+
+func (i ModelBackupSettingArgs) ToModelBackupSettingPtrOutputWithContext(ctx context.Context) ModelBackupSettingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelBackupSettingOutput).ToModelBackupSettingPtrOutputWithContext(ctx)
+}
+
+// ModelBackupSettingPtrInput is an input type that accepts ModelBackupSettingArgs, ModelBackupSettingPtr and ModelBackupSettingPtrOutput values.
+// You can construct a concrete instance of `ModelBackupSettingPtrInput` via:
+//
+//	        ModelBackupSettingArgs{...}
+//
+//	or:
+//
+//	        nil
+type ModelBackupSettingPtrInput interface {
+	pulumi.Input
+
+	ToModelBackupSettingPtrOutput() ModelBackupSettingPtrOutput
+	ToModelBackupSettingPtrOutputWithContext(context.Context) ModelBackupSettingPtrOutput
+}
+
+type modelBackupSettingPtrType ModelBackupSettingArgs
+
+func ModelBackupSettingPtr(v *ModelBackupSettingArgs) ModelBackupSettingPtrInput {
+	return (*modelBackupSettingPtrType)(v)
+}
+
+func (*modelBackupSettingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelBackupSetting)(nil)).Elem()
+}
+
+func (i *modelBackupSettingPtrType) ToModelBackupSettingPtrOutput() ModelBackupSettingPtrOutput {
+	return i.ToModelBackupSettingPtrOutputWithContext(context.Background())
+}
+
+func (i *modelBackupSettingPtrType) ToModelBackupSettingPtrOutputWithContext(ctx context.Context) ModelBackupSettingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelBackupSettingPtrOutput)
+}
+
+type ModelBackupSettingOutput struct{ *pulumi.OutputState }
+
+func (ModelBackupSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelBackupSetting)(nil)).Elem()
+}
+
+func (o ModelBackupSettingOutput) ToModelBackupSettingOutput() ModelBackupSettingOutput {
+	return o
+}
+
+func (o ModelBackupSettingOutput) ToModelBackupSettingOutputWithContext(ctx context.Context) ModelBackupSettingOutput {
+	return o
+}
+
+func (o ModelBackupSettingOutput) ToModelBackupSettingPtrOutput() ModelBackupSettingPtrOutput {
+	return o.ToModelBackupSettingPtrOutputWithContext(context.Background())
+}
+
+func (o ModelBackupSettingOutput) ToModelBackupSettingPtrOutputWithContext(ctx context.Context) ModelBackupSettingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelBackupSetting) *ModelBackupSetting {
+		return &v
+	}).(ModelBackupSettingPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure backup region for the model.
+func (o ModelBackupSettingOutput) BackupRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelBackupSetting) string { return v.BackupRegion }).(pulumi.StringOutput)
+}
+
+// (Updatable) Customer notification on backup success/failure events.
+func (o ModelBackupSettingOutput) CustomerNotificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelBackupSetting) *string { return v.CustomerNotificationType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+func (o ModelBackupSettingOutput) IsBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ModelBackupSetting) bool { return v.IsBackupEnabled }).(pulumi.BoolOutput)
+}
+
+type ModelBackupSettingPtrOutput struct{ *pulumi.OutputState }
+
+func (ModelBackupSettingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelBackupSetting)(nil)).Elem()
+}
+
+func (o ModelBackupSettingPtrOutput) ToModelBackupSettingPtrOutput() ModelBackupSettingPtrOutput {
+	return o
+}
+
+func (o ModelBackupSettingPtrOutput) ToModelBackupSettingPtrOutputWithContext(ctx context.Context) ModelBackupSettingPtrOutput {
+	return o
+}
+
+func (o ModelBackupSettingPtrOutput) Elem() ModelBackupSettingOutput {
+	return o.ApplyT(func(v *ModelBackupSetting) ModelBackupSetting {
+		if v != nil {
+			return *v
+		}
+		var ret ModelBackupSetting
+		return ret
+	}).(ModelBackupSettingOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure backup region for the model.
+func (o ModelBackupSettingPtrOutput) BackupRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelBackupSetting) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.BackupRegion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Customer notification on backup success/failure events.
+func (o ModelBackupSettingPtrOutput) CustomerNotificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelBackupSetting) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerNotificationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+func (o ModelBackupSettingPtrOutput) IsBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ModelBackupSetting) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsBackupEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 type ModelCustomMetadataList struct {
 	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category *string `pulumi:"category"`
@@ -4975,6 +5265,323 @@ func (o ModelDeploymentModelDeploymentSystemDataArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelDeploymentModelDeploymentSystemData {
 		return vs[0].([]ModelDeploymentModelDeploymentSystemData)[vs[1].(int)]
 	}).(ModelDeploymentModelDeploymentSystemDataOutput)
+}
+
+type ModelRetentionOperationDetail struct {
+	// The archival status of model.
+	ArchiveState *string `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails *string `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState *string `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails *string `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled *string `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled *string `pulumi:"timeDeletionScheduled"`
+}
+
+// ModelRetentionOperationDetailInput is an input type that accepts ModelRetentionOperationDetailArgs and ModelRetentionOperationDetailOutput values.
+// You can construct a concrete instance of `ModelRetentionOperationDetailInput` via:
+//
+//	ModelRetentionOperationDetailArgs{...}
+type ModelRetentionOperationDetailInput interface {
+	pulumi.Input
+
+	ToModelRetentionOperationDetailOutput() ModelRetentionOperationDetailOutput
+	ToModelRetentionOperationDetailOutputWithContext(context.Context) ModelRetentionOperationDetailOutput
+}
+
+type ModelRetentionOperationDetailArgs struct {
+	// The archival status of model.
+	ArchiveState pulumi.StringPtrInput `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails pulumi.StringPtrInput `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState pulumi.StringPtrInput `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails pulumi.StringPtrInput `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled pulumi.StringPtrInput `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled pulumi.StringPtrInput `pulumi:"timeDeletionScheduled"`
+}
+
+func (ModelRetentionOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i ModelRetentionOperationDetailArgs) ToModelRetentionOperationDetailOutput() ModelRetentionOperationDetailOutput {
+	return i.ToModelRetentionOperationDetailOutputWithContext(context.Background())
+}
+
+func (i ModelRetentionOperationDetailArgs) ToModelRetentionOperationDetailOutputWithContext(ctx context.Context) ModelRetentionOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelRetentionOperationDetailOutput)
+}
+
+// ModelRetentionOperationDetailArrayInput is an input type that accepts ModelRetentionOperationDetailArray and ModelRetentionOperationDetailArrayOutput values.
+// You can construct a concrete instance of `ModelRetentionOperationDetailArrayInput` via:
+//
+//	ModelRetentionOperationDetailArray{ ModelRetentionOperationDetailArgs{...} }
+type ModelRetentionOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToModelRetentionOperationDetailArrayOutput() ModelRetentionOperationDetailArrayOutput
+	ToModelRetentionOperationDetailArrayOutputWithContext(context.Context) ModelRetentionOperationDetailArrayOutput
+}
+
+type ModelRetentionOperationDetailArray []ModelRetentionOperationDetailInput
+
+func (ModelRetentionOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i ModelRetentionOperationDetailArray) ToModelRetentionOperationDetailArrayOutput() ModelRetentionOperationDetailArrayOutput {
+	return i.ToModelRetentionOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ModelRetentionOperationDetailArray) ToModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) ModelRetentionOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelRetentionOperationDetailArrayOutput)
+}
+
+type ModelRetentionOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (ModelRetentionOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o ModelRetentionOperationDetailOutput) ToModelRetentionOperationDetailOutput() ModelRetentionOperationDetailOutput {
+	return o
+}
+
+func (o ModelRetentionOperationDetailOutput) ToModelRetentionOperationDetailOutputWithContext(ctx context.Context) ModelRetentionOperationDetailOutput {
+	return o
+}
+
+// The archival status of model.
+func (o ModelRetentionOperationDetailOutput) ArchiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.ArchiveState }).(pulumi.StringPtrOutput)
+}
+
+// The archival state details of the model.
+func (o ModelRetentionOperationDetailOutput) ArchiveStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.ArchiveStateDetails }).(pulumi.StringPtrOutput)
+}
+
+// The deletion status of the archived model.
+func (o ModelRetentionOperationDetailOutput) DeleteState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.DeleteState }).(pulumi.StringPtrOutput)
+}
+
+// The deletion status details of the archived model.
+func (o ModelRetentionOperationDetailOutput) DeleteStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.DeleteStateDetails }).(pulumi.StringPtrOutput)
+}
+
+// The estimated archival time of the model based on the provided retention setting.
+func (o ModelRetentionOperationDetailOutput) TimeArchivalScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.TimeArchivalScheduled }).(pulumi.StringPtrOutput)
+}
+
+// The estimated deletion time of the model based on the provided retention setting.
+func (o ModelRetentionOperationDetailOutput) TimeDeletionScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionOperationDetail) *string { return v.TimeDeletionScheduled }).(pulumi.StringPtrOutput)
+}
+
+type ModelRetentionOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelRetentionOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o ModelRetentionOperationDetailArrayOutput) ToModelRetentionOperationDetailArrayOutput() ModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o ModelRetentionOperationDetailArrayOutput) ToModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) ModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o ModelRetentionOperationDetailArrayOutput) Index(i pulumi.IntInput) ModelRetentionOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelRetentionOperationDetail {
+		return vs[0].([]ModelRetentionOperationDetail)[vs[1].(int)]
+	}).(ModelRetentionOperationDetailOutput)
+}
+
+type ModelRetentionSetting struct {
+	// (Updatable) Number of days after which the model will be archived.
+	ArchiveAfterDays int `pulumi:"archiveAfterDays"`
+	// (Updatable) Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType *string `pulumi:"customerNotificationType"`
+	// (Updatable) Number of days after which the archived model will be deleted.
+	DeleteAfterDays *int `pulumi:"deleteAfterDays"`
+}
+
+// ModelRetentionSettingInput is an input type that accepts ModelRetentionSettingArgs and ModelRetentionSettingOutput values.
+// You can construct a concrete instance of `ModelRetentionSettingInput` via:
+//
+//	ModelRetentionSettingArgs{...}
+type ModelRetentionSettingInput interface {
+	pulumi.Input
+
+	ToModelRetentionSettingOutput() ModelRetentionSettingOutput
+	ToModelRetentionSettingOutputWithContext(context.Context) ModelRetentionSettingOutput
+}
+
+type ModelRetentionSettingArgs struct {
+	// (Updatable) Number of days after which the model will be archived.
+	ArchiveAfterDays pulumi.IntInput `pulumi:"archiveAfterDays"`
+	// (Updatable) Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType pulumi.StringPtrInput `pulumi:"customerNotificationType"`
+	// (Updatable) Number of days after which the archived model will be deleted.
+	DeleteAfterDays pulumi.IntPtrInput `pulumi:"deleteAfterDays"`
+}
+
+func (ModelRetentionSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelRetentionSetting)(nil)).Elem()
+}
+
+func (i ModelRetentionSettingArgs) ToModelRetentionSettingOutput() ModelRetentionSettingOutput {
+	return i.ToModelRetentionSettingOutputWithContext(context.Background())
+}
+
+func (i ModelRetentionSettingArgs) ToModelRetentionSettingOutputWithContext(ctx context.Context) ModelRetentionSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelRetentionSettingOutput)
+}
+
+func (i ModelRetentionSettingArgs) ToModelRetentionSettingPtrOutput() ModelRetentionSettingPtrOutput {
+	return i.ToModelRetentionSettingPtrOutputWithContext(context.Background())
+}
+
+func (i ModelRetentionSettingArgs) ToModelRetentionSettingPtrOutputWithContext(ctx context.Context) ModelRetentionSettingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelRetentionSettingOutput).ToModelRetentionSettingPtrOutputWithContext(ctx)
+}
+
+// ModelRetentionSettingPtrInput is an input type that accepts ModelRetentionSettingArgs, ModelRetentionSettingPtr and ModelRetentionSettingPtrOutput values.
+// You can construct a concrete instance of `ModelRetentionSettingPtrInput` via:
+//
+//	        ModelRetentionSettingArgs{...}
+//
+//	or:
+//
+//	        nil
+type ModelRetentionSettingPtrInput interface {
+	pulumi.Input
+
+	ToModelRetentionSettingPtrOutput() ModelRetentionSettingPtrOutput
+	ToModelRetentionSettingPtrOutputWithContext(context.Context) ModelRetentionSettingPtrOutput
+}
+
+type modelRetentionSettingPtrType ModelRetentionSettingArgs
+
+func ModelRetentionSettingPtr(v *ModelRetentionSettingArgs) ModelRetentionSettingPtrInput {
+	return (*modelRetentionSettingPtrType)(v)
+}
+
+func (*modelRetentionSettingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelRetentionSetting)(nil)).Elem()
+}
+
+func (i *modelRetentionSettingPtrType) ToModelRetentionSettingPtrOutput() ModelRetentionSettingPtrOutput {
+	return i.ToModelRetentionSettingPtrOutputWithContext(context.Background())
+}
+
+func (i *modelRetentionSettingPtrType) ToModelRetentionSettingPtrOutputWithContext(ctx context.Context) ModelRetentionSettingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelRetentionSettingPtrOutput)
+}
+
+type ModelRetentionSettingOutput struct{ *pulumi.OutputState }
+
+func (ModelRetentionSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelRetentionSetting)(nil)).Elem()
+}
+
+func (o ModelRetentionSettingOutput) ToModelRetentionSettingOutput() ModelRetentionSettingOutput {
+	return o
+}
+
+func (o ModelRetentionSettingOutput) ToModelRetentionSettingOutputWithContext(ctx context.Context) ModelRetentionSettingOutput {
+	return o
+}
+
+func (o ModelRetentionSettingOutput) ToModelRetentionSettingPtrOutput() ModelRetentionSettingPtrOutput {
+	return o.ToModelRetentionSettingPtrOutputWithContext(context.Background())
+}
+
+func (o ModelRetentionSettingOutput) ToModelRetentionSettingPtrOutputWithContext(ctx context.Context) ModelRetentionSettingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelRetentionSetting) *ModelRetentionSetting {
+		return &v
+	}).(ModelRetentionSettingPtrOutput)
+}
+
+// (Updatable) Number of days after which the model will be archived.
+func (o ModelRetentionSettingOutput) ArchiveAfterDays() pulumi.IntOutput {
+	return o.ApplyT(func(v ModelRetentionSetting) int { return v.ArchiveAfterDays }).(pulumi.IntOutput)
+}
+
+// (Updatable) Customer notification options on success/failure of archival, deletion events.
+func (o ModelRetentionSettingOutput) CustomerNotificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelRetentionSetting) *string { return v.CustomerNotificationType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Number of days after which the archived model will be deleted.
+func (o ModelRetentionSettingOutput) DeleteAfterDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ModelRetentionSetting) *int { return v.DeleteAfterDays }).(pulumi.IntPtrOutput)
+}
+
+type ModelRetentionSettingPtrOutput struct{ *pulumi.OutputState }
+
+func (ModelRetentionSettingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelRetentionSetting)(nil)).Elem()
+}
+
+func (o ModelRetentionSettingPtrOutput) ToModelRetentionSettingPtrOutput() ModelRetentionSettingPtrOutput {
+	return o
+}
+
+func (o ModelRetentionSettingPtrOutput) ToModelRetentionSettingPtrOutputWithContext(ctx context.Context) ModelRetentionSettingPtrOutput {
+	return o
+}
+
+func (o ModelRetentionSettingPtrOutput) Elem() ModelRetentionSettingOutput {
+	return o.ApplyT(func(v *ModelRetentionSetting) ModelRetentionSetting {
+		if v != nil {
+			return *v
+		}
+		var ret ModelRetentionSetting
+		return ret
+	}).(ModelRetentionSettingOutput)
+}
+
+// (Updatable) Number of days after which the model will be archived.
+func (o ModelRetentionSettingPtrOutput) ArchiveAfterDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelRetentionSetting) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.ArchiveAfterDays
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Customer notification options on success/failure of archival, deletion events.
+func (o ModelRetentionSettingPtrOutput) CustomerNotificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelRetentionSetting) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerNotificationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Number of days after which the archived model will be deleted.
+func (o ModelRetentionSettingPtrOutput) DeleteAfterDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ModelRetentionSetting) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DeleteAfterDays
+	}).(pulumi.IntPtrOutput)
 }
 
 type NotebookSessionNotebookSessionConfigDetails struct {
@@ -13948,6 +14555,236 @@ func (o GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput) Index(i pu
 	}).(GetJobsJobJobStorageMountConfigurationDetailsListOutput)
 }
 
+type GetModelBackupOperationDetail struct {
+	// The backup status of the model.
+	BackupState string `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails string `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup string `pulumi:"timeLastBackup"`
+}
+
+// GetModelBackupOperationDetailInput is an input type that accepts GetModelBackupOperationDetailArgs and GetModelBackupOperationDetailOutput values.
+// You can construct a concrete instance of `GetModelBackupOperationDetailInput` via:
+//
+//	GetModelBackupOperationDetailArgs{...}
+type GetModelBackupOperationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelBackupOperationDetailOutput() GetModelBackupOperationDetailOutput
+	ToGetModelBackupOperationDetailOutputWithContext(context.Context) GetModelBackupOperationDetailOutput
+}
+
+type GetModelBackupOperationDetailArgs struct {
+	// The backup status of the model.
+	BackupState pulumi.StringInput `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails pulumi.StringInput `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup pulumi.StringInput `pulumi:"timeLastBackup"`
+}
+
+func (GetModelBackupOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelBackupOperationDetailArgs) ToGetModelBackupOperationDetailOutput() GetModelBackupOperationDetailOutput {
+	return i.ToGetModelBackupOperationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelBackupOperationDetailArgs) ToGetModelBackupOperationDetailOutputWithContext(ctx context.Context) GetModelBackupOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelBackupOperationDetailOutput)
+}
+
+// GetModelBackupOperationDetailArrayInput is an input type that accepts GetModelBackupOperationDetailArray and GetModelBackupOperationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelBackupOperationDetailArrayInput` via:
+//
+//	GetModelBackupOperationDetailArray{ GetModelBackupOperationDetailArgs{...} }
+type GetModelBackupOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelBackupOperationDetailArrayOutput() GetModelBackupOperationDetailArrayOutput
+	ToGetModelBackupOperationDetailArrayOutputWithContext(context.Context) GetModelBackupOperationDetailArrayOutput
+}
+
+type GetModelBackupOperationDetailArray []GetModelBackupOperationDetailInput
+
+func (GetModelBackupOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelBackupOperationDetailArray) ToGetModelBackupOperationDetailArrayOutput() GetModelBackupOperationDetailArrayOutput {
+	return i.ToGetModelBackupOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelBackupOperationDetailArray) ToGetModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) GetModelBackupOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelBackupOperationDetailArrayOutput)
+}
+
+type GetModelBackupOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelBackupOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelBackupOperationDetailOutput) ToGetModelBackupOperationDetailOutput() GetModelBackupOperationDetailOutput {
+	return o
+}
+
+func (o GetModelBackupOperationDetailOutput) ToGetModelBackupOperationDetailOutputWithContext(ctx context.Context) GetModelBackupOperationDetailOutput {
+	return o
+}
+
+// The backup status of the model.
+func (o GetModelBackupOperationDetailOutput) BackupState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelBackupOperationDetail) string { return v.BackupState }).(pulumi.StringOutput)
+}
+
+// The backup execution status details of the model.
+func (o GetModelBackupOperationDetailOutput) BackupStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelBackupOperationDetail) string { return v.BackupStateDetails }).(pulumi.StringOutput)
+}
+
+// The last backup execution time of the model.
+func (o GetModelBackupOperationDetailOutput) TimeLastBackup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelBackupOperationDetail) string { return v.TimeLastBackup }).(pulumi.StringOutput)
+}
+
+type GetModelBackupOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelBackupOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelBackupOperationDetailArrayOutput) ToGetModelBackupOperationDetailArrayOutput() GetModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelBackupOperationDetailArrayOutput) ToGetModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) GetModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelBackupOperationDetailArrayOutput) Index(i pulumi.IntInput) GetModelBackupOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelBackupOperationDetail {
+		return vs[0].([]GetModelBackupOperationDetail)[vs[1].(int)]
+	}).(GetModelBackupOperationDetailOutput)
+}
+
+type GetModelBackupSetting struct {
+	// Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion string `pulumi:"backupRegion"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType string `pulumi:"customerNotificationType"`
+	// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled bool `pulumi:"isBackupEnabled"`
+}
+
+// GetModelBackupSettingInput is an input type that accepts GetModelBackupSettingArgs and GetModelBackupSettingOutput values.
+// You can construct a concrete instance of `GetModelBackupSettingInput` via:
+//
+//	GetModelBackupSettingArgs{...}
+type GetModelBackupSettingInput interface {
+	pulumi.Input
+
+	ToGetModelBackupSettingOutput() GetModelBackupSettingOutput
+	ToGetModelBackupSettingOutputWithContext(context.Context) GetModelBackupSettingOutput
+}
+
+type GetModelBackupSettingArgs struct {
+	// Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion pulumi.StringInput `pulumi:"backupRegion"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType pulumi.StringInput `pulumi:"customerNotificationType"`
+	// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled pulumi.BoolInput `pulumi:"isBackupEnabled"`
+}
+
+func (GetModelBackupSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelBackupSetting)(nil)).Elem()
+}
+
+func (i GetModelBackupSettingArgs) ToGetModelBackupSettingOutput() GetModelBackupSettingOutput {
+	return i.ToGetModelBackupSettingOutputWithContext(context.Background())
+}
+
+func (i GetModelBackupSettingArgs) ToGetModelBackupSettingOutputWithContext(ctx context.Context) GetModelBackupSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelBackupSettingOutput)
+}
+
+// GetModelBackupSettingArrayInput is an input type that accepts GetModelBackupSettingArray and GetModelBackupSettingArrayOutput values.
+// You can construct a concrete instance of `GetModelBackupSettingArrayInput` via:
+//
+//	GetModelBackupSettingArray{ GetModelBackupSettingArgs{...} }
+type GetModelBackupSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetModelBackupSettingArrayOutput() GetModelBackupSettingArrayOutput
+	ToGetModelBackupSettingArrayOutputWithContext(context.Context) GetModelBackupSettingArrayOutput
+}
+
+type GetModelBackupSettingArray []GetModelBackupSettingInput
+
+func (GetModelBackupSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelBackupSetting)(nil)).Elem()
+}
+
+func (i GetModelBackupSettingArray) ToGetModelBackupSettingArrayOutput() GetModelBackupSettingArrayOutput {
+	return i.ToGetModelBackupSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelBackupSettingArray) ToGetModelBackupSettingArrayOutputWithContext(ctx context.Context) GetModelBackupSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelBackupSettingArrayOutput)
+}
+
+type GetModelBackupSettingOutput struct{ *pulumi.OutputState }
+
+func (GetModelBackupSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelBackupSetting)(nil)).Elem()
+}
+
+func (o GetModelBackupSettingOutput) ToGetModelBackupSettingOutput() GetModelBackupSettingOutput {
+	return o
+}
+
+func (o GetModelBackupSettingOutput) ToGetModelBackupSettingOutputWithContext(ctx context.Context) GetModelBackupSettingOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure backup region for the model.
+func (o GetModelBackupSettingOutput) BackupRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelBackupSetting) string { return v.BackupRegion }).(pulumi.StringOutput)
+}
+
+// Customer notification options on success/failure of archival, deletion events.
+func (o GetModelBackupSettingOutput) CustomerNotificationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelBackupSetting) string { return v.CustomerNotificationType }).(pulumi.StringOutput)
+}
+
+// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+func (o GetModelBackupSettingOutput) IsBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelBackupSetting) bool { return v.IsBackupEnabled }).(pulumi.BoolOutput)
+}
+
+type GetModelBackupSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelBackupSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelBackupSetting)(nil)).Elem()
+}
+
+func (o GetModelBackupSettingArrayOutput) ToGetModelBackupSettingArrayOutput() GetModelBackupSettingArrayOutput {
+	return o
+}
+
+func (o GetModelBackupSettingArrayOutput) ToGetModelBackupSettingArrayOutputWithContext(ctx context.Context) GetModelBackupSettingArrayOutput {
+	return o
+}
+
+func (o GetModelBackupSettingArrayOutput) Index(i pulumi.IntInput) GetModelBackupSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelBackupSetting {
+		return vs[0].([]GetModelBackupSetting)[vs[1].(int)]
+	}).(GetModelBackupSettingOutput)
+}
+
 type GetModelCustomMetadataList struct {
 	// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category string `pulumi:"category"`
@@ -18432,6 +19269,263 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput) 
 	}).(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput)
 }
 
+type GetModelRetentionOperationDetail struct {
+	// The archival status of model.
+	ArchiveState string `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails string `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState string `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails string `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled string `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled string `pulumi:"timeDeletionScheduled"`
+}
+
+// GetModelRetentionOperationDetailInput is an input type that accepts GetModelRetentionOperationDetailArgs and GetModelRetentionOperationDetailOutput values.
+// You can construct a concrete instance of `GetModelRetentionOperationDetailInput` via:
+//
+//	GetModelRetentionOperationDetailArgs{...}
+type GetModelRetentionOperationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelRetentionOperationDetailOutput() GetModelRetentionOperationDetailOutput
+	ToGetModelRetentionOperationDetailOutputWithContext(context.Context) GetModelRetentionOperationDetailOutput
+}
+
+type GetModelRetentionOperationDetailArgs struct {
+	// The archival status of model.
+	ArchiveState pulumi.StringInput `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails pulumi.StringInput `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState pulumi.StringInput `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails pulumi.StringInput `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled pulumi.StringInput `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled pulumi.StringInput `pulumi:"timeDeletionScheduled"`
+}
+
+func (GetModelRetentionOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelRetentionOperationDetailArgs) ToGetModelRetentionOperationDetailOutput() GetModelRetentionOperationDetailOutput {
+	return i.ToGetModelRetentionOperationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelRetentionOperationDetailArgs) ToGetModelRetentionOperationDetailOutputWithContext(ctx context.Context) GetModelRetentionOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelRetentionOperationDetailOutput)
+}
+
+// GetModelRetentionOperationDetailArrayInput is an input type that accepts GetModelRetentionOperationDetailArray and GetModelRetentionOperationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelRetentionOperationDetailArrayInput` via:
+//
+//	GetModelRetentionOperationDetailArray{ GetModelRetentionOperationDetailArgs{...} }
+type GetModelRetentionOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelRetentionOperationDetailArrayOutput() GetModelRetentionOperationDetailArrayOutput
+	ToGetModelRetentionOperationDetailArrayOutputWithContext(context.Context) GetModelRetentionOperationDetailArrayOutput
+}
+
+type GetModelRetentionOperationDetailArray []GetModelRetentionOperationDetailInput
+
+func (GetModelRetentionOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelRetentionOperationDetailArray) ToGetModelRetentionOperationDetailArrayOutput() GetModelRetentionOperationDetailArrayOutput {
+	return i.ToGetModelRetentionOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelRetentionOperationDetailArray) ToGetModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) GetModelRetentionOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelRetentionOperationDetailArrayOutput)
+}
+
+type GetModelRetentionOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelRetentionOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelRetentionOperationDetailOutput) ToGetModelRetentionOperationDetailOutput() GetModelRetentionOperationDetailOutput {
+	return o
+}
+
+func (o GetModelRetentionOperationDetailOutput) ToGetModelRetentionOperationDetailOutputWithContext(ctx context.Context) GetModelRetentionOperationDetailOutput {
+	return o
+}
+
+// The archival status of model.
+func (o GetModelRetentionOperationDetailOutput) ArchiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.ArchiveState }).(pulumi.StringOutput)
+}
+
+// The archival state details of the model.
+func (o GetModelRetentionOperationDetailOutput) ArchiveStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.ArchiveStateDetails }).(pulumi.StringOutput)
+}
+
+// The deletion status of the archived model.
+func (o GetModelRetentionOperationDetailOutput) DeleteState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.DeleteState }).(pulumi.StringOutput)
+}
+
+// The deletion status details of the archived model.
+func (o GetModelRetentionOperationDetailOutput) DeleteStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.DeleteStateDetails }).(pulumi.StringOutput)
+}
+
+// The estimated archival time of the model based on the provided retention setting.
+func (o GetModelRetentionOperationDetailOutput) TimeArchivalScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.TimeArchivalScheduled }).(pulumi.StringOutput)
+}
+
+// The estimated deletion time of the model based on the provided retention setting.
+func (o GetModelRetentionOperationDetailOutput) TimeDeletionScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionOperationDetail) string { return v.TimeDeletionScheduled }).(pulumi.StringOutput)
+}
+
+type GetModelRetentionOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelRetentionOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelRetentionOperationDetailArrayOutput) ToGetModelRetentionOperationDetailArrayOutput() GetModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelRetentionOperationDetailArrayOutput) ToGetModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) GetModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelRetentionOperationDetailArrayOutput) Index(i pulumi.IntInput) GetModelRetentionOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelRetentionOperationDetail {
+		return vs[0].([]GetModelRetentionOperationDetail)[vs[1].(int)]
+	}).(GetModelRetentionOperationDetailOutput)
+}
+
+type GetModelRetentionSetting struct {
+	// Number of days after which the model will be archived.
+	ArchiveAfterDays int `pulumi:"archiveAfterDays"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType string `pulumi:"customerNotificationType"`
+	// Number of days after which the archived model will be deleted.
+	DeleteAfterDays int `pulumi:"deleteAfterDays"`
+}
+
+// GetModelRetentionSettingInput is an input type that accepts GetModelRetentionSettingArgs and GetModelRetentionSettingOutput values.
+// You can construct a concrete instance of `GetModelRetentionSettingInput` via:
+//
+//	GetModelRetentionSettingArgs{...}
+type GetModelRetentionSettingInput interface {
+	pulumi.Input
+
+	ToGetModelRetentionSettingOutput() GetModelRetentionSettingOutput
+	ToGetModelRetentionSettingOutputWithContext(context.Context) GetModelRetentionSettingOutput
+}
+
+type GetModelRetentionSettingArgs struct {
+	// Number of days after which the model will be archived.
+	ArchiveAfterDays pulumi.IntInput `pulumi:"archiveAfterDays"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType pulumi.StringInput `pulumi:"customerNotificationType"`
+	// Number of days after which the archived model will be deleted.
+	DeleteAfterDays pulumi.IntInput `pulumi:"deleteAfterDays"`
+}
+
+func (GetModelRetentionSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelRetentionSetting)(nil)).Elem()
+}
+
+func (i GetModelRetentionSettingArgs) ToGetModelRetentionSettingOutput() GetModelRetentionSettingOutput {
+	return i.ToGetModelRetentionSettingOutputWithContext(context.Background())
+}
+
+func (i GetModelRetentionSettingArgs) ToGetModelRetentionSettingOutputWithContext(ctx context.Context) GetModelRetentionSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelRetentionSettingOutput)
+}
+
+// GetModelRetentionSettingArrayInput is an input type that accepts GetModelRetentionSettingArray and GetModelRetentionSettingArrayOutput values.
+// You can construct a concrete instance of `GetModelRetentionSettingArrayInput` via:
+//
+//	GetModelRetentionSettingArray{ GetModelRetentionSettingArgs{...} }
+type GetModelRetentionSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetModelRetentionSettingArrayOutput() GetModelRetentionSettingArrayOutput
+	ToGetModelRetentionSettingArrayOutputWithContext(context.Context) GetModelRetentionSettingArrayOutput
+}
+
+type GetModelRetentionSettingArray []GetModelRetentionSettingInput
+
+func (GetModelRetentionSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelRetentionSetting)(nil)).Elem()
+}
+
+func (i GetModelRetentionSettingArray) ToGetModelRetentionSettingArrayOutput() GetModelRetentionSettingArrayOutput {
+	return i.ToGetModelRetentionSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelRetentionSettingArray) ToGetModelRetentionSettingArrayOutputWithContext(ctx context.Context) GetModelRetentionSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelRetentionSettingArrayOutput)
+}
+
+type GetModelRetentionSettingOutput struct{ *pulumi.OutputState }
+
+func (GetModelRetentionSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelRetentionSetting)(nil)).Elem()
+}
+
+func (o GetModelRetentionSettingOutput) ToGetModelRetentionSettingOutput() GetModelRetentionSettingOutput {
+	return o
+}
+
+func (o GetModelRetentionSettingOutput) ToGetModelRetentionSettingOutputWithContext(ctx context.Context) GetModelRetentionSettingOutput {
+	return o
+}
+
+// Number of days after which the model will be archived.
+func (o GetModelRetentionSettingOutput) ArchiveAfterDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelRetentionSetting) int { return v.ArchiveAfterDays }).(pulumi.IntOutput)
+}
+
+// Customer notification options on success/failure of archival, deletion events.
+func (o GetModelRetentionSettingOutput) CustomerNotificationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelRetentionSetting) string { return v.CustomerNotificationType }).(pulumi.StringOutput)
+}
+
+// Number of days after which the archived model will be deleted.
+func (o GetModelRetentionSettingOutput) DeleteAfterDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelRetentionSetting) int { return v.DeleteAfterDays }).(pulumi.IntOutput)
+}
+
+type GetModelRetentionSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelRetentionSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelRetentionSetting)(nil)).Elem()
+}
+
+func (o GetModelRetentionSettingArrayOutput) ToGetModelRetentionSettingArrayOutput() GetModelRetentionSettingArrayOutput {
+	return o
+}
+
+func (o GetModelRetentionSettingArrayOutput) ToGetModelRetentionSettingArrayOutputWithContext(ctx context.Context) GetModelRetentionSettingArrayOutput {
+	return o
+}
+
+func (o GetModelRetentionSettingArrayOutput) Index(i pulumi.IntInput) GetModelRetentionSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelRetentionSetting {
+		return vs[0].([]GetModelRetentionSetting)[vs[1].(int)]
+	}).(GetModelRetentionSettingOutput)
+}
+
 type GetModelVersionSetsFilter struct {
 	// A filter to return only resources that match the entire name given.
 	Name   string   `pulumi:"name"`
@@ -18848,6 +19942,10 @@ type GetModelsModel struct {
 	ArtifactContentLength      string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5         string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       string `pulumi:"artifactLastModified"`
+	// Backup operation details of the model.
+	BackupOperationDetails []GetModelsModelBackupOperationDetail `pulumi:"backupOperationDetails"`
+	// Back up setting details of the model.
+	BackupSettings []GetModelsModelBackupSetting `pulumi:"backupSettings"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -18868,12 +19966,20 @@ type GetModelsModel struct {
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
-	InputSchema   string `pulumi:"inputSchema"`
-	ModelArtifact string `pulumi:"modelArtifact"`
+	InputSchema string `pulumi:"inputSchema"`
+	// Details about the lifecycle state of the model.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	ModelArtifact    string `pulumi:"modelArtifact"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema string `pulumi:"outputSchema"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId string `pulumi:"projectId"`
+	// Retention operation details for the model.
+	RetentionOperationDetails []GetModelsModelRetentionOperationDetail `pulumi:"retentionOperationDetails"`
+	// Retention setting details of the model.
+	RetentionSettings []GetModelsModelRetentionSetting `pulumi:"retentionSettings"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -18896,6 +20002,10 @@ type GetModelsModelArgs struct {
 	ArtifactContentLength      pulumi.StringInput `pulumi:"artifactContentLength"`
 	ArtifactContentMd5         pulumi.StringInput `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       pulumi.StringInput `pulumi:"artifactLastModified"`
+	// Backup operation details of the model.
+	BackupOperationDetails GetModelsModelBackupOperationDetailArrayInput `pulumi:"backupOperationDetails"`
+	// Back up setting details of the model.
+	BackupSettings GetModelsModelBackupSettingArrayInput `pulumi:"backupSettings"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
@@ -18916,12 +20026,20 @@ type GetModelsModelArgs struct {
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Input schema file content in String format
-	InputSchema   pulumi.StringInput `pulumi:"inputSchema"`
-	ModelArtifact pulumi.StringInput `pulumi:"modelArtifact"`
+	InputSchema pulumi.StringInput `pulumi:"inputSchema"`
+	// Details about the lifecycle state of the model.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	ModelArtifact    pulumi.StringInput `pulumi:"modelArtifact"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName pulumi.StringInput `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema pulumi.StringInput `pulumi:"outputSchema"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Retention operation details for the model.
+	RetentionOperationDetails GetModelsModelRetentionOperationDetailArrayInput `pulumi:"retentionOperationDetails"`
+	// Retention setting details of the model.
+	RetentionSettings GetModelsModelRetentionSettingArrayInput `pulumi:"retentionSettings"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -18995,6 +20113,16 @@ func (o GetModelsModelOutput) ArtifactLastModified() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.ArtifactLastModified }).(pulumi.StringOutput)
 }
 
+// Backup operation details of the model.
+func (o GetModelsModelOutput) BackupOperationDetails() GetModelsModelBackupOperationDetailArrayOutput {
+	return o.ApplyT(func(v GetModelsModel) []GetModelsModelBackupOperationDetail { return v.BackupOperationDetails }).(GetModelsModelBackupOperationDetailArrayOutput)
+}
+
+// Back up setting details of the model.
+func (o GetModelsModelOutput) BackupSettings() GetModelsModelBackupSettingArrayOutput {
+	return o.ApplyT(func(v GetModelsModel) []GetModelsModelBackupSetting { return v.BackupSettings }).(GetModelsModelBackupSettingArrayOutput)
+}
+
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetModelsModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -19049,8 +20177,18 @@ func (o GetModelsModelOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.InputSchema }).(pulumi.StringOutput)
 }
 
+// Details about the lifecycle state of the model.
+func (o GetModelsModelOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModel) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 func (o GetModelsModelOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.ModelArtifact }).(pulumi.StringOutput)
+}
+
+// The name of the model version set that the model is associated to.
+func (o GetModelsModelOutput) ModelVersionSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModel) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
 }
 
 // Output schema file content in String format
@@ -19061,6 +20199,16 @@ func (o GetModelsModelOutput) OutputSchema() pulumi.StringOutput {
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 func (o GetModelsModelOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Retention operation details for the model.
+func (o GetModelsModelOutput) RetentionOperationDetails() GetModelsModelRetentionOperationDetailArrayOutput {
+	return o.ApplyT(func(v GetModelsModel) []GetModelsModelRetentionOperationDetail { return v.RetentionOperationDetails }).(GetModelsModelRetentionOperationDetailArrayOutput)
+}
+
+// Retention setting details of the model.
+func (o GetModelsModelOutput) RetentionSettings() GetModelsModelRetentionSettingArrayOutput {
+	return o.ApplyT(func(v GetModelsModel) []GetModelsModelRetentionSetting { return v.RetentionSettings }).(GetModelsModelRetentionSettingArrayOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -19091,6 +20239,236 @@ func (o GetModelsModelArrayOutput) Index(i pulumi.IntInput) GetModelsModelOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModel {
 		return vs[0].([]GetModelsModel)[vs[1].(int)]
 	}).(GetModelsModelOutput)
+}
+
+type GetModelsModelBackupOperationDetail struct {
+	// The backup status of the model.
+	BackupState string `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails string `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup string `pulumi:"timeLastBackup"`
+}
+
+// GetModelsModelBackupOperationDetailInput is an input type that accepts GetModelsModelBackupOperationDetailArgs and GetModelsModelBackupOperationDetailOutput values.
+// You can construct a concrete instance of `GetModelsModelBackupOperationDetailInput` via:
+//
+//	GetModelsModelBackupOperationDetailArgs{...}
+type GetModelsModelBackupOperationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelsModelBackupOperationDetailOutput() GetModelsModelBackupOperationDetailOutput
+	ToGetModelsModelBackupOperationDetailOutputWithContext(context.Context) GetModelsModelBackupOperationDetailOutput
+}
+
+type GetModelsModelBackupOperationDetailArgs struct {
+	// The backup status of the model.
+	BackupState pulumi.StringInput `pulumi:"backupState"`
+	// The backup execution status details of the model.
+	BackupStateDetails pulumi.StringInput `pulumi:"backupStateDetails"`
+	// The last backup execution time of the model.
+	TimeLastBackup pulumi.StringInput `pulumi:"timeLastBackup"`
+}
+
+func (GetModelsModelBackupOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelsModelBackupOperationDetailArgs) ToGetModelsModelBackupOperationDetailOutput() GetModelsModelBackupOperationDetailOutput {
+	return i.ToGetModelsModelBackupOperationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelBackupOperationDetailArgs) ToGetModelsModelBackupOperationDetailOutputWithContext(ctx context.Context) GetModelsModelBackupOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelBackupOperationDetailOutput)
+}
+
+// GetModelsModelBackupOperationDetailArrayInput is an input type that accepts GetModelsModelBackupOperationDetailArray and GetModelsModelBackupOperationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelBackupOperationDetailArrayInput` via:
+//
+//	GetModelsModelBackupOperationDetailArray{ GetModelsModelBackupOperationDetailArgs{...} }
+type GetModelsModelBackupOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelBackupOperationDetailArrayOutput() GetModelsModelBackupOperationDetailArrayOutput
+	ToGetModelsModelBackupOperationDetailArrayOutputWithContext(context.Context) GetModelsModelBackupOperationDetailArrayOutput
+}
+
+type GetModelsModelBackupOperationDetailArray []GetModelsModelBackupOperationDetailInput
+
+func (GetModelsModelBackupOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelsModelBackupOperationDetailArray) ToGetModelsModelBackupOperationDetailArrayOutput() GetModelsModelBackupOperationDetailArrayOutput {
+	return i.ToGetModelsModelBackupOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelBackupOperationDetailArray) ToGetModelsModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) GetModelsModelBackupOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelBackupOperationDetailArrayOutput)
+}
+
+type GetModelsModelBackupOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelBackupOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelsModelBackupOperationDetailOutput) ToGetModelsModelBackupOperationDetailOutput() GetModelsModelBackupOperationDetailOutput {
+	return o
+}
+
+func (o GetModelsModelBackupOperationDetailOutput) ToGetModelsModelBackupOperationDetailOutputWithContext(ctx context.Context) GetModelsModelBackupOperationDetailOutput {
+	return o
+}
+
+// The backup status of the model.
+func (o GetModelsModelBackupOperationDetailOutput) BackupState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelBackupOperationDetail) string { return v.BackupState }).(pulumi.StringOutput)
+}
+
+// The backup execution status details of the model.
+func (o GetModelsModelBackupOperationDetailOutput) BackupStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelBackupOperationDetail) string { return v.BackupStateDetails }).(pulumi.StringOutput)
+}
+
+// The last backup execution time of the model.
+func (o GetModelsModelBackupOperationDetailOutput) TimeLastBackup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelBackupOperationDetail) string { return v.TimeLastBackup }).(pulumi.StringOutput)
+}
+
+type GetModelsModelBackupOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelBackupOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelBackupOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelsModelBackupOperationDetailArrayOutput) ToGetModelsModelBackupOperationDetailArrayOutput() GetModelsModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelsModelBackupOperationDetailArrayOutput) ToGetModelsModelBackupOperationDetailArrayOutputWithContext(ctx context.Context) GetModelsModelBackupOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelsModelBackupOperationDetailArrayOutput) Index(i pulumi.IntInput) GetModelsModelBackupOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelBackupOperationDetail {
+		return vs[0].([]GetModelsModelBackupOperationDetail)[vs[1].(int)]
+	}).(GetModelsModelBackupOperationDetailOutput)
+}
+
+type GetModelsModelBackupSetting struct {
+	// Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion string `pulumi:"backupRegion"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType string `pulumi:"customerNotificationType"`
+	// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled bool `pulumi:"isBackupEnabled"`
+}
+
+// GetModelsModelBackupSettingInput is an input type that accepts GetModelsModelBackupSettingArgs and GetModelsModelBackupSettingOutput values.
+// You can construct a concrete instance of `GetModelsModelBackupSettingInput` via:
+//
+//	GetModelsModelBackupSettingArgs{...}
+type GetModelsModelBackupSettingInput interface {
+	pulumi.Input
+
+	ToGetModelsModelBackupSettingOutput() GetModelsModelBackupSettingOutput
+	ToGetModelsModelBackupSettingOutputWithContext(context.Context) GetModelsModelBackupSettingOutput
+}
+
+type GetModelsModelBackupSettingArgs struct {
+	// Oracle Cloud Infrastructure backup region for the model.
+	BackupRegion pulumi.StringInput `pulumi:"backupRegion"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType pulumi.StringInput `pulumi:"customerNotificationType"`
+	// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+	IsBackupEnabled pulumi.BoolInput `pulumi:"isBackupEnabled"`
+}
+
+func (GetModelsModelBackupSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelBackupSetting)(nil)).Elem()
+}
+
+func (i GetModelsModelBackupSettingArgs) ToGetModelsModelBackupSettingOutput() GetModelsModelBackupSettingOutput {
+	return i.ToGetModelsModelBackupSettingOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelBackupSettingArgs) ToGetModelsModelBackupSettingOutputWithContext(ctx context.Context) GetModelsModelBackupSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelBackupSettingOutput)
+}
+
+// GetModelsModelBackupSettingArrayInput is an input type that accepts GetModelsModelBackupSettingArray and GetModelsModelBackupSettingArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelBackupSettingArrayInput` via:
+//
+//	GetModelsModelBackupSettingArray{ GetModelsModelBackupSettingArgs{...} }
+type GetModelsModelBackupSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelBackupSettingArrayOutput() GetModelsModelBackupSettingArrayOutput
+	ToGetModelsModelBackupSettingArrayOutputWithContext(context.Context) GetModelsModelBackupSettingArrayOutput
+}
+
+type GetModelsModelBackupSettingArray []GetModelsModelBackupSettingInput
+
+func (GetModelsModelBackupSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelBackupSetting)(nil)).Elem()
+}
+
+func (i GetModelsModelBackupSettingArray) ToGetModelsModelBackupSettingArrayOutput() GetModelsModelBackupSettingArrayOutput {
+	return i.ToGetModelsModelBackupSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelBackupSettingArray) ToGetModelsModelBackupSettingArrayOutputWithContext(ctx context.Context) GetModelsModelBackupSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelBackupSettingArrayOutput)
+}
+
+type GetModelsModelBackupSettingOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelBackupSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelBackupSetting)(nil)).Elem()
+}
+
+func (o GetModelsModelBackupSettingOutput) ToGetModelsModelBackupSettingOutput() GetModelsModelBackupSettingOutput {
+	return o
+}
+
+func (o GetModelsModelBackupSettingOutput) ToGetModelsModelBackupSettingOutputWithContext(ctx context.Context) GetModelsModelBackupSettingOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure backup region for the model.
+func (o GetModelsModelBackupSettingOutput) BackupRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelBackupSetting) string { return v.BackupRegion }).(pulumi.StringOutput)
+}
+
+// Customer notification options on success/failure of archival, deletion events.
+func (o GetModelsModelBackupSettingOutput) CustomerNotificationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelBackupSetting) string { return v.CustomerNotificationType }).(pulumi.StringOutput)
+}
+
+// Boolean flag representing whether backup needs to be enabled/disabled for the model.
+func (o GetModelsModelBackupSettingOutput) IsBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetModelsModelBackupSetting) bool { return v.IsBackupEnabled }).(pulumi.BoolOutput)
+}
+
+type GetModelsModelBackupSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelBackupSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelBackupSetting)(nil)).Elem()
+}
+
+func (o GetModelsModelBackupSettingArrayOutput) ToGetModelsModelBackupSettingArrayOutput() GetModelsModelBackupSettingArrayOutput {
+	return o
+}
+
+func (o GetModelsModelBackupSettingArrayOutput) ToGetModelsModelBackupSettingArrayOutputWithContext(ctx context.Context) GetModelsModelBackupSettingArrayOutput {
+	return o
+}
+
+func (o GetModelsModelBackupSettingArrayOutput) Index(i pulumi.IntInput) GetModelsModelBackupSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelBackupSetting {
+		return vs[0].([]GetModelsModelBackupSetting)[vs[1].(int)]
+	}).(GetModelsModelBackupSettingOutput)
 }
 
 type GetModelsModelCustomMetadataList struct {
@@ -19375,6 +20753,263 @@ func (o GetModelsModelDefinedMetadataListArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelDefinedMetadataList {
 		return vs[0].([]GetModelsModelDefinedMetadataList)[vs[1].(int)]
 	}).(GetModelsModelDefinedMetadataListOutput)
+}
+
+type GetModelsModelRetentionOperationDetail struct {
+	// The archival status of model.
+	ArchiveState string `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails string `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState string `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails string `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled string `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled string `pulumi:"timeDeletionScheduled"`
+}
+
+// GetModelsModelRetentionOperationDetailInput is an input type that accepts GetModelsModelRetentionOperationDetailArgs and GetModelsModelRetentionOperationDetailOutput values.
+// You can construct a concrete instance of `GetModelsModelRetentionOperationDetailInput` via:
+//
+//	GetModelsModelRetentionOperationDetailArgs{...}
+type GetModelsModelRetentionOperationDetailInput interface {
+	pulumi.Input
+
+	ToGetModelsModelRetentionOperationDetailOutput() GetModelsModelRetentionOperationDetailOutput
+	ToGetModelsModelRetentionOperationDetailOutputWithContext(context.Context) GetModelsModelRetentionOperationDetailOutput
+}
+
+type GetModelsModelRetentionOperationDetailArgs struct {
+	// The archival status of model.
+	ArchiveState pulumi.StringInput `pulumi:"archiveState"`
+	// The archival state details of the model.
+	ArchiveStateDetails pulumi.StringInput `pulumi:"archiveStateDetails"`
+	// The deletion status of the archived model.
+	DeleteState pulumi.StringInput `pulumi:"deleteState"`
+	// The deletion status details of the archived model.
+	DeleteStateDetails pulumi.StringInput `pulumi:"deleteStateDetails"`
+	// The estimated archival time of the model based on the provided retention setting.
+	TimeArchivalScheduled pulumi.StringInput `pulumi:"timeArchivalScheduled"`
+	// The estimated deletion time of the model based on the provided retention setting.
+	TimeDeletionScheduled pulumi.StringInput `pulumi:"timeDeletionScheduled"`
+}
+
+func (GetModelsModelRetentionOperationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelsModelRetentionOperationDetailArgs) ToGetModelsModelRetentionOperationDetailOutput() GetModelsModelRetentionOperationDetailOutput {
+	return i.ToGetModelsModelRetentionOperationDetailOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelRetentionOperationDetailArgs) ToGetModelsModelRetentionOperationDetailOutputWithContext(ctx context.Context) GetModelsModelRetentionOperationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelRetentionOperationDetailOutput)
+}
+
+// GetModelsModelRetentionOperationDetailArrayInput is an input type that accepts GetModelsModelRetentionOperationDetailArray and GetModelsModelRetentionOperationDetailArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelRetentionOperationDetailArrayInput` via:
+//
+//	GetModelsModelRetentionOperationDetailArray{ GetModelsModelRetentionOperationDetailArgs{...} }
+type GetModelsModelRetentionOperationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelRetentionOperationDetailArrayOutput() GetModelsModelRetentionOperationDetailArrayOutput
+	ToGetModelsModelRetentionOperationDetailArrayOutputWithContext(context.Context) GetModelsModelRetentionOperationDetailArrayOutput
+}
+
+type GetModelsModelRetentionOperationDetailArray []GetModelsModelRetentionOperationDetailInput
+
+func (GetModelsModelRetentionOperationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (i GetModelsModelRetentionOperationDetailArray) ToGetModelsModelRetentionOperationDetailArrayOutput() GetModelsModelRetentionOperationDetailArrayOutput {
+	return i.ToGetModelsModelRetentionOperationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelRetentionOperationDetailArray) ToGetModelsModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) GetModelsModelRetentionOperationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelRetentionOperationDetailArrayOutput)
+}
+
+type GetModelsModelRetentionOperationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelRetentionOperationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelsModelRetentionOperationDetailOutput) ToGetModelsModelRetentionOperationDetailOutput() GetModelsModelRetentionOperationDetailOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionOperationDetailOutput) ToGetModelsModelRetentionOperationDetailOutputWithContext(ctx context.Context) GetModelsModelRetentionOperationDetailOutput {
+	return o
+}
+
+// The archival status of model.
+func (o GetModelsModelRetentionOperationDetailOutput) ArchiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.ArchiveState }).(pulumi.StringOutput)
+}
+
+// The archival state details of the model.
+func (o GetModelsModelRetentionOperationDetailOutput) ArchiveStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.ArchiveStateDetails }).(pulumi.StringOutput)
+}
+
+// The deletion status of the archived model.
+func (o GetModelsModelRetentionOperationDetailOutput) DeleteState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.DeleteState }).(pulumi.StringOutput)
+}
+
+// The deletion status details of the archived model.
+func (o GetModelsModelRetentionOperationDetailOutput) DeleteStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.DeleteStateDetails }).(pulumi.StringOutput)
+}
+
+// The estimated archival time of the model based on the provided retention setting.
+func (o GetModelsModelRetentionOperationDetailOutput) TimeArchivalScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.TimeArchivalScheduled }).(pulumi.StringOutput)
+}
+
+// The estimated deletion time of the model based on the provided retention setting.
+func (o GetModelsModelRetentionOperationDetailOutput) TimeDeletionScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionOperationDetail) string { return v.TimeDeletionScheduled }).(pulumi.StringOutput)
+}
+
+type GetModelsModelRetentionOperationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelRetentionOperationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelRetentionOperationDetail)(nil)).Elem()
+}
+
+func (o GetModelsModelRetentionOperationDetailArrayOutput) ToGetModelsModelRetentionOperationDetailArrayOutput() GetModelsModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionOperationDetailArrayOutput) ToGetModelsModelRetentionOperationDetailArrayOutputWithContext(ctx context.Context) GetModelsModelRetentionOperationDetailArrayOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionOperationDetailArrayOutput) Index(i pulumi.IntInput) GetModelsModelRetentionOperationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelRetentionOperationDetail {
+		return vs[0].([]GetModelsModelRetentionOperationDetail)[vs[1].(int)]
+	}).(GetModelsModelRetentionOperationDetailOutput)
+}
+
+type GetModelsModelRetentionSetting struct {
+	// Number of days after which the model will be archived.
+	ArchiveAfterDays int `pulumi:"archiveAfterDays"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType string `pulumi:"customerNotificationType"`
+	// Number of days after which the archived model will be deleted.
+	DeleteAfterDays int `pulumi:"deleteAfterDays"`
+}
+
+// GetModelsModelRetentionSettingInput is an input type that accepts GetModelsModelRetentionSettingArgs and GetModelsModelRetentionSettingOutput values.
+// You can construct a concrete instance of `GetModelsModelRetentionSettingInput` via:
+//
+//	GetModelsModelRetentionSettingArgs{...}
+type GetModelsModelRetentionSettingInput interface {
+	pulumi.Input
+
+	ToGetModelsModelRetentionSettingOutput() GetModelsModelRetentionSettingOutput
+	ToGetModelsModelRetentionSettingOutputWithContext(context.Context) GetModelsModelRetentionSettingOutput
+}
+
+type GetModelsModelRetentionSettingArgs struct {
+	// Number of days after which the model will be archived.
+	ArchiveAfterDays pulumi.IntInput `pulumi:"archiveAfterDays"`
+	// Customer notification options on success/failure of archival, deletion events.
+	CustomerNotificationType pulumi.StringInput `pulumi:"customerNotificationType"`
+	// Number of days after which the archived model will be deleted.
+	DeleteAfterDays pulumi.IntInput `pulumi:"deleteAfterDays"`
+}
+
+func (GetModelsModelRetentionSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelRetentionSetting)(nil)).Elem()
+}
+
+func (i GetModelsModelRetentionSettingArgs) ToGetModelsModelRetentionSettingOutput() GetModelsModelRetentionSettingOutput {
+	return i.ToGetModelsModelRetentionSettingOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelRetentionSettingArgs) ToGetModelsModelRetentionSettingOutputWithContext(ctx context.Context) GetModelsModelRetentionSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelRetentionSettingOutput)
+}
+
+// GetModelsModelRetentionSettingArrayInput is an input type that accepts GetModelsModelRetentionSettingArray and GetModelsModelRetentionSettingArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelRetentionSettingArrayInput` via:
+//
+//	GetModelsModelRetentionSettingArray{ GetModelsModelRetentionSettingArgs{...} }
+type GetModelsModelRetentionSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelRetentionSettingArrayOutput() GetModelsModelRetentionSettingArrayOutput
+	ToGetModelsModelRetentionSettingArrayOutputWithContext(context.Context) GetModelsModelRetentionSettingArrayOutput
+}
+
+type GetModelsModelRetentionSettingArray []GetModelsModelRetentionSettingInput
+
+func (GetModelsModelRetentionSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelRetentionSetting)(nil)).Elem()
+}
+
+func (i GetModelsModelRetentionSettingArray) ToGetModelsModelRetentionSettingArrayOutput() GetModelsModelRetentionSettingArrayOutput {
+	return i.ToGetModelsModelRetentionSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelRetentionSettingArray) ToGetModelsModelRetentionSettingArrayOutputWithContext(ctx context.Context) GetModelsModelRetentionSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelRetentionSettingArrayOutput)
+}
+
+type GetModelsModelRetentionSettingOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelRetentionSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelRetentionSetting)(nil)).Elem()
+}
+
+func (o GetModelsModelRetentionSettingOutput) ToGetModelsModelRetentionSettingOutput() GetModelsModelRetentionSettingOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionSettingOutput) ToGetModelsModelRetentionSettingOutputWithContext(ctx context.Context) GetModelsModelRetentionSettingOutput {
+	return o
+}
+
+// Number of days after which the model will be archived.
+func (o GetModelsModelRetentionSettingOutput) ArchiveAfterDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionSetting) int { return v.ArchiveAfterDays }).(pulumi.IntOutput)
+}
+
+// Customer notification options on success/failure of archival, deletion events.
+func (o GetModelsModelRetentionSettingOutput) CustomerNotificationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionSetting) string { return v.CustomerNotificationType }).(pulumi.StringOutput)
+}
+
+// Number of days after which the archived model will be deleted.
+func (o GetModelsModelRetentionSettingOutput) DeleteAfterDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelsModelRetentionSetting) int { return v.DeleteAfterDays }).(pulumi.IntOutput)
+}
+
+type GetModelsModelRetentionSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelRetentionSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelRetentionSetting)(nil)).Elem()
+}
+
+func (o GetModelsModelRetentionSettingArrayOutput) ToGetModelsModelRetentionSettingArrayOutput() GetModelsModelRetentionSettingArrayOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionSettingArrayOutput) ToGetModelsModelRetentionSettingArrayOutputWithContext(ctx context.Context) GetModelsModelRetentionSettingArrayOutput {
+	return o
+}
+
+func (o GetModelsModelRetentionSettingArrayOutput) Index(i pulumi.IntInput) GetModelsModelRetentionSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelRetentionSetting {
+		return vs[0].([]GetModelsModelRetentionSetting)[vs[1].(int)]
+	}).(GetModelsModelRetentionSettingOutput)
 }
 
 type GetNotebookSessionNotebookSessionConfigDetail struct {
@@ -27918,6 +29553,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), JobRunJobStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailInput)(nil)).Elem(), JobRunLogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobRunLogDetailArrayInput)(nil)).Elem(), JobRunLogDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupOperationDetailInput)(nil)).Elem(), ModelBackupOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupOperationDetailArrayInput)(nil)).Elem(), ModelBackupOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupSettingInput)(nil)).Elem(), ModelBackupSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelBackupSettingPtrInput)(nil)).Elem(), ModelBackupSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelCustomMetadataListInput)(nil)).Elem(), ModelCustomMetadataListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelCustomMetadataListArrayInput)(nil)).Elem(), ModelCustomMetadataListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDefinedMetadataListInput)(nil)).Elem(), ModelDefinedMetadataListArgs{})
@@ -27948,6 +29587,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationInput)(nil)).Elem(), ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentSystemDataInput)(nil)).Elem(), ModelDeploymentModelDeploymentSystemDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelDeploymentModelDeploymentSystemDataArrayInput)(nil)).Elem(), ModelDeploymentModelDeploymentSystemDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelRetentionOperationDetailInput)(nil)).Elem(), ModelRetentionOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelRetentionOperationDetailArrayInput)(nil)).Elem(), ModelRetentionOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelRetentionSettingInput)(nil)).Elem(), ModelRetentionSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelRetentionSettingPtrInput)(nil)).Elem(), ModelRetentionSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsPtrInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsInput)(nil)).Elem(), NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{})
@@ -28067,6 +29710,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobLogConfigurationDetailArrayInput)(nil)).Elem(), GetJobsJobJobLogConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobJobStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetJobsJobJobStorageMountConfigurationDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailInput)(nil)).Elem(), GetModelBackupOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailArrayInput)(nil)).Elem(), GetModelBackupOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupSettingInput)(nil)).Elem(), GetModelBackupSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupSettingArrayInput)(nil)).Elem(), GetModelBackupSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelCustomMetadataListInput)(nil)).Elem(), GetModelCustomMetadataListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelCustomMetadataListArrayInput)(nil)).Elem(), GetModelCustomMetadataListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDefinedMetadataListInput)(nil)).Elem(), GetModelDefinedMetadataListArgs{})
@@ -28135,6 +29782,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemDataInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput)(nil)).Elem(), GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelRetentionOperationDetailInput)(nil)).Elem(), GetModelRetentionOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelRetentionOperationDetailArrayInput)(nil)).Elem(), GetModelRetentionOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelRetentionSettingInput)(nil)).Elem(), GetModelRetentionSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelRetentionSettingArrayInput)(nil)).Elem(), GetModelRetentionSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterInput)(nil)).Elem(), GetModelVersionSetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsFilterArrayInput)(nil)).Elem(), GetModelVersionSetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelVersionSetsModelVersionSetInput)(nil)).Elem(), GetModelVersionSetsModelVersionSetArgs{})
@@ -28143,10 +29794,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsFilterArrayInput)(nil)).Elem(), GetModelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelInput)(nil)).Elem(), GetModelsModelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelArrayInput)(nil)).Elem(), GetModelsModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelBackupOperationDetailInput)(nil)).Elem(), GetModelsModelBackupOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelBackupOperationDetailArrayInput)(nil)).Elem(), GetModelsModelBackupOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelBackupSettingInput)(nil)).Elem(), GetModelsModelBackupSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelBackupSettingArrayInput)(nil)).Elem(), GetModelsModelBackupSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCustomMetadataListInput)(nil)).Elem(), GetModelsModelCustomMetadataListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCustomMetadataListArrayInput)(nil)).Elem(), GetModelsModelCustomMetadataListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelDefinedMetadataListInput)(nil)).Elem(), GetModelsModelDefinedMetadataListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelDefinedMetadataListArrayInput)(nil)).Elem(), GetModelsModelDefinedMetadataListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelRetentionOperationDetailInput)(nil)).Elem(), GetModelsModelRetentionOperationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelRetentionOperationDetailArrayInput)(nil)).Elem(), GetModelsModelRetentionOperationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelRetentionSettingInput)(nil)).Elem(), GetModelsModelRetentionSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelRetentionSettingArrayInput)(nil)).Elem(), GetModelsModelRetentionSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigDetailInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigDetailArrayInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailInput)(nil)).Elem(), GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs{})
@@ -28301,6 +29960,10 @@ func init() {
 	pulumi.RegisterOutputType(JobRunJobStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailOutput{})
 	pulumi.RegisterOutputType(JobRunLogDetailArrayOutput{})
+	pulumi.RegisterOutputType(ModelBackupOperationDetailOutput{})
+	pulumi.RegisterOutputType(ModelBackupOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(ModelBackupSettingOutput{})
+	pulumi.RegisterOutputType(ModelBackupSettingPtrOutput{})
 	pulumi.RegisterOutputType(ModelCustomMetadataListOutput{})
 	pulumi.RegisterOutputType(ModelCustomMetadataListArrayOutput{})
 	pulumi.RegisterOutputType(ModelDefinedMetadataListOutput{})
@@ -28331,6 +29994,10 @@ func init() {
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentSystemDataOutput{})
 	pulumi.RegisterOutputType(ModelDeploymentModelDeploymentSystemDataArrayOutput{})
+	pulumi.RegisterOutputType(ModelRetentionOperationDetailOutput{})
+	pulumi.RegisterOutputType(ModelRetentionOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(ModelRetentionSettingOutput{})
+	pulumi.RegisterOutputType(ModelRetentionSettingPtrOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput{})
@@ -28450,6 +30117,10 @@ func init() {
 	pulumi.RegisterOutputType(GetJobsJobJobLogConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(GetJobsJobJobStorageMountConfigurationDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetModelBackupOperationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelBackupOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelBackupSettingOutput{})
+	pulumi.RegisterOutputType(GetModelBackupSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetModelCustomMetadataListOutput{})
 	pulumi.RegisterOutputType(GetModelCustomMetadataListArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDefinedMetadataListOutput{})
@@ -28518,6 +30189,10 @@ func init() {
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataOutput{})
 	pulumi.RegisterOutputType(GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayOutput{})
+	pulumi.RegisterOutputType(GetModelRetentionOperationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelRetentionOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelRetentionSettingOutput{})
+	pulumi.RegisterOutputType(GetModelRetentionSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsFilterOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelVersionSetsModelVersionSetOutput{})
@@ -28526,10 +30201,18 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelOutput{})
 	pulumi.RegisterOutputType(GetModelsModelArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelBackupOperationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelsModelBackupOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelBackupSettingOutput{})
+	pulumi.RegisterOutputType(GetModelsModelBackupSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCustomMetadataListOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCustomMetadataListArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelDefinedMetadataListOutput{})
 	pulumi.RegisterOutputType(GetModelsModelDefinedMetadataListArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelRetentionOperationDetailOutput{})
+	pulumi.RegisterOutputType(GetModelsModelRetentionOperationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelRetentionSettingOutput{})
+	pulumi.RegisterOutputType(GetModelsModelRetentionSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailOutput{})

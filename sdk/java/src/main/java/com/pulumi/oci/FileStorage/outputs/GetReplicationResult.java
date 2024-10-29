@@ -5,7 +5,10 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.outputs.GetReplicationLock;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -51,6 +54,7 @@ public final class GetReplicationResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
@@ -61,6 +65,11 @@ public final class GetReplicationResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetReplicationLock> locks;
     /**
      * @return The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
@@ -155,6 +164,9 @@ public final class GetReplicationResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
@@ -168,6 +180,13 @@ public final class GetReplicationResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetReplicationLock> locks() {
+        return this.locks;
     }
     /**
      * @return The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
@@ -239,8 +258,10 @@ public final class GetReplicationResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lastSnapshotId;
         private String lifecycleDetails;
+        private List<GetReplicationLock> locks;
         private String recoveryPointTime;
         private String replicationId;
         private String replicationInterval;
@@ -260,8 +281,10 @@ public final class GetReplicationResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lastSnapshotId = defaults.lastSnapshotId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.recoveryPointTime = defaults.recoveryPointTime;
     	      this.replicationId = defaults.replicationId;
     	      this.replicationInterval = defaults.replicationInterval;
@@ -337,6 +360,14 @@ public final class GetReplicationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetReplicationResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastSnapshotId(String lastSnapshotId) {
             if (lastSnapshotId == null) {
               throw new MissingRequiredPropertyException("GetReplicationResult", "lastSnapshotId");
@@ -351,6 +382,17 @@ public final class GetReplicationResult {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetReplicationLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetReplicationResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetReplicationLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder recoveryPointTime(String recoveryPointTime) {
@@ -426,8 +468,10 @@ public final class GetReplicationResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lastSnapshotId = lastSnapshotId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.recoveryPointTime = recoveryPointTime;
             _resultValue.replicationId = replicationId;
             _resultValue.replicationInterval = replicationInterval;

@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFileSystemLock;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFileSystemSourceDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -71,6 +72,7 @@ public final class GetFileSystemsFileSystem {
      * 
      */
     private Boolean isHydrated;
+    private Boolean isLockOverride;
     /**
      * @return Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
@@ -86,6 +88,11 @@ public final class GetFileSystemsFileSystem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetFileSystemsFileSystemLock> locks;
     /**
      * @return The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      * 
@@ -198,6 +205,9 @@ public final class GetFileSystemsFileSystem {
     public Boolean isHydrated() {
         return this.isHydrated;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
@@ -218,6 +228,13 @@ public final class GetFileSystemsFileSystem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetFileSystemsFileSystemLock> locks() {
+        return this.locks;
     }
     /**
      * @return The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
@@ -283,9 +300,11 @@ public final class GetFileSystemsFileSystem {
         private String id;
         private Boolean isCloneParent;
         private Boolean isHydrated;
+        private Boolean isLockOverride;
         private Boolean isTargetable;
         private String kmsKeyId;
         private String lifecycleDetails;
+        private List<GetFileSystemsFileSystemLock> locks;
         private String meteredBytes;
         private String replicationTargetId;
         private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
@@ -307,9 +326,11 @@ public final class GetFileSystemsFileSystem {
     	      this.id = defaults.id;
     	      this.isCloneParent = defaults.isCloneParent;
     	      this.isHydrated = defaults.isHydrated;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.isTargetable = defaults.isTargetable;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.meteredBytes = defaults.meteredBytes;
     	      this.replicationTargetId = defaults.replicationTargetId;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -415,6 +436,14 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isTargetable(Boolean isTargetable) {
             if (isTargetable == null) {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "isTargetable");
@@ -437,6 +466,17 @@ public final class GetFileSystemsFileSystem {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetFileSystemsFileSystemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetFileSystemsFileSystemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder meteredBytes(String meteredBytes) {
@@ -503,9 +543,11 @@ public final class GetFileSystemsFileSystem {
             _resultValue.id = id;
             _resultValue.isCloneParent = isCloneParent;
             _resultValue.isHydrated = isHydrated;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.isTargetable = isTargetable;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.meteredBytes = meteredBytes;
             _resultValue.replicationTargetId = replicationTargetId;
             _resultValue.sourceDetails = sourceDetails;

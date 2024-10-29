@@ -9,8 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataScience.ModelArgs;
 import com.pulumi.oci.DataScience.inputs.ModelState;
+import com.pulumi.oci.DataScience.outputs.ModelBackupOperationDetail;
+import com.pulumi.oci.DataScience.outputs.ModelBackupSetting;
 import com.pulumi.oci.DataScience.outputs.ModelCustomMetadataList;
 import com.pulumi.oci.DataScience.outputs.ModelDefinedMetadataList;
+import com.pulumi.oci.DataScience.outputs.ModelRetentionOperationDetail;
+import com.pulumi.oci.DataScience.outputs.ModelRetentionSetting;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -26,57 +30,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataScience.Model;
- * import com.pulumi.oci.DataScience.ModelArgs;
- * import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
- * import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testModel = new Model("testModel", ModelArgs.builder()
- *             .compartmentId(compartmentId)
- *             .projectId(testProject.id())
- *             .customMetadataLists(ModelCustomMetadataListArgs.builder()
- *                 .category(modelCustomMetadataListCategory)
- *                 .description(modelCustomMetadataListDescription)
- *                 .key(modelCustomMetadataListKey)
- *                 .value(modelCustomMetadataListValue)
- *                 .build())
- *             .definedMetadataLists(ModelDefinedMetadataListArgs.builder()
- *                 .category(modelDefinedMetadataListCategory)
- *                 .description(modelDefinedMetadataListDescription)
- *                 .key(modelDefinedMetadataListKey)
- *                 .value(modelDefinedMetadataListValue)
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(modelDescription)
- *             .displayName(modelDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .inputSchema(modelInputSchema)
- *             .outputSchema(modelOutputSchema)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -135,6 +88,34 @@ public class Model extends com.pulumi.resources.CustomResource {
 
     public Output<String> artifactLastModified() {
         return this.artifactLastModified;
+    }
+    /**
+     * Backup operation details of the model.
+     * 
+     */
+    @Export(name="backupOperationDetails", refs={List.class,ModelBackupOperationDetail.class}, tree="[0,1]")
+    private Output<List<ModelBackupOperationDetail>> backupOperationDetails;
+
+    /**
+     * @return Backup operation details of the model.
+     * 
+     */
+    public Output<List<ModelBackupOperationDetail>> backupOperationDetails() {
+        return this.backupOperationDetails;
+    }
+    /**
+     * (Updatable) Back up setting details of the model.
+     * 
+     */
+    @Export(name="backupSetting", refs={ModelBackupSetting.class}, tree="[0]")
+    private Output<ModelBackupSetting> backupSetting;
+
+    /**
+     * @return (Updatable) Back up setting details of the model.
+     * 
+     */
+    public Output<ModelBackupSetting> backupSetting() {
+        return this.backupSetting;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -269,6 +250,20 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.inputSchema;
     }
     /**
+     * Details about the lifecycle state of the model.
+     * 
+     */
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the lifecycle state of the model.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
      * 
      */
@@ -281,6 +276,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> modelArtifact() {
         return this.modelArtifact;
+    }
+    /**
+     * The name of the model version set that the model is associated to.
+     * 
+     */
+    @Export(name="modelVersionSetName", refs={String.class}, tree="[0]")
+    private Output<String> modelVersionSetName;
+
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
+    public Output<String> modelVersionSetName() {
+        return this.modelVersionSetName;
     }
     /**
      * Output schema file content in String format
@@ -309,6 +318,34 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> projectId() {
         return this.projectId;
+    }
+    /**
+     * Retention operation details for the model.
+     * 
+     */
+    @Export(name="retentionOperationDetails", refs={List.class,ModelRetentionOperationDetail.class}, tree="[0,1]")
+    private Output<List<ModelRetentionOperationDetail>> retentionOperationDetails;
+
+    /**
+     * @return Retention operation details for the model.
+     * 
+     */
+    public Output<List<ModelRetentionOperationDetail>> retentionOperationDetails() {
+        return this.retentionOperationDetails;
+    }
+    /**
+     * (Updatable) Retention setting details of the model.
+     * 
+     */
+    @Export(name="retentionSetting", refs={ModelRetentionSetting.class}, tree="[0]")
+    private Output<ModelRetentionSetting> retentionSetting;
+
+    /**
+     * @return (Updatable) Retention setting details of the model.
+     * 
+     */
+    public Output<ModelRetentionSetting> retentionSetting() {
+        return this.retentionSetting;
     }
     /**
      * The state of the model.

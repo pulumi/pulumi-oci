@@ -335,7 +335,7 @@ namespace Pulumi.Oci.Core
         public Output<string> Region { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
         [Output("securityAttributes")]
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
@@ -706,7 +706,7 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _securityAttributes;
 
         /// <summary>
-        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
         public InputMap<string> SecurityAttributes
         {
@@ -1058,7 +1058,7 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _securityAttributes;
 
         /// <summary>
-        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
         public InputMap<string> SecurityAttributes
         {

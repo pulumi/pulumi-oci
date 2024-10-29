@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetReplicationResult',
@@ -26,7 +27,7 @@ class GetReplicationResult:
     """
     A collection of values returned by getReplication.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, delta_progress=None, delta_status=None, display_name=None, freeform_tags=None, id=None, last_snapshot_id=None, lifecycle_details=None, recovery_point_time=None, replication_id=None, replication_interval=None, replication_target_id=None, source_id=None, state=None, target_id=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, delta_progress=None, delta_status=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, last_snapshot_id=None, lifecycle_details=None, locks=None, recovery_point_time=None, replication_id=None, replication_interval=None, replication_target_id=None, source_id=None, state=None, target_id=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -51,12 +52,18 @@ class GetReplicationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if last_snapshot_id and not isinstance(last_snapshot_id, str):
             raise TypeError("Expected argument 'last_snapshot_id' to be a str")
         pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if recovery_point_time and not isinstance(recovery_point_time, str):
             raise TypeError("Expected argument 'recovery_point_time' to be a str")
         pulumi.set(__self__, "recovery_point_time", recovery_point_time)
@@ -147,6 +154,11 @@ class GetReplicationResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lastSnapshotId")
     def last_snapshot_id(self) -> str:
         """
@@ -161,6 +173,14 @@ class GetReplicationResult:
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetReplicationLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
@@ -238,8 +258,10 @@ class AwaitableGetReplicationResult(GetReplicationResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
             last_snapshot_id=self.last_snapshot_id,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             recovery_point_time=self.recovery_point_time,
             replication_id=self.replication_id,
             replication_interval=self.replication_interval,
@@ -283,8 +305,10 @@ def get_replication(replication_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         last_snapshot_id=pulumi.get(__ret__, 'last_snapshot_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         recovery_point_time=pulumi.get(__ret__, 'recovery_point_time'),
         replication_id=pulumi.get(__ret__, 'replication_id'),
         replication_interval=pulumi.get(__ret__, 'replication_interval'),
@@ -325,8 +349,10 @@ def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         last_snapshot_id=pulumi.get(__response__, 'last_snapshot_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         recovery_point_time=pulumi.get(__response__, 'recovery_point_time'),
         replication_id=pulumi.get(__response__, 'replication_id'),
         replication_interval=pulumi.get(__response__, 'replication_interval'),

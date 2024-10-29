@@ -27,7 +27,7 @@ class GetVirtualCircuitResult:
     """
     A collection of values returned by getVirtualCircuit.
     """
-    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None):
+    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None, virtual_circuit_redundancy_metadatas=None):
         if bandwidth_shape_name and not isinstance(bandwidth_shape_name, str):
             raise TypeError("Expected argument 'bandwidth_shape_name' to be a str")
         pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -118,6 +118,9 @@ class GetVirtualCircuitResult:
         if virtual_circuit_id and not isinstance(virtual_circuit_id, str):
             raise TypeError("Expected argument 'virtual_circuit_id' to be a str")
         pulumi.set(__self__, "virtual_circuit_id", virtual_circuit_id)
+        if virtual_circuit_redundancy_metadatas and not isinstance(virtual_circuit_redundancy_metadatas, list):
+            raise TypeError("Expected argument 'virtual_circuit_redundancy_metadatas' to be a list")
+        pulumi.set(__self__, "virtual_circuit_redundancy_metadatas", virtual_circuit_redundancy_metadatas)
 
     @property
     @pulumi.getter(name="bandwidthShapeName")
@@ -358,6 +361,14 @@ class GetVirtualCircuitResult:
     def virtual_circuit_id(self) -> str:
         return pulumi.get(self, "virtual_circuit_id")
 
+    @property
+    @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
+    def virtual_circuit_redundancy_metadatas(self) -> Sequence['outputs.GetVirtualCircuitVirtualCircuitRedundancyMetadataResult']:
+        """
+        Redundancy level details of the virtual circuit
+        """
+        return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
+
 
 class AwaitableGetVirtualCircuitResult(GetVirtualCircuitResult):
     # pylint: disable=using-constant-test
@@ -394,7 +405,8 @@ class AwaitableGetVirtualCircuitResult(GetVirtualCircuitResult):
             state=self.state,
             time_created=self.time_created,
             type=self.type,
-            virtual_circuit_id=self.virtual_circuit_id)
+            virtual_circuit_id=self.virtual_circuit_id,
+            virtual_circuit_redundancy_metadatas=self.virtual_circuit_redundancy_metadatas)
 
 
 def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
@@ -451,7 +463,8 @@ def get_virtual_circuit(virtual_circuit_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         type=pulumi.get(__ret__, 'type'),
-        virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'))
+        virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
+        virtual_circuit_redundancy_metadatas=pulumi.get(__ret__, 'virtual_circuit_redundancy_metadatas'))
 def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitResult]:
     """
@@ -505,4 +518,5 @@ def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[str]] =
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         type=pulumi.get(__response__, 'type'),
-        virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id')))
+        virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id'),
+        virtual_circuit_redundancy_metadatas=pulumi.get(__response__, 'virtual_circuit_redundancy_metadatas')))

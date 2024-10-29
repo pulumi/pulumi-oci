@@ -5,8 +5,10 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FileStorage.inputs.SnapshotLockArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -107,6 +109,13 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isCloneSource);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * Additional information about the current `lifecycleState`.
      * 
@@ -120,6 +129,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<SnapshotLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<SnapshotLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -241,7 +265,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.freeformTags = $.freeformTags;
         this.isCloneSource = $.isCloneSource;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.name = $.name;
         this.provenanceId = $.provenanceId;
         this.snapshotTime = $.snapshotTime;
@@ -394,6 +420,15 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
             return isCloneSource(Output.of(isCloneSource));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails Additional information about the current `lifecycleState`.
          * 
@@ -413,6 +448,37 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<SnapshotLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<SnapshotLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(SnapshotLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

@@ -62,6 +62,7 @@ import * as utilities from "../utilities";
  *     hostnameLabel: mountTargetHostnameLabel,
  *     idmapType: mountTargetIdmapType,
  *     ipAddress: mountTargetIpAddress,
+ *     isLockOverride: mountTargetIsLockOverride,
  *     kerberos: {
  *         kerberosRealm: mountTargetKerberosKerberosRealm,
  *         backupKeyTabSecretVersion: mountTargetKerberosBackupKeyTabSecretVersion,
@@ -79,6 +80,12 @@ import * as utilities from "../utilities";
  *         schemaType: mountTargetLdapIdmapSchemaType,
  *         userSearchBase: mountTargetLdapIdmapUserSearchBase,
  *     },
+ *     locks: [{
+ *         type: mountTargetLocksType,
+ *         message: mountTargetLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: mountTargetLocksTimeCreated,
+ *     }],
  *     nsgIds: mountTargetNsgIds,
  *     requestedThroughput: mountTargetRequestedThroughput,
  * });
@@ -163,6 +170,10 @@ export class MountTarget extends pulumi.CustomResource {
      */
     public readonly ipAddress!: pulumi.Output<string>;
     /**
+     * (Updatable) Whether to override locks (if any exist).
+     */
+    public readonly isLockOverride!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Kerberos details needed to create configuration.
      */
     public readonly kerberos!: pulumi.Output<outputs.FileStorage.MountTargetKerberos | undefined>;
@@ -174,6 +185,10 @@ export class MountTarget extends pulumi.CustomResource {
      * Additional information about the current 'lifecycleState'.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.FileStorage.MountTargetLock[]>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
@@ -237,9 +252,11 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
             resourceInputs["idmapType"] = state ? state.idmapType : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["kerberos"] = state ? state.kerberos : undefined;
             resourceInputs["ldapIdmap"] = state ? state.ldapIdmap : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["observedThroughput"] = state ? state.observedThroughput : undefined;
             resourceInputs["privateIpIds"] = state ? state.privateIpIds : undefined;
@@ -268,8 +285,10 @@ export class MountTarget extends pulumi.CustomResource {
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
             resourceInputs["idmapType"] = args ? args.idmapType : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["kerberos"] = args ? args.kerberos : undefined;
             resourceInputs["ldapIdmap"] = args ? args.ldapIdmap : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["requestedThroughput"] = args ? args.requestedThroughput : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -334,6 +353,10 @@ export interface MountTargetState {
      */
     ipAddress?: pulumi.Input<string>;
     /**
+     * (Updatable) Whether to override locks (if any exist).
+     */
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Kerberos details needed to create configuration.
      */
     kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
@@ -345,6 +368,10 @@ export interface MountTargetState {
      * Additional information about the current 'lifecycleState'.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[]>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
@@ -430,6 +457,10 @@ export interface MountTargetArgs {
      */
     ipAddress?: pulumi.Input<string>;
     /**
+     * (Updatable) Whether to override locks (if any exist).
+     */
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
      * (Updatable) Kerberos details needed to create configuration.
      */
     kerberos?: pulumi.Input<inputs.FileStorage.MountTargetKerberos>;
@@ -437,6 +468,10 @@ export interface MountTargetArgs {
      * (Updatable) Mount target details about the LDAP ID mapping configuration.
      */
     ldapIdmap?: pulumi.Input<inputs.FileStorage.MountTargetLdapIdmap>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.MountTargetLock>[]>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */

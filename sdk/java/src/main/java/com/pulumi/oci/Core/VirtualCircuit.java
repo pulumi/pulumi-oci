@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.VirtualCircuitArgs;
 import com.pulumi.oci.Core.inputs.VirtualCircuitState;
 import com.pulumi.oci.Core.outputs.VirtualCircuitCrossConnectMapping;
 import com.pulumi.oci.Core.outputs.VirtualCircuitPublicPrefix;
+import com.pulumi.oci.Core.outputs.VirtualCircuitVirtualCircuitRedundancyMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -526,6 +527,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      */
     public Output<String> type() {
         return this.type;
+    }
+    /**
+     * Redundancy level details of the virtual circuit
+     * 
+     */
+    @Export(name="virtualCircuitRedundancyMetadatas", refs={List.class,VirtualCircuitVirtualCircuitRedundancyMetadata.class}, tree="[0,1]")
+    private Output<List<VirtualCircuitVirtualCircuitRedundancyMetadata>> virtualCircuitRedundancyMetadatas;
+
+    /**
+     * @return Redundancy level details of the virtual circuit
+     * 
+     */
+    public Output<List<VirtualCircuitVirtualCircuitRedundancyMetadata>> virtualCircuitRedundancyMetadatas() {
+        return this.virtualCircuitRedundancyMetadatas;
     }
 
     /**

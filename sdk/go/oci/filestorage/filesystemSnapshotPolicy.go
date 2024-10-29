@@ -44,6 +44,14 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: filestorage.FilesystemSnapshotPolicyLockArray{
+//					&filestorage.FilesystemSnapshotPolicyLockArgs{
+//						Type:              pulumi.Any(filesystemSnapshotPolicyLocksType),
+//						Message:           pulumi.Any(filesystemSnapshotPolicyLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(filesystemSnapshotPolicyLocksTimeCreated),
+//					},
+//				},
 //				PolicyPrefix: pulumi.Any(filesystemSnapshotPolicyPolicyPrefix),
 //				Schedules: filestorage.FilesystemSnapshotPolicyScheduleArray{
 //					&filestorage.FilesystemSnapshotPolicyScheduleArgs{
@@ -87,7 +95,10 @@ type FilesystemSnapshotPolicy struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks FilesystemSnapshotPolicyLockArrayOutput `pulumi:"locks"`
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix pulumi.StringOutput `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -148,7 +159,10 @@ type filesystemSnapshotPolicyState struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []FilesystemSnapshotPolicyLock `pulumi:"locks"`
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -174,7 +188,10 @@ type FilesystemSnapshotPolicyState struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks FilesystemSnapshotPolicyLockArrayInput
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix pulumi.StringPtrInput
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -204,7 +221,10 @@ type filesystemSnapshotPolicyArgs struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []FilesystemSnapshotPolicyLock `pulumi:"locks"`
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -229,7 +249,10 @@ type FilesystemSnapshotPolicyArgs struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks FilesystemSnapshotPolicyLockArrayInput
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix pulumi.StringPtrInput
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -353,6 +376,15 @@ func (o FilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o FilesystemSnapshotPolicyOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o FilesystemSnapshotPolicyOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o FilesystemSnapshotPolicyOutput) Locks() FilesystemSnapshotPolicyLockArrayOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) FilesystemSnapshotPolicyLockArrayOutput { return v.Locks }).(FilesystemSnapshotPolicyLockArrayOutput)
 }
 
 // (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`

@@ -121,6 +121,8 @@ type LookupVirtualCircuitResult struct {
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             string `pulumi:"type"`
 	VirtualCircuitId string `pulumi:"virtualCircuitId"`
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas []GetVirtualCircuitVirtualCircuitRedundancyMetadata `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
 func LookupVirtualCircuitOutput(ctx *pulumi.Context, args LookupVirtualCircuitOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualCircuitResultOutput {
@@ -320,6 +322,13 @@ func (o LookupVirtualCircuitResultOutput) Type() pulumi.StringOutput {
 
 func (o LookupVirtualCircuitResultOutput) VirtualCircuitId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.VirtualCircuitId }).(pulumi.StringOutput)
+}
+
+// Redundancy level details of the virtual circuit
+func (o LookupVirtualCircuitResultOutput) VirtualCircuitRedundancyMetadatas() GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o.ApplyT(func(v LookupVirtualCircuitResult) []GetVirtualCircuitVirtualCircuitRedundancyMetadata {
+		return v.VirtualCircuitRedundancyMetadatas
+	}).(GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput)
 }
 
 func init() {

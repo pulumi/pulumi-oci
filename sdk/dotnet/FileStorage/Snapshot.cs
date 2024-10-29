@@ -38,6 +38,16 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.SnapshotLockArgs
+    ///             {
+    ///                 Type = snapshotLocksType,
+    ///                 Message = snapshotLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = snapshotLocksTimeCreated,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -90,11 +100,20 @@ namespace Pulumi.Oci.FileStorage
         [Output("isCloneSource")]
         public Output<bool> IsCloneSource { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.SnapshotLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -225,6 +244,21 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.SnapshotLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.SnapshotLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.SnapshotLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
         /// 
@@ -295,11 +329,26 @@ namespace Pulumi.Oci.FileStorage
         [Input("isCloneSource")]
         public Input<bool>? IsCloneSource { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.SnapshotLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.SnapshotLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.SnapshotLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.

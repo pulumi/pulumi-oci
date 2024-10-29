@@ -14,57 +14,6 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a new model.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testModel = new Oci.DataScience.Model("test_model", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         ProjectId = testProject.Id,
-    ///         CustomMetadataLists = new[]
-    ///         {
-    ///             new Oci.DataScience.Inputs.ModelCustomMetadataListArgs
-    ///             {
-    ///                 Category = modelCustomMetadataListCategory,
-    ///                 Description = modelCustomMetadataListDescription,
-    ///                 Key = modelCustomMetadataListKey,
-    ///                 Value = modelCustomMetadataListValue,
-    ///             },
-    ///         },
-    ///         DefinedMetadataLists = new[]
-    ///         {
-    ///             new Oci.DataScience.Inputs.ModelDefinedMetadataListArgs
-    ///             {
-    ///                 Category = modelDefinedMetadataListCategory,
-    ///                 Description = modelDefinedMetadataListDescription,
-    ///                 Key = modelDefinedMetadataListKey,
-    ///                 Value = modelDefinedMetadataListValue,
-    ///             },
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = modelDescription,
-    ///         DisplayName = modelDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         InputSchema = modelInputSchema,
-    ///         OutputSchema = modelOutputSchema,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Models can be imported using the `id`, e.g.
@@ -96,6 +45,18 @@ namespace Pulumi.Oci.DataScience
 
         [Output("artifactLastModified")]
         public Output<string> ArtifactLastModified { get; private set; } = null!;
+
+        /// <summary>
+        /// Backup operation details of the model.
+        /// </summary>
+        [Output("backupOperationDetails")]
+        public Output<ImmutableArray<Outputs.ModelBackupOperationDetail>> BackupOperationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Back up setting details of the model.
+        /// </summary>
+        [Output("backupSetting")]
+        public Output<Outputs.ModelBackupSetting> BackupSetting { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -155,10 +116,22 @@ namespace Pulumi.Oci.DataScience
         public Output<string> InputSchema { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the lifecycle state of the model.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         /// </summary>
         [Output("modelArtifact")]
         public Output<string> ModelArtifact { get; private set; } = null!;
+
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
+        [Output("modelVersionSetName")]
+        public Output<string> ModelVersionSetName { get; private set; } = null!;
 
         /// <summary>
         /// Output schema file content in String format
@@ -171,6 +144,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
+
+        /// <summary>
+        /// Retention operation details for the model.
+        /// </summary>
+        [Output("retentionOperationDetails")]
+        public Output<ImmutableArray<Outputs.ModelRetentionOperationDetail>> RetentionOperationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Retention setting details of the model.
+        /// </summary>
+        [Output("retentionSetting")]
+        public Output<Outputs.ModelRetentionSetting> RetentionSetting { get; private set; } = null!;
 
         /// <summary>
         /// The state of the model.
@@ -244,6 +229,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("artifactContentLength", required: true)]
         public Input<string> ArtifactContentLength { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Back up setting details of the model.
+        /// </summary>
+        [Input("backupSetting")]
+        public Input<Inputs.ModelBackupSettingArgs>? BackupSetting { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -336,6 +327,12 @@ namespace Pulumi.Oci.DataScience
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Retention setting details of the model.
+        /// </summary>
+        [Input("retentionSetting")]
+        public Input<Inputs.ModelRetentionSettingArgs>? RetentionSetting { get; set; }
+
+        /// <summary>
         /// The state of the model.
         /// </summary>
         [Input("state")]
@@ -369,6 +366,24 @@ namespace Pulumi.Oci.DataScience
 
         [Input("artifactLastModified")]
         public Input<string>? ArtifactLastModified { get; set; }
+
+        [Input("backupOperationDetails")]
+        private InputList<Inputs.ModelBackupOperationDetailGetArgs>? _backupOperationDetails;
+
+        /// <summary>
+        /// Backup operation details of the model.
+        /// </summary>
+        public InputList<Inputs.ModelBackupOperationDetailGetArgs> BackupOperationDetails
+        {
+            get => _backupOperationDetails ?? (_backupOperationDetails = new InputList<Inputs.ModelBackupOperationDetailGetArgs>());
+            set => _backupOperationDetails = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Back up setting details of the model.
+        /// </summary>
+        [Input("backupSetting")]
+        public Input<Inputs.ModelBackupSettingGetArgs>? BackupSetting { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -452,10 +467,22 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? InputSchema { get; set; }
 
         /// <summary>
+        /// Details about the lifecycle state of the model.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
         /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         /// </summary>
         [Input("modelArtifact")]
         public Input<string>? ModelArtifact { get; set; }
+
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetName")]
+        public Input<string>? ModelVersionSetName { get; set; }
 
         /// <summary>
         /// Output schema file content in String format
@@ -468,6 +495,24 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
+
+        [Input("retentionOperationDetails")]
+        private InputList<Inputs.ModelRetentionOperationDetailGetArgs>? _retentionOperationDetails;
+
+        /// <summary>
+        /// Retention operation details for the model.
+        /// </summary>
+        public InputList<Inputs.ModelRetentionOperationDetailGetArgs> RetentionOperationDetails
+        {
+            get => _retentionOperationDetails ?? (_retentionOperationDetails = new InputList<Inputs.ModelRetentionOperationDetailGetArgs>());
+            set => _retentionOperationDetails = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Retention setting details of the model.
+        /// </summary>
+        [Input("retentionSetting")]
+        public Input<Inputs.ModelRetentionSettingGetArgs>? RetentionSetting { get; set; }
 
         /// <summary>
         /// The state of the model.

@@ -152,6 +152,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Key History Entry.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
+        /// <summary>
+        /// Details of the Autonomous Database encryption key.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult> EncryptionKeys;
+        /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
         public readonly int FailedDataRecoveryInSeconds;
@@ -561,6 +569,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
+
+            ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
+
             int failedDataRecoveryInSeconds,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -764,6 +776,8 @@ namespace Pulumi.Oci.Database.Outputs
             DefinedTags = definedTags;
             DisasterRecoveryRegionType = disasterRecoveryRegionType;
             DisplayName = displayName;
+            EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
             Id = id;

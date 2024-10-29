@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.SnapshotArgs;
 import com.pulumi.oci.FileStorage.inputs.SnapshotState;
+import com.pulumi.oci.FileStorage.outputs.SnapshotLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -33,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.Snapshot;
  * import com.pulumi.oci.FileStorage.SnapshotArgs;
+ * import com.pulumi.oci.FileStorage.inputs.SnapshotLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,6 +55,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .expirationTime(snapshotExpirationTime)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(SnapshotLockArgs.builder()
+ *                 .type(snapshotLocksType)
+ *                 .message(snapshotLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(snapshotLocksTimeCreated)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -155,6 +164,12 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isCloneSource() {
         return this.isCloneSource;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * Additional information about the current `lifecycleState`.
      * 
@@ -168,6 +183,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,SnapshotLock.class}, tree="[0,1]")
+    private Output<List<SnapshotLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<SnapshotLock>> locks() {
+        return this.locks;
     }
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.

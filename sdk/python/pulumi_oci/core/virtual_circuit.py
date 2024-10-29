@@ -370,7 +370,8 @@ class _VirtualCircuitState:
                  service_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 type: Optional[pulumi.Input[str]] = None):
+                 type: Optional[pulumi.Input[str]] = None,
+                 virtual_circuit_redundancy_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
         """
         Input properties used for looking up and filtering VirtualCircuit resources.
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -405,6 +406,7 @@ class _VirtualCircuitState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]] virtual_circuit_redundancy_metadatas: Redundancy level details of the virtual circuit
         """
         if bandwidth_shape_name is not None:
             pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -468,6 +470,8 @@ class _VirtualCircuitState:
             pulumi.set(__self__, "time_created", time_created)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if virtual_circuit_redundancy_metadatas is not None:
+            pulumi.set(__self__, "virtual_circuit_redundancy_metadatas", virtual_circuit_redundancy_metadatas)
 
     @property
     @pulumi.getter(name="bandwidthShapeName")
@@ -811,6 +815,18 @@ class _VirtualCircuitState:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+    @property
+    @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
+    def virtual_circuit_redundancy_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]:
+        """
+        Redundancy level details of the virtual circuit
+        """
+        return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
+
+    @virtual_circuit_redundancy_metadatas.setter
+    def virtual_circuit_redundancy_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]):
+        pulumi.set(self, "virtual_circuit_redundancy_metadatas", value)
+
 
 class VirtualCircuit(pulumi.CustomResource):
     @overload
@@ -1094,6 +1110,7 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["service_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["virtual_circuit_redundancy_metadatas"] = None
         super(VirtualCircuit, __self__).__init__(
             'oci:Core/virtualCircuit:VirtualCircuit',
             resource_name,
@@ -1131,7 +1148,8 @@ class VirtualCircuit(pulumi.CustomResource):
             service_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            type: Optional[pulumi.Input[str]] = None) -> 'VirtualCircuit':
+            type: Optional[pulumi.Input[str]] = None,
+            virtual_circuit_redundancy_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
         """
         Get an existing VirtualCircuit resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1171,6 +1189,7 @@ class VirtualCircuit(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]] virtual_circuit_redundancy_metadatas: Redundancy level details of the virtual circuit
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1204,6 +1223,7 @@ class VirtualCircuit(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["type"] = type
+        __props__.__dict__["virtual_circuit_redundancy_metadatas"] = virtual_circuit_redundancy_metadatas
         return VirtualCircuit(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1435,4 +1455,12 @@ class VirtualCircuit(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
+    def virtual_circuit_redundancy_metadatas(self) -> pulumi.Output[Sequence['outputs.VirtualCircuitVirtualCircuitRedundancyMetadata']]:
+        """
+        Redundancy level details of the virtual circuit
+        """
+        return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
 

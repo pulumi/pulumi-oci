@@ -6,8 +6,10 @@ package com.pulumi.oci.DataScience;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.inputs.ModelBackupSettingArgs;
 import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
+import com.pulumi.oci.DataScience.inputs.ModelRetentionSettingArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +56,21 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> artifactContentLength() {
         return this.artifactContentLength;
+    }
+
+    /**
+     * (Updatable) Back up setting details of the model.
+     * 
+     */
+    @Import(name="backupSetting")
+    private @Nullable Output<ModelBackupSettingArgs> backupSetting;
+
+    /**
+     * @return (Updatable) Back up setting details of the model.
+     * 
+     */
+    public Optional<Output<ModelBackupSettingArgs>> backupSetting() {
+        return Optional.ofNullable(this.backupSetting);
     }
 
     /**
@@ -222,6 +239,21 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Retention setting details of the model.
+     * 
+     */
+    @Import(name="retentionSetting")
+    private @Nullable Output<ModelRetentionSettingArgs> retentionSetting;
+
+    /**
+     * @return (Updatable) Retention setting details of the model.
+     * 
+     */
+    public Optional<Output<ModelRetentionSettingArgs>> retentionSetting() {
+        return Optional.ofNullable(this.retentionSetting);
+    }
+
+    /**
      * The state of the model.
      * 
      */
@@ -241,6 +273,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     private ModelArgs(ModelArgs $) {
         this.artifactContentDisposition = $.artifactContentDisposition;
         this.artifactContentLength = $.artifactContentLength;
+        this.backupSetting = $.backupSetting;
         this.compartmentId = $.compartmentId;
         this.customMetadataLists = $.customMetadataLists;
         this.definedMetadataLists = $.definedMetadataLists;
@@ -252,6 +285,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         this.modelArtifact = $.modelArtifact;
         this.outputSchema = $.outputSchema;
         this.projectId = $.projectId;
+        this.retentionSetting = $.retentionSetting;
         this.state = $.state;
     }
 
@@ -319,6 +353,27 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder artifactContentLength(String artifactContentLength) {
             return artifactContentLength(Output.of(artifactContentLength));
+        }
+
+        /**
+         * @param backupSetting (Updatable) Back up setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSetting(@Nullable Output<ModelBackupSettingArgs> backupSetting) {
+            $.backupSetting = backupSetting;
+            return this;
+        }
+
+        /**
+         * @param backupSetting (Updatable) Back up setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSetting(ModelBackupSettingArgs backupSetting) {
+            return backupSetting(Output.of(backupSetting));
         }
 
         /**
@@ -570,6 +625,27 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
+        }
+
+        /**
+         * @param retentionSetting (Updatable) Retention setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionSetting(@Nullable Output<ModelRetentionSettingArgs> retentionSetting) {
+            $.retentionSetting = retentionSetting;
+            return this;
+        }
+
+        /**
+         * @param retentionSetting (Updatable) Retention setting details of the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionSetting(ModelRetentionSettingArgs retentionSetting) {
+            return retentionSetting(Output.of(retentionSetting));
         }
 
         /**

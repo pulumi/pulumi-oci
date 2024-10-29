@@ -35,14 +35,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -50,14 +50,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A filter to return only autonomous database resources that match the specified dbVersion.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A filter to return only autonomous database resources that match the specified dbVersion.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -65,22 +65,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
     @Import(name="dbWorkload")
     private @Nullable Output<String> dbWorkload;
 
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
     public Optional<Output<String>> dbWorkload() {
@@ -88,14 +80,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -110,14 +102,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The infrastructure type this resource belongs to.
+     * A filter to return only resources that match the given Infrastructure Type.
      * 
      */
     @Import(name="infrastructureType")
     private @Nullable Output<String> infrastructureType;
 
     /**
-     * @return The infrastructure type this resource belongs to.
+     * @return A filter to return only resources that match the given Infrastructure Type.
      * 
      */
     public Optional<Output<String>> infrastructureType() {
@@ -125,14 +117,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * A filter to return only resources that have Data Guard enabled.
      * 
      */
     @Import(name="isDataGuardEnabled")
     private @Nullable Output<Boolean> isDataGuardEnabled;
 
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return A filter to return only resources that have Data Guard enabled.
      * 
      */
     public Optional<Output<Boolean>> isDataGuardEnabled() {
@@ -140,14 +132,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
     @Import(name="isFreeTier")
     private @Nullable Output<Boolean> isFreeTier;
 
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      * 
      */
     public Optional<Output<Boolean>> isFreeTier() {
@@ -155,23 +147,31 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * Indicates if the Autonomous Database is a refreshable clone.
+     * Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      * 
      */
     @Import(name="isRefreshableClone")
     private @Nullable Output<Boolean> isRefreshableClone;
 
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      * 
      */
     public Optional<Output<Boolean>> isRefreshableClone() {
         return Optional.ofNullable(this.isRefreshableClone);
     }
 
+    /**
+     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     * 
+     */
     @Import(name="isResourcePoolLeader")
     private @Nullable Output<Boolean> isResourcePoolLeader;
 
+    /**
+     * @return Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     * 
+     */
     public Optional<Output<Boolean>> isResourcePoolLeader() {
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
@@ -184,14 +184,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
      * 
      */
     @Import(name="resourcePoolLeaderId")
     private @Nullable Output<String> resourcePoolLeaderId;
 
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
      * 
      */
     public Optional<Output<String>> resourcePoolLeaderId() {
@@ -199,14 +199,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * The current state of the Autonomous Database.
+     * A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Autonomous Database.
+     * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
     public Optional<Output<String>> state() {
@@ -272,7 +272,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * @param dbVersion A filter to return only autonomous database resources that match the specified dbVersion.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * @param dbVersion A filter to return only autonomous database resources that match the specified dbVersion.
          * 
          * @return builder
          * 
@@ -314,11 +314,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbWorkload The Autonomous Database workload type. The following values are valid:
-         * * OLTP - indicates an Autonomous Transaction Processing database
-         * * DW - indicates an Autonomous Data Warehouse database
-         * * AJD - indicates an Autonomous JSON Database
-         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
          * 
          * @return builder
          * 
@@ -329,11 +325,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbWorkload The Autonomous Database workload type. The following values are valid:
-         * * OLTP - indicates an Autonomous Transaction Processing database
-         * * DW - indicates an Autonomous Data Warehouse database
-         * * AJD - indicates an Autonomous JSON Database
-         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
          * 
          * @return builder
          * 
@@ -343,7 +335,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * @param displayName A filter to return only resources that match the entire display name given. The match is not case sensitive.
          * 
          * @return builder
          * 
@@ -354,7 +346,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * @param displayName A filter to return only resources that match the entire display name given. The match is not case sensitive.
          * 
          * @return builder
          * 
@@ -377,7 +369,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param infrastructureType The infrastructure type this resource belongs to.
+         * @param infrastructureType A filter to return only resources that match the given Infrastructure Type.
          * 
          * @return builder
          * 
@@ -388,7 +380,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param infrastructureType The infrastructure type this resource belongs to.
+         * @param infrastructureType A filter to return only resources that match the given Infrastructure Type.
          * 
          * @return builder
          * 
@@ -398,7 +390,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isDataGuardEnabled **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+         * @param isDataGuardEnabled A filter to return only resources that have Data Guard enabled.
          * 
          * @return builder
          * 
@@ -409,7 +401,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isDataGuardEnabled **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+         * @param isDataGuardEnabled A filter to return only resources that have Data Guard enabled.
          * 
          * @return builder
          * 
@@ -419,7 +411,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isFreeTier Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+         * @param isFreeTier Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
          * 
          * @return builder
          * 
@@ -430,7 +422,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isFreeTier Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+         * @param isFreeTier Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
          * 
          * @return builder
          * 
@@ -440,7 +432,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isRefreshableClone Indicates if the Autonomous Database is a refreshable clone.
+         * @param isRefreshableClone Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
          * 
          * @return builder
          * 
@@ -451,7 +443,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param isRefreshableClone Indicates if the Autonomous Database is a refreshable clone.
+         * @param isRefreshableClone Filter on the value of the resource&#39;s &#39;isRefreshableClone&#39; property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
          * 
          * @return builder
          * 
@@ -460,11 +452,23 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
             return isRefreshableClone(Output.of(isRefreshableClone));
         }
 
+        /**
+         * @param isResourcePoolLeader Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isResourcePoolLeader(@Nullable Output<Boolean> isResourcePoolLeader) {
             $.isResourcePoolLeader = isResourcePoolLeader;
             return this;
         }
 
+        /**
+         * @param isResourcePoolLeader Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isResourcePoolLeader(Boolean isResourcePoolLeader) {
             return isResourcePoolLeader(Output.of(isResourcePoolLeader));
         }
@@ -479,7 +483,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param resourcePoolLeaderId The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
          * 
          * @return builder
          * 
@@ -490,7 +494,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param resourcePoolLeaderId The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
          * 
          * @return builder
          * 
@@ -500,7 +504,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param state The current state of the Autonomous Database.
+         * @param state A filter to return only resources that match the given lifecycle state exactly.
          * 
          * @return builder
          * 
@@ -511,7 +515,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param state The current state of the Autonomous Database.
+         * @param state A filter to return only resources that match the given lifecycle state exactly.
          * 
          * @return builder
          * 

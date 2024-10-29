@@ -27,7 +27,7 @@ class GetNetworkLoadBalancerResult:
     """
     A collection of values returned by getNetworkLoadBalancer.
     """
-    def __init__(__self__, assigned_ipv6=None, assigned_private_ipv4=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, is_symmetric_hash_enabled=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, state=None, subnet_id=None, subnet_ipv6cidr=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, assigned_ipv6=None, assigned_private_ipv4=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, is_symmetric_hash_enabled=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, security_attributes=None, state=None, subnet_id=None, subnet_ipv6cidr=None, system_tags=None, time_created=None, time_updated=None):
         if assigned_ipv6 and not isinstance(assigned_ipv6, str):
             raise TypeError("Expected argument 'assigned_ipv6' to be a str")
         pulumi.set(__self__, "assigned_ipv6", assigned_ipv6)
@@ -76,6 +76,9 @@ class GetNetworkLoadBalancerResult:
         if reserved_ips and not isinstance(reserved_ips, list):
             raise TypeError("Expected argument 'reserved_ips' to be a list")
         pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -212,6 +215,14 @@ class GetNetworkLoadBalancerResult:
         return pulumi.get(self, "reserved_ips")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -279,6 +290,7 @@ class AwaitableGetNetworkLoadBalancerResult(GetNetworkLoadBalancerResult):
             network_security_group_ids=self.network_security_group_ids,
             nlb_ip_version=self.nlb_ip_version,
             reserved_ips=self.reserved_ips,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             subnet_ipv6cidr=self.subnet_ipv6cidr,
@@ -328,6 +340,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
         nlb_ip_version=pulumi.get(__ret__, 'nlb_ip_version'),
         reserved_ips=pulumi.get(__ret__, 'reserved_ips'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         subnet_ipv6cidr=pulumi.get(__ret__, 'subnet_ipv6cidr'),
@@ -374,6 +387,7 @@ def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.I
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
         nlb_ip_version=pulumi.get(__response__, 'nlb_ip_version'),
         reserved_ips=pulumi.get(__response__, 'reserved_ips'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         subnet_ipv6cidr=pulumi.get(__response__, 'subnet_ipv6cidr'),

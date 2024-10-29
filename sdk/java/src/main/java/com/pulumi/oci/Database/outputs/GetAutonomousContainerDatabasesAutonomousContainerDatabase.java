@@ -67,7 +67,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String dbName;
     /**
-     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     private Integer dbSplitThreshold;
@@ -88,7 +88,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String displayName;
     /**
-     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * @return Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      * 
      */
     private String distributionAffinity;
@@ -270,7 +270,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String versionPreference;
     /**
-     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     private Integer vmFailoverReservation;
@@ -343,7 +343,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.dbName;
     }
     /**
-     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Integer dbSplitThreshold() {
@@ -374,7 +374,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.displayName;
     }
     /**
-     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * @return Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      * 
      */
     public String distributionAffinity() {
@@ -648,7 +648,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.versionPreference;
     }
     /**
-     * @return The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      * 
      */
     public Integer vmFailoverReservation() {

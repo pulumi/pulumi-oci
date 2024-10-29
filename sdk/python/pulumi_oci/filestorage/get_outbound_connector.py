@@ -27,7 +27,7 @@ class GetOutboundConnectorResult:
     """
     A collection of values returned by getOutboundConnector.
     """
-    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, time_created=None):
+    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -55,6 +55,12 @@ class GetOutboundConnectorResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if outbound_connector_id and not isinstance(outbound_connector_id, str):
             raise TypeError("Expected argument 'outbound_connector_id' to be a str")
         pulumi.set(__self__, "outbound_connector_id", outbound_connector_id)
@@ -144,6 +150,19 @@ class GetOutboundConnectorResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetOutboundConnectorLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="outboundConnectorId")
     def outbound_connector_id(self) -> str:
         return pulumi.get(self, "outbound_connector_id")
@@ -196,6 +215,8 @@ class AwaitableGetOutboundConnectorResult(GetOutboundConnectorResult):
             endpoints=self.endpoints,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             outbound_connector_id=self.outbound_connector_id,
             password_secret_id=self.password_secret_id,
             password_secret_version=self.password_secret_version,
@@ -237,6 +258,8 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
         endpoints=pulumi.get(__ret__, 'endpoints'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         outbound_connector_id=pulumi.get(__ret__, 'outbound_connector_id'),
         password_secret_id=pulumi.get(__ret__, 'password_secret_id'),
         password_secret_version=pulumi.get(__ret__, 'password_secret_version'),
@@ -275,6 +298,8 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
         endpoints=pulumi.get(__response__, 'endpoints'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        locks=pulumi.get(__response__, 'locks'),
         outbound_connector_id=pulumi.get(__response__, 'outbound_connector_id'),
         password_secret_id=pulumi.get(__response__, 'password_secret_id'),
         password_secret_version=pulumi.get(__response__, 'password_secret_version'),

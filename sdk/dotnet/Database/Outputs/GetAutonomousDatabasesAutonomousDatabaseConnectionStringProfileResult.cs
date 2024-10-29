@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ConsumerGroup;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

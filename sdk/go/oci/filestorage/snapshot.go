@@ -41,6 +41,14 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: filestorage.SnapshotLockArray{
+//					&filestorage.SnapshotLockArgs{
+//						Type:              pulumi.Any(snapshotLocksType),
+//						Message:           pulumi.Any(snapshotLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(snapshotLocksTimeCreated),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -72,9 +80,12 @@ type Snapshot struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource pulumi.BoolOutput `pulumi:"isCloneSource"`
+	IsCloneSource  pulumi.BoolOutput `pulumi:"isCloneSource"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks SnapshotLockArrayOutput `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -143,9 +154,12 @@ type snapshotState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource *bool `pulumi:"isCloneSource"`
+	IsCloneSource  *bool `pulumi:"isCloneSource"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []SnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -182,9 +196,12 @@ type SnapshotState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource pulumi.BoolPtrInput
+	IsCloneSource  pulumi.BoolPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks SnapshotLockArrayInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -221,7 +238,10 @@ type snapshotArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
 	FileSystemId string `pulumi:"fileSystemId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []SnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -242,7 +262,10 @@ type SnapshotArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
 	FileSystemId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks SnapshotLockArrayInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -371,9 +394,18 @@ func (o SnapshotOutput) IsCloneSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.BoolOutput { return v.IsCloneSource }).(pulumi.BoolOutput)
 }
 
+func (o SnapshotOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Snapshot) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current `lifecycleState`.
 func (o SnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o SnapshotOutput) Locks() SnapshotLockArrayOutput {
+	return o.ApplyT(func(v *Snapshot) SnapshotLockArrayOutput { return v.Locks }).(SnapshotLockArrayOutput)
 }
 
 // Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.

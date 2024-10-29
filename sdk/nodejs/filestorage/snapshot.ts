@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,6 +28,12 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     locks: [{
+ *         type: snapshotLocksType,
+ *         message: snapshotLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: snapshotLocksTimeCreated,
+ *     }],
  * });
  * ```
  *
@@ -89,10 +97,15 @@ export class Snapshot extends pulumi.CustomResource {
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public /*out*/ readonly isCloneSource!: pulumi.Output<boolean>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * Additional information about the current `lifecycleState`.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.FileStorage.SnapshotLock[]>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *
@@ -148,7 +161,9 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCloneSource"] = state ? state.isCloneSource : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["provenanceId"] = state ? state.provenanceId : undefined;
             resourceInputs["snapshotTime"] = state ? state.snapshotTime : undefined;
@@ -164,6 +179,8 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["expirationTime"] = args ? args.expirationTime : undefined;
             resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["filesystemSnapshotPolicyId"] = undefined /*out*/;
             resourceInputs["isCloneSource"] = undefined /*out*/;
@@ -207,10 +224,15 @@ export interface SnapshotState {
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     isCloneSource?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * Additional information about the current `lifecycleState`.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[]>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *
@@ -268,6 +290,11 @@ export interface SnapshotArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.SnapshotLock>[]>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *

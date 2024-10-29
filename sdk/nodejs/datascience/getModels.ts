@@ -64,6 +64,9 @@ export interface GetModelsArgs {
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
     id?: string;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
     modelVersionSetName: string;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -97,6 +100,9 @@ export interface GetModelsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     readonly id?: string;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
     readonly modelVersionSetName: string;
     /**
      * The list of models.
@@ -170,6 +176,9 @@ export interface GetModelsOutputArgs {
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
     id?: pulumi.Input<string>;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
     modelVersionSetName: pulumi.Input<string>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.

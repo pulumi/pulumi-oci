@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -73,6 +75,7 @@ export interface GetReplicationResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      */
@@ -81,6 +84,10 @@ export interface GetReplicationResult {
      * Additional information about the current 'lifecycleState'.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.FileStorage.GetReplicationLock[];
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      */

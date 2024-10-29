@@ -179,6 +179,254 @@ func (o ExportExportOptionArrayOutput) Index(i pulumi.IntInput) ExportExportOpti
 	}).(ExportExportOptionOutput)
 }
 
+type ExportLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// ExportLockInput is an input type that accepts ExportLockArgs and ExportLockOutput values.
+// You can construct a concrete instance of `ExportLockInput` via:
+//
+//	ExportLockArgs{...}
+type ExportLockInput interface {
+	pulumi.Input
+
+	ToExportLockOutput() ExportLockOutput
+	ToExportLockOutputWithContext(context.Context) ExportLockOutput
+}
+
+type ExportLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ExportLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExportLock)(nil)).Elem()
+}
+
+func (i ExportLockArgs) ToExportLockOutput() ExportLockOutput {
+	return i.ToExportLockOutputWithContext(context.Background())
+}
+
+func (i ExportLockArgs) ToExportLockOutputWithContext(ctx context.Context) ExportLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExportLockOutput)
+}
+
+// ExportLockArrayInput is an input type that accepts ExportLockArray and ExportLockArrayOutput values.
+// You can construct a concrete instance of `ExportLockArrayInput` via:
+//
+//	ExportLockArray{ ExportLockArgs{...} }
+type ExportLockArrayInput interface {
+	pulumi.Input
+
+	ToExportLockArrayOutput() ExportLockArrayOutput
+	ToExportLockArrayOutputWithContext(context.Context) ExportLockArrayOutput
+}
+
+type ExportLockArray []ExportLockInput
+
+func (ExportLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExportLock)(nil)).Elem()
+}
+
+func (i ExportLockArray) ToExportLockArrayOutput() ExportLockArrayOutput {
+	return i.ToExportLockArrayOutputWithContext(context.Background())
+}
+
+func (i ExportLockArray) ToExportLockArrayOutputWithContext(ctx context.Context) ExportLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExportLockArrayOutput)
+}
+
+type ExportLockOutput struct{ *pulumi.OutputState }
+
+func (ExportLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExportLock)(nil)).Elem()
+}
+
+func (o ExportLockOutput) ToExportLockOutput() ExportLockOutput {
+	return o
+}
+
+func (o ExportLockOutput) ToExportLockOutputWithContext(ctx context.Context) ExportLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o ExportLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExportLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o ExportLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExportLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o ExportLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExportLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o ExportLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ExportLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ExportLockArrayOutput struct{ *pulumi.OutputState }
+
+func (ExportLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExportLock)(nil)).Elem()
+}
+
+func (o ExportLockArrayOutput) ToExportLockArrayOutput() ExportLockArrayOutput {
+	return o
+}
+
+func (o ExportLockArrayOutput) ToExportLockArrayOutputWithContext(ctx context.Context) ExportLockArrayOutput {
+	return o
+}
+
+func (o ExportLockArrayOutput) Index(i pulumi.IntInput) ExportLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExportLock {
+		return vs[0].([]ExportLock)[vs[1].(int)]
+	}).(ExportLockOutput)
+}
+
+type FileSystemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// FileSystemLockInput is an input type that accepts FileSystemLockArgs and FileSystemLockOutput values.
+// You can construct a concrete instance of `FileSystemLockInput` via:
+//
+//	FileSystemLockArgs{...}
+type FileSystemLockInput interface {
+	pulumi.Input
+
+	ToFileSystemLockOutput() FileSystemLockOutput
+	ToFileSystemLockOutputWithContext(context.Context) FileSystemLockOutput
+}
+
+type FileSystemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (FileSystemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileSystemLock)(nil)).Elem()
+}
+
+func (i FileSystemLockArgs) ToFileSystemLockOutput() FileSystemLockOutput {
+	return i.ToFileSystemLockOutputWithContext(context.Background())
+}
+
+func (i FileSystemLockArgs) ToFileSystemLockOutputWithContext(ctx context.Context) FileSystemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileSystemLockOutput)
+}
+
+// FileSystemLockArrayInput is an input type that accepts FileSystemLockArray and FileSystemLockArrayOutput values.
+// You can construct a concrete instance of `FileSystemLockArrayInput` via:
+//
+//	FileSystemLockArray{ FileSystemLockArgs{...} }
+type FileSystemLockArrayInput interface {
+	pulumi.Input
+
+	ToFileSystemLockArrayOutput() FileSystemLockArrayOutput
+	ToFileSystemLockArrayOutputWithContext(context.Context) FileSystemLockArrayOutput
+}
+
+type FileSystemLockArray []FileSystemLockInput
+
+func (FileSystemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileSystemLock)(nil)).Elem()
+}
+
+func (i FileSystemLockArray) ToFileSystemLockArrayOutput() FileSystemLockArrayOutput {
+	return i.ToFileSystemLockArrayOutputWithContext(context.Background())
+}
+
+func (i FileSystemLockArray) ToFileSystemLockArrayOutputWithContext(ctx context.Context) FileSystemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileSystemLockArrayOutput)
+}
+
+type FileSystemLockOutput struct{ *pulumi.OutputState }
+
+func (FileSystemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileSystemLock)(nil)).Elem()
+}
+
+func (o FileSystemLockOutput) ToFileSystemLockOutput() FileSystemLockOutput {
+	return o
+}
+
+func (o FileSystemLockOutput) ToFileSystemLockOutputWithContext(ctx context.Context) FileSystemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o FileSystemLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileSystemLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o FileSystemLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileSystemLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o FileSystemLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileSystemLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o FileSystemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v FileSystemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type FileSystemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (FileSystemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileSystemLock)(nil)).Elem()
+}
+
+func (o FileSystemLockArrayOutput) ToFileSystemLockArrayOutput() FileSystemLockArrayOutput {
+	return o
+}
+
+func (o FileSystemLockArrayOutput) ToFileSystemLockArrayOutputWithContext(ctx context.Context) FileSystemLockArrayOutput {
+	return o
+}
+
+func (o FileSystemLockArrayOutput) Index(i pulumi.IntInput) FileSystemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileSystemLock {
+		return vs[0].([]FileSystemLock)[vs[1].(int)]
+	}).(FileSystemLockOutput)
+}
+
 type FileSystemSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId *string `pulumi:"parentFileSystemId"`
@@ -283,6 +531,130 @@ func (o FileSystemSourceDetailArrayOutput) Index(i pulumi.IntInput) FileSystemSo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileSystemSourceDetail {
 		return vs[0].([]FileSystemSourceDetail)[vs[1].(int)]
 	}).(FileSystemSourceDetailOutput)
+}
+
+type FilesystemSnapshotPolicyLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// FilesystemSnapshotPolicyLockInput is an input type that accepts FilesystemSnapshotPolicyLockArgs and FilesystemSnapshotPolicyLockOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyLockInput` via:
+//
+//	FilesystemSnapshotPolicyLockArgs{...}
+type FilesystemSnapshotPolicyLockInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyLockOutput() FilesystemSnapshotPolicyLockOutput
+	ToFilesystemSnapshotPolicyLockOutputWithContext(context.Context) FilesystemSnapshotPolicyLockOutput
+}
+
+type FilesystemSnapshotPolicyLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (FilesystemSnapshotPolicyLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i FilesystemSnapshotPolicyLockArgs) ToFilesystemSnapshotPolicyLockOutput() FilesystemSnapshotPolicyLockOutput {
+	return i.ToFilesystemSnapshotPolicyLockOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyLockArgs) ToFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyLockOutput)
+}
+
+// FilesystemSnapshotPolicyLockArrayInput is an input type that accepts FilesystemSnapshotPolicyLockArray and FilesystemSnapshotPolicyLockArrayOutput values.
+// You can construct a concrete instance of `FilesystemSnapshotPolicyLockArrayInput` via:
+//
+//	FilesystemSnapshotPolicyLockArray{ FilesystemSnapshotPolicyLockArgs{...} }
+type FilesystemSnapshotPolicyLockArrayInput interface {
+	pulumi.Input
+
+	ToFilesystemSnapshotPolicyLockArrayOutput() FilesystemSnapshotPolicyLockArrayOutput
+	ToFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Context) FilesystemSnapshotPolicyLockArrayOutput
+}
+
+type FilesystemSnapshotPolicyLockArray []FilesystemSnapshotPolicyLockInput
+
+func (FilesystemSnapshotPolicyLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i FilesystemSnapshotPolicyLockArray) ToFilesystemSnapshotPolicyLockArrayOutput() FilesystemSnapshotPolicyLockArrayOutput {
+	return i.ToFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Background())
+}
+
+func (i FilesystemSnapshotPolicyLockArray) ToFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyLockArrayOutput)
+}
+
+type FilesystemSnapshotPolicyLockOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyLockOutput) ToFilesystemSnapshotPolicyLockOutput() FilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyLockOutput) ToFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o FilesystemSnapshotPolicyLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o FilesystemSnapshotPolicyLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o FilesystemSnapshotPolicyLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o FilesystemSnapshotPolicyLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v FilesystemSnapshotPolicyLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type FilesystemSnapshotPolicyLockArrayOutput struct{ *pulumi.OutputState }
+
+func (FilesystemSnapshotPolicyLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o FilesystemSnapshotPolicyLockArrayOutput) ToFilesystemSnapshotPolicyLockArrayOutput() FilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyLockArrayOutput) ToFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o FilesystemSnapshotPolicyLockArrayOutput) Index(i pulumi.IntInput) FilesystemSnapshotPolicyLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FilesystemSnapshotPolicyLock {
+		return vs[0].([]FilesystemSnapshotPolicyLock)[vs[1].(int)]
+	}).(FilesystemSnapshotPolicyLockOutput)
 }
 
 type FilesystemSnapshotPolicySchedule struct {
@@ -937,6 +1309,130 @@ func (o MountTargetLdapIdmapPtrOutput) UserSearchBase() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type MountTargetLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// MountTargetLockInput is an input type that accepts MountTargetLockArgs and MountTargetLockOutput values.
+// You can construct a concrete instance of `MountTargetLockInput` via:
+//
+//	MountTargetLockArgs{...}
+type MountTargetLockInput interface {
+	pulumi.Input
+
+	ToMountTargetLockOutput() MountTargetLockOutput
+	ToMountTargetLockOutputWithContext(context.Context) MountTargetLockOutput
+}
+
+type MountTargetLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MountTargetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetLock)(nil)).Elem()
+}
+
+func (i MountTargetLockArgs) ToMountTargetLockOutput() MountTargetLockOutput {
+	return i.ToMountTargetLockOutputWithContext(context.Background())
+}
+
+func (i MountTargetLockArgs) ToMountTargetLockOutputWithContext(ctx context.Context) MountTargetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLockOutput)
+}
+
+// MountTargetLockArrayInput is an input type that accepts MountTargetLockArray and MountTargetLockArrayOutput values.
+// You can construct a concrete instance of `MountTargetLockArrayInput` via:
+//
+//	MountTargetLockArray{ MountTargetLockArgs{...} }
+type MountTargetLockArrayInput interface {
+	pulumi.Input
+
+	ToMountTargetLockArrayOutput() MountTargetLockArrayOutput
+	ToMountTargetLockArrayOutputWithContext(context.Context) MountTargetLockArrayOutput
+}
+
+type MountTargetLockArray []MountTargetLockInput
+
+func (MountTargetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountTargetLock)(nil)).Elem()
+}
+
+func (i MountTargetLockArray) ToMountTargetLockArrayOutput() MountTargetLockArrayOutput {
+	return i.ToMountTargetLockArrayOutputWithContext(context.Background())
+}
+
+func (i MountTargetLockArray) ToMountTargetLockArrayOutputWithContext(ctx context.Context) MountTargetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLockArrayOutput)
+}
+
+type MountTargetLockOutput struct{ *pulumi.OutputState }
+
+func (MountTargetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountTargetLock)(nil)).Elem()
+}
+
+func (o MountTargetLockOutput) ToMountTargetLockOutput() MountTargetLockOutput {
+	return o
+}
+
+func (o MountTargetLockOutput) ToMountTargetLockOutputWithContext(ctx context.Context) MountTargetLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MountTargetLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MountTargetLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o MountTargetLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountTargetLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o MountTargetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MountTargetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MountTargetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MountTargetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountTargetLock)(nil)).Elem()
+}
+
+func (o MountTargetLockArrayOutput) ToMountTargetLockArrayOutput() MountTargetLockArrayOutput {
+	return o
+}
+
+func (o MountTargetLockArrayOutput) ToMountTargetLockArrayOutputWithContext(ctx context.Context) MountTargetLockArrayOutput {
+	return o
+}
+
+func (o MountTargetLockArrayOutput) Index(i pulumi.IntInput) MountTargetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MountTargetLock {
+		return vs[0].([]MountTargetLock)[vs[1].(int)]
+	}).(MountTargetLockOutput)
+}
+
 type OutboundConnectorEndpoint struct {
 	// Name of the DNS server.
 	Hostname string `pulumi:"hostname"`
@@ -1041,6 +1537,378 @@ func (o OutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) OutboundC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutboundConnectorEndpoint {
 		return vs[0].([]OutboundConnectorEndpoint)[vs[1].(int)]
 	}).(OutboundConnectorEndpointOutput)
+}
+
+type OutboundConnectorLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// OutboundConnectorLockInput is an input type that accepts OutboundConnectorLockArgs and OutboundConnectorLockOutput values.
+// You can construct a concrete instance of `OutboundConnectorLockInput` via:
+//
+//	OutboundConnectorLockArgs{...}
+type OutboundConnectorLockInput interface {
+	pulumi.Input
+
+	ToOutboundConnectorLockOutput() OutboundConnectorLockOutput
+	ToOutboundConnectorLockOutputWithContext(context.Context) OutboundConnectorLockOutput
+}
+
+type OutboundConnectorLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (OutboundConnectorLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutboundConnectorLock)(nil)).Elem()
+}
+
+func (i OutboundConnectorLockArgs) ToOutboundConnectorLockOutput() OutboundConnectorLockOutput {
+	return i.ToOutboundConnectorLockOutputWithContext(context.Background())
+}
+
+func (i OutboundConnectorLockArgs) ToOutboundConnectorLockOutputWithContext(ctx context.Context) OutboundConnectorLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorLockOutput)
+}
+
+// OutboundConnectorLockArrayInput is an input type that accepts OutboundConnectorLockArray and OutboundConnectorLockArrayOutput values.
+// You can construct a concrete instance of `OutboundConnectorLockArrayInput` via:
+//
+//	OutboundConnectorLockArray{ OutboundConnectorLockArgs{...} }
+type OutboundConnectorLockArrayInput interface {
+	pulumi.Input
+
+	ToOutboundConnectorLockArrayOutput() OutboundConnectorLockArrayOutput
+	ToOutboundConnectorLockArrayOutputWithContext(context.Context) OutboundConnectorLockArrayOutput
+}
+
+type OutboundConnectorLockArray []OutboundConnectorLockInput
+
+func (OutboundConnectorLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutboundConnectorLock)(nil)).Elem()
+}
+
+func (i OutboundConnectorLockArray) ToOutboundConnectorLockArrayOutput() OutboundConnectorLockArrayOutput {
+	return i.ToOutboundConnectorLockArrayOutputWithContext(context.Background())
+}
+
+func (i OutboundConnectorLockArray) ToOutboundConnectorLockArrayOutputWithContext(ctx context.Context) OutboundConnectorLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorLockArrayOutput)
+}
+
+type OutboundConnectorLockOutput struct{ *pulumi.OutputState }
+
+func (OutboundConnectorLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutboundConnectorLock)(nil)).Elem()
+}
+
+func (o OutboundConnectorLockOutput) ToOutboundConnectorLockOutput() OutboundConnectorLockOutput {
+	return o
+}
+
+func (o OutboundConnectorLockOutput) ToOutboundConnectorLockOutputWithContext(ctx context.Context) OutboundConnectorLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o OutboundConnectorLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OutboundConnectorLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o OutboundConnectorLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OutboundConnectorLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o OutboundConnectorLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OutboundConnectorLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o OutboundConnectorLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v OutboundConnectorLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type OutboundConnectorLockArrayOutput struct{ *pulumi.OutputState }
+
+func (OutboundConnectorLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutboundConnectorLock)(nil)).Elem()
+}
+
+func (o OutboundConnectorLockArrayOutput) ToOutboundConnectorLockArrayOutput() OutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o OutboundConnectorLockArrayOutput) ToOutboundConnectorLockArrayOutputWithContext(ctx context.Context) OutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o OutboundConnectorLockArrayOutput) Index(i pulumi.IntInput) OutboundConnectorLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutboundConnectorLock {
+		return vs[0].([]OutboundConnectorLock)[vs[1].(int)]
+	}).(OutboundConnectorLockOutput)
+}
+
+type ReplicationLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// ReplicationLockInput is an input type that accepts ReplicationLockArgs and ReplicationLockOutput values.
+// You can construct a concrete instance of `ReplicationLockInput` via:
+//
+//	ReplicationLockArgs{...}
+type ReplicationLockInput interface {
+	pulumi.Input
+
+	ToReplicationLockOutput() ReplicationLockOutput
+	ToReplicationLockOutputWithContext(context.Context) ReplicationLockOutput
+}
+
+type ReplicationLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ReplicationLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicationLock)(nil)).Elem()
+}
+
+func (i ReplicationLockArgs) ToReplicationLockOutput() ReplicationLockOutput {
+	return i.ToReplicationLockOutputWithContext(context.Background())
+}
+
+func (i ReplicationLockArgs) ToReplicationLockOutputWithContext(ctx context.Context) ReplicationLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicationLockOutput)
+}
+
+// ReplicationLockArrayInput is an input type that accepts ReplicationLockArray and ReplicationLockArrayOutput values.
+// You can construct a concrete instance of `ReplicationLockArrayInput` via:
+//
+//	ReplicationLockArray{ ReplicationLockArgs{...} }
+type ReplicationLockArrayInput interface {
+	pulumi.Input
+
+	ToReplicationLockArrayOutput() ReplicationLockArrayOutput
+	ToReplicationLockArrayOutputWithContext(context.Context) ReplicationLockArrayOutput
+}
+
+type ReplicationLockArray []ReplicationLockInput
+
+func (ReplicationLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicationLock)(nil)).Elem()
+}
+
+func (i ReplicationLockArray) ToReplicationLockArrayOutput() ReplicationLockArrayOutput {
+	return i.ToReplicationLockArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicationLockArray) ToReplicationLockArrayOutputWithContext(ctx context.Context) ReplicationLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicationLockArrayOutput)
+}
+
+type ReplicationLockOutput struct{ *pulumi.OutputState }
+
+func (ReplicationLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicationLock)(nil)).Elem()
+}
+
+func (o ReplicationLockOutput) ToReplicationLockOutput() ReplicationLockOutput {
+	return o
+}
+
+func (o ReplicationLockOutput) ToReplicationLockOutputWithContext(ctx context.Context) ReplicationLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o ReplicationLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicationLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o ReplicationLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicationLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o ReplicationLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicationLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o ReplicationLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ReplicationLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ReplicationLockArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicationLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicationLock)(nil)).Elem()
+}
+
+func (o ReplicationLockArrayOutput) ToReplicationLockArrayOutput() ReplicationLockArrayOutput {
+	return o
+}
+
+func (o ReplicationLockArrayOutput) ToReplicationLockArrayOutputWithContext(ctx context.Context) ReplicationLockArrayOutput {
+	return o
+}
+
+func (o ReplicationLockArrayOutput) Index(i pulumi.IntInput) ReplicationLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicationLock {
+		return vs[0].([]ReplicationLock)[vs[1].(int)]
+	}).(ReplicationLockOutput)
+}
+
+type SnapshotLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// SnapshotLockInput is an input type that accepts SnapshotLockArgs and SnapshotLockOutput values.
+// You can construct a concrete instance of `SnapshotLockInput` via:
+//
+//	SnapshotLockArgs{...}
+type SnapshotLockInput interface {
+	pulumi.Input
+
+	ToSnapshotLockOutput() SnapshotLockOutput
+	ToSnapshotLockOutputWithContext(context.Context) SnapshotLockOutput
+}
+
+type SnapshotLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (SnapshotLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotLock)(nil)).Elem()
+}
+
+func (i SnapshotLockArgs) ToSnapshotLockOutput() SnapshotLockOutput {
+	return i.ToSnapshotLockOutputWithContext(context.Background())
+}
+
+func (i SnapshotLockArgs) ToSnapshotLockOutputWithContext(ctx context.Context) SnapshotLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotLockOutput)
+}
+
+// SnapshotLockArrayInput is an input type that accepts SnapshotLockArray and SnapshotLockArrayOutput values.
+// You can construct a concrete instance of `SnapshotLockArrayInput` via:
+//
+//	SnapshotLockArray{ SnapshotLockArgs{...} }
+type SnapshotLockArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotLockArrayOutput() SnapshotLockArrayOutput
+	ToSnapshotLockArrayOutputWithContext(context.Context) SnapshotLockArrayOutput
+}
+
+type SnapshotLockArray []SnapshotLockInput
+
+func (SnapshotLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotLock)(nil)).Elem()
+}
+
+func (i SnapshotLockArray) ToSnapshotLockArrayOutput() SnapshotLockArrayOutput {
+	return i.ToSnapshotLockArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotLockArray) ToSnapshotLockArrayOutputWithContext(ctx context.Context) SnapshotLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotLockArrayOutput)
+}
+
+type SnapshotLockOutput struct{ *pulumi.OutputState }
+
+func (SnapshotLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotLock)(nil)).Elem()
+}
+
+func (o SnapshotLockOutput) ToSnapshotLockOutput() SnapshotLockOutput {
+	return o
+}
+
+func (o SnapshotLockOutput) ToSnapshotLockOutputWithContext(ctx context.Context) SnapshotLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o SnapshotLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o SnapshotLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o SnapshotLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o SnapshotLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v SnapshotLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type SnapshotLockArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotLock)(nil)).Elem()
+}
+
+func (o SnapshotLockArrayOutput) ToSnapshotLockArrayOutput() SnapshotLockArrayOutput {
+	return o
+}
+
+func (o SnapshotLockArrayOutput) ToSnapshotLockArrayOutputWithContext(ctx context.Context) SnapshotLockArrayOutput {
+	return o
+}
+
+func (o SnapshotLockArrayOutput) Index(i pulumi.IntInput) SnapshotLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotLock {
+		return vs[0].([]SnapshotLock)[vs[1].(int)]
+	}).(SnapshotLockOutput)
 }
 
 type GetExportSetsExportSet struct {
@@ -1335,6 +2203,9 @@ type GetExportsExport struct {
 	Id string `pulumi:"id"`
 	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
 	IsIdmapGroupsForSysAuth bool `pulumi:"isIdmapGroupsForSysAuth"`
+	IsLockOverride          bool `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetExportsExportLock `pulumi:"locks"`
 	// Path used to access the associated file system.
 	Path string `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -1365,6 +2236,9 @@ type GetExportsExportArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
 	IsIdmapGroupsForSysAuth pulumi.BoolInput `pulumi:"isIdmapGroupsForSysAuth"`
+	IsLockOverride          pulumi.BoolInput `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetExportsExportLockArrayInput `pulumi:"locks"`
 	// Path used to access the associated file system.
 	Path pulumi.StringInput `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -1447,6 +2321,15 @@ func (o GetExportsExportOutput) Id() pulumi.StringOutput {
 // Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
 func (o GetExportsExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetExportsExport) bool { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolOutput)
+}
+
+func (o GetExportsExportOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExportsExport) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetExportsExportOutput) Locks() GetExportsExportLockArrayOutput {
+	return o.ApplyT(func(v GetExportsExport) []GetExportsExportLock { return v.Locks }).(GetExportsExportLockArrayOutput)
 }
 
 // Path used to access the associated file system.
@@ -1644,6 +2527,130 @@ func (o GetExportsExportExportOptionArrayOutput) Index(i pulumi.IntInput) GetExp
 	}).(GetExportsExportExportOptionOutput)
 }
 
+type GetExportsExportLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetExportsExportLockInput is an input type that accepts GetExportsExportLockArgs and GetExportsExportLockOutput values.
+// You can construct a concrete instance of `GetExportsExportLockInput` via:
+//
+//	GetExportsExportLockArgs{...}
+type GetExportsExportLockInput interface {
+	pulumi.Input
+
+	ToGetExportsExportLockOutput() GetExportsExportLockOutput
+	ToGetExportsExportLockOutputWithContext(context.Context) GetExportsExportLockOutput
+}
+
+type GetExportsExportLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetExportsExportLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExportsExportLock)(nil)).Elem()
+}
+
+func (i GetExportsExportLockArgs) ToGetExportsExportLockOutput() GetExportsExportLockOutput {
+	return i.ToGetExportsExportLockOutputWithContext(context.Background())
+}
+
+func (i GetExportsExportLockArgs) ToGetExportsExportLockOutputWithContext(ctx context.Context) GetExportsExportLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportLockOutput)
+}
+
+// GetExportsExportLockArrayInput is an input type that accepts GetExportsExportLockArray and GetExportsExportLockArrayOutput values.
+// You can construct a concrete instance of `GetExportsExportLockArrayInput` via:
+//
+//	GetExportsExportLockArray{ GetExportsExportLockArgs{...} }
+type GetExportsExportLockArrayInput interface {
+	pulumi.Input
+
+	ToGetExportsExportLockArrayOutput() GetExportsExportLockArrayOutput
+	ToGetExportsExportLockArrayOutputWithContext(context.Context) GetExportsExportLockArrayOutput
+}
+
+type GetExportsExportLockArray []GetExportsExportLockInput
+
+func (GetExportsExportLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExportsExportLock)(nil)).Elem()
+}
+
+func (i GetExportsExportLockArray) ToGetExportsExportLockArrayOutput() GetExportsExportLockArrayOutput {
+	return i.ToGetExportsExportLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetExportsExportLockArray) ToGetExportsExportLockArrayOutputWithContext(ctx context.Context) GetExportsExportLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportLockArrayOutput)
+}
+
+type GetExportsExportLockOutput struct{ *pulumi.OutputState }
+
+func (GetExportsExportLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExportsExportLock)(nil)).Elem()
+}
+
+func (o GetExportsExportLockOutput) ToGetExportsExportLockOutput() GetExportsExportLockOutput {
+	return o
+}
+
+func (o GetExportsExportLockOutput) ToGetExportsExportLockOutputWithContext(ctx context.Context) GetExportsExportLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetExportsExportLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExportsExportLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetExportsExportLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExportsExportLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetExportsExportLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExportsExportLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetExportsExportLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExportsExportLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetExportsExportLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExportsExportLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExportsExportLock)(nil)).Elem()
+}
+
+func (o GetExportsExportLockArrayOutput) ToGetExportsExportLockArrayOutput() GetExportsExportLockArrayOutput {
+	return o
+}
+
+func (o GetExportsExportLockArrayOutput) ToGetExportsExportLockArrayOutputWithContext(ctx context.Context) GetExportsExportLockArrayOutput {
+	return o
+}
+
+func (o GetExportsExportLockArrayOutput) Index(i pulumi.IntInput) GetExportsExportLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExportsExportLock {
+		return vs[0].([]GetExportsExportLock)[vs[1].(int)]
+	}).(GetExportsExportLockOutput)
+}
+
 type GetExportsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -1773,13 +2780,16 @@ type GetFileSystemsFileSystem struct {
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent bool `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated bool `pulumi:"isHydrated"`
+	IsHydrated     bool `pulumi:"isHydrated"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable bool `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetFileSystemsFileSystemLock `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes string `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -1828,13 +2838,16 @@ type GetFileSystemsFileSystemArgs struct {
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent pulumi.BoolInput `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
+	IsHydrated     pulumi.BoolInput `pulumi:"isHydrated"`
+	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable pulumi.BoolInput `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetFileSystemsFileSystemLockArrayInput `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringInput `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -1959,6 +2972,10 @@ func (o GetFileSystemsFileSystemOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
+func (o GetFileSystemsFileSystemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 func (o GetFileSystemsFileSystemOutput) IsTargetable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsTargetable }).(pulumi.BoolOutput)
@@ -1972,6 +2989,11 @@ func (o GetFileSystemsFileSystemOutput) KmsKeyId() pulumi.StringOutput {
 // Additional information about the current 'lifecycleState'.
 func (o GetFileSystemsFileSystemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetFileSystemsFileSystemOutput) Locks() GetFileSystemsFileSystemLockArrayOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) []GetFileSystemsFileSystemLock { return v.Locks }).(GetFileSystemsFileSystemLockArrayOutput)
 }
 
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
@@ -2022,6 +3044,130 @@ func (o GetFileSystemsFileSystemArrayOutput) Index(i pulumi.IntInput) GetFileSys
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemsFileSystem {
 		return vs[0].([]GetFileSystemsFileSystem)[vs[1].(int)]
 	}).(GetFileSystemsFileSystemOutput)
+}
+
+type GetFileSystemsFileSystemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetFileSystemsFileSystemLockInput is an input type that accepts GetFileSystemsFileSystemLockArgs and GetFileSystemsFileSystemLockOutput values.
+// You can construct a concrete instance of `GetFileSystemsFileSystemLockInput` via:
+//
+//	GetFileSystemsFileSystemLockArgs{...}
+type GetFileSystemsFileSystemLockInput interface {
+	pulumi.Input
+
+	ToGetFileSystemsFileSystemLockOutput() GetFileSystemsFileSystemLockOutput
+	ToGetFileSystemsFileSystemLockOutputWithContext(context.Context) GetFileSystemsFileSystemLockOutput
+}
+
+type GetFileSystemsFileSystemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetFileSystemsFileSystemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemsFileSystemLock)(nil)).Elem()
+}
+
+func (i GetFileSystemsFileSystemLockArgs) ToGetFileSystemsFileSystemLockOutput() GetFileSystemsFileSystemLockOutput {
+	return i.ToGetFileSystemsFileSystemLockOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemsFileSystemLockArgs) ToGetFileSystemsFileSystemLockOutputWithContext(ctx context.Context) GetFileSystemsFileSystemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemLockOutput)
+}
+
+// GetFileSystemsFileSystemLockArrayInput is an input type that accepts GetFileSystemsFileSystemLockArray and GetFileSystemsFileSystemLockArrayOutput values.
+// You can construct a concrete instance of `GetFileSystemsFileSystemLockArrayInput` via:
+//
+//	GetFileSystemsFileSystemLockArray{ GetFileSystemsFileSystemLockArgs{...} }
+type GetFileSystemsFileSystemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetFileSystemsFileSystemLockArrayOutput() GetFileSystemsFileSystemLockArrayOutput
+	ToGetFileSystemsFileSystemLockArrayOutputWithContext(context.Context) GetFileSystemsFileSystemLockArrayOutput
+}
+
+type GetFileSystemsFileSystemLockArray []GetFileSystemsFileSystemLockInput
+
+func (GetFileSystemsFileSystemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemsFileSystemLock)(nil)).Elem()
+}
+
+func (i GetFileSystemsFileSystemLockArray) ToGetFileSystemsFileSystemLockArrayOutput() GetFileSystemsFileSystemLockArrayOutput {
+	return i.ToGetFileSystemsFileSystemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileSystemsFileSystemLockArray) ToGetFileSystemsFileSystemLockArrayOutputWithContext(ctx context.Context) GetFileSystemsFileSystemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemLockArrayOutput)
+}
+
+type GetFileSystemsFileSystemLockOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemsFileSystemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileSystemsFileSystemLock)(nil)).Elem()
+}
+
+func (o GetFileSystemsFileSystemLockOutput) ToGetFileSystemsFileSystemLockOutput() GetFileSystemsFileSystemLockOutput {
+	return o
+}
+
+func (o GetFileSystemsFileSystemLockOutput) ToGetFileSystemsFileSystemLockOutputWithContext(ctx context.Context) GetFileSystemsFileSystemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetFileSystemsFileSystemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetFileSystemsFileSystemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFileSystemsFileSystemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetFileSystemsFileSystemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetFileSystemsFileSystemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileSystemsFileSystemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileSystemsFileSystemLock)(nil)).Elem()
+}
+
+func (o GetFileSystemsFileSystemLockArrayOutput) ToGetFileSystemsFileSystemLockArrayOutput() GetFileSystemsFileSystemLockArrayOutput {
+	return o
+}
+
+func (o GetFileSystemsFileSystemLockArrayOutput) ToGetFileSystemsFileSystemLockArrayOutputWithContext(ctx context.Context) GetFileSystemsFileSystemLockArrayOutput {
+	return o
+}
+
+func (o GetFileSystemsFileSystemLockArrayOutput) Index(i pulumi.IntInput) GetFileSystemsFileSystemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemsFileSystemLock {
+		return vs[0].([]GetFileSystemsFileSystemLock)[vs[1].(int)]
+	}).(GetFileSystemsFileSystemLockOutput)
 }
 
 type GetFileSystemsFileSystemSourceDetail struct {
@@ -2248,7 +3394,10 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock `pulumi:"locks"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix string `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -2282,7 +3431,10 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput `pulumi:"locks"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix pulumi.StringInput `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -2374,6 +3526,17 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Id() pulumi
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Locks() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock {
+		return v.Locks
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput)
+}
+
 // The prefix to apply to all snapshots created by this policy.  Example: `acme`
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.PolicyPrefix }).(pulumi.StringOutput)
@@ -2414,6 +3577,130 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
 		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)[vs[1].(int)]
 	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs{...}
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput)
+}
+
+// GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput` via:
+//
+//	GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray{ GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs{...} }
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput
+	ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockInput
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput {
+	return i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock {
+		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput)
 }
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule struct {
@@ -2693,6 +3980,130 @@ func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilter {
 		return vs[0].([]GetFilesystemSnapshotPoliciesFilter)[vs[1].(int)]
 	}).(GetFilesystemSnapshotPoliciesFilterOutput)
+}
+
+type GetFilesystemSnapshotPolicyLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetFilesystemSnapshotPolicyLockInput is an input type that accepts GetFilesystemSnapshotPolicyLockArgs and GetFilesystemSnapshotPolicyLockOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyLockInput` via:
+//
+//	GetFilesystemSnapshotPolicyLockArgs{...}
+type GetFilesystemSnapshotPolicyLockInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPolicyLockOutput
+	ToGetFilesystemSnapshotPolicyLockOutputWithContext(context.Context) GetFilesystemSnapshotPolicyLockOutput
+}
+
+type GetFilesystemSnapshotPolicyLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetFilesystemSnapshotPolicyLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyLockArgs) ToGetFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPolicyLockOutput {
+	return i.ToGetFilesystemSnapshotPolicyLockOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyLockArgs) ToGetFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyLockOutput)
+}
+
+// GetFilesystemSnapshotPolicyLockArrayInput is an input type that accepts GetFilesystemSnapshotPolicyLockArray and GetFilesystemSnapshotPolicyLockArrayOutput values.
+// You can construct a concrete instance of `GetFilesystemSnapshotPolicyLockArrayInput` via:
+//
+//	GetFilesystemSnapshotPolicyLockArray{ GetFilesystemSnapshotPolicyLockArgs{...} }
+type GetFilesystemSnapshotPolicyLockArrayInput interface {
+	pulumi.Input
+
+	ToGetFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPolicyLockArrayOutput
+	ToGetFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Context) GetFilesystemSnapshotPolicyLockArrayOutput
+}
+
+type GetFilesystemSnapshotPolicyLockArray []GetFilesystemSnapshotPolicyLockInput
+
+func (GetFilesystemSnapshotPolicyLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (i GetFilesystemSnapshotPolicyLockArray) ToGetFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPolicyLockArrayOutput {
+	return i.ToGetFilesystemSnapshotPolicyLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetFilesystemSnapshotPolicyLockArray) ToGetFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyLockArrayOutput)
+}
+
+type GetFilesystemSnapshotPolicyLockOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyLockOutput) ToGetFilesystemSnapshotPolicyLockOutput() GetFilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyLockOutput) ToGetFilesystemSnapshotPolicyLockOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetFilesystemSnapshotPolicyLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetFilesystemSnapshotPolicyLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetFilesystemSnapshotPolicyLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetFilesystemSnapshotPolicyLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicyLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetFilesystemSnapshotPolicyLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFilesystemSnapshotPolicyLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFilesystemSnapshotPolicyLock)(nil)).Elem()
+}
+
+func (o GetFilesystemSnapshotPolicyLockArrayOutput) ToGetFilesystemSnapshotPolicyLockArrayOutput() GetFilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyLockArrayOutput) ToGetFilesystemSnapshotPolicyLockArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyLockArrayOutput {
+	return o
+}
+
+func (o GetFilesystemSnapshotPolicyLockArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPolicyLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPolicyLock {
+		return vs[0].([]GetFilesystemSnapshotPolicyLock)[vs[1].(int)]
+	}).(GetFilesystemSnapshotPolicyLockOutput)
 }
 
 type GetFilesystemSnapshotPolicySchedule struct {
@@ -2987,14 +4398,17 @@ type GetMountTargetsMountTarget struct {
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id string `pulumi:"id"`
 	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-	IdmapType string `pulumi:"idmapType"`
-	IpAddress string `pulumi:"ipAddress"`
+	IdmapType      string `pulumi:"idmapType"`
+	IpAddress      string `pulumi:"ipAddress"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
 	Kerberos []GetMountTargetsMountTargetKerbero `pulumi:"kerberos"`
 	// Mount target details about the LDAP ID mapping configuration.
 	LdapIdmaps []GetMountTargetsMountTargetLdapIdmap `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMountTargetsMountTargetLock `pulumi:"locks"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -3043,14 +4457,17 @@ type GetMountTargetsMountTargetArgs struct {
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-	IdmapType pulumi.StringInput `pulumi:"idmapType"`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IdmapType      pulumi.StringInput `pulumi:"idmapType"`
+	IpAddress      pulumi.StringInput `pulumi:"ipAddress"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
 	Kerberos GetMountTargetsMountTargetKerberoArrayInput `pulumi:"kerberos"`
 	// Mount target details about the LDAP ID mapping configuration.
 	LdapIdmaps GetMountTargetsMountTargetLdapIdmapArrayInput `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetMountTargetsMountTargetLockArrayInput `pulumi:"locks"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -3170,6 +4587,10 @@ func (o GetMountTargetsMountTargetOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+func (o GetMountTargetsMountTargetOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
 func (o GetMountTargetsMountTargetOutput) Kerberos() GetMountTargetsMountTargetKerberoArrayOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) []GetMountTargetsMountTargetKerbero { return v.Kerberos }).(GetMountTargetsMountTargetKerberoArrayOutput)
@@ -3183,6 +4604,11 @@ func (o GetMountTargetsMountTargetOutput) LdapIdmaps() GetMountTargetsMountTarge
 // Additional information about the current 'lifecycleState'.
 func (o GetMountTargetsMountTargetOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetMountTargetsMountTargetOutput) Locks() GetMountTargetsMountTargetLockArrayOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) []GetMountTargetsMountTargetLock { return v.Locks }).(GetMountTargetsMountTargetLockArrayOutput)
 }
 
 // A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -3543,6 +4969,130 @@ func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) Index(i pulumi.IntInput)
 	}).(GetMountTargetsMountTargetLdapIdmapOutput)
 }
 
+type GetMountTargetsMountTargetLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMountTargetsMountTargetLockInput is an input type that accepts GetMountTargetsMountTargetLockArgs and GetMountTargetsMountTargetLockOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetLockInput` via:
+//
+//	GetMountTargetsMountTargetLockArgs{...}
+type GetMountTargetsMountTargetLockInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetLockOutput() GetMountTargetsMountTargetLockOutput
+	ToGetMountTargetsMountTargetLockOutputWithContext(context.Context) GetMountTargetsMountTargetLockOutput
+}
+
+type GetMountTargetsMountTargetLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMountTargetsMountTargetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetLock)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetLockArgs) ToGetMountTargetsMountTargetLockOutput() GetMountTargetsMountTargetLockOutput {
+	return i.ToGetMountTargetsMountTargetLockOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetLockArgs) ToGetMountTargetsMountTargetLockOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLockOutput)
+}
+
+// GetMountTargetsMountTargetLockArrayInput is an input type that accepts GetMountTargetsMountTargetLockArray and GetMountTargetsMountTargetLockArrayOutput values.
+// You can construct a concrete instance of `GetMountTargetsMountTargetLockArrayInput` via:
+//
+//	GetMountTargetsMountTargetLockArray{ GetMountTargetsMountTargetLockArgs{...} }
+type GetMountTargetsMountTargetLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMountTargetsMountTargetLockArrayOutput() GetMountTargetsMountTargetLockArrayOutput
+	ToGetMountTargetsMountTargetLockArrayOutputWithContext(context.Context) GetMountTargetsMountTargetLockArrayOutput
+}
+
+type GetMountTargetsMountTargetLockArray []GetMountTargetsMountTargetLockInput
+
+func (GetMountTargetsMountTargetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetLock)(nil)).Elem()
+}
+
+func (i GetMountTargetsMountTargetLockArray) ToGetMountTargetsMountTargetLockArrayOutput() GetMountTargetsMountTargetLockArrayOutput {
+	return i.ToGetMountTargetsMountTargetLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountTargetsMountTargetLockArray) ToGetMountTargetsMountTargetLockArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLockArrayOutput)
+}
+
+type GetMountTargetsMountTargetLockOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountTargetsMountTargetLock)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetLockOutput) ToGetMountTargetsMountTargetLockOutput() GetMountTargetsMountTargetLockOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLockOutput) ToGetMountTargetsMountTargetLockOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMountTargetsMountTargetLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMountTargetsMountTargetLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMountTargetsMountTargetLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMountTargetsMountTargetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMountTargetsMountTargetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountTargetsMountTargetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountTargetsMountTargetLock)(nil)).Elem()
+}
+
+func (o GetMountTargetsMountTargetLockArrayOutput) ToGetMountTargetsMountTargetLockArrayOutput() GetMountTargetsMountTargetLockArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLockArrayOutput) ToGetMountTargetsMountTargetLockArrayOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLockArrayOutput {
+	return o
+}
+
+func (o GetMountTargetsMountTargetLockArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTargetLock {
+		return vs[0].([]GetMountTargetsMountTargetLock)[vs[1].(int)]
+	}).(GetMountTargetsMountTargetLockOutput)
+}
+
 type GetOutboundConnectorEndpoint struct {
 	// Name of the DNS server.
 	Hostname string `pulumi:"hostname"`
@@ -3647,6 +5197,130 @@ func (o GetOutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) GetOut
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorEndpoint {
 		return vs[0].([]GetOutboundConnectorEndpoint)[vs[1].(int)]
 	}).(GetOutboundConnectorEndpointOutput)
+}
+
+type GetOutboundConnectorLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetOutboundConnectorLockInput is an input type that accepts GetOutboundConnectorLockArgs and GetOutboundConnectorLockOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorLockInput` via:
+//
+//	GetOutboundConnectorLockArgs{...}
+type GetOutboundConnectorLockInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorLockOutput() GetOutboundConnectorLockOutput
+	ToGetOutboundConnectorLockOutputWithContext(context.Context) GetOutboundConnectorLockOutput
+}
+
+type GetOutboundConnectorLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetOutboundConnectorLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorLock)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorLockArgs) ToGetOutboundConnectorLockOutput() GetOutboundConnectorLockOutput {
+	return i.ToGetOutboundConnectorLockOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorLockArgs) ToGetOutboundConnectorLockOutputWithContext(ctx context.Context) GetOutboundConnectorLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorLockOutput)
+}
+
+// GetOutboundConnectorLockArrayInput is an input type that accepts GetOutboundConnectorLockArray and GetOutboundConnectorLockArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorLockArrayInput` via:
+//
+//	GetOutboundConnectorLockArray{ GetOutboundConnectorLockArgs{...} }
+type GetOutboundConnectorLockArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorLockArrayOutput() GetOutboundConnectorLockArrayOutput
+	ToGetOutboundConnectorLockArrayOutputWithContext(context.Context) GetOutboundConnectorLockArrayOutput
+}
+
+type GetOutboundConnectorLockArray []GetOutboundConnectorLockInput
+
+func (GetOutboundConnectorLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorLock)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorLockArray) ToGetOutboundConnectorLockArrayOutput() GetOutboundConnectorLockArrayOutput {
+	return i.ToGetOutboundConnectorLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorLockArray) ToGetOutboundConnectorLockArrayOutputWithContext(ctx context.Context) GetOutboundConnectorLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorLockArrayOutput)
+}
+
+type GetOutboundConnectorLockOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorLock)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorLockOutput) ToGetOutboundConnectorLockOutput() GetOutboundConnectorLockOutput {
+	return o
+}
+
+func (o GetOutboundConnectorLockOutput) ToGetOutboundConnectorLockOutputWithContext(ctx context.Context) GetOutboundConnectorLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetOutboundConnectorLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetOutboundConnectorLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetOutboundConnectorLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetOutboundConnectorLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetOutboundConnectorLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorLock)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorLockArrayOutput) ToGetOutboundConnectorLockArrayOutput() GetOutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorLockArrayOutput) ToGetOutboundConnectorLockArrayOutputWithContext(ctx context.Context) GetOutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorLockArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorLock {
+		return vs[0].([]GetOutboundConnectorLock)[vs[1].(int)]
+	}).(GetOutboundConnectorLockOutput)
 }
 
 type GetOutboundConnectorsFilter struct {
@@ -3773,7 +5447,10 @@ type GetOutboundConnectorsOutboundConnector struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetOutboundConnectorsOutboundConnectorLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -3813,7 +5490,10 @@ type GetOutboundConnectorsOutboundConnectorArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetOutboundConnectorsOutboundConnectorLockArrayInput `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -3920,6 +5600,17 @@ func (o GetOutboundConnectorsOutboundConnectorOutput) FreeformTags() pulumi.Stri
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 func (o GetOutboundConnectorsOutboundConnectorOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetOutboundConnectorsOutboundConnectorOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetOutboundConnectorsOutboundConnectorOutput) Locks() GetOutboundConnectorsOutboundConnectorLockArrayOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) []GetOutboundConnectorsOutboundConnectorLock {
+		return v.Locks
+	}).(GetOutboundConnectorsOutboundConnectorLockArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
@@ -4066,6 +5757,254 @@ func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsOutboundConnectorEndpoint {
 		return vs[0].([]GetOutboundConnectorsOutboundConnectorEndpoint)[vs[1].(int)]
 	}).(GetOutboundConnectorsOutboundConnectorEndpointOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetOutboundConnectorsOutboundConnectorLockInput is an input type that accepts GetOutboundConnectorsOutboundConnectorLockArgs and GetOutboundConnectorsOutboundConnectorLockOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorLockInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorLockArgs{...}
+type GetOutboundConnectorsOutboundConnectorLockInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorLockOutput() GetOutboundConnectorsOutboundConnectorLockOutput
+	ToGetOutboundConnectorsOutboundConnectorLockOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorLockOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetOutboundConnectorsOutboundConnectorLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorLock)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorLockArgs) ToGetOutboundConnectorsOutboundConnectorLockOutput() GetOutboundConnectorsOutboundConnectorLockOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorLockOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorLockArgs) ToGetOutboundConnectorsOutboundConnectorLockOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorLockOutput)
+}
+
+// GetOutboundConnectorsOutboundConnectorLockArrayInput is an input type that accepts GetOutboundConnectorsOutboundConnectorLockArray and GetOutboundConnectorsOutboundConnectorLockArrayOutput values.
+// You can construct a concrete instance of `GetOutboundConnectorsOutboundConnectorLockArrayInput` via:
+//
+//	GetOutboundConnectorsOutboundConnectorLockArray{ GetOutboundConnectorsOutboundConnectorLockArgs{...} }
+type GetOutboundConnectorsOutboundConnectorLockArrayInput interface {
+	pulumi.Input
+
+	ToGetOutboundConnectorsOutboundConnectorLockArrayOutput() GetOutboundConnectorsOutboundConnectorLockArrayOutput
+	ToGetOutboundConnectorsOutboundConnectorLockArrayOutputWithContext(context.Context) GetOutboundConnectorsOutboundConnectorLockArrayOutput
+}
+
+type GetOutboundConnectorsOutboundConnectorLockArray []GetOutboundConnectorsOutboundConnectorLockInput
+
+func (GetOutboundConnectorsOutboundConnectorLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnectorLock)(nil)).Elem()
+}
+
+func (i GetOutboundConnectorsOutboundConnectorLockArray) ToGetOutboundConnectorsOutboundConnectorLockArrayOutput() GetOutboundConnectorsOutboundConnectorLockArrayOutput {
+	return i.ToGetOutboundConnectorsOutboundConnectorLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetOutboundConnectorsOutboundConnectorLockArray) ToGetOutboundConnectorsOutboundConnectorLockArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorLockArrayOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorLockOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorLock)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) ToGetOutboundConnectorsOutboundConnectorLockOutput() GetOutboundConnectorsOutboundConnectorLockOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) ToGetOutboundConnectorsOutboundConnectorLockOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetOutboundConnectorsOutboundConnectorLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetOutboundConnectorsOutboundConnectorLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOutboundConnectorsOutboundConnectorLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOutboundConnectorsOutboundConnectorLock)(nil)).Elem()
+}
+
+func (o GetOutboundConnectorsOutboundConnectorLockArrayOutput) ToGetOutboundConnectorsOutboundConnectorLockArrayOutput() GetOutboundConnectorsOutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorLockArrayOutput) ToGetOutboundConnectorsOutboundConnectorLockArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorLockArrayOutput {
+	return o
+}
+
+func (o GetOutboundConnectorsOutboundConnectorLockArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsOutboundConnectorLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsOutboundConnectorLock {
+		return vs[0].([]GetOutboundConnectorsOutboundConnectorLock)[vs[1].(int)]
+	}).(GetOutboundConnectorsOutboundConnectorLockOutput)
+}
+
+type GetReplicationLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetReplicationLockInput is an input type that accepts GetReplicationLockArgs and GetReplicationLockOutput values.
+// You can construct a concrete instance of `GetReplicationLockInput` via:
+//
+//	GetReplicationLockArgs{...}
+type GetReplicationLockInput interface {
+	pulumi.Input
+
+	ToGetReplicationLockOutput() GetReplicationLockOutput
+	ToGetReplicationLockOutputWithContext(context.Context) GetReplicationLockOutput
+}
+
+type GetReplicationLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetReplicationLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationLock)(nil)).Elem()
+}
+
+func (i GetReplicationLockArgs) ToGetReplicationLockOutput() GetReplicationLockOutput {
+	return i.ToGetReplicationLockOutputWithContext(context.Background())
+}
+
+func (i GetReplicationLockArgs) ToGetReplicationLockOutputWithContext(ctx context.Context) GetReplicationLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationLockOutput)
+}
+
+// GetReplicationLockArrayInput is an input type that accepts GetReplicationLockArray and GetReplicationLockArrayOutput values.
+// You can construct a concrete instance of `GetReplicationLockArrayInput` via:
+//
+//	GetReplicationLockArray{ GetReplicationLockArgs{...} }
+type GetReplicationLockArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationLockArrayOutput() GetReplicationLockArrayOutput
+	ToGetReplicationLockArrayOutputWithContext(context.Context) GetReplicationLockArrayOutput
+}
+
+type GetReplicationLockArray []GetReplicationLockInput
+
+func (GetReplicationLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationLock)(nil)).Elem()
+}
+
+func (i GetReplicationLockArray) ToGetReplicationLockArrayOutput() GetReplicationLockArrayOutput {
+	return i.ToGetReplicationLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationLockArray) ToGetReplicationLockArrayOutputWithContext(ctx context.Context) GetReplicationLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationLockArrayOutput)
+}
+
+type GetReplicationLockOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationLock)(nil)).Elem()
+}
+
+func (o GetReplicationLockOutput) ToGetReplicationLockOutput() GetReplicationLockOutput {
+	return o
+}
+
+func (o GetReplicationLockOutput) ToGetReplicationLockOutputWithContext(ctx context.Context) GetReplicationLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetReplicationLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetReplicationLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+func (o GetReplicationLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetReplicationLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetReplicationLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationLock)(nil)).Elem()
+}
+
+func (o GetReplicationLockArrayOutput) ToGetReplicationLockArrayOutput() GetReplicationLockArrayOutput {
+	return o
+}
+
+func (o GetReplicationLockArrayOutput) ToGetReplicationLockArrayOutputWithContext(ctx context.Context) GetReplicationLockArrayOutput {
+	return o
+}
+
+func (o GetReplicationLockArrayOutput) Index(i pulumi.IntInput) GetReplicationLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationLock {
+		return vs[0].([]GetReplicationLock)[vs[1].(int)]
+	}).(GetReplicationLockOutput)
 }
 
 type GetReplicationTargetsFilter struct {
@@ -4528,11 +6467,14 @@ type GetReplicationsReplication struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId string `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetReplicationsReplicationLock `pulumi:"locks"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime string `pulumi:"recoveryPointTime"`
 	// Duration in minutes between replication snapshots.
@@ -4576,11 +6518,14 @@ type GetReplicationsReplicationArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId pulumi.StringInput `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetReplicationsReplicationLockArrayInput `pulumi:"locks"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime pulumi.StringInput `pulumi:"recoveryPointTime"`
 	// Duration in minutes between replication snapshots.
@@ -4688,6 +6633,10 @@ func (o GetReplicationsReplicationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationsReplication) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetReplicationsReplicationOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 func (o GetReplicationsReplicationOutput) LastSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LastSnapshotId }).(pulumi.StringOutput)
@@ -4696,6 +6645,11 @@ func (o GetReplicationsReplicationOutput) LastSnapshotId() pulumi.StringOutput {
 // Additional information about the current 'lifecycleState'.
 func (o GetReplicationsReplicationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetReplicationsReplicationOutput) Locks() GetReplicationsReplicationLockArrayOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) []GetReplicationsReplicationLock { return v.Locks }).(GetReplicationsReplicationLockArrayOutput)
 }
 
 // The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
@@ -4751,6 +6705,254 @@ func (o GetReplicationsReplicationArrayOutput) Index(i pulumi.IntInput) GetRepli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationsReplication {
 		return vs[0].([]GetReplicationsReplication)[vs[1].(int)]
 	}).(GetReplicationsReplicationOutput)
+}
+
+type GetReplicationsReplicationLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetReplicationsReplicationLockInput is an input type that accepts GetReplicationsReplicationLockArgs and GetReplicationsReplicationLockOutput values.
+// You can construct a concrete instance of `GetReplicationsReplicationLockInput` via:
+//
+//	GetReplicationsReplicationLockArgs{...}
+type GetReplicationsReplicationLockInput interface {
+	pulumi.Input
+
+	ToGetReplicationsReplicationLockOutput() GetReplicationsReplicationLockOutput
+	ToGetReplicationsReplicationLockOutputWithContext(context.Context) GetReplicationsReplicationLockOutput
+}
+
+type GetReplicationsReplicationLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetReplicationsReplicationLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsReplicationLock)(nil)).Elem()
+}
+
+func (i GetReplicationsReplicationLockArgs) ToGetReplicationsReplicationLockOutput() GetReplicationsReplicationLockOutput {
+	return i.ToGetReplicationsReplicationLockOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsReplicationLockArgs) ToGetReplicationsReplicationLockOutputWithContext(ctx context.Context) GetReplicationsReplicationLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationLockOutput)
+}
+
+// GetReplicationsReplicationLockArrayInput is an input type that accepts GetReplicationsReplicationLockArray and GetReplicationsReplicationLockArrayOutput values.
+// You can construct a concrete instance of `GetReplicationsReplicationLockArrayInput` via:
+//
+//	GetReplicationsReplicationLockArray{ GetReplicationsReplicationLockArgs{...} }
+type GetReplicationsReplicationLockArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationsReplicationLockArrayOutput() GetReplicationsReplicationLockArrayOutput
+	ToGetReplicationsReplicationLockArrayOutputWithContext(context.Context) GetReplicationsReplicationLockArrayOutput
+}
+
+type GetReplicationsReplicationLockArray []GetReplicationsReplicationLockInput
+
+func (GetReplicationsReplicationLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsReplicationLock)(nil)).Elem()
+}
+
+func (i GetReplicationsReplicationLockArray) ToGetReplicationsReplicationLockArrayOutput() GetReplicationsReplicationLockArrayOutput {
+	return i.ToGetReplicationsReplicationLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsReplicationLockArray) ToGetReplicationsReplicationLockArrayOutputWithContext(ctx context.Context) GetReplicationsReplicationLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationLockArrayOutput)
+}
+
+type GetReplicationsReplicationLockOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsReplicationLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsReplicationLock)(nil)).Elem()
+}
+
+func (o GetReplicationsReplicationLockOutput) ToGetReplicationsReplicationLockOutput() GetReplicationsReplicationLockOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationLockOutput) ToGetReplicationsReplicationLockOutputWithContext(ctx context.Context) GetReplicationsReplicationLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetReplicationsReplicationLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplicationLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetReplicationsReplicationLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplicationLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+func (o GetReplicationsReplicationLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplicationLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetReplicationsReplicationLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplicationLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetReplicationsReplicationLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsReplicationLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsReplicationLock)(nil)).Elem()
+}
+
+func (o GetReplicationsReplicationLockArrayOutput) ToGetReplicationsReplicationLockArrayOutput() GetReplicationsReplicationLockArrayOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationLockArrayOutput) ToGetReplicationsReplicationLockArrayOutputWithContext(ctx context.Context) GetReplicationsReplicationLockArrayOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationLockArrayOutput) Index(i pulumi.IntInput) GetReplicationsReplicationLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationsReplicationLock {
+		return vs[0].([]GetReplicationsReplicationLock)[vs[1].(int)]
+	}).(GetReplicationsReplicationLockOutput)
+}
+
+type GetSnapshotLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetSnapshotLockInput is an input type that accepts GetSnapshotLockArgs and GetSnapshotLockOutput values.
+// You can construct a concrete instance of `GetSnapshotLockInput` via:
+//
+//	GetSnapshotLockArgs{...}
+type GetSnapshotLockInput interface {
+	pulumi.Input
+
+	ToGetSnapshotLockOutput() GetSnapshotLockOutput
+	ToGetSnapshotLockOutputWithContext(context.Context) GetSnapshotLockOutput
+}
+
+type GetSnapshotLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetSnapshotLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotLock)(nil)).Elem()
+}
+
+func (i GetSnapshotLockArgs) ToGetSnapshotLockOutput() GetSnapshotLockOutput {
+	return i.ToGetSnapshotLockOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotLockArgs) ToGetSnapshotLockOutputWithContext(ctx context.Context) GetSnapshotLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotLockOutput)
+}
+
+// GetSnapshotLockArrayInput is an input type that accepts GetSnapshotLockArray and GetSnapshotLockArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotLockArrayInput` via:
+//
+//	GetSnapshotLockArray{ GetSnapshotLockArgs{...} }
+type GetSnapshotLockArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotLockArrayOutput() GetSnapshotLockArrayOutput
+	ToGetSnapshotLockArrayOutputWithContext(context.Context) GetSnapshotLockArrayOutput
+}
+
+type GetSnapshotLockArray []GetSnapshotLockInput
+
+func (GetSnapshotLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotLock)(nil)).Elem()
+}
+
+func (i GetSnapshotLockArray) ToGetSnapshotLockArrayOutput() GetSnapshotLockArrayOutput {
+	return i.ToGetSnapshotLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotLockArray) ToGetSnapshotLockArrayOutputWithContext(ctx context.Context) GetSnapshotLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotLockArrayOutput)
+}
+
+type GetSnapshotLockOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotLock)(nil)).Elem()
+}
+
+func (o GetSnapshotLockOutput) ToGetSnapshotLockOutput() GetSnapshotLockOutput {
+	return o
+}
+
+func (o GetSnapshotLockOutput) ToGetSnapshotLockOutputWithContext(ctx context.Context) GetSnapshotLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetSnapshotLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetSnapshotLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSnapshotLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetSnapshotLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetSnapshotLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotLock)(nil)).Elem()
+}
+
+func (o GetSnapshotLockArrayOutput) ToGetSnapshotLockArrayOutput() GetSnapshotLockArrayOutput {
+	return o
+}
+
+func (o GetSnapshotLockArrayOutput) ToGetSnapshotLockArrayOutputWithContext(ctx context.Context) GetSnapshotLockArrayOutput {
+	return o
+}
+
+func (o GetSnapshotLockArrayOutput) Index(i pulumi.IntInput) GetSnapshotLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotLock {
+		return vs[0].([]GetSnapshotLock)[vs[1].(int)]
+	}).(GetSnapshotLockOutput)
 }
 
 type GetSnapshotsFilter struct {
@@ -4876,9 +7078,12 @@ type GetSnapshotsSnapshot struct {
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id string `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource bool `pulumi:"isCloneSource"`
+	IsCloneSource  bool `pulumi:"isCloneSource"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetSnapshotsSnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
 	Name string `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -4921,9 +7126,12 @@ type GetSnapshotsSnapshotArgs struct {
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource pulumi.BoolInput `pulumi:"isCloneSource"`
+	IsCloneSource  pulumi.BoolInput `pulumi:"isCloneSource"`
+	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetSnapshotsSnapshotLockArrayInput `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
 	Name pulumi.StringInput `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -5027,9 +7235,18 @@ func (o GetSnapshotsSnapshotOutput) IsCloneSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) bool { return v.IsCloneSource }).(pulumi.BoolOutput)
 }
 
+func (o GetSnapshotsSnapshotOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current `lifecycleState`.
 func (o GetSnapshotsSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetSnapshotsSnapshotOutput) Locks() GetSnapshotsSnapshotLockArrayOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) []GetSnapshotsSnapshotLock { return v.Locks }).(GetSnapshotsSnapshotLockArrayOutput)
 }
 
 // Name of the snapshot. This value is immutable.
@@ -5085,19 +7302,157 @@ func (o GetSnapshotsSnapshotArrayOutput) Index(i pulumi.IntInput) GetSnapshotsSn
 	}).(GetSnapshotsSnapshotOutput)
 }
 
+type GetSnapshotsSnapshotLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetSnapshotsSnapshotLockInput is an input type that accepts GetSnapshotsSnapshotLockArgs and GetSnapshotsSnapshotLockOutput values.
+// You can construct a concrete instance of `GetSnapshotsSnapshotLockInput` via:
+//
+//	GetSnapshotsSnapshotLockArgs{...}
+type GetSnapshotsSnapshotLockInput interface {
+	pulumi.Input
+
+	ToGetSnapshotsSnapshotLockOutput() GetSnapshotsSnapshotLockOutput
+	ToGetSnapshotsSnapshotLockOutputWithContext(context.Context) GetSnapshotsSnapshotLockOutput
+}
+
+type GetSnapshotsSnapshotLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetSnapshotsSnapshotLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotsSnapshotLock)(nil)).Elem()
+}
+
+func (i GetSnapshotsSnapshotLockArgs) ToGetSnapshotsSnapshotLockOutput() GetSnapshotsSnapshotLockOutput {
+	return i.ToGetSnapshotsSnapshotLockOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotsSnapshotLockArgs) ToGetSnapshotsSnapshotLockOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotLockOutput)
+}
+
+// GetSnapshotsSnapshotLockArrayInput is an input type that accepts GetSnapshotsSnapshotLockArray and GetSnapshotsSnapshotLockArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotsSnapshotLockArrayInput` via:
+//
+//	GetSnapshotsSnapshotLockArray{ GetSnapshotsSnapshotLockArgs{...} }
+type GetSnapshotsSnapshotLockArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotsSnapshotLockArrayOutput() GetSnapshotsSnapshotLockArrayOutput
+	ToGetSnapshotsSnapshotLockArrayOutputWithContext(context.Context) GetSnapshotsSnapshotLockArrayOutput
+}
+
+type GetSnapshotsSnapshotLockArray []GetSnapshotsSnapshotLockInput
+
+func (GetSnapshotsSnapshotLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotsSnapshotLock)(nil)).Elem()
+}
+
+func (i GetSnapshotsSnapshotLockArray) ToGetSnapshotsSnapshotLockArrayOutput() GetSnapshotsSnapshotLockArrayOutput {
+	return i.ToGetSnapshotsSnapshotLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotsSnapshotLockArray) ToGetSnapshotsSnapshotLockArrayOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotLockArrayOutput)
+}
+
+type GetSnapshotsSnapshotLockOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotsSnapshotLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotsSnapshotLock)(nil)).Elem()
+}
+
+func (o GetSnapshotsSnapshotLockOutput) ToGetSnapshotsSnapshotLockOutput() GetSnapshotsSnapshotLockOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockOutput) ToGetSnapshotsSnapshotLockOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetSnapshotsSnapshotLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetSnapshotsSnapshotLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetSnapshotsSnapshotLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetSnapshotsSnapshotLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshotLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetSnapshotsSnapshotLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotsSnapshotLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotsSnapshotLock)(nil)).Elem()
+}
+
+func (o GetSnapshotsSnapshotLockArrayOutput) ToGetSnapshotsSnapshotLockArrayOutput() GetSnapshotsSnapshotLockArrayOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockArrayOutput) ToGetSnapshotsSnapshotLockArrayOutputWithContext(ctx context.Context) GetSnapshotsSnapshotLockArrayOutput {
+	return o
+}
+
+func (o GetSnapshotsSnapshotLockArrayOutput) Index(i pulumi.IntInput) GetSnapshotsSnapshotLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotsSnapshotLock {
+		return vs[0].([]GetSnapshotsSnapshotLock)[vs[1].(int)]
+	}).(GetSnapshotsSnapshotLockOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExportExportOptionInput)(nil)).Elem(), ExportExportOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExportExportOptionArrayInput)(nil)).Elem(), ExportExportOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExportLockInput)(nil)).Elem(), ExportLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExportLockArrayInput)(nil)).Elem(), ExportLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemLockInput)(nil)).Elem(), FileSystemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemLockArrayInput)(nil)).Elem(), FileSystemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemSourceDetailInput)(nil)).Elem(), FileSystemSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileSystemSourceDetailArrayInput)(nil)).Elem(), FileSystemSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyLockInput)(nil)).Elem(), FilesystemSnapshotPolicyLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), FilesystemSnapshotPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosInput)(nil)).Elem(), MountTargetKerberosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetKerberosPtrInput)(nil)).Elem(), MountTargetKerberosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLdapIdmapInput)(nil)).Elem(), MountTargetLdapIdmapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLdapIdmapPtrInput)(nil)).Elem(), MountTargetLdapIdmapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLockInput)(nil)).Elem(), MountTargetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountTargetLockArrayInput)(nil)).Elem(), MountTargetLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorEndpointInput)(nil)).Elem(), OutboundConnectorEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorEndpointArrayInput)(nil)).Elem(), OutboundConnectorEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorLockInput)(nil)).Elem(), OutboundConnectorLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutboundConnectorLockArrayInput)(nil)).Elem(), OutboundConnectorLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicationLockInput)(nil)).Elem(), ReplicationLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicationLockArrayInput)(nil)).Elem(), ReplicationLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockInput)(nil)).Elem(), SnapshotLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotLockArrayInput)(nil)).Elem(), SnapshotLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetInput)(nil)).Elem(), GetExportSetsExportSetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsExportSetArrayInput)(nil)).Elem(), GetExportSetsExportSetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportSetsFilterInput)(nil)).Elem(), GetExportSetsFilterArgs{})
@@ -5106,20 +7461,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportArrayInput)(nil)).Elem(), GetExportsExportArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportExportOptionInput)(nil)).Elem(), GetExportsExportExportOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportExportOptionArrayInput)(nil)).Elem(), GetExportsExportExportOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportLockInput)(nil)).Elem(), GetExportsExportLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsExportLockArrayInput)(nil)).Elem(), GetExportsExportLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsFilterInput)(nil)).Elem(), GetExportsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExportsFilterArrayInput)(nil)).Elem(), GetExportsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemInput)(nil)).Elem(), GetFileSystemsFileSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemArrayInput)(nil)).Elem(), GetFileSystemsFileSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemLockInput)(nil)).Elem(), GetFileSystemsFileSystemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemLockArrayInput)(nil)).Elem(), GetFileSystemsFileSystemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemSourceDetailInput)(nil)).Elem(), GetFileSystemsFileSystemSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFileSystemSourceDetailArrayInput)(nil)).Elem(), GetFileSystemsFileSystemSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFilterInput)(nil)).Elem(), GetFileSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileSystemsFilterArrayInput)(nil)).Elem(), GetFileSystemsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPoliciesFilterArrayInput)(nil)).Elem(), GetFilesystemSnapshotPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyLockInput)(nil)).Elem(), GetFilesystemSnapshotPolicyLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyLockArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFilesystemSnapshotPolicyScheduleArrayInput)(nil)).Elem(), GetFilesystemSnapshotPolicyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterInput)(nil)).Elem(), GetMountTargetsFilterArgs{})
@@ -5130,14 +7493,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetKerberoArrayInput)(nil)).Elem(), GetMountTargetsMountTargetKerberoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmapInput)(nil)).Elem(), GetMountTargetsMountTargetLdapIdmapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLdapIdmapArrayInput)(nil)).Elem(), GetMountTargetsMountTargetLdapIdmapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLockInput)(nil)).Elem(), GetMountTargetsMountTargetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetLockArrayInput)(nil)).Elem(), GetMountTargetsMountTargetLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorEndpointInput)(nil)).Elem(), GetOutboundConnectorEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorEndpointArrayInput)(nil)).Elem(), GetOutboundConnectorEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorLockInput)(nil)).Elem(), GetOutboundConnectorLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorLockArrayInput)(nil)).Elem(), GetOutboundConnectorLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsFilterInput)(nil)).Elem(), GetOutboundConnectorsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsFilterArrayInput)(nil)).Elem(), GetOutboundConnectorsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorArrayInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpointInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorEndpointArrayInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorLockInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOutboundConnectorsOutboundConnectorLockArrayInput)(nil)).Elem(), GetOutboundConnectorsOutboundConnectorLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationLockInput)(nil)).Elem(), GetReplicationLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationLockArrayInput)(nil)).Elem(), GetReplicationLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterInput)(nil)).Elem(), GetReplicationTargetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterArrayInput)(nil)).Elem(), GetReplicationTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsReplicationTargetInput)(nil)).Elem(), GetReplicationTargetsReplicationTargetArgs{})
@@ -5146,22 +7517,42 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsFilterArrayInput)(nil)).Elem(), GetReplicationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationInput)(nil)).Elem(), GetReplicationsReplicationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationArrayInput)(nil)).Elem(), GetReplicationsReplicationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationLockInput)(nil)).Elem(), GetReplicationsReplicationLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationLockArrayInput)(nil)).Elem(), GetReplicationsReplicationLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockInput)(nil)).Elem(), GetSnapshotLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotLockArrayInput)(nil)).Elem(), GetSnapshotLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterInput)(nil)).Elem(), GetSnapshotsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterArrayInput)(nil)).Elem(), GetSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotInput)(nil)).Elem(), GetSnapshotsSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotArrayInput)(nil)).Elem(), GetSnapshotsSnapshotArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockInput)(nil)).Elem(), GetSnapshotsSnapshotLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotLockArrayInput)(nil)).Elem(), GetSnapshotsSnapshotLockArray{})
 	pulumi.RegisterOutputType(ExportExportOptionOutput{})
 	pulumi.RegisterOutputType(ExportExportOptionArrayOutput{})
+	pulumi.RegisterOutputType(ExportLockOutput{})
+	pulumi.RegisterOutputType(ExportLockArrayOutput{})
+	pulumi.RegisterOutputType(FileSystemLockOutput{})
+	pulumi.RegisterOutputType(FileSystemLockArrayOutput{})
 	pulumi.RegisterOutputType(FileSystemSourceDetailOutput{})
 	pulumi.RegisterOutputType(FileSystemSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyLockOutput{})
+	pulumi.RegisterOutputType(FilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(FilesystemSnapshotPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(MountTargetKerberosOutput{})
 	pulumi.RegisterOutputType(MountTargetKerberosPtrOutput{})
 	pulumi.RegisterOutputType(MountTargetLdapIdmapOutput{})
 	pulumi.RegisterOutputType(MountTargetLdapIdmapPtrOutput{})
+	pulumi.RegisterOutputType(MountTargetLockOutput{})
+	pulumi.RegisterOutputType(MountTargetLockArrayOutput{})
 	pulumi.RegisterOutputType(OutboundConnectorEndpointOutput{})
 	pulumi.RegisterOutputType(OutboundConnectorEndpointArrayOutput{})
+	pulumi.RegisterOutputType(OutboundConnectorLockOutput{})
+	pulumi.RegisterOutputType(OutboundConnectorLockArrayOutput{})
+	pulumi.RegisterOutputType(ReplicationLockOutput{})
+	pulumi.RegisterOutputType(ReplicationLockArrayOutput{})
+	pulumi.RegisterOutputType(SnapshotLockOutput{})
+	pulumi.RegisterOutputType(SnapshotLockArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetOutput{})
 	pulumi.RegisterOutputType(GetExportSetsExportSetArrayOutput{})
 	pulumi.RegisterOutputType(GetExportSetsFilterOutput{})
@@ -5170,20 +7561,28 @@ func init() {
 	pulumi.RegisterOutputType(GetExportsExportArrayOutput{})
 	pulumi.RegisterOutputType(GetExportsExportExportOptionOutput{})
 	pulumi.RegisterOutputType(GetExportsExportExportOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetExportsExportLockOutput{})
+	pulumi.RegisterOutputType(GetExportsExportLockArrayOutput{})
 	pulumi.RegisterOutputType(GetExportsFilterOutput{})
 	pulumi.RegisterOutputType(GetExportsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetFileSystemsFileSystemLockOutput{})
+	pulumi.RegisterOutputType(GetFileSystemsFileSystemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFileSystemSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetFileSystemsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyLockOutput{})
+	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyLockArrayOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(GetFilesystemSnapshotPolicyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsFilterOutput{})
@@ -5194,14 +7593,22 @@ func init() {
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetKerberoArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetLdapIdmapOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetLdapIdmapArrayOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetLockOutput{})
+	pulumi.RegisterOutputType(GetMountTargetsMountTargetLockArrayOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorEndpointOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorLockOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorLockArrayOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsFilterOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorArrayOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorEndpointOutput{})
 	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorLockOutput{})
+	pulumi.RegisterOutputType(GetOutboundConnectorsOutboundConnectorLockArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationLockOutput{})
+	pulumi.RegisterOutputType(GetReplicationLockArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationTargetsReplicationTargetOutput{})
@@ -5210,8 +7617,14 @@ func init() {
 	pulumi.RegisterOutputType(GetReplicationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationsReplicationOutput{})
 	pulumi.RegisterOutputType(GetReplicationsReplicationArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationsReplicationLockOutput{})
+	pulumi.RegisterOutputType(GetReplicationsReplicationLockArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotLockOutput{})
+	pulumi.RegisterOutputType(GetSnapshotLockArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotArrayOutput{})
+	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockOutput{})
+	pulumi.RegisterOutputType(GetSnapshotsSnapshotLockArrayOutput{})
 }

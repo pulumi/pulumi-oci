@@ -134,6 +134,10 @@ type AutonomousDatabase struct {
 	DisasterRecoveryType pulumi.StringOutput `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Details of the Autonomous Database encryption key.
+	EncryptionKey AutonomousDatabaseEncryptionKeyOutput `pulumi:"encryptionKey"`
+	// Key History Entry.
+	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput `pulumi:"encryptionKeyHistoryEntries"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntOutput `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -530,6 +534,10 @@ type autonomousDatabaseState struct {
 	DisasterRecoveryType *string `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Details of the Autonomous Database encryption key.
+	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
+	// Key History Entry.
+	EncryptionKeyHistoryEntries []AutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -884,6 +892,10 @@ type AutonomousDatabaseState struct {
 	DisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Details of the Autonomous Database encryption key.
+	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
+	// Key History Entry.
+	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1220,6 +1232,8 @@ type autonomousDatabaseArgs struct {
 	DisasterRecoveryType *string `pulumi:"disasterRecoveryType"`
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Details of the Autonomous Database encryption key.
+	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1459,6 +1473,8 @@ type AutonomousDatabaseArgs struct {
 	DisasterRecoveryType pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Details of the Autonomous Database encryption key.
+	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -1923,6 +1939,18 @@ func (o AutonomousDatabaseOutput) DisasterRecoveryType() pulumi.StringOutput {
 // (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o AutonomousDatabaseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details of the Autonomous Database encryption key.
+func (o AutonomousDatabaseOutput) EncryptionKey() AutonomousDatabaseEncryptionKeyOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyOutput { return v.EncryptionKey }).(AutonomousDatabaseEncryptionKeyOutput)
+}
+
+// Key History Entry.
+func (o AutonomousDatabaseOutput) EncryptionKeyHistoryEntries() AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput {
+		return v.EncryptionKeyHistoryEntries
+	}).(AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.

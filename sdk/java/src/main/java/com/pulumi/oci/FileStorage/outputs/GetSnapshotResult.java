@@ -5,8 +5,10 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.outputs.GetSnapshotLock;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -47,11 +49,17 @@ public final class GetSnapshotResult {
      * 
      */
     private Boolean isCloneSource;
+    private Boolean isLockOverride;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetSnapshotLock> locks;
     /**
      * @return Name of the snapshot. This value is immutable.
      * 
@@ -137,12 +145,22 @@ public final class GetSnapshotResult {
     public Boolean isCloneSource() {
         return this.isCloneSource;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetSnapshotLock> locks() {
+        return this.locks;
     }
     /**
      * @return Name of the snapshot. This value is immutable.
@@ -209,7 +227,9 @@ public final class GetSnapshotResult {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isCloneSource;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetSnapshotLock> locks;
         private String name;
         private String provenanceId;
         private String snapshotId;
@@ -227,7 +247,9 @@ public final class GetSnapshotResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCloneSource = defaults.isCloneSource;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.provenanceId = defaults.provenanceId;
     	      this.snapshotId = defaults.snapshotId;
@@ -294,12 +316,31 @@ public final class GetSnapshotResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetSnapshotResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetSnapshotLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetSnapshotResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetSnapshotLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder name(String name) {
@@ -366,7 +407,9 @@ public final class GetSnapshotResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isCloneSource = isCloneSource;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.name = name;
             _resultValue.provenanceId = provenanceId;
             _resultValue.snapshotId = snapshotId;

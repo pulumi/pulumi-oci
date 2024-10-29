@@ -37,6 +37,9 @@ __all__ = [
     'AutonomousDatabaseConnectionUrl',
     'AutonomousDatabaseCustomerContact',
     'AutonomousDatabaseDbToolsDetail',
+    'AutonomousDatabaseEncryptionKey',
+    'AutonomousDatabaseEncryptionKeyHistoryEntry',
+    'AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey',
     'AutonomousDatabaseKeyHistoryEntry',
     'AutonomousDatabaseLocalStandbyDb',
     'AutonomousDatabaseLongTermBackupSchedule',
@@ -242,6 +245,9 @@ __all__ = [
     'GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationResult',
     'GetAutonomousDatabaseDataguardAssociationsFilterResult',
     'GetAutonomousDatabaseDbToolsDetailResult',
+    'GetAutonomousDatabaseEncryptionKeyResult',
+    'GetAutonomousDatabaseEncryptionKeyHistoryEntryResult',
+    'GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult',
     'GetAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabaseLongTermBackupScheduleResult',
@@ -268,6 +274,9 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult',
     'GetAutonomousDatabasesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailResult',
+    'GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult',
+    'GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult',
+    'GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult',
     'GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult',
@@ -285,6 +294,9 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult',
@@ -2214,6 +2226,492 @@ class AutonomousDatabaseDbToolsDetail(dict):
         (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
         """
         return pulumi.get(self, "max_idle_time_in_minutes")
+
+
+@pulumi.output_type
+class AutonomousDatabaseEncryptionKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "arnRole":
+            suggest = "arn_role"
+        elif key == "autonomousDatabaseProvider":
+            suggest = "autonomous_database_provider"
+        elif key == "certificateDirectoryName":
+            suggest = "certificate_directory_name"
+        elif key == "certificateId":
+            suggest = "certificate_id"
+        elif key == "directoryName":
+            suggest = "directory_name"
+        elif key == "externalId":
+            suggest = "external_id"
+        elif key == "keyArn":
+            suggest = "key_arn"
+        elif key == "keyName":
+            suggest = "key_name"
+        elif key == "kmsKeyId":
+            suggest = "kms_key_id"
+        elif key == "okvKmsKey":
+            suggest = "okv_kms_key"
+        elif key == "okvUri":
+            suggest = "okv_uri"
+        elif key == "serviceEndpointUri":
+            suggest = "service_endpoint_uri"
+        elif key == "vaultId":
+            suggest = "vault_id"
+        elif key == "vaultUri":
+            suggest = "vault_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseEncryptionKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseEncryptionKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseEncryptionKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 arn_role: Optional[str] = None,
+                 autonomous_database_provider: Optional[str] = None,
+                 certificate_directory_name: Optional[str] = None,
+                 certificate_id: Optional[str] = None,
+                 directory_name: Optional[str] = None,
+                 external_id: Optional[str] = None,
+                 key_arn: Optional[str] = None,
+                 key_name: Optional[str] = None,
+                 kms_key_id: Optional[str] = None,
+                 okv_kms_key: Optional[str] = None,
+                 okv_uri: Optional[str] = None,
+                 service_endpoint_uri: Optional[str] = None,
+                 vault_id: Optional[str] = None,
+                 vault_uri: Optional[str] = None):
+        """
+        :param str arn_role: (Updatable) AWS ARN role
+        :param str autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: (Updatable) OKV certificate directory name
+        :param str certificate_id: (Updatable) OKV certificate id
+        :param str directory_name: (Updatable) OKV wallet directory name
+        :param str external_id: (Updatable) AWS external ID
+        :param str key_arn: (Updatable) AWS key ARN
+        :param str key_name: (Updatable) Azure key name
+        :param str kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: (Updatable) UUID of OKV KMS Key
+        :param str okv_uri: (Updatable) URI of OKV server
+        :param str service_endpoint_uri: (Updatable) AWS key service endpoint URI
+        :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param str vault_uri: (Updatable) Azure vault URI
+        """
+        if arn_role is not None:
+            pulumi.set(__self__, "arn_role", arn_role)
+        if autonomous_database_provider is not None:
+            pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        if certificate_directory_name is not None:
+            pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if directory_name is not None:
+            pulumi.set(__self__, "directory_name", directory_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if key_arn is not None:
+            pulumi.set(__self__, "key_arn", key_arn)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if okv_kms_key is not None:
+            pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        if okv_uri is not None:
+            pulumi.set(__self__, "okv_uri", okv_uri)
+        if service_endpoint_uri is not None:
+            pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if vault_uri is not None:
+            pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> Optional[str]:
+        """
+        (Updatable) AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> Optional[str]:
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> Optional[str]:
+        """
+        (Updatable) OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[str]:
+        """
+        (Updatable) OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> Optional[str]:
+        """
+        (Updatable) OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[str]:
+        """
+        (Updatable) AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> Optional[str]:
+        """
+        (Updatable) AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[str]:
+        """
+        (Updatable) Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> Optional[str]:
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> Optional[str]:
+        """
+        (Updatable) URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> Optional[str]:
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> Optional[str]:
+        """
+        (Updatable) Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
+class AutonomousDatabaseEncryptionKeyHistoryEntry(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionKeys":
+            suggest = "encryption_keys"
+        elif key == "timeActivated":
+            suggest = "time_activated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseEncryptionKeyHistoryEntry. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseEncryptionKeyHistoryEntry.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseEncryptionKeyHistoryEntry.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encryption_keys: Optional[Sequence['outputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey']] = None,
+                 time_activated: Optional[str] = None):
+        """
+        :param Sequence['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: (Updatable) Details of the Autonomous Database encryption key.
+        :param str time_activated: The date and time the kms key activated.
+        """
+        if encryption_keys is not None:
+            pulumi.set(__self__, "encryption_keys", encryption_keys)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Optional[Sequence['outputs.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey']]:
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[str]:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+
+@pulumi.output_type
+class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "arnRole":
+            suggest = "arn_role"
+        elif key == "autonomousDatabaseProvider":
+            suggest = "autonomous_database_provider"
+        elif key == "certificateDirectoryName":
+            suggest = "certificate_directory_name"
+        elif key == "certificateId":
+            suggest = "certificate_id"
+        elif key == "directoryName":
+            suggest = "directory_name"
+        elif key == "externalId":
+            suggest = "external_id"
+        elif key == "keyArn":
+            suggest = "key_arn"
+        elif key == "keyName":
+            suggest = "key_name"
+        elif key == "kmsKeyId":
+            suggest = "kms_key_id"
+        elif key == "okvKmsKey":
+            suggest = "okv_kms_key"
+        elif key == "okvUri":
+            suggest = "okv_uri"
+        elif key == "serviceEndpointUri":
+            suggest = "service_endpoint_uri"
+        elif key == "vaultId":
+            suggest = "vault_id"
+        elif key == "vaultUri":
+            suggest = "vault_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 arn_role: Optional[str] = None,
+                 autonomous_database_provider: Optional[str] = None,
+                 certificate_directory_name: Optional[str] = None,
+                 certificate_id: Optional[str] = None,
+                 directory_name: Optional[str] = None,
+                 external_id: Optional[str] = None,
+                 key_arn: Optional[str] = None,
+                 key_name: Optional[str] = None,
+                 kms_key_id: Optional[str] = None,
+                 okv_kms_key: Optional[str] = None,
+                 okv_uri: Optional[str] = None,
+                 service_endpoint_uri: Optional[str] = None,
+                 vault_id: Optional[str] = None,
+                 vault_uri: Optional[str] = None):
+        """
+        :param str arn_role: (Updatable) AWS ARN role
+        :param str autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: (Updatable) OKV certificate directory name
+        :param str certificate_id: (Updatable) OKV certificate id
+        :param str directory_name: (Updatable) OKV wallet directory name
+        :param str external_id: (Updatable) AWS external ID
+        :param str key_arn: (Updatable) AWS key ARN
+        :param str key_name: (Updatable) Azure key name
+        :param str kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: (Updatable) UUID of OKV KMS Key
+        :param str okv_uri: (Updatable) URI of OKV server
+        :param str service_endpoint_uri: (Updatable) AWS key service endpoint URI
+        :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param str vault_uri: (Updatable) Azure vault URI
+        """
+        if arn_role is not None:
+            pulumi.set(__self__, "arn_role", arn_role)
+        if autonomous_database_provider is not None:
+            pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        if certificate_directory_name is not None:
+            pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if directory_name is not None:
+            pulumi.set(__self__, "directory_name", directory_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if key_arn is not None:
+            pulumi.set(__self__, "key_arn", key_arn)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if okv_kms_key is not None:
+            pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        if okv_uri is not None:
+            pulumi.set(__self__, "okv_uri", okv_uri)
+        if service_endpoint_uri is not None:
+            pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if vault_uri is not None:
+            pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> Optional[str]:
+        """
+        (Updatable) AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> Optional[str]:
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> Optional[str]:
+        """
+        (Updatable) OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[str]:
+        """
+        (Updatable) OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> Optional[str]:
+        """
+        (Updatable) OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[str]:
+        """
+        (Updatable) AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> Optional[str]:
+        """
+        (Updatable) AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[str]:
+        """
+        (Updatable) Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> Optional[str]:
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> Optional[str]:
+        """
+        (Updatable) URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> Optional[str]:
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> Optional[str]:
+        """
+        (Updatable) Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
 
 
 @pulumi.output_type
@@ -14743,11 +15241,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param int db_split_threshold: The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        :param int db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param str distribution_affinity: This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        :param str distribution_affinity: Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param str dst_file_version: DST Time-zone File version of the Autonomous Container Database.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -14781,7 +15279,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str version_preference: The next maintenance version preference.
-        :param int vm_failover_reservation: The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        :param int vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
@@ -14927,7 +15425,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> int:
         """
-        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
+        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -14964,7 +15462,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> str:
         """
-        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -15296,7 +15794,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="vmFailoverReservation")
     def vm_failover_reservation(self) -> int:
         """
-        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 
@@ -17069,6 +17567,357 @@ class GetAutonomousDatabaseDbToolsDetailResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_database_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseEncryptionKeyHistoryEntryResult(dict):
+    def __init__(__self__, *,
+                 encryption_keys: Sequence['outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
+                 time_activated: str):
+        """
+        :param Sequence['GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param str time_activated: The date and time the kms key activated.
+        """
+        pulumi.set(__self__, "encryption_keys", encryption_keys)
+        pulumi.set(__self__, "time_activated", time_activated)
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
+        """
+        Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> str:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_database_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
     def __init__(__self__, *,
                  id: str,
@@ -17919,6 +18768,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  disaster_recovery_region_type: str,
                  disaster_recovery_type: str,
                  display_name: str,
+                 encryption_key_history_entries: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult'],
+                 encryption_keys: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult'],
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
@@ -18026,7 +18877,6 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -18034,7 +18884,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param float compute_count: Compute used by database tools.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -18049,34 +18899,32 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str dataguard_region_type: **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param str db_name: The database name.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
-        :param str db_version: A valid Oracle Database version for Autonomous Database.
-        :param str db_workload: The Autonomous Database workload type. The following values are valid:
-               * OLTP - indicates an Autonomous Transaction Processing database
-               * DW - indicates an Autonomous Data Warehouse database
-               * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
+        :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
         :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
-        :param str infrastructure_type: The infrastructure type this resource belongs to.
+        :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_dev_tier: Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
-        :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Specifies if the Autonomous Database requires mTLS connections.
         :param bool is_preview: Indicates if the Autonomous Database version is a preview version.
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
-        :param bool is_refreshable_clone: Indicates if the Autonomous Database is a refreshable clone.
+        :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
@@ -18112,7 +18960,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
-        :param str resource_pool_leader_id: The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
@@ -18120,7 +18968,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
-        :param str state: The current state of the Autonomous Database.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
@@ -18189,6 +19037,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
+        pulumi.set(__self__, "encryption_keys", encryption_keys)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -18358,9 +19208,6 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
@@ -18433,7 +19280,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -18553,7 +19400,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        A valid Oracle Database version for Autonomous Database.
+        A filter to return only autonomous database resources that match the specified dbVersion.
         """
         return pulumi.get(self, "db_version")
 
@@ -18561,11 +19408,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> str:
         """
-        The Autonomous Database workload type. The following values are valid:
-        * OLTP - indicates an Autonomous Transaction Processing database
-        * DW - indicates an Autonomous Data Warehouse database
-        * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        A filter to return only autonomous database resources that match the specified workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -18597,9 +19440,25 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionKeyHistoryEntries")
+    def encryption_key_history_entries(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult']:
+        """
+        Key History Entry.
+        """
+        return pulumi.get(self, "encryption_key_history_entries")
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult']:
+        """
+        Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
 
     @property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -18645,7 +19504,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> str:
         """
-        The infrastructure type this resource belongs to.
+        A filter to return only resources that match the given Infrastructure Type.
         """
         return pulumi.get(self, "infrastructure_type")
 
@@ -18677,7 +19536,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> bool:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        A filter to return only resources that have Data Guard enabled.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -18701,7 +19560,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> bool:
         """
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -18746,7 +19605,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> bool:
         """
-        Indicates if the Autonomous Database is a refreshable clone.
+        Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         """
         return pulumi.get(self, "is_refreshable_clone")
 
@@ -19038,7 +19897,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="resourcePoolLeaderId")
     def resource_pool_leader_id(self) -> str:
         """
-        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
         """
         return pulumi.get(self, "resource_pool_leader_id")
 
@@ -19127,7 +19986,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Autonomous Database.
+        A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
 
@@ -19506,7 +20365,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
                  value: str):
         """
         :param str consumer_group: Consumer group used by the connection.
-        :param str display_name: The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str host_format: Host format used in connection string.
         :param str protocol: Protocol used by the connection.
         :param str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
@@ -19536,7 +20395,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult(dict
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
 
@@ -19759,6 +20618,357 @@ class GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_database_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult(dict):
+    def __init__(__self__, *,
+                 encryption_keys: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
+                 time_activated: str):
+        """
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param str time_activated: The date and time the kms key activated.
+        """
+        pulumi.set(__self__, "encryption_keys", encryption_keys)
+        pulumi.set(__self__, "time_activated", time_activated)
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
+        """
+        Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> str:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_database_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_database_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
     def __init__(__self__, *,
                  id: str,
@@ -19822,7 +21032,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
         :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: The current state of the Autonomous Database.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -19861,7 +21071,7 @@ class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Autonomous Database.
+        A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
 
@@ -20179,7 +21389,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
         :param str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
         :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param str lifecycle_details: Additional information about the current lifecycle state.
-        :param str state: The current state of the Autonomous Database.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
@@ -20218,7 +21428,7 @@ class GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Autonomous Database.
+        A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
 
@@ -20277,6 +21487,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  defined_tags: Mapping[str, str],
                  disaster_recovery_region_type: str,
                  display_name: str,
+                 encryption_key_history_entries: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult'],
+                 encryption_keys: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult'],
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, str],
                  id: str,
@@ -20399,6 +21611,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -20522,6 +21736,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
+        pulumi.set(__self__, "encryption_keys", encryption_keys)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -20884,6 +22100,22 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionKeyHistoryEntries")
+    def encryption_key_history_entries(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult']:
+        """
+        Key History Entry.
+        """
+        return pulumi.get(self, "encryption_key_history_entries")
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult']:
+        """
+        Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
 
     @property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -21958,6 +23190,357 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailResult(dict):
         Name of the day of the week.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_databases_clone_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_databases_clone_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_databases_clone_provider", autonomous_databases_clone_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabasesCloneProvider")
+    def autonomous_databases_clone_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_databases_clone_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult(dict):
+    def __init__(__self__, *,
+                 encryption_keys: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult'],
+                 time_activated: str):
+        """
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs'] encryption_keys: Details of the Autonomous Database encryption key.
+        :param str time_activated: The date and time the kms key activated.
+        """
+        pulumi.set(__self__, "encryption_keys", encryption_keys)
+        pulumi.set(__self__, "time_activated", time_activated)
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult']:
+        """
+        Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> str:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult(dict):
+    def __init__(__self__, *,
+                 arn_role: str,
+                 autonomous_databases_clone_provider: str,
+                 certificate_directory_name: str,
+                 certificate_id: str,
+                 directory_name: str,
+                 external_id: str,
+                 key_arn: str,
+                 key_name: str,
+                 kms_key_id: str,
+                 okv_kms_key: str,
+                 okv_uri: str,
+                 service_endpoint_uri: str,
+                 vault_id: str,
+                 vault_uri: str):
+        """
+        :param str arn_role: AWS ARN role
+        :param str autonomous_databases_clone_provider: The provider for the Autonomous Database encryption key.
+        :param str certificate_directory_name: OKV certificate directory name
+        :param str certificate_id: OKV certificate id
+        :param str directory_name: OKV wallet directory name
+        :param str external_id: AWS external ID
+        :param str key_arn: AWS key ARN
+        :param str key_name: Azure key name
+        :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param str okv_kms_key: UUID of OKV KMS Key
+        :param str okv_uri: URI of OKV server
+        :param str service_endpoint_uri: AWS key service endpoint URI
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str vault_uri: Azure vault URI
+        """
+        pulumi.set(__self__, "arn_role", arn_role)
+        pulumi.set(__self__, "autonomous_databases_clone_provider", autonomous_databases_clone_provider)
+        pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "directory_name", directory_name)
+        pulumi.set(__self__, "external_id", external_id)
+        pulumi.set(__self__, "key_arn", key_arn)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        pulumi.set(__self__, "okv_uri", okv_uri)
+        pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> str:
+        """
+        AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @property
+    @pulumi.getter(name="autonomousDatabasesCloneProvider")
+    def autonomous_databases_clone_provider(self) -> str:
+        """
+        The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_databases_clone_provider")
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> str:
+        """
+        OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> str:
+        """
+        OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> str:
+        """
+        OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> str:
+        """
+        AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> str:
+        """
+        Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> str:
+        """
+        UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> str:
+        """
+        URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> str:
+        """
+        AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> str:
+        """
+        Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
 
 
 @pulumi.output_type

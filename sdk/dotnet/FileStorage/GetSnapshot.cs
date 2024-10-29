@@ -125,10 +125,15 @@ namespace Pulumi.Oci.FileStorage
         /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         public readonly bool IsCloneSource;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSnapshotLockResult> Locks;
         /// <summary>
         /// Name of the snapshot. This value is immutable.
         /// </summary>
@@ -174,7 +179,11 @@ namespace Pulumi.Oci.FileStorage
 
             bool isCloneSource,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetSnapshotLockResult> locks,
 
             string name,
 
@@ -197,7 +206,9 @@ namespace Pulumi.Oci.FileStorage
             FreeformTags = freeformTags;
             Id = id;
             IsCloneSource = isCloneSource;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             Name = name;
             ProvenanceId = provenanceId;
             SnapshotId = snapshotId;

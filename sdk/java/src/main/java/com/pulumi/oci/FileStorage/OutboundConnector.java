@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.OutboundConnectorArgs;
 import com.pulumi.oci.FileStorage.inputs.OutboundConnectorState;
 import com.pulumi.oci.FileStorage.outputs.OutboundConnectorEndpoint;
+import com.pulumi.oci.FileStorage.outputs.OutboundConnectorLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -54,6 +56,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FileStorage.OutboundConnector;
  * import com.pulumi.oci.FileStorage.OutboundConnectorArgs;
  * import com.pulumi.oci.FileStorage.inputs.OutboundConnectorEndpointArgs;
+ * import com.pulumi.oci.FileStorage.inputs.OutboundConnectorLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -79,6 +82,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(outboundConnectorDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(OutboundConnectorLockArgs.builder()
+ *                 .type(outboundConnectorLocksType)
+ *                 .message(outboundConnectorLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(outboundConnectorLocksTimeCreated)
+ *                 .build())
  *             .passwordSecretId(testSecret.id())
  *             .passwordSecretVersion(outboundConnectorPasswordSecretVersion)
  *             .build());
@@ -211,6 +220,26 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,OutboundConnectorLock.class}, tree="[0,1]")
+    private Output<List<OutboundConnectorLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<OutboundConnectorLock>> locks() {
+        return this.locks;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.

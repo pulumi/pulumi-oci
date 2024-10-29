@@ -27,7 +27,7 @@ class GetFilesystemSnapshotPolicyResult:
     """
     A collection of values returned by getFilesystemSnapshotPolicy.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, policy_prefix=None, schedules=None, state=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, policy_prefix=None, schedules=None, state=None, time_created=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -49,6 +49,12 @@ class GetFilesystemSnapshotPolicyResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if policy_prefix and not isinstance(policy_prefix, str):
             raise TypeError("Expected argument 'policy_prefix' to be a str")
         pulumi.set(__self__, "policy_prefix", policy_prefix)
@@ -116,6 +122,19 @@ class GetFilesystemSnapshotPolicyResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetFilesystemSnapshotPolicyLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> str:
         """
@@ -161,6 +180,8 @@ class AwaitableGetFilesystemSnapshotPolicyResult(GetFilesystemSnapshotPolicyResu
             filesystem_snapshot_policy_id=self.filesystem_snapshot_policy_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             policy_prefix=self.policy_prefix,
             schedules=self.schedules,
             state=self.state,
@@ -199,6 +220,8 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
         filesystem_snapshot_policy_id=pulumi.get(__ret__, 'filesystem_snapshot_policy_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
+        locks=pulumi.get(__ret__, 'locks'),
         policy_prefix=pulumi.get(__ret__, 'policy_prefix'),
         schedules=pulumi.get(__ret__, 'schedules'),
         state=pulumi.get(__ret__, 'state'),
@@ -234,6 +257,8 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
         filesystem_snapshot_policy_id=pulumi.get(__response__, 'filesystem_snapshot_policy_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
+        locks=pulumi.get(__response__, 'locks'),
         policy_prefix=pulumi.get(__response__, 'policy_prefix'),
         schedules=pulumi.get(__response__, 'schedules'),
         state=pulumi.get(__response__, 'state'),

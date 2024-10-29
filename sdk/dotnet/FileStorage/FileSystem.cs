@@ -68,6 +68,16 @@ namespace Pulumi.Oci.FileStorage
     ///             { "Department", "Finance" },
     ///         },
     ///         KmsKeyId = testKey.Id,
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.FileSystemLockArgs
+    ///             {
+    ///                 Type = fileSystemLocksType,
+    ///                 Message = fileSystemLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = fileSystemLocksTimeCreated,
+    ///             },
+    ///         },
     ///         SourceSnapshotId = testSnapshot.Id,
     ///     });
     /// 
@@ -157,6 +167,9 @@ namespace Pulumi.Oci.FileStorage
         [Output("isHydrated")]
         public Output<bool> IsHydrated { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         /// </summary>
@@ -174,6 +187,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.FileSystemLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
@@ -323,11 +342,26 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.FileSystemLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.FileSystemLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.FileSystemLockArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -427,6 +461,9 @@ namespace Pulumi.Oci.FileStorage
         [Input("isHydrated")]
         public Input<bool>? IsHydrated { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         /// </summary>
@@ -444,6 +481,18 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.FileSystemLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.FileSystemLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.FileSystemLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).

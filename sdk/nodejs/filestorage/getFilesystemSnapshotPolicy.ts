@@ -68,6 +68,11 @@ export interface GetFilesystemSnapshotPolicyResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.FileStorage.GetFilesystemSnapshotPolicyLock[];
     /**
      * The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */

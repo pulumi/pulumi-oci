@@ -292,6 +292,18 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details of the Autonomous Database encryption key.
+        /// </summary>
+        [Output("encryptionKey")]
+        public Output<Outputs.AutonomousDatabaseEncryptionKey> EncryptionKey { get; private set; } = null!;
+
+        /// <summary>
+        /// Key History Entry.
+        /// </summary>
+        [Output("encryptionKeyHistoryEntries")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyHistoryEntry>> EncryptionKeyHistoryEntries { get; private set; } = null!;
+
+        /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
         [Output("failedDataRecoveryInSeconds")]
@@ -1197,6 +1209,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// (Updatable) Details of the Autonomous Database encryption key.
+        /// </summary>
+        [Input("encryptionKey")]
+        public Input<Inputs.AutonomousDatabaseEncryptionKeyArgs>? EncryptionKey { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -1910,6 +1928,24 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details of the Autonomous Database encryption key.
+        /// </summary>
+        [Input("encryptionKey")]
+        public Input<Inputs.AutonomousDatabaseEncryptionKeyGetArgs>? EncryptionKey { get; set; }
+
+        [Input("encryptionKeyHistoryEntries")]
+        private InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryGetArgs>? _encryptionKeyHistoryEntries;
+
+        /// <summary>
+        /// Key History Entry.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryGetArgs> EncryptionKeyHistoryEntries
+        {
+            get => _encryptionKeyHistoryEntries ?? (_encryptionKeyHistoryEntries = new InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryGetArgs>());
+            set => _encryptionKeyHistoryEntries = value;
+        }
 
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.

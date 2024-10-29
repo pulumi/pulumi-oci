@@ -234,6 +234,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     */
+    public readonly encryptionKey!: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKey>;
+    /**
+     * Key History Entry.
+     */
+    public /*out*/ readonly encryptionKeyHistoryEntries!: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry[]>;
+    /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
     public /*out*/ readonly failedDataRecoveryInSeconds!: pulumi.Output<number>;
@@ -723,6 +731,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["disasterRecoveryRegionType"] = state ? state.disasterRecoveryRegionType : undefined;
             resourceInputs["disasterRecoveryType"] = state ? state.disasterRecoveryType : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["encryptionKey"] = state ? state.encryptionKey : undefined;
+            resourceInputs["encryptionKeyHistoryEntries"] = state ? state.encryptionKeyHistoryEntries : undefined;
             resourceInputs["failedDataRecoveryInSeconds"] = state ? state.failedDataRecoveryInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["inMemoryAreaInGbs"] = state ? state.inMemoryAreaInGbs : undefined;
@@ -858,6 +868,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["disasterRecoveryType"] = args ? args.disasterRecoveryType : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["encryptionKey"] = args ? args.encryptionKey : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["inMemoryPercentage"] = args ? args.inMemoryPercentage : undefined;
             resourceInputs["isAccessControlEnabled"] = args ? args.isAccessControlEnabled : undefined;
@@ -919,6 +930,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["connectionUrls"] = undefined /*out*/;
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
             resourceInputs["disasterRecoveryRegionType"] = undefined /*out*/;
+            resourceInputs["encryptionKeyHistoryEntries"] = undefined /*out*/;
             resourceInputs["failedDataRecoveryInSeconds"] = undefined /*out*/;
             resourceInputs["inMemoryAreaInGbs"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
@@ -1163,6 +1175,14 @@ export interface AutonomousDatabaseState {
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     */
+    encryptionKey?: pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKey>;
+    /**
+     * Key History Entry.
+     */
+    encryptionKeyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry>[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
@@ -1745,6 +1765,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the Autonomous Database encryption key.
+     */
+    encryptionKey?: pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKey>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

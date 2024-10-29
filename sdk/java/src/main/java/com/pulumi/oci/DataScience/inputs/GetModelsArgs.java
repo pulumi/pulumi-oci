@@ -85,9 +85,17 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.id);
     }
 
+    /**
+     * The name of the model version set that the model is associated to.
+     * 
+     */
     @Import(name="modelVersionSetName", required=true)
     private Output<String> modelVersionSetName;
 
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
     public Output<String> modelVersionSetName() {
         return this.modelVersionSetName;
     }
@@ -258,11 +266,23 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
             return id(Output.of(id));
         }
 
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelVersionSetName(Output<String> modelVersionSetName) {
             $.modelVersionSetName = modelVersionSetName;
             return this;
         }
 
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelVersionSetName(String modelVersionSetName) {
             return modelVersionSetName(Output.of(modelVersionSetName));
         }

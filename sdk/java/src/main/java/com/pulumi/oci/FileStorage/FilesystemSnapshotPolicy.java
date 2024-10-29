@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.FilesystemSnapshotPolicyArgs;
 import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyState;
+import com.pulumi.oci.FileStorage.outputs.FilesystemSnapshotPolicyLock;
 import com.pulumi.oci.FileStorage.outputs.FilesystemSnapshotPolicySchedule;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.FilesystemSnapshotPolicy;
  * import com.pulumi.oci.FileStorage.FilesystemSnapshotPolicyArgs;
+ * import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyLockArgs;
  * import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -57,6 +60,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(filesystemSnapshotPolicyDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(FilesystemSnapshotPolicyLockArgs.builder()
+ *                 .type(filesystemSnapshotPolicyLocksType)
+ *                 .message(filesystemSnapshotPolicyLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(filesystemSnapshotPolicyLocksTimeCreated)
+ *                 .build())
  *             .policyPrefix(filesystemSnapshotPolicyPolicyPrefix)
  *             .schedules(FilesystemSnapshotPolicyScheduleArgs.builder()
  *                 .period(filesystemSnapshotPolicySchedulesPeriod)
@@ -157,6 +166,26 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,FilesystemSnapshotPolicyLock.class}, tree="[0,1]")
+    private Output<List<FilesystemSnapshotPolicyLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<FilesystemSnapshotPolicyLock>> locks() {
+        return this.locks;
     }
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`

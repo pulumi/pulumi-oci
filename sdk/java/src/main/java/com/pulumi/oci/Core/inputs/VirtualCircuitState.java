@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.VirtualCircuitCrossConnectMappingArgs;
 import com.pulumi.oci.Core.inputs.VirtualCircuitPublicPrefixArgs;
+import com.pulumi.oci.Core.inputs.VirtualCircuitVirtualCircuitRedundancyMetadataArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -463,6 +464,21 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * Redundancy level details of the virtual circuit
+     * 
+     */
+    @Import(name="virtualCircuitRedundancyMetadatas")
+    private @Nullable Output<List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs>> virtualCircuitRedundancyMetadatas;
+
+    /**
+     * @return Redundancy level details of the virtual circuit
+     * 
+     */
+    public Optional<Output<List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs>>> virtualCircuitRedundancyMetadatas() {
+        return Optional.ofNullable(this.virtualCircuitRedundancyMetadatas);
+    }
+
     private VirtualCircuitState() {}
 
     private VirtualCircuitState(VirtualCircuitState $) {
@@ -494,6 +510,7 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.type = $.type;
+        this.virtualCircuitRedundancyMetadatas = $.virtualCircuitRedundancyMetadatas;
     }
 
     public static Builder builder() {
@@ -1152,6 +1169,37 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualCircuitRedundancyMetadatas(@Nullable Output<List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs>> virtualCircuitRedundancyMetadatas) {
+            $.virtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;
+            return this;
+        }
+
+        /**
+         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualCircuitRedundancyMetadatas(List<VirtualCircuitVirtualCircuitRedundancyMetadataArgs> virtualCircuitRedundancyMetadatas) {
+            return virtualCircuitRedundancyMetadatas(Output.of(virtualCircuitRedundancyMetadatas));
+        }
+
+        /**
+         * @param virtualCircuitRedundancyMetadatas Redundancy level details of the virtual circuit
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualCircuitRedundancyMetadatas(VirtualCircuitVirtualCircuitRedundancyMetadataArgs... virtualCircuitRedundancyMetadatas) {
+            return virtualCircuitRedundancyMetadatas(List.of(virtualCircuitRedundancyMetadatas));
         }
 
         public VirtualCircuitState build() {

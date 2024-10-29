@@ -67,6 +67,14 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: filestorage.OutboundConnectorLockArray{
+//					&filestorage.OutboundConnectorLockArgs{
+//						Type:              pulumi.Any(outboundConnectorLocksType),
+//						Message:           pulumi.Any(outboundConnectorLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(outboundConnectorLocksTimeCreated),
+//					},
+//				},
 //				PasswordSecretId:      pulumi.Any(testSecret.Id),
 //				PasswordSecretVersion: pulumi.Any(outboundConnectorPasswordSecretVersion),
 //			})
@@ -104,7 +112,10 @@ type OutboundConnector struct {
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks OutboundConnectorLockArrayOutput `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringOutput `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -178,7 +189,10 @@ type outboundConnectorState struct {
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []OutboundConnectorEndpoint `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []OutboundConnectorLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -208,7 +222,10 @@ type OutboundConnectorState struct {
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks OutboundConnectorLockArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringPtrInput
 	// Version of the password secret in the Vault to use.
@@ -242,7 +259,10 @@ type outboundConnectorArgs struct {
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []OutboundConnectorEndpoint `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []OutboundConnectorLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -269,7 +289,10 @@ type OutboundConnectorArgs struct {
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks OutboundConnectorLockArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringPtrInput
 	// Version of the password secret in the Vault to use.
@@ -404,6 +427,15 @@ func (o OutboundConnectorOutput) Endpoints() OutboundConnectorEndpointArrayOutpu
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o OutboundConnectorOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *OutboundConnector) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o OutboundConnectorOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o OutboundConnectorOutput) Locks() OutboundConnectorLockArrayOutput {
+	return o.ApplyT(func(v *OutboundConnector) OutboundConnectorLockArrayOutput { return v.Locks }).(OutboundConnectorLockArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.

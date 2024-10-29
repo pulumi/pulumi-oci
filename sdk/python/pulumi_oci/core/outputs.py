@@ -182,6 +182,7 @@ __all__ = [
     'VcnByoipv6cidrDetail',
     'VirtualCircuitCrossConnectMapping',
     'VirtualCircuitPublicPrefix',
+    'VirtualCircuitVirtualCircuitRedundancyMetadata',
     'VirtualNetworkByoipv6cidrDetail',
     'VnicAttachmentCreateVnicDetails',
     'VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail',
@@ -687,10 +688,12 @@ __all__ = [
     'GetVirtualCircuitPublicPrefixResult',
     'GetVirtualCircuitPublicPrefixesFilterResult',
     'GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult',
+    'GetVirtualCircuitVirtualCircuitRedundancyMetadataResult',
     'GetVirtualCircuitsFilterResult',
     'GetVirtualCircuitsVirtualCircuitResult',
     'GetVirtualCircuitsVirtualCircuitCrossConnectMappingResult',
     'GetVirtualCircuitsVirtualCircuitPublicPrefixResult',
+    'GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult',
     'GetVirtualNetworksFilterResult',
     'GetVirtualNetworksVirtualNetworkResult',
     'GetVirtualNetworksVirtualNetworkByoipv6cidrDetailResult',
@@ -14339,6 +14342,70 @@ class VirtualCircuitPublicPrefix(dict):
         (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
         """
         return pulumi.get(self, "cidr_block")
+
+
+@pulumi.output_type
+class VirtualCircuitVirtualCircuitRedundancyMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configuredRedundancyLevel":
+            suggest = "configured_redundancy_level"
+        elif key == "ipv4bgpSessionRedundancyStatus":
+            suggest = "ipv4bgp_session_redundancy_status"
+        elif key == "ipv6bgpSessionRedundancyStatus":
+            suggest = "ipv6bgp_session_redundancy_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualCircuitVirtualCircuitRedundancyMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualCircuitVirtualCircuitRedundancyMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualCircuitVirtualCircuitRedundancyMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 configured_redundancy_level: Optional[str] = None,
+                 ipv4bgp_session_redundancy_status: Optional[str] = None,
+                 ipv6bgp_session_redundancy_status: Optional[str] = None):
+        """
+        :param str configured_redundancy_level: The configured redundancy level of the virtual circuit
+        :param str ipv4bgp_session_redundancy_status: IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        :param str ipv6bgp_session_redundancy_status: IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        if configured_redundancy_level is not None:
+            pulumi.set(__self__, "configured_redundancy_level", configured_redundancy_level)
+        if ipv4bgp_session_redundancy_status is not None:
+            pulumi.set(__self__, "ipv4bgp_session_redundancy_status", ipv4bgp_session_redundancy_status)
+        if ipv6bgp_session_redundancy_status is not None:
+            pulumi.set(__self__, "ipv6bgp_session_redundancy_status", ipv6bgp_session_redundancy_status)
+
+    @property
+    @pulumi.getter(name="configuredRedundancyLevel")
+    def configured_redundancy_level(self) -> Optional[str]:
+        """
+        The configured redundancy level of the virtual circuit
+        """
+        return pulumi.get(self, "configured_redundancy_level")
+
+    @property
+    @pulumi.getter(name="ipv4bgpSessionRedundancyStatus")
+    def ipv4bgp_session_redundancy_status(self) -> Optional[str]:
+        """
+        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv4bgp_session_redundancy_status")
+
+    @property
+    @pulumi.getter(name="ipv6bgpSessionRedundancyStatus")
+    def ipv6bgp_session_redundancy_status(self) -> Optional[str]:
+        """
+        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv6bgp_session_redundancy_status")
 
 
 @pulumi.output_type
@@ -33810,7 +33877,7 @@ class GetInstanceCreateVnicDetailResult(dict):
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the instance VNIC's primary private IP.
         :param str private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
-        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -33896,7 +33963,7 @@ class GetInstanceCreateVnicDetailResult(dict):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, str]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -36253,7 +36320,7 @@ class GetInstancesInstanceResult(dict):
         :param Sequence['GetInstancesInstancePreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Optional) Configuration options for preemptible instances.
         :param bool preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param str region: The region that contains the availability domain the instance is running in.
-        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param str security_attributes_state: The lifecycle state of the `securityAttributes`
         :param str shape: The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param Sequence['GetInstancesInstanceShapeConfigArgs'] shape_configs: The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
@@ -36578,7 +36645,7 @@ class GetInstancesInstanceResult(dict):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, str]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -36789,7 +36856,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
         :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -36869,7 +36936,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, str]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -45498,6 +45565,46 @@ class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult(dict):
 
 
 @pulumi.output_type
+class GetVirtualCircuitVirtualCircuitRedundancyMetadataResult(dict):
+    def __init__(__self__, *,
+                 configured_redundancy_level: str,
+                 ipv4bgp_session_redundancy_status: str,
+                 ipv6bgp_session_redundancy_status: str):
+        """
+        :param str configured_redundancy_level: The configured redundancy level of the virtual circuit
+        :param str ipv4bgp_session_redundancy_status: IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        :param str ipv6bgp_session_redundancy_status: IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        pulumi.set(__self__, "configured_redundancy_level", configured_redundancy_level)
+        pulumi.set(__self__, "ipv4bgp_session_redundancy_status", ipv4bgp_session_redundancy_status)
+        pulumi.set(__self__, "ipv6bgp_session_redundancy_status", ipv6bgp_session_redundancy_status)
+
+    @property
+    @pulumi.getter(name="configuredRedundancyLevel")
+    def configured_redundancy_level(self) -> str:
+        """
+        The configured redundancy level of the virtual circuit
+        """
+        return pulumi.get(self, "configured_redundancy_level")
+
+    @property
+    @pulumi.getter(name="ipv4bgpSessionRedundancyStatus")
+    def ipv4bgp_session_redundancy_status(self) -> str:
+        """
+        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv4bgp_session_redundancy_status")
+
+    @property
+    @pulumi.getter(name="ipv6bgpSessionRedundancyStatus")
+    def ipv6bgp_session_redundancy_status(self) -> str:
+        """
+        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv6bgp_session_redundancy_status")
+
+
+@pulumi.output_type
 class GetVirtualCircuitsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -45556,7 +45663,8 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
                  state: str,
                  time_created: str,
                  type: str,
-                 virtual_circuit_id: str):
+                 virtual_circuit_id: str,
+                 virtual_circuit_redundancy_metadatas: Sequence['outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult']):
         """
         :param str bandwidth_shape_name: The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         :param str bgp_admin_state: Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
@@ -45587,6 +45695,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str type: Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+        :param Sequence['GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs'] virtual_circuit_redundancy_metadatas: Redundancy level details of the virtual circuit
         """
         pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
         pulumi.set(__self__, "bgp_admin_state", bgp_admin_state)
@@ -45618,6 +45727,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "virtual_circuit_id", virtual_circuit_id)
+        pulumi.set(__self__, "virtual_circuit_redundancy_metadatas", virtual_circuit_redundancy_metadatas)
 
     @property
     @pulumi.getter(name="bandwidthShapeName")
@@ -45858,6 +45968,14 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
     def virtual_circuit_id(self) -> str:
         return pulumi.get(self, "virtual_circuit_id")
 
+    @property
+    @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
+    def virtual_circuit_redundancy_metadatas(self) -> Sequence['outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult']:
+        """
+        Redundancy level details of the virtual circuit
+        """
+        return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
+
 
 @pulumi.output_type
 class GetVirtualCircuitsVirtualCircuitCrossConnectMappingResult(dict):
@@ -45953,6 +46071,46 @@ class GetVirtualCircuitsVirtualCircuitPublicPrefixResult(dict):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> str:
         return pulumi.get(self, "cidr_block")
+
+
+@pulumi.output_type
+class GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult(dict):
+    def __init__(__self__, *,
+                 configured_redundancy_level: str,
+                 ipv4bgp_session_redundancy_status: str,
+                 ipv6bgp_session_redundancy_status: str):
+        """
+        :param str configured_redundancy_level: The configured redundancy level of the virtual circuit
+        :param str ipv4bgp_session_redundancy_status: IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        :param str ipv6bgp_session_redundancy_status: IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        pulumi.set(__self__, "configured_redundancy_level", configured_redundancy_level)
+        pulumi.set(__self__, "ipv4bgp_session_redundancy_status", ipv4bgp_session_redundancy_status)
+        pulumi.set(__self__, "ipv6bgp_session_redundancy_status", ipv6bgp_session_redundancy_status)
+
+    @property
+    @pulumi.getter(name="configuredRedundancyLevel")
+    def configured_redundancy_level(self) -> str:
+        """
+        The configured redundancy level of the virtual circuit
+        """
+        return pulumi.get(self, "configured_redundancy_level")
+
+    @property
+    @pulumi.getter(name="ipv4bgpSessionRedundancyStatus")
+    def ipv4bgp_session_redundancy_status(self) -> str:
+        """
+        IPV4 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv4bgp_session_redundancy_status")
+
+    @property
+    @pulumi.getter(name="ipv6bgpSessionRedundancyStatus")
+    def ipv6bgp_session_redundancy_status(self) -> str:
+        """
+        IPV6 BGP redundancy status indicates if the configured redundancy level is met
+        """
+        return pulumi.get(self, "ipv6bgp_session_redundancy_status")
 
 
 @pulumi.output_type

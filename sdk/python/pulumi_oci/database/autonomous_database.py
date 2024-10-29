@@ -50,6 +50,7 @@ class AutonomousDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
@@ -157,6 +158,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -314,6 +316,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if in_memory_percentage is not None:
@@ -789,6 +793,18 @@ class AutonomousDatabaseArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]:
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @encryption_key.setter
+    def encryption_key(self, value: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]):
+        pulumi.set(self, "encryption_key", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1483,6 +1499,8 @@ class _AutonomousDatabaseState:
                  disaster_recovery_region_type: Optional[pulumi.Input[str]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
+                 encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
                  failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  in_memory_area_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -1649,6 +1667,8 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] disaster_recovery_region_type: **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Serverless Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
@@ -1876,6 +1896,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if encryption_key_history_entries is not None:
+            pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
         if failed_data_recovery_in_seconds is not None:
             pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         if freeform_tags is not None:
@@ -2579,6 +2603,30 @@ class _AutonomousDatabaseState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]:
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @encryption_key.setter
+    def encryption_key(self, value: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']]):
+        pulumi.set(self, "encryption_key", value)
+
+    @property
+    @pulumi.getter(name="encryptionKeyHistoryEntries")
+    def encryption_key_history_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]:
+        """
+        Key History Entry.
+        """
+        return pulumi.get(self, "encryption_key_history_entries")
+
+    @encryption_key_history_entries.setter
+    def encryption_key_history_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]):
+        pulumi.set(self, "encryption_key_history_entries", value)
 
     @property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -3834,6 +3882,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
@@ -3957,6 +4006,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] in_memory_percentage: (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         :param pulumi.Input[bool] is_access_control_enabled: (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -4123,6 +4173,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  in_memory_percentage: Optional[pulumi.Input[int]] = None,
                  is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
@@ -4215,6 +4266,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["disaster_recovery_type"] = disaster_recovery_type
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["encryption_key"] = encryption_key
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["in_memory_percentage"] = in_memory_percentage
             __props__.__dict__["is_access_control_enabled"] = is_access_control_enabled
@@ -4276,6 +4328,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["connection_urls"] = None
             __props__.__dict__["dataguard_region_type"] = None
             __props__.__dict__["disaster_recovery_region_type"] = None
+            __props__.__dict__["encryption_key_history_entries"] = None
             __props__.__dict__["failed_data_recovery_in_seconds"] = None
             __props__.__dict__["in_memory_area_in_gbs"] = None
             __props__.__dict__["infrastructure_type"] = None
@@ -4376,6 +4429,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             disaster_recovery_region_type: Optional[pulumi.Input[str]] = None,
             disaster_recovery_type: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
+            encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
             failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             in_memory_area_in_gbs: Optional[pulumi.Input[int]] = None,
@@ -4547,6 +4602,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] disaster_recovery_region_type: **Deprecated** The disaster recovery (DR) region type of the Autonomous Database. For Serverless Autonomous Databases, DR associations have designated primary (`PRIMARY`) and standby (`REMOTE`) regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous Database encryption key.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
@@ -4738,6 +4795,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["disaster_recovery_region_type"] = disaster_recovery_region_type
         __props__.__dict__["disaster_recovery_type"] = disaster_recovery_type
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["encryption_key"] = encryption_key
+        __props__.__dict__["encryption_key_history_entries"] = encryption_key_history_entries
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["in_memory_area_in_gbs"] = in_memory_area_in_gbs
@@ -5181,6 +5240,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> pulumi.Output['outputs.AutonomousDatabaseEncryptionKey']:
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="encryptionKeyHistoryEntries")
+    def encryption_key_history_entries(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseEncryptionKeyHistoryEntry']]:
+        """
+        Key History Entry.
+        """
+        return pulumi.get(self, "encryption_key_history_entries")
 
     @property
     @pulumi.getter(name="failedDataRecoveryInSeconds")

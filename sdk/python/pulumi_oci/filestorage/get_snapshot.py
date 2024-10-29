@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSnapshotResult',
@@ -26,7 +27,7 @@ class GetSnapshotResult:
     """
     A collection of values returned by getSnapshot.
     """
-    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, lifecycle_details=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, time_created=None):
+    def __init__(__self__, defined_tags=None, expiration_time=None, file_system_id=None, filesystem_snapshot_policy_id=None, freeform_tags=None, id=None, is_clone_source=None, is_lock_override=None, lifecycle_details=None, locks=None, name=None, provenance_id=None, snapshot_id=None, snapshot_time=None, snapshot_type=None, state=None, time_created=None):
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -48,9 +49,15 @@ class GetSnapshotResult:
         if is_clone_source and not isinstance(is_clone_source, bool):
             raise TypeError("Expected argument 'is_clone_source' to be a bool")
         pulumi.set(__self__, "is_clone_source", is_clone_source)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -130,12 +137,25 @@ class GetSnapshotResult:
         return pulumi.get(self, "is_clone_source")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSnapshotLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -207,7 +227,9 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_clone_source=self.is_clone_source,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             name=self.name,
             provenance_id=self.provenance_id,
             snapshot_id=self.snapshot_id,
@@ -249,7 +271,9 @@ def get_snapshot(snapshot_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_clone_source=pulumi.get(__ret__, 'is_clone_source'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         name=pulumi.get(__ret__, 'name'),
         provenance_id=pulumi.get(__ret__, 'provenance_id'),
         snapshot_id=pulumi.get(__ret__, 'snapshot_id'),
@@ -288,7 +312,9 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_clone_source=pulumi.get(__response__, 'is_clone_source'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         name=pulumi.get(__response__, 'name'),
         provenance_id=pulumi.get(__response__, 'provenance_id'),
         snapshot_id=pulumi.get(__response__, 'snapshot_id'),

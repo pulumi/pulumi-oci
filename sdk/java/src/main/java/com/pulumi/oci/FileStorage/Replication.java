@@ -9,8 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.ReplicationArgs;
 import com.pulumi.oci.FileStorage.inputs.ReplicationState;
+import com.pulumi.oci.FileStorage.outputs.ReplicationLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -57,6 +60,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.Replication;
  * import com.pulumi.oci.FileStorage.ReplicationArgs;
+ * import com.pulumi.oci.FileStorage.inputs.ReplicationLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -77,6 +81,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(replicationDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(ReplicationLockArgs.builder()
+ *                 .type(replicationLocksType)
+ *                 .message(replicationLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(replicationLocksTimeCreated)
+ *                 .build())
  *             .replicationInterval(replicationReplicationInterval)
  *             .build());
  * 
@@ -195,6 +205,12 @@ public class Replication extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
@@ -222,6 +238,20 @@ public class Replication extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,ReplicationLock.class}, tree="[0,1]")
+    private Output<List<ReplicationLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<ReplicationLock>> locks() {
+        return this.locks;
     }
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`

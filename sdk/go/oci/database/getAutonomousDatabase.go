@@ -137,6 +137,10 @@ type LookupAutonomousDatabaseResult struct {
 	DisasterRecoveryType string `pulumi:"disasterRecoveryType"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// Key History Entry.
+	EncryptionKeyHistoryEntries []GetAutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
+	// Details of the Autonomous Database encryption key.
+	EncryptionKeys []GetAutonomousDatabaseEncryptionKey `pulumi:"encryptionKeys"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds int `pulumi:"failedDataRecoveryInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -573,6 +577,18 @@ func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryType() pulumi.Stri
 // The user-friendly name for the Autonomous Database. The name does not have to be unique.
 func (o LookupAutonomousDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Key History Entry.
+func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyHistoryEntries() GetAutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKeyHistoryEntry {
+		return v.EncryptionKeyHistoryEntries
+	}).(GetAutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
+}
+
+// Details of the Autonomous Database encryption key.
+func (o LookupAutonomousDatabaseResultOutput) EncryptionKeys() GetAutonomousDatabaseEncryptionKeyArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKey { return v.EncryptionKeys }).(GetAutonomousDatabaseEncryptionKeyArrayOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.

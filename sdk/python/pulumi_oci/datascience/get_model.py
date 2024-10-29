@@ -27,7 +27,7 @@ class GetModelResult:
     """
     A collection of values returned by getModel.
     """
-    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, custom_metadata_lists=None, defined_metadata_lists=None, defined_tags=None, description=None, display_name=None, empty_model=None, freeform_tags=None, id=None, input_schema=None, model_artifact=None, model_id=None, output_schema=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, backup_operation_details=None, backup_settings=None, compartment_id=None, created_by=None, custom_metadata_lists=None, defined_metadata_lists=None, defined_tags=None, description=None, display_name=None, empty_model=None, freeform_tags=None, id=None, input_schema=None, lifecycle_details=None, model_artifact=None, model_id=None, model_version_set_name=None, output_schema=None, project_id=None, retention_operation_details=None, retention_settings=None, state=None, time_created=None):
         if artifact_content_disposition and not isinstance(artifact_content_disposition, str):
             raise TypeError("Expected argument 'artifact_content_disposition' to be a str")
         pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -40,6 +40,12 @@ class GetModelResult:
         if artifact_last_modified and not isinstance(artifact_last_modified, str):
             raise TypeError("Expected argument 'artifact_last_modified' to be a str")
         pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        if backup_operation_details and not isinstance(backup_operation_details, list):
+            raise TypeError("Expected argument 'backup_operation_details' to be a list")
+        pulumi.set(__self__, "backup_operation_details", backup_operation_details)
+        if backup_settings and not isinstance(backup_settings, list):
+            raise TypeError("Expected argument 'backup_settings' to be a list")
+        pulumi.set(__self__, "backup_settings", backup_settings)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -73,18 +79,30 @@ class GetModelResult:
         if input_schema and not isinstance(input_schema, str):
             raise TypeError("Expected argument 'input_schema' to be a str")
         pulumi.set(__self__, "input_schema", input_schema)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_artifact and not isinstance(model_artifact, str):
             raise TypeError("Expected argument 'model_artifact' to be a str")
         pulumi.set(__self__, "model_artifact", model_artifact)
         if model_id and not isinstance(model_id, str):
             raise TypeError("Expected argument 'model_id' to be a str")
         pulumi.set(__self__, "model_id", model_id)
+        if model_version_set_name and not isinstance(model_version_set_name, str):
+            raise TypeError("Expected argument 'model_version_set_name' to be a str")
+        pulumi.set(__self__, "model_version_set_name", model_version_set_name)
         if output_schema and not isinstance(output_schema, str):
             raise TypeError("Expected argument 'output_schema' to be a str")
         pulumi.set(__self__, "output_schema", output_schema)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
+        if retention_operation_details and not isinstance(retention_operation_details, list):
+            raise TypeError("Expected argument 'retention_operation_details' to be a list")
+        pulumi.set(__self__, "retention_operation_details", retention_operation_details)
+        if retention_settings and not isinstance(retention_settings, list):
+            raise TypeError("Expected argument 'retention_settings' to be a list")
+        pulumi.set(__self__, "retention_settings", retention_settings)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -111,6 +129,22 @@ class GetModelResult:
     @pulumi.getter(name="artifactLastModified")
     def artifact_last_modified(self) -> str:
         return pulumi.get(self, "artifact_last_modified")
+
+    @property
+    @pulumi.getter(name="backupOperationDetails")
+    def backup_operation_details(self) -> Sequence['outputs.GetModelBackupOperationDetailResult']:
+        """
+        Backup operation details of the model.
+        """
+        return pulumi.get(self, "backup_operation_details")
+
+    @property
+    @pulumi.getter(name="backupSettings")
+    def backup_settings(self) -> Sequence['outputs.GetModelBackupSettingResult']:
+        """
+        Back up setting details of the model.
+        """
+        return pulumi.get(self, "backup_settings")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -198,6 +232,14 @@ class GetModelResult:
         return pulumi.get(self, "input_schema")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the lifecycle state of the model.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="modelArtifact")
     def model_artifact(self) -> str:
         return pulumi.get(self, "model_artifact")
@@ -206,6 +248,14 @@ class GetModelResult:
     @pulumi.getter(name="modelId")
     def model_id(self) -> str:
         return pulumi.get(self, "model_id")
+
+    @property
+    @pulumi.getter(name="modelVersionSetName")
+    def model_version_set_name(self) -> str:
+        """
+        The name of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_name")
 
     @property
     @pulumi.getter(name="outputSchema")
@@ -222,6 +272,22 @@ class GetModelResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
         """
         return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="retentionOperationDetails")
+    def retention_operation_details(self) -> Sequence['outputs.GetModelRetentionOperationDetailResult']:
+        """
+        Retention operation details for the model.
+        """
+        return pulumi.get(self, "retention_operation_details")
+
+    @property
+    @pulumi.getter(name="retentionSettings")
+    def retention_settings(self) -> Sequence['outputs.GetModelRetentionSettingResult']:
+        """
+        Retention setting details of the model.
+        """
+        return pulumi.get(self, "retention_settings")
 
     @property
     @pulumi.getter
@@ -250,6 +316,8 @@ class AwaitableGetModelResult(GetModelResult):
             artifact_content_length=self.artifact_content_length,
             artifact_content_md5=self.artifact_content_md5,
             artifact_last_modified=self.artifact_last_modified,
+            backup_operation_details=self.backup_operation_details,
+            backup_settings=self.backup_settings,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             custom_metadata_lists=self.custom_metadata_lists,
@@ -261,10 +329,14 @@ class AwaitableGetModelResult(GetModelResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             input_schema=self.input_schema,
+            lifecycle_details=self.lifecycle_details,
             model_artifact=self.model_artifact,
             model_id=self.model_id,
+            model_version_set_name=self.model_version_set_name,
             output_schema=self.output_schema,
             project_id=self.project_id,
+            retention_operation_details=self.retention_operation_details,
+            retention_settings=self.retention_settings,
             state=self.state,
             time_created=self.time_created)
 
@@ -298,6 +370,8 @@ def get_model(model_id: Optional[str] = None,
         artifact_content_length=pulumi.get(__ret__, 'artifact_content_length'),
         artifact_content_md5=pulumi.get(__ret__, 'artifact_content_md5'),
         artifact_last_modified=pulumi.get(__ret__, 'artifact_last_modified'),
+        backup_operation_details=pulumi.get(__ret__, 'backup_operation_details'),
+        backup_settings=pulumi.get(__ret__, 'backup_settings'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         custom_metadata_lists=pulumi.get(__ret__, 'custom_metadata_lists'),
@@ -309,10 +383,14 @@ def get_model(model_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         input_schema=pulumi.get(__ret__, 'input_schema'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         model_artifact=pulumi.get(__ret__, 'model_artifact'),
         model_id=pulumi.get(__ret__, 'model_id'),
+        model_version_set_name=pulumi.get(__ret__, 'model_version_set_name'),
         output_schema=pulumi.get(__ret__, 'output_schema'),
         project_id=pulumi.get(__ret__, 'project_id'),
+        retention_operation_details=pulumi.get(__ret__, 'retention_operation_details'),
+        retention_settings=pulumi.get(__ret__, 'retention_settings'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
@@ -343,6 +421,8 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
         artifact_content_length=pulumi.get(__response__, 'artifact_content_length'),
         artifact_content_md5=pulumi.get(__response__, 'artifact_content_md5'),
         artifact_last_modified=pulumi.get(__response__, 'artifact_last_modified'),
+        backup_operation_details=pulumi.get(__response__, 'backup_operation_details'),
+        backup_settings=pulumi.get(__response__, 'backup_settings'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         custom_metadata_lists=pulumi.get(__response__, 'custom_metadata_lists'),
@@ -354,9 +434,13 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         input_schema=pulumi.get(__response__, 'input_schema'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         model_artifact=pulumi.get(__response__, 'model_artifact'),
         model_id=pulumi.get(__response__, 'model_id'),
+        model_version_set_name=pulumi.get(__response__, 'model_version_set_name'),
         output_schema=pulumi.get(__response__, 'output_schema'),
         project_id=pulumi.get(__response__, 'project_id'),
+        retention_operation_details=pulumi.get(__response__, 'retention_operation_details'),
+        retention_settings=pulumi.get(__response__, 'retention_settings'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created')))

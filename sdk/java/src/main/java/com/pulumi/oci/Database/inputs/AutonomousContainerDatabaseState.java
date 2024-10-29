@@ -176,14 +176,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     @Import(name="dbSplitThreshold")
     private @Nullable Output<Integer> dbSplitThreshold;
 
     /**
-     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Optional<Output<Integer>> dbSplitThreshold() {
@@ -243,14 +243,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     @Import(name="distributionAffinity")
     private @Nullable Output<String> distributionAffinity;
 
     /**
-     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * @return Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     public Optional<Output<String>> distributionAffinity() {
@@ -1225,7 +1225,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * @param dbSplitThreshold The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          * 
          * @return builder
          * 
@@ -1236,7 +1236,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbSplitThreshold The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+         * @param dbSplitThreshold The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          * 
          * @return builder
          * 
@@ -1318,7 +1318,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * @param distributionAffinity Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
          * 
          * @return builder
          * 
@@ -1329,7 +1329,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param distributionAffinity This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * @param distributionAffinity Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
          * 
          * @return builder
          * 

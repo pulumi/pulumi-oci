@@ -17,7 +17,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
      */
     private String consumerGroup;
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     private String displayName;
@@ -62,7 +62,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
         return this.consumerGroup;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
     public String displayName() {

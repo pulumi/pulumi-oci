@@ -6,6 +6,8 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorEndpoint;
+import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorLock;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -59,6 +61,12 @@ public final class GetOutboundConnectorResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetOutboundConnectorLock> locks;
     private String outboundConnectorId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
@@ -145,6 +153,16 @@ public final class GetOutboundConnectorResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetOutboundConnectorLock> locks() {
+        return this.locks;
+    }
     public String outboundConnectorId() {
         return this.outboundConnectorId;
     }
@@ -195,6 +213,8 @@ public final class GetOutboundConnectorResult {
         private List<GetOutboundConnectorEndpoint> endpoints;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetOutboundConnectorLock> locks;
         private String outboundConnectorId;
         private String passwordSecretId;
         private Integer passwordSecretVersion;
@@ -212,6 +232,8 @@ public final class GetOutboundConnectorResult {
     	      this.endpoints = defaults.endpoints;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.outboundConnectorId = defaults.outboundConnectorId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.passwordSecretVersion = defaults.passwordSecretVersion;
@@ -295,6 +317,25 @@ public final class GetOutboundConnectorResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetOutboundConnectorLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetOutboundConnectorLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder outboundConnectorId(String outboundConnectorId) {
             if (outboundConnectorId == null) {
               throw new MissingRequiredPropertyException("GetOutboundConnectorResult", "outboundConnectorId");
@@ -345,6 +386,8 @@ public final class GetOutboundConnectorResult {
             _resultValue.endpoints = endpoints;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.outboundConnectorId = outboundConnectorId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.passwordSecretVersion = passwordSecretVersion;

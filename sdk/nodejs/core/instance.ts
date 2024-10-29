@@ -293,7 +293,7 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly region!: pulumi.Output<string>;
     /**
-     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
     public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -664,7 +664,7 @@ export interface InstanceState {
      */
     region?: pulumi.Input<string>;
     /**
-     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -891,7 +891,7 @@ export interface InstanceArgs {
     preserveBootVolume?: pulumi.Input<boolean>;
     preserveDataVolumesCreatedAtLaunch?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**

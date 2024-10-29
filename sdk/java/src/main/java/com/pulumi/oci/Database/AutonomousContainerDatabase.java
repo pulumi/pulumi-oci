@@ -288,14 +288,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.dbName;
     }
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     @Export(name="dbSplitThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbSplitThreshold;
 
     /**
-     * @return The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the &#34;CPU per VM&#34; value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the &#34;CPU per VM&#34; value.
+     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Output<Integer> dbSplitThreshold() {
@@ -350,14 +350,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.displayName;
     }
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     @Export(name="distributionAffinity", refs={String.class}, tree="[0]")
     private Output<String> distributionAffinity;
 
     /**
-     * @return This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * @return Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     public Output<String> distributionAffinity() {

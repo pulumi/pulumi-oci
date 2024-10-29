@@ -164,6 +164,10 @@ export interface GetVirtualCircuitResult {
      */
     readonly type: string;
     readonly virtualCircuitId: string;
+    /**
+     * Redundancy level details of the virtual circuit
+     */
+    readonly virtualCircuitRedundancyMetadatas: outputs.Core.GetVirtualCircuitVirtualCircuitRedundancyMetadata[];
 }
 /**
  * This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.

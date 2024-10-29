@@ -17,16 +17,30 @@ from .. import _utilities
 __all__ = [
     'ExportExportOptionArgs',
     'ExportExportOptionArgsDict',
+    'ExportLockArgs',
+    'ExportLockArgsDict',
+    'FileSystemLockArgs',
+    'FileSystemLockArgsDict',
     'FileSystemSourceDetailArgs',
     'FileSystemSourceDetailArgsDict',
+    'FilesystemSnapshotPolicyLockArgs',
+    'FilesystemSnapshotPolicyLockArgsDict',
     'FilesystemSnapshotPolicyScheduleArgs',
     'FilesystemSnapshotPolicyScheduleArgsDict',
     'MountTargetKerberosArgs',
     'MountTargetKerberosArgsDict',
     'MountTargetLdapIdmapArgs',
     'MountTargetLdapIdmapArgsDict',
+    'MountTargetLockArgs',
+    'MountTargetLockArgsDict',
     'OutboundConnectorEndpointArgs',
     'OutboundConnectorEndpointArgsDict',
+    'OutboundConnectorLockArgs',
+    'OutboundConnectorLockArgsDict',
+    'ReplicationLockArgs',
+    'ReplicationLockArgsDict',
+    'SnapshotLockArgs',
+    'SnapshotLockArgsDict',
     'GetExportSetsFilterArgs',
     'GetExportSetsFilterArgsDict',
     'GetExportsFilterArgs',
@@ -227,6 +241,188 @@ class ExportExportOptionArgs:
 
 
 if not MYPY:
+    class ExportLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    ExportLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExportLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
+    class FileSystemLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    FileSystemLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FileSystemLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
     class FileSystemSourceDetailArgsDict(TypedDict):
         parent_file_system_id: NotRequired[pulumi.Input[str]]
         """
@@ -276,6 +472,97 @@ class FileSystemSourceDetailArgs:
     @source_snapshot_id.setter
     def source_snapshot_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_snapshot_id", value)
+
+
+if not MYPY:
+    class FilesystemSnapshotPolicyLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    FilesystemSnapshotPolicyLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FilesystemSnapshotPolicyLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:
@@ -752,6 +1039,97 @@ class MountTargetLdapIdmapArgs:
 
 
 if not MYPY:
+    class MountTargetLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    MountTargetLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MountTargetLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
     class OutboundConnectorEndpointArgsDict(TypedDict):
         hostname: pulumi.Input[str]
         """
@@ -799,6 +1177,279 @@ class OutboundConnectorEndpointArgs:
     @port.setter
     def port(self, value: pulumi.Input[str]):
         pulumi.set(self, "port", value)
+
+
+if not MYPY:
+    class OutboundConnectorLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    OutboundConnectorLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OutboundConnectorLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
+    class ReplicationLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    ReplicationLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ReplicationLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
+    class SnapshotLockArgsDict(TypedDict):
+        type: pulumi.Input[str]
+        """
+        Type of the lock.
+        """
+        message: NotRequired[pulumi.Input[str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[str]]
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[str]]
+        """
+        When the lock was created.
+        """
+elif False:
+    SnapshotLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:

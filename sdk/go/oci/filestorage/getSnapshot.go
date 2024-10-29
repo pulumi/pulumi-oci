@@ -71,9 +71,12 @@ type LookupSnapshotResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
 	Id string `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource bool `pulumi:"isCloneSource"`
+	IsCloneSource  bool `pulumi:"isCloneSource"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetSnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable.
 	Name string `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -171,9 +174,18 @@ func (o LookupSnapshotResultOutput) IsCloneSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) bool { return v.IsCloneSource }).(pulumi.BoolOutput)
 }
 
+func (o LookupSnapshotResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current `lifecycleState`.
 func (o LookupSnapshotResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupSnapshotResultOutput) Locks() GetSnapshotLockArrayOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) []GetSnapshotLock { return v.Locks }).(GetSnapshotLockArrayOutput)
 }
 
 // Name of the snapshot. This value is immutable.

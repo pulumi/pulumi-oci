@@ -123,6 +123,10 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      */
     public readonly reservedIps!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[]>;
     /**
+     * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the network load balancer.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -178,6 +182,7 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
             resourceInputs["nlbIpVersion"] = state ? state.nlbIpVersion : undefined;
             resourceInputs["reservedIps"] = state ? state.reservedIps : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["subnetIpv6cidr"] = state ? state.subnetIpv6cidr : undefined;
@@ -207,6 +212,7 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
             resourceInputs["nlbIpVersion"] = args ? args.nlbIpVersion : undefined;
             resourceInputs["reservedIps"] = args ? args.reservedIps : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["subnetIpv6cidr"] = args ? args.subnetIpv6cidr : undefined;
             resourceInputs["ipAddresses"] = undefined /*out*/;
@@ -300,6 +306,10 @@ export interface NetworkLoadBalancerState {
      * An array of reserved Ips.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
+    /**
+     * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the network load balancer.
      */
@@ -401,6 +411,10 @@ export interface NetworkLoadBalancerArgs {
      * An array of reserved Ips.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
+    /**
+     * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

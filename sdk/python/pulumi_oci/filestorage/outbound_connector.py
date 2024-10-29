@@ -29,6 +29,8 @@ class OutboundConnectorArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  password_secret_version: Optional[pulumi.Input[int]] = None):
         """
@@ -41,6 +43,7 @@ class OutboundConnectorArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
@@ -59,6 +62,10 @@ class OutboundConnectorArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if password_secret_version is not None:
@@ -161,6 +168,27 @@ class OutboundConnectorArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -200,6 +228,8 @@ class _OutboundConnectorState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  password_secret_version: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -214,6 +244,7 @@ class _OutboundConnectorState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
@@ -239,6 +270,10 @@ class _OutboundConnectorState:
             pulumi.set(__self__, "endpoints", endpoints)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if password_secret_version is not None:
@@ -345,6 +380,27 @@ class _OutboundConnectorState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -410,6 +466,8 @@ class OutboundConnector(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  password_secret_version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -459,6 +517,12 @@ class OutboundConnector(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": outbound_connector_locks_type,
+                "message": outbound_connector_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": outbound_connector_locks_time_created,
+            }],
             password_secret_id=test_secret["id"],
             password_secret_version=outbound_connector_password_secret_version)
         ```
@@ -481,6 +545,7 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
@@ -540,6 +605,12 @@ class OutboundConnector(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": outbound_connector_locks_type,
+                "message": outbound_connector_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": outbound_connector_locks_time_created,
+            }],
             password_secret_id=test_secret["id"],
             password_secret_version=outbound_connector_password_secret_version)
         ```
@@ -575,6 +646,8 @@ class OutboundConnector(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
                  password_secret_id: Optional[pulumi.Input[str]] = None,
                  password_secret_version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -604,6 +677,8 @@ class OutboundConnector(pulumi.CustomResource):
                 raise TypeError("Missing required property 'endpoints'")
             __props__.__dict__["endpoints"] = endpoints
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["password_secret_id"] = password_secret_id
             __props__.__dict__["password_secret_version"] = password_secret_version
             __props__.__dict__["state"] = None
@@ -626,6 +701,8 @@ class OutboundConnector(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
             password_secret_id: Optional[pulumi.Input[str]] = None,
             password_secret_version: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -645,6 +722,7 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[int] password_secret_version: Version of the password secret in the Vault to use.
                
@@ -666,6 +744,8 @@ class OutboundConnector(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["endpoints"] = endpoints
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["password_secret_id"] = password_secret_id
         __props__.__dict__["password_secret_version"] = password_secret_version
         __props__.__dict__["state"] = state
@@ -735,6 +815,19 @@ class OutboundConnector(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.OutboundConnectorLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="passwordSecretId")

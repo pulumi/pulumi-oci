@@ -16676,6 +16676,21 @@ export namespace Core {
         cidrBlock: pulumi.Input<string>;
     }
 
+    export interface VirtualCircuitVirtualCircuitRedundancyMetadata {
+        /**
+         * The configured redundancy level of the virtual circuit
+         */
+        configuredRedundancyLevel?: pulumi.Input<string>;
+        /**
+         * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         */
+        ipv4bgpSessionRedundancyStatus?: pulumi.Input<string>;
+        /**
+         * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         */
+        ipv6bgpSessionRedundancyStatus?: pulumi.Input<string>;
+    }
+
     export interface VirtualNetworkByoipv6cidrDetail {
         byoipv6rangeId: pulumi.Input<string>;
         ipv6cidrBlock: pulumi.Input<string>;
@@ -23077,6 +23092,36 @@ export namespace DataScience {
         logId?: pulumi.Input<string>;
     }
 
+    export interface ModelBackupOperationDetail {
+        /**
+         * The backup status of the model.
+         */
+        backupState?: pulumi.Input<string>;
+        /**
+         * The backup execution status details of the model.
+         */
+        backupStateDetails?: pulumi.Input<string>;
+        /**
+         * The last backup execution time of the model.
+         */
+        timeLastBackup?: pulumi.Input<string>;
+    }
+
+    export interface ModelBackupSetting {
+        /**
+         * (Updatable) Oracle Cloud Infrastructure backup region for the model.
+         */
+        backupRegion: pulumi.Input<string>;
+        /**
+         * (Updatable) Customer notification on backup success/failure events.
+         */
+        customerNotificationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Boolean flag representing whether backup needs to be enabled/disabled for the model.
+         */
+        isBackupEnabled: pulumi.Input<boolean>;
+    }
+
     export interface ModelCustomMetadataList {
         /**
          * (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
@@ -23411,6 +23456,48 @@ export namespace DataScience {
          * The infrastructure type of the model deployment.
          */
         systemInfraType?: pulumi.Input<string>;
+    }
+
+    export interface ModelRetentionOperationDetail {
+        /**
+         * The archival status of model.
+         */
+        archiveState?: pulumi.Input<string>;
+        /**
+         * The archival state details of the model.
+         */
+        archiveStateDetails?: pulumi.Input<string>;
+        /**
+         * The deletion status of the archived model.
+         */
+        deleteState?: pulumi.Input<string>;
+        /**
+         * The deletion status details of the archived model.
+         */
+        deleteStateDetails?: pulumi.Input<string>;
+        /**
+         * The estimated archival time of the model based on the provided retention setting.
+         */
+        timeArchivalScheduled?: pulumi.Input<string>;
+        /**
+         * The estimated deletion time of the model based on the provided retention setting.
+         */
+        timeDeletionScheduled?: pulumi.Input<string>;
+    }
+
+    export interface ModelRetentionSetting {
+        /**
+         * (Updatable) Number of days after which the model will be archived.
+         */
+        archiveAfterDays: pulumi.Input<number>;
+        /**
+         * (Updatable) Customer notification options on success/failure of archival, deletion events.
+         */
+        customerNotificationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Number of days after which the archived model will be deleted.
+         */
+        deleteAfterDays?: pulumi.Input<number>;
     }
 
     export interface NotebookSessionNotebookSessionConfigDetails {
@@ -24315,6 +24402,135 @@ export namespace Database {
          * (Updatable) Name of database tool.
          */
         name: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseEncryptionKey {
+        /**
+         * (Updatable) AWS ARN role
+         */
+        arnRole?: pulumi.Input<string>;
+        /**
+         * (Updatable) The provider for the Autonomous Database encryption key.
+         */
+        autonomousDatabaseProvider?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV certificate directory name
+         */
+        certificateDirectoryName?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV certificate id
+         */
+        certificateId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV wallet directory name
+         */
+        directoryName?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS external ID
+         */
+        externalId?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS key ARN
+         */
+        keyArn?: pulumi.Input<string>;
+        /**
+         * (Updatable) Azure key name
+         */
+        keyName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) UUID of OKV KMS Key
+         */
+        okvKmsKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) URI of OKV server
+         */
+        okvUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS key service endpoint URI
+         */
+        serviceEndpointUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Azure vault URI
+         */
+        vaultUri?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseEncryptionKeyHistoryEntry {
+        /**
+         * (Updatable) Details of the Autonomous Database encryption key.
+         */
+        encryptionKeys?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey>[]>;
+        /**
+         * The date and time the kms key activated.
+         */
+        timeActivated?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey {
+        /**
+         * (Updatable) AWS ARN role
+         */
+        arnRole?: pulumi.Input<string>;
+        /**
+         * (Updatable) The provider for the Autonomous Database encryption key.
+         */
+        autonomousDatabaseProvider?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV certificate directory name
+         */
+        certificateDirectoryName?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV certificate id
+         */
+        certificateId?: pulumi.Input<string>;
+        /**
+         * (Updatable) OKV wallet directory name
+         */
+        directoryName?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS external ID
+         */
+        externalId?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS key ARN
+         */
+        keyArn?: pulumi.Input<string>;
+        /**
+         * (Updatable) Azure key name
+         */
+        keyName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) UUID of OKV KMS Key
+         */
+        okvKmsKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) URI of OKV server
+         */
+        okvUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS key service endpoint URI
+         */
+        serviceEndpointUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Azure vault URI
+         */
+        vaultUri?: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseKeyHistoryEntry {
@@ -35189,6 +35405,44 @@ export namespace FileStorage {
         source: pulumi.Input<string>;
     }
 
+    export interface ExportLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface FileSystemLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface FileSystemSourceDetail {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -35198,6 +35452,25 @@ export namespace FileStorage {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         sourceSnapshotId?: pulumi.Input<string>;
+    }
+
+    export interface FilesystemSnapshotPolicyLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface FilesystemSnapshotPolicySchedule {
@@ -35411,6 +35684,25 @@ export namespace FileStorage {
         userSearchBase?: pulumi.Input<string>;
     }
 
+    export interface MountTargetLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface OutboundConnectorEndpoint {
         /**
          * Name of the DNS server.
@@ -35420,6 +35712,63 @@ export namespace FileStorage {
          * Port of the DNS server.
          */
         port: pulumi.Input<string>;
+    }
+
+    export interface OutboundConnectorLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface ReplicationLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface SnapshotLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 }
 

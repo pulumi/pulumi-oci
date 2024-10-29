@@ -25,7 +25,9 @@ class ExportArgs:
                  file_system_id: pulumi.Input[str],
                  path: pulumi.Input[str],
                  export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
-                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None):
+                 is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]] = None):
         """
         The set of arguments for constructing a Export resource.
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
@@ -51,6 +53,7 @@ class ExportArgs:
                
                The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        :param pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "export_set_id", export_set_id)
         pulumi.set(__self__, "file_system_id", file_system_id)
@@ -59,6 +62,10 @@ class ExportArgs:
             pulumi.set(__self__, "export_options", export_options)
         if is_idmap_groups_for_sys_auth is not None:
             pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @property
     @pulumi.getter(name="exportSetId")
@@ -138,6 +145,27 @@ class ExportArgs:
     def is_idmap_groups_for_sys_auth(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_idmap_groups_for_sys_auth", value)
 
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
 
 @pulumi.input_type
 class _ExportState:
@@ -146,6 +174,8 @@ class _ExportState:
                  export_set_id: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
@@ -165,6 +195,7 @@ class _ExportState:
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        :param pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] path: Path used to access the associated file system.
                
                Avoid entering confidential information.
@@ -185,6 +216,10 @@ class _ExportState:
             pulumi.set(__self__, "file_system_id", file_system_id)
         if is_idmap_groups_for_sys_auth is not None:
             pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if path is not None:
             pulumi.set(__self__, "path", path)
         if state is not None:
@@ -251,6 +286,27 @@ class _ExportState:
         pulumi.set(self, "is_idmap_groups_for_sys_auth", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
         """
@@ -304,6 +360,8 @@ class Export(pulumi.CustomResource):
                  export_set_id: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -332,7 +390,13 @@ class Export(pulumi.CustomResource):
                 "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
                 "require_privileged_source_port": export_export_options_require_privileged_source_port,
             }],
-            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth,
+            locks=[{
+                "type": export_locks_type,
+                "message": export_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": export_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -359,6 +423,7 @@ class Export(pulumi.CustomResource):
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] path: Path used to access the associated file system.
                
                Avoid entering confidential information.
@@ -401,7 +466,13 @@ class Export(pulumi.CustomResource):
                 "is_anonymous_access_allowed": export_export_options_is_anonymous_access_allowed,
                 "require_privileged_source_port": export_export_options_require_privileged_source_port,
             }],
-            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth,
+            locks=[{
+                "type": export_locks_type,
+                "message": export_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": export_locks_time_created,
+            }])
         ```
 
         ## Import
@@ -431,6 +502,8 @@ class Export(pulumi.CustomResource):
                  export_set_id: Optional[pulumi.Input[str]] = None,
                  file_system_id: Optional[pulumi.Input[str]] = None,
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -449,6 +522,8 @@ class Export(pulumi.CustomResource):
                 raise TypeError("Missing required property 'file_system_id'")
             __props__.__dict__["file_system_id"] = file_system_id
             __props__.__dict__["is_idmap_groups_for_sys_auth"] = is_idmap_groups_for_sys_auth
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             if path is None and not opts.urn:
                 raise TypeError("Missing required property 'path'")
             __props__.__dict__["path"] = path
@@ -468,6 +543,8 @@ class Export(pulumi.CustomResource):
             export_set_id: Optional[pulumi.Input[str]] = None,
             file_system_id: Optional[pulumi.Input[str]] = None,
             is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]]] = None,
             path: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'Export':
@@ -492,6 +569,7 @@ class Export(pulumi.CustomResource):
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] path: Path used to access the associated file system.
                
                Avoid entering confidential information.
@@ -512,6 +590,8 @@ class Export(pulumi.CustomResource):
         __props__.__dict__["export_set_id"] = export_set_id
         __props__.__dict__["file_system_id"] = file_system_id
         __props__.__dict__["is_idmap_groups_for_sys_auth"] = is_idmap_groups_for_sys_auth
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["path"] = path
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -558,6 +638,19 @@ class Export(pulumi.CustomResource):
         (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.ExportLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter

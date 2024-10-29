@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.ExportExportOptionArgs;
+import com.pulumi.oci.FileStorage.inputs.ExportLockArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -99,6 +100,28 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isIdmapGroupsForSysAuth);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<ExportLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<ExportLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * Path used to access the associated file system.
      * 
@@ -135,6 +158,8 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
         this.exportSetId = $.exportSetId;
         this.fileSystemId = $.fileSystemId;
         this.isIdmapGroupsForSysAuth = $.isIdmapGroupsForSysAuth;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.path = $.path;
     }
 
@@ -278,6 +303,46 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
             return isIdmapGroupsForSysAuth(Output.of(isIdmapGroupsForSysAuth));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<ExportLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<ExportLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(ExportLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

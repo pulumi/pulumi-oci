@@ -269,6 +269,21 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;oracle-zpr&#34;: {&#34;td&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;oracle-zpr&#34;: {&#34;td&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The current state of the network load balancer.
      * 
      */
@@ -381,6 +396,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.nlbIpVersion = $.nlbIpVersion;
         this.reservedIps = $.reservedIps;
+        this.securityAttributes = $.securityAttributes;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.subnetIpv6cidr = $.subnetIpv6cidr;
@@ -775,6 +791,27 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
          */
         public Builder reservedIps(NetworkLoadBalancerReservedIpArgs... reservedIps) {
             return reservedIps(List.of(reservedIps));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;oracle-zpr&#34;: {&#34;td&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;oracle-zpr&#34;: {&#34;td&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

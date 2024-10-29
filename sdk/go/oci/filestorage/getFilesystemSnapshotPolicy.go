@@ -70,7 +70,10 @@ type LookupFilesystemSnapshotPolicyResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetFilesystemSnapshotPolicyLock `pulumi:"locks"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
 	PolicyPrefix string `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -157,6 +160,15 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) FreeformTags() pulumi.String
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
 func (o LookupFilesystemSnapshotPolicyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupFilesystemSnapshotPolicyResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupFilesystemSnapshotPolicyResultOutput) Locks() GetFilesystemSnapshotPolicyLockArrayOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) []GetFilesystemSnapshotPolicyLock { return v.Locks }).(GetFilesystemSnapshotPolicyLockArrayOutput)
 }
 
 // The prefix to apply to all snapshots created by this policy.  Example: `acme`

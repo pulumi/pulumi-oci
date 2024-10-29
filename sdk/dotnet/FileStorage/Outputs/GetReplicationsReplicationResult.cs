@@ -45,6 +45,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         /// </summary>
@@ -53,6 +54,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicationsReplicationLockResult> Locks;
         /// <summary>
         /// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         /// </summary>
@@ -100,9 +105,13 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string id,
 
+            bool isLockOverride,
+
             string lastSnapshotId,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetReplicationsReplicationLockResult> locks,
 
             string recoveryPointTime,
 
@@ -126,8 +135,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LastSnapshotId = lastSnapshotId;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             RecoveryPointTime = recoveryPointTime;
             ReplicationInterval = replicationInterval;
             ReplicationTargetId = replicationTargetId;

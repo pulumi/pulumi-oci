@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,10 +71,15 @@ export interface GetSnapshotResult {
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     readonly isCloneSource: boolean;
+    readonly isLockOverride: boolean;
     /**
      * Additional information about the current `lifecycleState`.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.FileStorage.GetSnapshotLock[];
     /**
      * Name of the snapshot. This value is immutable.
      */

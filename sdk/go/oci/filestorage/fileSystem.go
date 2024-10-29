@@ -70,7 +70,15 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				KmsKeyId:         pulumi.Any(testKey.Id),
+//				KmsKeyId: pulumi.Any(testKey.Id),
+//				Locks: filestorage.FileSystemLockArray{
+//					&filestorage.FileSystemLockArgs{
+//						Type:              pulumi.Any(fileSystemLocksType),
+//						Message:           pulumi.Any(fileSystemLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(fileSystemLocksTimeCreated),
+//					},
+//				},
 //				SourceSnapshotId: pulumi.Any(testSnapshot.Id),
 //			})
 //			if err != nil {
@@ -118,13 +126,16 @@ type FileSystem struct {
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent pulumi.BoolOutput `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
+	IsHydrated     pulumi.BoolOutput `pulumi:"isHydrated"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable pulumi.BoolOutput `pulumi:"isTargetable"`
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks FileSystemLockArrayOutput `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringOutput `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -201,13 +212,16 @@ type fileSystemState struct {
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent *bool `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated *bool `pulumi:"isHydrated"`
+	IsHydrated     *bool `pulumi:"isHydrated"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable *bool `pulumi:"isTargetable"`
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []FileSystemLock `pulumi:"locks"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes *string `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -249,13 +263,16 @@ type FileSystemState struct {
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent pulumi.BoolPtrInput
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated pulumi.BoolPtrInput
+	IsHydrated     pulumi.BoolPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 	IsTargetable pulumi.BoolPtrInput
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrInput
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks FileSystemLockArrayInput
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
@@ -295,9 +312,12 @@ type fileSystemArgs struct {
 	// May be unset as a blank value.
 	FilesystemSnapshotPolicyId *string `pulumi:"filesystemSnapshotPolicyId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
+	// Locks associated with this resource.
+	Locks []FileSystemLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
@@ -324,9 +344,12 @@ type FileSystemArgs struct {
 	// May be unset as a blank value.
 	FilesystemSnapshotPolicyId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks FileSystemLockArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId pulumi.StringPtrInput
 }
@@ -478,6 +501,10 @@ func (o FileSystemOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
 }
 
+func (o FileSystemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
 func (o FileSystemOutput) IsTargetable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsTargetable }).(pulumi.BoolOutput)
@@ -491,6 +518,11 @@ func (o FileSystemOutput) KmsKeyId() pulumi.StringPtrOutput {
 // Additional information about the current 'lifecycleState'.
 func (o FileSystemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o FileSystemOutput) Locks() FileSystemLockArrayOutput {
+	return o.ApplyT(func(v *FileSystem) FileSystemLockArrayOutput { return v.Locks }).(FileSystemLockArrayOutput)
 }
 
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).

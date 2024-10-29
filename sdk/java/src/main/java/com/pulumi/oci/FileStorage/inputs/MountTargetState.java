@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FileStorage.inputs.MountTargetKerberosArgs;
 import com.pulumi.oci.FileStorage.inputs.MountTargetLdapIdmapArgs;
+import com.pulumi.oci.FileStorage.inputs.MountTargetLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -167,6 +169,21 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether to override locks (if any exist).
+     * 
+     */
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    /**
+     * @return (Updatable) Whether to override locks (if any exist).
+     * 
+     */
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    /**
      * (Updatable) Kerberos details needed to create configuration.
      * 
      */
@@ -209,6 +226,21 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<MountTargetLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<MountTargetLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -364,9 +396,11 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         this.hostnameLabel = $.hostnameLabel;
         this.idmapType = $.idmapType;
         this.ipAddress = $.ipAddress;
+        this.isLockOverride = $.isLockOverride;
         this.kerberos = $.kerberos;
         this.ldapIdmap = $.ldapIdmap;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.nsgIds = $.nsgIds;
         this.observedThroughput = $.observedThroughput;
         this.privateIpIds = $.privateIpIds;
@@ -598,6 +632,27 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isLockOverride (Updatable) Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
+         * @param isLockOverride (Updatable) Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        /**
          * @param kerberos (Updatable) Kerberos details needed to create configuration.
          * 
          * @return builder
@@ -658,6 +713,37 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<MountTargetLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<MountTargetLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(MountTargetLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

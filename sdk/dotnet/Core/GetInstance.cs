@@ -236,7 +236,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>

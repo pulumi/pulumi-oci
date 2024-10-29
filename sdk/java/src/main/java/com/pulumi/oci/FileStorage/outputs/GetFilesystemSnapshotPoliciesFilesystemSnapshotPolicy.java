@@ -5,7 +5,9 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock;
 import com.pulumi.oci.FileStorage.outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +45,12 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock> locks;
     /**
      * @return The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
@@ -107,6 +115,16 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock> locks() {
+        return this.locks;
+    }
     /**
      * @return The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
@@ -151,6 +169,8 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock> locks;
         private String policyPrefix;
         private List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule> schedules;
         private String state;
@@ -164,6 +184,8 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.policyPrefix = defaults.policyPrefix;
     	      this.schedules = defaults.schedules;
     	      this.state = defaults.state;
@@ -219,6 +241,25 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder policyPrefix(String policyPrefix) {
             if (policyPrefix == null) {
               throw new MissingRequiredPropertyException("GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy", "policyPrefix");
@@ -261,6 +302,8 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.policyPrefix = policyPrefix;
             _resultValue.schedules = schedules;
             _resultValue.state = state;

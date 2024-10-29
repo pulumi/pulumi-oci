@@ -73,11 +73,14 @@ type LookupReplicationResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 	LastSnapshotId string `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetReplicationLock `pulumi:"locks"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
 	RecoveryPointTime string `pulumi:"recoveryPointTime"`
 	ReplicationId     string `pulumi:"replicationId"`
@@ -179,6 +182,10 @@ func (o LookupReplicationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupReplicationResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupReplicationResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
 func (o LookupReplicationResultOutput) LastSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicationResult) string { return v.LastSnapshotId }).(pulumi.StringOutput)
@@ -187,6 +194,11 @@ func (o LookupReplicationResultOutput) LastSnapshotId() pulumi.StringOutput {
 // Additional information about the current 'lifecycleState'.
 func (o LookupReplicationResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupReplicationResultOutput) Locks() GetReplicationLockArrayOutput {
+	return o.ApplyT(func(v LookupReplicationResult) []GetReplicationLock { return v.Locks }).(GetReplicationLockArrayOutput)
 }
 
 // The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`

@@ -5,8 +5,12 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.outputs.GetModelsModelBackupOperationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelsModelBackupSetting;
 import com.pulumi.oci.DataScience.outputs.GetModelsModelCustomMetadataList;
 import com.pulumi.oci.DataScience.outputs.GetModelsModelDefinedMetadataList;
+import com.pulumi.oci.DataScience.outputs.GetModelsModelRetentionOperationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelsModelRetentionSetting;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +23,16 @@ public final class GetModelsModel {
     private String artifactContentLength;
     private String artifactContentMd5;
     private String artifactLastModified;
+    /**
+     * @return Backup operation details of the model.
+     * 
+     */
+    private List<GetModelsModelBackupOperationDetail> backupOperationDetails;
+    /**
+     * @return Back up setting details of the model.
+     * 
+     */
+    private List<GetModelsModelBackupSetting> backupSettings;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -70,7 +84,17 @@ public final class GetModelsModel {
      * 
      */
     private String inputSchema;
+    /**
+     * @return Details about the lifecycle state of the model.
+     * 
+     */
+    private String lifecycleDetails;
     private String modelArtifact;
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
+    private String modelVersionSetName;
     /**
      * @return Output schema file content in String format
      * 
@@ -81,6 +105,16 @@ public final class GetModelsModel {
      * 
      */
     private String projectId;
+    /**
+     * @return Retention operation details for the model.
+     * 
+     */
+    private List<GetModelsModelRetentionOperationDetail> retentionOperationDetails;
+    /**
+     * @return Retention setting details of the model.
+     * 
+     */
+    private List<GetModelsModelRetentionSetting> retentionSettings;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
@@ -104,6 +138,20 @@ public final class GetModelsModel {
     }
     public String artifactLastModified() {
         return this.artifactLastModified;
+    }
+    /**
+     * @return Backup operation details of the model.
+     * 
+     */
+    public List<GetModelsModelBackupOperationDetail> backupOperationDetails() {
+        return this.backupOperationDetails;
+    }
+    /**
+     * @return Back up setting details of the model.
+     * 
+     */
+    public List<GetModelsModelBackupSetting> backupSettings() {
+        return this.backupSettings;
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -178,8 +226,22 @@ public final class GetModelsModel {
     public String inputSchema() {
         return this.inputSchema;
     }
+    /**
+     * @return Details about the lifecycle state of the model.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
     public String modelArtifact() {
         return this.modelArtifact;
+    }
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
+    public String modelVersionSetName() {
+        return this.modelVersionSetName;
     }
     /**
      * @return Output schema file content in String format
@@ -194,6 +256,20 @@ public final class GetModelsModel {
      */
     public String projectId() {
         return this.projectId;
+    }
+    /**
+     * @return Retention operation details for the model.
+     * 
+     */
+    public List<GetModelsModelRetentionOperationDetail> retentionOperationDetails() {
+        return this.retentionOperationDetails;
+    }
+    /**
+     * @return Retention setting details of the model.
+     * 
+     */
+    public List<GetModelsModelRetentionSetting> retentionSettings() {
+        return this.retentionSettings;
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -223,6 +299,8 @@ public final class GetModelsModel {
         private String artifactContentLength;
         private String artifactContentMd5;
         private String artifactLastModified;
+        private List<GetModelsModelBackupOperationDetail> backupOperationDetails;
+        private List<GetModelsModelBackupSetting> backupSettings;
         private String compartmentId;
         private String createdBy;
         private List<GetModelsModelCustomMetadataList> customMetadataLists;
@@ -234,9 +312,13 @@ public final class GetModelsModel {
         private Map<String,String> freeformTags;
         private String id;
         private String inputSchema;
+        private String lifecycleDetails;
         private String modelArtifact;
+        private String modelVersionSetName;
         private String outputSchema;
         private String projectId;
+        private List<GetModelsModelRetentionOperationDetail> retentionOperationDetails;
+        private List<GetModelsModelRetentionSetting> retentionSettings;
         private String state;
         private String timeCreated;
         public Builder() {}
@@ -246,6 +328,8 @@ public final class GetModelsModel {
     	      this.artifactContentLength = defaults.artifactContentLength;
     	      this.artifactContentMd5 = defaults.artifactContentMd5;
     	      this.artifactLastModified = defaults.artifactLastModified;
+    	      this.backupOperationDetails = defaults.backupOperationDetails;
+    	      this.backupSettings = defaults.backupSettings;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.customMetadataLists = defaults.customMetadataLists;
@@ -257,9 +341,13 @@ public final class GetModelsModel {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inputSchema = defaults.inputSchema;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelArtifact = defaults.modelArtifact;
+    	      this.modelVersionSetName = defaults.modelVersionSetName;
     	      this.outputSchema = defaults.outputSchema;
     	      this.projectId = defaults.projectId;
+    	      this.retentionOperationDetails = defaults.retentionOperationDetails;
+    	      this.retentionSettings = defaults.retentionSettings;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -295,6 +383,28 @@ public final class GetModelsModel {
             }
             this.artifactLastModified = artifactLastModified;
             return this;
+        }
+        @CustomType.Setter
+        public Builder backupOperationDetails(List<GetModelsModelBackupOperationDetail> backupOperationDetails) {
+            if (backupOperationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "backupOperationDetails");
+            }
+            this.backupOperationDetails = backupOperationDetails;
+            return this;
+        }
+        public Builder backupOperationDetails(GetModelsModelBackupOperationDetail... backupOperationDetails) {
+            return backupOperationDetails(List.of(backupOperationDetails));
+        }
+        @CustomType.Setter
+        public Builder backupSettings(List<GetModelsModelBackupSetting> backupSettings) {
+            if (backupSettings == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "backupSettings");
+            }
+            this.backupSettings = backupSettings;
+            return this;
+        }
+        public Builder backupSettings(GetModelsModelBackupSetting... backupSettings) {
+            return backupSettings(List.of(backupSettings));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -391,11 +501,27 @@ public final class GetModelsModel {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder modelArtifact(String modelArtifact) {
             if (modelArtifact == null) {
               throw new MissingRequiredPropertyException("GetModelsModel", "modelArtifact");
             }
             this.modelArtifact = modelArtifact;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            if (modelVersionSetName == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "modelVersionSetName");
+            }
+            this.modelVersionSetName = modelVersionSetName;
             return this;
         }
         @CustomType.Setter
@@ -413,6 +539,28 @@ public final class GetModelsModel {
             }
             this.projectId = projectId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder retentionOperationDetails(List<GetModelsModelRetentionOperationDetail> retentionOperationDetails) {
+            if (retentionOperationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "retentionOperationDetails");
+            }
+            this.retentionOperationDetails = retentionOperationDetails;
+            return this;
+        }
+        public Builder retentionOperationDetails(GetModelsModelRetentionOperationDetail... retentionOperationDetails) {
+            return retentionOperationDetails(List.of(retentionOperationDetails));
+        }
+        @CustomType.Setter
+        public Builder retentionSettings(List<GetModelsModelRetentionSetting> retentionSettings) {
+            if (retentionSettings == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "retentionSettings");
+            }
+            this.retentionSettings = retentionSettings;
+            return this;
+        }
+        public Builder retentionSettings(GetModelsModelRetentionSetting... retentionSettings) {
+            return retentionSettings(List.of(retentionSettings));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -436,6 +584,8 @@ public final class GetModelsModel {
             _resultValue.artifactContentLength = artifactContentLength;
             _resultValue.artifactContentMd5 = artifactContentMd5;
             _resultValue.artifactLastModified = artifactLastModified;
+            _resultValue.backupOperationDetails = backupOperationDetails;
+            _resultValue.backupSettings = backupSettings;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.customMetadataLists = customMetadataLists;
@@ -447,9 +597,13 @@ public final class GetModelsModel {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.inputSchema = inputSchema;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelArtifact = modelArtifact;
+            _resultValue.modelVersionSetName = modelVersionSetName;
             _resultValue.outputSchema = outputSchema;
             _resultValue.projectId = projectId;
+            _resultValue.retentionOperationDetails = retentionOperationDetails;
+            _resultValue.retentionSettings = retentionSettings;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

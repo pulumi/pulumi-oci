@@ -41,6 +41,16 @@ namespace Pulumi.Oci.FileStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.FilesystemSnapshotPolicyLockArgs
+    ///             {
+    ///                 Type = filesystemSnapshotPolicyLocksType,
+    ///                 Message = filesystemSnapshotPolicyLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = filesystemSnapshotPolicyLocksTimeCreated,
+    ///             },
+    ///         },
     ///         PolicyPrefix = filesystemSnapshotPolicyPolicyPrefix,
     ///         Schedules = new[]
     ///         {
@@ -102,6 +112,15 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.FilesystemSnapshotPolicyLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
@@ -221,6 +240,21 @@ namespace Pulumi.Oci.FileStorage
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.FilesystemSnapshotPolicyLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.FilesystemSnapshotPolicyLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.FilesystemSnapshotPolicyLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
         /// </summary>
@@ -299,6 +333,21 @@ namespace Pulumi.Oci.FileStorage
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
+        }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.FilesystemSnapshotPolicyLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.FilesystemSnapshotPolicyLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.FilesystemSnapshotPolicyLockGetArgs>());
+            set => _locks = value;
         }
 
         /// <summary>

@@ -47,6 +47,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string IdmapType;
         public readonly string IpAddress;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
         /// </summary>
@@ -59,6 +60,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> Locks;
         /// <summary>
         /// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         /// </summary>
@@ -118,11 +123,15 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string ipAddress,
 
+            bool isLockOverride,
+
             ImmutableArray<Outputs.GetMountTargetsMountTargetKerberoResult> kerberos,
 
             ImmutableArray<Outputs.GetMountTargetsMountTargetLdapIdmapResult> ldapIdmaps,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> locks,
 
             ImmutableArray<string> nsgIds,
 
@@ -152,9 +161,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
             Id = id;
             IdmapType = idmapType;
             IpAddress = ipAddress;
+            IsLockOverride = isLockOverride;
             Kerberos = kerberos;
             LdapIdmaps = ldapIdmaps;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             NsgIds = nsgIds;
             ObservedThroughput = observedThroughput;
             PrivateIpIds = privateIpIds;

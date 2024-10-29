@@ -2188,6 +2188,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
                  network_security_group_ids: Sequence[str],
                  nlb_ip_version: str,
                  reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult'],
+                 security_attributes: Mapping[str, str],
                  state: str,
                  subnet_id: str,
                  subnet_ipv6cidr: str,
@@ -2206,6 +2207,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[str] network_security_group_ids: An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
         :param str nlb_ip_version: IP version associated with the NLB.
+        :param Mapping[str, str] security_attributes: ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
         :param str state: A filter to return only resources that match the given lifecycle state.
         :param str subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         :param Mapping[str, str] system_tags: Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
@@ -2227,6 +2229,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
         pulumi.set(__self__, "reserved_ips", reserved_ips)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
@@ -2341,6 +2344,14 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult']:
         return pulumi.get(self, "reserved_ips")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

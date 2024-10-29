@@ -13,6 +13,143 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstancePoolPlacementConfiguration struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domains to place instances.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId string `pulumi:"primarySubnetId"`
+	// Details about the IPv6 primary subnet.
+	PrimaryVnicSubnets []GetInstancePoolPlacementConfigurationPrimaryVnicSubnet `pulumi:"primaryVnicSubnets"`
+	// The set of secondary VNIC data for instances in the pool.
+	SecondaryVnicSubnets []GetInstancePoolPlacementConfigurationSecondaryVnicSubnet `pulumi:"secondaryVnicSubnets"`
+}
+
+// GetInstancePoolPlacementConfigurationInput is an input type that accepts GetInstancePoolPlacementConfigurationArgs and GetInstancePoolPlacementConfigurationOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationInput` via:
+//
+//	GetInstancePoolPlacementConfigurationArgs{...}
+type GetInstancePoolPlacementConfigurationInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationOutput() GetInstancePoolPlacementConfigurationOutput
+	ToGetInstancePoolPlacementConfigurationOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationOutput
+}
+
+type GetInstancePoolPlacementConfigurationArgs struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domains to place instances.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId pulumi.StringInput `pulumi:"primarySubnetId"`
+	// Details about the IPv6 primary subnet.
+	PrimaryVnicSubnets GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput `pulumi:"primaryVnicSubnets"`
+	// The set of secondary VNIC data for instances in the pool.
+	SecondaryVnicSubnets GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput `pulumi:"secondaryVnicSubnets"`
+}
+
+func (GetInstancePoolPlacementConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationArgs) ToGetInstancePoolPlacementConfigurationOutput() GetInstancePoolPlacementConfigurationOutput {
+	return i.ToGetInstancePoolPlacementConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationArgs) ToGetInstancePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationOutput)
+}
+
+// GetInstancePoolPlacementConfigurationArrayInput is an input type that accepts GetInstancePoolPlacementConfigurationArray and GetInstancePoolPlacementConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolPlacementConfigurationArrayInput` via:
+//
+//	GetInstancePoolPlacementConfigurationArray{ GetInstancePoolPlacementConfigurationArgs{...} }
+type GetInstancePoolPlacementConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolPlacementConfigurationArrayOutput
+	ToGetInstancePoolPlacementConfigurationArrayOutputWithContext(context.Context) GetInstancePoolPlacementConfigurationArrayOutput
+}
+
+type GetInstancePoolPlacementConfigurationArray []GetInstancePoolPlacementConfigurationInput
+
+func (GetInstancePoolPlacementConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetInstancePoolPlacementConfigurationArray) ToGetInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolPlacementConfigurationArrayOutput {
+	return i.ToGetInstancePoolPlacementConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolPlacementConfigurationArray) ToGetInstancePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolPlacementConfigurationArrayOutput)
+}
+
+type GetInstancePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationOutput) ToGetInstancePoolPlacementConfigurationOutput() GetInstancePoolPlacementConfigurationOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationOutput) ToGetInstancePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationOutput {
+	return o
+}
+
+// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+func (o GetInstancePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domains to place instances.
+func (o GetInstancePoolPlacementConfigurationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+func (o GetInstancePoolPlacementConfigurationOutput) PrimarySubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) string { return v.PrimarySubnetId }).(pulumi.StringOutput)
+}
+
+// Details about the IPv6 primary subnet.
+func (o GetInstancePoolPlacementConfigurationOutput) PrimaryVnicSubnets() GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) []GetInstancePoolPlacementConfigurationPrimaryVnicSubnet {
+		return v.PrimaryVnicSubnets
+	}).(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput)
+}
+
+// The set of secondary VNIC data for instances in the pool.
+func (o GetInstancePoolPlacementConfigurationOutput) SecondaryVnicSubnets() GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) []GetInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+		return v.SecondaryVnicSubnets
+	}).(GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput)
+}
+
+type GetInstancePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolPlacementConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetInstancePoolPlacementConfigurationArrayOutput) ToGetInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationArrayOutput) ToGetInstancePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetInstancePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetInstancePoolPlacementConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolPlacementConfiguration {
+		return vs[0].([]GetInstancePoolPlacementConfiguration)[vs[1].(int)]
+	}).(GetInstancePoolPlacementConfigurationOutput)
+}
+
 type GetInstancePoolPlacementConfigurationPrimaryVnicSubnet struct {
 	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
 	Ipv6addressIpv6subnetCidrPairDetails []GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
@@ -2375,7 +2512,7 @@ type GetInstancesInstance struct {
 	PublicIp                           string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region string `pulumi:"region"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The lifecycle state of the `securityAttributes`
 	SecurityAttributesState string `pulumi:"securityAttributesState"`
@@ -2479,7 +2616,7 @@ type GetInstancesInstanceArgs struct {
 	PublicIp                           pulumi.StringInput `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
 	Region pulumi.StringInput `pulumi:"region"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The lifecycle state of the `securityAttributes`
 	SecurityAttributesState pulumi.StringInput `pulumi:"securityAttributesState"`
@@ -2731,7 +2868,7 @@ func (o GetInstancesInstanceOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstance) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 func (o GetInstancesInstanceOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstancesInstance) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
@@ -3162,7 +3299,7 @@ type GetInstancesInstanceCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               []string                                                                  `pulumi:"nsgIds"`
 	PrivateIp                            string                                                                    `pulumi:"privateIp"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  map[string]string `pulumi:"securityAttributes"`
 	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
 	SubnetId            string            `pulumi:"subnetId"`
@@ -3194,7 +3331,7 @@ type GetInstancesInstanceCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               pulumi.StringArrayInput                                                           `pulumi:"nsgIds"`
 	PrivateIp                            pulumi.StringInput                                                                `pulumi:"privateIp"`
-	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  pulumi.StringMapInput `pulumi:"securityAttributes"`
 	SkipSourceDestCheck pulumi.BoolInput      `pulumi:"skipSourceDestCheck"`
 	SubnetId            pulumi.StringInput    `pulumi:"subnetId"`
@@ -3297,7 +3434,7 @@ func (o GetInstancesInstanceCreateVnicDetailOutput) PrivateIp() pulumi.StringOut
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 func (o GetInstancesInstanceCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
@@ -22940,6 +23077,125 @@ func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) In
 	}).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput)
 }
 
+type GetVirtualCircuitVirtualCircuitRedundancyMetadata struct {
+	// The configured redundancy level of the virtual circuit
+	ConfiguredRedundancyLevel string `pulumi:"configuredRedundancyLevel"`
+	// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv4bgpSessionRedundancyStatus string `pulumi:"ipv4bgpSessionRedundancyStatus"`
+	// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv6bgpSessionRedundancyStatus string `pulumi:"ipv6bgpSessionRedundancyStatus"`
+}
+
+// GetVirtualCircuitVirtualCircuitRedundancyMetadataInput is an input type that accepts GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs and GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitVirtualCircuitRedundancyMetadataInput` via:
+//
+//	GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs{...}
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput
+	ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput
+}
+
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs struct {
+	// The configured redundancy level of the virtual circuit
+	ConfiguredRedundancyLevel pulumi.StringInput `pulumi:"configuredRedundancyLevel"`
+	// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv4bgpSessionRedundancyStatus pulumi.StringInput `pulumi:"ipv4bgpSessionRedundancyStatus"`
+	// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv6bgpSessionRedundancyStatus pulumi.StringInput `pulumi:"ipv6bgpSessionRedundancyStatus"`
+}
+
+func (GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return i.ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(ctx context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput)
+}
+
+// GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput is an input type that accepts GetVirtualCircuitVirtualCircuitRedundancyMetadataArray and GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput` via:
+//
+//	GetVirtualCircuitVirtualCircuitRedundancyMetadataArray{ GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs{...} }
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput
+	ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput
+}
+
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataArray []GetVirtualCircuitVirtualCircuitRedundancyMetadataInput
+
+func (GetVirtualCircuitVirtualCircuitRedundancyMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitVirtualCircuitRedundancyMetadataArray) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return i.ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitVirtualCircuitRedundancyMetadataArray) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(ctx context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput)
+}
+
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return o
+}
+
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(ctx context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return o
+}
+
+// The configured redundancy level of the virtual circuit
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ConfiguredRedundancyLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitVirtualCircuitRedundancyMetadata) string { return v.ConfiguredRedundancyLevel }).(pulumi.StringOutput)
+}
+
+// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) Ipv4bgpSessionRedundancyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitVirtualCircuitRedundancyMetadata) string {
+		return v.Ipv4bgpSessionRedundancyStatus
+	}).(pulumi.StringOutput)
+}
+
+// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput) Ipv6bgpSessionRedundancyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitVirtualCircuitRedundancyMetadata) string {
+		return v.Ipv6bgpSessionRedundancyStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ToGetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(ctx context.Context) GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitVirtualCircuitRedundancyMetadata {
+		return vs[0].([]GetVirtualCircuitVirtualCircuitRedundancyMetadata)[vs[1].(int)]
+	}).(GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput)
+}
+
 type GetVirtualCircuitsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -23110,6 +23366,8 @@ type GetVirtualCircuitsVirtualCircuit struct {
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             string `pulumi:"type"`
 	VirtualCircuitId string `pulumi:"virtualCircuitId"`
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas []GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
 // GetVirtualCircuitsVirtualCircuitInput is an input type that accepts GetVirtualCircuitsVirtualCircuitArgs and GetVirtualCircuitsVirtualCircuitOutput values.
@@ -23187,6 +23445,8 @@ type GetVirtualCircuitsVirtualCircuitArgs struct {
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             pulumi.StringInput `pulumi:"type"`
 	VirtualCircuitId pulumi.StringInput `pulumi:"virtualCircuitId"`
+	// Redundancy level details of the virtual circuit
+	VirtualCircuitRedundancyMetadatas GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput `pulumi:"virtualCircuitRedundancyMetadatas"`
 }
 
 func (GetVirtualCircuitsVirtualCircuitArgs) ElementType() reflect.Type {
@@ -23395,6 +23655,13 @@ func (o GetVirtualCircuitsVirtualCircuitOutput) Type() pulumi.StringOutput {
 
 func (o GetVirtualCircuitsVirtualCircuitOutput) VirtualCircuitId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.VirtualCircuitId }).(pulumi.StringOutput)
+}
+
+// Redundancy level details of the virtual circuit
+func (o GetVirtualCircuitsVirtualCircuitOutput) VirtualCircuitRedundancyMetadatas() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) []GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata {
+		return v.VirtualCircuitRedundancyMetadatas
+	}).(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput)
 }
 
 type GetVirtualCircuitsVirtualCircuitArrayOutput struct{ *pulumi.OutputState }
@@ -23662,6 +23929,127 @@ func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuitPublicPrefix {
 		return vs[0].([]GetVirtualCircuitsVirtualCircuitPublicPrefix)[vs[1].(int)]
 	}).(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata struct {
+	// The configured redundancy level of the virtual circuit
+	ConfiguredRedundancyLevel string `pulumi:"configuredRedundancyLevel"`
+	// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv4bgpSessionRedundancyStatus string `pulumi:"ipv4bgpSessionRedundancyStatus"`
+	// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv6bgpSessionRedundancyStatus string `pulumi:"ipv6bgpSessionRedundancyStatus"`
+}
+
+// GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataInput is an input type that accepts GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs and GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs{...}
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput
+	ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs struct {
+	// The configured redundancy level of the virtual circuit
+	ConfiguredRedundancyLevel pulumi.StringInput `pulumi:"configuredRedundancyLevel"`
+	// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv4bgpSessionRedundancyStatus pulumi.StringInput `pulumi:"ipv4bgpSessionRedundancyStatus"`
+	// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+	Ipv6bgpSessionRedundancyStatus pulumi.StringInput `pulumi:"ipv6bgpSessionRedundancyStatus"`
+}
+
+func (GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput)
+}
+
+// GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray and GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput` via:
+//
+//	GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray{ GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs{...} }
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput
+	ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput
+}
+
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray []GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataInput
+
+func (GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (i GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return i.ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return o
+}
+
+// The configured redundancy level of the virtual circuit
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) ConfiguredRedundancyLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata) string {
+		return v.ConfiguredRedundancyLevel
+	}).(pulumi.StringOutput)
+}
+
+// IPV4 BGP redundancy status indicates if the configured redundancy level is met
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) Ipv4bgpSessionRedundancyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata) string {
+		return v.Ipv4bgpSessionRedundancyStatus
+	}).(pulumi.StringOutput)
+}
+
+// IPV6 BGP redundancy status indicates if the configured redundancy level is met
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput) Ipv6bgpSessionRedundancyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata) string {
+		return v.Ipv6bgpSessionRedundancyStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata)(nil)).Elem()
+}
+
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput() GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) ToGetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput {
+	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata {
+		return vs[0].([]GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata)[vs[1].(int)]
+	}).(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput)
 }
 
 type GetVirtualNetworksFilter struct {
@@ -29859,6 +30247,8 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
@@ -30201,6 +30591,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesFilterArrayInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput)(nil)).Elem(), GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitVirtualCircuitRedundancyMetadataInput)(nil)).Elem(), GetVirtualCircuitVirtualCircuitRedundancyMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput)(nil)).Elem(), GetVirtualCircuitVirtualCircuitRedundancyMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsFilterInput)(nil)).Elem(), GetVirtualCircuitsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsFilterArrayInput)(nil)).Elem(), GetVirtualCircuitsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitArgs{})
@@ -30209,6 +30601,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefixInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitPublicPrefixArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitPublicPrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayInput)(nil)).Elem(), GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksFilterInput)(nil)).Elem(), GetVirtualNetworksFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksFilterArrayInput)(nil)).Elem(), GetVirtualNetworksFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNetworksVirtualNetworkInput)(nil)).Elem(), GetVirtualNetworksVirtualNetworkArgs{})
@@ -30291,6 +30685,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
@@ -30633,6 +31029,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitVirtualCircuitRedundancyMetadataOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitsFilterOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitOutput{})
@@ -30641,6 +31039,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput{})
 	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataOutput{})
+	pulumi.RegisterOutputType(GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNetworksFilterOutput{})
 	pulumi.RegisterOutputType(GetVirtualNetworksFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNetworksVirtualNetworkOutput{})

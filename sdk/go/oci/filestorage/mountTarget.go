@@ -72,9 +72,10 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				HostnameLabel: pulumi.Any(mountTargetHostnameLabel),
-//				IdmapType:     pulumi.Any(mountTargetIdmapType),
-//				IpAddress:     pulumi.Any(mountTargetIpAddress),
+//				HostnameLabel:  pulumi.Any(mountTargetHostnameLabel),
+//				IdmapType:      pulumi.Any(mountTargetIdmapType),
+//				IpAddress:      pulumi.Any(mountTargetIpAddress),
+//				IsLockOverride: pulumi.Any(mountTargetIsLockOverride),
 //				Kerberos: &filestorage.MountTargetKerberosArgs{
 //					KerberosRealm:              pulumi.Any(mountTargetKerberosKerberosRealm),
 //					BackupKeyTabSecretVersion:  pulumi.Any(mountTargetKerberosBackupKeyTabSecretVersion),
@@ -91,6 +92,14 @@ import (
 //					OutboundConnector2id:         pulumi.Any(testOutboundConnector2.Id),
 //					SchemaType:                   pulumi.Any(mountTargetLdapIdmapSchemaType),
 //					UserSearchBase:               pulumi.Any(mountTargetLdapIdmapUserSearchBase),
+//				},
+//				Locks: filestorage.MountTargetLockArray{
+//					&filestorage.MountTargetLockArgs{
+//						Type:              pulumi.Any(mountTargetLocksType),
+//						Message:           pulumi.Any(mountTargetLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(mountTargetLocksTimeCreated),
+//					},
 //				},
 //				NsgIds:              pulumi.Any(mountTargetNsgIds),
 //				RequestedThroughput: pulumi.Any(mountTargetRequestedThroughput),
@@ -138,12 +147,16 @@ type MountTarget struct {
 	IdmapType pulumi.StringOutput `pulumi:"idmapType"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	// (Updatable) Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrOutput `pulumi:"kerberos"`
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap MountTargetLdapIdmapPtrOutput `pulumi:"ldapIdmap"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks MountTargetLockArrayOutput `pulumi:"locks"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -230,12 +243,16 @@ type mountTargetState struct {
 	IdmapType *string `pulumi:"idmapType"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
+	// (Updatable) Whether to override locks (if any exist).
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos *MountTargetKerberos `pulumi:"kerberos"`
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap *MountTargetLdapIdmap `pulumi:"ldapIdmap"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []MountTargetLock `pulumi:"locks"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -284,12 +301,16 @@ type MountTargetState struct {
 	IdmapType pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
+	// (Updatable) Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolPtrInput
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrInput
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap MountTargetLdapIdmapPtrInput
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks MountTargetLockArrayInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -340,10 +361,14 @@ type mountTargetArgs struct {
 	IdmapType *string `pulumi:"idmapType"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress *string `pulumi:"ipAddress"`
+	// (Updatable) Whether to override locks (if any exist).
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos *MountTargetKerberos `pulumi:"kerberos"`
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap *MountTargetLdapIdmap `pulumi:"ldapIdmap"`
+	// Locks associated with this resource.
+	Locks []MountTargetLock `pulumi:"locks"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -379,10 +404,14 @@ type MountTargetArgs struct {
 	IdmapType pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
 	IpAddress pulumi.StringPtrInput
+	// (Updatable) Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolPtrInput
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrInput
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap MountTargetLdapIdmapPtrInput
+	// Locks associated with this resource.
+	Locks MountTargetLockArrayInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -532,6 +561,11 @@ func (o MountTargetOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// (Updatable) Whether to override locks (if any exist).
+func (o MountTargetOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // (Updatable) Kerberos details needed to create configuration.
 func (o MountTargetOutput) Kerberos() MountTargetKerberosPtrOutput {
 	return o.ApplyT(func(v *MountTarget) MountTargetKerberosPtrOutput { return v.Kerberos }).(MountTargetKerberosPtrOutput)
@@ -545,6 +579,11 @@ func (o MountTargetOutput) LdapIdmap() MountTargetLdapIdmapPtrOutput {
 // Additional information about the current 'lifecycleState'.
 func (o MountTargetOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o MountTargetOutput) Locks() MountTargetLockArrayOutput {
+	return o.ApplyT(func(v *MountTarget) MountTargetLockArrayOutput { return v.Locks }).(MountTargetLockArrayOutput)
 }
 
 // (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).

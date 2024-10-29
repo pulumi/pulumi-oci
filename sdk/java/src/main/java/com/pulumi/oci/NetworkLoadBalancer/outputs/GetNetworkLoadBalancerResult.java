@@ -80,6 +80,11 @@ public final class GetNetworkLoadBalancerResult {
     private String nlbIpVersion;
     private List<GetNetworkLoadBalancerReservedIp> reservedIps;
     /**
+     * @return ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ &#34;oracle-zpr&#34;: { &#34;td&#34;: { &#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34; } } }`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The current state of the network load balancer.
      * 
      */
@@ -204,6 +209,13 @@ public final class GetNetworkLoadBalancerResult {
         return this.reservedIps;
     }
     /**
+     * @return ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{ &#34;oracle-zpr&#34;: { &#34;td&#34;: { &#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34; } } }`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The current state of the network load balancer.
      * 
      */
@@ -267,6 +279,7 @@ public final class GetNetworkLoadBalancerResult {
         private List<String> networkSecurityGroupIds;
         private String nlbIpVersion;
         private List<GetNetworkLoadBalancerReservedIp> reservedIps;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private String subnetIpv6cidr;
@@ -292,6 +305,7 @@ public final class GetNetworkLoadBalancerResult {
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.nlbIpVersion = defaults.nlbIpVersion;
     	      this.reservedIps = defaults.reservedIps;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.subnetIpv6cidr = defaults.subnetIpv6cidr;
@@ -438,6 +452,14 @@ public final class GetNetworkLoadBalancerResult {
             return reservedIps(List.of(reservedIps));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "state");
@@ -503,6 +525,7 @@ public final class GetNetworkLoadBalancerResult {
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.nlbIpVersion = nlbIpVersion;
             _resultValue.reservedIps = reservedIps;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.subnetIpv6cidr = subnetIpv6cidr;

@@ -57,6 +57,12 @@ __all__ = [
     'AutonomousDatabaseCustomerContactArgsDict',
     'AutonomousDatabaseDbToolsDetailArgs',
     'AutonomousDatabaseDbToolsDetailArgsDict',
+    'AutonomousDatabaseEncryptionKeyArgs',
+    'AutonomousDatabaseEncryptionKeyArgsDict',
+    'AutonomousDatabaseEncryptionKeyHistoryEntryArgs',
+    'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict',
+    'AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs',
+    'AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict',
     'AutonomousDatabaseKeyHistoryEntryArgs',
     'AutonomousDatabaseKeyHistoryEntryArgsDict',
     'AutonomousDatabaseLocalStandbyDbArgs',
@@ -2544,6 +2550,642 @@ class AutonomousDatabaseDbToolsDetailArgs:
     @max_idle_time_in_minutes.setter
     def max_idle_time_in_minutes(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "max_idle_time_in_minutes", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseEncryptionKeyArgsDict(TypedDict):
+        arn_role: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS ARN role
+        """
+        autonomous_database_provider: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        certificate_directory_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV certificate directory name
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV certificate id
+        """
+        directory_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV wallet directory name
+        """
+        external_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS external ID
+        """
+        key_arn: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS key ARN
+        """
+        key_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Azure key name
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        okv_kms_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        okv_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) URI of OKV server
+        """
+        service_endpoint_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        vault_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        vault_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Azure vault URI
+        """
+elif False:
+    AutonomousDatabaseEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseEncryptionKeyArgs:
+    def __init__(__self__, *,
+                 arn_role: Optional[pulumi.Input[str]] = None,
+                 autonomous_database_provider: Optional[pulumi.Input[str]] = None,
+                 certificate_directory_name: Optional[pulumi.Input[str]] = None,
+                 certificate_id: Optional[pulumi.Input[str]] = None,
+                 directory_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
+                 key_arn: Optional[pulumi.Input[str]] = None,
+                 key_name: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 okv_kms_key: Optional[pulumi.Input[str]] = None,
+                 okv_uri: Optional[pulumi.Input[str]] = None,
+                 service_endpoint_uri: Optional[pulumi.Input[str]] = None,
+                 vault_id: Optional[pulumi.Input[str]] = None,
+                 vault_uri: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] arn_role: (Updatable) AWS ARN role
+        :param pulumi.Input[str] autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param pulumi.Input[str] certificate_directory_name: (Updatable) OKV certificate directory name
+        :param pulumi.Input[str] certificate_id: (Updatable) OKV certificate id
+        :param pulumi.Input[str] directory_name: (Updatable) OKV wallet directory name
+        :param pulumi.Input[str] external_id: (Updatable) AWS external ID
+        :param pulumi.Input[str] key_arn: (Updatable) AWS key ARN
+        :param pulumi.Input[str] key_name: (Updatable) Azure key name
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[str] okv_kms_key: (Updatable) UUID of OKV KMS Key
+        :param pulumi.Input[str] okv_uri: (Updatable) URI of OKV server
+        :param pulumi.Input[str] service_endpoint_uri: (Updatable) AWS key service endpoint URI
+        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[str] vault_uri: (Updatable) Azure vault URI
+        """
+        if arn_role is not None:
+            pulumi.set(__self__, "arn_role", arn_role)
+        if autonomous_database_provider is not None:
+            pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        if certificate_directory_name is not None:
+            pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if directory_name is not None:
+            pulumi.set(__self__, "directory_name", directory_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if key_arn is not None:
+            pulumi.set(__self__, "key_arn", key_arn)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if okv_kms_key is not None:
+            pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        if okv_uri is not None:
+            pulumi.set(__self__, "okv_uri", okv_uri)
+        if service_endpoint_uri is not None:
+            pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if vault_uri is not None:
+            pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @arn_role.setter
+    def arn_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "arn_role", value)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @autonomous_database_provider.setter
+    def autonomous_database_provider(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "autonomous_database_provider", value)
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @certificate_directory_name.setter
+    def certificate_directory_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_directory_name", value)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_id", value)
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @directory_name.setter
+    def directory_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "directory_name", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @key_arn.setter
+    def key_arn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_arn", value)
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @key_name.setter
+    def key_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_name", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @okv_kms_key.setter
+    def okv_kms_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "okv_kms_key", value)
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @okv_uri.setter
+    def okv_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "okv_uri", value)
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @service_endpoint_uri.setter
+    def service_endpoint_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_endpoint_uri", value)
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_id", value)
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+    @vault_uri.setter
+    def vault_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_uri", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict(TypedDict):
+        encryption_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict']]]]
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        time_activated: NotRequired[pulumi.Input[str]]
+        """
+        The date and time the kms key activated.
+        """
+elif False:
+    AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseEncryptionKeyHistoryEntryArgs:
+    def __init__(__self__, *,
+                 encryption_keys: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]] = None,
+                 time_activated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]] encryption_keys: (Updatable) Details of the Autonomous Database encryption key.
+        :param pulumi.Input[str] time_activated: The date and time the kms key activated.
+        """
+        if encryption_keys is not None:
+            pulumi.set(__self__, "encryption_keys", encryption_keys)
+        if time_activated is not None:
+            pulumi.set(__self__, "time_activated", time_activated)
+
+    @property
+    @pulumi.getter(name="encryptionKeys")
+    def encryption_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]]:
+        """
+        (Updatable) Details of the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "encryption_keys")
+
+    @encryption_keys.setter
+    def encryption_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]]):
+        pulumi.set(self, "encryption_keys", value)
+
+    @property
+    @pulumi.getter(name="timeActivated")
+    def time_activated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the kms key activated.
+        """
+        return pulumi.get(self, "time_activated")
+
+    @time_activated.setter
+    def time_activated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_activated", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict(TypedDict):
+        arn_role: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS ARN role
+        """
+        autonomous_database_provider: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        certificate_directory_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV certificate directory name
+        """
+        certificate_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV certificate id
+        """
+        directory_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) OKV wallet directory name
+        """
+        external_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS external ID
+        """
+        key_arn: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS key ARN
+        """
+        key_name: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Azure key name
+        """
+        kms_key_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        okv_kms_key: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        okv_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) URI of OKV server
+        """
+        service_endpoint_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        vault_id: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        vault_uri: NotRequired[pulumi.Input[str]]
+        """
+        (Updatable) Azure vault URI
+        """
+elif False:
+    AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
+    def __init__(__self__, *,
+                 arn_role: Optional[pulumi.Input[str]] = None,
+                 autonomous_database_provider: Optional[pulumi.Input[str]] = None,
+                 certificate_directory_name: Optional[pulumi.Input[str]] = None,
+                 certificate_id: Optional[pulumi.Input[str]] = None,
+                 directory_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
+                 key_arn: Optional[pulumi.Input[str]] = None,
+                 key_name: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
+                 okv_kms_key: Optional[pulumi.Input[str]] = None,
+                 okv_uri: Optional[pulumi.Input[str]] = None,
+                 service_endpoint_uri: Optional[pulumi.Input[str]] = None,
+                 vault_id: Optional[pulumi.Input[str]] = None,
+                 vault_uri: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] arn_role: (Updatable) AWS ARN role
+        :param pulumi.Input[str] autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param pulumi.Input[str] certificate_directory_name: (Updatable) OKV certificate directory name
+        :param pulumi.Input[str] certificate_id: (Updatable) OKV certificate id
+        :param pulumi.Input[str] directory_name: (Updatable) OKV wallet directory name
+        :param pulumi.Input[str] external_id: (Updatable) AWS external ID
+        :param pulumi.Input[str] key_arn: (Updatable) AWS key ARN
+        :param pulumi.Input[str] key_name: (Updatable) Azure key name
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[str] okv_kms_key: (Updatable) UUID of OKV KMS Key
+        :param pulumi.Input[str] okv_uri: (Updatable) URI of OKV server
+        :param pulumi.Input[str] service_endpoint_uri: (Updatable) AWS key service endpoint URI
+        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[str] vault_uri: (Updatable) Azure vault URI
+        """
+        if arn_role is not None:
+            pulumi.set(__self__, "arn_role", arn_role)
+        if autonomous_database_provider is not None:
+            pulumi.set(__self__, "autonomous_database_provider", autonomous_database_provider)
+        if certificate_directory_name is not None:
+            pulumi.set(__self__, "certificate_directory_name", certificate_directory_name)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
+        if directory_name is not None:
+            pulumi.set(__self__, "directory_name", directory_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
+        if key_arn is not None:
+            pulumi.set(__self__, "key_arn", key_arn)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if okv_kms_key is not None:
+            pulumi.set(__self__, "okv_kms_key", okv_kms_key)
+        if okv_uri is not None:
+            pulumi.set(__self__, "okv_uri", okv_uri)
+        if service_endpoint_uri is not None:
+            pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if vault_uri is not None:
+            pulumi.set(__self__, "vault_uri", vault_uri)
+
+    @property
+    @pulumi.getter(name="arnRole")
+    def arn_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS ARN role
+        """
+        return pulumi.get(self, "arn_role")
+
+    @arn_role.setter
+    def arn_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "arn_role", value)
+
+    @property
+    @pulumi.getter(name="autonomousDatabaseProvider")
+    def autonomous_database_provider(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The provider for the Autonomous Database encryption key.
+        """
+        return pulumi.get(self, "autonomous_database_provider")
+
+    @autonomous_database_provider.setter
+    def autonomous_database_provider(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "autonomous_database_provider", value)
+
+    @property
+    @pulumi.getter(name="certificateDirectoryName")
+    def certificate_directory_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV certificate directory name
+        """
+        return pulumi.get(self, "certificate_directory_name")
+
+    @certificate_directory_name.setter
+    def certificate_directory_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_directory_name", value)
+
+    @property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV certificate id
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate_id", value)
+
+    @property
+    @pulumi.getter(name="directoryName")
+    def directory_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OKV wallet directory name
+        """
+        return pulumi.get(self, "directory_name")
+
+    @directory_name.setter
+    def directory_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "directory_name", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS external ID
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
+    @pulumi.getter(name="keyArn")
+    def key_arn(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS key ARN
+        """
+        return pulumi.get(self, "key_arn")
+
+    @key_arn.setter
+    def key_arn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_arn", value)
+
+    @property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure key name
+        """
+        return pulumi.get(self, "key_name")
+
+    @key_name.setter
+    def key_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_name", value)
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
+    @pulumi.getter(name="okvKmsKey")
+    def okv_kms_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) UUID of OKV KMS Key
+        """
+        return pulumi.get(self, "okv_kms_key")
+
+    @okv_kms_key.setter
+    def okv_kms_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "okv_kms_key", value)
+
+    @property
+    @pulumi.getter(name="okvUri")
+    def okv_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URI of OKV server
+        """
+        return pulumi.get(self, "okv_uri")
+
+    @okv_uri.setter
+    def okv_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "okv_uri", value)
+
+    @property
+    @pulumi.getter(name="serviceEndpointUri")
+    def service_endpoint_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS key service endpoint URI
+        """
+        return pulumi.get(self, "service_endpoint_uri")
+
+    @service_endpoint_uri.setter
+    def service_endpoint_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_endpoint_uri", value)
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_id", value)
+
+    @property
+    @pulumi.getter(name="vaultUri")
+    def vault_uri(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Azure vault URI
+        """
+        return pulumi.get(self, "vault_uri")
+
+    @vault_uri.setter
+    def vault_uri(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_uri", value)
 
 
 if not MYPY:

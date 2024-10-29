@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.FileSystemArgs;
 import com.pulumi.oci.FileStorage.inputs.FileSystemState;
+import com.pulumi.oci.FileStorage.outputs.FileSystemLock;
 import com.pulumi.oci.FileStorage.outputs.FileSystemSourceDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.FileSystem;
  * import com.pulumi.oci.FileStorage.FileSystemArgs;
+ * import com.pulumi.oci.FileStorage.inputs.FileSystemLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -86,6 +88,12 @@ import javax.annotation.Nullable;
  *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
+ *             .locks(FileSystemLockArgs.builder()
+ *                 .type(fileSystemLocksType)
+ *                 .message(fileSystemLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(fileSystemLocksTimeCreated)
+ *                 .build())
  *             .sourceSnapshotId(testSnapshot.id())
  *             .build());
  * 
@@ -270,6 +278,12 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isHydrated() {
         return this.isHydrated;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
@@ -311,6 +325,20 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,FileSystemLock.class}, tree="[0,1]")
+    private Output<List<FileSystemLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<FileSystemLock>> locks() {
+        return this.locks;
     }
     /**
      * The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).

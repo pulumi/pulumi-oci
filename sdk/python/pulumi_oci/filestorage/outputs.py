@@ -17,37 +17,55 @@ from . import outputs
 
 __all__ = [
     'ExportExportOption',
+    'ExportLock',
+    'FileSystemLock',
     'FileSystemSourceDetail',
+    'FilesystemSnapshotPolicyLock',
     'FilesystemSnapshotPolicySchedule',
     'MountTargetKerberos',
     'MountTargetLdapIdmap',
+    'MountTargetLock',
     'OutboundConnectorEndpoint',
+    'OutboundConnectorLock',
+    'ReplicationLock',
+    'SnapshotLock',
     'GetExportSetsExportSetResult',
     'GetExportSetsFilterResult',
     'GetExportsExportResult',
     'GetExportsExportExportOptionResult',
+    'GetExportsExportLockResult',
     'GetExportsFilterResult',
     'GetFileSystemsFileSystemResult',
+    'GetFileSystemsFileSystemLockResult',
     'GetFileSystemsFileSystemSourceDetailResult',
     'GetFileSystemsFilterResult',
     'GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult',
+    'GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult',
     'GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult',
     'GetFilesystemSnapshotPoliciesFilterResult',
+    'GetFilesystemSnapshotPolicyLockResult',
     'GetFilesystemSnapshotPolicyScheduleResult',
     'GetMountTargetsFilterResult',
     'GetMountTargetsMountTargetResult',
     'GetMountTargetsMountTargetKerberoResult',
     'GetMountTargetsMountTargetLdapIdmapResult',
+    'GetMountTargetsMountTargetLockResult',
     'GetOutboundConnectorEndpointResult',
+    'GetOutboundConnectorLockResult',
     'GetOutboundConnectorsFilterResult',
     'GetOutboundConnectorsOutboundConnectorResult',
     'GetOutboundConnectorsOutboundConnectorEndpointResult',
+    'GetOutboundConnectorsOutboundConnectorLockResult',
+    'GetReplicationLockResult',
     'GetReplicationTargetsFilterResult',
     'GetReplicationTargetsReplicationTargetResult',
     'GetReplicationsFilterResult',
     'GetReplicationsReplicationResult',
+    'GetReplicationsReplicationLockResult',
+    'GetSnapshotLockResult',
     'GetSnapshotsFilterResult',
     'GetSnapshotsSnapshotResult',
+    'GetSnapshotsSnapshotLockResult',
 ]
 
 @pulumi.output_type
@@ -184,6 +202,152 @@ class ExportExportOption(dict):
 
 
 @pulumi.output_type
+class ExportLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExportLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExportLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExportLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class FileSystemLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FileSystemLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FileSystemLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FileSystemLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class FileSystemSourceDetail(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -231,6 +395,79 @@ class FileSystemSourceDetail(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
+
+
+@pulumi.output_type
+class FilesystemSnapshotPolicyLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FilesystemSnapshotPolicyLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FilesystemSnapshotPolicyLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FilesystemSnapshotPolicyLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -601,6 +838,79 @@ class MountTargetLdapIdmap(dict):
 
 
 @pulumi.output_type
+class MountTargetLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountTargetLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountTargetLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountTargetLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class OutboundConnectorEndpoint(dict):
     def __init__(__self__, *,
                  hostname: str,
@@ -627,6 +937,225 @@ class OutboundConnectorEndpoint(dict):
         Port of the DNS server.
         """
         return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class OutboundConnectorLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OutboundConnectorLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OutboundConnectorLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OutboundConnectorLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class ReplicationLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReplicationLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReplicationLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReplicationLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class SnapshotLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SnapshotLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SnapshotLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SnapshotLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -777,6 +1306,8 @@ class GetExportsExportResult(dict):
                  file_system_id: str,
                  id: str,
                  is_idmap_groups_for_sys_auth: bool,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetExportsExportLockResult'],
                  path: str,
                  state: str,
                  time_created: str):
@@ -786,6 +1317,7 @@ class GetExportsExportResult(dict):
         :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         :param bool is_idmap_groups_for_sys_auth: Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+        :param Sequence['GetExportsExportLockArgs'] locks: Locks associated with this resource.
         :param str path: Path used to access the associated file system.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -795,6 +1327,8 @@ class GetExportsExportResult(dict):
         pulumi.set(__self__, "file_system_id", file_system_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -838,6 +1372,19 @@ class GetExportsExportResult(dict):
         Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetExportsExportLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -960,6 +1507,57 @@ class GetExportsExportExportOptionResult(dict):
 
 
 @pulumi.output_type
+class GetExportsExportLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetExportsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -1001,9 +1599,11 @@ class GetFileSystemsFileSystemResult(dict):
                  id: str,
                  is_clone_parent: bool,
                  is_hydrated: bool,
+                 is_lock_override: bool,
                  is_targetable: bool,
                  kms_key_id: str,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetFileSystemsFileSystemLockResult'],
                  metered_bytes: str,
                  replication_target_id: str,
                  source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
@@ -1025,6 +1625,7 @@ class GetFileSystemsFileSystemResult(dict):
         :param bool is_targetable: Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param Sequence['GetFileSystemsFileSystemLockArgs'] locks: Locks associated with this resource.
         :param str metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
         :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param Sequence['GetFileSystemsFileSystemSourceDetailArgs'] source_details: Source information for the file system.
@@ -1044,9 +1645,11 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_clone_parent", is_clone_parent)
         pulumi.set(__self__, "is_hydrated", is_hydrated)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "is_targetable", is_targetable)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "metered_bytes", metered_bytes)
         pulumi.set(__self__, "replication_target_id", replication_target_id)
         pulumi.set(__self__, "source_details", source_details)
@@ -1148,6 +1751,11 @@ class GetFileSystemsFileSystemResult(dict):
         return pulumi.get(self, "is_hydrated")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="isTargetable")
     def is_targetable(self) -> bool:
         """
@@ -1170,6 +1778,14 @@ class GetFileSystemsFileSystemResult(dict):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetFileSystemsFileSystemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="meteredBytes")
@@ -1218,6 +1834,57 @@ class GetFileSystemsFileSystemResult(dict):
         The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetFileSystemsFileSystemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1285,6 +1952,8 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult'],
                  policy_prefix: str,
                  schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
                  state: str,
@@ -1296,6 +1965,7 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        :param Sequence['GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockArgs'] locks: Locks associated with this resource.
         :param str policy_prefix: The prefix to apply to all snapshots created by this policy.  Example: `acme`
         :param Sequence['GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs'] schedules: The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -1307,6 +1977,8 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "policy_prefix", policy_prefix)
         pulumi.set(__self__, "schedules", schedules)
         pulumi.set(__self__, "state", state)
@@ -1361,6 +2033,19 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> str:
         """
@@ -1391,6 +2076,57 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1524,6 +2260,57 @@ class GetFilesystemSnapshotPoliciesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFilesystemSnapshotPolicyLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1672,9 +2459,11 @@ class GetMountTargetsMountTargetResult(dict):
                  id: str,
                  idmap_type: str,
                  ip_address: str,
+                 is_lock_override: bool,
                  kerberos: Sequence['outputs.GetMountTargetsMountTargetKerberoResult'],
                  ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetMountTargetsMountTargetLockResult'],
                  nsg_ids: Sequence[str],
                  observed_throughput: str,
                  private_ip_ids: Sequence[str],
@@ -1696,6 +2485,7 @@ class GetMountTargetsMountTargetResult(dict):
         :param Sequence['GetMountTargetsMountTargetKerberoArgs'] kerberos: Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
         :param Sequence['GetMountTargetsMountTargetLdapIdmapArgs'] ldap_idmaps: Mount target details about the LDAP ID mapping configuration.
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param Sequence['GetMountTargetsMountTargetLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] nsg_ids: A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param str observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param Sequence[str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
@@ -1716,9 +2506,11 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idmap_type", idmap_type)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "kerberos", kerberos)
         pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "observed_throughput", observed_throughput)
         pulumi.set(__self__, "private_ip_ids", private_ip_ids)
@@ -1804,6 +2596,11 @@ class GetMountTargetsMountTargetResult(dict):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter
     def kerberos(self) -> Sequence['outputs.GetMountTargetsMountTargetKerberoResult']:
         """
@@ -1826,6 +2623,14 @@ class GetMountTargetsMountTargetResult(dict):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetMountTargetsMountTargetLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -2058,6 +2863,57 @@ class GetMountTargetsMountTargetLdapIdmapResult(dict):
 
 
 @pulumi.output_type
+class GetMountTargetsMountTargetLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetOutboundConnectorEndpointResult(dict):
     def __init__(__self__, *,
                  hostname: str,
@@ -2084,6 +2940,57 @@ class GetOutboundConnectorEndpointResult(dict):
         Port of the DNS server.
         """
         return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetOutboundConnectorLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2125,6 +3032,8 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
                  endpoints: Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult'],
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetOutboundConnectorsOutboundConnectorLockResult'],
                  password_secret_id: str,
                  password_secret_version: int,
                  state: str,
@@ -2139,6 +3048,7 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         :param Sequence['GetOutboundConnectorsOutboundConnectorEndpointArgs'] endpoints: Array of server endpoints to use when connecting with the LDAP bind account.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        :param Sequence['GetOutboundConnectorsOutboundConnectorLockArgs'] locks: Locks associated with this resource.
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param int password_secret_version: Version of the password secret in the Vault to use.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -2153,6 +3063,8 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         pulumi.set(__self__, "endpoints", endpoints)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "password_secret_version", password_secret_version)
         pulumi.set(__self__, "state", state)
@@ -2231,6 +3143,19 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetOutboundConnectorsOutboundConnectorLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> str:
         """
@@ -2290,6 +3215,108 @@ class GetOutboundConnectorsOutboundConnectorEndpointResult(dict):
         Port of the DNS server.
         """
         return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetOutboundConnectorsOutboundConnectorLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetReplicationLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2540,8 +3567,10 @@ class GetReplicationsReplicationResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, str],
                  id: str,
+                 is_lock_override: bool,
                  last_snapshot_id: str,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetReplicationsReplicationLockResult'],
                  recovery_point_time: str,
                  replication_interval: str,
                  replication_target_id: str,
@@ -2560,6 +3589,7 @@ class GetReplicationsReplicationResult(dict):
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         :param str last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param Sequence['GetReplicationsReplicationLockArgs'] locks: Locks associated with this resource.
         :param str recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         :param str replication_interval: Duration in minutes between replication snapshots.
         :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
@@ -2576,8 +3606,10 @@ class GetReplicationsReplicationResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "recovery_point_time", recovery_point_time)
         pulumi.set(__self__, "replication_interval", replication_interval)
         pulumi.set(__self__, "replication_target_id", replication_target_id)
@@ -2651,6 +3683,11 @@ class GetReplicationsReplicationResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lastSnapshotId")
     def last_snapshot_id(self) -> str:
         """
@@ -2665,6 +3702,14 @@ class GetReplicationsReplicationResult(dict):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetReplicationsReplicationLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
@@ -2724,6 +3769,108 @@ class GetReplicationsReplicationResult(dict):
 
 
 @pulumi.output_type
+class GetReplicationsReplicationLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetSnapshotLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetSnapshotsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -2766,7 +3913,9 @@ class GetSnapshotsSnapshotResult(dict):
                  freeform_tags: Mapping[str, str],
                  id: str,
                  is_clone_source: bool,
+                 is_lock_override: bool,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetSnapshotsSnapshotLockResult'],
                  name: str,
                  provenance_id: str,
                  snapshot_time: str,
@@ -2782,6 +3931,7 @@ class GetSnapshotsSnapshotResult(dict):
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         :param bool is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param str lifecycle_details: Additional information about the current `lifecycleState`.
+        :param Sequence['GetSnapshotsSnapshotLockArgs'] locks: Locks associated with this resource.
         :param str name: Name of the snapshot. This value is immutable.
         :param str provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param str snapshot_time: The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -2799,7 +3949,9 @@ class GetSnapshotsSnapshotResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_clone_source", is_clone_source)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "provenance_id", provenance_id)
         pulumi.set(__self__, "snapshot_time", snapshot_time)
@@ -2864,12 +4016,25 @@ class GetSnapshotsSnapshotResult(dict):
         return pulumi.get(self, "is_clone_source")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSnapshotsSnapshotLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -2921,5 +4086,56 @@ class GetSnapshotsSnapshotResult(dict):
         The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetSnapshotsSnapshotLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 

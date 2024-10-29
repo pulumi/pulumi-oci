@@ -16,59 +16,6 @@ import (
 //
 // Creates a new model.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModel(ctx, "test_model", &DataScience.ModelArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				ProjectId:     pulumi.Any(testProject.Id),
-//				CustomMetadataLists: datascience.ModelCustomMetadataListArray{
-//					&datascience.ModelCustomMetadataListArgs{
-//						Category:    pulumi.Any(modelCustomMetadataListCategory),
-//						Description: pulumi.Any(modelCustomMetadataListDescription),
-//						Key:         pulumi.Any(modelCustomMetadataListKey),
-//						Value:       pulumi.Any(modelCustomMetadataListValue),
-//					},
-//				},
-//				DefinedMetadataLists: datascience.ModelDefinedMetadataListArray{
-//					&datascience.ModelDefinedMetadataListArgs{
-//						Category:    pulumi.Any(modelDefinedMetadataListCategory),
-//						Description: pulumi.Any(modelDefinedMetadataListDescription),
-//						Key:         pulumi.Any(modelDefinedMetadataListKey),
-//						Value:       pulumi.Any(modelDefinedMetadataListValue),
-//					},
-//				},
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(modelDescription),
-//				DisplayName: pulumi.Any(modelDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				InputSchema:  pulumi.Any(modelInputSchema),
-//				OutputSchema: pulumi.Any(modelOutputSchema),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Models can be imported using the `id`, e.g.
@@ -88,6 +35,10 @@ type Model struct {
 	ArtifactContentLength pulumi.StringOutput `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    pulumi.StringOutput `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  pulumi.StringOutput `pulumi:"artifactLastModified"`
+	// Backup operation details of the model.
+	BackupOperationDetails ModelBackupOperationDetailArrayOutput `pulumi:"backupOperationDetails"`
+	// (Updatable) Back up setting details of the model.
+	BackupSetting ModelBackupSettingOutput `pulumi:"backupSetting"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -107,12 +58,20 @@ type Model struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Input schema file content in String format
 	InputSchema pulumi.StringOutput `pulumi:"inputSchema"`
+	// Details about the lifecycle state of the model.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringOutput `pulumi:"modelArtifact"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName pulumi.StringOutput `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema pulumi.StringOutput `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	// Retention operation details for the model.
+	RetentionOperationDetails ModelRetentionOperationDetailArrayOutput `pulumi:"retentionOperationDetails"`
+	// (Updatable) Retention setting details of the model.
+	RetentionSetting ModelRetentionSettingOutput `pulumi:"retentionSetting"`
 	// The state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -170,6 +129,10 @@ type modelState struct {
 	ArtifactContentLength *string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    *string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  *string `pulumi:"artifactLastModified"`
+	// Backup operation details of the model.
+	BackupOperationDetails []ModelBackupOperationDetail `pulumi:"backupOperationDetails"`
+	// (Updatable) Back up setting details of the model.
+	BackupSetting *ModelBackupSetting `pulumi:"backupSetting"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -189,12 +152,20 @@ type modelState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Input schema file content in String format
 	InputSchema *string `pulumi:"inputSchema"`
+	// Details about the lifecycle state of the model.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact *string `pulumi:"modelArtifact"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName *string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema *string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId *string `pulumi:"projectId"`
+	// Retention operation details for the model.
+	RetentionOperationDetails []ModelRetentionOperationDetail `pulumi:"retentionOperationDetails"`
+	// (Updatable) Retention setting details of the model.
+	RetentionSetting *ModelRetentionSetting `pulumi:"retentionSetting"`
 	// The state of the model.
 	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -211,6 +182,10 @@ type ModelState struct {
 	ArtifactContentLength pulumi.StringPtrInput
 	ArtifactContentMd5    pulumi.StringPtrInput
 	ArtifactLastModified  pulumi.StringPtrInput
+	// Backup operation details of the model.
+	BackupOperationDetails ModelBackupOperationDetailArrayInput
+	// (Updatable) Back up setting details of the model.
+	BackupSetting ModelBackupSettingPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
@@ -230,12 +205,20 @@ type ModelState struct {
 	FreeformTags pulumi.StringMapInput
 	// Input schema file content in String format
 	InputSchema pulumi.StringPtrInput
+	// Details about the lifecycle state of the model.
+	LifecycleDetails pulumi.StringPtrInput
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringPtrInput
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName pulumi.StringPtrInput
 	// Output schema file content in String format
 	OutputSchema pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId pulumi.StringPtrInput
+	// Retention operation details for the model.
+	RetentionOperationDetails ModelRetentionOperationDetailArrayInput
+	// (Updatable) Retention setting details of the model.
+	RetentionSetting ModelRetentionSettingPtrInput
 	// The state of the model.
 	State pulumi.StringPtrInput
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -254,6 +237,8 @@ type modelArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength string `pulumi:"artifactContentLength"`
+	// (Updatable) Back up setting details of the model.
+	BackupSetting *ModelBackupSetting `pulumi:"backupSetting"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) An array of custom metadata details for the model.
@@ -276,6 +261,8 @@ type modelArgs struct {
 	OutputSchema *string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId string `pulumi:"projectId"`
+	// (Updatable) Retention setting details of the model.
+	RetentionSetting *ModelRetentionSetting `pulumi:"retentionSetting"`
 	// The state of the model.
 	State *string `pulumi:"state"`
 }
@@ -289,6 +276,8 @@ type ModelArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringInput
+	// (Updatable) Back up setting details of the model.
+	BackupSetting ModelBackupSettingPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) An array of custom metadata details for the model.
@@ -311,6 +300,8 @@ type ModelArgs struct {
 	OutputSchema pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId pulumi.StringInput
+	// (Updatable) Retention setting details of the model.
+	RetentionSetting ModelRetentionSettingPtrInput
 	// The state of the model.
 	State pulumi.StringPtrInput
 }
@@ -423,6 +414,16 @@ func (o ModelOutput) ArtifactLastModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactLastModified }).(pulumi.StringOutput)
 }
 
+// Backup operation details of the model.
+func (o ModelOutput) BackupOperationDetails() ModelBackupOperationDetailArrayOutput {
+	return o.ApplyT(func(v *Model) ModelBackupOperationDetailArrayOutput { return v.BackupOperationDetails }).(ModelBackupOperationDetailArrayOutput)
+}
+
+// (Updatable) Back up setting details of the model.
+func (o ModelOutput) BackupSetting() ModelBackupSettingOutput {
+	return o.ApplyT(func(v *Model) ModelBackupSettingOutput { return v.BackupSetting }).(ModelBackupSettingOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -472,9 +473,19 @@ func (o ModelOutput) InputSchema() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.InputSchema }).(pulumi.StringOutput)
 }
 
+// Details about the lifecycle state of the model.
+func (o ModelOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 // The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 func (o ModelOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelArtifact }).(pulumi.StringOutput)
+}
+
+// The name of the model version set that the model is associated to.
+func (o ModelOutput) ModelVersionSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelVersionSetName }).(pulumi.StringOutput)
 }
 
 // Output schema file content in String format
@@ -485,6 +496,16 @@ func (o ModelOutput) OutputSchema() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 func (o ModelOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Retention operation details for the model.
+func (o ModelOutput) RetentionOperationDetails() ModelRetentionOperationDetailArrayOutput {
+	return o.ApplyT(func(v *Model) ModelRetentionOperationDetailArrayOutput { return v.RetentionOperationDetails }).(ModelRetentionOperationDetailArrayOutput)
+}
+
+// (Updatable) Retention setting details of the model.
+func (o ModelOutput) RetentionSetting() ModelRetentionSettingOutput {
+	return o.ApplyT(func(v *Model) ModelRetentionSettingOutput { return v.RetentionSetting }).(ModelRetentionSettingOutput)
 }
 
 // The state of the model.

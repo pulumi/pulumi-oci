@@ -6,6 +6,8 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsOutboundConnectorEndpoint;
+import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsOutboundConnectorLock;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -59,6 +61,12 @@ public final class GetOutboundConnectorsOutboundConnector {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetOutboundConnectorsOutboundConnectorLock> locks;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * 
@@ -144,6 +152,16 @@ public final class GetOutboundConnectorsOutboundConnector {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetOutboundConnectorsOutboundConnectorLock> locks() {
+        return this.locks;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * 
@@ -191,6 +209,8 @@ public final class GetOutboundConnectorsOutboundConnector {
         private List<GetOutboundConnectorsOutboundConnectorEndpoint> endpoints;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetOutboundConnectorsOutboundConnectorLock> locks;
         private String passwordSecretId;
         private Integer passwordSecretVersion;
         private String state;
@@ -207,6 +227,8 @@ public final class GetOutboundConnectorsOutboundConnector {
     	      this.endpoints = defaults.endpoints;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.passwordSecretVersion = defaults.passwordSecretVersion;
     	      this.state = defaults.state;
@@ -289,6 +311,25 @@ public final class GetOutboundConnectorsOutboundConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetOutboundConnectorsOutboundConnectorLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetOutboundConnectorsOutboundConnectorLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
             if (passwordSecretId == null) {
               throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "passwordSecretId");
@@ -331,6 +372,8 @@ public final class GetOutboundConnectorsOutboundConnector {
             _resultValue.endpoints = endpoints;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.passwordSecretVersion = passwordSecretVersion;
             _resultValue.state = state;

@@ -45,6 +45,16 @@ namespace Pulumi.Oci.FileStorage
     ///             },
     ///         },
     ///         IsIdmapGroupsForSysAuth = exportIsIdmapGroupsForSysAuth,
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.FileStorage.Inputs.ExportLockArgs
+    ///             {
+    ///                 Type = exportLocksType,
+    ///                 Message = exportLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = exportLocksTimeCreated,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -94,6 +104,15 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("isIdmapGroupsForSysAuth")]
         public Output<bool> IsIdmapGroupsForSysAuth { get; private set; } = null!;
+
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ExportLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// Path used to access the associated file system.
@@ -207,6 +226,21 @@ namespace Pulumi.Oci.FileStorage
         [Input("isIdmapGroupsForSysAuth")]
         public Input<bool>? IsIdmapGroupsForSysAuth { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ExportLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ExportLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ExportLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// Path used to access the associated file system.
         /// 
@@ -268,6 +302,21 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("isIdmapGroupsForSysAuth")]
         public Input<bool>? IsIdmapGroupsForSysAuth { get; set; }
+
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ExportLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ExportLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ExportLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// Path used to access the associated file system.

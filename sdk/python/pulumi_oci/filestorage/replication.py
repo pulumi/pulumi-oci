@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ReplicationArgs', 'Replication']
 
@@ -25,6 +27,8 @@ class ReplicationArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
                  replication_interval: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Replication resource.
@@ -38,6 +42,7 @@ class ReplicationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +54,10 @@ class ReplicationArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if replication_interval is not None:
             pulumi.set(__self__, "replication_interval", replication_interval)
 
@@ -129,6 +138,27 @@ class ReplicationArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="replicationInterval")
     def replication_interval(self) -> Optional[pulumi.Input[str]]:
         """
@@ -151,8 +181,10 @@ class _ReplicationState:
                  delta_status: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  last_snapshot_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]] = None,
                  recovery_point_time: Optional[pulumi.Input[str]] = None,
                  replication_interval: Optional[pulumi.Input[str]] = None,
                  replication_target_id: Optional[pulumi.Input[str]] = None,
@@ -171,6 +203,7 @@ class _ReplicationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
@@ -197,10 +230,14 @@ class _ReplicationState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if last_snapshot_id is not None:
             pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if recovery_point_time is not None:
             pulumi.set(__self__, "recovery_point_time", recovery_point_time)
         if replication_interval is not None:
@@ -301,6 +338,15 @@ class _ReplicationState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="lastSnapshotId")
     def last_snapshot_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -323,6 +369,18 @@ class _ReplicationState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicationLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="recoveryPointTime")
@@ -422,6 +480,8 @@ class Replication(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
                  replication_interval: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
@@ -474,6 +534,12 @@ class Replication(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": replication_locks_type,
+                "message": replication_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": replication_locks_time_created,
+            }],
             replication_interval=replication_replication_interval)
         ```
 
@@ -491,6 +557,7 @@ class Replication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
         :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
@@ -553,6 +620,12 @@ class Replication(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            locks=[{
+                "type": replication_locks_type,
+                "message": replication_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": replication_locks_time_created,
+            }],
             replication_interval=replication_replication_interval)
         ```
 
@@ -583,6 +656,8 @@ class Replication(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
                  replication_interval: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
@@ -601,6 +676,8 @@ class Replication(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["replication_interval"] = replication_interval
             if source_id is None and not opts.urn:
                 raise TypeError("Missing required property 'source_id'")
@@ -634,8 +711,10 @@ class Replication(pulumi.CustomResource):
             delta_status: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             last_snapshot_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]]] = None,
             recovery_point_time: Optional[pulumi.Input[str]] = None,
             replication_interval: Optional[pulumi.Input[str]] = None,
             replication_target_id: Optional[pulumi.Input[str]] = None,
@@ -659,6 +738,7 @@ class Replication(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
@@ -682,8 +762,10 @@ class Replication(pulumi.CustomResource):
         __props__.__dict__["delta_status"] = delta_status
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["last_snapshot_id"] = last_snapshot_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["recovery_point_time"] = recovery_point_time
         __props__.__dict__["replication_interval"] = replication_interval
         __props__.__dict__["replication_target_id"] = replication_target_id
@@ -750,6 +832,11 @@ class Replication(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lastSnapshotId")
     def last_snapshot_id(self) -> pulumi.Output[str]:
         """
@@ -764,6 +851,14 @@ class Replication(pulumi.CustomResource):
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.ReplicationLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="recoveryPointTime")

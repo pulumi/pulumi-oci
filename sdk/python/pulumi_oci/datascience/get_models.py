@@ -100,6 +100,9 @@ class GetModelsResult:
     @property
     @pulumi.getter(name="modelVersionSetName")
     def model_version_set_name(self) -> str:
+        """
+        The name of the model version set that the model is associated to.
+        """
         return pulumi.get(self, "model_version_set_name")
 
     @property
@@ -185,6 +188,7 @@ def get_models(compartment_id: Optional[str] = None,
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+    :param str model_version_set_name: The name of the model version set that the model is associated to.
     :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """
@@ -247,6 +251,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+    :param str model_version_set_name: The name of the model version set that the model is associated to.
     :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
     """

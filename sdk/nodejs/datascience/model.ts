@@ -11,40 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new model.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testModel = new oci.datascience.Model("test_model", {
- *     compartmentId: compartmentId,
- *     projectId: testProject.id,
- *     customMetadataLists: [{
- *         category: modelCustomMetadataListCategory,
- *         description: modelCustomMetadataListDescription,
- *         key: modelCustomMetadataListKey,
- *         value: modelCustomMetadataListValue,
- *     }],
- *     definedMetadataLists: [{
- *         category: modelDefinedMetadataListCategory,
- *         description: modelDefinedMetadataListDescription,
- *         key: modelDefinedMetadataListKey,
- *         value: modelDefinedMetadataListValue,
- *     }],
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: modelDescription,
- *     displayName: modelDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     inputSchema: modelInputSchema,
- *     outputSchema: modelOutputSchema,
- * });
- * ```
- *
  * ## Import
  *
  * Models can be imported using the `id`, e.g.
@@ -95,6 +61,14 @@ export class Model extends pulumi.CustomResource {
     public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
     public /*out*/ readonly artifactLastModified!: pulumi.Output<string>;
     /**
+     * Backup operation details of the model.
+     */
+    public /*out*/ readonly backupOperationDetails!: pulumi.Output<outputs.DataScience.ModelBackupOperationDetail[]>;
+    /**
+     * (Updatable) Back up setting details of the model.
+     */
+    public readonly backupSetting!: pulumi.Output<outputs.DataScience.ModelBackupSetting>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -132,9 +106,17 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly inputSchema!: pulumi.Output<string>;
     /**
+     * Details about the lifecycle state of the model.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
      */
     public readonly modelArtifact!: pulumi.Output<string>;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
+    public /*out*/ readonly modelVersionSetName!: pulumi.Output<string>;
     /**
      * Output schema file content in String format
      */
@@ -143,6 +125,14 @@ export class Model extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
     public readonly projectId!: pulumi.Output<string>;
+    /**
+     * Retention operation details for the model.
+     */
+    public /*out*/ readonly retentionOperationDetails!: pulumi.Output<outputs.DataScience.ModelRetentionOperationDetail[]>;
+    /**
+     * (Updatable) Retention setting details of the model.
+     */
+    public readonly retentionSetting!: pulumi.Output<outputs.DataScience.ModelRetentionSetting>;
     /**
      * The state of the model.
      */
@@ -169,6 +159,8 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["artifactContentLength"] = state ? state.artifactContentLength : undefined;
             resourceInputs["artifactContentMd5"] = state ? state.artifactContentMd5 : undefined;
             resourceInputs["artifactLastModified"] = state ? state.artifactLastModified : undefined;
+            resourceInputs["backupOperationDetails"] = state ? state.backupOperationDetails : undefined;
+            resourceInputs["backupSetting"] = state ? state.backupSetting : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["customMetadataLists"] = state ? state.customMetadataLists : undefined;
@@ -179,9 +171,13 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["emptyModel"] = state ? state.emptyModel : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["inputSchema"] = state ? state.inputSchema : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["modelArtifact"] = state ? state.modelArtifact : undefined;
+            resourceInputs["modelVersionSetName"] = state ? state.modelVersionSetName : undefined;
             resourceInputs["outputSchema"] = state ? state.outputSchema : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
+            resourceInputs["retentionOperationDetails"] = state ? state.retentionOperationDetails : undefined;
+            resourceInputs["retentionSetting"] = state ? state.retentionSetting : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -200,6 +196,7 @@ export class Model extends pulumi.CustomResource {
             }
             resourceInputs["artifactContentDisposition"] = args ? args.artifactContentDisposition : undefined;
             resourceInputs["artifactContentLength"] = args ? args.artifactContentLength : undefined;
+            resourceInputs["backupSetting"] = args ? args.backupSetting : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["customMetadataLists"] = args ? args.customMetadataLists : undefined;
             resourceInputs["definedMetadataLists"] = args ? args.definedMetadataLists : undefined;
@@ -211,11 +208,16 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["modelArtifact"] = args ? args.modelArtifact : undefined;
             resourceInputs["outputSchema"] = args ? args.outputSchema : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["retentionSetting"] = args ? args.retentionSetting : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
+            resourceInputs["backupOperationDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["emptyModel"] = undefined /*out*/;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["modelVersionSetName"] = undefined /*out*/;
+            resourceInputs["retentionOperationDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -240,6 +242,14 @@ export interface ModelState {
     artifactContentLength?: pulumi.Input<string>;
     artifactContentMd5?: pulumi.Input<string>;
     artifactLastModified?: pulumi.Input<string>;
+    /**
+     * Backup operation details of the model.
+     */
+    backupOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelBackupOperationDetail>[]>;
+    /**
+     * (Updatable) Back up setting details of the model.
+     */
+    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
@@ -278,9 +288,17 @@ export interface ModelState {
      */
     inputSchema?: pulumi.Input<string>;
     /**
+     * Details about the lifecycle state of the model.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
+    /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
      */
     modelArtifact?: pulumi.Input<string>;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
+    modelVersionSetName?: pulumi.Input<string>;
     /**
      * Output schema file content in String format
      */
@@ -289,6 +307,14 @@ export interface ModelState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
     projectId?: pulumi.Input<string>;
+    /**
+     * Retention operation details for the model.
+     */
+    retentionOperationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelRetentionOperationDetail>[]>;
+    /**
+     * (Updatable) Retention setting details of the model.
+     */
+    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting>;
     /**
      * The state of the model.
      */
@@ -314,6 +340,10 @@ export interface ModelArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     artifactContentLength: pulumi.Input<string>;
+    /**
+     * (Updatable) Back up setting details of the model.
+     */
+    backupSetting?: pulumi.Input<inputs.DataScience.ModelBackupSetting>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
@@ -358,6 +388,10 @@ export interface ModelArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
     projectId: pulumi.Input<string>;
+    /**
+     * (Updatable) Retention setting details of the model.
+     */
+    retentionSetting?: pulumi.Input<inputs.DataScience.ModelRetentionSetting>;
     /**
      * The state of the model.
      */

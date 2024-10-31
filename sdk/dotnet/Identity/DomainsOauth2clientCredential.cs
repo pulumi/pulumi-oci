@@ -290,6 +290,21 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsOauth2clientCredentialScope>> Scopes { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Secret
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsScimCompliant: false
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Output("secret")]
+        public Output<string> Secret { get; private set; } = null!;
+
+        /// <summary>
         /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
@@ -941,6 +956,21 @@ namespace Pulumi.Oci.Identity
             get => _scopes ?? (_scopes = new InputList<Inputs.DomainsOauth2clientCredentialScopeGetArgs>());
             set => _scopes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Secret
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsScimCompliant: false
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Input("secret")]
+        public Input<string>? Secret { get; set; }
 
         /// <summary>
         /// The user's credential status.

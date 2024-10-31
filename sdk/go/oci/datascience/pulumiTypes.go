@@ -19970,6 +19970,8 @@ type GetModelsModel struct {
 	// Details about the lifecycle state of the model.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ModelArtifact    string `pulumi:"modelArtifact"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId string `pulumi:"modelVersionSetId"`
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
@@ -19983,7 +19985,8 @@ type GetModelsModel struct {
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated  string `pulumi:"timeCreated"`
+	VersionLabel string `pulumi:"versionLabel"`
 }
 
 // GetModelsModelInput is an input type that accepts GetModelsModelArgs and GetModelsModelOutput values.
@@ -20030,6 +20033,8 @@ type GetModelsModelArgs struct {
 	// Details about the lifecycle state of the model.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	ModelArtifact    pulumi.StringInput `pulumi:"modelArtifact"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId pulumi.StringInput `pulumi:"modelVersionSetId"`
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName pulumi.StringInput `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
@@ -20043,7 +20048,8 @@ type GetModelsModelArgs struct {
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated  pulumi.StringInput `pulumi:"timeCreated"`
+	VersionLabel pulumi.StringInput `pulumi:"versionLabel"`
 }
 
 func (GetModelsModelArgs) ElementType() reflect.Type {
@@ -20186,6 +20192,11 @@ func (o GetModelsModelOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.ModelArtifact }).(pulumi.StringOutput)
 }
 
+// The OCID of the model version set that the model is associated to.
+func (o GetModelsModelOutput) ModelVersionSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModel) string { return v.ModelVersionSetId }).(pulumi.StringOutput)
+}
+
 // The name of the model version set that the model is associated to.
 func (o GetModelsModelOutput) ModelVersionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
@@ -20219,6 +20230,10 @@ func (o GetModelsModelOutput) State() pulumi.StringOutput {
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 func (o GetModelsModelOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModel) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetModelsModelOutput) VersionLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModel) string { return v.VersionLabel }).(pulumi.StringOutput)
 }
 
 type GetModelsModelArrayOutput struct{ *pulumi.OutputState }

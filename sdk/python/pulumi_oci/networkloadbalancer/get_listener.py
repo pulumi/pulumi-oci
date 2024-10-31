@@ -26,7 +26,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, is_ppv2enabled=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None, tcp_idle_timeout=None, udp_idle_timeout=None):
+    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, is_ppv2enabled=None, l3ip_idle_timeout=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None, tcp_idle_timeout=None, udp_idle_timeout=None):
         if default_backend_set_name and not isinstance(default_backend_set_name, str):
             raise TypeError("Expected argument 'default_backend_set_name' to be a str")
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
@@ -39,6 +39,9 @@ class GetListenerResult:
         if is_ppv2enabled and not isinstance(is_ppv2enabled, bool):
             raise TypeError("Expected argument 'is_ppv2enabled' to be a bool")
         pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
+        if l3ip_idle_timeout and not isinstance(l3ip_idle_timeout, int):
+            raise TypeError("Expected argument 'l3ip_idle_timeout' to be a int")
+        pulumi.set(__self__, "l3ip_idle_timeout", l3ip_idle_timeout)
         if listener_name and not isinstance(listener_name, str):
             raise TypeError("Expected argument 'listener_name' to be a str")
         pulumi.set(__self__, "listener_name", listener_name)
@@ -89,6 +92,14 @@ class GetListenerResult:
         Property to enable/disable PPv2 feature for this listener.
         """
         return pulumi.get(self, "is_ppv2enabled")
+
+    @property
+    @pulumi.getter(name="l3ipIdleTimeout")
+    def l3ip_idle_timeout(self) -> int:
+        """
+        The duration for L3IP idle timeout in seconds. Example: `200`
+        """
+        return pulumi.get(self, "l3ip_idle_timeout")
 
     @property
     @pulumi.getter(name="listenerName")
@@ -151,6 +162,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             id=self.id,
             ip_version=self.ip_version,
             is_ppv2enabled=self.is_ppv2enabled,
+            l3ip_idle_timeout=self.l3ip_idle_timeout,
             listener_name=self.listener_name,
             name=self.name,
             network_load_balancer_id=self.network_load_balancer_id,
@@ -193,6 +205,7 @@ def get_listener(listener_name: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ip_version=pulumi.get(__ret__, 'ip_version'),
         is_ppv2enabled=pulumi.get(__ret__, 'is_ppv2enabled'),
+        l3ip_idle_timeout=pulumi.get(__ret__, 'l3ip_idle_timeout'),
         listener_name=pulumi.get(__ret__, 'listener_name'),
         name=pulumi.get(__ret__, 'name'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
@@ -232,6 +245,7 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
         id=pulumi.get(__response__, 'id'),
         ip_version=pulumi.get(__response__, 'ip_version'),
         is_ppv2enabled=pulumi.get(__response__, 'is_ppv2enabled'),
+        l3ip_idle_timeout=pulumi.get(__response__, 'l3ip_idle_timeout'),
         listener_name=pulumi.get(__response__, 'listener_name'),
         name=pulumi.get(__response__, 'name'),
         network_load_balancer_id=pulumi.get(__response__, 'network_load_balancer_id'),

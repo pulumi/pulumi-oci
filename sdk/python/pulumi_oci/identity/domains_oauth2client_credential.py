@@ -504,6 +504,7 @@ class _DomainsOauth2clientCredentialState:
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauth2clientCredentialScopeArgs']]]] = None,
+                 secret: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauth2clientCredentialTagArgs']]]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -675,6 +676,16 @@ class _DomainsOauth2clientCredentialState:
                * multiValued: true
                * required: true
                * returned: default
+        :param pulumi.Input[str] secret: (Updatable) Secret
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsScimCompliant: false
+               * idcsSensitive: hash_sc
         :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
@@ -763,6 +774,8 @@ class _DomainsOauth2clientCredentialState:
             pulumi.set(__self__, "schemas", schemas)
         if scopes is not None:
             pulumi.set(__self__, "scopes", scopes)
+        if secret is not None:
+            pulumi.set(__self__, "secret", secret)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if tags is not None:
@@ -1160,6 +1173,27 @@ class _DomainsOauth2clientCredentialState:
 
     @property
     @pulumi.getter
+    def secret(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Secret
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsScimCompliant: false
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "secret")
+
+    @secret.setter
+    def secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret", value)
+
+    @property
+    @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         The user's credential status.
@@ -1505,6 +1539,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
             __props__.__dict__["idcs_last_upgraded_in_release"] = None
             __props__.__dict__["idcs_prevented_operations"] = None
             __props__.__dict__["metas"] = None
+            __props__.__dict__["secret"] = None
             __props__.__dict__["tenancy_ocid"] = None
         super(DomainsOauth2clientCredential, __self__).__init__(
             'oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential',
@@ -1536,6 +1571,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauth2clientCredentialScopeArgs', 'DomainsOauth2clientCredentialScopeArgsDict']]]]] = None,
+            secret: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauth2clientCredentialTagArgs', 'DomainsOauth2clientCredentialTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -1712,6 +1748,16 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
                * multiValued: true
                * required: true
                * returned: default
+        :param pulumi.Input[str] secret: (Updatable) Secret
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsScimCompliant: false
+               * idcsSensitive: hash_sc
         :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
@@ -1784,6 +1830,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
         __props__.__dict__["schemas"] = schemas
         __props__.__dict__["scopes"] = scopes
+        __props__.__dict__["secret"] = secret
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
         __props__.__dict__["tenancy_ocid"] = tenancy_ocid
@@ -2094,6 +2141,23 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         * returned: default
         """
         return pulumi.get(self, "scopes")
+
+    @property
+    @pulumi.getter
+    def secret(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Secret
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsScimCompliant: false
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "secret")
 
     @property
     @pulumi.getter

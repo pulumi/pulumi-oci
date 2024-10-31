@@ -277,6 +277,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetId")
+    private @Nullable Output<String> modelVersionSetId;
+
+    /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<Output<String>> modelVersionSetId() {
+        return Optional.ofNullable(this.modelVersionSetId);
+    }
+
+    /**
      * The name of the model version set that the model is associated to.
      * 
      */
@@ -381,6 +396,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    @Import(name="versionLabel")
+    private @Nullable Output<String> versionLabel;
+
+    /**
+     * @return (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    public Optional<Output<String>> versionLabel() {
+        return Optional.ofNullable(this.versionLabel);
+    }
+
     private ModelState() {}
 
     private ModelState(ModelState $) {
@@ -402,6 +432,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.inputSchema = $.inputSchema;
         this.lifecycleDetails = $.lifecycleDetails;
         this.modelArtifact = $.modelArtifact;
+        this.modelVersionSetId = $.modelVersionSetId;
         this.modelVersionSetName = $.modelVersionSetName;
         this.outputSchema = $.outputSchema;
         this.projectId = $.projectId;
@@ -409,6 +440,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.retentionSetting = $.retentionSetting;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.versionLabel = $.versionLabel;
     }
 
     public static Builder builder() {
@@ -808,6 +840,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(@Nullable Output<String> modelVersionSetId) {
+            $.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+
+        /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            return modelVersionSetId(Output.of(modelVersionSetId));
+        }
+
+        /**
          * @param modelVersionSetName The name of the model version set that the model is associated to.
          * 
          * @return builder
@@ -962,6 +1015,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param versionLabel (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionLabel(@Nullable Output<String> versionLabel) {
+            $.versionLabel = versionLabel;
+            return this;
+        }
+
+        /**
+         * @param versionLabel (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionLabel(String versionLabel) {
+            return versionLabel(Output.of(versionLabel));
         }
 
         public ModelState build() {

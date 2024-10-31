@@ -9147,13 +9147,15 @@ class GetModelsModelResult(dict):
                  input_schema: str,
                  lifecycle_details: str,
                  model_artifact: str,
+                 model_version_set_id: str,
                  model_version_set_name: str,
                  output_schema: str,
                  project_id: str,
                  retention_operation_details: Sequence['outputs.GetModelsModelRetentionOperationDetailResult'],
                  retention_settings: Sequence['outputs.GetModelsModelRetentionSettingResult'],
                  state: str,
-                 time_created: str):
+                 time_created: str,
+                 version_label: str):
         """
         :param Sequence['GetModelsModelBackupOperationDetailArgs'] backup_operation_details: Backup operation details of the model.
         :param Sequence['GetModelsModelBackupSettingArgs'] backup_settings: Back up setting details of the model.
@@ -9168,6 +9170,7 @@ class GetModelsModelResult(dict):
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str input_schema: Input schema file content in String format
         :param str lifecycle_details: Details about the lifecycle state of the model.
+        :param str model_version_set_id: The OCID of the model version set that the model is associated to.
         :param str model_version_set_name: The name of the model version set that the model is associated to.
         :param str output_schema: Output schema file content in String format
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -9195,6 +9198,7 @@ class GetModelsModelResult(dict):
         pulumi.set(__self__, "input_schema", input_schema)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "model_artifact", model_artifact)
+        pulumi.set(__self__, "model_version_set_id", model_version_set_id)
         pulumi.set(__self__, "model_version_set_name", model_version_set_name)
         pulumi.set(__self__, "output_schema", output_schema)
         pulumi.set(__self__, "project_id", project_id)
@@ -9202,6 +9206,7 @@ class GetModelsModelResult(dict):
         pulumi.set(__self__, "retention_settings", retention_settings)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version_label", version_label)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -9338,6 +9343,14 @@ class GetModelsModelResult(dict):
         return pulumi.get(self, "model_artifact")
 
     @property
+    @pulumi.getter(name="modelVersionSetId")
+    def model_version_set_id(self) -> str:
+        """
+        The OCID of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_id")
+
+    @property
     @pulumi.getter(name="modelVersionSetName")
     def model_version_set_name(self) -> str:
         """
@@ -9392,6 +9405,11 @@ class GetModelsModelResult(dict):
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> str:
+        return pulumi.get(self, "version_label")
 
 
 @pulumi.output_type

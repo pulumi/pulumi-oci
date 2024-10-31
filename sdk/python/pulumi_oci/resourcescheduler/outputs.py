@@ -89,10 +89,11 @@ class ScheduleResourceFilter(dict):
                  should_include_child_compartments: Optional[bool] = None,
                  values: Optional[Sequence['outputs.ScheduleResourceFilterValue']] = None):
         """
-        :param str attribute: (Updatable) This is the resource attribute on which the threshold is defined.
-        :param str condition: (Updatable) This is the condition for the filter in comparison to its creation time.
-        :param bool should_include_child_compartments: (Updatable) This sets whether to include child compartments.
-        :param Sequence['ScheduleResourceFilterValueArgs'] values: (Updatable) This is a collection of resource lifecycle state values.
+        :param str attribute: (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
+        :param str condition: This is the condition for the filter in comparison to its creation time.
+        :param bool should_include_child_compartments: This sets whether to include child compartments.
+        :param Sequence['ScheduleResourceFilterValueArgs'] values: (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+               * When `attribute="DEFINED_TAGS"`:
         """
         pulumi.set(__self__, "attribute", attribute)
         if condition is not None:
@@ -106,7 +107,7 @@ class ScheduleResourceFilter(dict):
     @pulumi.getter
     def attribute(self) -> str:
         """
-        (Updatable) This is the resource attribute on which the threshold is defined.
+        (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
         """
         return pulumi.get(self, "attribute")
 
@@ -114,7 +115,7 @@ class ScheduleResourceFilter(dict):
     @pulumi.getter
     def condition(self) -> Optional[str]:
         """
-        (Updatable) This is the condition for the filter in comparison to its creation time.
+        This is the condition for the filter in comparison to its creation time.
         """
         return pulumi.get(self, "condition")
 
@@ -122,7 +123,7 @@ class ScheduleResourceFilter(dict):
     @pulumi.getter(name="shouldIncludeChildCompartments")
     def should_include_child_compartments(self) -> Optional[bool]:
         """
-        (Updatable) This sets whether to include child compartments.
+        This sets whether to include child compartments.
         """
         return pulumi.get(self, "should_include_child_compartments")
 
@@ -130,7 +131,8 @@ class ScheduleResourceFilter(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence['outputs.ScheduleResourceFilterValue']]:
         """
-        (Updatable) This is a collection of resource lifecycle state values.
+        (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+        * When `attribute="DEFINED_TAGS"`:
         """
         return pulumi.get(self, "values")
 
@@ -159,9 +161,9 @@ class ScheduleResourceFilterValue(dict):
                  tag_key: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str namespace: (Updatable) This is the namespace of the defined tag.
-        :param str tag_key: (Updatable) This is the key of the defined tag.
-        :param str value: (Updatable) This is the value of the defined tag.
+        :param str namespace: This is the namespace of the defined tag.
+        :param str tag_key: This is the key of the defined tag.
+        :param str value: This is the lifecycle state value used for filtering.
         """
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
@@ -174,7 +176,7 @@ class ScheduleResourceFilterValue(dict):
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
-        (Updatable) This is the namespace of the defined tag.
+        This is the namespace of the defined tag.
         """
         return pulumi.get(self, "namespace")
 
@@ -182,7 +184,7 @@ class ScheduleResourceFilterValue(dict):
     @pulumi.getter(name="tagKey")
     def tag_key(self) -> Optional[str]:
         """
-        (Updatable) This is the key of the defined tag.
+        This is the key of the defined tag.
         """
         return pulumi.get(self, "tag_key")
 
@@ -190,7 +192,7 @@ class ScheduleResourceFilterValue(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) This is the value of the defined tag.
+        This is the lifecycle state value used for filtering.
         """
         return pulumi.get(self, "value")
 
@@ -378,7 +380,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str action: This is the action that will be executed by the schedule.
-        :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
         :param Mapping[str, str] defined_tags: These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: This is the description of the schedule.
         :param str display_name: This is a filter to return only resources that match the given display name exactly.
@@ -429,7 +431,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
         """
         return pulumi.get(self, "compartment_id")
 

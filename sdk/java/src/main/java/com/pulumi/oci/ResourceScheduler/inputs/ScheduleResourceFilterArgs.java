@@ -20,14 +20,14 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
     public static final ScheduleResourceFilterArgs Empty = new ScheduleResourceFilterArgs();
 
     /**
-     * (Updatable) This is the resource attribute on which the threshold is defined.
+     * (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
      * 
      */
     @Import(name="attribute", required=true)
     private Output<String> attribute;
 
     /**
-     * @return (Updatable) This is the resource attribute on which the threshold is defined.
+     * @return (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
      * 
      */
     public Output<String> attribute() {
@@ -35,14 +35,14 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) This is the condition for the filter in comparison to its creation time.
+     * This is the condition for the filter in comparison to its creation time.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) This is the condition for the filter in comparison to its creation time.
+     * @return This is the condition for the filter in comparison to its creation time.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -50,14 +50,14 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) This sets whether to include child compartments.
+     * This sets whether to include child compartments.
      * 
      */
     @Import(name="shouldIncludeChildCompartments")
     private @Nullable Output<Boolean> shouldIncludeChildCompartments;
 
     /**
-     * @return (Updatable) This sets whether to include child compartments.
+     * @return This sets whether to include child compartments.
      * 
      */
     public Optional<Output<Boolean>> shouldIncludeChildCompartments() {
@@ -65,14 +65,16 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) This is a collection of resource lifecycle state values.
+     * (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+     * * When `attribute=&#34;DEFINED_TAGS&#34;`:
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<ScheduleResourceFilterValueArgs>> values;
 
     /**
-     * @return (Updatable) This is a collection of resource lifecycle state values.
+     * @return (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+     * * When `attribute=&#34;DEFINED_TAGS&#34;`:
      * 
      */
     public Optional<Output<List<ScheduleResourceFilterValueArgs>>> values() {
@@ -107,7 +109,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param attribute (Updatable) This is the resource attribute on which the threshold is defined.
+         * @param attribute (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
          * 
          * @return builder
          * 
@@ -118,7 +120,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param attribute (Updatable) This is the resource attribute on which the threshold is defined.
+         * @param attribute (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
          * 
          * @return builder
          * 
@@ -128,7 +130,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param condition (Updatable) This is the condition for the filter in comparison to its creation time.
+         * @param condition This is the condition for the filter in comparison to its creation time.
          * 
          * @return builder
          * 
@@ -139,7 +141,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param condition (Updatable) This is the condition for the filter in comparison to its creation time.
+         * @param condition This is the condition for the filter in comparison to its creation time.
          * 
          * @return builder
          * 
@@ -149,7 +151,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param shouldIncludeChildCompartments (Updatable) This sets whether to include child compartments.
+         * @param shouldIncludeChildCompartments This sets whether to include child compartments.
          * 
          * @return builder
          * 
@@ -160,7 +162,7 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param shouldIncludeChildCompartments (Updatable) This sets whether to include child compartments.
+         * @param shouldIncludeChildCompartments This sets whether to include child compartments.
          * 
          * @return builder
          * 
@@ -170,7 +172,8 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values (Updatable) This is a collection of resource lifecycle state values.
+         * @param values (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+         * * When `attribute=&#34;DEFINED_TAGS&#34;`:
          * 
          * @return builder
          * 
@@ -181,7 +184,8 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values (Updatable) This is a collection of resource lifecycle state values.
+         * @param values (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+         * * When `attribute=&#34;DEFINED_TAGS&#34;`:
          * 
          * @return builder
          * 
@@ -191,7 +195,8 @@ public final class ScheduleResourceFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values (Updatable) This is a collection of resource lifecycle state values.
+         * @param values (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+         * * When `attribute=&#34;DEFINED_TAGS&#34;`:
          * 
          * @return builder
          * 

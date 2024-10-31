@@ -140,6 +140,10 @@ export interface GetDomainsCustomerSecretKeyResult {
      */
     readonly schemas: string[];
     /**
+     * The secret key.
+     */
+    readonly secretKey: string;
+    /**
      * The user's credential status.
      */
     readonly status: string;

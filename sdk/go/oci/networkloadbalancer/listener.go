@@ -38,6 +38,7 @@ import (
 //				Protocol:              pulumi.Any(listenerProtocol),
 //				IpVersion:             pulumi.Any(listenerIpVersion),
 //				IsPpv2enabled:         pulumi.Any(listenerIsPpv2enabled),
+//				L3ipIdleTimeout:       pulumi.Any(listenerL3ipIdleTimeout),
 //				TcpIdleTimeout:        pulumi.Any(listenerTcpIdleTimeout),
 //				UdpIdleTimeout:        pulumi.Any(listenerUdpIdleTimeout),
 //			})
@@ -66,6 +67,8 @@ type Listener struct {
 	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
 	// (Updatable) Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled pulumi.BoolOutput `pulumi:"isPpv2enabled"`
+	// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout pulumi.IntOutput `pulumi:"l3ipIdleTimeout"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -131,6 +134,8 @@ type listenerState struct {
 	IpVersion *string `pulumi:"ipVersion"`
 	// (Updatable) Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled *bool `pulumi:"isPpv2enabled"`
+	// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout *int `pulumi:"l3ipIdleTimeout"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -155,6 +160,8 @@ type ListenerState struct {
 	IpVersion pulumi.StringPtrInput
 	// (Updatable) Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled pulumi.BoolPtrInput
+	// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout pulumi.IntPtrInput
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -183,6 +190,8 @@ type listenerArgs struct {
 	IpVersion *string `pulumi:"ipVersion"`
 	// (Updatable) Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled *bool `pulumi:"isPpv2enabled"`
+	// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout *int `pulumi:"l3ipIdleTimeout"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -208,6 +217,8 @@ type ListenerArgs struct {
 	IpVersion pulumi.StringPtrInput
 	// (Updatable) Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled pulumi.BoolPtrInput
+	// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout pulumi.IntPtrInput
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -325,6 +336,11 @@ func (o ListenerOutput) IpVersion() pulumi.StringOutput {
 // (Updatable) Property to enable/disable PPv2 feature for this listener.
 func (o ListenerOutput) IsPpv2enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Listener) pulumi.BoolOutput { return v.IsPpv2enabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+func (o ListenerOutput) L3ipIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.L3ipIdleTimeout }).(pulumi.IntOutput)
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

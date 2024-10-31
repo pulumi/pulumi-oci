@@ -91,6 +91,8 @@ type LookupModelResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ModelArtifact    string `pulumi:"modelArtifact"`
 	ModelId          string `pulumi:"modelId"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId string `pulumi:"modelVersionSetId"`
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
@@ -104,7 +106,8 @@ type LookupModelResult struct {
 	// The state of the model.
 	State string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated  string `pulumi:"timeCreated"`
+	VersionLabel string `pulumi:"versionLabel"`
 }
 
 func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...pulumi.InvokeOption) LookupModelResultOutput {
@@ -244,6 +247,11 @@ func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelId }).(pulumi.StringOutput)
 }
 
+// The OCID of the model version set that the model is associated to.
+func (o LookupModelResultOutput) ModelVersionSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.ModelVersionSetId }).(pulumi.StringOutput)
+}
+
 // The name of the model version set that the model is associated to.
 func (o LookupModelResultOutput) ModelVersionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
@@ -277,6 +285,10 @@ func (o LookupModelResultOutput) State() pulumi.StringOutput {
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o LookupModelResultOutput) VersionLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.VersionLabel }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -84,6 +84,11 @@ public final class GetDomainsSmtpCredentialResult {
      * 
      */
     private String ocid;
+    /**
+     * @return Password
+     * 
+     */
+    private String password;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -219,6 +224,13 @@ public final class GetDomainsSmtpCredentialResult {
     public String ocid() {
         return this.ocid;
     }
+    /**
+     * @return Password
+     * 
+     */
+    public String password() {
+        return this.password;
+    }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
@@ -300,6 +312,7 @@ public final class GetDomainsSmtpCredentialResult {
         private List<String> idcsPreventedOperations;
         private List<GetDomainsSmtpCredentialMeta> metas;
         private String ocid;
+        private String password;
         private @Nullable String resourceTypeSchemaVersion;
         private List<String> schemas;
         private String smtpCredentialId;
@@ -328,6 +341,7 @@ public final class GetDomainsSmtpCredentialResult {
     	      this.idcsPreventedOperations = defaults.idcsPreventedOperations;
     	      this.metas = defaults.metas;
     	      this.ocid = defaults.ocid;
+    	      this.password = defaults.password;
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
     	      this.smtpCredentialId = defaults.smtpCredentialId;
@@ -477,6 +491,14 @@ public final class GetDomainsSmtpCredentialResult {
             return this;
         }
         @CustomType.Setter
+        public Builder password(String password) {
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialResult", "password");
+            }
+            this.password = password;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
 
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
@@ -576,6 +598,7 @@ public final class GetDomainsSmtpCredentialResult {
             _resultValue.idcsPreventedOperations = idcsPreventedOperations;
             _resultValue.metas = metas;
             _resultValue.ocid = ocid;
+            _resultValue.password = password;
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
             _resultValue.smtpCredentialId = smtpCredentialId;

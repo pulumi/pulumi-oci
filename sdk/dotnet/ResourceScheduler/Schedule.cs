@@ -14,65 +14,6 @@ namespace Pulumi.Oci.ResourceScheduler
     /// 
     /// Creates a Schedule
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testSchedule = new Oci.ResourceScheduler.Schedule("test_schedule", new()
-    ///     {
-    ///         Action = scheduleAction,
-    ///         CompartmentId = compartmentId,
-    ///         RecurrenceDetails = scheduleRecurrenceDetails,
-    ///         RecurrenceType = scheduleRecurrenceType,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = scheduleDescription,
-    ///         DisplayName = scheduleDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         ResourceFilters = new[]
-    ///         {
-    ///             new Oci.ResourceScheduler.Inputs.ScheduleResourceFilterArgs
-    ///             {
-    ///                 Attribute = scheduleResourceFiltersAttribute,
-    ///                 Condition = scheduleResourceFiltersCondition,
-    ///                 ShouldIncludeChildCompartments = scheduleResourceFiltersShouldIncludeChildCompartments,
-    ///                 Values = new[]
-    ///                 {
-    ///                     new Oci.ResourceScheduler.Inputs.ScheduleResourceFilterValueArgs
-    ///                     {
-    ///                         Namespace = scheduleResourceFiltersValueNamespace,
-    ///                         TagKey = scheduleResourceFiltersValueTagKey,
-    ///                         Value = scheduleResourceFiltersValueValue,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///         Resources = new[]
-    ///         {
-    ///             new Oci.ResourceScheduler.Inputs.ScheduleResourceArgs
-    ///             {
-    ///                 Id = scheduleResourcesId,
-    ///                 Metadata = scheduleResourcesMetadata,
-    ///             },
-    ///         },
-    ///         TimeEnds = scheduleTimeEnds,
-    ///         TimeStarts = scheduleTimeStarts,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Schedules can be imported using the `id`, e.g.
@@ -121,13 +62,13 @@ namespace Pulumi.Oci.ResourceScheduler
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
         /// </summary>
         [Output("recurrenceDetails")]
         public Output<string> RecurrenceDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of recurrence of a schedule
+        /// (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         /// </summary>
         [Output("recurrenceType")]
         public Output<string> RecurrenceType { get; private set; } = null!;
@@ -291,13 +232,13 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
-        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
         /// </summary>
         [Input("recurrenceDetails", required: true)]
         public Input<string> RecurrenceDetails { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of recurrence of a schedule
+        /// (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         /// </summary>
         [Input("recurrenceType", required: true)]
         public Input<string> RecurrenceType { get; set; } = null!;
@@ -405,13 +346,13 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
-        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+        /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
         /// </summary>
         [Input("recurrenceDetails")]
         public Input<string>? RecurrenceDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of recurrence of a schedule
+        /// (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
         /// </summary>
         [Input("recurrenceType")]
         public Input<string>? RecurrenceType { get; set; }

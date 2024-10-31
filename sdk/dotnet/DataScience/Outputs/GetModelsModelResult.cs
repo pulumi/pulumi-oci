@@ -72,6 +72,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         public readonly string LifecycleDetails;
         public readonly string ModelArtifact;
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        public readonly string ModelVersionSetId;
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
         public readonly string ModelVersionSetName;
@@ -99,6 +103,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         /// </summary>
         public readonly string TimeCreated;
+        public readonly string VersionLabel;
 
         [OutputConstructor]
         private GetModelsModelResult(
@@ -140,6 +145,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string modelArtifact,
 
+            string modelVersionSetId,
+
             string modelVersionSetName,
 
             string outputSchema,
@@ -152,7 +159,9 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string state,
 
-            string timeCreated)
+            string timeCreated,
+
+            string versionLabel)
         {
             ArtifactContentDisposition = artifactContentDisposition;
             ArtifactContentLength = artifactContentLength;
@@ -173,6 +182,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             InputSchema = inputSchema;
             LifecycleDetails = lifecycleDetails;
             ModelArtifact = modelArtifact;
+            ModelVersionSetId = modelVersionSetId;
             ModelVersionSetName = modelVersionSetName;
             OutputSchema = outputSchema;
             ProjectId = projectId;
@@ -180,6 +190,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             RetentionSettings = retentionSettings;
             State = state;
             TimeCreated = timeCreated;
+            VersionLabel = versionLabel;
         }
     }
 }

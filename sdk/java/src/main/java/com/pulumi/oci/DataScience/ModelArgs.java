@@ -209,6 +209,36 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetId")
+    private @Nullable Output<String> modelVersionSetId;
+
+    /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<Output<String>> modelVersionSetId() {
+        return Optional.ofNullable(this.modelVersionSetId);
+    }
+
+    /**
+     * The name of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetName")
+    private @Nullable Output<String> modelVersionSetName;
+
+    /**
+     * @return The name of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<Output<String>> modelVersionSetName() {
+        return Optional.ofNullable(this.modelVersionSetName);
+    }
+
+    /**
      * Output schema file content in String format
      * 
      */
@@ -268,6 +298,21 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    @Import(name="versionLabel")
+    private @Nullable Output<String> versionLabel;
+
+    /**
+     * @return (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    public Optional<Output<String>> versionLabel() {
+        return Optional.ofNullable(this.versionLabel);
+    }
+
     private ModelArgs() {}
 
     private ModelArgs(ModelArgs $) {
@@ -283,10 +328,13 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.inputSchema = $.inputSchema;
         this.modelArtifact = $.modelArtifact;
+        this.modelVersionSetId = $.modelVersionSetId;
+        this.modelVersionSetName = $.modelVersionSetName;
         this.outputSchema = $.outputSchema;
         this.projectId = $.projectId;
         this.retentionSetting = $.retentionSetting;
         this.state = $.state;
+        this.versionLabel = $.versionLabel;
     }
 
     public static Builder builder() {
@@ -586,6 +634,48 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(@Nullable Output<String> modelVersionSetId) {
+            $.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+
+        /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            return modelVersionSetId(Output.of(modelVersionSetId));
+        }
+
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetName(@Nullable Output<String> modelVersionSetName) {
+            $.modelVersionSetName = modelVersionSetName;
+            return this;
+        }
+
+        /**
+         * @param modelVersionSetName The name of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            return modelVersionSetName(Output.of(modelVersionSetName));
+        }
+
+        /**
          * @param outputSchema Output schema file content in String format
          * 
          * @return builder
@@ -667,6 +757,27 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param versionLabel (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionLabel(@Nullable Output<String> versionLabel) {
+            $.versionLabel = versionLabel;
+            return this;
+        }
+
+        /**
+         * @param versionLabel (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionLabel(String versionLabel) {
+            return versionLabel(Output.of(versionLabel));
         }
 
         public ModelArgs build() {

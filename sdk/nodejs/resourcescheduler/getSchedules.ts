@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testSchedules = oci.ResourceScheduler.getSchedules({
  *     compartmentId: compartmentId,
- *     displayName: scheduleDisplayName,
  *     scheduleId: testSchedule.id,
+ *     displayName: scheduleDisplayName,
  *     state: scheduleState,
  * });
  * ```
@@ -42,7 +42,7 @@ export function getSchedules(args?: GetSchedulesArgs, opts?: pulumi.InvokeOption
  */
 export interface GetSchedulesArgs {
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
     compartmentId?: string;
     /**
@@ -51,7 +51,7 @@ export interface GetSchedulesArgs {
     displayName?: string;
     filters?: inputs.ResourceScheduler.GetSchedulesFilter[];
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
     scheduleId?: string;
     /**
@@ -100,8 +100,8 @@ export interface GetSchedulesResult {
  *
  * const testSchedules = oci.ResourceScheduler.getSchedules({
  *     compartmentId: compartmentId,
- *     displayName: scheduleDisplayName,
  *     scheduleId: testSchedule.id,
+ *     displayName: scheduleDisplayName,
  *     state: scheduleState,
  * });
  * ```
@@ -123,7 +123,7 @@ export function getSchedulesOutput(args?: GetSchedulesOutputArgs, opts?: pulumi.
  */
 export interface GetSchedulesOutputArgs {
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -132,7 +132,7 @@ export interface GetSchedulesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.GetSchedulesFilterArgs>[]>;
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      */
     scheduleId?: pulumi.Input<string>;
     /**

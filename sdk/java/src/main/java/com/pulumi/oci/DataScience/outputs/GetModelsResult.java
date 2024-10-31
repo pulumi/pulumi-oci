@@ -37,10 +37,15 @@ public final class GetModelsResult {
      */
     private @Nullable String id;
     /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    private @Nullable String modelVersionSetId;
+    /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
-    private String modelVersionSetName;
+    private @Nullable String modelVersionSetName;
     /**
      * @return The list of models.
      * 
@@ -56,7 +61,7 @@ public final class GetModelsResult {
      * 
      */
     private @Nullable String state;
-    private String versionLabel;
+    private @Nullable String versionLabel;
 
     private GetModelsResult() {}
     /**
@@ -91,11 +96,18 @@ public final class GetModelsResult {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<String> modelVersionSetId() {
+        return Optional.ofNullable(this.modelVersionSetId);
+    }
+    /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
-    public String modelVersionSetName() {
-        return this.modelVersionSetName;
+    public Optional<String> modelVersionSetName() {
+        return Optional.ofNullable(this.modelVersionSetName);
     }
     /**
      * @return The list of models.
@@ -118,8 +130,8 @@ public final class GetModelsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
-    public String versionLabel() {
-        return this.versionLabel;
+    public Optional<String> versionLabel() {
+        return Optional.ofNullable(this.versionLabel);
     }
 
     public static Builder builder() {
@@ -136,11 +148,12 @@ public final class GetModelsResult {
         private @Nullable String displayName;
         private @Nullable List<GetModelsFilter> filters;
         private @Nullable String id;
-        private String modelVersionSetName;
+        private @Nullable String modelVersionSetId;
+        private @Nullable String modelVersionSetName;
         private List<GetModelsModel> models;
         private @Nullable String projectId;
         private @Nullable String state;
-        private String versionLabel;
+        private @Nullable String versionLabel;
         public Builder() {}
         public Builder(GetModelsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -149,6 +162,7 @@ public final class GetModelsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.modelVersionSetId = defaults.modelVersionSetId;
     	      this.modelVersionSetName = defaults.modelVersionSetName;
     	      this.models = defaults.models;
     	      this.projectId = defaults.projectId;
@@ -192,10 +206,14 @@ public final class GetModelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersionSetName(String modelVersionSetName) {
-            if (modelVersionSetName == null) {
-              throw new MissingRequiredPropertyException("GetModelsResult", "modelVersionSetName");
-            }
+        public Builder modelVersionSetId(@Nullable String modelVersionSetId) {
+
+            this.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelVersionSetName(@Nullable String modelVersionSetName) {
+
             this.modelVersionSetName = modelVersionSetName;
             return this;
         }
@@ -223,10 +241,8 @@ public final class GetModelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder versionLabel(String versionLabel) {
-            if (versionLabel == null) {
-              throw new MissingRequiredPropertyException("GetModelsResult", "versionLabel");
-            }
+        public Builder versionLabel(@Nullable String versionLabel) {
+
             this.versionLabel = versionLabel;
             return this;
         }
@@ -237,6 +253,7 @@ public final class GetModelsResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.modelVersionSetId = modelVersionSetId;
             _resultValue.modelVersionSetName = modelVersionSetName;
             _resultValue.models = models;
             _resultValue.projectId = projectId;

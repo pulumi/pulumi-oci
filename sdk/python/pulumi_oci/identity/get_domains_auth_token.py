@@ -27,7 +27,7 @@ class GetDomainsAuthTokenResult:
     """
     A collection of values returned by getDomainsAuthToken.
     """
-    def __init__(__self__, attribute_sets=None, attributes=None, auth_token_id=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, resource_type_schema_version=None, schemas=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
+    def __init__(__self__, attribute_sets=None, attributes=None, auth_token_id=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, resource_type_schema_version=None, schemas=None, status=None, tags=None, tenancy_ocid=None, token=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
         if attribute_sets and not isinstance(attribute_sets, list):
             raise TypeError("Expected argument 'attribute_sets' to be a list")
         pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -94,6 +94,9 @@ class GetDomainsAuthTokenResult:
         if tenancy_ocid and not isinstance(tenancy_ocid, str):
             raise TypeError("Expected argument 'tenancy_ocid' to be a str")
         pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+        if token and not isinstance(token, str):
+            raise TypeError("Expected argument 'token' to be a str")
+        pulumi.set(__self__, "token", token)
         if urnietfparamsscimschemasoracleidcsextensionself_change_users and not isinstance(urnietfparamsscimschemasoracleidcsextensionself_change_users, list):
             raise TypeError("Expected argument 'urnietfparamsscimschemasoracleidcsextensionself_change_users' to be a list")
         pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_users", urnietfparamsscimschemasoracleidcsextensionself_change_users)
@@ -260,6 +263,14 @@ class GetDomainsAuthTokenResult:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        token
+        """
+        return pulumi.get(self, "token")
+
+    @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUsers")
     def urnietfparamsscimschemasoracleidcsextensionself_change_users(self) -> Sequence['outputs.GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult']:
         """
@@ -304,6 +315,7 @@ class AwaitableGetDomainsAuthTokenResult(GetDomainsAuthTokenResult):
             status=self.status,
             tags=self.tags,
             tenancy_ocid=self.tenancy_ocid,
+            token=self.token,
             urnietfparamsscimschemasoracleidcsextensionself_change_users=self.urnietfparamsscimschemasoracleidcsextensionself_change_users,
             users=self.users)
 
@@ -375,6 +387,7 @@ def get_domains_auth_token(attribute_sets: Optional[Sequence[str]] = None,
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
+        token=pulumi.get(__ret__, 'token'),
         urnietfparamsscimschemasoracleidcsextensionself_change_users=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionself_change_users'),
         users=pulumi.get(__ret__, 'users'))
 def get_domains_auth_token_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -443,5 +456,6 @@ def get_domains_auth_token_output(attribute_sets: Optional[pulumi.Input[Optional
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
         tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),
+        token=pulumi.get(__response__, 'token'),
         urnietfparamsscimschemasoracleidcsextensionself_change_users=pulumi.get(__response__, 'urnietfparamsscimschemasoracleidcsextensionself_change_users'),
         users=pulumi.get(__response__, 'users')))

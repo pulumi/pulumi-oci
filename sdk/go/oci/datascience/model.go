@@ -16,6 +16,70 @@ import (
 //
 // Creates a new model.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := DataScience.NewModel(ctx, "test_model", &DataScience.ModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ProjectId:     pulumi.Any(testProject.Id),
+//				BackupSetting: &datascience.ModelBackupSettingArgs{
+//					BackupRegion:             pulumi.Any(modelBackupSettingBackupRegion),
+//					IsBackupEnabled:          pulumi.Any(modelBackupSettingIsBackupEnabled),
+//					CustomerNotificationType: pulumi.Any(modelBackupSettingCustomerNotificationType),
+//				},
+//				CustomMetadataLists: datascience.ModelCustomMetadataListArray{
+//					&datascience.ModelCustomMetadataListArgs{
+//						Category:    pulumi.Any(modelCustomMetadataListCategory),
+//						Description: pulumi.Any(modelCustomMetadataListDescription),
+//						Key:         pulumi.Any(modelCustomMetadataListKey),
+//						Value:       pulumi.Any(modelCustomMetadataListValue),
+//					},
+//				},
+//				DefinedMetadataLists: datascience.ModelDefinedMetadataListArray{
+//					&datascience.ModelDefinedMetadataListArgs{
+//						Category:    pulumi.Any(modelDefinedMetadataListCategory),
+//						Description: pulumi.Any(modelDefinedMetadataListDescription),
+//						Key:         pulumi.Any(modelDefinedMetadataListKey),
+//						Value:       pulumi.Any(modelDefinedMetadataListValue),
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(modelDescription),
+//				DisplayName: pulumi.Any(modelDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				InputSchema:  pulumi.Any(modelInputSchema),
+//				OutputSchema: pulumi.Any(modelOutputSchema),
+//				RetentionSetting: &datascience.ModelRetentionSettingArgs{
+//					ArchiveAfterDays:         pulumi.Any(modelRetentionSettingArchiveAfterDays),
+//					CustomerNotificationType: pulumi.Any(modelRetentionSettingCustomerNotificationType),
+//					DeleteAfterDays:          pulumi.Any(modelRetentionSettingDeleteAfterDays),
+//				},
+//				VersionLabel: pulumi.Any(modelVersionLabel),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Models can be imported using the `id`, e.g.
@@ -62,6 +126,8 @@ type Model struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringOutput `pulumi:"modelArtifact"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId pulumi.StringOutput `pulumi:"modelVersionSetId"`
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName pulumi.StringOutput `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
@@ -76,6 +142,8 @@ type Model struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+	VersionLabel pulumi.StringOutput `pulumi:"versionLabel"`
 }
 
 // NewModel registers a new resource with the given unique name, arguments, and options.
@@ -156,6 +224,8 @@ type modelState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact *string `pulumi:"modelArtifact"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId *string `pulumi:"modelVersionSetId"`
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName *string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
@@ -170,6 +240,8 @@ type modelState struct {
 	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+	VersionLabel *string `pulumi:"versionLabel"`
 }
 
 type ModelState struct {
@@ -209,6 +281,8 @@ type ModelState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringPtrInput
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId pulumi.StringPtrInput
 	// The name of the model version set that the model is associated to.
 	ModelVersionSetName pulumi.StringPtrInput
 	// Output schema file content in String format
@@ -223,6 +297,8 @@ type ModelState struct {
 	State pulumi.StringPtrInput
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringPtrInput
+	// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+	VersionLabel pulumi.StringPtrInput
 }
 
 func (ModelState) ElementType() reflect.Type {
@@ -257,6 +333,10 @@ type modelArgs struct {
 	InputSchema *string `pulumi:"inputSchema"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact string `pulumi:"modelArtifact"`
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId *string `pulumi:"modelVersionSetId"`
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName *string `pulumi:"modelVersionSetName"`
 	// Output schema file content in String format
 	OutputSchema *string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -265,6 +345,8 @@ type modelArgs struct {
 	RetentionSetting *ModelRetentionSetting `pulumi:"retentionSetting"`
 	// The state of the model.
 	State *string `pulumi:"state"`
+	// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+	VersionLabel *string `pulumi:"versionLabel"`
 }
 
 // The set of arguments for constructing a Model resource.
@@ -296,6 +378,10 @@ type ModelArgs struct {
 	InputSchema pulumi.StringPtrInput
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringInput
+	// The OCID of the model version set that the model is associated to.
+	ModelVersionSetId pulumi.StringPtrInput
+	// The name of the model version set that the model is associated to.
+	ModelVersionSetName pulumi.StringPtrInput
 	// Output schema file content in String format
 	OutputSchema pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -304,6 +390,8 @@ type ModelArgs struct {
 	RetentionSetting ModelRetentionSettingPtrInput
 	// The state of the model.
 	State pulumi.StringPtrInput
+	// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+	VersionLabel pulumi.StringPtrInput
 }
 
 func (ModelArgs) ElementType() reflect.Type {
@@ -483,6 +571,11 @@ func (o ModelOutput) ModelArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelArtifact }).(pulumi.StringOutput)
 }
 
+// The OCID of the model version set that the model is associated to.
+func (o ModelOutput) ModelVersionSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelVersionSetId }).(pulumi.StringOutput)
+}
+
 // The name of the model version set that the model is associated to.
 func (o ModelOutput) ModelVersionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelVersionSetName }).(pulumi.StringOutput)
@@ -516,6 +609,11 @@ func (o ModelOutput) State() pulumi.StringOutput {
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 func (o ModelOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+func (o ModelOutput) VersionLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.VersionLabel }).(pulumi.StringOutput)
 }
 
 type ModelArrayOutput struct{ *pulumi.OutputState }

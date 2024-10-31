@@ -100,7 +100,9 @@ type LookupDomainsSmtpCredentialResult struct {
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsSmtpCredentialMeta `pulumi:"metas"`
 	// User's ocid
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid string `pulumi:"ocid"`
+	// Password
+	Password                  string  `pulumi:"password"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas          []string `pulumi:"schemas"`
@@ -251,6 +253,11 @@ func (o LookupDomainsSmtpCredentialResultOutput) Metas() GetDomainsSmtpCredentia
 // User's ocid
 func (o LookupDomainsSmtpCredentialResultOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsSmtpCredentialResult) string { return v.Ocid }).(pulumi.StringOutput)
+}
+
+// Password
+func (o LookupDomainsSmtpCredentialResultOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsSmtpCredentialResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
 func (o LookupDomainsSmtpCredentialResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {

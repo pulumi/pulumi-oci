@@ -36,6 +36,7 @@ export function getModels(args: GetModelsArgs, opts?: pulumi.InvokeOptions): Pro
         "displayName": args.displayName,
         "filters": args.filters,
         "id": args.id,
+        "modelVersionSetId": args.modelVersionSetId,
         "modelVersionSetName": args.modelVersionSetName,
         "projectId": args.projectId,
         "state": args.state,
@@ -65,9 +66,13 @@ export interface GetModelsArgs {
      */
     id?: string;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    modelVersionSetId?: string;
+    /**
      * The name of the model version set that the model is associated to.
      */
-    modelVersionSetName: string;
+    modelVersionSetName?: string;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
@@ -76,7 +81,7 @@ export interface GetModelsArgs {
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
     state?: string;
-    versionLabel: string;
+    versionLabel?: string;
 }
 
 /**
@@ -101,9 +106,13 @@ export interface GetModelsResult {
      */
     readonly id?: string;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    readonly modelVersionSetId?: string;
+    /**
      * The name of the model version set that the model is associated to.
      */
-    readonly modelVersionSetName: string;
+    readonly modelVersionSetName?: string;
     /**
      * The list of models.
      */
@@ -116,7 +125,7 @@ export interface GetModelsResult {
      * The state of the model.
      */
     readonly state?: string;
-    readonly versionLabel: string;
+    readonly versionLabel?: string;
 }
 /**
  * This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
@@ -148,6 +157,7 @@ export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeO
         "displayName": args.displayName,
         "filters": args.filters,
         "id": args.id,
+        "modelVersionSetId": args.modelVersionSetId,
         "modelVersionSetName": args.modelVersionSetName,
         "projectId": args.projectId,
         "state": args.state,
@@ -177,9 +187,13 @@ export interface GetModelsOutputArgs {
      */
     id?: pulumi.Input<string>;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    modelVersionSetId?: pulumi.Input<string>;
+    /**
      * The name of the model version set that the model is associated to.
      */
-    modelVersionSetName: pulumi.Input<string>;
+    modelVersionSetName?: pulumi.Input<string>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
@@ -188,5 +202,5 @@ export interface GetModelsOutputArgs {
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
     state?: pulumi.Input<string>;
-    versionLabel: pulumi.Input<string>;
+    versionLabel?: pulumi.Input<string>;
 }

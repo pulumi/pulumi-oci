@@ -30,6 +30,70 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.Model;
+ * import com.pulumi.oci.DataScience.ModelArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelBackupSettingArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelRetentionSettingArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModel = new Model("testModel", ModelArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .projectId(testProject.id())
+ *             .backupSetting(ModelBackupSettingArgs.builder()
+ *                 .backupRegion(modelBackupSettingBackupRegion)
+ *                 .isBackupEnabled(modelBackupSettingIsBackupEnabled)
+ *                 .customerNotificationType(modelBackupSettingCustomerNotificationType)
+ *                 .build())
+ *             .customMetadataLists(ModelCustomMetadataListArgs.builder()
+ *                 .category(modelCustomMetadataListCategory)
+ *                 .description(modelCustomMetadataListDescription)
+ *                 .key(modelCustomMetadataListKey)
+ *                 .value(modelCustomMetadataListValue)
+ *                 .build())
+ *             .definedMetadataLists(ModelDefinedMetadataListArgs.builder()
+ *                 .category(modelDefinedMetadataListCategory)
+ *                 .description(modelDefinedMetadataListDescription)
+ *                 .key(modelDefinedMetadataListKey)
+ *                 .value(modelDefinedMetadataListValue)
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(modelDescription)
+ *             .displayName(modelDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .inputSchema(modelInputSchema)
+ *             .outputSchema(modelOutputSchema)
+ *             .retentionSetting(ModelRetentionSettingArgs.builder()
+ *                 .archiveAfterDays(modelRetentionSettingArchiveAfterDays)
+ *                 .customerNotificationType(modelRetentionSettingCustomerNotificationType)
+ *                 .deleteAfterDays(modelRetentionSettingDeleteAfterDays)
+ *                 .build())
+ *             .versionLabel(modelVersionLabel)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -278,6 +342,20 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.modelArtifact;
     }
     /**
+     * The OCID of the model version set that the model is associated to.
+     * 
+     */
+    @Export(name="modelVersionSetId", refs={String.class}, tree="[0]")
+    private Output<String> modelVersionSetId;
+
+    /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Output<String> modelVersionSetId() {
+        return this.modelVersionSetId;
+    }
+    /**
      * The name of the model version set that the model is associated to.
      * 
      */
@@ -374,6 +452,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    @Export(name="versionLabel", refs={String.class}, tree="[0]")
+    private Output<String> versionLabel;
+
+    /**
+     * @return (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * 
+     */
+    public Output<String> versionLabel() {
+        return this.versionLabel;
     }
 
     /**

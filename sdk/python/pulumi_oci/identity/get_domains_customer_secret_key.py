@@ -27,7 +27,7 @@ class GetDomainsCustomerSecretKeyResult:
     """
     A collection of values returned by getDomainsCustomerSecretKey.
     """
-    def __init__(__self__, access_key=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, customer_secret_key_id=None, delete_in_progress=None, description=None, display_name=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, resource_type_schema_version=None, schemas=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
+    def __init__(__self__, access_key=None, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, customer_secret_key_id=None, delete_in_progress=None, description=None, display_name=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, resource_type_schema_version=None, schemas=None, secret_key=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
         if access_key and not isinstance(access_key, str):
             raise TypeError("Expected argument 'access_key' to be a str")
         pulumi.set(__self__, "access_key", access_key)
@@ -91,6 +91,9 @@ class GetDomainsCustomerSecretKeyResult:
         if schemas and not isinstance(schemas, list):
             raise TypeError("Expected argument 'schemas' to be a list")
         pulumi.set(__self__, "schemas", schemas)
+        if secret_key and not isinstance(secret_key, str):
+            raise TypeError("Expected argument 'secret_key' to be a str")
+        pulumi.set(__self__, "secret_key", secret_key)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -258,6 +261,14 @@ class GetDomainsCustomerSecretKeyResult:
         return pulumi.get(self, "schemas")
 
     @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> str:
+        """
+        The secret key.
+        """
+        return pulumi.get(self, "secret_key")
+
+    @property
     @pulumi.getter
     def status(self) -> str:
         """
@@ -325,6 +336,7 @@ class AwaitableGetDomainsCustomerSecretKeyResult(GetDomainsCustomerSecretKeyResu
             ocid=self.ocid,
             resource_type_schema_version=self.resource_type_schema_version,
             schemas=self.schemas,
+            secret_key=self.secret_key,
             status=self.status,
             tags=self.tags,
             tenancy_ocid=self.tenancy_ocid,
@@ -398,6 +410,7 @@ def get_domains_customer_secret_key(attribute_sets: Optional[Sequence[str]] = No
         ocid=pulumi.get(__ret__, 'ocid'),
         resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
         schemas=pulumi.get(__ret__, 'schemas'),
+        secret_key=pulumi.get(__ret__, 'secret_key'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
@@ -468,6 +481,7 @@ def get_domains_customer_secret_key_output(attribute_sets: Optional[pulumi.Input
         ocid=pulumi.get(__response__, 'ocid'),
         resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
         schemas=pulumi.get(__response__, 'schemas'),
+        secret_key=pulumi.get(__response__, 'secret_key'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
         tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),

@@ -14,6 +14,70 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a new model.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testModel = new Oci.DataScience.Model("test_model", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         ProjectId = testProject.Id,
+    ///         BackupSetting = new Oci.DataScience.Inputs.ModelBackupSettingArgs
+    ///         {
+    ///             BackupRegion = modelBackupSettingBackupRegion,
+    ///             IsBackupEnabled = modelBackupSettingIsBackupEnabled,
+    ///             CustomerNotificationType = modelBackupSettingCustomerNotificationType,
+    ///         },
+    ///         CustomMetadataLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.ModelCustomMetadataListArgs
+    ///             {
+    ///                 Category = modelCustomMetadataListCategory,
+    ///                 Description = modelCustomMetadataListDescription,
+    ///                 Key = modelCustomMetadataListKey,
+    ///                 Value = modelCustomMetadataListValue,
+    ///             },
+    ///         },
+    ///         DefinedMetadataLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.ModelDefinedMetadataListArgs
+    ///             {
+    ///                 Category = modelDefinedMetadataListCategory,
+    ///                 Description = modelDefinedMetadataListDescription,
+    ///                 Key = modelDefinedMetadataListKey,
+    ///                 Value = modelDefinedMetadataListValue,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = modelDescription,
+    ///         DisplayName = modelDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         InputSchema = modelInputSchema,
+    ///         OutputSchema = modelOutputSchema,
+    ///         RetentionSetting = new Oci.DataScience.Inputs.ModelRetentionSettingArgs
+    ///         {
+    ///             ArchiveAfterDays = modelRetentionSettingArchiveAfterDays,
+    ///             CustomerNotificationType = modelRetentionSettingCustomerNotificationType,
+    ///             DeleteAfterDays = modelRetentionSettingDeleteAfterDays,
+    ///         },
+    ///         VersionLabel = modelVersionLabel,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Models can be imported using the `id`, e.g.
@@ -128,6 +192,12 @@ namespace Pulumi.Oci.DataScience
         public Output<string> ModelArtifact { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        [Output("modelVersionSetId")]
+        public Output<string> ModelVersionSetId { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
         [Output("modelVersionSetName")]
@@ -168,6 +238,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        /// </summary>
+        [Output("versionLabel")]
+        public Output<string> VersionLabel { get; private set; } = null!;
 
 
         /// <summary>
@@ -315,6 +391,18 @@ namespace Pulumi.Oci.DataScience
         public Input<string> ModelArtifact { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetId")]
+        public Input<string>? ModelVersionSetId { get; set; }
+
+        /// <summary>
+        /// The name of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetName")]
+        public Input<string>? ModelVersionSetName { get; set; }
+
+        /// <summary>
         /// Output schema file content in String format
         /// </summary>
         [Input("outputSchema")]
@@ -337,6 +425,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        /// </summary>
+        [Input("versionLabel")]
+        public Input<string>? VersionLabel { get; set; }
 
         public ModelArgs()
         {
@@ -479,6 +573,12 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? ModelArtifact { get; set; }
 
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetId")]
+        public Input<string>? ModelVersionSetId { get; set; }
+
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
         [Input("modelVersionSetName")]
@@ -525,6 +625,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        /// </summary>
+        [Input("versionLabel")]
+        public Input<string>? VersionLabel { get; set; }
 
         public ModelState()
         {

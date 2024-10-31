@@ -294,6 +294,22 @@ namespace Pulumi.Oci.Identity
         public Output<string> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) token
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Output("token")]
+        public Output<string> Token { get; private set; } = null!;
+
+        /// <summary>
         /// Controls whether a user can update themselves or not via User related APIs
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionselfChangeUser")]
@@ -847,6 +863,22 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
+
+        /// <summary>
+        /// (Updatable) token
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Input("token")]
+        public Input<string>? Token { get; set; }
 
         /// <summary>
         /// Controls whether a user can update themselves or not via User related APIs

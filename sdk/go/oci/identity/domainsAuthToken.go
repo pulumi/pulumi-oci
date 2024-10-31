@@ -214,6 +214,18 @@ type DomainsAuthToken struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	// (Updatable) token
+	//
+	// **Added In:** 2010242156
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Token pulumi.StringOutput `pulumi:"token"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the Auth token.
@@ -454,6 +466,18 @@ type domainsAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
+	// (Updatable) token
+	//
+	// **Added In:** 2010242156
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Token *string `pulumi:"token"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the Auth token.
@@ -659,6 +683,18 @@ type DomainsAuthTokenState struct {
 	// * type: string
 	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
+	// (Updatable) token
+	//
+	// **Added In:** 2010242156
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Token pulumi.StringPtrInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
 	// The user linked to the Auth token.
@@ -1217,6 +1253,21 @@ func (o DomainsAuthTokenOutput) Tags() DomainsAuthTokenTagArrayOutput {
 // * uniqueness: none
 func (o DomainsAuthTokenOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+}
+
+// (Updatable) token
+//
+// **Added In:** 2010242156
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * type: string
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsSensitive: hash_sc
+func (o DomainsAuthTokenOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs

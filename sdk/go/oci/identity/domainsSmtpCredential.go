@@ -160,6 +160,16 @@ type DomainsSmtpCredential struct {
 	// * type: string
 	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	// (Updatable) Password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Password pulumi.StringOutput `pulumi:"password"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -410,6 +420,16 @@ type domainsSmtpCredentialState struct {
 	// * type: string
 	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
+	// (Updatable) Password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Password *string `pulumi:"password"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -625,6 +645,16 @@ type DomainsSmtpCredentialState struct {
 	// * type: string
 	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
+	// (Updatable) Password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsSensitive: hash_sc
+	Password pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1176,6 +1206,19 @@ func (o DomainsSmtpCredentialOutput) Metas() DomainsSmtpCredentialMetaArrayOutpu
 // * uniqueness: global
 func (o DomainsSmtpCredentialOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+}
+
+// (Updatable) Password
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * type: string
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsSensitive: hash_sc
+func (o DomainsSmtpCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.

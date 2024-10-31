@@ -120,6 +120,11 @@ __all__ = [
     'GetDataSafeConfigurationGlobalSettingResult',
     'GetDataSafePrivateEndpointsDataSafePrivateEndpointResult',
     'GetDataSafePrivateEndpointsFilterResult',
+    'GetDatabaseSecurityConfigSqlFirewallConfigResult',
+    'GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionResult',
+    'GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult',
+    'GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigResult',
+    'GetDatabaseSecurityConfigsFilterResult',
     'GetDiscoveryAnalyticItemResult',
     'GetDiscoveryAnalyticItemDimensionResult',
     'GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult',
@@ -10339,6 +10344,326 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
 
 @pulumi.output_type
 class GetDataSafePrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseSecurityConfigSqlFirewallConfigResult(dict):
+    def __init__(__self__, *,
+                 exclude_job: str,
+                 status: str,
+                 time_status_updated: str,
+                 violation_log_auto_purge: str):
+        """
+        :param str exclude_job: Specifies whether the firewall should include or exclude the database internal job activities.
+        :param str status: Specifies if the firewall is enabled or disabled on the target database.
+        :param str time_status_updated: The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        :param str violation_log_auto_purge: Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        pulumi.set(__self__, "exclude_job", exclude_job)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_status_updated", time_status_updated)
+        pulumi.set(__self__, "violation_log_auto_purge", violation_log_auto_purge)
+
+    @property
+    @pulumi.getter(name="excludeJob")
+    def exclude_job(self) -> str:
+        """
+        Specifies whether the firewall should include or exclude the database internal job activities.
+        """
+        return pulumi.get(self, "exclude_job")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Specifies if the firewall is enabled or disabled on the target database.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> str:
+        """
+        The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+    @property
+    @pulumi.getter(name="violationLogAutoPurge")
+    def violation_log_auto_purge(self) -> str:
+        """
+        Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        return pulumi.get(self, "violation_log_auto_purge")
+
+
+@pulumi.output_type
+class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 database_security_config_id: str,
+                 defined_tags: Mapping[str, str],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, str],
+                 id: str,
+                 lifecycle_details: str,
+                 refresh_trigger: int,
+                 sql_firewall_configs: Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigResult'],
+                 state: str,
+                 system_tags: Mapping[str, str],
+                 target_id: str,
+                 time_created: str,
+                 time_last_refreshed: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param str database_security_config_id: An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the database security config.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the database security config.
+        :param str lifecycle_details: Details about the current state of the database security config in Data Safe.
+        :param Sequence['GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs'] sql_firewall_configs: The SQL Firewall related configurations.
+        :param str state: The current state of the database security configuration.
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str time_created: The time that the database security config was created, in the format defined by RFC3339.
+        :param str time_last_refreshed: The last date and time the database security config was refreshed, in the format defined by RFC3339.
+        :param str time_updated: The date and time the database security configuration was last updated, in the format defined by RFC3339.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_security_config_id", database_security_config_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        pulumi.set(__self__, "sql_firewall_configs", sql_firewall_configs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_refreshed", time_last_refreshed)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseSecurityConfigId")
+    def database_security_config_id(self) -> str:
+        """
+        An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+        """
+        return pulumi.get(self, "database_security_config_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the database security config.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the database security config.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the current state of the database security config in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> int:
+        return pulumi.get(self, "refresh_trigger")
+
+    @property
+    @pulumi.getter(name="sqlFirewallConfigs")
+    def sql_firewall_configs(self) -> Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigResult']:
+        """
+        The SQL Firewall related configurations.
+        """
+        return pulumi.get(self, "sql_firewall_configs")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the database security configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time that the database security config was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastRefreshed")
+    def time_last_refreshed(self) -> str:
+        """
+        The last date and time the database security config was refreshed, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_refreshed")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the database security configuration was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigResult(dict):
+    def __init__(__self__, *,
+                 exclude_job: str,
+                 status: str,
+                 time_status_updated: str,
+                 violation_log_auto_purge: str):
+        """
+        :param str exclude_job: Specifies whether the firewall should include or exclude the database internal job activities.
+        :param str status: Specifies if the firewall is enabled or disabled on the target database.
+        :param str time_status_updated: The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        :param str violation_log_auto_purge: Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        pulumi.set(__self__, "exclude_job", exclude_job)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_status_updated", time_status_updated)
+        pulumi.set(__self__, "violation_log_auto_purge", violation_log_auto_purge)
+
+    @property
+    @pulumi.getter(name="excludeJob")
+    def exclude_job(self) -> str:
+        """
+        Specifies whether the firewall should include or exclude the database internal job activities.
+        """
+        return pulumi.get(self, "exclude_job")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Specifies if the firewall is enabled or disabled on the target database.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> str:
+        """
+        The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+    @property
+    @pulumi.getter(name="violationLogAutoPurge")
+    def violation_log_auto_purge(self) -> str:
+        """
+        Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        return pulumi.get(self, "violation_log_auto_purge")
+
+
+@pulumi.output_type
+class GetDatabaseSecurityConfigsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

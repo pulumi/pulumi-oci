@@ -613,6 +613,39 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
     }
 
     /**
+     * (Updatable) Secret
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    @Import(name="secret")
+    private @Nullable Output<String> secret;
+
+    /**
+     * @return (Updatable) Secret
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    public Optional<Output<String>> secret() {
+        return Optional.ofNullable(this.secret);
+    }
+
+    /**
      * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
@@ -794,6 +827,7 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
         this.resourceTypeSchemaVersion = $.resourceTypeSchemaVersion;
         this.schemas = $.schemas;
         this.scopes = $.scopes;
+        this.secret = $.secret;
         this.status = $.status;
         this.tags = $.tags;
         this.tenancyOcid = $.tenancyOcid;
@@ -1649,6 +1683,45 @@ public final class DomainsOauth2clientCredentialState extends com.pulumi.resourc
          */
         public Builder scopes(DomainsOauth2clientCredentialScopeArgs... scopes) {
             return scopes(List.of(scopes));
+        }
+
+        /**
+         * @param secret (Updatable) Secret
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsScimCompliant: false
+         * * idcsSensitive: hash_sc
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secret(@Nullable Output<String> secret) {
+            $.secret = secret;
+            return this;
+        }
+
+        /**
+         * @param secret (Updatable) Secret
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsScimCompliant: false
+         * * idcsSensitive: hash_sc
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secret(String secret) {
+            return secret(Output.of(secret));
         }
 
         /**

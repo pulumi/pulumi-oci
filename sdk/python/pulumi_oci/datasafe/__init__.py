@@ -56,6 +56,8 @@ from .get_compatible_formats_for_sensitive_type import *
 from .get_data_safe_configuration import *
 from .get_data_safe_private_endpoint import *
 from .get_data_safe_private_endpoints import *
+from .get_database_security_config import *
+from .get_database_security_configs import *
 from .get_discovery_analytic import *
 from .get_discovery_analytics import *
 from .get_discovery_job import *

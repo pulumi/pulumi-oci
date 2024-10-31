@@ -60,6 +60,10 @@ export interface GetListenerResult {
      * Property to enable/disable PPv2 feature for this listener.
      */
     readonly isPpv2enabled: boolean;
+    /**
+     * The duration for L3IP idle timeout in seconds. Example: `200`
+     */
+    readonly l3ipIdleTimeout: number;
     readonly listenerName: string;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

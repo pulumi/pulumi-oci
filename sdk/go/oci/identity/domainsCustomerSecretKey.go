@@ -192,6 +192,15 @@ type DomainsCustomerSecretKey struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
+	// (Updatable) The secret key.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	SecretKey pulumi.StringOutput `pulumi:"secretKey"`
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -448,6 +457,15 @@ type domainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
+	// (Updatable) The secret key.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	SecretKey *string `pulumi:"secretKey"`
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -669,6 +687,15 @@ type DomainsCustomerSecretKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
+	// (Updatable) The secret key.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	SecretKey pulumi.StringPtrInput
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -1258,6 +1285,18 @@ func (o DomainsCustomerSecretKeyOutput) ResourceTypeSchemaVersion() pulumi.Strin
 // * uniqueness: none
 func (o DomainsCustomerSecretKeyOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The secret key.
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * type: string
+// * mutability: readOnly
+// * required: false
+// * returned: default
+func (o DomainsCustomerSecretKeyOutput) SecretKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsCustomerSecretKey) pulumi.StringOutput { return v.SecretKey }).(pulumi.StringOutput)
 }
 
 // The user's credential status.

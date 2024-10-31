@@ -565,6 +565,35 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) The secret key.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * 
+     */
+    @Import(name="secretKey")
+    private @Nullable Output<String> secretKey;
+
+    /**
+     * @return (Updatable) The secret key.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * 
+     */
+    public Optional<Output<String>> secretKey() {
+        return Optional.ofNullable(this.secretKey);
+    }
+
+    /**
      * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424
@@ -745,6 +774,7 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
         this.ocid = $.ocid;
         this.resourceTypeSchemaVersion = $.resourceTypeSchemaVersion;
         this.schemas = $.schemas;
+        this.secretKey = $.secretKey;
         this.status = $.status;
         this.tags = $.tags;
         this.tenancyOcid = $.tenancyOcid;
@@ -1528,6 +1558,41 @@ public final class DomainsCustomerSecretKeyState extends com.pulumi.resources.Re
          */
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
+        }
+
+        /**
+         * @param secretKey (Updatable) The secret key.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretKey(@Nullable Output<String> secretKey) {
+            $.secretKey = secretKey;
+            return this;
+        }
+
+        /**
+         * @param secretKey (Updatable) The secret key.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretKey(String secretKey) {
+            return secretKey(Output.of(secretKey));
         }
 
         /**

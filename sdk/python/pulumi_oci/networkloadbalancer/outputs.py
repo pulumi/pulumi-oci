@@ -1294,7 +1294,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
                  network_load_balancer_id: str,
                  policy: str):
         """
-        :param Sequence['GetBackendSetsBackendSetCollectionItemBackendArgs'] backends: Array of backends.
+        :param Sequence['GetBackendSetsBackendSetCollectionItemBackendArgs'] backends: An array of backends.
         :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param str ip_version: IP version associated with the backend set.
         :param bool is_fail_open: If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
@@ -1319,7 +1319,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter
     def backends(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionItemBackendResult']:
         """
-        Array of backends.
+        An array of backends.
         """
         return pulumi.get(self, "backends")
 
@@ -1932,6 +1932,7 @@ class GetListenersListenerCollectionItemResult(dict):
                  id: str,
                  ip_version: str,
                  is_ppv2enabled: bool,
+                 l3ip_idle_timeout: int,
                  name: str,
                  network_load_balancer_id: str,
                  port: int,
@@ -1942,6 +1943,7 @@ class GetListenersListenerCollectionItemResult(dict):
         :param str default_backend_set_name: The name of the associated backend set.  Example: `example_backend_set`
         :param str ip_version: IP version associated with the listener.
         :param bool is_ppv2enabled: Property to enable/disable PPv2 feature for this listener.
+        :param int l3ip_idle_timeout: The duration for L3IP idle timeout in seconds. Example: `200`
         :param str name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param int port: The communication port for the listener.  Example: `80`
@@ -1953,6 +1955,7 @@ class GetListenersListenerCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_version", ip_version)
         pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
+        pulumi.set(__self__, "l3ip_idle_timeout", l3ip_idle_timeout)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "port", port)
@@ -1988,6 +1991,14 @@ class GetListenersListenerCollectionItemResult(dict):
         Property to enable/disable PPv2 feature for this listener.
         """
         return pulumi.get(self, "is_ppv2enabled")
+
+    @property
+    @pulumi.getter(name="l3ipIdleTimeout")
+    def l3ip_idle_timeout(self) -> int:
+        """
+        The duration for L3IP idle timeout in seconds. Example: `200`
+        """
+        return pulumi.get(self, "l3ip_idle_timeout")
 
     @property
     @pulumi.getter

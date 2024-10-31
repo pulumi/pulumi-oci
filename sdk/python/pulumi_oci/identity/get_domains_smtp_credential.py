@@ -27,7 +27,7 @@ class GetDomainsSmtpCredentialResult:
     """
     A collection of values returned by getDomainsSmtpCredential.
     """
-    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, resource_type_schema_version=None, schemas=None, smtp_credential_id=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, user_name=None, users=None):
+    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, metas=None, ocid=None, password=None, resource_type_schema_version=None, schemas=None, smtp_credential_id=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, user_name=None, users=None):
         if attribute_sets and not isinstance(attribute_sets, list):
             raise TypeError("Expected argument 'attribute_sets' to be a list")
         pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -76,6 +76,9 @@ class GetDomainsSmtpCredentialResult:
         if ocid and not isinstance(ocid, str):
             raise TypeError("Expected argument 'ocid' to be a str")
         pulumi.set(__self__, "ocid", ocid)
+        if password and not isinstance(password, str):
+            raise TypeError("Expected argument 'password' to be a str")
+        pulumi.set(__self__, "password", password)
         if resource_type_schema_version and not isinstance(resource_type_schema_version, str):
             raise TypeError("Expected argument 'resource_type_schema_version' to be a str")
         pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
@@ -221,6 +224,14 @@ class GetDomainsSmtpCredentialResult:
         return pulumi.get(self, "ocid")
 
     @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        Password
+        """
+        return pulumi.get(self, "password")
+
+    @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[str]:
         return pulumi.get(self, "resource_type_schema_version")
@@ -309,6 +320,7 @@ class AwaitableGetDomainsSmtpCredentialResult(GetDomainsSmtpCredentialResult):
             idcs_prevented_operations=self.idcs_prevented_operations,
             metas=self.metas,
             ocid=self.ocid,
+            password=self.password,
             resource_type_schema_version=self.resource_type_schema_version,
             schemas=self.schemas,
             smtp_credential_id=self.smtp_credential_id,
@@ -381,6 +393,7 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[str]] = None,
         idcs_prevented_operations=pulumi.get(__ret__, 'idcs_prevented_operations'),
         metas=pulumi.get(__ret__, 'metas'),
         ocid=pulumi.get(__ret__, 'ocid'),
+        password=pulumi.get(__ret__, 'password'),
         resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
         schemas=pulumi.get(__ret__, 'schemas'),
         smtp_credential_id=pulumi.get(__ret__, 'smtp_credential_id'),
@@ -450,6 +463,7 @@ def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Opt
         idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
         metas=pulumi.get(__response__, 'metas'),
         ocid=pulumi.get(__response__, 'ocid'),
+        password=pulumi.get(__response__, 'password'),
         resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
         schemas=pulumi.get(__response__, 'schemas'),
         smtp_credential_id=pulumi.get(__response__, 'smtp_credential_id'),

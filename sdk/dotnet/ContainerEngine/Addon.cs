@@ -44,7 +44,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Addon configuration details.
+        /// (Updatable) Addon configuration details
         /// </summary>
         [Output("configurations")]
         public Output<ImmutableArray<Outputs.AddonConfiguration>> Configurations { get; private set; } = null!;
@@ -54,6 +54,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("currentInstalledVersion")]
         public Output<string> CurrentInstalledVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+        /// </summary>
+        [Output("overrideExisting")]
+        public Output<bool?> OverrideExisting { get; private set; } = null!;
 
         /// <summary>
         /// Whether to remove addon resource in deletion.
@@ -145,13 +151,19 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.AddonConfigurationArgs>? _configurations;
 
         /// <summary>
-        /// (Updatable) Addon configuration details.
+        /// (Updatable) Addon configuration details
         /// </summary>
         public InputList<Inputs.AddonConfigurationArgs> Configurations
         {
             get => _configurations ?? (_configurations = new InputList<Inputs.AddonConfigurationArgs>());
             set => _configurations = value;
         }
+
+        /// <summary>
+        /// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+        /// </summary>
+        [Input("overrideExisting")]
+        public Input<bool>? OverrideExisting { get; set; }
 
         /// <summary>
         /// Whether to remove addon resource in deletion.
@@ -205,7 +217,7 @@ namespace Pulumi.Oci.ContainerEngine
         private InputList<Inputs.AddonConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// (Updatable) Addon configuration details.
+        /// (Updatable) Addon configuration details
         /// </summary>
         public InputList<Inputs.AddonConfigurationGetArgs> Configurations
         {
@@ -218,6 +230,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("currentInstalledVersion")]
         public Input<string>? CurrentInstalledVersion { get; set; }
+
+        /// <summary>
+        /// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+        /// </summary>
+        [Input("overrideExisting")]
+        public Input<bool>? OverrideExisting { get; set; }
 
         /// <summary>
         /// Whether to remove addon resource in deletion.

@@ -16,14 +16,14 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
     public static final ScheduleResourceFilterValueArgs Empty = new ScheduleResourceFilterValueArgs();
 
     /**
-     * (Updatable) This is the namespace of the defined tag.
+     * This is the namespace of the defined tag.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return (Updatable) This is the namespace of the defined tag.
+     * @return This is the namespace of the defined tag.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -31,14 +31,14 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) This is the key of the defined tag.
+     * This is the key of the defined tag.
      * 
      */
     @Import(name="tagKey")
     private @Nullable Output<String> tagKey;
 
     /**
-     * @return (Updatable) This is the key of the defined tag.
+     * @return This is the key of the defined tag.
      * 
      */
     public Optional<Output<String>> tagKey() {
@@ -46,14 +46,14 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) This is the value of the defined tag.
+     * This is the lifecycle state value used for filtering.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) This is the value of the defined tag.
+     * @return This is the lifecycle state value used for filtering.
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace (Updatable) This is the namespace of the defined tag.
+         * @param namespace This is the namespace of the defined tag.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace (Updatable) This is the namespace of the defined tag.
+         * @param namespace This is the namespace of the defined tag.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param tagKey (Updatable) This is the key of the defined tag.
+         * @param tagKey This is the key of the defined tag.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param tagKey (Updatable) This is the key of the defined tag.
+         * @param tagKey This is the key of the defined tag.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param value (Updatable) This is the value of the defined tag.
+         * @param value This is the lifecycle state value used for filtering.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class ScheduleResourceFilterValueArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param value (Updatable) This is the value of the defined tag.
+         * @param value This is the lifecycle state value used for filtering.
          * 
          * @return builder
          * 

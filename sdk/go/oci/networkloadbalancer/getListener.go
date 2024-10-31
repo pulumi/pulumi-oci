@@ -67,8 +67,10 @@ type LookupListenerResult struct {
 	// IP version associated with the listener.
 	IpVersion string `pulumi:"ipVersion"`
 	// Property to enable/disable PPv2 feature for this listener.
-	IsPpv2enabled bool   `pulumi:"isPpv2enabled"`
-	ListenerName  string `pulumi:"listenerName"`
+	IsPpv2enabled bool `pulumi:"isPpv2enabled"`
+	// The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout int    `pulumi:"l3ipIdleTimeout"`
+	ListenerName    string `pulumi:"listenerName"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name                  string `pulumi:"name"`
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
@@ -145,6 +147,11 @@ func (o LookupListenerResultOutput) IpVersion() pulumi.StringOutput {
 // Property to enable/disable PPv2 feature for this listener.
 func (o LookupListenerResultOutput) IsPpv2enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupListenerResult) bool { return v.IsPpv2enabled }).(pulumi.BoolOutput)
+}
+
+// The duration for L3IP idle timeout in seconds. Example: `200`
+func (o LookupListenerResultOutput) L3ipIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupListenerResult) int { return v.L3ipIdleTimeout }).(pulumi.IntOutput)
 }
 
 func (o LookupListenerResultOutput) ListenerName() pulumi.StringOutput {

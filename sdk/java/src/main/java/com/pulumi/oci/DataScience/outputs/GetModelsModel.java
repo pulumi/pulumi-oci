@@ -91,6 +91,11 @@ public final class GetModelsModel {
     private String lifecycleDetails;
     private String modelArtifact;
     /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    private String modelVersionSetId;
+    /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
@@ -125,6 +130,7 @@ public final class GetModelsModel {
      * 
      */
     private String timeCreated;
+    private String versionLabel;
 
     private GetModelsModel() {}
     public String artifactContentDisposition() {
@@ -237,6 +243,13 @@ public final class GetModelsModel {
         return this.modelArtifact;
     }
     /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public String modelVersionSetId() {
+        return this.modelVersionSetId;
+    }
+    /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
@@ -285,6 +298,9 @@ public final class GetModelsModel {
     public String timeCreated() {
         return this.timeCreated;
     }
+    public String versionLabel() {
+        return this.versionLabel;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -314,6 +330,7 @@ public final class GetModelsModel {
         private String inputSchema;
         private String lifecycleDetails;
         private String modelArtifact;
+        private String modelVersionSetId;
         private String modelVersionSetName;
         private String outputSchema;
         private String projectId;
@@ -321,6 +338,7 @@ public final class GetModelsModel {
         private List<GetModelsModelRetentionSetting> retentionSettings;
         private String state;
         private String timeCreated;
+        private String versionLabel;
         public Builder() {}
         public Builder(GetModelsModel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -343,6 +361,7 @@ public final class GetModelsModel {
     	      this.inputSchema = defaults.inputSchema;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelArtifact = defaults.modelArtifact;
+    	      this.modelVersionSetId = defaults.modelVersionSetId;
     	      this.modelVersionSetName = defaults.modelVersionSetName;
     	      this.outputSchema = defaults.outputSchema;
     	      this.projectId = defaults.projectId;
@@ -350,6 +369,7 @@ public final class GetModelsModel {
     	      this.retentionSettings = defaults.retentionSettings;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.versionLabel = defaults.versionLabel;
         }
 
         @CustomType.Setter
@@ -517,6 +537,14 @@ public final class GetModelsModel {
             return this;
         }
         @CustomType.Setter
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            if (modelVersionSetId == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "modelVersionSetId");
+            }
+            this.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder modelVersionSetName(String modelVersionSetName) {
             if (modelVersionSetName == null) {
               throw new MissingRequiredPropertyException("GetModelsModel", "modelVersionSetName");
@@ -578,6 +606,14 @@ public final class GetModelsModel {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder versionLabel(String versionLabel) {
+            if (versionLabel == null) {
+              throw new MissingRequiredPropertyException("GetModelsModel", "versionLabel");
+            }
+            this.versionLabel = versionLabel;
+            return this;
+        }
         public GetModelsModel build() {
             final var _resultValue = new GetModelsModel();
             _resultValue.artifactContentDisposition = artifactContentDisposition;
@@ -599,6 +635,7 @@ public final class GetModelsModel {
             _resultValue.inputSchema = inputSchema;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelArtifact = modelArtifact;
+            _resultValue.modelVersionSetId = modelVersionSetId;
             _resultValue.modelVersionSetName = modelVersionSetName;
             _resultValue.outputSchema = outputSchema;
             _resultValue.projectId = projectId;
@@ -606,6 +643,7 @@ public final class GetModelsModel {
             _resultValue.retentionSettings = retentionSettings;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.versionLabel = versionLabel;
             return _resultValue;
         }
     }

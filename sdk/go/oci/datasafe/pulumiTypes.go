@@ -16422,6 +16422,707 @@ func (o GetDataSafePrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetDataSafePrivateEndpointsFilterOutput)
 }
 
+type GetDatabaseSecurityConfigSqlFirewallConfig struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob string `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge string `pulumi:"violationLogAutoPurge"`
+}
+
+// GetDatabaseSecurityConfigSqlFirewallConfigInput is an input type that accepts GetDatabaseSecurityConfigSqlFirewallConfigArgs and GetDatabaseSecurityConfigSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigSqlFirewallConfigInput` via:
+//
+//	GetDatabaseSecurityConfigSqlFirewallConfigArgs{...}
+type GetDatabaseSecurityConfigSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput
+	ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArgs struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringInput `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge pulumi.StringInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return i.ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+// GetDatabaseSecurityConfigSqlFirewallConfigArrayInput is an input type that accepts GetDatabaseSecurityConfigSqlFirewallConfigArray and GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigSqlFirewallConfigArrayInput` via:
+//
+//	GetDatabaseSecurityConfigSqlFirewallConfigArray{ GetDatabaseSecurityConfigSqlFirewallConfigArgs{...} }
+type GetDatabaseSecurityConfigSqlFirewallConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput
+	ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArray []GetDatabaseSecurityConfigSqlFirewallConfigInput
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArray) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return i.ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArray) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput)
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+// Specifies whether the firewall should include or exclude the database internal job activities.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ExcludeJob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.ExcludeJob }).(pulumi.StringOutput)
+}
+
+// Specifies if the firewall is enabled or disabled on the target database.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+}
+
+// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.ViolationLogAutoPurge }).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigSqlFirewallConfig {
+		return vs[0].([]GetDatabaseSecurityConfigSqlFirewallConfig)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection struct {
+	Items []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs struct {
+	Items GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput)
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) Items() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection) []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem {
+		return v.Items
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the database security config.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the database security config.
+	Id string `pulumi:"id"`
+	// Details about the current state of the database security config in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	RefreshTrigger   int    `pulumi:"refreshTrigger"`
+	// The SQL Firewall related configurations.
+	SqlFirewallConfigs []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig `pulumi:"sqlFirewallConfigs"`
+	// The current state of the database security configuration.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The time that the database security config was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+	TimeLastRefreshed string `pulumi:"timeLastRefreshed"`
+	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+	DatabaseSecurityConfigId pulumi.StringInput `pulumi:"databaseSecurityConfigId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the database security config.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the database security config.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the database security config in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	RefreshTrigger   pulumi.IntInput    `pulumi:"refreshTrigger"`
+	// The SQL Firewall related configurations.
+	SqlFirewallConfigs GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput `pulumi:"sqlFirewallConfigs"`
+	// The current state of the database security configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The time that the database security config was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+	TimeLastRefreshed pulumi.StringInput `pulumi:"timeLastRefreshed"`
+	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput)
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DatabaseSecurityConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.DatabaseSecurityConfigId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the database security config.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the database security config.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the database security config in Data Safe.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// The SQL Firewall related configurations.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) SqlFirewallConfigs() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig {
+		return v.SqlFirewallConfigs
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput)
+}
+
+// The current state of the database security configuration.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The time that the database security config was created, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeLastRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.TimeLastRefreshed
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob string `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge string `pulumi:"violationLogAutoPurge"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringInput `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge pulumi.StringInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput)
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return o
+}
+
+// Specifies whether the firewall should include or exclude the database internal job activities.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ExcludeJob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.ExcludeJob
+	}).(pulumi.StringOutput)
+}
+
+// Specifies if the firewall is enabled or disabled on the target database.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.ViolationLogAutoPurge
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput)
+}
+
+type GetDatabaseSecurityConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseSecurityConfigsFilterInput is an input type that accepts GetDatabaseSecurityConfigsFilterArgs and GetDatabaseSecurityConfigsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsFilterInput` via:
+//
+//	GetDatabaseSecurityConfigsFilterArgs{...}
+type GetDatabaseSecurityConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput
+	ToGetDatabaseSecurityConfigsFilterOutputWithContext(context.Context) GetDatabaseSecurityConfigsFilterOutput
+}
+
+type GetDatabaseSecurityConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseSecurityConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsFilterArgs) ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput {
+	return i.ToGetDatabaseSecurityConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsFilterArgs) ToGetDatabaseSecurityConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsFilterOutput)
+}
+
+// GetDatabaseSecurityConfigsFilterArrayInput is an input type that accepts GetDatabaseSecurityConfigsFilterArray and GetDatabaseSecurityConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsFilterArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsFilterArray{ GetDatabaseSecurityConfigsFilterArgs{...} }
+type GetDatabaseSecurityConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput
+	ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsFilterArrayOutput
+}
+
+type GetDatabaseSecurityConfigsFilterArray []GetDatabaseSecurityConfigsFilterInput
+
+func (GetDatabaseSecurityConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsFilterArray) ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsFilterArray) ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsFilterArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) ToGetDatabaseSecurityConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsFilter {
+		return vs[0].([]GetDatabaseSecurityConfigsFilter)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsFilterOutput)
+}
+
 type GetDiscoveryAnalyticItem struct {
 	// The total count for the aggregation metric.
 	Count string `pulumi:"count"`
@@ -58197,6 +58898,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput)(nil)).Elem(), GetDataSafePrivateEndpointsDataSafePrivateEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsFilterInput)(nil)).Elem(), GetDataSafePrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsFilterArrayInput)(nil)).Elem(), GetDataSafePrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfigInput)(nil)).Elem(), GetDatabaseSecurityConfigSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfigArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigSqlFirewallConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsFilterInput)(nil)).Elem(), GetDatabaseSecurityConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsFilterArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemInput)(nil)).Elem(), GetDiscoveryAnalyticItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemArrayInput)(nil)).Elem(), GetDiscoveryAnalyticItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemDimensionInput)(nil)).Elem(), GetDiscoveryAnalyticItemDimensionArgs{})
@@ -58977,6 +59688,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemDimensionOutput{})

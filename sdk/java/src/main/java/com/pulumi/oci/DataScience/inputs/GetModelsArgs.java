@@ -86,18 +86,33 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * The OCID of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetId")
+    private @Nullable Output<String> modelVersionSetId;
+
+    /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<Output<String>> modelVersionSetId() {
+        return Optional.ofNullable(this.modelVersionSetId);
+    }
+
+    /**
      * The name of the model version set that the model is associated to.
      * 
      */
-    @Import(name="modelVersionSetName", required=true)
-    private Output<String> modelVersionSetName;
+    @Import(name="modelVersionSetName")
+    private @Nullable Output<String> modelVersionSetName;
 
     /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
-    public Output<String> modelVersionSetName() {
-        return this.modelVersionSetName;
+    public Optional<Output<String>> modelVersionSetName() {
+        return Optional.ofNullable(this.modelVersionSetName);
     }
 
     /**
@@ -130,11 +145,11 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
-    @Import(name="versionLabel", required=true)
-    private Output<String> versionLabel;
+    @Import(name="versionLabel")
+    private @Nullable Output<String> versionLabel;
 
-    public Output<String> versionLabel() {
-        return this.versionLabel;
+    public Optional<Output<String>> versionLabel() {
+        return Optional.ofNullable(this.versionLabel);
     }
 
     private GetModelsArgs() {}
@@ -145,6 +160,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.id = $.id;
+        this.modelVersionSetId = $.modelVersionSetId;
         this.modelVersionSetName = $.modelVersionSetName;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -267,12 +283,33 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(@Nullable Output<String> modelVersionSetId) {
+            $.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+
+        /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            return modelVersionSetId(Output.of(modelVersionSetId));
+        }
+
+        /**
          * @param modelVersionSetName The name of the model version set that the model is associated to.
          * 
          * @return builder
          * 
          */
-        public Builder modelVersionSetName(Output<String> modelVersionSetName) {
+        public Builder modelVersionSetName(@Nullable Output<String> modelVersionSetName) {
             $.modelVersionSetName = modelVersionSetName;
             return this;
         }
@@ -329,7 +366,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
             return state(Output.of(state));
         }
 
-        public Builder versionLabel(Output<String> versionLabel) {
+        public Builder versionLabel(@Nullable Output<String> versionLabel) {
             $.versionLabel = versionLabel;
             return this;
         }
@@ -341,12 +378,6 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         public GetModelsArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("GetModelsArgs", "compartmentId");
-            }
-            if ($.modelVersionSetName == null) {
-                throw new MissingRequiredPropertyException("GetModelsArgs", "modelVersionSetName");
-            }
-            if ($.versionLabel == null) {
-                throw new MissingRequiredPropertyException("GetModelsArgs", "versionLabel");
             }
             return $;
         }

@@ -63,6 +63,21 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    @Import(name="l3ipIdleTimeout")
+    private @Nullable Output<Integer> l3ipIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    public Optional<Output<Integer>> l3ipIdleTimeout() {
+        return Optional.ofNullable(this.l3ipIdleTimeout);
+    }
+
+    /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
      */
@@ -164,6 +179,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         this.defaultBackendSetName = $.defaultBackendSetName;
         this.ipVersion = $.ipVersion;
         this.isPpv2enabled = $.isPpv2enabled;
+        this.l3ipIdleTimeout = $.l3ipIdleTimeout;
         this.name = $.name;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
         this.port = $.port;
@@ -251,6 +267,27 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isPpv2enabled(Boolean isPpv2enabled) {
             return isPpv2enabled(Output.of(isPpv2enabled));
+        }
+
+        /**
+         * @param l3ipIdleTimeout (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder l3ipIdleTimeout(@Nullable Output<Integer> l3ipIdleTimeout) {
+            $.l3ipIdleTimeout = l3ipIdleTimeout;
+            return this;
+        }
+
+        /**
+         * @param l3ipIdleTimeout (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder l3ipIdleTimeout(Integer l3ipIdleTimeout) {
+            return l3ipIdleTimeout(Output.of(l3ipIdleTimeout));
         }
 
         /**

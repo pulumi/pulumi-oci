@@ -71,6 +71,7 @@ type LookupAddonResult struct {
 	// current installed version of the addon
 	CurrentInstalledVersion      string `pulumi:"currentInstalledVersion"`
 	Id                           string `pulumi:"id"`
+	OverrideExisting             bool   `pulumi:"overrideExisting"`
 	RemoveAddonResourcesOnDelete bool   `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
 	State string `pulumi:"state"`
@@ -152,6 +153,10 @@ func (o LookupAddonResultOutput) CurrentInstalledVersion() pulumi.StringOutput {
 
 func (o LookupAddonResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAddonResultOutput) OverrideExisting() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAddonResult) bool { return v.OverrideExisting }).(pulumi.BoolOutput)
 }
 
 func (o LookupAddonResultOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {

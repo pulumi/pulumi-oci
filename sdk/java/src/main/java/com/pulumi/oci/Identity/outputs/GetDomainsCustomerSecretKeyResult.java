@@ -102,6 +102,11 @@ public final class GetDomainsCustomerSecretKeyResult {
      */
     private List<String> schemas;
     /**
+     * @return The secret key.
+     * 
+     */
+    private String secretKey;
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -252,6 +257,13 @@ public final class GetDomainsCustomerSecretKeyResult {
         return this.schemas;
     }
     /**
+     * @return The secret key.
+     * 
+     */
+    public String secretKey() {
+        return this.secretKey;
+    }
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -317,6 +329,7 @@ public final class GetDomainsCustomerSecretKeyResult {
         private String ocid;
         private @Nullable String resourceTypeSchemaVersion;
         private List<String> schemas;
+        private String secretKey;
         private String status;
         private List<GetDomainsCustomerSecretKeyTag> tags;
         private String tenancyOcid;
@@ -346,6 +359,7 @@ public final class GetDomainsCustomerSecretKeyResult {
     	      this.ocid = defaults.ocid;
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
+    	      this.secretKey = defaults.secretKey;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.tenancyOcid = defaults.tenancyOcid;
@@ -532,6 +546,14 @@ public final class GetDomainsCustomerSecretKeyResult {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
+        public Builder secretKey(String secretKey) {
+            if (secretKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "secretKey");
+            }
+            this.secretKey = secretKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeyResult", "status");
@@ -603,6 +625,7 @@ public final class GetDomainsCustomerSecretKeyResult {
             _resultValue.ocid = ocid;
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
+            _resultValue.secretKey = secretKey;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.tenancyOcid = tenancyOcid;

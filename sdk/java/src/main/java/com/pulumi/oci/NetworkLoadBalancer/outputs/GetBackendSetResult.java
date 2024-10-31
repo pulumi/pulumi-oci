@@ -16,7 +16,7 @@ import java.util.Objects;
 public final class GetBackendSetResult {
     private String backendSetName;
     /**
-     * @return Array of backends.
+     * @return An array of backends.
      * 
      */
     private List<GetBackendSetBackend> backends;
@@ -63,7 +63,7 @@ public final class GetBackendSetResult {
         return this.backendSetName;
     }
     /**
-     * @return Array of backends.
+     * @return An array of backends.
      * 
      */
     public List<GetBackendSetBackend> backends() {

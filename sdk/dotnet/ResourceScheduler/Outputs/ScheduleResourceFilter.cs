@@ -14,19 +14,20 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
     public sealed class ScheduleResourceFilter
     {
         /// <summary>
-        /// (Updatable) This is the resource attribute on which the threshold is defined.
+        /// (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
         /// </summary>
         public readonly string Attribute;
         /// <summary>
-        /// (Updatable) This is the condition for the filter in comparison to its creation time.
+        /// This is the condition for the filter in comparison to its creation time.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// (Updatable) This sets whether to include child compartments.
+        /// This sets whether to include child compartments.
         /// </summary>
         public readonly bool? ShouldIncludeChildCompartments;
         /// <summary>
-        /// (Updatable) This is a collection of resource lifecycle state values.
+        /// (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+        /// * When `attribute="DEFINED_TAGS"`:
         /// </summary>
         public readonly ImmutableArray<Outputs.ScheduleResourceFilterValue> Values;
 

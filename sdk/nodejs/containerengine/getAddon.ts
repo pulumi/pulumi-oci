@@ -67,6 +67,7 @@ export interface GetAddonResult {
      */
     readonly currentInstalledVersion: string;
     readonly id: string;
+    readonly overrideExisting: boolean;
     readonly removeAddonResourcesOnDelete: boolean;
     /**
      * The state of the addon.

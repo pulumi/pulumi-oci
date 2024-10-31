@@ -63,6 +63,10 @@ import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
+import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
@@ -284,6 +288,8 @@ import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForSensitiveTypeResul
 import com.pulumi.oci.DataSafe.outputs.GetDataSafeConfigurationResult;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafePrivateEndpointResult;
 import com.pulumi.oci.DataSafe.outputs.GetDataSafePrivateEndpointsResult;
+import com.pulumi.oci.DataSafe.outputs.GetDatabaseSecurityConfigResult;
+import com.pulumi.oci.DataSafe.outputs.GetDatabaseSecurityConfigsResult;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryAnalyticResult;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobResult;
@@ -6362,6 +6368,442 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpointsPlain(GetDataSafePrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getDataSafePrivateEndpoints:getDataSafePrivateEndpoints", TypeShape.of(GetDataSafePrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database security configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseSecurityConfigResult> getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs args) {
+        return getDatabaseSecurityConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database security configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSecurityConfigResult> getDatabaseSecurityConfigPlain(GetDatabaseSecurityConfigPlainArgs args) {
+        return getDatabaseSecurityConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database security configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseSecurityConfigResult> getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig", TypeShape.of(GetDatabaseSecurityConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a database security configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfig = DataSafeFunctions.getDatabaseSecurityConfig(GetDatabaseSecurityConfigArgs.builder()
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfigOciDataSafeDatabaseSecurityConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSecurityConfigResult> getDatabaseSecurityConfigPlain(GetDatabaseSecurityConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getDatabaseSecurityConfig:getDatabaseSecurityConfig", TypeShape.of(GetDatabaseSecurityConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database security configurations in Data Safe.
+     * 
+     * The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfigs = DataSafeFunctions.getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(databaseSecurityConfigAccessLevel)
+     *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .displayName(databaseSecurityConfigDisplayName)
+     *             .state(databaseSecurityConfigState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseSecurityConfigsResult> getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs args) {
+        return getDatabaseSecurityConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database security configurations in Data Safe.
+     * 
+     * The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfigs = DataSafeFunctions.getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(databaseSecurityConfigAccessLevel)
+     *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .displayName(databaseSecurityConfigDisplayName)
+     *             .state(databaseSecurityConfigState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSecurityConfigsResult> getDatabaseSecurityConfigsPlain(GetDatabaseSecurityConfigsPlainArgs args) {
+        return getDatabaseSecurityConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database security configurations in Data Safe.
+     * 
+     * The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfigs = DataSafeFunctions.getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(databaseSecurityConfigAccessLevel)
+     *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .displayName(databaseSecurityConfigDisplayName)
+     *             .state(databaseSecurityConfigState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDatabaseSecurityConfigsResult> getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getDatabaseSecurityConfigs:getDatabaseSecurityConfigs", TypeShape.of(GetDatabaseSecurityConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all database security configurations in Data Safe.
+     * 
+     * The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDatabaseSecurityConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSecurityConfigs = DataSafeFunctions.getDatabaseSecurityConfigs(GetDatabaseSecurityConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(databaseSecurityConfigAccessLevel)
+     *             .compartmentIdInSubtree(databaseSecurityConfigCompartmentIdInSubtree)
+     *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
+     *             .displayName(databaseSecurityConfigDisplayName)
+     *             .state(databaseSecurityConfigState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSecurityConfigsResult> getDatabaseSecurityConfigsPlain(GetDatabaseSecurityConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getDatabaseSecurityConfigs:getDatabaseSecurityConfigs", TypeShape.of(GetDatabaseSecurityConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.

@@ -65,14 +65,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Addon configuration details.
+     * (Updatable) Addon configuration details
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<AddonConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Addon configuration details.
+     * @return (Updatable) Addon configuration details
      * 
      */
     public Optional<Output<List<AddonConfigurationArgs>>> configurations() {
@@ -92,6 +92,21 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> currentInstalledVersion() {
         return Optional.ofNullable(this.currentInstalledVersion);
+    }
+
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     * 
+     */
+    @Import(name="overrideExisting")
+    private @Nullable Output<Boolean> overrideExisting;
+
+    /**
+     * @return Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     * 
+     */
+    public Optional<Output<Boolean>> overrideExisting() {
+        return Optional.ofNullable(this.overrideExisting);
     }
 
     /**
@@ -168,6 +183,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         this.clusterId = $.clusterId;
         this.configurations = $.configurations;
         this.currentInstalledVersion = $.currentInstalledVersion;
+        this.overrideExisting = $.overrideExisting;
         this.removeAddonResourcesOnDelete = $.removeAddonResourcesOnDelete;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -266,7 +282,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurations (Updatable) Addon configuration details.
+         * @param configurations (Updatable) Addon configuration details
          * 
          * @return builder
          * 
@@ -277,7 +293,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurations (Updatable) Addon configuration details.
+         * @param configurations (Updatable) Addon configuration details
          * 
          * @return builder
          * 
@@ -287,7 +303,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurations (Updatable) Addon configuration details.
+         * @param configurations (Updatable) Addon configuration details
          * 
          * @return builder
          * 
@@ -315,6 +331,27 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder currentInstalledVersion(String currentInstalledVersion) {
             return currentInstalledVersion(Output.of(currentInstalledVersion));
+        }
+
+        /**
+         * @param overrideExisting Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideExisting(@Nullable Output<Boolean> overrideExisting) {
+            $.overrideExisting = overrideExisting;
+            return this;
+        }
+
+        /**
+         * @param overrideExisting Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideExisting(Boolean overrideExisting) {
+            return overrideExisting(Output.of(overrideExisting));
         }
 
         /**

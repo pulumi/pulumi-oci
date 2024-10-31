@@ -125,6 +125,11 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
      */
     private List<GetDomainsOauth2clientCredentialsOauth2clientCredentialScope> scopes;
     /**
+     * @return Secret
+     * 
+     */
+    private String secret;
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -299,6 +304,13 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
         return this.scopes;
     }
     /**
+     * @return Secret
+     * 
+     */
+    public String secret() {
+        return this.secret;
+    }
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -364,6 +376,7 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
         private String resourceTypeSchemaVersion;
         private List<String> schemas;
         private List<GetDomainsOauth2clientCredentialsOauth2clientCredentialScope> scopes;
+        private String secret;
         private String status;
         private List<GetDomainsOauth2clientCredentialsOauth2clientCredentialTag> tags;
         private String tenancyOcid;
@@ -393,6 +406,7 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
     	      this.scopes = defaults.scopes;
+    	      this.secret = defaults.secret;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.tenancyOcid = defaults.tenancyOcid;
@@ -590,6 +604,14 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
+        public Builder secret(String secret) {
+            if (secret == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsOauth2clientCredential", "secret");
+            }
+            this.secret = secret;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialsOauth2clientCredential", "status");
@@ -661,6 +683,7 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredential {
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
             _resultValue.scopes = scopes;
+            _resultValue.secret = secret;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.tenancyOcid = tenancyOcid;

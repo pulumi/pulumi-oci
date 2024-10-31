@@ -144,6 +144,10 @@ export interface GetDomainsAuthTokenResult {
      */
     readonly tenancyOcid: string;
     /**
+     * token
+     */
+    readonly token: string;
+    /**
      * Controls whether a user can update themselves or not via User related APIs
      */
     readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];

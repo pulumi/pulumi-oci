@@ -14,15 +14,15 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
     public sealed class ScheduleResourceFilterValue
     {
         /// <summary>
-        /// (Updatable) This is the namespace of the defined tag.
+        /// This is the namespace of the defined tag.
         /// </summary>
         public readonly string? Namespace;
         /// <summary>
-        /// (Updatable) This is the key of the defined tag.
+        /// This is the key of the defined tag.
         /// </summary>
         public readonly string? TagKey;
         /// <summary>
-        /// (Updatable) This is the value of the defined tag.
+        /// This is the lifecycle state value used for filtering.
         /// </summary>
         public readonly string? Value;
 

@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScheduleResourceFilterValue {
     /**
-     * @return (Updatable) This is the namespace of the defined tag.
+     * @return This is the namespace of the defined tag.
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return (Updatable) This is the key of the defined tag.
+     * @return This is the key of the defined tag.
      * 
      */
     private @Nullable String tagKey;
     /**
-     * @return (Updatable) This is the value of the defined tag.
+     * @return This is the lifecycle state value used for filtering.
      * 
      */
     private @Nullable String value;
 
     private ScheduleResourceFilterValue() {}
     /**
-     * @return (Updatable) This is the namespace of the defined tag.
+     * @return This is the namespace of the defined tag.
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return (Updatable) This is the key of the defined tag.
+     * @return This is the key of the defined tag.
      * 
      */
     public Optional<String> tagKey() {
         return Optional.ofNullable(this.tagKey);
     }
     /**
-     * @return (Updatable) This is the value of the defined tag.
+     * @return This is the lifecycle state value used for filtering.
      * 
      */
     public Optional<String> value() {

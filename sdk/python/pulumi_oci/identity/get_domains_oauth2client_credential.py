@@ -27,7 +27,7 @@ class GetDomainsOauth2clientCredentialResult:
     """
     A collection of values returned by getDomainsOauth2clientCredential.
     """
-    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, is_reset_secret=None, metas=None, name=None, o_auth2client_credential_id=None, ocid=None, resource_type_schema_version=None, schemas=None, scopes=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
+    def __init__(__self__, attribute_sets=None, attributes=None, authorization=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, expires_on=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, is_reset_secret=None, metas=None, name=None, o_auth2client_credential_id=None, ocid=None, resource_type_schema_version=None, schemas=None, scopes=None, secret=None, status=None, tags=None, tenancy_ocid=None, urnietfparamsscimschemasoracleidcsextensionself_change_users=None, users=None):
         if attribute_sets and not isinstance(attribute_sets, list):
             raise TypeError("Expected argument 'attribute_sets' to be a list")
         pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -94,6 +94,9 @@ class GetDomainsOauth2clientCredentialResult:
         if scopes and not isinstance(scopes, list):
             raise TypeError("Expected argument 'scopes' to be a list")
         pulumi.set(__self__, "scopes", scopes)
+        if secret and not isinstance(secret, str):
+            raise TypeError("Expected argument 'secret' to be a str")
+        pulumi.set(__self__, "secret", secret)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -270,6 +273,14 @@ class GetDomainsOauth2clientCredentialResult:
 
     @property
     @pulumi.getter
+    def secret(self) -> str:
+        """
+        Secret
+        """
+        return pulumi.get(self, "secret")
+
+    @property
+    @pulumi.getter
     def status(self) -> str:
         """
         The user's credential status.
@@ -337,6 +348,7 @@ class AwaitableGetDomainsOauth2clientCredentialResult(GetDomainsOauth2clientCred
             resource_type_schema_version=self.resource_type_schema_version,
             schemas=self.schemas,
             scopes=self.scopes,
+            secret=self.secret,
             status=self.status,
             tags=self.tags,
             tenancy_ocid=self.tenancy_ocid,
@@ -411,6 +423,7 @@ def get_domains_oauth2client_credential(attribute_sets: Optional[Sequence[str]] 
         resource_type_schema_version=pulumi.get(__ret__, 'resource_type_schema_version'),
         schemas=pulumi.get(__ret__, 'schemas'),
         scopes=pulumi.get(__ret__, 'scopes'),
+        secret=pulumi.get(__ret__, 'secret'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
@@ -482,6 +495,7 @@ def get_domains_oauth2client_credential_output(attribute_sets: Optional[pulumi.I
         resource_type_schema_version=pulumi.get(__response__, 'resource_type_schema_version'),
         schemas=pulumi.get(__response__, 'schemas'),
         scopes=pulumi.get(__response__, 'scopes'),
+        secret=pulumi.get(__response__, 'secret'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
         tenancy_ocid=pulumi.get(__response__, 'tenancy_ocid'),

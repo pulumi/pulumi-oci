@@ -570,10 +570,10 @@ class VirtualNodePool(pulumi.CustomResource):
             }],
             virtual_node_tags={
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
             })
         ```
@@ -651,10 +651,10 @@ class VirtualNodePool(pulumi.CustomResource):
             }],
             virtual_node_tags={
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
             })
         ```

@@ -397,11 +397,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "cluster_placement_group_id": cluster_placement_group_id,
                         "compartment_id": compartment_id,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_block_volumes_create_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
                         "kms_key_id": test_key["id"],
@@ -438,11 +438,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
                         "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_launch_details_create_vnic_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "hostname_label": instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
                         "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -457,13 +457,13 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "display_name": instance_configuration_instance_details_launch_details_display_name,
                     "extended_metadata": instance_configuration_instance_details_launch_details_extended_metadata,
                     "fault_domain": instance_configuration_instance_details_launch_details_fault_domain,
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                     "instance_options": {
                         "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
@@ -546,11 +546,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "cluster_placement_group_id": cluster_placement_group_id,
                             "compartment_id": compartment_id,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_block_volumes_create_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "kms_key_id": test_key["id"],
                             "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
@@ -585,11 +585,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
                             "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "hostname_label": instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
                             "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -604,13 +604,13 @@ class InstanceConfiguration(pulumi.CustomResource):
                         },
                         "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_options_launch_details_display_name,
                         "extended_metadata": instance_configuration_instance_details_options_launch_details_extended_metadata,
                         "fault_domain": instance_configuration_instance_details_options_launch_details_fault_domain,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "instance_options": {
                             "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
@@ -676,11 +676,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
                             "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "hostname_label": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
                             "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -702,11 +702,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
                         "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "hostname_label": instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label,
                         "nsg_ids": instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids,
@@ -807,11 +807,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "cluster_placement_group_id": cluster_placement_group_id,
                         "compartment_id": compartment_id,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_block_volumes_create_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
                         "kms_key_id": test_key["id"],
@@ -848,11 +848,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
                         "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_launch_details_create_vnic_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "hostname_label": instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
                         "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -867,13 +867,13 @@ class InstanceConfiguration(pulumi.CustomResource):
                     },
                     "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "display_name": instance_configuration_instance_details_launch_details_display_name,
                     "extended_metadata": instance_configuration_instance_details_launch_details_extended_metadata,
                     "fault_domain": instance_configuration_instance_details_launch_details_fault_domain,
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                     "instance_options": {
                         "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
@@ -956,11 +956,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "cluster_placement_group_id": cluster_placement_group_id,
                             "compartment_id": compartment_id,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_block_volumes_create_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "kms_key_id": test_key["id"],
                             "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
@@ -995,11 +995,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
                             "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "hostname_label": instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
                             "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -1014,13 +1014,13 @@ class InstanceConfiguration(pulumi.CustomResource):
                         },
                         "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_options_launch_details_display_name,
                         "extended_metadata": instance_configuration_instance_details_options_launch_details_extended_metadata,
                         "fault_domain": instance_configuration_instance_details_options_launch_details_fault_domain,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "instance_options": {
                             "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
@@ -1086,11 +1086,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                             "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
                             "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
                             "defined_tags": {
-                                "operations__cost_center": "42",
+                                "Operations.CostCenter": "42",
                             },
                             "display_name": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
                             "freeform_tags": {
-                                "department": "Finance",
+                                "Department": "Finance",
                             },
                             "hostname_label": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
                             "ipv6address_ipv6subnet_cidr_pair_details": [{
@@ -1112,11 +1112,11 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
                         "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip,
                         "defined_tags": {
-                            "operations__cost_center": "42",
+                            "Operations.CostCenter": "42",
                         },
                         "display_name": instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name,
                         "freeform_tags": {
-                            "department": "Finance",
+                            "Department": "Finance",
                         },
                         "hostname_label": instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label,
                         "nsg_ids": instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids,

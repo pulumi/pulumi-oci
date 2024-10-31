@@ -614,18 +614,18 @@ class Cluster(pulumi.CustomResource):
                 },
                 "persistent_volume_config": {
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 "service_lb_config": {
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 "service_lb_subnet_ids": cluster_options_service_lb_subnet_ids,
@@ -735,18 +735,18 @@ class Cluster(pulumi.CustomResource):
                 },
                 "persistent_volume_config": {
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 "service_lb_config": {
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 "service_lb_subnet_ids": cluster_options_service_lb_subnet_ids,

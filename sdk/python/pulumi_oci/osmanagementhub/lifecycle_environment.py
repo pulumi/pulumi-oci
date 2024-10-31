@@ -481,20 +481,20 @@ class LifecycleEnvironment(pulumi.CustomResource):
                     "display_name": lifecycle_environment_stages_display_name1,
                     "rank": lifecycle_environment_stages_rank1,
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 {
                     "display_name": lifecycle_environment_stages_display_name2,
                     "rank": lifecycle_environment_stages_rank2,
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
             ],
@@ -561,20 +561,20 @@ class LifecycleEnvironment(pulumi.CustomResource):
                     "display_name": lifecycle_environment_stages_display_name1,
                     "rank": lifecycle_environment_stages_rank1,
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
                 {
                     "display_name": lifecycle_environment_stages_display_name2,
                     "rank": lifecycle_environment_stages_rank2,
                     "defined_tags": {
-                        "operations__cost_center": "42",
+                        "Operations.CostCenter": "42",
                     },
                     "freeform_tags": {
-                        "department": "Finance",
+                        "Department": "Finance",
                     },
                 },
             ],

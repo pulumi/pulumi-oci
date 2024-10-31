@@ -1262,10 +1262,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             admin_username=mysql_db_system_admin_username,
             backup_policy={
                 "defined_tags": {
-                    "foo_namespace_bar_key": "value",
+                    "foo-namespace.bar-key": "value",
                 },
                 "freeform_tags": {
-                    "bar_key": "value",
+                    "bar-key": "value",
                 },
                 "is_enabled": mysql_db_system_backup_policy_is_enabled,
                 "pitr_policy": {
@@ -1402,10 +1402,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             admin_username=mysql_db_system_admin_username,
             backup_policy={
                 "defined_tags": {
-                    "foo_namespace_bar_key": "value",
+                    "foo-namespace.bar-key": "value",
                 },
                 "freeform_tags": {
-                    "bar_key": "value",
+                    "bar-key": "value",
                 },
                 "is_enabled": mysql_db_system_backup_policy_is_enabled,
                 "pitr_policy": {

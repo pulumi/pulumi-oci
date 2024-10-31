@@ -810,10 +810,10 @@ class NodePool(pulumi.CustomResource):
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
                 "nsg_ids": node_pool_node_config_details_nsg_ids,
             },
@@ -932,10 +932,10 @@ class NodePool(pulumi.CustomResource):
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 },
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
                 "nsg_ids": node_pool_node_config_details_nsg_ids,
             },

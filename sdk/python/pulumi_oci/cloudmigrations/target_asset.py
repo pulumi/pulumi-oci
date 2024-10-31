@@ -507,11 +507,11 @@ class TargetAsset(pulumi.CustomResource):
                     "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
                     "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
                     "defined_tags": {
-                        "foo_namespace_bar_key": "value",
+                        "foo-namespace.bar-key": "value",
                     },
                     "display_name": target_asset_user_spec_create_vnic_details_display_name,
                     "freeform_tags": {
-                        "bar_key": "value",
+                        "bar-key": "value",
                     },
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
@@ -522,12 +522,12 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                 "defined_tags": {
-                    "foo_namespace_bar_key": "value",
+                    "foo-namespace.bar-key": "value",
                 },
                 "display_name": target_asset_user_spec_display_name,
                 "fault_domain": target_asset_user_spec_fault_domain,
                 "freeform_tags": {
-                    "bar_key": "value",
+                    "bar-key": "value",
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {
@@ -617,11 +617,11 @@ class TargetAsset(pulumi.CustomResource):
                     "assign_private_dns_record": target_asset_user_spec_create_vnic_details_assign_private_dns_record,
                     "assign_public_ip": target_asset_user_spec_create_vnic_details_assign_public_ip,
                     "defined_tags": {
-                        "foo_namespace_bar_key": "value",
+                        "foo-namespace.bar-key": "value",
                     },
                     "display_name": target_asset_user_spec_create_vnic_details_display_name,
                     "freeform_tags": {
-                        "bar_key": "value",
+                        "bar-key": "value",
                     },
                     "hostname_label": target_asset_user_spec_create_vnic_details_hostname_label,
                     "nsg_ids": target_asset_user_spec_create_vnic_details_nsg_ids,
@@ -632,12 +632,12 @@ class TargetAsset(pulumi.CustomResource):
                 },
                 "dedicated_vm_host_id": test_dedicated_vm_host["id"],
                 "defined_tags": {
-                    "foo_namespace_bar_key": "value",
+                    "foo-namespace.bar-key": "value",
                 },
                 "display_name": target_asset_user_spec_display_name,
                 "fault_domain": target_asset_user_spec_fault_domain,
                 "freeform_tags": {
-                    "bar_key": "value",
+                    "bar-key": "value",
                 },
                 "hostname_label": target_asset_user_spec_hostname_label,
                 "instance_options": {

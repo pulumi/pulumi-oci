@@ -395,11 +395,11 @@ class ClusterNetwork(pulumi.CustomResource):
                 "instance_configuration_id": test_instance_configuration["id"],
                 "size": cluster_network_instance_pools_size,
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "display_name": cluster_network_instance_pools_display_name,
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
             }],
             placement_configuration={
@@ -492,11 +492,11 @@ class ClusterNetwork(pulumi.CustomResource):
                 "instance_configuration_id": test_instance_configuration["id"],
                 "size": cluster_network_instance_pools_size,
                 "defined_tags": {
-                    "operations__cost_center": "42",
+                    "Operations.CostCenter": "42",
                 },
                 "display_name": cluster_network_instance_pools_display_name,
                 "freeform_tags": {
-                    "department": "Finance",
+                    "Department": "Finance",
                 },
             }],
             placement_configuration={

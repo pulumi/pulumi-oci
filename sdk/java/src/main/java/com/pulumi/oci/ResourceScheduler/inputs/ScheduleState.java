@@ -110,14 +110,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      * 
      */
     @Import(name="recurrenceDetails")
     private @Nullable Output<String> recurrenceDetails;
 
     /**
-     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      * 
      */
     public Optional<Output<String>> recurrenceDetails() {
@@ -125,14 +125,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of recurrence of a schedule
+     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      * 
      */
     @Import(name="recurrenceType")
     private @Nullable Output<String> recurrenceType;
 
     /**
-     * @return (Updatable) Type of recurrence of a schedule
+     * @return (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      * 
      */
     public Optional<Output<String>> recurrenceType() {
@@ -463,7 +463,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceType (Updatable) Type of recurrence of a schedule
+         * @param recurrenceType (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceType (Updatable) Type of recurrence of a schedule
+         * @param recurrenceType (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
          * 
          * @return builder
          * 

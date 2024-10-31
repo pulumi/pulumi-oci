@@ -11,44 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a Schedule
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSchedule = new oci.resourcescheduler.Schedule("test_schedule", {
- *     action: scheduleAction,
- *     compartmentId: compartmentId,
- *     recurrenceDetails: scheduleRecurrenceDetails,
- *     recurrenceType: scheduleRecurrenceType,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: scheduleDescription,
- *     displayName: scheduleDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     resourceFilters: [{
- *         attribute: scheduleResourceFiltersAttribute,
- *         condition: scheduleResourceFiltersCondition,
- *         shouldIncludeChildCompartments: scheduleResourceFiltersShouldIncludeChildCompartments,
- *         values: [{
- *             namespace: scheduleResourceFiltersValueNamespace,
- *             tagKey: scheduleResourceFiltersValueTagKey,
- *             value: scheduleResourceFiltersValueValue,
- *         }],
- *     }],
- *     resources: [{
- *         id: scheduleResourcesId,
- *         metadata: scheduleResourcesMetadata,
- *     }],
- *     timeEnds: scheduleTimeEnds,
- *     timeStarts: scheduleTimeStarts,
- * });
- * ```
- *
  * ## Import
  *
  * Schedules can be imported using the `id`, e.g.
@@ -110,11 +72,11 @@ export class Schedule extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      */
     public readonly recurrenceDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule
+     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      */
     public readonly recurrenceType!: pulumi.Output<string>;
     /**
@@ -260,11 +222,11 @@ export interface ScheduleState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      */
     recurrenceDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule
+     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      */
     recurrenceType?: pulumi.Input<string>;
     /**
@@ -342,11 +304,11 @@ export interface ScheduleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      */
     recurrenceDetails: pulumi.Input<string>;
     /**
-     * (Updatable) Type of recurrence of a schedule
+     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      */
     recurrenceType: pulumi.Input<string>;
     /**

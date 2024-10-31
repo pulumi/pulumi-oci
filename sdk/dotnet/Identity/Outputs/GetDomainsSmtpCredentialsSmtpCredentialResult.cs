@@ -78,6 +78,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Ocid;
         /// <summary>
+        /// Password
+        /// </summary>
+        public readonly string Password;
+        /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         /// </summary>
         public readonly string ResourceTypeSchemaVersion;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string ocid,
 
+            string password,
+
             string resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
@@ -176,6 +182,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IdcsPreventedOperations = idcsPreventedOperations;
             Metas = metas;
             Ocid = ocid;
+            Password = password;
             ResourceTypeSchemaVersion = resourceTypeSchemaVersion;
             Schemas = schemas;
             Status = status;

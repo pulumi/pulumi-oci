@@ -144,6 +144,10 @@ export interface GetDomainsOauth2clientCredentialResult {
      */
     readonly scopes: outputs.Identity.GetDomainsOauth2clientCredentialScope[];
     /**
+     * Secret
+     */
+    readonly secret: string;
+    /**
      * The user's credential status.
      */
     readonly status: string;

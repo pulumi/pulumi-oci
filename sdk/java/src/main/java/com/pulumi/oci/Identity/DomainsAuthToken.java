@@ -620,6 +620,40 @@ public class DomainsAuthToken extends com.pulumi.resources.CustomResource {
         return this.tenancyOcid;
     }
     /**
+     * (Updatable) token
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    @Export(name="token", refs={String.class}, tree="[0]")
+    private Output<String> token;
+
+    /**
+     * @return (Updatable) token
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    public Output<String> token() {
+        return this.token;
+    }
+    /**
      * Controls whether a user can update themselves or not via User related APIs
      * 
      */

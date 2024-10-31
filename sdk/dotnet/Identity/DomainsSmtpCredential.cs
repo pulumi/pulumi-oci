@@ -220,6 +220,20 @@ namespace Pulumi.Oci.Identity
         public Output<string> Ocid { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Password
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Output("password")]
+        public Output<string> Password { get; private set; } = null!;
+
+        /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         /// </summary>
         [Output("resourceTypeSchemaVersion")]
@@ -774,6 +788,20 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
+
+        /// <summary>
+        /// (Updatable) Password
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsSensitive: hash_sc
+        /// </summary>
+        [Input("password")]
+        public Input<string>? Password { get; set; }
 
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.

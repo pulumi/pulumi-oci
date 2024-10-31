@@ -111,6 +111,8 @@ type LookupDomainsAuthTokenResult struct {
 	Tags []GetDomainsAuthTokenTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 	TenancyOcid string `pulumi:"tenancyOcid"`
+	// token
+	Token string `pulumi:"token"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers []GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUsers"`
 	// The user linked to the Auth token.
@@ -275,6 +277,11 @@ func (o LookupDomainsAuthTokenResultOutput) Tags() GetDomainsAuthTokenTagArrayOu
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 func (o LookupDomainsAuthTokenResultOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+}
+
+// token
+func (o LookupDomainsAuthTokenResultOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsAuthTokenResult) string { return v.Token }).(pulumi.StringOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs

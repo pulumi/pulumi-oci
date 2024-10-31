@@ -20912,6 +20912,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDatabaseSecurityConfigsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseSecurityConfigsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDiscoveryAnalyticsFilter {
         name: string;
         regex?: boolean;
@@ -77595,34 +77607,35 @@ export namespace ResourceScheduler {
 
     export interface ScheduleResourceFilter {
         /**
-         * (Updatable) This is the resource attribute on which the threshold is defined.
+         * (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
          */
         attribute: pulumi.Input<string>;
         /**
-         * (Updatable) This is the condition for the filter in comparison to its creation time.
+         * This is the condition for the filter in comparison to its creation time.
          */
         condition?: pulumi.Input<string>;
         /**
-         * (Updatable) This sets whether to include child compartments.
+         * This sets whether to include child compartments.
          */
         shouldIncludeChildCompartments?: pulumi.Input<boolean>;
         /**
-         * (Updatable) This is a collection of resource lifecycle state values.
+         * (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+         * * When `attribute="DEFINED_TAGS"`:
          */
         values?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilterValue>[]>;
     }
 
     export interface ScheduleResourceFilterValue {
         /**
-         * (Updatable) This is the namespace of the defined tag.
+         * This is the namespace of the defined tag.
          */
         namespace?: pulumi.Input<string>;
         /**
-         * (Updatable) This is the key of the defined tag.
+         * This is the key of the defined tag.
          */
         tagKey?: pulumi.Input<string>;
         /**
-         * (Updatable) This is the value of the defined tag.
+         * This is the lifecycle state value used for filtering.
          */
         value?: pulumi.Input<string>;
     }

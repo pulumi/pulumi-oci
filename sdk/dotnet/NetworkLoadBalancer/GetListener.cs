@@ -124,6 +124,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Property to enable/disable PPv2 feature for this listener.
         /// </summary>
         public readonly bool IsPpv2enabled;
+        /// <summary>
+        /// The duration for L3IP idle timeout in seconds. Example: `200`
+        /// </summary>
+        public readonly int L3ipIdleTimeout;
         public readonly string ListenerName;
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -157,6 +161,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             bool isPpv2enabled,
 
+            int l3ipIdleTimeout,
+
             string listenerName,
 
             string name,
@@ -175,6 +181,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             Id = id;
             IpVersion = ipVersion;
             IsPpv2enabled = isPpv2enabled;
+            L3ipIdleTimeout = l3ipIdleTimeout;
             ListenerName = listenerName;
             Name = name;
             NetworkLoadBalancerId = networkLoadBalancerId;

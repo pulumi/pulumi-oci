@@ -225,8 +225,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 
@@ -272,8 +272,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 
@@ -319,8 +319,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 
@@ -366,8 +366,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 
@@ -413,8 +413,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 
@@ -460,8 +460,8 @@ public final class ResourceSchedulerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSchedules = ResourceSchedulerFunctions.getSchedules(GetSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(scheduleDisplayName)
      *             .scheduleId(testSchedule.id())
+     *             .displayName(scheduleDisplayName)
      *             .state(scheduleState)
      *             .build());
      * 

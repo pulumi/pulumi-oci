@@ -613,6 +613,38 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
         return this.scopes;
     }
     /**
+     * (Updatable) Secret
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    @Export(name="secret", refs={String.class}, tree="[0]")
+    private Output<String> secret;
+
+    /**
+     * @return (Updatable) Secret
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    public Output<String> secret() {
+        return this.secret;
+    }
+    /**
      * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424

@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,14 +77,14 @@ public class Addon extends com.pulumi.resources.CustomResource {
         return this.clusterId;
     }
     /**
-     * (Updatable) Addon configuration details.
+     * (Updatable) Addon configuration details
      * 
      */
     @Export(name="configurations", refs={List.class,AddonConfiguration.class}, tree="[0,1]")
     private Output<List<AddonConfiguration>> configurations;
 
     /**
-     * @return (Updatable) Addon configuration details.
+     * @return (Updatable) Addon configuration details
      * 
      */
     public Output<List<AddonConfiguration>> configurations() {
@@ -102,6 +103,20 @@ public class Addon extends com.pulumi.resources.CustomResource {
      */
     public Output<String> currentInstalledVersion() {
         return this.currentInstalledVersion;
+    }
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     * 
+     */
+    @Export(name="overrideExisting", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> overrideExisting;
+
+    /**
+     * @return Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     * 
+     */
+    public Output<Optional<Boolean>> overrideExisting() {
+        return Codegen.optional(this.overrideExisting);
     }
     /**
      * Whether to remove addon resource in deletion.

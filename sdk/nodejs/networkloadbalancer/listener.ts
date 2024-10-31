@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     protocol: listenerProtocol,
  *     ipVersion: listenerIpVersion,
  *     isPpv2enabled: listenerIsPpv2enabled,
+ *     l3ipIdleTimeout: listenerL3ipIdleTimeout,
  *     tcpIdleTimeout: listenerTcpIdleTimeout,
  *     udpIdleTimeout: listenerUdpIdleTimeout,
  * });
@@ -77,6 +78,10 @@ export class Listener extends pulumi.CustomResource {
      */
     public readonly isPpv2enabled!: pulumi.Output<boolean>;
     /**
+     * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     */
+    public readonly l3ipIdleTimeout!: pulumi.Output<number>;
+    /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
     public readonly name!: pulumi.Output<string>;
@@ -121,6 +126,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["defaultBackendSetName"] = state ? state.defaultBackendSetName : undefined;
             resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
             resourceInputs["isPpv2enabled"] = state ? state.isPpv2enabled : undefined;
+            resourceInputs["l3ipIdleTimeout"] = state ? state.l3ipIdleTimeout : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
@@ -144,6 +150,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["defaultBackendSetName"] = args ? args.defaultBackendSetName : undefined;
             resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
             resourceInputs["isPpv2enabled"] = args ? args.isPpv2enabled : undefined;
+            resourceInputs["l3ipIdleTimeout"] = args ? args.l3ipIdleTimeout : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
@@ -172,6 +179,10 @@ export interface ListenerState {
      * (Updatable) Property to enable/disable PPv2 feature for this listener.
      */
     isPpv2enabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     */
+    l3ipIdleTimeout?: pulumi.Input<number>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
@@ -218,6 +229,10 @@ export interface ListenerArgs {
      * (Updatable) Property to enable/disable PPv2 feature for this listener.
      */
     isPpv2enabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     */
+    l3ipIdleTimeout?: pulumi.Input<number>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */

@@ -210,6 +210,17 @@ type DomainsOauth2clientCredential struct {
 	// * required: true
 	// * returned: default
 	Scopes DomainsOauth2clientCredentialScopeArrayOutput `pulumi:"scopes"`
+	// (Updatable) Secret
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsScimCompliant: false
+	// * idcsSensitive: hash_sc
+	Secret pulumi.StringOutput `pulumi:"secret"`
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -487,6 +498,17 @@ type domainsOauth2clientCredentialState struct {
 	// * required: true
 	// * returned: default
 	Scopes []DomainsOauth2clientCredentialScope `pulumi:"scopes"`
+	// (Updatable) Secret
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsScimCompliant: false
+	// * idcsSensitive: hash_sc
+	Secret *string `pulumi:"secret"`
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -726,6 +748,17 @@ type DomainsOauth2clientCredentialState struct {
 	// * required: true
 	// * returned: default
 	Scopes DomainsOauth2clientCredentialScopeArrayInput
+	// (Updatable) Secret
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsScimCompliant: false
+	// * idcsSensitive: hash_sc
+	Secret pulumi.StringPtrInput
 	// The user's credential status.
 	//
 	// **Added In:** 2109090424
@@ -1390,6 +1423,20 @@ func (o DomainsOauth2clientCredentialOutput) Schemas() pulumi.StringArrayOutput 
 // * returned: default
 func (o DomainsOauth2clientCredentialOutput) Scopes() DomainsOauth2clientCredentialScopeArrayOutput {
 	return o.ApplyT(func(v *DomainsOauth2clientCredential) DomainsOauth2clientCredentialScopeArrayOutput { return v.Scopes }).(DomainsOauth2clientCredentialScopeArrayOutput)
+}
+
+// (Updatable) Secret
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * type: string
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsScimCompliant: false
+// * idcsSensitive: hash_sc
+func (o DomainsOauth2clientCredentialOutput) Secret() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsOauth2clientCredential) pulumi.StringOutput { return v.Secret }).(pulumi.StringOutput)
 }
 
 // The user's credential status.

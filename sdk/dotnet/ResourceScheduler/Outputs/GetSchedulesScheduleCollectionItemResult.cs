@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

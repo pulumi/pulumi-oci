@@ -135,15 +135,15 @@ def get_schedules(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_schedules = oci.ResourceScheduler.get_schedules(compartment_id=compartment_id,
-        display_name=schedule_display_name,
         schedule_id=test_schedule["id"],
+        display_name=schedule_display_name,
         state=schedule_state)
     ```
 
 
-    :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param str display_name: This is a filter to return only resources that match the given display name exactly.
-    :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+    :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -181,15 +181,15 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     import pulumi_oci as oci
 
     test_schedules = oci.ResourceScheduler.get_schedules(compartment_id=compartment_id,
-        display_name=schedule_display_name,
         schedule_id=test_schedule["id"],
+        display_name=schedule_display_name,
         state=schedule_state)
     ```
 
 
-    :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param str display_name: This is a filter to return only resources that match the given display name exactly.
-    :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+    :param str schedule_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
     :param str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

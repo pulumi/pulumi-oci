@@ -32,10 +32,12 @@ type Addon struct {
 	AddonName pulumi.StringOutput `pulumi:"addonName"`
 	// The OCID of the cluster.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// (Updatable) Addon configuration details.
+	// (Updatable) Addon configuration details
 	Configurations AddonConfigurationArrayOutput `pulumi:"configurations"`
 	// current installed version of the addon
 	CurrentInstalledVersion pulumi.StringOutput `pulumi:"currentInstalledVersion"`
+	// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+	OverrideExisting pulumi.BoolPtrOutput `pulumi:"overrideExisting"`
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete pulumi.BoolOutput `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
@@ -94,10 +96,12 @@ type addonState struct {
 	AddonName *string `pulumi:"addonName"`
 	// The OCID of the cluster.
 	ClusterId *string `pulumi:"clusterId"`
-	// (Updatable) Addon configuration details.
+	// (Updatable) Addon configuration details
 	Configurations []AddonConfiguration `pulumi:"configurations"`
 	// current installed version of the addon
 	CurrentInstalledVersion *string `pulumi:"currentInstalledVersion"`
+	// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+	OverrideExisting *bool `pulumi:"overrideExisting"`
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete *bool `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
@@ -118,10 +122,12 @@ type AddonState struct {
 	AddonName pulumi.StringPtrInput
 	// The OCID of the cluster.
 	ClusterId pulumi.StringPtrInput
-	// (Updatable) Addon configuration details.
+	// (Updatable) Addon configuration details
 	Configurations AddonConfigurationArrayInput
 	// current installed version of the addon
 	CurrentInstalledVersion pulumi.StringPtrInput
+	// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+	OverrideExisting pulumi.BoolPtrInput
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete pulumi.BoolPtrInput
 	// The state of the addon.
@@ -144,8 +150,10 @@ type addonArgs struct {
 	AddonName string `pulumi:"addonName"`
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// (Updatable) Addon configuration details.
+	// (Updatable) Addon configuration details
 	Configurations []AddonConfiguration `pulumi:"configurations"`
+	// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+	OverrideExisting *bool `pulumi:"overrideExisting"`
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete bool `pulumi:"removeAddonResourcesOnDelete"`
 	// (Updatable) The version of addon to be installed.
@@ -161,8 +169,10 @@ type AddonArgs struct {
 	AddonName pulumi.StringInput
 	// The OCID of the cluster.
 	ClusterId pulumi.StringInput
-	// (Updatable) Addon configuration details.
+	// (Updatable) Addon configuration details
 	Configurations AddonConfigurationArrayInput
+	// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+	OverrideExisting pulumi.BoolPtrInput
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete pulumi.BoolInput
 	// (Updatable) The version of addon to be installed.
@@ -274,7 +284,7 @@ func (o AddonOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Addon configuration details.
+// (Updatable) Addon configuration details
 func (o AddonOutput) Configurations() AddonConfigurationArrayOutput {
 	return o.ApplyT(func(v *Addon) AddonConfigurationArrayOutput { return v.Configurations }).(AddonConfigurationArrayOutput)
 }
@@ -282,6 +292,11 @@ func (o AddonOutput) Configurations() AddonConfigurationArrayOutput {
 // current installed version of the addon
 func (o AddonOutput) CurrentInstalledVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+}
+
+// Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+func (o AddonOutput) OverrideExisting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.BoolPtrOutput { return v.OverrideExisting }).(pulumi.BoolPtrOutput)
 }
 
 // Whether to remove addon resource in deletion.

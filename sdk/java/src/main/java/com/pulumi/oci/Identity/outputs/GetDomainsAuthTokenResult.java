@@ -107,6 +107,11 @@ public final class GetDomainsAuthTokenResult {
      */
     private String tenancyOcid;
     /**
+     * @return token
+     * 
+     */
+    private String token;
+    /**
      * @return Controls whether a user can update themselves or not via User related APIs
      * 
      */
@@ -249,6 +254,13 @@ public final class GetDomainsAuthTokenResult {
         return this.tenancyOcid;
     }
     /**
+     * @return token
+     * 
+     */
+    public String token() {
+        return this.token;
+    }
+    /**
      * @return Controls whether a user can update themselves or not via User related APIs
      * 
      */
@@ -294,6 +306,7 @@ public final class GetDomainsAuthTokenResult {
         private String status;
         private List<GetDomainsAuthTokenTag> tags;
         private String tenancyOcid;
+        private String token;
         private List<GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
         private List<GetDomainsAuthTokenUser> users;
         public Builder() {}
@@ -321,6 +334,7 @@ public final class GetDomainsAuthTokenResult {
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.tenancyOcid = defaults.tenancyOcid;
+    	      this.token = defaults.token;
     	      this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = defaults.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     	      this.users = defaults.users;
         }
@@ -515,6 +529,14 @@ public final class GetDomainsAuthTokenResult {
             return this;
         }
         @CustomType.Setter
+        public Builder token(String token) {
+            if (token == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthTokenResult", "token");
+            }
+            this.token = token;
+            return this;
+        }
+        @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
             if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
               throw new MissingRequiredPropertyException("GetDomainsAuthTokenResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
@@ -560,6 +582,7 @@ public final class GetDomainsAuthTokenResult {
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.token = token;
             _resultValue.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             _resultValue.users = users;
             return _resultValue;

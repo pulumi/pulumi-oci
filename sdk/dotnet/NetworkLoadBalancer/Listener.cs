@@ -33,6 +33,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         Protocol = listenerProtocol,
     ///         IpVersion = listenerIpVersion,
     ///         IsPpv2enabled = listenerIsPpv2enabled,
+    ///         L3ipIdleTimeout = listenerL3ipIdleTimeout,
     ///         TcpIdleTimeout = listenerTcpIdleTimeout,
     ///         UdpIdleTimeout = listenerUdpIdleTimeout,
     ///     });
@@ -68,6 +69,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Output("isPpv2enabled")]
         public Output<bool> IsPpv2enabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+        /// </summary>
+        [Output("l3ipIdleTimeout")]
+        public Output<int> L3ipIdleTimeout { get; private set; } = null!;
 
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -174,6 +181,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<bool>? IsPpv2enabled { get; set; }
 
         /// <summary>
+        /// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+        /// </summary>
+        [Input("l3ipIdleTimeout")]
+        public Input<int>? L3ipIdleTimeout { get; set; }
+
+        /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         /// </summary>
         [Input("name")]
@@ -238,6 +251,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Input("isPpv2enabled")]
         public Input<bool>? IsPpv2enabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+        /// </summary>
+        [Input("l3ipIdleTimeout")]
+        public Input<int>? L3ipIdleTimeout { get; set; }
 
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

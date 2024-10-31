@@ -108,6 +108,11 @@ public final class GetDomainsOauth2clientCredentialResult {
      */
     private List<GetDomainsOauth2clientCredentialScope> scopes;
     /**
+     * @return Secret
+     * 
+     */
+    private String secret;
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -265,6 +270,13 @@ public final class GetDomainsOauth2clientCredentialResult {
         return this.scopes;
     }
     /**
+     * @return Secret
+     * 
+     */
+    public String secret() {
+        return this.secret;
+    }
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -331,6 +343,7 @@ public final class GetDomainsOauth2clientCredentialResult {
         private @Nullable String resourceTypeSchemaVersion;
         private List<String> schemas;
         private List<GetDomainsOauth2clientCredentialScope> scopes;
+        private String secret;
         private String status;
         private List<GetDomainsOauth2clientCredentialTag> tags;
         private String tenancyOcid;
@@ -361,6 +374,7 @@ public final class GetDomainsOauth2clientCredentialResult {
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
     	      this.scopes = defaults.scopes;
+    	      this.secret = defaults.secret;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.tenancyOcid = defaults.tenancyOcid;
@@ -558,6 +572,14 @@ public final class GetDomainsOauth2clientCredentialResult {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
+        public Builder secret(String secret) {
+            if (secret == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialResult", "secret");
+            }
+            this.secret = secret;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetDomainsOauth2clientCredentialResult", "status");
@@ -630,6 +652,7 @@ public final class GetDomainsOauth2clientCredentialResult {
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
             _resultValue.scopes = scopes;
+            _resultValue.secret = secret;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.tenancyOcid = tenancyOcid;

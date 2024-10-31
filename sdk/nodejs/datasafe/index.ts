@@ -260,6 +260,16 @@ export const getDataSafePrivateEndpoints: typeof import("./getDataSafePrivateEnd
 export const getDataSafePrivateEndpointsOutput: typeof import("./getDataSafePrivateEndpoints").getDataSafePrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDataSafePrivateEndpoints","getDataSafePrivateEndpointsOutput"], () => require("./getDataSafePrivateEndpoints"));
 
+export { GetDatabaseSecurityConfigArgs, GetDatabaseSecurityConfigResult, GetDatabaseSecurityConfigOutputArgs } from "./getDatabaseSecurityConfig";
+export const getDatabaseSecurityConfig: typeof import("./getDatabaseSecurityConfig").getDatabaseSecurityConfig = null as any;
+export const getDatabaseSecurityConfigOutput: typeof import("./getDatabaseSecurityConfig").getDatabaseSecurityConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSecurityConfig","getDatabaseSecurityConfigOutput"], () => require("./getDatabaseSecurityConfig"));
+
+export { GetDatabaseSecurityConfigsArgs, GetDatabaseSecurityConfigsResult, GetDatabaseSecurityConfigsOutputArgs } from "./getDatabaseSecurityConfigs";
+export const getDatabaseSecurityConfigs: typeof import("./getDatabaseSecurityConfigs").getDatabaseSecurityConfigs = null as any;
+export const getDatabaseSecurityConfigsOutput: typeof import("./getDatabaseSecurityConfigs").getDatabaseSecurityConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSecurityConfigs","getDatabaseSecurityConfigsOutput"], () => require("./getDatabaseSecurityConfigs"));
+
 export { GetDiscoveryAnalyticArgs, GetDiscoveryAnalyticResult, GetDiscoveryAnalyticOutputArgs } from "./getDiscoveryAnalytic";
 export const getDiscoveryAnalytic: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalytic = null as any;
 export const getDiscoveryAnalyticOutput: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalyticOutput = null as any;

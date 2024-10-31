@@ -28,7 +28,7 @@ class GetModelsResult:
     """
     A collection of values returned by getModels.
     """
-    def __init__(__self__, compartment_id=None, created_by=None, display_name=None, filters=None, id=None, model_version_set_name=None, models=None, project_id=None, state=None, version_label=None):
+    def __init__(__self__, compartment_id=None, created_by=None, display_name=None, filters=None, id=None, model_version_set_id=None, model_version_set_name=None, models=None, project_id=None, state=None, version_label=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetModelsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if model_version_set_id and not isinstance(model_version_set_id, str):
+            raise TypeError("Expected argument 'model_version_set_id' to be a str")
+        pulumi.set(__self__, "model_version_set_id", model_version_set_id)
         if model_version_set_name and not isinstance(model_version_set_name, str):
             raise TypeError("Expected argument 'model_version_set_name' to be a str")
         pulumi.set(__self__, "model_version_set_name", model_version_set_name)
@@ -98,8 +101,16 @@ class GetModelsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="modelVersionSetId")
+    def model_version_set_id(self) -> Optional[str]:
+        """
+        The OCID of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_id")
+
+    @property
     @pulumi.getter(name="modelVersionSetName")
-    def model_version_set_name(self) -> str:
+    def model_version_set_name(self) -> Optional[str]:
         """
         The name of the model version set that the model is associated to.
         """
@@ -131,7 +142,7 @@ class GetModelsResult:
 
     @property
     @pulumi.getter(name="versionLabel")
-    def version_label(self) -> str:
+    def version_label(self) -> Optional[str]:
         return pulumi.get(self, "version_label")
 
 
@@ -146,6 +157,7 @@ class AwaitableGetModelsResult(GetModelsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            model_version_set_id=self.model_version_set_id,
             model_version_set_name=self.model_version_set_name,
             models=self.models,
             project_id=self.project_id,
@@ -158,6 +170,7 @@ def get_models(compartment_id: Optional[str] = None,
                display_name: Optional[str] = None,
                filters: Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]] = None,
                id: Optional[str] = None,
+               model_version_set_id: Optional[str] = None,
                model_version_set_name: Optional[str] = None,
                project_id: Optional[str] = None,
                state: Optional[str] = None,
@@ -188,6 +201,7 @@ def get_models(compartment_id: Optional[str] = None,
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+    :param str model_version_set_id: The OCID of the model version set that the model is associated to.
     :param str model_version_set_name: The name of the model version set that the model is associated to.
     :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -198,6 +212,7 @@ def get_models(compartment_id: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['modelVersionSetId'] = model_version_set_id
     __args__['modelVersionSetName'] = model_version_set_name
     __args__['projectId'] = project_id
     __args__['state'] = state
@@ -211,6 +226,7 @@ def get_models(compartment_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        model_version_set_id=pulumi.get(__ret__, 'model_version_set_id'),
         model_version_set_name=pulumi.get(__ret__, 'model_version_set_name'),
         models=pulumi.get(__ret__, 'models'),
         project_id=pulumi.get(__ret__, 'project_id'),
@@ -221,10 +237,11 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       display_name: Optional[pulumi.Input[Optional[str]]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
                       id: Optional[pulumi.Input[Optional[str]]] = None,
-                      model_version_set_name: Optional[pulumi.Input[str]] = None,
+                      model_version_set_id: Optional[pulumi.Input[Optional[str]]] = None,
+                      model_version_set_name: Optional[pulumi.Input[Optional[str]]] = None,
                       project_id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
-                      version_label: Optional[pulumi.Input[str]] = None,
+                      version_label: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelsResult]:
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
@@ -251,6 +268,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
     :param str display_name: <b>Filter</b> results by its user-friendly name.
     :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+    :param str model_version_set_id: The OCID of the model version set that the model is associated to.
     :param str model_version_set_name: The name of the model version set that the model is associated to.
     :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
     :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -261,6 +279,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['modelVersionSetId'] = model_version_set_id
     __args__['modelVersionSetName'] = model_version_set_name
     __args__['projectId'] = project_id
     __args__['state'] = state
@@ -273,6 +292,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        model_version_set_id=pulumi.get(__response__, 'model_version_set_id'),
         model_version_set_name=pulumi.get(__response__, 'model_version_set_name'),
         models=pulumi.get(__response__, 'models'),
         project_id=pulumi.get(__response__, 'project_id'),

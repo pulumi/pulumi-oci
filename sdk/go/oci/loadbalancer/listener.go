@@ -98,7 +98,7 @@ type Listener struct {
 	PathRouteSetName pulumi.StringPtrOutput `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntOutput `pulumi:"port"`
-	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+	// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
 	RoutingPolicyName pulumi.StringPtrOutput `pulumi:"routingPolicyName"`
@@ -171,7 +171,7 @@ type listenerState struct {
 	PathRouteSetName *string `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port *int `pulumi:"port"`
-	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+	// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 	Protocol *string `pulumi:"protocol"`
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
 	RoutingPolicyName *string `pulumi:"routingPolicyName"`
@@ -203,7 +203,7 @@ type ListenerState struct {
 	PathRouteSetName pulumi.StringPtrInput
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntPtrInput
-	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+	// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 	Protocol pulumi.StringPtrInput
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
 	RoutingPolicyName pulumi.StringPtrInput
@@ -239,7 +239,7 @@ type listenerArgs struct {
 	PathRouteSetName *string `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port int `pulumi:"port"`
-	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+	// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 	Protocol string `pulumi:"protocol"`
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
 	RoutingPolicyName *string `pulumi:"routingPolicyName"`
@@ -271,7 +271,7 @@ type ListenerArgs struct {
 	PathRouteSetName pulumi.StringPtrInput
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntInput
-	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+	// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 	Protocol pulumi.StringInput
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
 	RoutingPolicyName pulumi.StringPtrInput
@@ -409,7 +409,7 @@ func (o ListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
+// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
 func (o ListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }

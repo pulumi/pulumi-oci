@@ -13,19 +13,19 @@ namespace Pulumi.Oci.ResourceScheduler.Inputs
     public sealed class ScheduleResourceFilterValueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) This is the namespace of the defined tag.
+        /// This is the namespace of the defined tag.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// (Updatable) This is the key of the defined tag.
+        /// This is the key of the defined tag.
         /// </summary>
         [Input("tagKey")]
         public Input<string>? TagKey { get; set; }
 
         /// <summary>
-        /// (Updatable) This is the value of the defined tag.
+        /// This is the lifecycle state value used for filtering.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

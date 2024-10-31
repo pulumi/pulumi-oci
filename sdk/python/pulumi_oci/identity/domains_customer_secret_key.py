@@ -426,6 +426,7 @@ class _DomainsCustomerSecretKeyState:
                  ocid: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 secret_key: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyTagArgs']]]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -580,6 +581,14 @@ class _DomainsCustomerSecretKeyState:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[str] secret_key: (Updatable) The secret key.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
         :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
@@ -666,6 +675,8 @@ class _DomainsCustomerSecretKeyState:
             pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
             pulumi.set(__self__, "schemas", schemas)
+        if secret_key is not None:
+            pulumi.set(__self__, "secret_key", secret_key)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if tags is not None:
@@ -1034,6 +1045,25 @@ class _DomainsCustomerSecretKeyState:
         pulumi.set(self, "schemas", value)
 
     @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The secret key.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        """
+        return pulumi.get(self, "secret_key")
+
+    @secret_key.setter
+    def secret_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_key", value)
+
+    @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1348,6 +1378,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
             __props__.__dict__["idcs_last_upgraded_in_release"] = None
             __props__.__dict__["idcs_prevented_operations"] = None
             __props__.__dict__["metas"] = None
+            __props__.__dict__["secret_key"] = None
             __props__.__dict__["tenancy_ocid"] = None
         super(DomainsCustomerSecretKey, __self__).__init__(
             'oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey',
@@ -1378,6 +1409,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
             ocid: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            secret_key: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsCustomerSecretKeyTagArgs', 'DomainsCustomerSecretKeyTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
@@ -1537,6 +1569,14 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[str] secret_key: (Updatable) The secret key.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
         :param pulumi.Input[str] status: The user's credential status.
                
                **Added In:** 2109090424
@@ -1608,6 +1648,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         __props__.__dict__["ocid"] = ocid
         __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
         __props__.__dict__["schemas"] = schemas
+        __props__.__dict__["secret_key"] = secret_key
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
         __props__.__dict__["tenancy_ocid"] = tenancy_ocid
@@ -1894,6 +1935,21 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "schemas")
+
+    @property
+    @pulumi.getter(name="secretKey")
+    def secret_key(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The secret key.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        """
+        return pulumi.get(self, "secret_key")
 
     @property
     @pulumi.getter

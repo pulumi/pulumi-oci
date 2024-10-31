@@ -88,19 +88,20 @@ if not MYPY:
     class ScheduleResourceFilterArgsDict(TypedDict):
         attribute: pulumi.Input[str]
         """
-        (Updatable) This is the resource attribute on which the threshold is defined.
+        (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
         """
         condition: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) This is the condition for the filter in comparison to its creation time.
+        This is the condition for the filter in comparison to its creation time.
         """
         should_include_child_compartments: NotRequired[pulumi.Input[bool]]
         """
-        (Updatable) This sets whether to include child compartments.
+        This sets whether to include child compartments.
         """
         values: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]
         """
-        (Updatable) This is a collection of resource lifecycle state values.
+        (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+        * When `attribute="DEFINED_TAGS"`:
         """
 elif False:
     ScheduleResourceFilterArgsDict: TypeAlias = Mapping[str, Any]
@@ -113,10 +114,11 @@ class ScheduleResourceFilterArgs:
                  should_include_child_compartments: Optional[pulumi.Input[bool]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]] = None):
         """
-        :param pulumi.Input[str] attribute: (Updatable) This is the resource attribute on which the threshold is defined.
-        :param pulumi.Input[str] condition: (Updatable) This is the condition for the filter in comparison to its creation time.
-        :param pulumi.Input[bool] should_include_child_compartments: (Updatable) This sets whether to include child compartments.
-        :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]] values: (Updatable) This is a collection of resource lifecycle state values.
+        :param pulumi.Input[str] attribute: (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
+        :param pulumi.Input[str] condition: This is the condition for the filter in comparison to its creation time.
+        :param pulumi.Input[bool] should_include_child_compartments: This sets whether to include child compartments.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]] values: (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+               * When `attribute="DEFINED_TAGS"`:
         """
         pulumi.set(__self__, "attribute", attribute)
         if condition is not None:
@@ -130,7 +132,7 @@ class ScheduleResourceFilterArgs:
     @pulumi.getter
     def attribute(self) -> pulumi.Input[str]:
         """
-        (Updatable) This is the resource attribute on which the threshold is defined.
+        (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
         """
         return pulumi.get(self, "attribute")
 
@@ -142,7 +144,7 @@ class ScheduleResourceFilterArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This is the condition for the filter in comparison to its creation time.
+        This is the condition for the filter in comparison to its creation time.
         """
         return pulumi.get(self, "condition")
 
@@ -154,7 +156,7 @@ class ScheduleResourceFilterArgs:
     @pulumi.getter(name="shouldIncludeChildCompartments")
     def should_include_child_compartments(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) This sets whether to include child compartments.
+        This sets whether to include child compartments.
         """
         return pulumi.get(self, "should_include_child_compartments")
 
@@ -166,7 +168,8 @@ class ScheduleResourceFilterArgs:
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]:
         """
-        (Updatable) This is a collection of resource lifecycle state values.
+        (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+        * When `attribute="DEFINED_TAGS"`:
         """
         return pulumi.get(self, "values")
 
@@ -179,15 +182,15 @@ if not MYPY:
     class ScheduleResourceFilterValueArgsDict(TypedDict):
         namespace: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) This is the namespace of the defined tag.
+        This is the namespace of the defined tag.
         """
         tag_key: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) This is the key of the defined tag.
+        This is the key of the defined tag.
         """
         value: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) This is the value of the defined tag.
+        This is the lifecycle state value used for filtering.
         """
 elif False:
     ScheduleResourceFilterValueArgsDict: TypeAlias = Mapping[str, Any]
@@ -199,9 +202,9 @@ class ScheduleResourceFilterValueArgs:
                  tag_key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] namespace: (Updatable) This is the namespace of the defined tag.
-        :param pulumi.Input[str] tag_key: (Updatable) This is the key of the defined tag.
-        :param pulumi.Input[str] value: (Updatable) This is the value of the defined tag.
+        :param pulumi.Input[str] namespace: This is the namespace of the defined tag.
+        :param pulumi.Input[str] tag_key: This is the key of the defined tag.
+        :param pulumi.Input[str] value: This is the lifecycle state value used for filtering.
         """
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
@@ -214,7 +217,7 @@ class ScheduleResourceFilterValueArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This is the namespace of the defined tag.
+        This is the namespace of the defined tag.
         """
         return pulumi.get(self, "namespace")
 
@@ -226,7 +229,7 @@ class ScheduleResourceFilterValueArgs:
     @pulumi.getter(name="tagKey")
     def tag_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This is the key of the defined tag.
+        This is the key of the defined tag.
         """
         return pulumi.get(self, "tag_key")
 
@@ -238,7 +241,7 @@ class ScheduleResourceFilterValueArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) This is the value of the defined tag.
+        This is the lifecycle state value used for filtering.
         """
         return pulumi.get(self, "value")
 

@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ResourceScheduler.GetSchedules(ctx, &resourcescheduler.GetSchedulesArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
-//				DisplayName:   pulumi.StringRef(scheduleDisplayName),
 //				ScheduleId:    pulumi.StringRef(testSchedule.Id),
+//				DisplayName:   pulumi.StringRef(scheduleDisplayName),
 //				State:         pulumi.StringRef(scheduleState),
 //			}, nil)
 //			if err != nil {
@@ -55,12 +55,12 @@ func GetSchedules(ctx *pulumi.Context, args *GetSchedulesArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getSchedules.
 type GetSchedulesArgs struct {
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetSchedulesFilter `pulumi:"filters"`
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
 	ScheduleId *string `pulumi:"scheduleId"`
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -103,12 +103,12 @@ func GetSchedulesOutput(ctx *pulumi.Context, args GetSchedulesOutputArgs, opts .
 
 // A collection of arguments for invoking getSchedules.
 type GetSchedulesOutputArgs struct {
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput        `pulumi:"displayName"`
 	Filters     GetSchedulesFilterArrayInput `pulumi:"filters"`
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
 	ScheduleId pulumi.StringPtrInput `pulumi:"scheduleId"`
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`

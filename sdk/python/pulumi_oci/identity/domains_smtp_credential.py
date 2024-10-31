@@ -392,6 +392,7 @@ class _DomainsSmtpCredentialState:
                  idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSmtpCredentialMetaArgs']]]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
@@ -521,6 +522,15 @@ class _DomainsSmtpCredentialState:
                * returned: default
                * type: string
                * uniqueness: global
+        :param pulumi.Input[str] password: (Updatable) Password
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsSensitive: hash_sc
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -623,6 +633,8 @@ class _DomainsSmtpCredentialState:
             pulumi.set(__self__, "metas", metas)
         if ocid is not None:
             pulumi.set(__self__, "ocid", ocid)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
         if resource_type_schema_version is not None:
             pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
@@ -923,6 +935,26 @@ class _DomainsSmtpCredentialState:
     @ocid.setter
     def ocid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ocid", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Password
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
@@ -1284,6 +1316,7 @@ class DomainsSmtpCredential(pulumi.CustomResource):
             __props__.__dict__["idcs_last_upgraded_in_release"] = None
             __props__.__dict__["idcs_prevented_operations"] = None
             __props__.__dict__["metas"] = None
+            __props__.__dict__["password"] = None
             __props__.__dict__["tenancy_ocid"] = None
             __props__.__dict__["user_name"] = None
         super(DomainsSmtpCredential, __self__).__init__(
@@ -1311,6 +1344,7 @@ class DomainsSmtpCredential(pulumi.CustomResource):
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSmtpCredentialMetaArgs', 'DomainsSmtpCredentialMetaArgsDict']]]]] = None,
             ocid: Optional[pulumi.Input[str]] = None,
+            password: Optional[pulumi.Input[str]] = None,
             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
@@ -1445,6 +1479,15 @@ class DomainsSmtpCredential(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: global
+        :param pulumi.Input[str] password: (Updatable) Password
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsSensitive: hash_sc
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1536,6 +1579,7 @@ class DomainsSmtpCredential(pulumi.CustomResource):
         __props__.__dict__["idcs_prevented_operations"] = idcs_prevented_operations
         __props__.__dict__["metas"] = metas
         __props__.__dict__["ocid"] = ocid
+        __props__.__dict__["password"] = password
         __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
         __props__.__dict__["schemas"] = schemas
         __props__.__dict__["status"] = status
@@ -1769,6 +1813,22 @@ class DomainsSmtpCredential(pulumi.CustomResource):
         * uniqueness: global
         """
         return pulumi.get(self, "ocid")
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Password
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")

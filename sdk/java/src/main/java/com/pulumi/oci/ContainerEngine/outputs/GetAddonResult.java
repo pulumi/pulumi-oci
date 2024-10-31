@@ -36,6 +36,7 @@ public final class GetAddonResult {
      */
     private String currentInstalledVersion;
     private String id;
+    private Boolean overrideExisting;
     private Boolean removeAddonResourcesOnDelete;
     /**
      * @return The state of the addon.
@@ -88,6 +89,9 @@ public final class GetAddonResult {
     public String id() {
         return this.id;
     }
+    public Boolean overrideExisting() {
+        return this.overrideExisting;
+    }
     public Boolean removeAddonResourcesOnDelete() {
         return this.removeAddonResourcesOnDelete;
     }
@@ -128,6 +132,7 @@ public final class GetAddonResult {
         private List<GetAddonConfiguration> configurations;
         private String currentInstalledVersion;
         private String id;
+        private Boolean overrideExisting;
         private Boolean removeAddonResourcesOnDelete;
         private String state;
         private String timeCreated;
@@ -141,6 +146,7 @@ public final class GetAddonResult {
     	      this.configurations = defaults.configurations;
     	      this.currentInstalledVersion = defaults.currentInstalledVersion;
     	      this.id = defaults.id;
+    	      this.overrideExisting = defaults.overrideExisting;
     	      this.removeAddonResourcesOnDelete = defaults.removeAddonResourcesOnDelete;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -202,6 +208,14 @@ public final class GetAddonResult {
             return this;
         }
         @CustomType.Setter
+        public Builder overrideExisting(Boolean overrideExisting) {
+            if (overrideExisting == null) {
+              throw new MissingRequiredPropertyException("GetAddonResult", "overrideExisting");
+            }
+            this.overrideExisting = overrideExisting;
+            return this;
+        }
+        @CustomType.Setter
         public Builder removeAddonResourcesOnDelete(Boolean removeAddonResourcesOnDelete) {
             if (removeAddonResourcesOnDelete == null) {
               throw new MissingRequiredPropertyException("GetAddonResult", "removeAddonResourcesOnDelete");
@@ -241,6 +255,7 @@ public final class GetAddonResult {
             _resultValue.configurations = configurations;
             _resultValue.currentInstalledVersion = currentInstalledVersion;
             _resultValue.id = id;
+            _resultValue.overrideExisting = overrideExisting;
             _resultValue.removeAddonResourcesOnDelete = removeAddonResourcesOnDelete;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

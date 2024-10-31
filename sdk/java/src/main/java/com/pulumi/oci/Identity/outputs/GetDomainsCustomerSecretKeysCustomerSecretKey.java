@@ -119,6 +119,11 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
      */
     private List<String> schemas;
     /**
+     * @return The secret key.
+     * 
+     */
+    private String secretKey;
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -286,6 +291,13 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
         return this.schemas;
     }
     /**
+     * @return The secret key.
+     * 
+     */
+    public String secretKey() {
+        return this.secretKey;
+    }
+    /**
      * @return The user&#39;s credential status.
      * 
      */
@@ -350,6 +362,7 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
         private String ocid;
         private String resourceTypeSchemaVersion;
         private List<String> schemas;
+        private String secretKey;
         private String status;
         private List<GetDomainsCustomerSecretKeysCustomerSecretKeyTag> tags;
         private String tenancyOcid;
@@ -378,6 +391,7 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
     	      this.ocid = defaults.ocid;
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
+    	      this.secretKey = defaults.secretKey;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.tenancyOcid = defaults.tenancyOcid;
@@ -564,6 +578,14 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
+        public Builder secretKey(String secretKey) {
+            if (secretKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeysCustomerSecretKey", "secretKey");
+            }
+            this.secretKey = secretKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetDomainsCustomerSecretKeysCustomerSecretKey", "status");
@@ -634,6 +656,7 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKey {
             _resultValue.ocid = ocid;
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
+            _resultValue.secretKey = secretKey;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.tenancyOcid = tenancyOcid;

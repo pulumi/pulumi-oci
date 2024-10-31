@@ -98,6 +98,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string TenancyOcid;
         /// <summary>
+        /// token
+        /// </summary>
+        public readonly string Token;
+        /// <summary>
         /// Controls whether a user can update themselves or not via User related APIs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsAuthTokensAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
@@ -150,6 +154,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string tenancyOcid,
 
+            string token,
+
             ImmutableArray<Outputs.GetDomainsAuthTokensAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers,
 
             ImmutableArray<Outputs.GetDomainsAuthTokensAuthTokenUserResult> users)
@@ -175,6 +181,7 @@ namespace Pulumi.Oci.Identity.Outputs
             Status = status;
             Tags = tags;
             TenancyOcid = tenancyOcid;
+            Token = token;
             UrnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             Users = users;
         }

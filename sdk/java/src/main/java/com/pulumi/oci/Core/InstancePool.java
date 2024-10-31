@@ -222,14 +222,14 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
         return this.instanceHostnameFormatter;
     }
     /**
-     * The load balancers to attach to the instance pool.
+     * The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
     @Export(name="loadBalancers", refs={List.class,InstancePoolLoadBalancer.class}, tree="[0,1]")
     private Output<List<InstancePoolLoadBalancer>> loadBalancers;
 
     /**
-     * @return The load balancers to attach to the instance pool.
+     * @return The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
     public Output<List<InstancePoolLoadBalancer>> loadBalancers() {

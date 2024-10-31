@@ -1091,6 +1091,8 @@
         "datasafe/getDataSafeConfiguration.ts",
         "datasafe/getDataSafePrivateEndpoint.ts",
         "datasafe/getDataSafePrivateEndpoints.ts",
+        "datasafe/getDatabaseSecurityConfig.ts",
+        "datasafe/getDatabaseSecurityConfigs.ts",
         "datasafe/getDiscoveryAnalytic.ts",
         "datasafe/getDiscoveryAnalytics.ts",
         "datasafe/getDiscoveryJob.ts",

@@ -94,6 +94,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
         /// <summary>
+        /// The secret key.
+        /// </summary>
+        public readonly string SecretKey;
+        /// <summary>
         /// The user's credential status.
         /// </summary>
         public readonly string Status;
@@ -156,6 +160,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<string> schemas,
 
+            string secretKey,
+
             string status,
 
             ImmutableArray<Outputs.GetDomainsCustomerSecretKeysCustomerSecretKeyTagResult> tags,
@@ -186,6 +192,7 @@ namespace Pulumi.Oci.Identity.Outputs
             Ocid = ocid;
             ResourceTypeSchemaVersion = resourceTypeSchemaVersion;
             Schemas = schemas;
+            SecretKey = secretKey;
             Status = status;
             Tags = tags;
             TenancyOcid = tenancyOcid;

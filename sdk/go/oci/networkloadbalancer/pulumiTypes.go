@@ -2438,7 +2438,7 @@ func (o GetBackendSetsBackendSetCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetBackendSetsBackendSetCollectionItem struct {
-	// Array of backends.
+	// An array of backends.
 	Backends []GetBackendSetsBackendSetCollectionItemBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetsBackendSetCollectionItemHealthChecker `pulumi:"healthCheckers"`
@@ -2471,7 +2471,7 @@ type GetBackendSetsBackendSetCollectionItemInput interface {
 }
 
 type GetBackendSetsBackendSetCollectionItemArgs struct {
-	// Array of backends.
+	// An array of backends.
 	Backends GetBackendSetsBackendSetCollectionItemBackendArrayInput `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput `pulumi:"healthCheckers"`
@@ -2543,7 +2543,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) ToGetBackendSetsBackendSet
 	return o
 }
 
-// Array of backends.
+// An array of backends.
 func (o GetBackendSetsBackendSetCollectionItemOutput) Backends() GetBackendSetsBackendSetCollectionItemBackendArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) []GetBackendSetsBackendSetCollectionItemBackend {
 		return v.Backends
@@ -3805,6 +3805,8 @@ type GetListenersListenerCollectionItem struct {
 	IpVersion string `pulumi:"ipVersion"`
 	// Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled bool `pulumi:"isPpv2enabled"`
+	// The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout int `pulumi:"l3ipIdleTimeout"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -3838,6 +3840,8 @@ type GetListenersListenerCollectionItemArgs struct {
 	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
 	// Property to enable/disable PPv2 feature for this listener.
 	IsPpv2enabled pulumi.BoolInput `pulumi:"isPpv2enabled"`
+	// The duration for L3IP idle timeout in seconds. Example: `200`
+	L3ipIdleTimeout pulumi.IntInput `pulumi:"l3ipIdleTimeout"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -3920,6 +3924,11 @@ func (o GetListenersListenerCollectionItemOutput) IpVersion() pulumi.StringOutpu
 // Property to enable/disable PPv2 feature for this listener.
 func (o GetListenersListenerCollectionItemOutput) IsPpv2enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetListenersListenerCollectionItem) bool { return v.IsPpv2enabled }).(pulumi.BoolOutput)
+}
+
+// The duration for L3IP idle timeout in seconds. Example: `200`
+func (o GetListenersListenerCollectionItemOutput) L3ipIdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) int { return v.L3ipIdleTimeout }).(pulumi.IntOutput)
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

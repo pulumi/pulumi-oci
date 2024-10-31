@@ -22,66 +22,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a Schedule
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.ResourceScheduler.Schedule;
- * import com.pulumi.oci.ResourceScheduler.ScheduleArgs;
- * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceFilterArgs;
- * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testSchedule = new Schedule("testSchedule", ScheduleArgs.builder()
- *             .action(scheduleAction)
- *             .compartmentId(compartmentId)
- *             .recurrenceDetails(scheduleRecurrenceDetails)
- *             .recurrenceType(scheduleRecurrenceType)
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(scheduleDescription)
- *             .displayName(scheduleDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .resourceFilters(ScheduleResourceFilterArgs.builder()
- *                 .attribute(scheduleResourceFiltersAttribute)
- *                 .condition(scheduleResourceFiltersCondition)
- *                 .shouldIncludeChildCompartments(scheduleResourceFiltersShouldIncludeChildCompartments)
- *                 .values(ScheduleResourceFilterValueArgs.builder()
- *                     .namespace(scheduleResourceFiltersValueNamespace)
- *                     .tagKey(scheduleResourceFiltersValueTagKey)
- *                     .value(scheduleResourceFiltersValueValue)
- *                     .build())
- *                 .build())
- *             .resources(ScheduleResourceArgs.builder()
- *                 .id(scheduleResourcesId)
- *                 .metadata(scheduleResourcesMetadata)
- *                 .build())
- *             .timeEnds(scheduleTimeEnds)
- *             .timeStarts(scheduleTimeStarts)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * Schedules can be imported using the `id`, e.g.
@@ -178,28 +118,28 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      * 
      */
     @Export(name="recurrenceDetails", refs={String.class}, tree="[0]")
     private Output<String> recurrenceDetails;
 
     /**
-     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
+     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      * 
      */
     public Output<String> recurrenceDetails() {
         return this.recurrenceDetails;
     }
     /**
-     * (Updatable) Type of recurrence of a schedule
+     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      * 
      */
     @Export(name="recurrenceType", refs={String.class}, tree="[0]")
     private Output<String> recurrenceType;
 
     /**
-     * @return (Updatable) Type of recurrence of a schedule
+     * @return (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      * 
      */
     public Output<String> recurrenceType() {

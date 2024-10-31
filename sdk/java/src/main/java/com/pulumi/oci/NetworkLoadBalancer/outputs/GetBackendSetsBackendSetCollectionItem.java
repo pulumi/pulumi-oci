@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendSetsBackendSetCollectionItem {
     /**
-     * @return Array of backends.
+     * @return An array of backends.
      * 
      */
     private List<GetBackendSetsBackendSetCollectionItemBackend> backends;
@@ -63,7 +63,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
 
     private GetBackendSetsBackendSetCollectionItem() {}
     /**
-     * @return Array of backends.
+     * @return An array of backends.
      * 
      */
     public List<GetBackendSetsBackendSetCollectionItemBackend> backends() {

@@ -250,6 +250,10 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsOauth2clientCredentialScopeResult> Scopes;
         /// <summary>
+        /// Secret
+        /// </summary>
+        public readonly string Secret;
+        /// <summary>
         /// The user's credential status.
         /// </summary>
         public readonly string Status;
@@ -316,6 +320,8 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsOauth2clientCredentialScopeResult> scopes,
 
+            string secret,
+
             string status,
 
             ImmutableArray<Outputs.GetDomainsOauth2clientCredentialTagResult> tags,
@@ -348,6 +354,7 @@ namespace Pulumi.Oci.Identity
             ResourceTypeSchemaVersion = resourceTypeSchemaVersion;
             Schemas = schemas;
             Scopes = scopes;
+            Secret = secret;
             Status = status;
             Tags = tags;
             TenancyOcid = tenancyOcid;

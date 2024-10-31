@@ -620,6 +620,41 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) token
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    @Import(name="token")
+    private @Nullable Output<String> token;
+
+    /**
+     * @return (Updatable) token
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     * 
+     */
+    public Optional<Output<String>> token() {
+        return Optional.ofNullable(this.token);
+    }
+
+    /**
      * Controls whether a user can update themselves or not via User related APIs
      * 
      */
@@ -692,6 +727,7 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
         this.status = $.status;
         this.tags = $.tags;
         this.tenancyOcid = $.tenancyOcid;
+        this.token = $.token;
         this.urnietfparamsscimschemasoracleidcsextensionselfChangeUser = $.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
         this.user = $.user;
     }
@@ -1553,6 +1589,47 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
          */
         public Builder tenancyOcid(String tenancyOcid) {
             return tenancyOcid(Output.of(tenancyOcid));
+        }
+
+        /**
+         * @param token (Updatable) token
+         * 
+         * **Added In:** 2010242156
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsSensitive: hash_sc
+         * 
+         * @return builder
+         * 
+         */
+        public Builder token(@Nullable Output<String> token) {
+            $.token = token;
+            return this;
+        }
+
+        /**
+         * @param token (Updatable) token
+         * 
+         * **Added In:** 2010242156
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: string
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsSensitive: hash_sc
+         * 
+         * @return builder
+         * 
+         */
+        public Builder token(String token) {
+            return token(Output.of(token));
         }
 
         /**

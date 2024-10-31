@@ -45,7 +45,7 @@ class InstancePoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
                
@@ -185,7 +185,7 @@ class InstancePoolArgs:
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
-        The load balancers to attach to the instance pool.
+        The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
 
@@ -236,7 +236,7 @@ class _InstancePoolState:
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
@@ -375,7 +375,7 @@ class _InstancePoolState:
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
-        The load balancers to attach to the instance pool.
+        The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
 
@@ -528,7 +528,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
@@ -703,7 +703,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
                To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
@@ -802,7 +802,7 @@ class InstancePool(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> pulumi.Output[Sequence['outputs.InstancePoolLoadBalancer']]:
         """
-        The load balancers to attach to the instance pool.
+        The load balancers to attach to the instance pool. (Note: From 6.14.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
 

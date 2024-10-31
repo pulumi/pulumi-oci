@@ -268,6 +268,19 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The secret key.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// </summary>
+        [Output("secretKey")]
+        public Output<string> SecretKey { get; private set; } = null!;
+
+        /// <summary>
         /// The user's credential status.
         /// 
         /// **Added In:** 2109090424
@@ -850,6 +863,19 @@ namespace Pulumi.Oci.Identity
             get => _schemas ?? (_schemas = new InputList<string>());
             set => _schemas = value;
         }
+
+        /// <summary>
+        /// (Updatable) The secret key.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// </summary>
+        [Input("secretKey")]
+        public Input<string>? SecretKey { get; set; }
 
         /// <summary>
         /// The user's credential status.

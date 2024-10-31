@@ -28,6 +28,11 @@ public final class GetListenerResult {
      * 
      */
     private Boolean isPpv2enabled;
+    /**
+     * @return The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    private Integer l3ipIdleTimeout;
     private String listenerName;
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -80,6 +85,13 @@ public final class GetListenerResult {
      */
     public Boolean isPpv2enabled() {
         return this.isPpv2enabled;
+    }
+    /**
+     * @return The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    public Integer l3ipIdleTimeout() {
+        return this.l3ipIdleTimeout;
     }
     public String listenerName() {
         return this.listenerName;
@@ -136,6 +148,7 @@ public final class GetListenerResult {
         private String id;
         private String ipVersion;
         private Boolean isPpv2enabled;
+        private Integer l3ipIdleTimeout;
         private String listenerName;
         private String name;
         private String networkLoadBalancerId;
@@ -150,6 +163,7 @@ public final class GetListenerResult {
     	      this.id = defaults.id;
     	      this.ipVersion = defaults.ipVersion;
     	      this.isPpv2enabled = defaults.isPpv2enabled;
+    	      this.l3ipIdleTimeout = defaults.l3ipIdleTimeout;
     	      this.listenerName = defaults.listenerName;
     	      this.name = defaults.name;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
@@ -189,6 +203,14 @@ public final class GetListenerResult {
               throw new MissingRequiredPropertyException("GetListenerResult", "isPpv2enabled");
             }
             this.isPpv2enabled = isPpv2enabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder l3ipIdleTimeout(Integer l3ipIdleTimeout) {
+            if (l3ipIdleTimeout == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "l3ipIdleTimeout");
+            }
+            this.l3ipIdleTimeout = l3ipIdleTimeout;
             return this;
         }
         @CustomType.Setter
@@ -253,6 +275,7 @@ public final class GetListenerResult {
             _resultValue.id = id;
             _resultValue.ipVersion = ipVersion;
             _resultValue.isPpv2enabled = isPpv2enabled;
+            _resultValue.l3ipIdleTimeout = l3ipIdleTimeout;
             _resultValue.listenerName = listenerName;
             _resultValue.name = name;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;

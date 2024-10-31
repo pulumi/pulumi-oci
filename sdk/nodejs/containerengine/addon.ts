@@ -60,13 +60,17 @@ export class Addon extends pulumi.CustomResource {
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * (Updatable) Addon configuration details.
+     * (Updatable) Addon configuration details
      */
     public readonly configurations!: pulumi.Output<outputs.ContainerEngine.AddonConfiguration[]>;
     /**
      * current installed version of the addon
      */
     public /*out*/ readonly currentInstalledVersion!: pulumi.Output<string>;
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     */
+    public readonly overrideExisting!: pulumi.Output<boolean | undefined>;
     /**
      * Whether to remove addon resource in deletion.
      */
@@ -106,6 +110,7 @@ export class Addon extends pulumi.CustomResource {
             resourceInputs["clusterId"] = state ? state.clusterId : undefined;
             resourceInputs["configurations"] = state ? state.configurations : undefined;
             resourceInputs["currentInstalledVersion"] = state ? state.currentInstalledVersion : undefined;
+            resourceInputs["overrideExisting"] = state ? state.overrideExisting : undefined;
             resourceInputs["removeAddonResourcesOnDelete"] = state ? state.removeAddonResourcesOnDelete : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -124,6 +129,7 @@ export class Addon extends pulumi.CustomResource {
             resourceInputs["addonName"] = args ? args.addonName : undefined;
             resourceInputs["clusterId"] = args ? args.clusterId : undefined;
             resourceInputs["configurations"] = args ? args.configurations : undefined;
+            resourceInputs["overrideExisting"] = args ? args.overrideExisting : undefined;
             resourceInputs["removeAddonResourcesOnDelete"] = args ? args.removeAddonResourcesOnDelete : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["addonErrors"] = undefined /*out*/;
@@ -153,13 +159,17 @@ export interface AddonState {
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * (Updatable) Addon configuration details.
+     * (Updatable) Addon configuration details
      */
     configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[]>;
     /**
      * current installed version of the addon
      */
     currentInstalledVersion?: pulumi.Input<string>;
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     */
+    overrideExisting?: pulumi.Input<boolean>;
     /**
      * Whether to remove addon resource in deletion.
      */
@@ -195,9 +205,13 @@ export interface AddonArgs {
      */
     clusterId: pulumi.Input<string>;
     /**
-     * (Updatable) Addon configuration details.
+     * (Updatable) Addon configuration details
      */
     configurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.AddonConfiguration>[]>;
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     */
+    overrideExisting?: pulumi.Input<boolean>;
     /**
      * Whether to remove addon resource in deletion.
      */

@@ -75,7 +75,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     {
         public readonly string BackendSetName;
         /// <summary>
-        /// Array of backends.
+        /// An array of backends.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetBackendResult> Backends;
         /// <summary>

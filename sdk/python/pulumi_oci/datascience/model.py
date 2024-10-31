@@ -34,9 +34,12 @@ class ModelArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  input_schema: Optional[pulumi.Input[str]] = None,
+                 model_version_set_id: Optional[pulumi.Input[str]] = None,
+                 model_version_set_name: Optional[pulumi.Input[str]] = None,
                  output_schema: Optional[pulumi.Input[str]] = None,
                  retention_setting: Optional[pulumi.Input['ModelRetentionSettingArgs']] = None,
-                 state: Optional[pulumi.Input[str]] = None):
+                 state: Optional[pulumi.Input[str]] = None,
+                 version_label: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Model resource.
         :param pulumi.Input[str] artifact_content_length: The content length of the model_artifact.
@@ -55,9 +58,12 @@ class ModelArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] input_schema: Input schema file content in String format
+        :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
+        :param pulumi.Input[str] model_version_set_name: The name of the model version set that the model is associated to.
         :param pulumi.Input[str] output_schema: Output schema file content in String format
         :param pulumi.Input['ModelRetentionSettingArgs'] retention_setting: (Updatable) Retention setting details of the model.
         :param pulumi.Input[str] state: The state of the model.
+        :param pulumi.Input[str] version_label: (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,12 +87,18 @@ class ModelArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if input_schema is not None:
             pulumi.set(__self__, "input_schema", input_schema)
+        if model_version_set_id is not None:
+            pulumi.set(__self__, "model_version_set_id", model_version_set_id)
+        if model_version_set_name is not None:
+            pulumi.set(__self__, "model_version_set_name", model_version_set_name)
         if output_schema is not None:
             pulumi.set(__self__, "output_schema", output_schema)
         if retention_setting is not None:
             pulumi.set(__self__, "retention_setting", retention_setting)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if version_label is not None:
+            pulumi.set(__self__, "version_label", version_label)
 
     @property
     @pulumi.getter(name="artifactContentLength")
@@ -248,6 +260,30 @@ class ModelArgs:
         pulumi.set(self, "input_schema", value)
 
     @property
+    @pulumi.getter(name="modelVersionSetId")
+    def model_version_set_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_id")
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_version_set_id", value)
+
+    @property
+    @pulumi.getter(name="modelVersionSetName")
+    def model_version_set_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_name")
+
+    @model_version_set_name.setter
+    def model_version_set_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_version_set_name", value)
+
+    @property
     @pulumi.getter(name="outputSchema")
     def output_schema(self) -> Optional[pulumi.Input[str]]:
         """
@@ -283,6 +319,18 @@ class ModelArgs:
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
 
+    @property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        """
+        return pulumi.get(self, "version_label")
+
+    @version_label.setter
+    def version_label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_label", value)
+
 
 @pulumi.input_type
 class _ModelState:
@@ -305,13 +353,15 @@ class _ModelState:
                  input_schema: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  model_artifact: Optional[pulumi.Input[str]] = None,
+                 model_version_set_id: Optional[pulumi.Input[str]] = None,
                  model_version_set_name: Optional[pulumi.Input[str]] = None,
                  output_schema: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  retention_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelRetentionOperationDetailArgs']]]] = None,
                  retention_setting: Optional[pulumi.Input['ModelRetentionSettingArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None):
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 version_label: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Model resources.
         :param pulumi.Input[str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
@@ -332,6 +382,7 @@ class _ModelState:
         :param pulumi.Input[str] input_schema: Input schema file content in String format
         :param pulumi.Input[str] lifecycle_details: Details about the lifecycle state of the model.
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
         :param pulumi.Input[str] model_version_set_name: The name of the model version set that the model is associated to.
         :param pulumi.Input[str] output_schema: Output schema file content in String format
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -339,6 +390,7 @@ class _ModelState:
         :param pulumi.Input['ModelRetentionSettingArgs'] retention_setting: (Updatable) Retention setting details of the model.
         :param pulumi.Input[str] state: The state of the model.
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param pulumi.Input[str] version_label: (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         if artifact_content_disposition is not None:
             pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -376,6 +428,8 @@ class _ModelState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_artifact is not None:
             pulumi.set(__self__, "model_artifact", model_artifact)
+        if model_version_set_id is not None:
+            pulumi.set(__self__, "model_version_set_id", model_version_set_id)
         if model_version_set_name is not None:
             pulumi.set(__self__, "model_version_set_name", model_version_set_name)
         if output_schema is not None:
@@ -390,6 +444,8 @@ class _ModelState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if version_label is not None:
+            pulumi.set(__self__, "version_label", version_label)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -602,6 +658,18 @@ class _ModelState:
         pulumi.set(self, "model_artifact", value)
 
     @property
+    @pulumi.getter(name="modelVersionSetId")
+    def model_version_set_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_id")
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "model_version_set_id", value)
+
+    @property
     @pulumi.getter(name="modelVersionSetName")
     def model_version_set_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -685,6 +753,18 @@ class _ModelState:
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
 
+    @property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        """
+        return pulumi.get(self, "version_label")
+
+    @version_label.setter
+    def version_label(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "version_label", value)
+
 
 class Model(pulumi.CustomResource):
     @overload
@@ -703,15 +783,62 @@ class Model(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  input_schema: Optional[pulumi.Input[str]] = None,
                  model_artifact: Optional[pulumi.Input[str]] = None,
+                 model_version_set_id: Optional[pulumi.Input[str]] = None,
+                 model_version_set_name: Optional[pulumi.Input[str]] = None,
                  output_schema: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 version_label: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Data Science service.
 
         Creates a new model.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_model = oci.data_science.Model("test_model",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
+            backup_setting={
+                "backup_region": model_backup_setting_backup_region,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "customer_notification_type": model_backup_setting_customer_notification_type,
+            },
+            custom_metadata_lists=[{
+                "category": model_custom_metadata_list_category,
+                "description": model_custom_metadata_list_description,
+                "key": model_custom_metadata_list_key,
+                "value": model_custom_metadata_list_value,
+            }],
+            defined_metadata_lists=[{
+                "category": model_defined_metadata_list_category,
+                "description": model_defined_metadata_list_description,
+                "key": model_defined_metadata_list_key,
+                "value": model_defined_metadata_list_value,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=model_description,
+            display_name=model_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            input_schema=model_input_schema,
+            output_schema=model_output_schema,
+            retention_setting={
+                "archive_after_days": model_retention_setting_archive_after_days,
+                "customer_notification_type": model_retention_setting_customer_notification_type,
+                "delete_after_days": model_retention_setting_delete_after_days,
+            },
+            version_label=model_version_label)
+        ```
 
         ## Import
 
@@ -738,10 +865,13 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] input_schema: Input schema file content in String format
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
+        :param pulumi.Input[str] model_version_set_name: The name of the model version set that the model is associated to.
         :param pulumi.Input[str] output_schema: Output schema file content in String format
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
         :param pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']] retention_setting: (Updatable) Retention setting details of the model.
         :param pulumi.Input[str] state: The state of the model.
+        :param pulumi.Input[str] version_label: (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         ...
     @overload
@@ -753,6 +883,50 @@ class Model(pulumi.CustomResource):
         This resource provides the Model resource in Oracle Cloud Infrastructure Data Science service.
 
         Creates a new model.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_model = oci.data_science.Model("test_model",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
+            backup_setting={
+                "backup_region": model_backup_setting_backup_region,
+                "is_backup_enabled": model_backup_setting_is_backup_enabled,
+                "customer_notification_type": model_backup_setting_customer_notification_type,
+            },
+            custom_metadata_lists=[{
+                "category": model_custom_metadata_list_category,
+                "description": model_custom_metadata_list_description,
+                "key": model_custom_metadata_list_key,
+                "value": model_custom_metadata_list_value,
+            }],
+            defined_metadata_lists=[{
+                "category": model_defined_metadata_list_category,
+                "description": model_defined_metadata_list_description,
+                "key": model_defined_metadata_list_key,
+                "value": model_defined_metadata_list_value,
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=model_description,
+            display_name=model_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            input_schema=model_input_schema,
+            output_schema=model_output_schema,
+            retention_setting={
+                "archive_after_days": model_retention_setting_archive_after_days,
+                "customer_notification_type": model_retention_setting_customer_notification_type,
+                "delete_after_days": model_retention_setting_delete_after_days,
+            },
+            version_label=model_version_label)
+        ```
 
         ## Import
 
@@ -789,10 +963,13 @@ class Model(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  input_schema: Optional[pulumi.Input[str]] = None,
                  model_artifact: Optional[pulumi.Input[str]] = None,
+                 model_version_set_id: Optional[pulumi.Input[str]] = None,
+                 model_version_set_name: Optional[pulumi.Input[str]] = None,
                  output_schema: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 version_label: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -820,19 +997,21 @@ class Model(pulumi.CustomResource):
             if model_artifact is None and not opts.urn:
                 raise TypeError("Missing required property 'model_artifact'")
             __props__.__dict__["model_artifact"] = model_artifact
+            __props__.__dict__["model_version_set_id"] = model_version_set_id
+            __props__.__dict__["model_version_set_name"] = model_version_set_name
             __props__.__dict__["output_schema"] = output_schema
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
             __props__.__dict__["retention_setting"] = retention_setting
             __props__.__dict__["state"] = state
+            __props__.__dict__["version_label"] = version_label
             __props__.__dict__["artifact_content_md5"] = None
             __props__.__dict__["artifact_last_modified"] = None
             __props__.__dict__["backup_operation_details"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["empty_model"] = None
             __props__.__dict__["lifecycle_details"] = None
-            __props__.__dict__["model_version_set_name"] = None
             __props__.__dict__["retention_operation_details"] = None
             __props__.__dict__["time_created"] = None
         super(Model, __self__).__init__(
@@ -863,13 +1042,15 @@ class Model(pulumi.CustomResource):
             input_schema: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             model_artifact: Optional[pulumi.Input[str]] = None,
+            model_version_set_id: Optional[pulumi.Input[str]] = None,
             model_version_set_name: Optional[pulumi.Input[str]] = None,
             output_schema: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             retention_operation_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelRetentionOperationDetailArgs', 'ModelRetentionOperationDetailArgsDict']]]]] = None,
             retention_setting: Optional[pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            time_created: Optional[pulumi.Input[str]] = None) -> 'Model':
+            time_created: Optional[pulumi.Input[str]] = None,
+            version_label: Optional[pulumi.Input[str]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -895,6 +1076,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] input_schema: Input schema file content in String format
         :param pulumi.Input[str] lifecycle_details: Details about the lifecycle state of the model.
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
+        :param pulumi.Input[str] model_version_set_id: The OCID of the model version set that the model is associated to.
         :param pulumi.Input[str] model_version_set_name: The name of the model version set that the model is associated to.
         :param pulumi.Input[str] output_schema: Output schema file content in String format
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -902,6 +1084,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict']] retention_setting: (Updatable) Retention setting details of the model.
         :param pulumi.Input[str] state: The state of the model.
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param pulumi.Input[str] version_label: (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -925,6 +1108,7 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["input_schema"] = input_schema
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["model_artifact"] = model_artifact
+        __props__.__dict__["model_version_set_id"] = model_version_set_id
         __props__.__dict__["model_version_set_name"] = model_version_set_name
         __props__.__dict__["output_schema"] = output_schema
         __props__.__dict__["project_id"] = project_id
@@ -932,6 +1116,7 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["retention_setting"] = retention_setting
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["version_label"] = version_label
         return Model(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -1073,6 +1258,14 @@ class Model(pulumi.CustomResource):
         return pulumi.get(self, "model_artifact")
 
     @property
+    @pulumi.getter(name="modelVersionSetId")
+    def model_version_set_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the model version set that the model is associated to.
+        """
+        return pulumi.get(self, "model_version_set_id")
+
+    @property
     @pulumi.getter(name="modelVersionSetName")
     def model_version_set_name(self) -> pulumi.Output[str]:
         """
@@ -1127,4 +1320,12 @@ class Model(pulumi.CustomResource):
         The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+        """
+        return pulumi.get(self, "version_label")
 

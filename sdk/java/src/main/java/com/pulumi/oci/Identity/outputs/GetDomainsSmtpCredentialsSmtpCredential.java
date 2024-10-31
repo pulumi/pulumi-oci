@@ -99,6 +99,11 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
      */
     private String ocid;
     /**
+     * @return Password
+     * 
+     */
+    private String password;
+    /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
@@ -253,6 +258,13 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
         return this.ocid;
     }
     /**
+     * @return Password
+     * 
+     */
+    public String password() {
+        return this.password;
+    }
+    /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
@@ -334,6 +346,7 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
         private List<String> idcsPreventedOperations;
         private List<GetDomainsSmtpCredentialsSmtpCredentialMeta> metas;
         private String ocid;
+        private String password;
         private String resourceTypeSchemaVersion;
         private List<String> schemas;
         private String status;
@@ -361,6 +374,7 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
     	      this.idcsPreventedOperations = defaults.idcsPreventedOperations;
     	      this.metas = defaults.metas;
     	      this.ocid = defaults.ocid;
+    	      this.password = defaults.password;
     	      this.resourceTypeSchemaVersion = defaults.resourceTypeSchemaVersion;
     	      this.schemas = defaults.schemas;
     	      this.status = defaults.status;
@@ -515,6 +529,14 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
             return this;
         }
         @CustomType.Setter
+        public Builder password(String password) {
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialsSmtpCredential", "password");
+            }
+            this.password = password;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
             if (resourceTypeSchemaVersion == null) {
               throw new MissingRequiredPropertyException("GetDomainsSmtpCredentialsSmtpCredential", "resourceTypeSchemaVersion");
@@ -608,6 +630,7 @@ public final class GetDomainsSmtpCredentialsSmtpCredential {
             _resultValue.idcsPreventedOperations = idcsPreventedOperations;
             _resultValue.metas = metas;
             _resultValue.ocid = ocid;
+            _resultValue.password = password;
             _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             _resultValue.schemas = schemas;
             _resultValue.status = status;

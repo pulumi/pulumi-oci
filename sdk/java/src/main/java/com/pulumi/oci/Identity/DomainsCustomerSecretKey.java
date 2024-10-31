@@ -566,6 +566,34 @@ public class DomainsCustomerSecretKey extends com.pulumi.resources.CustomResourc
         return this.schemas;
     }
     /**
+     * (Updatable) The secret key.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * 
+     */
+    @Export(name="secretKey", refs={String.class}, tree="[0]")
+    private Output<String> secretKey;
+
+    /**
+     * @return (Updatable) The secret key.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * 
+     */
+    public Output<String> secretKey() {
+        return this.secretKey;
+    }
+    /**
      * The user&#39;s credential status.
      * 
      * **Added In:** 2109090424

@@ -401,6 +401,7 @@ class _DomainsAuthTokenState:
                  status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthTokenTagArgs']]]] = None,
                  tenancy_ocid: Optional[pulumi.Input[str]] = None,
+                 token: Optional[pulumi.Input[str]] = None,
                  urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
                  user: Optional[pulumi.Input['DomainsAuthTokenUserArgs']] = None):
         """
@@ -573,6 +574,17 @@ class _DomainsAuthTokenState:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[str] token: (Updatable) token
+               
+               **Added In:** 2010242156
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsSensitive: hash_sc
         :param pulumi.Input['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input['DomainsAuthTokenUserArgs'] user: The user linked to the Auth token.
                
@@ -626,6 +638,8 @@ class _DomainsAuthTokenState:
             pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
             pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+        if token is not None:
+            pulumi.set(__self__, "token", token)
         if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None:
             pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
         if user is not None:
@@ -1020,6 +1034,28 @@ class _DomainsAuthTokenState:
         pulumi.set(self, "tenancy_ocid", value)
 
     @property
+    @pulumi.getter
+    def token(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) token
+
+        **Added In:** 2010242156
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "token")
+
+    @token.setter
+    def token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "token", value)
+
+    @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
     def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> Optional[pulumi.Input['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
         """
@@ -1257,6 +1293,7 @@ class DomainsAuthToken(pulumi.CustomResource):
             __props__.__dict__["idcs_prevented_operations"] = None
             __props__.__dict__["metas"] = None
             __props__.__dict__["tenancy_ocid"] = None
+            __props__.__dict__["token"] = None
         super(DomainsAuthToken, __self__).__init__(
             'oci:Identity/domainsAuthToken:DomainsAuthToken',
             resource_name,
@@ -1287,6 +1324,7 @@ class DomainsAuthToken(pulumi.CustomResource):
             status: Optional[pulumi.Input[str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAuthTokenTagArgs', 'DomainsAuthTokenTagArgsDict']]]]] = None,
             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+            token: Optional[pulumi.Input[str]] = None,
             urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
             user: Optional[pulumi.Input[Union['DomainsAuthTokenUserArgs', 'DomainsAuthTokenUserArgsDict']]] = None) -> 'DomainsAuthToken':
         """
@@ -1464,6 +1502,17 @@ class DomainsAuthToken(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[str] token: (Updatable) token
+               
+               **Added In:** 2010242156
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsSensitive: hash_sc
         :param pulumi.Input[Union['DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']] urnietfparamsscimschemasoracleidcsextensionself_change_user: Controls whether a user can update themselves or not via User related APIs
         :param pulumi.Input[Union['DomainsAuthTokenUserArgs', 'DomainsAuthTokenUserArgsDict']] user: The user linked to the Auth token.
                
@@ -1501,6 +1550,7 @@ class DomainsAuthToken(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
         __props__.__dict__["tenancy_ocid"] = tenancy_ocid
+        __props__.__dict__["token"] = token
         __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_change_user"] = urnietfparamsscimschemasoracleidcsextensionself_change_user
         __props__.__dict__["user"] = user
         return DomainsAuthToken(resource_name, opts=opts, __props__=__props__)
@@ -1812,6 +1862,24 @@ class DomainsAuthToken(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
+
+    @property
+    @pulumi.getter
+    def token(self) -> pulumi.Output[str]:
+        """
+        (Updatable) token
+
+        **Added In:** 2010242156
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsSensitive: hash_sc
+        """
+        return pulumi.get(self, "token")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")

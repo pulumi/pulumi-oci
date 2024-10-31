@@ -16,50 +16,52 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScheduleResourceFilter {
     /**
-     * @return (Updatable) This is the resource attribute on which the threshold is defined.
+     * @return (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
      * 
      */
     private String attribute;
     /**
-     * @return (Updatable) This is the condition for the filter in comparison to its creation time.
+     * @return This is the condition for the filter in comparison to its creation time.
      * 
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) This sets whether to include child compartments.
+     * @return This sets whether to include child compartments.
      * 
      */
     private @Nullable Boolean shouldIncludeChildCompartments;
     /**
-     * @return (Updatable) This is a collection of resource lifecycle state values.
+     * @return (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+     * * When `attribute=&#34;DEFINED_TAGS&#34;`:
      * 
      */
     private @Nullable List<ScheduleResourceFilterValue> values;
 
     private ScheduleResourceFilter() {}
     /**
-     * @return (Updatable) This is the resource attribute on which the threshold is defined.
+     * @return (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
      * 
      */
     public String attribute() {
         return this.attribute;
     }
     /**
-     * @return (Updatable) This is the condition for the filter in comparison to its creation time.
+     * @return This is the condition for the filter in comparison to its creation time.
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) This sets whether to include child compartments.
+     * @return This sets whether to include child compartments.
      * 
      */
     public Optional<Boolean> shouldIncludeChildCompartments() {
         return Optional.ofNullable(this.shouldIncludeChildCompartments);
     }
     /**
-     * @return (Updatable) This is a collection of resource lifecycle state values.
+     * @return (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+     * * When `attribute=&#34;DEFINED_TAGS&#34;`:
      * 
      */
     public List<ScheduleResourceFilterValue> values() {

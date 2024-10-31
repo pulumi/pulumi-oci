@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class GetBackendSetsBackendSetCollectionItemResult
     {
         /// <summary>
-        /// Array of backends.
+        /// An array of backends.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendSetCollectionItemBackendResult> Backends;
         /// <summary>

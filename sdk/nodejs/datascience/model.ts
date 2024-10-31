@@ -11,6 +11,51 @@ import * as utilities from "../utilities";
  *
  * Creates a new model.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModel = new oci.datascience.Model("test_model", {
+ *     compartmentId: compartmentId,
+ *     projectId: testProject.id,
+ *     backupSetting: {
+ *         backupRegion: modelBackupSettingBackupRegion,
+ *         isBackupEnabled: modelBackupSettingIsBackupEnabled,
+ *         customerNotificationType: modelBackupSettingCustomerNotificationType,
+ *     },
+ *     customMetadataLists: [{
+ *         category: modelCustomMetadataListCategory,
+ *         description: modelCustomMetadataListDescription,
+ *         key: modelCustomMetadataListKey,
+ *         value: modelCustomMetadataListValue,
+ *     }],
+ *     definedMetadataLists: [{
+ *         category: modelDefinedMetadataListCategory,
+ *         description: modelDefinedMetadataListDescription,
+ *         key: modelDefinedMetadataListKey,
+ *         value: modelDefinedMetadataListValue,
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: modelDescription,
+ *     displayName: modelDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     inputSchema: modelInputSchema,
+ *     outputSchema: modelOutputSchema,
+ *     retentionSetting: {
+ *         archiveAfterDays: modelRetentionSettingArchiveAfterDays,
+ *         customerNotificationType: modelRetentionSettingCustomerNotificationType,
+ *         deleteAfterDays: modelRetentionSettingDeleteAfterDays,
+ *     },
+ *     versionLabel: modelVersionLabel,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Models can be imported using the `id`, e.g.
@@ -114,9 +159,13 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly modelArtifact!: pulumi.Output<string>;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    public readonly modelVersionSetId!: pulumi.Output<string>;
+    /**
      * The name of the model version set that the model is associated to.
      */
-    public /*out*/ readonly modelVersionSetName!: pulumi.Output<string>;
+    public readonly modelVersionSetName!: pulumi.Output<string>;
     /**
      * Output schema file content in String format
      */
@@ -141,6 +190,10 @@ export class Model extends pulumi.CustomResource {
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     */
+    public readonly versionLabel!: pulumi.Output<string>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.
@@ -173,6 +226,7 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["inputSchema"] = state ? state.inputSchema : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["modelArtifact"] = state ? state.modelArtifact : undefined;
+            resourceInputs["modelVersionSetId"] = state ? state.modelVersionSetId : undefined;
             resourceInputs["modelVersionSetName"] = state ? state.modelVersionSetName : undefined;
             resourceInputs["outputSchema"] = state ? state.outputSchema : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
@@ -180,6 +234,7 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["retentionSetting"] = state ? state.retentionSetting : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["versionLabel"] = state ? state.versionLabel : undefined;
         } else {
             const args = argsOrState as ModelArgs | undefined;
             if ((!args || args.artifactContentLength === undefined) && !opts.urn) {
@@ -206,17 +261,19 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["inputSchema"] = args ? args.inputSchema : undefined;
             resourceInputs["modelArtifact"] = args ? args.modelArtifact : undefined;
+            resourceInputs["modelVersionSetId"] = args ? args.modelVersionSetId : undefined;
+            resourceInputs["modelVersionSetName"] = args ? args.modelVersionSetName : undefined;
             resourceInputs["outputSchema"] = args ? args.outputSchema : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["retentionSetting"] = args ? args.retentionSetting : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["versionLabel"] = args ? args.versionLabel : undefined;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
             resourceInputs["backupOperationDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["emptyModel"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
-            resourceInputs["modelVersionSetName"] = undefined /*out*/;
             resourceInputs["retentionOperationDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -296,6 +353,10 @@ export interface ModelState {
      */
     modelArtifact?: pulumi.Input<string>;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    modelVersionSetId?: pulumi.Input<string>;
+    /**
      * The name of the model version set that the model is associated to.
      */
     modelVersionSetName?: pulumi.Input<string>;
@@ -323,6 +384,10 @@ export interface ModelState {
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     */
+    versionLabel?: pulumi.Input<string>;
 }
 
 /**
@@ -381,6 +446,14 @@ export interface ModelArgs {
      */
     modelArtifact: pulumi.Input<string>;
     /**
+     * The OCID of the model version set that the model is associated to.
+     */
+    modelVersionSetId?: pulumi.Input<string>;
+    /**
+     * The name of the model version set that the model is associated to.
+     */
+    modelVersionSetName?: pulumi.Input<string>;
+    /**
      * Output schema file content in String format
      */
     outputSchema?: pulumi.Input<string>;
@@ -396,4 +469,8 @@ export interface ModelArgs {
      * The state of the model.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     */
+    versionLabel?: pulumi.Input<string>;
 }

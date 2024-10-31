@@ -112,10 +112,16 @@ namespace Pulumi.Oci.DataScience
         public string? Id { get; set; }
 
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetId")]
+        public string? ModelVersionSetId { get; set; }
+
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
-        [Input("modelVersionSetName", required: true)]
-        public string ModelVersionSetName { get; set; } = null!;
+        [Input("modelVersionSetName")]
+        public string? ModelVersionSetName { get; set; }
 
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -129,8 +135,8 @@ namespace Pulumi.Oci.DataScience
         [Input("state")]
         public string? State { get; set; }
 
-        [Input("versionLabel", required: true)]
-        public string VersionLabel { get; set; } = null!;
+        [Input("versionLabel")]
+        public string? VersionLabel { get; set; }
 
         public GetModelsArgs()
         {
@@ -173,10 +179,16 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        [Input("modelVersionSetId")]
+        public Input<string>? ModelVersionSetId { get; set; }
+
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
-        [Input("modelVersionSetName", required: true)]
-        public Input<string> ModelVersionSetName { get; set; } = null!;
+        [Input("modelVersionSetName")]
+        public Input<string>? ModelVersionSetName { get; set; }
 
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -190,8 +202,8 @@ namespace Pulumi.Oci.DataScience
         [Input("state")]
         public Input<string>? State { get; set; }
 
-        [Input("versionLabel", required: true)]
-        public Input<string> VersionLabel { get; set; } = null!;
+        [Input("versionLabel")]
+        public Input<string>? VersionLabel { get; set; }
 
         public GetModelsInvokeArgs()
         {
@@ -221,9 +233,13 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// The OCID of the model version set that the model is associated to.
+        /// </summary>
+        public readonly string? ModelVersionSetId;
+        /// <summary>
         /// The name of the model version set that the model is associated to.
         /// </summary>
-        public readonly string ModelVersionSetName;
+        public readonly string? ModelVersionSetName;
         /// <summary>
         /// The list of models.
         /// </summary>
@@ -236,7 +252,7 @@ namespace Pulumi.Oci.DataScience
         /// The state of the model.
         /// </summary>
         public readonly string? State;
-        public readonly string VersionLabel;
+        public readonly string? VersionLabel;
 
         [OutputConstructor]
         private GetModelsResult(
@@ -250,7 +266,9 @@ namespace Pulumi.Oci.DataScience
 
             string? id,
 
-            string modelVersionSetName,
+            string? modelVersionSetId,
+
+            string? modelVersionSetName,
 
             ImmutableArray<Outputs.GetModelsModelResult> models,
 
@@ -258,13 +276,14 @@ namespace Pulumi.Oci.DataScience
 
             string? state,
 
-            string versionLabel)
+            string? versionLabel)
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            ModelVersionSetId = modelVersionSetId;
             ModelVersionSetName = modelVersionSetName;
             Models = models;
             ProjectId = projectId;

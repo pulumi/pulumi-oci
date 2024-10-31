@@ -11,6 +11,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonsAddon {
@@ -39,6 +41,7 @@ public final class GetAddonsAddon {
      * 
      */
     private String currentInstalledVersion;
+    private @Nullable Boolean overrideExisting;
     private Boolean removeAddonResourcesOnDelete;
     /**
      * @return The state of the addon.
@@ -92,6 +95,9 @@ public final class GetAddonsAddon {
     public String currentInstalledVersion() {
         return this.currentInstalledVersion;
     }
+    public Optional<Boolean> overrideExisting() {
+        return Optional.ofNullable(this.overrideExisting);
+    }
     public Boolean removeAddonResourcesOnDelete() {
         return this.removeAddonResourcesOnDelete;
     }
@@ -131,6 +137,7 @@ public final class GetAddonsAddon {
         private String clusterId;
         private List<GetAddonsAddonConfiguration> configurations;
         private String currentInstalledVersion;
+        private @Nullable Boolean overrideExisting;
         private Boolean removeAddonResourcesOnDelete;
         private String state;
         private String timeCreated;
@@ -143,6 +150,7 @@ public final class GetAddonsAddon {
     	      this.clusterId = defaults.clusterId;
     	      this.configurations = defaults.configurations;
     	      this.currentInstalledVersion = defaults.currentInstalledVersion;
+    	      this.overrideExisting = defaults.overrideExisting;
     	      this.removeAddonResourcesOnDelete = defaults.removeAddonResourcesOnDelete;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -196,6 +204,12 @@ public final class GetAddonsAddon {
             return this;
         }
         @CustomType.Setter
+        public Builder overrideExisting(@Nullable Boolean overrideExisting) {
+
+            this.overrideExisting = overrideExisting;
+            return this;
+        }
+        @CustomType.Setter
         public Builder removeAddonResourcesOnDelete(Boolean removeAddonResourcesOnDelete) {
             if (removeAddonResourcesOnDelete == null) {
               throw new MissingRequiredPropertyException("GetAddonsAddon", "removeAddonResourcesOnDelete");
@@ -234,6 +248,7 @@ public final class GetAddonsAddon {
             _resultValue.clusterId = clusterId;
             _resultValue.configurations = configurations;
             _resultValue.currentInstalledVersion = currentInstalledVersion;
+            _resultValue.overrideExisting = overrideExisting;
             _resultValue.removeAddonResourcesOnDelete = removeAddonResourcesOnDelete;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

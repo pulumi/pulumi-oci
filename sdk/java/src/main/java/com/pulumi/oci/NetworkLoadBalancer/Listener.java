@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .protocol(listenerProtocol)
  *             .ipVersion(listenerIpVersion)
  *             .isPpv2enabled(listenerIsPpv2enabled)
+ *             .l3ipIdleTimeout(listenerL3ipIdleTimeout)
  *             .tcpIdleTimeout(listenerTcpIdleTimeout)
  *             .udpIdleTimeout(listenerUdpIdleTimeout)
  *             .build());
@@ -115,6 +116,20 @@ public class Listener extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isPpv2enabled() {
         return this.isPpv2enabled;
+    }
+    /**
+     * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    @Export(name="l3ipIdleTimeout", refs={Integer.class}, tree="[0]")
+    private Output<Integer> l3ipIdleTimeout;
+
+    /**
+     * @return (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
+     * 
+     */
+    public Output<Integer> l3ipIdleTimeout() {
+        return this.l3ipIdleTimeout;
     }
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

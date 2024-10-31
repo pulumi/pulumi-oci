@@ -33,6 +33,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// current installed version of the addon
         /// </summary>
         public readonly string CurrentInstalledVersion;
+        public readonly bool? OverrideExisting;
         public readonly bool RemoveAddonResourcesOnDelete;
         /// <summary>
         /// The state of the addon.
@@ -59,6 +60,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string currentInstalledVersion,
 
+            bool? overrideExisting,
+
             bool removeAddonResourcesOnDelete,
 
             string state,
@@ -72,6 +75,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             ClusterId = clusterId;
             Configurations = configurations;
             CurrentInstalledVersion = currentInstalledVersion;
+            OverrideExisting = overrideExisting;
             RemoveAddonResourcesOnDelete = removeAddonResourcesOnDelete;
             State = state;
             TimeCreated = timeCreated;

@@ -8660,6 +8660,7 @@ type GetAddonsAddon struct {
 	Configurations []GetAddonsAddonConfiguration `pulumi:"configurations"`
 	// current installed version of the addon
 	CurrentInstalledVersion      string `pulumi:"currentInstalledVersion"`
+	OverrideExisting             *bool  `pulumi:"overrideExisting"`
 	RemoveAddonResourcesOnDelete bool   `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
 	State string `pulumi:"state"`
@@ -8690,8 +8691,9 @@ type GetAddonsAddonArgs struct {
 	// Addon configuration details.
 	Configurations GetAddonsAddonConfigurationArrayInput `pulumi:"configurations"`
 	// current installed version of the addon
-	CurrentInstalledVersion      pulumi.StringInput `pulumi:"currentInstalledVersion"`
-	RemoveAddonResourcesOnDelete pulumi.BoolInput   `pulumi:"removeAddonResourcesOnDelete"`
+	CurrentInstalledVersion      pulumi.StringInput  `pulumi:"currentInstalledVersion"`
+	OverrideExisting             pulumi.BoolPtrInput `pulumi:"overrideExisting"`
+	RemoveAddonResourcesOnDelete pulumi.BoolInput    `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created.
@@ -8774,6 +8776,10 @@ func (o GetAddonsAddonOutput) Configurations() GetAddonsAddonConfigurationArrayO
 // current installed version of the addon
 func (o GetAddonsAddonOutput) CurrentInstalledVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddonsAddon) string { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+}
+
+func (o GetAddonsAddonOutput) OverrideExisting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *bool { return v.OverrideExisting }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetAddonsAddonOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {

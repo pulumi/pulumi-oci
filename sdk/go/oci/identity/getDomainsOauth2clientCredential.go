@@ -111,6 +111,8 @@ type LookupDomainsOauth2clientCredentialResult struct {
 	Schemas []string `pulumi:"schemas"`
 	// Scopes
 	Scopes []GetDomainsOauth2clientCredentialScope `pulumi:"scopes"`
+	// Secret
+	Secret string `pulumi:"secret"`
 	// The user's credential status.
 	Status string `pulumi:"status"`
 	// A list of tags on this resource.
@@ -287,6 +289,11 @@ func (o LookupDomainsOauth2clientCredentialResultOutput) Scopes() GetDomainsOaut
 	return o.ApplyT(func(v LookupDomainsOauth2clientCredentialResult) []GetDomainsOauth2clientCredentialScope {
 		return v.Scopes
 	}).(GetDomainsOauth2clientCredentialScopeArrayOutput)
+}
+
+// Secret
+func (o LookupDomainsOauth2clientCredentialResultOutput) Secret() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsOauth2clientCredentialResult) string { return v.Secret }).(pulumi.StringOutput)
 }
 
 // The user's credential status.

@@ -27,7 +27,7 @@ class GetAddonResult:
     """
     A collection of values returned by getAddon.
     """
-    def __init__(__self__, addon_errors=None, addon_name=None, cluster_id=None, configurations=None, current_installed_version=None, id=None, remove_addon_resources_on_delete=None, state=None, time_created=None, version=None):
+    def __init__(__self__, addon_errors=None, addon_name=None, cluster_id=None, configurations=None, current_installed_version=None, id=None, override_existing=None, remove_addon_resources_on_delete=None, state=None, time_created=None, version=None):
         if addon_errors and not isinstance(addon_errors, list):
             raise TypeError("Expected argument 'addon_errors' to be a list")
         pulumi.set(__self__, "addon_errors", addon_errors)
@@ -46,6 +46,9 @@ class GetAddonResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if override_existing and not isinstance(override_existing, bool):
+            raise TypeError("Expected argument 'override_existing' to be a bool")
+        pulumi.set(__self__, "override_existing", override_existing)
         if remove_addon_resources_on_delete and not isinstance(remove_addon_resources_on_delete, bool):
             raise TypeError("Expected argument 'remove_addon_resources_on_delete' to be a bool")
         pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
@@ -102,6 +105,11 @@ class GetAddonResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="overrideExisting")
+    def override_existing(self) -> bool:
+        return pulumi.get(self, "override_existing")
+
+    @property
     @pulumi.getter(name="removeAddonResourcesOnDelete")
     def remove_addon_resources_on_delete(self) -> bool:
         return pulumi.get(self, "remove_addon_resources_on_delete")
@@ -143,6 +151,7 @@ class AwaitableGetAddonResult(GetAddonResult):
             configurations=self.configurations,
             current_installed_version=self.current_installed_version,
             id=self.id,
+            override_existing=self.override_existing,
             remove_addon_resources_on_delete=self.remove_addon_resources_on_delete,
             state=self.state,
             time_created=self.time_created,
@@ -184,6 +193,7 @@ def get_addon(addon_name: Optional[str] = None,
         configurations=pulumi.get(__ret__, 'configurations'),
         current_installed_version=pulumi.get(__ret__, 'current_installed_version'),
         id=pulumi.get(__ret__, 'id'),
+        override_existing=pulumi.get(__ret__, 'override_existing'),
         remove_addon_resources_on_delete=pulumi.get(__ret__, 'remove_addon_resources_on_delete'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -222,6 +232,7 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
         configurations=pulumi.get(__response__, 'configurations'),
         current_installed_version=pulumi.get(__response__, 'current_installed_version'),
         id=pulumi.get(__response__, 'id'),
+        override_existing=pulumi.get(__response__, 'override_existing'),
         remove_addon_resources_on_delete=pulumi.get(__response__, 'remove_addon_resources_on_delete'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),

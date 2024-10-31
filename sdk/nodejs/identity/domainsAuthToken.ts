@@ -276,6 +276,20 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
     /**
+     * (Updatable) token
+     *
+     * **Added In:** 2010242156
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     */
+    public /*out*/ readonly token!: pulumi.Output<string>;
+    /**
      * Controls whether a user can update themselves or not via User related APIs
      */
     public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
@@ -327,6 +341,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
+            resourceInputs["token"] = state ? state.token : undefined;
             resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionselfChangeUser : undefined;
             resourceInputs["user"] = state ? state.user : undefined;
         } else {
@@ -359,6 +374,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
             resourceInputs["idcsPreventedOperations"] = undefined /*out*/;
             resourceInputs["metas"] = undefined /*out*/;
             resourceInputs["tenancyOcid"] = undefined /*out*/;
+            resourceInputs["token"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DomainsAuthToken.__pulumiType, name, resourceInputs, opts);
@@ -597,6 +613,20 @@ export interface DomainsAuthTokenState {
      * * uniqueness: none
      */
     tenancyOcid?: pulumi.Input<string>;
+    /**
+     * (Updatable) token
+     *
+     * **Added In:** 2010242156
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsSensitive: hash_sc
+     */
+    token?: pulumi.Input<string>;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */

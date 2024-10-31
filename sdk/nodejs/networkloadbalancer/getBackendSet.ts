@@ -39,7 +39,7 @@ export interface GetBackendSetArgs {
 export interface GetBackendSetResult {
     readonly backendSetName: string;
     /**
-     * Array of backends.
+     * An array of backends.
      */
     readonly backends: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
     /**

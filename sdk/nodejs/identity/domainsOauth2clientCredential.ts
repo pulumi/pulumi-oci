@@ -272,6 +272,19 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
      */
     public readonly scopes!: pulumi.Output<outputs.Identity.DomainsOauth2clientCredentialScope[]>;
     /**
+     * (Updatable) Secret
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     */
+    public /*out*/ readonly secret!: pulumi.Output<string>;
+    /**
      * The user's credential status.
      *
      * **Added In:** 2109090424
@@ -367,6 +380,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
             resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
             resourceInputs["schemas"] = state ? state.schemas : undefined;
             resourceInputs["scopes"] = state ? state.scopes : undefined;
+            resourceInputs["secret"] = state ? state.secret : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
@@ -407,6 +421,7 @@ export class DomainsOauth2clientCredential extends pulumi.CustomResource {
             resourceInputs["idcsLastUpgradedInRelease"] = undefined /*out*/;
             resourceInputs["idcsPreventedOperations"] = undefined /*out*/;
             resourceInputs["metas"] = undefined /*out*/;
+            resourceInputs["secret"] = undefined /*out*/;
             resourceInputs["tenancyOcid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -642,6 +657,19 @@ export interface DomainsOauth2clientCredentialState {
      * * returned: default
      */
     scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauth2clientCredentialScope>[]>;
+    /**
+     * (Updatable) Secret
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsScimCompliant: false
+     * * idcsSensitive: hash_sc
+     */
+    secret?: pulumi.Input<string>;
     /**
      * The user's credential status.
      *

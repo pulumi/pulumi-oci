@@ -252,6 +252,17 @@ export class DomainsCustomerSecretKey extends pulumi.CustomResource {
      */
     public readonly schemas!: pulumi.Output<string[]>;
     /**
+     * (Updatable) The secret key.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     */
+    public /*out*/ readonly secretKey!: pulumi.Output<string>;
+    /**
      * The user's credential status.
      *
      * **Added In:** 2109090424
@@ -346,6 +357,7 @@ export class DomainsCustomerSecretKey extends pulumi.CustomResource {
             resourceInputs["ocid"] = state ? state.ocid : undefined;
             resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
             resourceInputs["schemas"] = state ? state.schemas : undefined;
+            resourceInputs["secretKey"] = state ? state.secretKey : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
@@ -382,6 +394,7 @@ export class DomainsCustomerSecretKey extends pulumi.CustomResource {
             resourceInputs["idcsLastUpgradedInRelease"] = undefined /*out*/;
             resourceInputs["idcsPreventedOperations"] = undefined /*out*/;
             resourceInputs["metas"] = undefined /*out*/;
+            resourceInputs["secretKey"] = undefined /*out*/;
             resourceInputs["tenancyOcid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -597,6 +610,17 @@ export interface DomainsCustomerSecretKeyState {
      * * uniqueness: none
      */
     schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The secret key.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: string
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     */
+    secretKey?: pulumi.Input<string>;
     /**
      * The user's credential status.
      *

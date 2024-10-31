@@ -20,7 +20,7 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private String action;
     /**
-     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
      * 
      */
     private String compartmentId;
@@ -119,7 +119,7 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.action;
     }
     /**
-     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
      * 
      */
     public String compartmentId() {

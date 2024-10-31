@@ -119,7 +119,7 @@ type InstancePool struct {
 	InstanceDisplayNameFormatter pulumi.StringOutput `pulumi:"instanceDisplayNameFormatter"`
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter pulumi.StringOutput `pulumi:"instanceHostnameFormatter"`
-	// The load balancers to attach to the instance pool.
+	// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
@@ -194,7 +194,7 @@ type instancePoolState struct {
 	InstanceDisplayNameFormatter *string `pulumi:"instanceDisplayNameFormatter"`
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter *string `pulumi:"instanceHostnameFormatter"`
-	// The load balancers to attach to the instance pool.
+	// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
@@ -228,7 +228,7 @@ type InstancePoolState struct {
 	InstanceDisplayNameFormatter pulumi.StringPtrInput
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter pulumi.StringPtrInput
-	// The load balancers to attach to the instance pool.
+	// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
@@ -264,7 +264,7 @@ type instancePoolArgs struct {
 	InstanceDisplayNameFormatter *string `pulumi:"instanceDisplayNameFormatter"`
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter *string `pulumi:"instanceHostnameFormatter"`
-	// The load balancers to attach to the instance pool.
+	// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
@@ -295,7 +295,7 @@ type InstancePoolArgs struct {
 	InstanceDisplayNameFormatter pulumi.StringPtrInput
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
 	InstanceHostnameFormatter pulumi.StringPtrInput
-	// The load balancers to attach to the instance pool.
+	// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
@@ -437,7 +437,7 @@ func (o InstancePoolOutput) InstanceHostnameFormatter() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
 }
 
-// The load balancers to attach to the instance pool.
+// The load balancers to attach to the instance pool. (Note: From 6.14.0 loadBalancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
 func (o InstancePoolOutput) LoadBalancers() InstancePoolLoadBalancerArrayOutput {
 	return o.ApplyT(func(v *InstancePool) InstancePoolLoadBalancerArrayOutput { return v.LoadBalancers }).(InstancePoolLoadBalancerArrayOutput)
 }

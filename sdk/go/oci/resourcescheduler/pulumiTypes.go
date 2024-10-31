@@ -126,13 +126,14 @@ func (o ScheduleResourceArrayOutput) Index(i pulumi.IntInput) ScheduleResourceOu
 }
 
 type ScheduleResourceFilter struct {
-	// (Updatable) This is the resource attribute on which the threshold is defined.
+	// (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
 	Attribute string `pulumi:"attribute"`
-	// (Updatable) This is the condition for the filter in comparison to its creation time.
+	// This is the condition for the filter in comparison to its creation time.
 	Condition *string `pulumi:"condition"`
-	// (Updatable) This sets whether to include child compartments.
+	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments *bool `pulumi:"shouldIncludeChildCompartments"`
-	// (Updatable) This is a collection of resource lifecycle state values.
+	// (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+	// * When `attribute="DEFINED_TAGS"`:
 	Values []ScheduleResourceFilterValue `pulumi:"values"`
 }
 
@@ -148,13 +149,14 @@ type ScheduleResourceFilterInput interface {
 }
 
 type ScheduleResourceFilterArgs struct {
-	// (Updatable) This is the resource attribute on which the threshold is defined.
+	// (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
 	Attribute pulumi.StringInput `pulumi:"attribute"`
-	// (Updatable) This is the condition for the filter in comparison to its creation time.
+	// This is the condition for the filter in comparison to its creation time.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// (Updatable) This sets whether to include child compartments.
+	// This sets whether to include child compartments.
 	ShouldIncludeChildCompartments pulumi.BoolPtrInput `pulumi:"shouldIncludeChildCompartments"`
-	// (Updatable) This is a collection of resource lifecycle state values.
+	// (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+	// * When `attribute="DEFINED_TAGS"`:
 	Values ScheduleResourceFilterValueArrayInput `pulumi:"values"`
 }
 
@@ -209,22 +211,23 @@ func (o ScheduleResourceFilterOutput) ToScheduleResourceFilterOutputWithContext(
 	return o
 }
 
-// (Updatable) This is the resource attribute on which the threshold is defined.
+// (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
 func (o ScheduleResourceFilterOutput) Attribute() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleResourceFilter) string { return v.Attribute }).(pulumi.StringOutput)
 }
 
-// (Updatable) This is the condition for the filter in comparison to its creation time.
+// This is the condition for the filter in comparison to its creation time.
 func (o ScheduleResourceFilterOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceFilter) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) This sets whether to include child compartments.
+// This sets whether to include child compartments.
 func (o ScheduleResourceFilterOutput) ShouldIncludeChildCompartments() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceFilter) *bool { return v.ShouldIncludeChildCompartments }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) This is a collection of resource lifecycle state values.
+// (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+// * When `attribute="DEFINED_TAGS"`:
 func (o ScheduleResourceFilterOutput) Values() ScheduleResourceFilterValueArrayOutput {
 	return o.ApplyT(func(v ScheduleResourceFilter) []ScheduleResourceFilterValue { return v.Values }).(ScheduleResourceFilterValueArrayOutput)
 }
@@ -250,11 +253,11 @@ func (o ScheduleResourceFilterArrayOutput) Index(i pulumi.IntInput) ScheduleReso
 }
 
 type ScheduleResourceFilterValue struct {
-	// (Updatable) This is the namespace of the defined tag.
+	// This is the namespace of the defined tag.
 	Namespace *string `pulumi:"namespace"`
-	// (Updatable) This is the key of the defined tag.
+	// This is the key of the defined tag.
 	TagKey *string `pulumi:"tagKey"`
-	// (Updatable) This is the value of the defined tag.
+	// This is the lifecycle state value used for filtering.
 	Value *string `pulumi:"value"`
 }
 
@@ -270,11 +273,11 @@ type ScheduleResourceFilterValueInput interface {
 }
 
 type ScheduleResourceFilterValueArgs struct {
-	// (Updatable) This is the namespace of the defined tag.
+	// This is the namespace of the defined tag.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// (Updatable) This is the key of the defined tag.
+	// This is the key of the defined tag.
 	TagKey pulumi.StringPtrInput `pulumi:"tagKey"`
-	// (Updatable) This is the value of the defined tag.
+	// This is the lifecycle state value used for filtering.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -329,17 +332,17 @@ func (o ScheduleResourceFilterValueOutput) ToScheduleResourceFilterValueOutputWi
 	return o
 }
 
-// (Updatable) This is the namespace of the defined tag.
+// This is the namespace of the defined tag.
 func (o ScheduleResourceFilterValueOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceFilterValue) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) This is the key of the defined tag.
+// This is the key of the defined tag.
 func (o ScheduleResourceFilterValueOutput) TagKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceFilterValue) *string { return v.TagKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) This is the value of the defined tag.
+// This is the lifecycle state value used for filtering.
 func (o ScheduleResourceFilterValueOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleResourceFilterValue) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -912,7 +915,7 @@ func (o GetSchedulesScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetS
 type GetSchedulesScheduleCollectionItem struct {
 	// This is the action that will be executed by the schedule.
 	Action string `pulumi:"action"`
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
 	CompartmentId string `pulumi:"compartmentId"`
 	// These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -964,7 +967,7 @@ type GetSchedulesScheduleCollectionItemInput interface {
 type GetSchedulesScheduleCollectionItemArgs struct {
 	// This is the action that will be executed by the schedule.
 	Action pulumi.StringInput `pulumi:"action"`
-	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -1058,7 +1061,7 @@ func (o GetSchedulesScheduleCollectionItemOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
 func (o GetSchedulesScheduleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

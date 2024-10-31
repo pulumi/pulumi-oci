@@ -71,7 +71,7 @@ class GetBackendSetResult:
     @pulumi.getter
     def backends(self) -> Sequence['outputs.GetBackendSetBackendResult']:
         """
-        Array of backends.
+        An array of backends.
         """
         return pulumi.get(self, "backends")
 

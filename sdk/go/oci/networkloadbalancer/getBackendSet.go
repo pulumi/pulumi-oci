@@ -35,7 +35,7 @@ type LookupBackendSetArgs struct {
 // A collection of values returned by getBackendSet.
 type LookupBackendSetResult struct {
 	BackendSetName string `pulumi:"backendSetName"`
-	// Array of backends.
+	// An array of backends.
 	Backends []GetBackendSetBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetHealthChecker `pulumi:"healthCheckers"`
@@ -105,7 +105,7 @@ func (o LookupBackendSetResultOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
 
-// Array of backends.
+// An array of backends.
 func (o LookupBackendSetResultOutput) Backends() GetBackendSetBackendArrayOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetBackend { return v.Backends }).(GetBackendSetBackendArrayOutput)
 }

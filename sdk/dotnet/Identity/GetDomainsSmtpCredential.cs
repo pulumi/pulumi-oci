@@ -231,6 +231,10 @@ namespace Pulumi.Oci.Identity
         /// User's ocid
         /// </summary>
         public readonly string Ocid;
+        /// <summary>
+        /// Password
+        /// </summary>
+        public readonly string Password;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -296,6 +300,8 @@ namespace Pulumi.Oci.Identity
 
             string ocid,
 
+            string password,
+
             string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
@@ -330,6 +336,7 @@ namespace Pulumi.Oci.Identity
             IdcsPreventedOperations = idcsPreventedOperations;
             Metas = metas;
             Ocid = ocid;
+            Password = password;
             ResourceTypeSchemaVersion = resourceTypeSchemaVersion;
             Schemas = schemas;
             SmtpCredentialId = smtpCredentialId;

@@ -85,18 +85,33 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * The OCID of the model version set that the model is associated to.
+     * 
+     */
+    @Import(name="modelVersionSetId")
+    private @Nullable String modelVersionSetId;
+
+    /**
+     * @return The OCID of the model version set that the model is associated to.
+     * 
+     */
+    public Optional<String> modelVersionSetId() {
+        return Optional.ofNullable(this.modelVersionSetId);
+    }
+
+    /**
      * The name of the model version set that the model is associated to.
      * 
      */
-    @Import(name="modelVersionSetName", required=true)
-    private String modelVersionSetName;
+    @Import(name="modelVersionSetName")
+    private @Nullable String modelVersionSetName;
 
     /**
      * @return The name of the model version set that the model is associated to.
      * 
      */
-    public String modelVersionSetName() {
-        return this.modelVersionSetName;
+    public Optional<String> modelVersionSetName() {
+        return Optional.ofNullable(this.modelVersionSetName);
     }
 
     /**
@@ -129,11 +144,11 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
-    @Import(name="versionLabel", required=true)
-    private String versionLabel;
+    @Import(name="versionLabel")
+    private @Nullable String versionLabel;
 
-    public String versionLabel() {
-        return this.versionLabel;
+    public Optional<String> versionLabel() {
+        return Optional.ofNullable(this.versionLabel);
     }
 
     private GetModelsPlainArgs() {}
@@ -144,6 +159,7 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.id = $.id;
+        this.modelVersionSetId = $.modelVersionSetId;
         this.modelVersionSetName = $.modelVersionSetName;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -222,12 +238,23 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
+         * @param modelVersionSetId The OCID of the model version set that the model is associated to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelVersionSetId(@Nullable String modelVersionSetId) {
+            $.modelVersionSetId = modelVersionSetId;
+            return this;
+        }
+
+        /**
          * @param modelVersionSetName The name of the model version set that the model is associated to.
          * 
          * @return builder
          * 
          */
-        public Builder modelVersionSetName(String modelVersionSetName) {
+        public Builder modelVersionSetName(@Nullable String modelVersionSetName) {
             $.modelVersionSetName = modelVersionSetName;
             return this;
         }
@@ -254,7 +281,7 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        public Builder versionLabel(String versionLabel) {
+        public Builder versionLabel(@Nullable String versionLabel) {
             $.versionLabel = versionLabel;
             return this;
         }
@@ -262,12 +289,6 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         public GetModelsPlainArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("GetModelsPlainArgs", "compartmentId");
-            }
-            if ($.modelVersionSetName == null) {
-                throw new MissingRequiredPropertyException("GetModelsPlainArgs", "modelVersionSetName");
-            }
-            if ($.versionLabel == null) {
-                throw new MissingRequiredPropertyException("GetModelsPlainArgs", "versionLabel");
             }
             return $;
         }

@@ -9700,8 +9700,6 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
 	LakeId string `pulumi:"lakeId"`
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -9764,8 +9762,6 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	JdbcEndpointUrl pulumi.StringInput `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
 	LakeId pulumi.StringInput `pulumi:"lakeId"`
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken pulumi.StringInput `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
 	MaxExecutorCount pulumi.IntInput `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -9905,11 +9901,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) JdbcEndpointUrl() pulumi
 // The OCID of Oracle Cloud Infrastructure Lake.
 func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LakeId }).(pulumi.StringOutput)
-}
-
-// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LastAcceptedRequestToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
 }
 
 // The maximum number of executors.

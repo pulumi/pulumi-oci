@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Create a Rule
+// Create a Rule.
 //
 // ## Example Usage
 //
@@ -335,6 +335,7 @@ type DomainsRule struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -651,6 +652,7 @@ type domainsRuleState struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -923,6 +925,7 @@ type DomainsRuleState struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -1108,6 +1111,7 @@ type domainsRuleArgs struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -1275,6 +1279,7 @@ type DomainsRuleArgs struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -1693,6 +1698,7 @@ func (o DomainsRuleOutput) Schemas() pulumi.StringArrayOutput {
 //
 // **SCIM++ Properties:**
 // * idcsCompositeKey: [key, value]
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 // * idcsSearchable: true
 // * multiValued: true
 // * mutability: readWrite

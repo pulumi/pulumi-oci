@@ -693,6 +693,12 @@ namespace Pulumi.Oci.Database
         public Output<int> SecretVersionNumber { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         [Output("serviceConsoleUrl")]
@@ -1477,6 +1483,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("secretVersionNumber")]
         public Input<int>? SecretVersionNumber { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         [Input("shrinkAdbTrigger")]
         public Input<int>? ShrinkAdbTrigger { get; set; }
@@ -2395,6 +2413,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("secretVersionNumber")]
         public Input<int>? SecretVersionNumber { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The URL of the Service Console for the Autonomous Database.

@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) Condition or ConditionGroup identifier
+        /// (Updatable) Condition or ConditionGroup identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

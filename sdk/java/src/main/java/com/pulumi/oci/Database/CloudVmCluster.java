@@ -107,6 +107,7 @@ import javax.annotation.Nullable;
  *             .privateZoneId(testZone.id())
  *             .scanListenerPortTcp(cloudVmClusterScanListenerPortTcp)
  *             .scanListenerPortTcpSsl(cloudVmClusterScanListenerPortTcpSsl)
+ *             .securityAttributes(cloudVmClusterSecurityAttributes)
  *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(cloudVmClusterSystemVersion)
  *             .timeZone(cloudVmClusterTimeZone)
@@ -690,6 +691,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> scanListenerPortTcpSsl() {
         return this.scanListenerPortTcpSsl;
+    }
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The model name of the Exadata hardware running the cloud VM cluster.

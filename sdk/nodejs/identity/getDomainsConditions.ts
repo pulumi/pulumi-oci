@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Conditions
+ * Search conditions.
  *
  * ## Example Usage
  *
@@ -120,7 +120,7 @@ export interface GetDomainsConditionsResult {
 /**
  * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Conditions
+ * Search conditions.
  *
  * ## Example Usage
  *

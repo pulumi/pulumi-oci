@@ -378,7 +378,7 @@ def get_domains_rule(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Rule
+    Get a Rule.
 
     ## Example Usage
 
@@ -452,7 +452,7 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     """
     This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Rule
+    Get a Rule.
 
     ## Example Usage
 

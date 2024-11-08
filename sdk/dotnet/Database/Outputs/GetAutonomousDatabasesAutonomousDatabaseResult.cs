@@ -398,6 +398,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string SecretId;
         public readonly int SecretVersionNumber;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         public readonly string ServiceConsoleUrl;
@@ -739,6 +743,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int secretVersionNumber,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string serviceConsoleUrl,
 
             int shrinkAdbTrigger,
@@ -917,6 +923,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScheduledOperations = scheduledOperations;
             SecretId = secretId;
             SecretVersionNumber = secretVersionNumber;
+            SecurityAttributes = securityAttributes;
             ServiceConsoleUrl = serviceConsoleUrl;
             ShrinkAdbTrigger = shrinkAdbTrigger;
             Source = source;

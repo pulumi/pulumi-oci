@@ -261,6 +261,8 @@ type LookupAutonomousDatabaseResult struct {
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	SecretId            string                                    `pulumi:"secretId"`
 	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
 	ShrinkAdbTrigger  int    `pulumi:"shrinkAdbTrigger"`
@@ -907,6 +909,11 @@ func (o LookupAutonomousDatabaseResultOutput) SecretId() pulumi.StringOutput {
 
 func (o LookupAutonomousDatabaseResultOutput) SecretVersionNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.SecretVersionNumber }).(pulumi.IntOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupAutonomousDatabaseResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The URL of the Service Console for the Autonomous Database.

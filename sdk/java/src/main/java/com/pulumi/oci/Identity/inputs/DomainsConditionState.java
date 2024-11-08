@@ -684,6 +684,7 @@ public final class DomainsConditionState extends com.pulumi.resources.ResourceAr
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -701,6 +702,7 @@ public final class DomainsConditionState extends com.pulumi.resources.ResourceAr
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -1702,6 +1704,7 @@ public final class DomainsConditionState extends com.pulumi.resources.ResourceAr
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite
@@ -1723,6 +1726,7 @@ public final class DomainsConditionState extends com.pulumi.resources.ResourceAr
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite
@@ -1743,6 +1747,7 @@ public final class DomainsConditionState extends com.pulumi.resources.ResourceAr
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite

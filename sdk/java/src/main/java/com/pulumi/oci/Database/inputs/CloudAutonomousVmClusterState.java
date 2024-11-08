@@ -738,6 +738,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
@@ -795,6 +810,36 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
+    }
+
+    /**
+     * The date and time of Database SSL certificate expiration.
+     * 
+     */
+    @Import(name="timeDatabaseSslCertificateExpires")
+    private @Nullable Output<String> timeDatabaseSslCertificateExpires;
+
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public Optional<Output<String>> timeDatabaseSslCertificateExpires() {
+        return Optional.ofNullable(this.timeDatabaseSslCertificateExpires);
+    }
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     * 
+     */
+    @Import(name="timeOrdsCertificateExpires")
+    private @Nullable Output<String> timeOrdsCertificateExpires;
+
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public Optional<Output<String>> timeOrdsCertificateExpires() {
+        return Optional.ofNullable(this.timeOrdsCertificateExpires);
     }
 
     /**
@@ -913,10 +958,13 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.reservedCpus = $.reservedCpus;
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
+        this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
+        this.timeDatabaseSslCertificateExpires = $.timeDatabaseSslCertificateExpires;
+        this.timeOrdsCertificateExpires = $.timeOrdsCertificateExpires;
         this.timeUpdated = $.timeUpdated;
         this.totalAutonomousDataStorageInTbs = $.totalAutonomousDataStorageInTbs;
         this.totalContainerDatabases = $.totalContainerDatabases;
@@ -1970,6 +2018,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
+        }
+
+        /**
          * @param shape The model name of the Exadata hardware running the cloud Autonomous VM cluster.
          * 
          * @return builder
@@ -2051,6 +2120,48 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeDatabaseSslCertificateExpires The date and time of Database SSL certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDatabaseSslCertificateExpires(@Nullable Output<String> timeDatabaseSslCertificateExpires) {
+            $.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            return this;
+        }
+
+        /**
+         * @param timeDatabaseSslCertificateExpires The date and time of Database SSL certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDatabaseSslCertificateExpires(String timeDatabaseSslCertificateExpires) {
+            return timeDatabaseSslCertificateExpires(Output.of(timeDatabaseSslCertificateExpires));
+        }
+
+        /**
+         * @param timeOrdsCertificateExpires The date and time of ORDS certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOrdsCertificateExpires(@Nullable Output<String> timeOrdsCertificateExpires) {
+            $.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+            return this;
+        }
+
+        /**
+         * @param timeOrdsCertificateExpires The date and time of ORDS certificate expiration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOrdsCertificateExpires(String timeOrdsCertificateExpires) {
+            return timeOrdsCertificateExpires(Output.of(timeOrdsCertificateExpires));
         }
 
         /**

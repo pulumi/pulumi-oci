@@ -27,7 +27,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -76,6 +76,9 @@ class GetDataGuardAssociationResult:
         if db_system_freeform_tags and not isinstance(db_system_freeform_tags, dict):
             raise TypeError("Expected argument 'db_system_freeform_tags' to be a dict")
         pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+        if db_system_security_attributes and not isinstance(db_system_security_attributes, dict):
+            raise TypeError("Expected argument 'db_system_security_attributes' to be a dict")
+        pulumi.set(__self__, "db_system_security_attributes", db_system_security_attributes)
         if delete_standby_db_home_on_delete and not isinstance(delete_standby_db_home_on_delete, str):
             raise TypeError("Expected argument 'delete_standby_db_home_on_delete' to be a str")
         pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
@@ -252,6 +255,11 @@ class GetDataGuardAssociationResult:
     @pulumi.getter(name="dbSystemFreeformTags")
     def db_system_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemSecurityAttributes")
+    def db_system_security_attributes(self) -> Mapping[str, str]:
+        return pulumi.get(self, "db_system_security_attributes")
 
     @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
@@ -460,6 +468,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             database_software_image_id=self.database_software_image_id,
             db_system_defined_tags=self.db_system_defined_tags,
             db_system_freeform_tags=self.db_system_freeform_tags,
+            db_system_security_attributes=self.db_system_security_attributes,
             delete_standby_db_home_on_delete=self.delete_standby_db_home_on_delete,
             display_name=self.display_name,
             domain=self.domain,
@@ -536,6 +545,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
         db_system_defined_tags=pulumi.get(__ret__, 'db_system_defined_tags'),
         db_system_freeform_tags=pulumi.get(__ret__, 'db_system_freeform_tags'),
+        db_system_security_attributes=pulumi.get(__ret__, 'db_system_security_attributes'),
         delete_standby_db_home_on_delete=pulumi.get(__ret__, 'delete_standby_db_home_on_delete'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain=pulumi.get(__ret__, 'domain'),
@@ -609,6 +619,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
         database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
         db_system_defined_tags=pulumi.get(__response__, 'db_system_defined_tags'),
         db_system_freeform_tags=pulumi.get(__response__, 'db_system_freeform_tags'),
+        db_system_security_attributes=pulumi.get(__response__, 'db_system_security_attributes'),
         delete_standby_db_home_on_delete=pulumi.get(__response__, 'delete_standby_db_home_on_delete'),
         display_name=pulumi.get(__response__, 'display_name'),
         domain=pulumi.get(__response__, 'domain'),

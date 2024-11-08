@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Policies
+        /// Search Policies.
         /// 
         /// ## Example Usage
         /// 
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Policies
+        /// Search Policies.
         /// 
         /// ## Example Usage
         /// 

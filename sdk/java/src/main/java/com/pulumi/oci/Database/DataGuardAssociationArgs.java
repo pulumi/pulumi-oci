@@ -224,6 +224,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.dbSystemFreeformTags);
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="dbSystemSecurityAttributes")
+    private @Nullable Output<Map<String,String>> dbSystemSecurityAttributes;
+
+    /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> dbSystemSecurityAttributes() {
+        return Optional.ofNullable(this.dbSystemSecurityAttributes);
+    }
+
     @Import(name="deleteStandbyDbHomeOnDelete", required=true)
     private Output<String> deleteStandbyDbHomeOnDelete;
 
@@ -599,6 +614,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbSystemDefinedTags = $.dbSystemDefinedTags;
         this.dbSystemFreeformTags = $.dbSystemFreeformTags;
+        this.dbSystemSecurityAttributes = $.dbSystemSecurityAttributes;
         this.deleteStandbyDbHomeOnDelete = $.deleteStandbyDbHomeOnDelete;
         this.displayName = $.displayName;
         this.domain = $.domain;
@@ -925,6 +941,27 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
          */
         public Builder dbSystemFreeformTags(Map<String,String> dbSystemFreeformTags) {
             return dbSystemFreeformTags(Output.of(dbSystemFreeformTags));
+        }
+
+        /**
+         * @param dbSystemSecurityAttributes Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemSecurityAttributes(@Nullable Output<Map<String,String>> dbSystemSecurityAttributes) {
+            $.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
+            return this;
+        }
+
+        /**
+         * @param dbSystemSecurityAttributes Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemSecurityAttributes(Map<String,String> dbSystemSecurityAttributes) {
+            return dbSystemSecurityAttributes(Output.of(dbSystemSecurityAttributes));
         }
 
         public Builder deleteStandbyDbHomeOnDelete(Output<String> deleteStandbyDbHomeOnDelete) {

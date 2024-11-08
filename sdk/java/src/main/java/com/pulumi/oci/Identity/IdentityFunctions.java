@@ -196,6 +196,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatePlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
@@ -399,6 +403,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificateResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificatesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthPartnerCertificateResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthPartnerCertificatesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOciConsoleSignOnPolicyConsentResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOciConsoleSignOnPolicyConsentsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPoliciesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPolicyResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsPoliciesResult;
@@ -8643,7 +8649,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Condition
+     * Get a condition.
      * 
      * ## Example Usage
      * 
@@ -8692,7 +8698,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Condition
+     * Get a condition.
      * 
      * ## Example Usage
      * 
@@ -8741,7 +8747,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Condition
+     * Get a condition.
      * 
      * ## Example Usage
      * 
@@ -8790,7 +8796,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Condition
+     * Get a condition.
      * 
      * ## Example Usage
      * 
@@ -8839,7 +8845,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Conditions
+     * Search conditions.
      * 
      * ## Example Usage
      * 
@@ -8890,7 +8896,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Conditions
+     * Search conditions.
      * 
      * ## Example Usage
      * 
@@ -8941,7 +8947,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Conditions
+     * Search conditions.
      * 
      * ## Example Usage
      * 
@@ -8992,7 +8998,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Conditions
+     * Search conditions.
      * 
      * ## Example Usage
      * 
@@ -19229,6 +19235,406 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", TypeShape.of(GetDomainsOauthPartnerCertificatesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Oci Console Sign On Policy Consent resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsOciConsoleSignOnPolicyConsentResult> getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs args) {
+        return getDomainsOciConsoleSignOnPolicyConsent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Console Sign On Policy Consent resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsOciConsoleSignOnPolicyConsentResult> getDomainsOciConsoleSignOnPolicyConsentPlain(GetDomainsOciConsoleSignOnPolicyConsentPlainArgs args) {
+        return getDomainsOciConsoleSignOnPolicyConsentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Console Sign On Policy Consent resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsOciConsoleSignOnPolicyConsentResult> getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent", TypeShape.of(GetDomainsOciConsoleSignOnPolicyConsentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Console Sign On Policy Consent resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsent = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsent(GetDomainsOciConsoleSignOnPolicyConsentArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentId(testOciConsoleSignOnPolicyConsentOciIdentityDomainsOciConsoleSignOnPolicyConsent.id())
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsOciConsoleSignOnPolicyConsentResult> getDomainsOciConsoleSignOnPolicyConsentPlain(GetDomainsOciConsoleSignOnPolicyConsentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOciConsoleSignOnPolicyConsent:getDomainsOciConsoleSignOnPolicyConsent", TypeShape.of(GetDomainsOciConsoleSignOnPolicyConsentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OciConsoleSignOnPolicyConsent entries
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
+     *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .startIndex(ociConsoleSignOnPolicyConsentStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsOciConsoleSignOnPolicyConsentsResult> getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs args) {
+        return getDomainsOciConsoleSignOnPolicyConsents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OciConsoleSignOnPolicyConsent entries
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
+     *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .startIndex(ociConsoleSignOnPolicyConsentStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsOciConsoleSignOnPolicyConsentsResult> getDomainsOciConsoleSignOnPolicyConsentsPlain(GetDomainsOciConsoleSignOnPolicyConsentsPlainArgs args) {
+        return getDomainsOciConsoleSignOnPolicyConsentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OciConsoleSignOnPolicyConsent entries
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
+     *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .startIndex(ociConsoleSignOnPolicyConsentStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDomainsOciConsoleSignOnPolicyConsentsResult> getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", TypeShape.of(GetDomainsOciConsoleSignOnPolicyConsentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OciConsoleSignOnPolicyConsent entries
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciConsoleSignOnPolicyConsents = IdentityFunctions.getDomainsOciConsoleSignOnPolicyConsents(GetDomainsOciConsoleSignOnPolicyConsentsArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .ociConsoleSignOnPolicyConsentCount(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount)
+     *             .ociConsoleSignOnPolicyConsentFilter(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter)
+     *             .attributeSets(ociConsoleSignOnPolicyConsentAttributeSets)
+     *             .attributes(ociConsoleSignOnPolicyConsentAttributes)
+     *             .authorization(ociConsoleSignOnPolicyConsentAuthorization)
+     *             .resourceTypeSchemaVersion(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion)
+     *             .startIndex(ociConsoleSignOnPolicyConsentStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDomainsOciConsoleSignOnPolicyConsentsResult> getDomainsOciConsoleSignOnPolicyConsentsPlain(GetDomainsOciConsoleSignOnPolicyConsentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOciConsoleSignOnPolicyConsents:getDomainsOciConsoleSignOnPolicyConsents", TypeShape.of(GetDomainsOciConsoleSignOnPolicyConsentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search for password policies.
@@ -19631,7 +20037,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Policies
+     * Search Policies.
      * 
      * ## Example Usage
      * 
@@ -19682,7 +20088,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Policies
+     * Search Policies.
      * 
      * ## Example Usage
      * 
@@ -19733,7 +20139,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Policies
+     * Search Policies.
      * 
      * ## Example Usage
      * 
@@ -19784,7 +20190,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Policies
+     * Search Policies.
      * 
      * ## Example Usage
      * 
@@ -19835,7 +20241,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Policy
+     * Get a Policy.
      * 
      * ## Example Usage
      * 
@@ -19884,7 +20290,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Policy
+     * Get a Policy.
      * 
      * ## Example Usage
      * 
@@ -19933,7 +20339,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Policy
+     * Get a Policy.
      * 
      * ## Example Usage
      * 
@@ -19982,7 +20388,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Policy
+     * Get a Policy.
      * 
      * ## Example Usage
      * 
@@ -20235,7 +20641,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Rule
+     * Get a Rule.
      * 
      * ## Example Usage
      * 
@@ -20284,7 +20690,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Rule
+     * Get a Rule.
      * 
      * ## Example Usage
      * 
@@ -20333,7 +20739,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Rule
+     * Get a Rule.
      * 
      * ## Example Usage
      * 
@@ -20382,7 +20788,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Get a Rule
+     * Get a Rule.
      * 
      * ## Example Usage
      * 
@@ -20431,7 +20837,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Rules
+     * Search Rules.
      * 
      * ## Example Usage
      * 
@@ -20482,7 +20888,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Rules
+     * Search Rules.
      * 
      * ## Example Usage
      * 
@@ -20533,7 +20939,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Rules
+     * Search Rules.
      * 
      * ## Example Usage
      * 
@@ -20584,7 +20990,7 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
      * 
-     * Search Rules
+     * Search Rules.
      * 
      * ## Example Usage
      * 

@@ -52,14 +52,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The description of CreateSQLEndpointDetails.
+     * (Updatable) The description of CreateSQLEndpointDetails.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of CreateSQLEndpointDetails.
+     * @return (Updatable) The description of CreateSQLEndpointDetails.
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,14 +67,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The SQL Endpoint name, which can be changed.
+     * (Updatable) The SQL Endpoint name, which can be changed.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return The SQL Endpoint name, which can be changed.
+     * @return (Updatable) The SQL Endpoint name, which can be changed.
      * 
      */
     public Output<String> displayName() {
@@ -157,14 +157,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The maximum number of executors.
+     * (Updatable) The maximum number of executors.
      * 
      */
     @Import(name="maxExecutorCount", required=true)
     private Output<Integer> maxExecutorCount;
 
     /**
-     * @return The maximum number of executors.
+     * @return (Updatable) The maximum number of executors.
      * 
      */
     public Output<Integer> maxExecutorCount() {
@@ -187,14 +187,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The minimum number of executors.
+     * (Updatable) The minimum number of executors.
      * 
      */
     @Import(name="minExecutorCount", required=true)
     private Output<Integer> minExecutorCount;
 
     /**
-     * @return The minimum number of executors.
+     * @return (Updatable) The minimum number of executors.
      * 
      */
     public Output<Integer> minExecutorCount() {
@@ -217,14 +217,14 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     @Import(name="sparkAdvancedConfigurations")
     private @Nullable Output<Map<String,String>> sparkAdvancedConfigurations;
 
     /**
-     * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * @return (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     public Optional<Output<Map<String,String>>> sparkAdvancedConfigurations() {
@@ -246,6 +246,27 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         return this.sqlEndpointVersion;
     }
 
+    /**
+     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
     private SqlEndpointArgs() {}
 
     private SqlEndpointArgs(SqlEndpointArgs $) {
@@ -264,6 +285,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         this.networkConfiguration = $.networkConfiguration;
         this.sparkAdvancedConfigurations = $.sparkAdvancedConfigurations;
         this.sqlEndpointVersion = $.sqlEndpointVersion;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -327,7 +349,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description of CreateSQLEndpointDetails.
+         * @param description (Updatable) The description of CreateSQLEndpointDetails.
          * 
          * @return builder
          * 
@@ -338,7 +360,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description of CreateSQLEndpointDetails.
+         * @param description (Updatable) The description of CreateSQLEndpointDetails.
          * 
          * @return builder
          * 
@@ -348,7 +370,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName The SQL Endpoint name, which can be changed.
+         * @param displayName (Updatable) The SQL Endpoint name, which can be changed.
          * 
          * @return builder
          * 
@@ -359,7 +381,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName The SQL Endpoint name, which can be changed.
+         * @param displayName (Updatable) The SQL Endpoint name, which can be changed.
          * 
          * @return builder
          * 
@@ -474,7 +496,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxExecutorCount The maximum number of executors.
+         * @param maxExecutorCount (Updatable) The maximum number of executors.
          * 
          * @return builder
          * 
@@ -485,7 +507,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxExecutorCount The maximum number of executors.
+         * @param maxExecutorCount (Updatable) The maximum number of executors.
          * 
          * @return builder
          * 
@@ -516,7 +538,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param minExecutorCount The minimum number of executors.
+         * @param minExecutorCount (Updatable) The minimum number of executors.
          * 
          * @return builder
          * 
@@ -527,7 +549,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param minExecutorCount The minimum number of executors.
+         * @param minExecutorCount (Updatable) The minimum number of executors.
          * 
          * @return builder
          * 
@@ -558,7 +580,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+         * @param sparkAdvancedConfigurations (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
          * 
          * @return builder
          * 
@@ -569,7 +591,7 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sparkAdvancedConfigurations The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+         * @param sparkAdvancedConfigurations (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
          * 
          * @return builder
          * 
@@ -597,6 +619,33 @@ public final class SqlEndpointArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sqlEndpointVersion(String sqlEndpointVersion) {
             return sqlEndpointVersion(Output.of(sqlEndpointVersion));
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public SqlEndpointArgs build() {

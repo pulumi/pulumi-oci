@@ -157,6 +157,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ScanListenerPortNonTls int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listenenr TLS port. Default is 2484.
 	ScanListenerPortTls int `pulumi:"scanListenerPortTls"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape string `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -165,6 +167,10 @@ type LookupCloudAutonomousVmClusterResult struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires string `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires string `pulumi:"timeOrdsCertificateExpires"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The total data disk group size for Autonomous Databases, in TBs.
@@ -471,6 +477,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ScanListenerPortTls() pulumi
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.ScanListenerPortTls }).(pulumi.IntOutput)
 }
 
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupCloudAutonomousVmClusterResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.Shape }).(pulumi.StringOutput)
@@ -489,6 +500,16 @@ func (o LookupCloudAutonomousVmClusterResultOutput) SubnetId() pulumi.StringOutp
 // The date and time that the cloud Autonomous VM cluster was created.
 func (o LookupCloudAutonomousVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of Database SSL certificate expiration.
+func (o LookupCloudAutonomousVmClusterResultOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringOutput)
+}
+
+// The date and time of ORDS certificate expiration.
+func (o LookupCloudAutonomousVmClusterResultOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeOrdsCertificateExpires }).(pulumi.StringOutput)
 }
 
 // The last date and time that the cloud Autonomous VM cluster was updated.

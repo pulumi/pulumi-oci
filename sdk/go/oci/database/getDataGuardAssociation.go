@@ -80,6 +80,7 @@ type LookupDataGuardAssociationResult struct {
 	DatabaseSoftwareImageId     string            `pulumi:"databaseSoftwareImageId"`
 	DbSystemDefinedTags         map[string]string `pulumi:"dbSystemDefinedTags"`
 	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DbSystemSecurityAttributes  map[string]string `pulumi:"dbSystemSecurityAttributes"`
 	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
 	DisplayName                 string            `pulumi:"displayName"`
 	Domain                      string            `pulumi:"domain"`
@@ -237,6 +238,10 @@ func (o LookupDataGuardAssociationResultOutput) DbSystemDefinedTags() pulumi.Str
 
 func (o LookupDataGuardAssociationResultOutput) DbSystemFreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DbSystemFreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) DbSystemSecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DbSystemSecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {

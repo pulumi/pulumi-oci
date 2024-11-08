@@ -284,6 +284,8 @@ type AutonomousDatabase struct {
 	SecretId pulumi.StringOutput `pulumi:"secretId"`
 	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntOutput `pulumi:"secretVersionNumber"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl pulumi.StringOutput `pulumi:"serviceConsoleUrl"`
 	ShrinkAdbTrigger  pulumi.IntOutput    `pulumi:"shrinkAdbTrigger"`
@@ -684,6 +686,8 @@ type autonomousDatabaseState struct {
 	SecretId *string `pulumi:"secretId"`
 	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
 	ShrinkAdbTrigger  *int    `pulumi:"shrinkAdbTrigger"`
@@ -1042,6 +1046,8 @@ type AutonomousDatabaseState struct {
 	SecretId pulumi.StringPtrInput
 	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The URL of the Service Console for the Autonomous Database.
 	ServiceConsoleUrl pulumi.StringPtrInput
 	ShrinkAdbTrigger  pulumi.IntPtrInput
@@ -1330,7 +1336,9 @@ type autonomousDatabaseArgs struct {
 	SecretId *string `pulumi:"secretId"`
 	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
-	ShrinkAdbTrigger    *int `pulumi:"shrinkAdbTrigger"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	ShrinkAdbTrigger   *int              `pulumi:"shrinkAdbTrigger"`
 	// The source of the database:
 	// * Use `NONE` for creating a new Autonomous Database.
 	// * Use `DATABASE` for creating a new Autonomous Database by cloning an existing running Autonomous Database from the latest timestamp, also provide the source database OCID in the `sourceId` parameter.
@@ -1571,7 +1579,9 @@ type AutonomousDatabaseArgs struct {
 	SecretId pulumi.StringPtrInput
 	// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntPtrInput
-	ShrinkAdbTrigger    pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
+	ShrinkAdbTrigger   pulumi.IntPtrInput
 	// The source of the database:
 	// * Use `NONE` for creating a new Autonomous Database.
 	// * Use `DATABASE` for creating a new Autonomous Database by cloning an existing running Autonomous Database from the latest timestamp, also provide the source database OCID in the `sourceId` parameter.
@@ -2288,6 +2298,11 @@ func (o AutonomousDatabaseOutput) SecretId() pulumi.StringOutput {
 // (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
 func (o AutonomousDatabaseOutput) SecretVersionNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.IntOutput { return v.SecretVersionNumber }).(pulumi.IntOutput)
+}
+
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o AutonomousDatabaseOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The URL of the Service Console for the Autonomous Database.

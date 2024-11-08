@@ -237,6 +237,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly scanListenerPortTls: number;
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
     readonly shape: string;
@@ -252,6 +256,14 @@ export interface GetCloudAutonomousVmClusterResult {
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     readonly timeCreated: string;
+    /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    readonly timeDatabaseSslCertificateExpires: string;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    readonly timeOrdsCertificateExpires: string;
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */

@@ -138,6 +138,7 @@ namespace Pulumi.Oci.Database
         public readonly string DatabaseSoftwareImageId;
         public readonly ImmutableDictionary<string, string> DbSystemDefinedTags;
         public readonly ImmutableDictionary<string, string> DbSystemFreeformTags;
+        public readonly ImmutableDictionary<string, string> DbSystemSecurityAttributes;
         public readonly string DeleteStandbyDbHomeOnDelete;
         public readonly string DisplayName;
         public readonly string Domain;
@@ -241,6 +242,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableDictionary<string, string> dbSystemFreeformTags,
 
+            ImmutableDictionary<string, string> dbSystemSecurityAttributes,
+
             string deleteStandbyDbHomeOnDelete,
 
             string displayName,
@@ -315,6 +318,7 @@ namespace Pulumi.Oci.Database
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbSystemDefinedTags = dbSystemDefinedTags;
             DbSystemFreeformTags = dbSystemFreeformTags;
+            DbSystemSecurityAttributes = dbSystemSecurityAttributes;
             DeleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             DisplayName = displayName;
             Domain = domain;

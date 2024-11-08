@@ -342,7 +342,7 @@ def get_domains_policy(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Policy
+    Get a Policy.
 
     ## Example Usage
 
@@ -413,7 +413,7 @@ def get_domains_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     """
     This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Policy
+    Get a Policy.
 
     ## Example Usage
 

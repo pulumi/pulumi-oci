@@ -376,6 +376,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult> ScheduledOperations;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         public readonly string ServiceConsoleUrl;
@@ -679,6 +683,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult> scheduledOperations,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string serviceConsoleUrl,
 
             string sourceId,
@@ -831,6 +837,7 @@ namespace Pulumi.Oci.Database.Outputs
             ResourcePoolSummaries = resourcePoolSummaries;
             Role = role;
             ScheduledOperations = scheduledOperations;
+            SecurityAttributes = securityAttributes;
             ServiceConsoleUrl = serviceConsoleUrl;
             SourceId = sourceId;
             StandbyDbs = standbyDbs;

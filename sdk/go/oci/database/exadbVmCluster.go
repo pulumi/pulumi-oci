@@ -50,7 +50,9 @@ type ExadbVmCluster struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
-	// (Updatable) Grid Setup will be done using this grid image id
+	// (Updatable) Grid Setup will be done using this grid image id.
+	//
+	// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 	GridImageId pulumi.StringOutput `pulumi:"gridImageId"`
 	// The type of Grid Image
 	GridImageType pulumi.StringOutput `pulumi:"gridImageType"`
@@ -89,6 +91,8 @@ type ExadbVmCluster struct {
 	ScanListenerPortTcp pulumi.IntOutput `pulumi:"scanListenerPortTcp"`
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl pulumi.IntOutput `pulumi:"scanListenerPortTcpSsl"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -201,7 +205,9 @@ type exadbVmClusterState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion *string `pulumi:"giVersion"`
-	// (Updatable) Grid Setup will be done using this grid image id
+	// (Updatable) Grid Setup will be done using this grid image id.
+	//
+	// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 	GridImageId *string `pulumi:"gridImageId"`
 	// The type of Grid Image
 	GridImageType *string `pulumi:"gridImageType"`
@@ -240,6 +246,8 @@ type exadbVmClusterState struct {
 	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape *string `pulumi:"shape"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -290,7 +298,9 @@ type ExadbVmClusterState struct {
 	FreeformTags pulumi.StringMapInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringPtrInput
-	// (Updatable) Grid Setup will be done using this grid image id
+	// (Updatable) Grid Setup will be done using this grid image id.
+	//
+	// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 	GridImageId pulumi.StringPtrInput
 	// The type of Grid Image
 	GridImageType pulumi.StringPtrInput
@@ -329,6 +339,8 @@ type ExadbVmClusterState struct {
 	ScanListenerPortTcp pulumi.IntPtrInput
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape pulumi.StringPtrInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -381,7 +393,9 @@ type exadbVmClusterArgs struct {
 	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Grid Setup will be done using this grid image id
+	// (Updatable) Grid Setup will be done using this grid image id.
+	//
+	// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 	GridImageId string `pulumi:"gridImageId"`
 	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 	//
@@ -404,6 +418,8 @@ type exadbVmClusterArgs struct {
 	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape string `pulumi:"shape"`
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -443,7 +459,9 @@ type ExadbVmClusterArgs struct {
 	ExascaleDbStorageVaultId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Grid Setup will be done using this grid image id
+	// (Updatable) Grid Setup will be done using this grid image id.
+	//
+	// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 	GridImageId pulumi.StringInput
 	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 	//
@@ -466,6 +484,8 @@ type ExadbVmClusterArgs struct {
 	ScanListenerPortTcp pulumi.IntPtrInput
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape pulumi.StringInput
 	// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -628,7 +648,9 @@ func (o ExadbVmClusterOutput) GiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.GiVersion }).(pulumi.StringOutput)
 }
 
-// (Updatable) Grid Setup will be done using this grid image id
+// (Updatable) Grid Setup will be done using this grid image id.
+//
+// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 func (o ExadbVmClusterOutput) GridImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringOutput { return v.GridImageId }).(pulumi.StringOutput)
 }
@@ -716,6 +738,11 @@ func (o ExadbVmClusterOutput) ScanListenerPortTcp() pulumi.IntOutput {
 // The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 func (o ExadbVmClusterOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadbVmCluster) pulumi.IntOutput { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o ExadbVmClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the Exadata VM cluster on Exascale Infrastructure resource

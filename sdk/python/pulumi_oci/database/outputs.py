@@ -18832,6 +18832,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  scheduled_operations: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult'],
                  secret_id: str,
                  secret_version_number: int,
+                 security_attributes: Mapping[str, str],
                  service_console_url: str,
                  shrink_adb_trigger: int,
                  source: str,
@@ -18964,6 +18965,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
@@ -19101,6 +19103,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "secret_version_number", secret_version_number)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "service_console_url", service_console_url)
         pulumi.set(__self__, "shrink_adb_trigger", shrink_adb_trigger)
         pulumi.set(__self__, "source", source)
@@ -19939,6 +19942,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="secretVersionNumber")
     def secret_version_number(self) -> int:
         return pulumi.get(self, "secret_version_number")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
@@ -21542,6 +21553,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  resource_pool_summaries: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult'],
                  role: str,
                  scheduled_operations: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult'],
+                 security_attributes: Mapping[str, str],
                  service_console_url: str,
                  source_id: str,
                  standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult'],
@@ -21670,6 +21682,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryArgs'] resource_pool_summaries: The configuration details for resource pool
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
@@ -21791,6 +21804,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "resource_pool_summaries", resource_pool_summaries)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "service_console_url", service_console_url)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "standby_dbs", standby_dbs)
@@ -22544,6 +22558,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
         """
         return pulumi.get(self, "scheduled_operations")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
@@ -28567,10 +28589,13 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  reserved_cpus: float,
                  scan_listener_port_non_tls: int,
                  scan_listener_port_tls: int,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  state: str,
                  subnet_id: str,
                  time_created: str,
+                 time_database_ssl_certificate_expires: str,
+                 time_ords_certificate_expires: str,
                  time_updated: str,
                  total_autonomous_data_storage_in_tbs: float,
                  total_container_databases: int,
@@ -28626,10 +28651,13 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param int scan_listener_port_tls: The SCAN Listenenr TLS port. Default is 2484.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param str time_created: The date and time that the cloud Autonomous VM cluster was created.
+        :param str time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param str time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param str time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param float total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous Databases, in TBs.
         :param int total_container_databases: The total number of Autonomous Container Databases that can be created with the allocated local storage.
@@ -28683,10 +28711,13 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
+        pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
         pulumi.set(__self__, "total_container_databases", total_container_databases)
@@ -29077,6 +29108,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "scan_listener_port_tls")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -29107,6 +29146,22 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The date and time that the cloud Autonomous VM cluster was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> str:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> str:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -30793,6 +30848,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  scan_ip_ids: Sequence[str],
                  scan_listener_port_tcp: int,
                  scan_listener_port_tcp_ssl: int,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  ssh_public_keys: Sequence[str],
                  state: str,
@@ -30844,6 +30900,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param int scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param int scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
@@ -30897,6 +30954,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
@@ -31221,6 +31279,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter
@@ -31637,6 +31703,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  database_software_image_id: str,
                  db_system_defined_tags: Mapping[str, str],
                  db_system_freeform_tags: Mapping[str, str],
+                 db_system_security_attributes: Mapping[str, str],
                  delete_standby_db_home_on_delete: str,
                  display_name: str,
                  domain: str,
@@ -31699,6 +31766,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
         pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+        pulumi.set(__self__, "db_system_security_attributes", db_system_security_attributes)
         pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain", domain)
@@ -31812,6 +31880,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="dbSystemFreeformTags")
     def db_system_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemSecurityAttributes")
+    def db_system_security_attributes(self) -> Mapping[str, str]:
+        return pulumi.get(self, "db_system_security_attributes")
 
     @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
@@ -38296,6 +38369,7 @@ class GetDbSystemsDbSystemResult(dict):
                  scan_dns_name: str,
                  scan_dns_record_id: str,
                  scan_ip_ids: Sequence[str],
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  source: str,
                  source_db_system_id: str,
@@ -38347,6 +38421,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str shape: The shape of the DB system. The shape determines resources to allocate to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
@@ -38403,6 +38478,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "source_db_system_id", source_db_system_id)
@@ -38730,6 +38806,14 @@ class GetDbSystemsDbSystemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter
@@ -41876,6 +41960,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  scan_ip_ids: Sequence[str],
                  scan_listener_port_tcp: int,
                  scan_listener_port_tcp_ssl: int,
+                 security_attributes: Mapping[str, str],
                  shape: str,
                  ssh_public_keys: Sequence[str],
                  state: str,
@@ -41899,7 +41984,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
         :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param str grid_image_id: Grid Setup will be done using this grid image id
+        :param str grid_image_id: Grid Setup will be done using this grid image id.
         :param str grid_image_type: The type of Grid Image
         :param str hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
@@ -41918,6 +42003,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param int scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param int scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param Mapping[str, str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param str shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
@@ -41959,6 +42045,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
@@ -42070,7 +42157,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
     @pulumi.getter(name="gridImageId")
     def grid_image_id(self) -> str:
         """
-        Grid Setup will be done using this grid image id
+        Grid Setup will be done using this grid image id.
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -42210,6 +42297,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

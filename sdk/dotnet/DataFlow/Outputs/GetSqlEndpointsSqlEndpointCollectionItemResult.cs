@@ -62,10 +62,6 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string LakeId;
         /// <summary>
-        /// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        /// </summary>
-        public readonly string LastAcceptedRequestToken;
-        /// <summary>
         /// The maximum number of executors.
         /// </summary>
         public readonly int MaxExecutorCount;
@@ -140,8 +136,6 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string lakeId,
 
-            string lastAcceptedRequestToken,
-
             int maxExecutorCount,
 
             string metastoreId,
@@ -178,7 +172,6 @@ namespace Pulumi.Oci.DataFlow.Outputs
             Id = id;
             JdbcEndpointUrl = jdbcEndpointUrl;
             LakeId = lakeId;
-            LastAcceptedRequestToken = lastAcceptedRequestToken;
             MaxExecutorCount = maxExecutorCount;
             MetastoreId = metastoreId;
             MinExecutorCount = minExecutorCount;

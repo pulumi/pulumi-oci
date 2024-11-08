@@ -73,6 +73,7 @@ namespace Pulumi.Oci.Database
     ///         NsgIds = cloudAutonomousVmClusterNsgIds,
     ///         ScanListenerPortNonTls = cloudAutonomousVmClusterScanListenerPortNonTls,
     ///         ScanListenerPortTls = cloudAutonomousVmClusterScanListenerPortTls,
+    ///         SecurityAttributes = cloudAutonomousVmClusterSecurityAttributes,
     ///         TotalContainerDatabases = cloudAutonomousVmClusterTotalContainerDatabases,
     ///     });
     /// 
@@ -378,6 +379,12 @@ namespace Pulumi.Oci.Database
         public Output<int> ScanListenerPortTls { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
         [Output("shape")]
@@ -400,6 +407,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        [Output("timeDatabaseSslCertificateExpires")]
+        public Output<string> TimeDatabaseSslCertificateExpires { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        [Output("timeOrdsCertificateExpires")]
+        public Output<string> TimeOrdsCertificateExpires { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
@@ -608,6 +627,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("scanListenerPortTls")]
         public Input<int>? ScanListenerPortTls { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -955,6 +986,18 @@ namespace Pulumi.Oci.Database
         [Input("scanListenerPortTls")]
         public Input<int>? ScanListenerPortTls { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
@@ -978,6 +1021,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        [Input("timeDatabaseSslCertificateExpires")]
+        public Input<string>? TimeDatabaseSslCertificateExpires { get; set; }
+
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        [Input("timeOrdsCertificateExpires")]
+        public Input<string>? TimeOrdsCertificateExpires { get; set; }
 
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.

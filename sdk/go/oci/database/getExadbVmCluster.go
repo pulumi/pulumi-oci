@@ -83,7 +83,7 @@ type LookupExadbVmClusterResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion string `pulumi:"giVersion"`
-	// Grid Setup will be done using this grid image id
+	// Grid Setup will be done using this grid image id.
 	GridImageId string `pulumi:"gridImageId"`
 	// The type of Grid Image
 	GridImageType string `pulumi:"gridImageType"`
@@ -120,6 +120,8 @@ type LookupExadbVmClusterResult struct {
 	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
 	// The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape string `pulumi:"shape"`
 	// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -252,7 +254,7 @@ func (o LookupExadbVmClusterResultOutput) GiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.GiVersion }).(pulumi.StringOutput)
 }
 
-// Grid Setup will be done using this grid image id
+// Grid Setup will be done using this grid image id.
 func (o LookupExadbVmClusterResultOutput) GridImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.GridImageId }).(pulumi.StringOutput)
 }
@@ -341,6 +343,11 @@ func (o LookupExadbVmClusterResultOutput) ScanListenerPortTcp() pulumi.IntOutput
 // The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
 func (o LookupExadbVmClusterResultOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupExadbVmClusterResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the Exadata VM cluster on Exascale Infrastructure resource

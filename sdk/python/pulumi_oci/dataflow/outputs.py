@@ -4212,7 +4212,6 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
                  id: str,
                  jdbc_endpoint_url: str,
                  lake_id: str,
-                 last_accepted_request_token: str,
                  max_executor_count: int,
                  metastore_id: str,
                  min_executor_count: int,
@@ -4238,7 +4237,6 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         :param str id: The provision identifier that is immutable on creation.
         :param str jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         :param str lake_id: The OCID of Oracle Cloud Infrastructure Lake.
-        :param str last_accepted_request_token: This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
         :param int max_executor_count: The maximum number of executors.
         :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param int min_executor_count: The minimum number of executors.
@@ -4264,7 +4262,6 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
         pulumi.set(__self__, "lake_id", lake_id)
-        pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
         pulumi.set(__self__, "max_executor_count", max_executor_count)
         pulumi.set(__self__, "metastore_id", metastore_id)
         pulumi.set(__self__, "min_executor_count", min_executor_count)
@@ -4373,14 +4370,6 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         The OCID of Oracle Cloud Infrastructure Lake.
         """
         return pulumi.get(self, "lake_id")
-
-    @property
-    @pulumi.getter(name="lastAcceptedRequestToken")
-    def last_accepted_request_token(self) -> str:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
-        return pulumi.get(self, "last_accepted_request_token")
 
     @property
     @pulumi.getter(name="maxExecutorCount")

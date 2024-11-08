@@ -43,6 +43,7 @@ public final class GetDataGuardAssociationResult {
     private String databaseSoftwareImageId;
     private Map<String,String> dbSystemDefinedTags;
     private Map<String,String> dbSystemFreeformTags;
+    private Map<String,String> dbSystemSecurityAttributes;
     private String deleteStandbyDbHomeOnDelete;
     private String displayName;
     private String domain;
@@ -185,6 +186,9 @@ public final class GetDataGuardAssociationResult {
     }
     public Map<String,String> dbSystemFreeformTags() {
         return this.dbSystemFreeformTags;
+    }
+    public Map<String,String> dbSystemSecurityAttributes() {
+        return this.dbSystemSecurityAttributes;
     }
     public String deleteStandbyDbHomeOnDelete() {
         return this.deleteStandbyDbHomeOnDelete;
@@ -351,6 +355,7 @@ public final class GetDataGuardAssociationResult {
         private String databaseSoftwareImageId;
         private Map<String,String> dbSystemDefinedTags;
         private Map<String,String> dbSystemFreeformTags;
+        private Map<String,String> dbSystemSecurityAttributes;
         private String deleteStandbyDbHomeOnDelete;
         private String displayName;
         private String domain;
@@ -399,6 +404,7 @@ public final class GetDataGuardAssociationResult {
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbSystemDefinedTags = defaults.dbSystemDefinedTags;
     	      this.dbSystemFreeformTags = defaults.dbSystemFreeformTags;
+    	      this.dbSystemSecurityAttributes = defaults.dbSystemSecurityAttributes;
     	      this.deleteStandbyDbHomeOnDelete = defaults.deleteStandbyDbHomeOnDelete;
     	      this.displayName = defaults.displayName;
     	      this.domain = defaults.domain;
@@ -562,6 +568,14 @@ public final class GetDataGuardAssociationResult {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "dbSystemFreeformTags");
             }
             this.dbSystemFreeformTags = dbSystemFreeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbSystemSecurityAttributes(Map<String,String> dbSystemSecurityAttributes) {
+            if (dbSystemSecurityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "dbSystemSecurityAttributes");
+            }
+            this.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
             return this;
         }
         @CustomType.Setter
@@ -820,6 +834,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbSystemDefinedTags = dbSystemDefinedTags;
             _resultValue.dbSystemFreeformTags = dbSystemFreeformTags;
+            _resultValue.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
             _resultValue.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             _resultValue.displayName = displayName;
             _resultValue.domain = domain;

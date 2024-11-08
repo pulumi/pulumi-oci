@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Create a Rule
+    /// Create a Rule.
     /// 
     /// ## Example Usage
     /// 
@@ -435,6 +435,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite
@@ -757,6 +758,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite
@@ -1171,6 +1173,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite

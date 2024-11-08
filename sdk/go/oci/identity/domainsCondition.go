@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Create a Condition
+// # Create a condition
 //
 // ## Example Usage
 //
@@ -287,6 +287,7 @@ type DomainsCondition struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -569,6 +570,7 @@ type domainsConditionState struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -807,6 +809,7 @@ type DomainsConditionState struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -958,6 +961,7 @@ type domainsConditionArgs struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -1091,6 +1095,7 @@ type DomainsConditionArgs struct {
 	//
 	// **SCIM++ Properties:**
 	// * idcsCompositeKey: [key, value]
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 	// * idcsSearchable: true
 	// * multiValued: true
 	// * mutability: readWrite
@@ -1466,6 +1471,7 @@ func (o DomainsConditionOutput) Schemas() pulumi.StringArrayOutput {
 //
 // **SCIM++ Properties:**
 // * idcsCompositeKey: [key, value]
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
 // * idcsSearchable: true
 // * multiValued: true
 // * mutability: readWrite

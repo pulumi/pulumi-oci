@@ -87,6 +87,7 @@ class AutonomousDatabaseArgs:
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
@@ -218,6 +219,7 @@ class AutonomousDatabaseArgs:
                
                This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] source: The source of the database:
                * Use `NONE` for creating a new Autonomous Database.
                * Use `DATABASE` for creating a new Autonomous Database by cloning an existing running Autonomous Database from the latest timestamp, also provide the source database OCID in the `source_id` parameter.
@@ -393,6 +395,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "secret_id", secret_id)
         if secret_version_number is not None:
             pulumi.set(__self__, "secret_version_number", secret_version_number)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shrink_adb_trigger is not None:
             pulumi.set(__self__, "shrink_adb_trigger", shrink_adb_trigger)
         if source is not None:
@@ -1263,6 +1267,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "secret_version_number", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="shrinkAdbTrigger")
     def shrink_adb_trigger(self) -> Optional[pulumi.Input[int]]:
         return pulumi.get(self, "shrink_adb_trigger")
@@ -1562,6 +1578,7 @@ class _AutonomousDatabaseState:
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  service_console_url: Optional[pulumi.Input[str]] = None,
                  shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -1753,6 +1770,7 @@ class _AutonomousDatabaseState:
                
                This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database:
                * Use `NONE` for creating a new Autonomous Database.
@@ -2025,6 +2043,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "secret_id", secret_id)
         if secret_version_number is not None:
             pulumi.set(__self__, "secret_version_number", secret_version_number)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if service_console_url is not None:
             pulumi.set(__self__, "service_console_url", service_console_url)
         if shrink_adb_trigger is not None:
@@ -3385,6 +3405,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "secret_version_number", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="serviceConsoleUrl")
     def service_console_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -3919,6 +3951,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
@@ -4066,6 +4099,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] source: The source of the database:
                * Use `NONE` for creating a new Autonomous Database.
                * Use `DATABASE` for creating a new Autonomous Database by cloning an existing running Autonomous Database from the latest timestamp, also provide the source database OCID in the `source_id` parameter.
@@ -4210,6 +4244,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  secret_version_number: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
@@ -4303,6 +4338,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["scheduled_operations"] = scheduled_operations
             __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["secret_version_number"] = secret_version_number
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shrink_adb_trigger"] = shrink_adb_trigger
             __props__.__dict__["source"] = source
             __props__.__dict__["source_id"] = source_id
@@ -4492,6 +4528,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseScheduledOperationArgs', 'AutonomousDatabaseScheduledOperationArgsDict']]]]] = None,
             secret_id: Optional[pulumi.Input[str]] = None,
             secret_version_number: Optional[pulumi.Input[int]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             service_console_url: Optional[pulumi.Input[str]] = None,
             shrink_adb_trigger: Optional[pulumi.Input[int]] = None,
             source: Optional[pulumi.Input[str]] = None,
@@ -4688,6 +4725,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database:
                * Use `NONE` for creating a new Autonomous Database.
@@ -4858,6 +4896,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["scheduled_operations"] = scheduled_operations
         __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["secret_version_number"] = secret_version_number
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["service_console_url"] = service_console_url
         __props__.__dict__["shrink_adb_trigger"] = shrink_adb_trigger
         __props__.__dict__["source"] = source
@@ -5768,6 +5807,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         """
         return pulumi.get(self, "secret_version_number")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")

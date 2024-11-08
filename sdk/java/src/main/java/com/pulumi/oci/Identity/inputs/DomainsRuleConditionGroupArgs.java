@@ -122,7 +122,7 @@ public final class DomainsRuleConditionGroupArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Condition or ConditionGroup identifier
+     * (Updatable) Condition or ConditionGroup identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -139,7 +139,7 @@ public final class DomainsRuleConditionGroupArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) Condition or ConditionGroup identifier
+     * @return (Updatable) Condition or ConditionGroup identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -307,7 +307,7 @@ public final class DomainsRuleConditionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) Condition or ConditionGroup identifier
+         * @param value (Updatable) Condition or ConditionGroup identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -328,7 +328,7 @@ public final class DomainsRuleConditionGroupArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) Condition or ConditionGroup identifier
+         * @param value (Updatable) Condition or ConditionGroup identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

@@ -515,6 +515,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String secretId;
     private Integer secretVersionNumber;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
@@ -1370,6 +1375,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.secretVersionNumber;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
@@ -1719,6 +1731,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations;
         private String secretId;
         private Integer secretVersionNumber;
+        private Map<String,String> securityAttributes;
         private String serviceConsoleUrl;
         private Integer shrinkAdbTrigger;
         private String source;
@@ -1863,6 +1876,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.scheduledOperations = defaults.scheduledOperations;
     	      this.secretId = defaults.secretId;
     	      this.secretVersionNumber = defaults.secretVersionNumber;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.serviceConsoleUrl = defaults.serviceConsoleUrl;
     	      this.shrinkAdbTrigger = defaults.shrinkAdbTrigger;
     	      this.source = defaults.source;
@@ -2792,6 +2806,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
             if (serviceConsoleUrl == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "serviceConsoleUrl");
@@ -3205,6 +3227,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.scheduledOperations = scheduledOperations;
             _resultValue.secretId = secretId;
             _resultValue.secretVersionNumber = secretVersionNumber;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.serviceConsoleUrl = serviceConsoleUrl;
             _resultValue.shrinkAdbTrigger = shrinkAdbTrigger;
             _resultValue.source = source;

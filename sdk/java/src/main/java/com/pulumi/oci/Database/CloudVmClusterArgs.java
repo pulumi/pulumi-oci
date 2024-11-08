@@ -476,6 +476,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      * 
      */
@@ -588,6 +603,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.privateZoneId = $.privateZoneId;
         this.scanListenerPortTcp = $.scanListenerPortTcp;
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
+        this.securityAttributes = $.securityAttributes;
         this.sshPublicKeys = $.sshPublicKeys;
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
@@ -1273,6 +1289,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             return scanListenerPortTcpSsl(Output.of(scanListenerPortTcpSsl));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

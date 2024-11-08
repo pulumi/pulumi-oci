@@ -51,6 +51,7 @@ class DbSystemArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
                  sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
@@ -127,6 +128,7 @@ class DbSystemArgs:
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
         :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
@@ -190,6 +192,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "private_ip", private_ip)
         if reco_storage_size_in_gb is not None:
             pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if source is not None:
             pulumi.set(__self__, "source", source)
         if source_db_system_id is not None:
@@ -601,6 +605,18 @@ class DbSystemArgs:
         pulumi.set(self, "reco_storage_size_in_gb", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
         """
@@ -708,6 +724,7 @@ class _DbSystemState:
                  scan_dns_name: Optional[pulumi.Input[str]] = None,
                  scan_dns_record_id: Optional[pulumi.Input[str]] = None,
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -792,6 +809,7 @@ class _DbSystemState:
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -900,6 +918,8 @@ class _DbSystemState:
             pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         if scan_ip_ids is not None:
             pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if source is not None:
@@ -1437,6 +1457,18 @@ class _DbSystemState:
         pulumi.set(self, "scan_ip_ids", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1639,6 +1671,7 @@ class DbSystem(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -1759,6 +1792,7 @@ class DbSystem(pulumi.CustomResource):
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -1883,6 +1917,7 @@ class DbSystem(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -1935,6 +1970,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_ip"] = private_ip
             __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
+            __props__.__dict__["security_attributes"] = security_attributes
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
@@ -2017,6 +2053,7 @@ class DbSystem(pulumi.CustomResource):
             scan_dns_name: Optional[pulumi.Input[str]] = None,
             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             source: Optional[pulumi.Input[str]] = None,
             source_db_system_id: Optional[pulumi.Input[str]] = None,
@@ -2106,6 +2143,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -2178,6 +2216,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["scan_dns_name"] = scan_dns_name
         __props__.__dict__["scan_dns_record_id"] = scan_dns_record_id
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["source"] = source
         __props__.__dict__["source_db_system_id"] = source_db_system_id
@@ -2541,6 +2580,14 @@ class DbSystem(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         """
         return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

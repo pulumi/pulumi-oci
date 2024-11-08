@@ -138,6 +138,8 @@ type LookupCloudVmClusterResult struct {
 	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
 	// The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
 	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud VM cluster.
 	Shape string `pulumi:"shape"`
 	// The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -415,6 +417,11 @@ func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcp() pulumi.IntOutput
 // The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
 func (o LookupCloudVmClusterResultOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupCloudVmClusterResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The model name of the Exadata hardware running the cloud VM cluster.

@@ -37,6 +37,7 @@ class DataGuardAssociationArgs:
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -92,6 +93,7 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -151,6 +153,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
         if db_system_freeform_tags is not None:
             pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+        if db_system_security_attributes is not None:
+            pulumi.set(__self__, "db_system_security_attributes", db_system_security_attributes)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if domain is not None:
@@ -394,6 +398,18 @@ class DataGuardAssociationArgs:
     @db_system_freeform_tags.setter
     def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="dbSystemSecurityAttributes")
+    def db_system_security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "db_system_security_attributes")
+
+    @db_system_security_attributes.setter
+    def db_system_security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "db_system_security_attributes", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -644,6 +660,7 @@ class _DataGuardAssociationState:
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -696,6 +713,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -781,6 +799,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
         if db_system_freeform_tags is not None:
             pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+        if db_system_security_attributes is not None:
+            pulumi.set(__self__, "db_system_security_attributes", db_system_security_attributes)
         if delete_standby_db_home_on_delete is not None:
             pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         if display_name is not None:
@@ -1022,6 +1042,18 @@ class _DataGuardAssociationState:
     @db_system_freeform_tags.setter
     def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="dbSystemSecurityAttributes")
+    def db_system_security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "db_system_security_attributes")
+
+    @db_system_security_attributes.setter
+    def db_system_security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "db_system_security_attributes", value)
 
     @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
@@ -1402,6 +1434,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1462,6 +1495,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
+            db_system_security_attributes=data_guard_association_db_system_security_attributes,
             display_name=data_guard_association_display_name,
             domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
@@ -1508,6 +1542,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -1600,6 +1635,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
             db_system_freeform_tags=data_guard_association_db_system_freeform_tags,
+            db_system_security_attributes=data_guard_association_db_system_security_attributes,
             display_name=data_guard_association_display_name,
             domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
@@ -1652,6 +1688,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1701,6 +1738,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["db_system_defined_tags"] = db_system_defined_tags
             __props__.__dict__["db_system_freeform_tags"] = db_system_freeform_tags
+            __props__.__dict__["db_system_security_attributes"] = db_system_security_attributes
             if delete_standby_db_home_on_delete is None and not opts.urn:
                 raise TypeError("Missing required property 'delete_standby_db_home_on_delete'")
             __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
@@ -1764,6 +1802,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             database_software_image_id: Optional[pulumi.Input[str]] = None,
             db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
@@ -1821,6 +1860,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[str] domain: A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -1895,6 +1935,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["database_software_image_id"] = database_software_image_id
         __props__.__dict__["db_system_defined_tags"] = db_system_defined_tags
         __props__.__dict__["db_system_freeform_tags"] = db_system_freeform_tags
+        __props__.__dict__["db_system_security_attributes"] = db_system_security_attributes
         __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain"] = domain
@@ -2049,6 +2090,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemSecurityAttributes")
+    def db_system_security_attributes(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "db_system_security_attributes")
 
     @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")

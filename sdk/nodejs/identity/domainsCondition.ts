@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a Condition
+ * Create a condition
  *
  * ## Example Usage
  *
@@ -332,6 +332,7 @@ export class DomainsCondition extends pulumi.CustomResource {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -705,6 +706,7 @@ export interface DomainsConditionState {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -888,6 +890,7 @@ export interface DomainsConditionArgs {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite

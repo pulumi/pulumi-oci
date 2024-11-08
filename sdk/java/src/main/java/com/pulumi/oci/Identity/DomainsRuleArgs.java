@@ -516,6 +516,7 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -533,6 +534,7 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -1233,6 +1235,7 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite
@@ -1254,6 +1257,7 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite
@@ -1274,6 +1278,7 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [key, value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          * * idcsSearchable: true
          * * multiValued: true
          * * mutability: readWrite

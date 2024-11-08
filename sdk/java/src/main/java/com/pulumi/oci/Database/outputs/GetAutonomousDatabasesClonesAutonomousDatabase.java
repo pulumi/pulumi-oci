@@ -482,6 +482,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
@@ -1265,6 +1270,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.scheduledOperations;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
@@ -1577,6 +1589,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
         private String role;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation> scheduledOperations;
+        private Map<String,String> securityAttributes;
         private String serviceConsoleUrl;
         private String sourceId;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
@@ -1701,6 +1714,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.resourcePoolSummaries = defaults.resourcePoolSummaries;
     	      this.role = defaults.role;
     	      this.scheduledOperations = defaults.scheduledOperations;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.serviceConsoleUrl = defaults.serviceConsoleUrl;
     	      this.sourceId = defaults.sourceId;
     	      this.standbyDbs = defaults.standbyDbs;
@@ -2512,6 +2526,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return scheduledOperations(List.of(scheduledOperations));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
             if (serviceConsoleUrl == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "serviceConsoleUrl");
@@ -2863,6 +2885,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.resourcePoolSummaries = resourcePoolSummaries;
             _resultValue.role = role;
             _resultValue.scheduledOperations = scheduledOperations;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.serviceConsoleUrl = serviceConsoleUrl;
             _resultValue.sourceId = sourceId;
             _resultValue.standbyDbs = standbyDbs;

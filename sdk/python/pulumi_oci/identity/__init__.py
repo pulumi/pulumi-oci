@@ -154,6 +154,8 @@ from .get_domains_oauth_client_certificate import *
 from .get_domains_oauth_client_certificates import *
 from .get_domains_oauth_partner_certificate import *
 from .get_domains_oauth_partner_certificates import *
+from .get_domains_oci_console_sign_on_policy_consent import *
+from .get_domains_oci_console_sign_on_policy_consents import *
 from .get_domains_password_policies import *
 from .get_domains_password_policy import *
 from .get_domains_policies import *

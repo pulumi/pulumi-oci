@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Identity
     /// <summary>
     /// This resource provides the Policy resource in Oracle Cloud Infrastructure Identity Domains service.
     /// 
-    /// Create a Policy
+    /// Create a Policy.
     /// 
     /// ## Example Usage
     /// 
@@ -379,6 +379,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite
@@ -653,6 +654,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite
@@ -1019,6 +1021,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsCompositeKey: [key, value]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         /// * idcsSearchable: true
         /// * multiValued: true
         /// * mutability: readWrite

@@ -123,6 +123,8 @@ if typing.TYPE_CHECKING:
     generativeai = __generativeai
     import pulumi_oci.genericartifactscontent as __genericartifactscontent
     genericartifactscontent = __genericartifactscontent
+    import pulumi_oci.globallydistributeddatabase as __globallydistributeddatabase
+    globallydistributeddatabase = __globallydistributeddatabase
     import pulumi_oci.goldengate as __goldengate
     goldengate = __goldengate
     import pulumi_oci.healthchecks as __healthchecks
@@ -309,6 +311,7 @@ else:
     fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
     generativeai = _utilities.lazy_import('pulumi_oci.generativeai')
     genericartifactscontent = _utilities.lazy_import('pulumi_oci.genericartifactscontent')
+    globallydistributeddatabase = _utilities.lazy_import('pulumi_oci.globallydistributeddatabase')
     goldengate = _utilities.lazy_import('pulumi_oci.goldengate')
     healthchecks = _utilities.lazy_import('pulumi_oci.healthchecks')
     identity = _utilities.lazy_import('pulumi_oci.identity')
@@ -3831,6 +3834,22 @@ _utilities.register(
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
    "oci:GenericArtifactsContent/artifactByPath:ArtifactByPath": "ArtifactByPath"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GloballyDistributedDatabase/privateEndpoint",
+  "fqn": "pulumi_oci.globallydistributeddatabase",
+  "classes": {
+   "oci:GloballyDistributedDatabase/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GloballyDistributedDatabase/shardedDatabase",
+  "fqn": "pulumi_oci.globallydistributeddatabase",
+  "classes": {
+   "oci:GloballyDistributedDatabase/shardedDatabase:ShardedDatabase": "ShardedDatabase"
   }
  },
  {

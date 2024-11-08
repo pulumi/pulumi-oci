@@ -58,7 +58,7 @@ public final class DomainsRuleConditionGroup {
      */
     private String type;
     /**
-     * @return (Updatable) Condition or ConditionGroup identifier
+     * @return (Updatable) Condition or ConditionGroup identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -126,7 +126,7 @@ public final class DomainsRuleConditionGroup {
         return this.type;
     }
     /**
-     * @return (Updatable) Condition or ConditionGroup identifier
+     * @return (Updatable) Condition or ConditionGroup identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

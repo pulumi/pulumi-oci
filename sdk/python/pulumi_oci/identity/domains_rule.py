@@ -179,6 +179,7 @@ class DomainsRuleArgs:
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
                * idcsSearchable: true
                * multiValued: true
                * mutability: readWrite
@@ -548,6 +549,7 @@ class DomainsRuleArgs:
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [key, value]
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         * idcsSearchable: true
         * multiValued: true
         * mutability: readWrite
@@ -816,6 +818,7 @@ class _DomainsRuleState:
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
                * idcsSearchable: true
                * multiValued: true
                * mutability: readWrite
@@ -1394,6 +1397,7 @@ class _DomainsRuleState:
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [key, value]
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         * idcsSearchable: true
         * multiValued: true
         * mutability: readWrite
@@ -1462,7 +1466,7 @@ class DomainsRule(pulumi.CustomResource):
         """
         This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Rule
+        Create a Rule.
 
         ## Example Usage
 
@@ -1651,6 +1655,7 @@ class DomainsRule(pulumi.CustomResource):
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
                * idcsSearchable: true
                * multiValued: true
                * mutability: readWrite
@@ -1668,7 +1673,7 @@ class DomainsRule(pulumi.CustomResource):
         """
         This resource provides the Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 
-        Create a Rule
+        Create a Rule.
 
         ## Example Usage
 
@@ -2061,6 +2066,7 @@ class DomainsRule(pulumi.CustomResource):
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [key, value]
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
                * idcsSearchable: true
                * multiValued: true
                * mutability: readWrite
@@ -2517,6 +2523,7 @@ class DomainsRule(pulumi.CustomResource):
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [key, value]
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
         * idcsSearchable: true
         * multiValued: true
         * mutability: readWrite

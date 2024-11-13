@@ -750,6 +750,16 @@ export const getDomainsOauthPartnerCertificates: typeof import("./getDomainsOaut
 export const getDomainsOauthPartnerCertificatesOutput: typeof import("./getDomainsOauthPartnerCertificates").getDomainsOauthPartnerCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsOauthPartnerCertificates","getDomainsOauthPartnerCertificatesOutput"], () => require("./getDomainsOauthPartnerCertificates"));
 
+export { GetDomainsOciConsoleSignOnPolicyConsentArgs, GetDomainsOciConsoleSignOnPolicyConsentResult, GetDomainsOciConsoleSignOnPolicyConsentOutputArgs } from "./getDomainsOciConsoleSignOnPolicyConsent";
+export const getDomainsOciConsoleSignOnPolicyConsent: typeof import("./getDomainsOciConsoleSignOnPolicyConsent").getDomainsOciConsoleSignOnPolicyConsent = null as any;
+export const getDomainsOciConsoleSignOnPolicyConsentOutput: typeof import("./getDomainsOciConsoleSignOnPolicyConsent").getDomainsOciConsoleSignOnPolicyConsentOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOciConsoleSignOnPolicyConsent","getDomainsOciConsoleSignOnPolicyConsentOutput"], () => require("./getDomainsOciConsoleSignOnPolicyConsent"));
+
+export { GetDomainsOciConsoleSignOnPolicyConsentsArgs, GetDomainsOciConsoleSignOnPolicyConsentsResult, GetDomainsOciConsoleSignOnPolicyConsentsOutputArgs } from "./getDomainsOciConsoleSignOnPolicyConsents";
+export const getDomainsOciConsoleSignOnPolicyConsents: typeof import("./getDomainsOciConsoleSignOnPolicyConsents").getDomainsOciConsoleSignOnPolicyConsents = null as any;
+export const getDomainsOciConsoleSignOnPolicyConsentsOutput: typeof import("./getDomainsOciConsoleSignOnPolicyConsents").getDomainsOciConsoleSignOnPolicyConsentsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOciConsoleSignOnPolicyConsents","getDomainsOciConsoleSignOnPolicyConsentsOutput"], () => require("./getDomainsOciConsoleSignOnPolicyConsents"));
+
 export { GetDomainsPasswordPoliciesArgs, GetDomainsPasswordPoliciesResult, GetDomainsPasswordPoliciesOutputArgs } from "./getDomainsPasswordPolicies";
 export const getDomainsPasswordPolicies: typeof import("./getDomainsPasswordPolicies").getDomainsPasswordPolicies = null as any;
 export const getDomainsPasswordPoliciesOutput: typeof import("./getDomainsPasswordPolicies").getDomainsPasswordPoliciesOutput = null as any;

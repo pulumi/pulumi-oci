@@ -33,9 +33,9 @@ type SqlEndpoint struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// The description of CreateSQLEndpointDetails.
+	// (Updatable) The description of CreateSQLEndpointDetails.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The SQL Endpoint name, which can be changed.
+	// (Updatable) The SQL Endpoint name, which can be changed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape pulumi.StringOutput `pulumi:"driverShape"`
@@ -51,21 +51,22 @@ type SqlEndpoint struct {
 	JdbcEndpointUrl pulumi.StringOutput `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId pulumi.StringOutput `pulumi:"lakeId"`
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken pulumi.StringOutput `pulumi:"lastAcceptedRequestToken"`
-	// The maximum number of executors.
+	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntOutput `pulumi:"maxExecutorCount"`
 	// Metastore OCID
 	MetastoreId pulumi.StringOutput `pulumi:"metastoreId"`
-	// The minimum number of executors.
+	// (Updatable) The minimum number of executors.
 	MinExecutorCount pulumi.IntOutput `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationOutput `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapOutput `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringOutput `pulumi:"sqlEndpointVersion"`
-	// The current state of the Sql Endpoint.
+	// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
@@ -76,9 +77,6 @@ type SqlEndpoint struct {
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringOutput `pulumi:"warehouseBucketUri"`
 }
 
@@ -143,9 +141,9 @@ type sqlEndpointState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The description of CreateSQLEndpointDetails.
+	// (Updatable) The description of CreateSQLEndpointDetails.
 	Description *string `pulumi:"description"`
-	// The SQL Endpoint name, which can be changed.
+	// (Updatable) The SQL Endpoint name, which can be changed.
 	DisplayName *string `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape *string `pulumi:"driverShape"`
@@ -161,21 +159,22 @@ type sqlEndpointState struct {
 	JdbcEndpointUrl *string `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId *string `pulumi:"lakeId"`
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken *string `pulumi:"lastAcceptedRequestToken"`
-	// The maximum number of executors.
+	// (Updatable) The maximum number of executors.
 	MaxExecutorCount *int `pulumi:"maxExecutorCount"`
 	// Metastore OCID
 	MetastoreId *string `pulumi:"metastoreId"`
-	// The minimum number of executors.
+	// (Updatable) The minimum number of executors.
 	MinExecutorCount *int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration *SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion *string `pulumi:"sqlEndpointVersion"`
-	// The current state of the Sql Endpoint.
+	// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
@@ -186,9 +185,6 @@ type sqlEndpointState struct {
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
@@ -197,9 +193,9 @@ type SqlEndpointState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// The description of CreateSQLEndpointDetails.
+	// (Updatable) The description of CreateSQLEndpointDetails.
 	Description pulumi.StringPtrInput
-	// The SQL Endpoint name, which can be changed.
+	// (Updatable) The SQL Endpoint name, which can be changed.
 	DisplayName pulumi.StringPtrInput
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape pulumi.StringPtrInput
@@ -215,21 +211,22 @@ type SqlEndpointState struct {
 	JdbcEndpointUrl pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure lake OCID
 	LakeId pulumi.StringPtrInput
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken pulumi.StringPtrInput
-	// The maximum number of executors.
+	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntPtrInput
 	// Metastore OCID
 	MetastoreId pulumi.StringPtrInput
-	// The minimum number of executors.
+	// (Updatable) The minimum number of executors.
 	MinExecutorCount pulumi.IntPtrInput
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationPtrInput
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringPtrInput
-	// The current state of the Sql Endpoint.
+	// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage pulumi.StringPtrInput
@@ -240,9 +237,6 @@ type SqlEndpointState struct {
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringPtrInput
 }
 
@@ -255,9 +249,9 @@ type sqlEndpointArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The description of CreateSQLEndpointDetails.
+	// (Updatable) The description of CreateSQLEndpointDetails.
 	Description *string `pulumi:"description"`
-	// The SQL Endpoint name, which can be changed.
+	// (Updatable) The SQL Endpoint name, which can be changed.
 	DisplayName string `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape string `pulumi:"driverShape"`
@@ -269,18 +263,23 @@ type sqlEndpointArgs struct {
 	ExecutorShapeConfig *SqlEndpointExecutorShapeConfig `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The maximum number of executors.
+	// (Updatable) The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// Metastore OCID
 	MetastoreId string `pulumi:"metastoreId"`
-	// The minimum number of executors.
+	// (Updatable) The minimum number of executors.
 	MinExecutorCount int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
+	// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State *string `pulumi:"state"`
 }
 
 // The set of arguments for constructing a SqlEndpoint resource.
@@ -289,9 +288,9 @@ type SqlEndpointArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// The description of CreateSQLEndpointDetails.
+	// (Updatable) The description of CreateSQLEndpointDetails.
 	Description pulumi.StringPtrInput
-	// The SQL Endpoint name, which can be changed.
+	// (Updatable) The SQL Endpoint name, which can be changed.
 	DisplayName pulumi.StringInput
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape pulumi.StringInput
@@ -303,18 +302,23 @@ type SqlEndpointArgs struct {
 	ExecutorShapeConfig SqlEndpointExecutorShapeConfigPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// The maximum number of executors.
+	// (Updatable) The maximum number of executors.
 	MaxExecutorCount pulumi.IntInput
 	// Metastore OCID
 	MetastoreId pulumi.StringInput
-	// The minimum number of executors.
+	// (Updatable) The minimum number of executors.
 	MinExecutorCount pulumi.IntInput
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationInput
-	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringInput
+	// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State pulumi.StringPtrInput
 }
 
 func (SqlEndpointArgs) ElementType() reflect.Type {
@@ -414,12 +418,12 @@ func (o SqlEndpointOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// The description of CreateSQLEndpointDetails.
+// (Updatable) The description of CreateSQLEndpointDetails.
 func (o SqlEndpointOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The SQL Endpoint name, which can be changed.
+// (Updatable) The SQL Endpoint name, which can be changed.
 func (o SqlEndpointOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -459,12 +463,7 @@ func (o SqlEndpointOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LakeId }).(pulumi.StringOutput)
 }
 
-// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-func (o SqlEndpointOutput) LastAcceptedRequestToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
-}
-
-// The maximum number of executors.
+// (Updatable) The maximum number of executors.
 func (o SqlEndpointOutput) MaxExecutorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.IntOutput { return v.MaxExecutorCount }).(pulumi.IntOutput)
 }
@@ -474,7 +473,7 @@ func (o SqlEndpointOutput) MetastoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.MetastoreId }).(pulumi.StringOutput)
 }
 
-// The minimum number of executors.
+// (Updatable) The minimum number of executors.
 func (o SqlEndpointOutput) MinExecutorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.IntOutput { return v.MinExecutorCount }).(pulumi.IntOutput)
 }
@@ -484,7 +483,7 @@ func (o SqlEndpointOutput) NetworkConfiguration() SqlEndpointNetworkConfiguratio
 	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointNetworkConfigurationOutput { return v.NetworkConfiguration }).(SqlEndpointNetworkConfigurationOutput)
 }
 
-// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 func (o SqlEndpointOutput) SparkAdvancedConfigurations() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.SparkAdvancedConfigurations }).(pulumi.StringMapOutput)
 }
@@ -494,7 +493,10 @@ func (o SqlEndpointOutput) SqlEndpointVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.SqlEndpointVersion }).(pulumi.StringOutput)
 }
 
-// The current state of the Sql Endpoint.
+// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SqlEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -520,9 +522,6 @@ func (o SqlEndpointOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SqlEndpointOutput) WarehouseBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.WarehouseBucketUri }).(pulumi.StringOutput)
 }

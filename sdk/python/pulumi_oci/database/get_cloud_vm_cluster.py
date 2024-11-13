@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -151,6 +151,9 @@ class GetCloudVmClusterResult:
         if scan_listener_port_tcp_ssl and not isinstance(scan_listener_port_tcp_ssl, int):
             raise TypeError("Expected argument 'scan_listener_port_tcp_ssl' to be a int")
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -509,6 +512,14 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> str:
         """
@@ -652,6 +663,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             scan_ip_ids=self.scan_ip_ids,
             scan_listener_port_tcp=self.scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=self.scan_listener_port_tcp_ssl,
+            security_attributes=self.security_attributes,
             shape=self.shape,
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
@@ -732,6 +744,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         scan_ip_ids=pulumi.get(__ret__, 'scan_ip_ids'),
         scan_listener_port_tcp=pulumi.get(__ret__, 'scan_listener_port_tcp'),
         scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'scan_listener_port_tcp_ssl'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
@@ -809,6 +822,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         scan_ip_ids=pulumi.get(__response__, 'scan_ip_ids'),
         scan_listener_port_tcp=pulumi.get(__response__, 'scan_listener_port_tcp'),
         scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),

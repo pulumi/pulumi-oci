@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
 //
-// # Get a Rule
+// Get a Rule.
 //
 // ## Example Usage
 //

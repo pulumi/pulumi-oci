@@ -203,14 +203,18 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Grid Setup will be done using this grid image id
+     * (Updatable) Grid Setup will be done using this grid image id.
+     * 
+     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     @Import(name="gridImageId")
     private @Nullable Output<String> gridImageId;
 
     /**
-     * @return (Updatable) Grid Setup will be done using this grid image id
+     * @return (Updatable) Grid Setup will be done using this grid image id.
+     * 
+     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
      * 
      */
     public Optional<Output<String>> gridImageId() {
@@ -468,6 +472,21 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      * 
      */
@@ -655,6 +674,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         this.scanIpIds = $.scanIpIds;
         this.scanListenerPortTcp = $.scanListenerPortTcp;
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
+        this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
         this.sshPublicKeys = $.sshPublicKeys;
         this.state = $.state;
@@ -948,7 +968,9 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gridImageId (Updatable) Grid Setup will be done using this grid image id
+         * @param gridImageId (Updatable) Grid Setup will be done using this grid image id.
+         * 
+         * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
          * 
          * @return builder
          * 
@@ -959,7 +981,9 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param gridImageId (Updatable) Grid Setup will be done using this grid image id
+         * @param gridImageId (Updatable) Grid Setup will be done using this grid image id.
+         * 
+         * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
          * 
          * @return builder
          * 
@@ -1353,6 +1377,27 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             return scanListenerPortTcpSsl(Output.of(scanListenerPortTcpSsl));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

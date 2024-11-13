@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Policies
+ * Search Policies.
  *
  * ## Example Usage
  *
@@ -120,7 +120,7 @@ export interface GetDomainsPoliciesResult {
 /**
  * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Search Policies
+ * Search Policies.
  *
  * ## Example Usage
  *

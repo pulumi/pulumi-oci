@@ -277,6 +277,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -396,6 +400,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
             resourceInputs["scanDnsRecordId"] = state ? state.scanDnsRecordId : undefined;
             resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["sourceDbSystemId"] = state ? state.sourceDbSystemId : undefined;
@@ -459,6 +464,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateIp"] = args ? args.privateIp : undefined;
             resourceInputs["recoStorageSizeInGb"] = args ? args.recoStorageSizeInGb : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["sourceDbSystemId"] = args ? args.sourceDbSystemId : undefined;
@@ -685,6 +691,10 @@ export interface DbSystemState {
      */
     scanIpIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -893,6 +903,10 @@ export interface DbSystemArgs {
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
     recoStorageSizeInGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory

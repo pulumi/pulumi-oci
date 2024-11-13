@@ -44,6 +44,7 @@ import * as utilities from "../utilities";
  *     databaseSoftwareImageId: testDatabaseSoftwareImage.id,
  *     dbSystemDefinedTags: dataGuardAssociationDbSystemDefinedTags,
  *     dbSystemFreeformTags: dataGuardAssociationDbSystemFreeformTags,
+ *     dbSystemSecurityAttributes: dataGuardAssociationDbSystemSecurityAttributes,
  *     displayName: dataGuardAssociationDisplayName,
  *     domain: dataGuardAssociationDomain,
  *     faultDomains: dataGuardAssociationFaultDomains,
@@ -162,6 +163,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly dbSystemFreeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly dbSystemSecurityAttributes!: pulumi.Output<{[key: string]: string} | undefined>;
     public readonly deleteStandbyDbHomeOnDelete!: pulumi.Output<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -327,6 +332,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
             resourceInputs["dbSystemDefinedTags"] = state ? state.dbSystemDefinedTags : undefined;
             resourceInputs["dbSystemFreeformTags"] = state ? state.dbSystemFreeformTags : undefined;
+            resourceInputs["dbSystemSecurityAttributes"] = state ? state.dbSystemSecurityAttributes : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = state ? state.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domain"] = state ? state.domain : undefined;
@@ -388,6 +394,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
             resourceInputs["dbSystemDefinedTags"] = args ? args.dbSystemDefinedTags : undefined;
             resourceInputs["dbSystemFreeformTags"] = args ? args.dbSystemFreeformTags : undefined;
+            resourceInputs["dbSystemSecurityAttributes"] = args ? args.dbSystemSecurityAttributes : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = args ? args.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["domain"] = args ? args.domain : undefined;
@@ -495,6 +502,10 @@ export interface DataGuardAssociationState {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     dbSystemFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    dbSystemSecurityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     deleteStandbyDbHomeOnDelete?: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -694,6 +705,10 @@ export interface DataGuardAssociationArgs {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     dbSystemFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    dbSystemSecurityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     deleteStandbyDbHomeOnDelete: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.

@@ -164,6 +164,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ScanIpIds;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The shape of the DB system. The shape determines resources to allocate to the DB system.
         /// * For virtual machine shapes, the number of CPU cores and memory
         /// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
@@ -299,6 +303,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> scanIpIds,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             string source,
@@ -366,6 +372,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             Source = source;
             SourceDbSystemId = sourceDbSystemId;

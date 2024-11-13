@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Policy
+ * Get a Policy.
  *
  * ## Example Usage
  *
@@ -163,7 +163,7 @@ export interface GetDomainsPolicyResult {
 /**
  * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Policy
+ * Get a Policy.
  *
  * ## Example Usage
  *

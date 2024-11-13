@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) PolicyType identifier
+        /// (Updatable) PolicyType identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

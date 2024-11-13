@@ -57,6 +57,7 @@ import (
 //				DatabaseSoftwareImageId:      pulumi.Any(testDatabaseSoftwareImage.Id),
 //				DbSystemDefinedTags:          pulumi.Any(dataGuardAssociationDbSystemDefinedTags),
 //				DbSystemFreeformTags:         pulumi.Any(dataGuardAssociationDbSystemFreeformTags),
+//				DbSystemSecurityAttributes:   pulumi.Any(dataGuardAssociationDbSystemSecurityAttributes),
 //				DisplayName:                  pulumi.Any(dataGuardAssociationDisplayName),
 //				Domain:                       pulumi.Any(dataGuardAssociationDomain),
 //				FaultDomains:                 pulumi.Any(dataGuardAssociationFaultDomains),
@@ -127,7 +128,9 @@ type DataGuardAssociation struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DbSystemDefinedTags pulumi.StringMapOutput `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.StringMapOutput `pulumi:"dbSystemFreeformTags"`
+	DbSystemFreeformTags pulumi.StringMapOutput `pulumi:"dbSystemFreeformTags"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	DbSystemSecurityAttributes  pulumi.StringMapOutput `pulumi:"dbSystemSecurityAttributes"`
 	DeleteStandbyDbHomeOnDelete pulumi.StringOutput    `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -302,7 +305,9 @@ type dataGuardAssociationState struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DbSystemDefinedTags map[string]string `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DbSystemFreeformTags map[string]string `pulumi:"dbSystemFreeformTags"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	DbSystemSecurityAttributes  map[string]string `pulumi:"dbSystemSecurityAttributes"`
 	DeleteStandbyDbHomeOnDelete *string           `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
@@ -423,7 +428,9 @@ type DataGuardAssociationState struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DbSystemDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.StringMapInput
+	DbSystemFreeformTags pulumi.StringMapInput
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	DbSystemSecurityAttributes  pulumi.StringMapInput
 	DeleteStandbyDbHomeOnDelete pulumi.StringPtrInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
@@ -544,7 +551,9 @@ type dataGuardAssociationArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DbSystemDefinedTags map[string]string `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DbSystemFreeformTags map[string]string `pulumi:"dbSystemFreeformTags"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	DbSystemSecurityAttributes  map[string]string `pulumi:"dbSystemSecurityAttributes"`
 	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
@@ -648,7 +657,9 @@ type DataGuardAssociationArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DbSystemDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.StringMapInput
+	DbSystemFreeformTags pulumi.StringMapInput
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	DbSystemSecurityAttributes  pulumi.StringMapInput
 	DeleteStandbyDbHomeOnDelete pulumi.StringInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
@@ -887,6 +898,11 @@ func (o DataGuardAssociationOutput) DbSystemDefinedTags() pulumi.StringMapOutput
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o DataGuardAssociationOutput) DbSystemFreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DbSystemFreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DataGuardAssociationOutput) DbSystemSecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DbSystemSecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 func (o DataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {

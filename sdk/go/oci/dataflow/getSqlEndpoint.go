@@ -82,8 +82,6 @@ type LookupSqlEndpointResult struct {
 	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
 	LakeId string `pulumi:"lakeId"`
-	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -213,11 +211,6 @@ func (o LookupSqlEndpointResultOutput) JdbcEndpointUrl() pulumi.StringOutput {
 // The OCID of Oracle Cloud Infrastructure Lake.
 func (o LookupSqlEndpointResultOutput) LakeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LakeId }).(pulumi.StringOutput)
-}
-
-// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-func (o LookupSqlEndpointResultOutput) LastAcceptedRequestToken() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlEndpointResult) string { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
 }
 
 // The maximum number of executors.

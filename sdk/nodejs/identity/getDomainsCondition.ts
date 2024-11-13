@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Condition
+ * Get a condition.
  *
  * ## Example Usage
  *
@@ -171,7 +171,7 @@ export interface GetDomainsConditionResult {
 /**
  * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Get a Condition
+ * Get a condition.
  *
  * ## Example Usage
  *

@@ -37008,6 +37008,275 @@ export namespace GenerativeAi {
     }
 }
 
+export namespace GloballyDistributedDatabase {
+    export interface GetPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetShardedDatabasesFilter {
+        /**
+         * Name of the shard.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetShardedDatabasesFilterArgs {
+        /**
+         * Name of the shard.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ShardedDatabaseCatalogDetail {
+        /**
+         * Admin password for the catalog database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the catalog database. It has to be in multiple of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * Identifier of the underlying container database.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying container database parent.
+         */
+        containerDatabaseParentId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+         */
+        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetailEncryptionKeyDetails>;
+        /**
+         * Determines the auto-scaling mode for the catalog database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         */
+        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+        /**
+         * Name of the shard-group to which the shard belongs.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseCatalogDetailEncryptionKeyDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+         */
+        kmsKeyId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+         */
+        vaultId: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface ShardedDatabaseGsm {
+        /**
+         * The compute amount available to the underlying autonomous database associated with shard.
+         */
+        computeCount?: pulumi.Input<number>;
+        /**
+         * The data disk group size to be allocated in GBs.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseShardDetail {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * Identifier of the underlying container database.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying container database parent.
+         */
+        containerDatabaseParentId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+         */
+        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseShardDetailEncryptionKeyDetails>;
+        /**
+         * Determines the auto-scaling mode for the shard database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         */
+        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+        /**
+         * Name of the shard-group to which the shard belongs.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+         */
+        shardSpace?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseShardDetailEncryptionKeyDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+         */
+        kmsKeyId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+         */
+        vaultId: pulumi.Input<string>;
+    }
+}
+
 export namespace GoldenGate {
     export interface ConnectionAdditionalAttribute {
         /**
@@ -56634,7 +56903,7 @@ export namespace Identity {
          */
         ref?: pulumi.Input<string>;
         /**
-         * (Updatable) PolicyType identifier
+         * (Updatable) PolicyType identifier.
          *
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -56784,7 +57053,7 @@ export namespace Identity {
          */
         type: pulumi.Input<string>;
         /**
-         * (Updatable) Condition or ConditionGroup identifier
+         * (Updatable) Condition or ConditionGroup identifier.
          *
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -64816,6 +65085,18 @@ export namespace Identity {
         /**
          * A filter to only return resources that match the given name exactly.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDomainsOciConsoleSignOnPolicyConsentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDomainsOciConsoleSignOnPolicyConsentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

@@ -27,7 +27,7 @@ public final class DomainsPolicyPolicyType {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) PolicyType identifier
+     * @return (Updatable) PolicyType identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -60,7 +60,7 @@ public final class DomainsPolicyPolicyType {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) PolicyType identifier
+     * @return (Updatable) PolicyType identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true

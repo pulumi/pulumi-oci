@@ -52,6 +52,7 @@ class CloudVmClusterArgs:
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
@@ -99,6 +100,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -160,6 +162,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if subscription_id is not None:
             pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
@@ -549,6 +553,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -631,6 +647,7 @@ class _CloudVmClusterState:
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -695,6 +712,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud VM cluster.
@@ -790,6 +808,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if ssh_public_keys is not None:
@@ -1293,6 +1313,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1475,6 +1507,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
@@ -1543,6 +1576,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=test_zone["id"],
             scan_listener_port_tcp=cloud_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=cloud_vm_cluster_scan_listener_port_tcp_ssl,
+            security_attributes=cloud_vm_cluster_security_attributes,
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
@@ -1598,6 +1632,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -1676,6 +1711,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=test_zone["id"],
             scan_listener_port_tcp=cloud_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=cloud_vm_cluster_scan_listener_port_tcp_ssl,
+            security_attributes=cloud_vm_cluster_security_attributes,
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
@@ -1733,6 +1769,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  subscription_id: Optional[pulumi.Input[str]] = None,
@@ -1790,6 +1827,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["private_zone_id"] = private_zone_id
             __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
             __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
+            __props__.__dict__["security_attributes"] = security_attributes
             if ssh_public_keys is None and not opts.urn:
                 raise TypeError("Missing required property 'ssh_public_keys'")
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
@@ -1865,6 +1903,7 @@ class CloudVmCluster(pulumi.CustomResource):
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1934,6 +1973,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud VM cluster.
@@ -1994,6 +2034,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
         __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
         __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
@@ -2328,6 +2369,14 @@ class CloudVmCluster(pulumi.CustomResource):
         The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

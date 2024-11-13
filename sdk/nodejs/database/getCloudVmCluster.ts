@@ -200,6 +200,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly scanListenerPortTcpSsl: number;
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     readonly shape: string;

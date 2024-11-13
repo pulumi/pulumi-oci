@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  *
- * Create a Policy
+ * Create a Policy.
  *
  * ## Example Usage
  *
@@ -335,6 +335,7 @@ export class DomainsPolicy extends pulumi.CustomResource {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -700,6 +701,7 @@ export interface DomainsPolicyState {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -881,6 +883,7 @@ export interface DomainsPolicyArgs {
      *
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite

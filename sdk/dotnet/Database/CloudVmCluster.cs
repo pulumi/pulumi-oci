@@ -85,6 +85,7 @@ namespace Pulumi.Oci.Database
     ///         PrivateZoneId = testZone.Id,
     ///         ScanListenerPortTcp = cloudVmClusterScanListenerPortTcp,
     ///         ScanListenerPortTcpSsl = cloudVmClusterScanListenerPortTcpSsl,
+    ///         SecurityAttributes = cloudVmClusterSecurityAttributes,
     ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = cloudVmClusterSystemVersion,
     ///         TimeZone = cloudVmClusterTimeZone,
@@ -346,6 +347,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("scanListenerPortTcpSsl")]
         public Output<int> ScanListenerPortTcpSsl { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud VM cluster.
@@ -688,6 +695,18 @@ namespace Pulumi.Oci.Database
         [Input("scanListenerPortTcpSsl")]
         public Input<int>? ScanListenerPortTcpSsl { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         [Input("sshPublicKeys", required: true)]
         private InputList<string>? _sshPublicKeys;
 
@@ -1026,6 +1045,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("scanListenerPortTcpSsl")]
         public Input<int>? ScanListenerPortTcpSsl { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud VM cluster.

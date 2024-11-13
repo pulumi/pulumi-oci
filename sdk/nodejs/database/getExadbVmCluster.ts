@@ -93,7 +93,7 @@ export interface GetExadbVmClusterResult {
      */
     readonly giVersion: string;
     /**
-     * Grid Setup will be done using this grid image id
+     * Grid Setup will be done using this grid image id.
      */
     readonly gridImageId: string;
     /**
@@ -165,6 +165,10 @@ export interface GetExadbVmClusterResult {
      * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      */
     readonly scanListenerPortTcpSsl: number;
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
     /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */

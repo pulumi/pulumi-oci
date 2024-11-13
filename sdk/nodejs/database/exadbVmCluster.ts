@@ -96,7 +96,9 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly giVersion!: pulumi.Output<string>;
     /**
-     * (Updatable) Grid Setup will be done using this grid image id
+     * (Updatable) Grid Setup will be done using this grid image id.
+     *
+     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
      */
     public readonly gridImageId!: pulumi.Output<string>;
     /**
@@ -168,6 +170,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      */
     public readonly scanListenerPortTcpSsl!: pulumi.Output<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
     /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */
@@ -255,6 +261,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
             resourceInputs["scanListenerPortTcp"] = state ? state.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = state ? state.scanListenerPortTcpSsl : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -320,6 +327,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["privateZoneId"] = args ? args.privateZoneId : undefined;
             resourceInputs["scanListenerPortTcp"] = args ? args.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -398,7 +406,9 @@ export interface ExadbVmClusterState {
      */
     giVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Grid Setup will be done using this grid image id
+     * (Updatable) Grid Setup will be done using this grid image id.
+     *
+     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
      */
     gridImageId?: pulumi.Input<string>;
     /**
@@ -470,6 +480,10 @@ export interface ExadbVmClusterState {
      * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      */
     scanListenerPortTcpSsl?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */
@@ -565,7 +579,9 @@ export interface ExadbVmClusterArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Grid Setup will be done using this grid image id
+     * (Updatable) Grid Setup will be done using this grid image id.
+     *
+     * The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
      */
     gridImageId: pulumi.Input<string>;
     /**
@@ -605,6 +621,10 @@ export interface ExadbVmClusterArgs {
      * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      */
     scanListenerPortTcpSsl?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */

@@ -350,7 +350,7 @@ def get_domains_condition(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Condition
+    Get a condition.
 
     ## Example Usage
 
@@ -421,7 +421,7 @@ def get_domains_condition_output(attribute_sets: Optional[pulumi.Input[Optional[
     """
     This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
 
-    Get a Condition
+    Get a condition.
 
     ## Example Usage
 

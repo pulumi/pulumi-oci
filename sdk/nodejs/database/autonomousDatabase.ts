@@ -511,6 +511,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public readonly secretVersionNumber!: pulumi.Output<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The URL of the Service Console for the Autonomous Database.
      */
     public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string>;
@@ -794,6 +798,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["scheduledOperations"] = state ? state.scheduledOperations : undefined;
             resourceInputs["secretId"] = state ? state.secretId : undefined;
             resourceInputs["secretVersionNumber"] = state ? state.secretVersionNumber : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["serviceConsoleUrl"] = state ? state.serviceConsoleUrl : undefined;
             resourceInputs["shrinkAdbTrigger"] = state ? state.shrinkAdbTrigger : undefined;
             resourceInputs["source"] = state ? state.source : undefined;
@@ -905,6 +910,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
             resourceInputs["secretId"] = args ? args.secretId : undefined;
             resourceInputs["secretVersionNumber"] = args ? args.secretVersionNumber : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shrinkAdbTrigger"] = args ? args.shrinkAdbTrigger : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["sourceId"] = args ? args.sourceId : undefined;
@@ -1453,6 +1459,10 @@ export interface AutonomousDatabaseState {
      */
     secretVersionNumber?: pulumi.Input<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The URL of the Service Console for the Autonomous Database.
      */
     serviceConsoleUrl?: pulumi.Input<string>;
@@ -1938,6 +1948,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      */
     secretVersionNumber?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     shrinkAdbTrigger?: pulumi.Input<number>;
     /**
      * The source of the database:

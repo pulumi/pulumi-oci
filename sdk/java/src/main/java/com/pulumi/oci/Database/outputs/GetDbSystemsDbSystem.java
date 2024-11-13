@@ -207,6 +207,11 @@ public final class GetDbSystemsDbSystem {
      */
     private List<String> scanIpIds;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape of the DB system. The shape determines resources to allocate to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
@@ -540,6 +545,13 @@ public final class GetDbSystemsDbSystem {
         return this.scanIpIds;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of the DB system. The shape determines resources to allocate to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
@@ -679,6 +691,7 @@ public final class GetDbSystemsDbSystem {
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
+        private Map<String,String> securityAttributes;
         private String shape;
         private String source;
         private String sourceDbSystemId;
@@ -736,6 +749,7 @@ public final class GetDbSystemsDbSystem {
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.source = defaults.source;
     	      this.sourceDbSystemId = defaults.sourceDbSystemId;
@@ -1110,6 +1124,14 @@ public final class GetDbSystemsDbSystem {
             return scanIpIds(List.of(scanIpIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "shape");
@@ -1262,6 +1284,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.scanDnsName = scanDnsName;
             _resultValue.scanDnsRecordId = scanDnsRecordId;
             _resultValue.scanIpIds = scanIpIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.source = source;
             _resultValue.sourceDbSystemId = sourceDbSystemId;

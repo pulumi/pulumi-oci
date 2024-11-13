@@ -41,13 +41,13 @@ namespace Pulumi.Oci.DataFlow
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The description of CreateSQLEndpointDetails.
+        /// (Updatable) The description of CreateSQLEndpointDetails.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The SQL Endpoint name, which can be changed.
+        /// (Updatable) The SQL Endpoint name, which can be changed.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -95,13 +95,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> LakeId { get; private set; } = null!;
 
         /// <summary>
-        /// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        /// </summary>
-        [Output("lastAcceptedRequestToken")]
-        public Output<string> LastAcceptedRequestToken { get; private set; } = null!;
-
-        /// <summary>
-        /// The maximum number of executors.
+        /// (Updatable) The maximum number of executors.
         /// </summary>
         [Output("maxExecutorCount")]
         public Output<int> MaxExecutorCount { get; private set; } = null!;
@@ -113,7 +107,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> MetastoreId { get; private set; } = null!;
 
         /// <summary>
-        /// The minimum number of executors.
+        /// (Updatable) The minimum number of executors.
         /// </summary>
         [Output("minExecutorCount")]
         public Output<int> MinExecutorCount { get; private set; } = null!;
@@ -125,7 +119,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<Outputs.SqlEndpointNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         [Output("sparkAdvancedConfigurations")]
         public Output<ImmutableDictionary<string, string>> SparkAdvancedConfigurations { get; private set; } = null!;
@@ -137,7 +131,11 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> SqlEndpointVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Sql Endpoint.
+        /// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -168,10 +166,6 @@ namespace Pulumi.Oci.DataFlow
 
         /// <summary>
         /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("warehouseBucketUri")]
         public Output<string> WarehouseBucketUri { get; private set; } = null!;
@@ -241,13 +235,13 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
-        /// The description of CreateSQLEndpointDetails.
+        /// (Updatable) The description of CreateSQLEndpointDetails.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The SQL Endpoint name, which can be changed.
+        /// (Updatable) The SQL Endpoint name, which can be changed.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -289,7 +283,7 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
-        /// The maximum number of executors.
+        /// (Updatable) The maximum number of executors.
         /// </summary>
         [Input("maxExecutorCount", required: true)]
         public Input<int> MaxExecutorCount { get; set; } = null!;
@@ -301,7 +295,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string> MetastoreId { get; set; } = null!;
 
         /// <summary>
-        /// The minimum number of executors.
+        /// (Updatable) The minimum number of executors.
         /// </summary>
         [Input("minExecutorCount", required: true)]
         public Input<int> MinExecutorCount { get; set; } = null!;
@@ -316,7 +310,7 @@ namespace Pulumi.Oci.DataFlow
         private InputMap<string>? _sparkAdvancedConfigurations;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         public InputMap<string> SparkAdvancedConfigurations
         {
@@ -329,6 +323,16 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("sqlEndpointVersion", required: true)]
         public Input<string> SqlEndpointVersion { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public SqlEndpointArgs()
         {
@@ -357,13 +361,13 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
-        /// The description of CreateSQLEndpointDetails.
+        /// (Updatable) The description of CreateSQLEndpointDetails.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The SQL Endpoint name, which can be changed.
+        /// (Updatable) The SQL Endpoint name, which can be changed.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -417,13 +421,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? LakeId { get; set; }
 
         /// <summary>
-        /// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        /// </summary>
-        [Input("lastAcceptedRequestToken")]
-        public Input<string>? LastAcceptedRequestToken { get; set; }
-
-        /// <summary>
-        /// The maximum number of executors.
+        /// (Updatable) The maximum number of executors.
         /// </summary>
         [Input("maxExecutorCount")]
         public Input<int>? MaxExecutorCount { get; set; }
@@ -435,7 +433,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? MetastoreId { get; set; }
 
         /// <summary>
-        /// The minimum number of executors.
+        /// (Updatable) The minimum number of executors.
         /// </summary>
         [Input("minExecutorCount")]
         public Input<int>? MinExecutorCount { get; set; }
@@ -450,7 +448,7 @@ namespace Pulumi.Oci.DataFlow
         private InputMap<string>? _sparkAdvancedConfigurations;
 
         /// <summary>
-        /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        /// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         public InputMap<string> SparkAdvancedConfigurations
         {
@@ -465,7 +463,11 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? SqlEndpointVersion { get; set; }
 
         /// <summary>
-        /// The current state of the Sql Endpoint.
+        /// (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -502,10 +504,6 @@ namespace Pulumi.Oci.DataFlow
 
         /// <summary>
         /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("warehouseBucketUri")]
         public Input<string>? WarehouseBucketUri { get; set; }

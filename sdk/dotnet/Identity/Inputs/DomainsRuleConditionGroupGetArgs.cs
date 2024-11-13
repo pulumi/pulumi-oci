@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Condition or ConditionGroup identifier
+        /// (Updatable) Condition or ConditionGroup identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

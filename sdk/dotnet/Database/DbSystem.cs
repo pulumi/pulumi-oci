@@ -335,6 +335,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> ScanIpIds { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
         /// * For virtual machine shapes, the number of CPU cores and memory
         /// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -692,6 +698,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("recoStorageSizeInGb")]
         public Input<int>? RecoStorageSizeInGb { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
@@ -1084,6 +1102,18 @@ namespace Pulumi.Oci.Database
         {
             get => _scanIpIds ?? (_scanIpIds = new InputList<string>());
             set => _scanIpIds = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

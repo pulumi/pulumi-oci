@@ -166,6 +166,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int ScanListenerPortTcpSsl;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The model name of the Exadata hardware running the cloud VM cluster.
         /// </summary>
         public readonly string Shape;
@@ -296,6 +300,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int scanListenerPortTcpSsl,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             ImmutableArray<string> sshPublicKeys,
@@ -360,6 +366,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScanIpIds = scanIpIds;
             ScanListenerPortTcp = scanListenerPortTcp;
             ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             SshPublicKeys = sshPublicKeys;
             State = state;

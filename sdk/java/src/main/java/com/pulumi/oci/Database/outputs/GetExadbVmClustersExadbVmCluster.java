@@ -78,7 +78,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String giVersion;
     /**
-     * @return Grid Setup will be done using this grid image id
+     * @return Grid Setup will be done using this grid image id.
      * 
      */
     private String gridImageId;
@@ -168,6 +168,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      * 
      */
     private Integer scanListenerPortTcpSsl;
+    /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
     /**
      * @return The shape of the Exadata VM cluster on Exascale Infrastructure resource
      * 
@@ -305,7 +310,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.giVersion;
     }
     /**
-     * @return Grid Setup will be done using this grid image id
+     * @return Grid Setup will be done using this grid image id.
      * 
      */
     public String gridImageId() {
@@ -432,6 +437,13 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.scanListenerPortTcpSsl;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of the Exadata VM cluster on Exascale Infrastructure resource
      * 
      */
@@ -541,6 +553,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         private List<String> scanIpIds;
         private Integer scanListenerPortTcp;
         private Integer scanListenerPortTcpSsl;
+        private Map<String,String> securityAttributes;
         private String shape;
         private List<String> sshPublicKeys;
         private String state;
@@ -584,6 +597,7 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.scanIpIds = defaults.scanIpIds;
     	      this.scanListenerPortTcp = defaults.scanListenerPortTcp;
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
@@ -858,6 +872,14 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "shape");
@@ -975,6 +997,7 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.scanIpIds = scanIpIds;
             _resultValue.scanListenerPortTcp = scanListenerPortTcp;
             _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;

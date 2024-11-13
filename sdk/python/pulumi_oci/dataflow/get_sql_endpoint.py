@@ -27,7 +27,7 @@ class GetSqlEndpointResult:
     """
     A collection of values returned by getSqlEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, executor_shape=None, executor_shape_configs=None, freeform_tags=None, id=None, jdbc_endpoint_url=None, lake_id=None, last_accepted_request_token=None, max_executor_count=None, metastore_id=None, min_executor_count=None, network_configurations=None, spark_advanced_configurations=None, sql_endpoint_id=None, sql_endpoint_version=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, warehouse_bucket_uri=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, executor_shape=None, executor_shape_configs=None, freeform_tags=None, id=None, jdbc_endpoint_url=None, lake_id=None, max_executor_count=None, metastore_id=None, min_executor_count=None, network_configurations=None, spark_advanced_configurations=None, sql_endpoint_id=None, sql_endpoint_version=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None, warehouse_bucket_uri=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,9 +64,6 @@ class GetSqlEndpointResult:
         if lake_id and not isinstance(lake_id, str):
             raise TypeError("Expected argument 'lake_id' to be a str")
         pulumi.set(__self__, "lake_id", lake_id)
-        if last_accepted_request_token and not isinstance(last_accepted_request_token, str):
-            raise TypeError("Expected argument 'last_accepted_request_token' to be a str")
-        pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
         if max_executor_count and not isinstance(max_executor_count, int):
             raise TypeError("Expected argument 'max_executor_count' to be a int")
         pulumi.set(__self__, "max_executor_count", max_executor_count)
@@ -204,14 +201,6 @@ class GetSqlEndpointResult:
         return pulumi.get(self, "lake_id")
 
     @property
-    @pulumi.getter(name="lastAcceptedRequestToken")
-    def last_accepted_request_token(self) -> str:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
-        return pulumi.get(self, "last_accepted_request_token")
-
-    @property
     @pulumi.getter(name="maxExecutorCount")
     def max_executor_count(self) -> int:
         """
@@ -331,7 +320,6 @@ class AwaitableGetSqlEndpointResult(GetSqlEndpointResult):
             id=self.id,
             jdbc_endpoint_url=self.jdbc_endpoint_url,
             lake_id=self.lake_id,
-            last_accepted_request_token=self.last_accepted_request_token,
             max_executor_count=self.max_executor_count,
             metastore_id=self.metastore_id,
             min_executor_count=self.min_executor_count,
@@ -384,7 +372,6 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         jdbc_endpoint_url=pulumi.get(__ret__, 'jdbc_endpoint_url'),
         lake_id=pulumi.get(__ret__, 'lake_id'),
-        last_accepted_request_token=pulumi.get(__ret__, 'last_accepted_request_token'),
         max_executor_count=pulumi.get(__ret__, 'max_executor_count'),
         metastore_id=pulumi.get(__ret__, 'metastore_id'),
         min_executor_count=pulumi.get(__ret__, 'min_executor_count'),
@@ -434,7 +421,6 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
         id=pulumi.get(__response__, 'id'),
         jdbc_endpoint_url=pulumi.get(__response__, 'jdbc_endpoint_url'),
         lake_id=pulumi.get(__response__, 'lake_id'),
-        last_accepted_request_token=pulumi.get(__response__, 'last_accepted_request_token'),
         max_executor_count=pulumi.get(__response__, 'max_executor_count'),
         metastore_id=pulumi.get(__response__, 'metastore_id'),
         min_executor_count=pulumi.get(__response__, 'min_executor_count'),

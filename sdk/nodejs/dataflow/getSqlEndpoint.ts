@@ -92,10 +92,6 @@ export interface GetSqlEndpointResult {
      */
     readonly lakeId: string;
     /**
-     * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-     */
-    readonly lastAcceptedRequestToken: string;
-    /**
      * The maximum number of executors.
      */
     readonly maxExecutorCount: number;

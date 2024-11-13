@@ -72,6 +72,7 @@ import (
 //				NsgIds:                          pulumi.Any(cloudAutonomousVmClusterNsgIds),
 //				ScanListenerPortNonTls:          pulumi.Any(cloudAutonomousVmClusterScanListenerPortNonTls),
 //				ScanListenerPortTls:             pulumi.Any(cloudAutonomousVmClusterScanListenerPortTls),
+//				SecurityAttributes:              pulumi.Any(cloudAutonomousVmClusterSecurityAttributes),
 //				TotalContainerDatabases:         pulumi.Any(cloudAutonomousVmClusterTotalContainerDatabases),
 //			})
 //			if err != nil {
@@ -192,6 +193,8 @@ type CloudAutonomousVmCluster struct {
 	ScanListenerPortNonTls pulumi.IntOutput `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -200,6 +203,10 @@ type CloudAutonomousVmCluster struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires pulumi.StringOutput `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires pulumi.StringOutput `pulumi:"timeOrdsCertificateExpires"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The total data disk group size for Autonomous Databases, in TBs.
@@ -354,6 +361,8 @@ type cloudAutonomousVmClusterState struct {
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape *string `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -362,6 +371,10 @@ type cloudAutonomousVmClusterState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires *string `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires *string `pulumi:"timeOrdsCertificateExpires"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total data disk group size for Autonomous Databases, in TBs.
@@ -475,6 +488,8 @@ type CloudAutonomousVmClusterState struct {
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringPtrInput
 	// The current state of the cloud Autonomous VM cluster.
@@ -483,6 +498,10 @@ type CloudAutonomousVmClusterState struct {
 	SubnetId pulumi.StringPtrInput
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires pulumi.StringPtrInput
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires pulumi.StringPtrInput
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// The total data disk group size for Autonomous Databases, in TBs.
@@ -540,6 +559,8 @@ type cloudAutonomousVmClusterArgs struct {
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId string `pulumi:"subnetId"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
@@ -592,6 +613,8 @@ type CloudAutonomousVmClusterArgs struct {
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringInput
 	// The last date and time that the cloud Autonomous VM cluster was updated.
@@ -938,6 +961,11 @@ func (o CloudAutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortTls }).(pulumi.IntOutput)
 }
 
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o CloudAutonomousVmClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 func (o CloudAutonomousVmClusterOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
@@ -956,6 +984,16 @@ func (o CloudAutonomousVmClusterOutput) SubnetId() pulumi.StringOutput {
 // The date and time that the cloud Autonomous VM cluster was created.
 func (o CloudAutonomousVmClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of Database SSL certificate expiration.
+func (o CloudAutonomousVmClusterOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringOutput)
+}
+
+// The date and time of ORDS certificate expiration.
+func (o CloudAutonomousVmClusterOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.TimeOrdsCertificateExpires }).(pulumi.StringOutput)
 }
 
 // The last date and time that the cloud Autonomous VM cluster was updated.

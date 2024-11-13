@@ -206,7 +206,7 @@ def get_domains_policies(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Policies
+    Search Policies.
 
     ## Example Usage
 
@@ -281,7 +281,7 @@ def get_domains_policies_output(attribute_sets: Optional[pulumi.Input[Optional[S
     """
     This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Policies
+    Search Policies.
 
     ## Example Usage
 

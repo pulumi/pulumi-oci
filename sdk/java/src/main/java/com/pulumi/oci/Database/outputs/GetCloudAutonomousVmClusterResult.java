@@ -258,6 +258,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer scanListenerPortTls;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
@@ -277,6 +282,16 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    private String timeDatabaseSslCertificateExpires;
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    private String timeOrdsCertificateExpires;
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
      * 
@@ -638,6 +653,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.scanListenerPortTls;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
@@ -664,6 +686,20 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public String timeDatabaseSslCertificateExpires() {
+        return this.timeDatabaseSslCertificateExpires;
+    }
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public String timeOrdsCertificateExpires() {
+        return this.timeOrdsCertificateExpires;
     }
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
@@ -752,10 +788,13 @@ public final class GetCloudAutonomousVmClusterResult {
         private Double reservedCpus;
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
+        private Map<String,String> securityAttributes;
         private String shape;
         private String state;
         private String subnetId;
         private String timeCreated;
+        private String timeDatabaseSslCertificateExpires;
+        private String timeOrdsCertificateExpires;
         private String timeUpdated;
         private Double totalAutonomousDataStorageInTbs;
         private Integer totalContainerDatabases;
@@ -812,10 +851,13 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.reservedCpus = defaults.reservedCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeDatabaseSslCertificateExpires = defaults.timeDatabaseSslCertificateExpires;
+    	      this.timeOrdsCertificateExpires = defaults.timeOrdsCertificateExpires;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalAutonomousDataStorageInTbs = defaults.totalAutonomousDataStorageInTbs;
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
@@ -1227,6 +1269,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "shape");
@@ -1256,6 +1306,22 @@ public final class GetCloudAutonomousVmClusterResult {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeDatabaseSslCertificateExpires(String timeDatabaseSslCertificateExpires) {
+            if (timeDatabaseSslCertificateExpires == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeDatabaseSslCertificateExpires");
+            }
+            this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeOrdsCertificateExpires(String timeOrdsCertificateExpires) {
+            if (timeOrdsCertificateExpires == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeOrdsCertificateExpires");
+            }
+            this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
             return this;
         }
         @CustomType.Setter
@@ -1341,10 +1407,13 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.reservedCpus = reservedCpus;
             _resultValue.scanListenerPortNonTls = scanListenerPortNonTls;
             _resultValue.scanListenerPortTls = scanListenerPortTls;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            _resultValue.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             _resultValue.totalContainerDatabases = totalContainerDatabases;

@@ -53,6 +53,7 @@ namespace Pulumi.Oci.Database
     ///         DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
     ///         DbSystemDefinedTags = dataGuardAssociationDbSystemDefinedTags,
     ///         DbSystemFreeformTags = dataGuardAssociationDbSystemFreeformTags,
+    ///         DbSystemSecurityAttributes = dataGuardAssociationDbSystemSecurityAttributes,
     ///         DisplayName = dataGuardAssociationDisplayName,
     ///         Domain = dataGuardAssociationDomain,
     ///         FaultDomains = dataGuardAssociationFaultDomains,
@@ -177,6 +178,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dbSystemFreeformTags")]
         public Output<ImmutableDictionary<string, string>?> DbSystemFreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("dbSystemSecurityAttributes")]
+        public Output<ImmutableDictionary<string, string>?> DbSystemSecurityAttributes { get; private set; } = null!;
 
         [Output("deleteStandbyDbHomeOnDelete")]
         public Output<string> DeleteStandbyDbHomeOnDelete { get; private set; } = null!;
@@ -543,6 +550,18 @@ namespace Pulumi.Oci.Database
             set => _dbSystemFreeformTags = value;
         }
 
+        [Input("dbSystemSecurityAttributes")]
+        private InputMap<string>? _dbSystemSecurityAttributes;
+
+        /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> DbSystemSecurityAttributes
+        {
+            get => _dbSystemSecurityAttributes ?? (_dbSystemSecurityAttributes = new InputMap<string>());
+            set => _dbSystemSecurityAttributes = value;
+        }
+
         [Input("deleteStandbyDbHomeOnDelete", required: true)]
         public Input<string> DeleteStandbyDbHomeOnDelete { get; set; } = null!;
 
@@ -846,6 +865,18 @@ namespace Pulumi.Oci.Database
         {
             get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<string>());
             set => _dbSystemFreeformTags = value;
+        }
+
+        [Input("dbSystemSecurityAttributes")]
+        private InputMap<string>? _dbSystemSecurityAttributes;
+
+        /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> DbSystemSecurityAttributes
+        {
+            get => _dbSystemSecurityAttributes ?? (_dbSystemSecurityAttributes = new InputMap<string>());
+            set => _dbSystemSecurityAttributes = value;
         }
 
         [Input("deleteStandbyDbHomeOnDelete")]

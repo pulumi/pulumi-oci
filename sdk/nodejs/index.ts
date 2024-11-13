@@ -69,6 +69,7 @@ import * as functions from "./functions";
 import * as fusionapps from "./fusionapps";
 import * as generativeai from "./generativeai";
 import * as genericartifactscontent from "./genericartifactscontent";
+import * as globallydistributeddatabase from "./globallydistributeddatabase";
 import * as goldengate from "./goldengate";
 import * as healthchecks from "./healthchecks";
 import * as identity from "./identity";
@@ -193,6 +194,7 @@ export {
     fusionapps,
     generativeai,
     genericartifactscontent,
+    globallydistributeddatabase,
     goldengate,
     healthchecks,
     identity,

@@ -27,7 +27,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) PolicyType identifier
+        /// (Updatable) PolicyType identifier.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

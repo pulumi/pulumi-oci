@@ -68,6 +68,7 @@ import * as utilities from "../utilities";
  *     privateZoneId: testZone.id,
  *     scanListenerPortTcp: cloudVmClusterScanListenerPortTcp,
  *     scanListenerPortTcpSsl: cloudVmClusterScanListenerPortTcpSsl,
+ *     securityAttributes: cloudVmClusterSecurityAttributes,
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: cloudVmClusterSystemVersion,
  *     timeZone: cloudVmClusterTimeZone,
@@ -276,6 +277,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public readonly scanListenerPortTcpSsl!: pulumi.Output<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     public /*out*/ readonly shape!: pulumi.Output<string>;
@@ -380,6 +385,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
             resourceInputs["scanListenerPortTcp"] = state ? state.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = state ? state.scanListenerPortTcpSsl : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -450,6 +456,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["privateZoneId"] = args ? args.privateZoneId : undefined;
             resourceInputs["scanListenerPortTcp"] = args ? args.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
@@ -648,6 +655,10 @@ export interface CloudVmClusterState {
      */
     scanListenerPortTcpSsl?: pulumi.Input<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
     shape?: pulumi.Input<string>;
@@ -830,6 +841,10 @@ export interface CloudVmClusterArgs {
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      */
     scanListenerPortTcpSsl?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */

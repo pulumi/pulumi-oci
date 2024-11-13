@@ -895,6 +895,8 @@ __all__ = [
     'GetDbCredentialsFilterArgsDict',
     'GetDomainsFilterArgs',
     'GetDomainsFilterArgsDict',
+    'GetDomainsOciConsoleSignOnPolicyConsentsFilterArgs',
+    'GetDomainsOciConsoleSignOnPolicyConsentsFilterArgsDict',
     'GetDynamicGroupsFilterArgs',
     'GetDynamicGroupsFilterArgsDict',
     'GetFaultDomainsFilterArgs',
@@ -69264,7 +69266,7 @@ if not MYPY:
     class DomainsPolicyPolicyTypeArgsDict(TypedDict):
         value: pulumi.Input[str]
         """
-        (Updatable) PolicyType identifier
+        (Updatable) PolicyType identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -69298,7 +69300,7 @@ class DomainsPolicyPolicyTypeArgs:
                  value: pulumi.Input[str],
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: (Updatable) PolicyType identifier
+        :param pulumi.Input[str] value: (Updatable) PolicyType identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -69328,7 +69330,7 @@ class DomainsPolicyPolicyTypeArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        (Updatable) PolicyType identifier
+        (Updatable) PolicyType identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -69737,7 +69739,7 @@ if not MYPY:
         """
         value: NotRequired[pulumi.Input[str]]
         """
-        (Updatable) Condition or ConditionGroup identifier
+        (Updatable) Condition or ConditionGroup identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -69793,7 +69795,7 @@ class DomainsRuleConditionGroupArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] value: (Updatable) Condition or ConditionGroup identifier
+        :param pulumi.Input[str] value: (Updatable) Condition or ConditionGroup identifier.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -69883,7 +69885,7 @@ class DomainsRuleConditionGroupArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Condition or ConditionGroup identifier
+        (Updatable) Condition or ConditionGroup identifier.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -98656,6 +98658,53 @@ class GetDomainsFilterArgs:
         """
         A filter to only return resources that match the given name exactly.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDomainsOciConsoleSignOnPolicyConsentsFilterArgsDict(TypedDict):
+        name: str
+        values: Sequence[str]
+        regex: NotRequired[bool]
+elif False:
+    GetDomainsOciConsoleSignOnPolicyConsentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDomainsOciConsoleSignOnPolicyConsentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

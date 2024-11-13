@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Policy resource in Oracle Cloud Infrastructure Identity Domains service.
  * 
- * Create a Policy
+ * Create a Policy.
  * 
  * ## Example Usage
  * 
@@ -735,6 +735,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite
@@ -752,6 +753,7 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [key, value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      * * idcsSearchable: true
      * * multiValued: true
      * * mutability: readWrite

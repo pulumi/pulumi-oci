@@ -13,6 +13,1996 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken struct {
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs struct {
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
+	return o
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput)
+}
+
+type GetDomainsUsersUserX509certificate struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary bool `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserX509certificateInput is an input type that accepts GetDomainsUsersUserX509certificateArgs and GetDomainsUsersUserX509certificateOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserX509certificateInput` via:
+//
+//	GetDomainsUsersUserX509certificateArgs{...}
+type GetDomainsUsersUserX509certificateInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserX509certificateOutput() GetDomainsUsersUserX509certificateOutput
+	ToGetDomainsUsersUserX509certificateOutputWithContext(context.Context) GetDomainsUsersUserX509certificateOutput
+}
+
+type GetDomainsUsersUserX509certificateArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserX509certificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserX509certificate)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserX509certificateArgs) ToGetDomainsUsersUserX509certificateOutput() GetDomainsUsersUserX509certificateOutput {
+	return i.ToGetDomainsUsersUserX509certificateOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserX509certificateArgs) ToGetDomainsUsersUserX509certificateOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserX509certificateOutput)
+}
+
+// GetDomainsUsersUserX509certificateArrayInput is an input type that accepts GetDomainsUsersUserX509certificateArray and GetDomainsUsersUserX509certificateArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserX509certificateArrayInput` via:
+//
+//	GetDomainsUsersUserX509certificateArray{ GetDomainsUsersUserX509certificateArgs{...} }
+type GetDomainsUsersUserX509certificateArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserX509certificateArrayOutput() GetDomainsUsersUserX509certificateArrayOutput
+	ToGetDomainsUsersUserX509certificateArrayOutputWithContext(context.Context) GetDomainsUsersUserX509certificateArrayOutput
+}
+
+type GetDomainsUsersUserX509certificateArray []GetDomainsUsersUserX509certificateInput
+
+func (GetDomainsUsersUserX509certificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserX509certificate)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserX509certificateArray) ToGetDomainsUsersUserX509certificateArrayOutput() GetDomainsUsersUserX509certificateArrayOutput {
+	return i.ToGetDomainsUsersUserX509certificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserX509certificateArray) ToGetDomainsUsersUserX509certificateArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserX509certificateArrayOutput)
+}
+
+type GetDomainsUsersUserX509certificateOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserX509certificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserX509certificate)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserX509certificateOutput) ToGetDomainsUsersUserX509certificateOutput() GetDomainsUsersUserX509certificateOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserX509certificateOutput) ToGetDomainsUsersUserX509certificateOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserX509certificateOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserX509certificate) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+func (o GetDomainsUsersUserX509certificateOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserX509certificate) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserX509certificateOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserX509certificate) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserX509certificateOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserX509certificate) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserX509certificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserX509certificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserX509certificate)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserX509certificateArrayOutput) ToGetDomainsUsersUserX509certificateArrayOutput() GetDomainsUsersUserX509certificateArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserX509certificateArrayOutput) ToGetDomainsUsersUserX509certificateArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserX509certificateArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserX509certificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserX509certificate {
+		return vs[0].([]GetDomainsUsersUserX509certificate)[vs[1].(int)]
+	}).(GetDomainsUsersUserX509certificateOutput)
+}
+
+type GetDynamicGroupsDynamicGroup struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description you assign to the group. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the group.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// A rule string that defines which instance certificates will be matched. For syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+	MatchingRule string `pulumi:"matchingRule"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDynamicGroupsDynamicGroupInput is an input type that accepts GetDynamicGroupsDynamicGroupArgs and GetDynamicGroupsDynamicGroupOutput values.
+// You can construct a concrete instance of `GetDynamicGroupsDynamicGroupInput` via:
+//
+//	GetDynamicGroupsDynamicGroupArgs{...}
+type GetDynamicGroupsDynamicGroupInput interface {
+	pulumi.Input
+
+	ToGetDynamicGroupsDynamicGroupOutput() GetDynamicGroupsDynamicGroupOutput
+	ToGetDynamicGroupsDynamicGroupOutputWithContext(context.Context) GetDynamicGroupsDynamicGroupOutput
+}
+
+type GetDynamicGroupsDynamicGroupArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description you assign to the group. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// A rule string that defines which instance certificates will be matched. For syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+	MatchingRule pulumi.StringInput `pulumi:"matchingRule"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDynamicGroupsDynamicGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicGroupsDynamicGroup)(nil)).Elem()
+}
+
+func (i GetDynamicGroupsDynamicGroupArgs) ToGetDynamicGroupsDynamicGroupOutput() GetDynamicGroupsDynamicGroupOutput {
+	return i.ToGetDynamicGroupsDynamicGroupOutputWithContext(context.Background())
+}
+
+func (i GetDynamicGroupsDynamicGroupArgs) ToGetDynamicGroupsDynamicGroupOutputWithContext(ctx context.Context) GetDynamicGroupsDynamicGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsDynamicGroupOutput)
+}
+
+// GetDynamicGroupsDynamicGroupArrayInput is an input type that accepts GetDynamicGroupsDynamicGroupArray and GetDynamicGroupsDynamicGroupArrayOutput values.
+// You can construct a concrete instance of `GetDynamicGroupsDynamicGroupArrayInput` via:
+//
+//	GetDynamicGroupsDynamicGroupArray{ GetDynamicGroupsDynamicGroupArgs{...} }
+type GetDynamicGroupsDynamicGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicGroupsDynamicGroupArrayOutput() GetDynamicGroupsDynamicGroupArrayOutput
+	ToGetDynamicGroupsDynamicGroupArrayOutputWithContext(context.Context) GetDynamicGroupsDynamicGroupArrayOutput
+}
+
+type GetDynamicGroupsDynamicGroupArray []GetDynamicGroupsDynamicGroupInput
+
+func (GetDynamicGroupsDynamicGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicGroupsDynamicGroup)(nil)).Elem()
+}
+
+func (i GetDynamicGroupsDynamicGroupArray) ToGetDynamicGroupsDynamicGroupArrayOutput() GetDynamicGroupsDynamicGroupArrayOutput {
+	return i.ToGetDynamicGroupsDynamicGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicGroupsDynamicGroupArray) ToGetDynamicGroupsDynamicGroupArrayOutputWithContext(ctx context.Context) GetDynamicGroupsDynamicGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsDynamicGroupArrayOutput)
+}
+
+type GetDynamicGroupsDynamicGroupOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicGroupsDynamicGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicGroupsDynamicGroup)(nil)).Elem()
+}
+
+func (o GetDynamicGroupsDynamicGroupOutput) ToGetDynamicGroupsDynamicGroupOutput() GetDynamicGroupsDynamicGroupOutput {
+	return o
+}
+
+func (o GetDynamicGroupsDynamicGroupOutput) ToGetDynamicGroupsDynamicGroupOutputWithContext(ctx context.Context) GetDynamicGroupsDynamicGroupOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetDynamicGroupsDynamicGroupOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetDynamicGroupsDynamicGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description you assign to the group. Does not have to be unique, and it's changeable.
+func (o GetDynamicGroupsDynamicGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetDynamicGroupsDynamicGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the group.
+func (o GetDynamicGroupsDynamicGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetDynamicGroupsDynamicGroupOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// A rule string that defines which instance certificates will be matched. For syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+func (o GetDynamicGroupsDynamicGroupOutput) MatchingRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.MatchingRule }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetDynamicGroupsDynamicGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetDynamicGroupsDynamicGroupOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDynamicGroupsDynamicGroupOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsDynamicGroup) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDynamicGroupsDynamicGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicGroupsDynamicGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicGroupsDynamicGroup)(nil)).Elem()
+}
+
+func (o GetDynamicGroupsDynamicGroupArrayOutput) ToGetDynamicGroupsDynamicGroupArrayOutput() GetDynamicGroupsDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetDynamicGroupsDynamicGroupArrayOutput) ToGetDynamicGroupsDynamicGroupArrayOutputWithContext(ctx context.Context) GetDynamicGroupsDynamicGroupArrayOutput {
+	return o
+}
+
+func (o GetDynamicGroupsDynamicGroupArrayOutput) Index(i pulumi.IntInput) GetDynamicGroupsDynamicGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicGroupsDynamicGroup {
+		return vs[0].([]GetDynamicGroupsDynamicGroup)[vs[1].(int)]
+	}).(GetDynamicGroupsDynamicGroupOutput)
+}
+
+type GetDynamicGroupsFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDynamicGroupsFilterInput is an input type that accepts GetDynamicGroupsFilterArgs and GetDynamicGroupsFilterOutput values.
+// You can construct a concrete instance of `GetDynamicGroupsFilterInput` via:
+//
+//	GetDynamicGroupsFilterArgs{...}
+type GetDynamicGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetDynamicGroupsFilterOutput() GetDynamicGroupsFilterOutput
+	ToGetDynamicGroupsFilterOutputWithContext(context.Context) GetDynamicGroupsFilterOutput
+}
+
+type GetDynamicGroupsFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDynamicGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicGroupsFilter)(nil)).Elem()
+}
+
+func (i GetDynamicGroupsFilterArgs) ToGetDynamicGroupsFilterOutput() GetDynamicGroupsFilterOutput {
+	return i.ToGetDynamicGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDynamicGroupsFilterArgs) ToGetDynamicGroupsFilterOutputWithContext(ctx context.Context) GetDynamicGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsFilterOutput)
+}
+
+// GetDynamicGroupsFilterArrayInput is an input type that accepts GetDynamicGroupsFilterArray and GetDynamicGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDynamicGroupsFilterArrayInput` via:
+//
+//	GetDynamicGroupsFilterArray{ GetDynamicGroupsFilterArgs{...} }
+type GetDynamicGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicGroupsFilterArrayOutput() GetDynamicGroupsFilterArrayOutput
+	ToGetDynamicGroupsFilterArrayOutputWithContext(context.Context) GetDynamicGroupsFilterArrayOutput
+}
+
+type GetDynamicGroupsFilterArray []GetDynamicGroupsFilterInput
+
+func (GetDynamicGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicGroupsFilter)(nil)).Elem()
+}
+
+func (i GetDynamicGroupsFilterArray) ToGetDynamicGroupsFilterArrayOutput() GetDynamicGroupsFilterArrayOutput {
+	return i.ToGetDynamicGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicGroupsFilterArray) ToGetDynamicGroupsFilterArrayOutputWithContext(ctx context.Context) GetDynamicGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsFilterArrayOutput)
+}
+
+type GetDynamicGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicGroupsFilter)(nil)).Elem()
+}
+
+func (o GetDynamicGroupsFilterOutput) ToGetDynamicGroupsFilterOutput() GetDynamicGroupsFilterOutput {
+	return o
+}
+
+func (o GetDynamicGroupsFilterOutput) ToGetDynamicGroupsFilterOutputWithContext(ctx context.Context) GetDynamicGroupsFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetDynamicGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDynamicGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDynamicGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDynamicGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDynamicGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicGroupsFilter)(nil)).Elem()
+}
+
+func (o GetDynamicGroupsFilterArrayOutput) ToGetDynamicGroupsFilterArrayOutput() GetDynamicGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicGroupsFilterArrayOutput) ToGetDynamicGroupsFilterArrayOutputWithContext(ctx context.Context) GetDynamicGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetDynamicGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicGroupsFilter {
+		return vs[0].([]GetDynamicGroupsFilter)[vs[1].(int)]
+	}).(GetDynamicGroupsFilterOutput)
+}
+
+type GetFaultDomainsFaultDomain struct {
+	// The name of the availibilityDomain.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the Fault Domain.
+	Id string `pulumi:"id"`
+	// The name of the Fault Domain.
+	Name string `pulumi:"name"`
+}
+
+// GetFaultDomainsFaultDomainInput is an input type that accepts GetFaultDomainsFaultDomainArgs and GetFaultDomainsFaultDomainOutput values.
+// You can construct a concrete instance of `GetFaultDomainsFaultDomainInput` via:
+//
+//	GetFaultDomainsFaultDomainArgs{...}
+type GetFaultDomainsFaultDomainInput interface {
+	pulumi.Input
+
+	ToGetFaultDomainsFaultDomainOutput() GetFaultDomainsFaultDomainOutput
+	ToGetFaultDomainsFaultDomainOutputWithContext(context.Context) GetFaultDomainsFaultDomainOutput
+}
+
+type GetFaultDomainsFaultDomainArgs struct {
+	// The name of the availibilityDomain.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The OCID of the Fault Domain.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the Fault Domain.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetFaultDomainsFaultDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFaultDomainsFaultDomain)(nil)).Elem()
+}
+
+func (i GetFaultDomainsFaultDomainArgs) ToGetFaultDomainsFaultDomainOutput() GetFaultDomainsFaultDomainOutput {
+	return i.ToGetFaultDomainsFaultDomainOutputWithContext(context.Background())
+}
+
+func (i GetFaultDomainsFaultDomainArgs) ToGetFaultDomainsFaultDomainOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFaultDomainOutput)
+}
+
+// GetFaultDomainsFaultDomainArrayInput is an input type that accepts GetFaultDomainsFaultDomainArray and GetFaultDomainsFaultDomainArrayOutput values.
+// You can construct a concrete instance of `GetFaultDomainsFaultDomainArrayInput` via:
+//
+//	GetFaultDomainsFaultDomainArray{ GetFaultDomainsFaultDomainArgs{...} }
+type GetFaultDomainsFaultDomainArrayInput interface {
+	pulumi.Input
+
+	ToGetFaultDomainsFaultDomainArrayOutput() GetFaultDomainsFaultDomainArrayOutput
+	ToGetFaultDomainsFaultDomainArrayOutputWithContext(context.Context) GetFaultDomainsFaultDomainArrayOutput
+}
+
+type GetFaultDomainsFaultDomainArray []GetFaultDomainsFaultDomainInput
+
+func (GetFaultDomainsFaultDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFaultDomainsFaultDomain)(nil)).Elem()
+}
+
+func (i GetFaultDomainsFaultDomainArray) ToGetFaultDomainsFaultDomainArrayOutput() GetFaultDomainsFaultDomainArrayOutput {
+	return i.ToGetFaultDomainsFaultDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetFaultDomainsFaultDomainArray) ToGetFaultDomainsFaultDomainArrayOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFaultDomainArrayOutput)
+}
+
+type GetFaultDomainsFaultDomainOutput struct{ *pulumi.OutputState }
+
+func (GetFaultDomainsFaultDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFaultDomainsFaultDomain)(nil)).Elem()
+}
+
+func (o GetFaultDomainsFaultDomainOutput) ToGetFaultDomainsFaultDomainOutput() GetFaultDomainsFaultDomainOutput {
+	return o
+}
+
+func (o GetFaultDomainsFaultDomainOutput) ToGetFaultDomainsFaultDomainOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainOutput {
+	return o
+}
+
+// The name of the availibilityDomain.
+func (o GetFaultDomainsFaultDomainOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFaultDomainsFaultDomain) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetFaultDomainsFaultDomainOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFaultDomainsFaultDomain) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the Fault Domain.
+func (o GetFaultDomainsFaultDomainOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFaultDomainsFaultDomain) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the Fault Domain.
+func (o GetFaultDomainsFaultDomainOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFaultDomainsFaultDomain) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetFaultDomainsFaultDomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFaultDomainsFaultDomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFaultDomainsFaultDomain)(nil)).Elem()
+}
+
+func (o GetFaultDomainsFaultDomainArrayOutput) ToGetFaultDomainsFaultDomainArrayOutput() GetFaultDomainsFaultDomainArrayOutput {
+	return o
+}
+
+func (o GetFaultDomainsFaultDomainArrayOutput) ToGetFaultDomainsFaultDomainArrayOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainArrayOutput {
+	return o
+}
+
+func (o GetFaultDomainsFaultDomainArrayOutput) Index(i pulumi.IntInput) GetFaultDomainsFaultDomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFaultDomainsFaultDomain {
+		return vs[0].([]GetFaultDomainsFaultDomain)[vs[1].(int)]
+	}).(GetFaultDomainsFaultDomainOutput)
+}
+
+type GetFaultDomainsFilter struct {
+	// The name of the Fault Domain.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFaultDomainsFilterInput is an input type that accepts GetFaultDomainsFilterArgs and GetFaultDomainsFilterOutput values.
+// You can construct a concrete instance of `GetFaultDomainsFilterInput` via:
+//
+//	GetFaultDomainsFilterArgs{...}
+type GetFaultDomainsFilterInput interface {
+	pulumi.Input
+
+	ToGetFaultDomainsFilterOutput() GetFaultDomainsFilterOutput
+	ToGetFaultDomainsFilterOutputWithContext(context.Context) GetFaultDomainsFilterOutput
+}
+
+type GetFaultDomainsFilterArgs struct {
+	// The name of the Fault Domain.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFaultDomainsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFaultDomainsFilter)(nil)).Elem()
+}
+
+func (i GetFaultDomainsFilterArgs) ToGetFaultDomainsFilterOutput() GetFaultDomainsFilterOutput {
+	return i.ToGetFaultDomainsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFaultDomainsFilterArgs) ToGetFaultDomainsFilterOutputWithContext(ctx context.Context) GetFaultDomainsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFilterOutput)
+}
+
+// GetFaultDomainsFilterArrayInput is an input type that accepts GetFaultDomainsFilterArray and GetFaultDomainsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFaultDomainsFilterArrayInput` via:
+//
+//	GetFaultDomainsFilterArray{ GetFaultDomainsFilterArgs{...} }
+type GetFaultDomainsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFaultDomainsFilterArrayOutput() GetFaultDomainsFilterArrayOutput
+	ToGetFaultDomainsFilterArrayOutputWithContext(context.Context) GetFaultDomainsFilterArrayOutput
+}
+
+type GetFaultDomainsFilterArray []GetFaultDomainsFilterInput
+
+func (GetFaultDomainsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFaultDomainsFilter)(nil)).Elem()
+}
+
+func (i GetFaultDomainsFilterArray) ToGetFaultDomainsFilterArrayOutput() GetFaultDomainsFilterArrayOutput {
+	return i.ToGetFaultDomainsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFaultDomainsFilterArray) ToGetFaultDomainsFilterArrayOutputWithContext(ctx context.Context) GetFaultDomainsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFilterArrayOutput)
+}
+
+type GetFaultDomainsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFaultDomainsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFaultDomainsFilter)(nil)).Elem()
+}
+
+func (o GetFaultDomainsFilterOutput) ToGetFaultDomainsFilterOutput() GetFaultDomainsFilterOutput {
+	return o
+}
+
+func (o GetFaultDomainsFilterOutput) ToGetFaultDomainsFilterOutputWithContext(ctx context.Context) GetFaultDomainsFilterOutput {
+	return o
+}
+
+// The name of the Fault Domain.
+func (o GetFaultDomainsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFaultDomainsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFaultDomainsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFaultDomainsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFaultDomainsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFaultDomainsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFaultDomainsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFaultDomainsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFaultDomainsFilter)(nil)).Elem()
+}
+
+func (o GetFaultDomainsFilterArrayOutput) ToGetFaultDomainsFilterArrayOutput() GetFaultDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetFaultDomainsFilterArrayOutput) ToGetFaultDomainsFilterArrayOutputWithContext(ctx context.Context) GetFaultDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetFaultDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetFaultDomainsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFaultDomainsFilter {
+		return vs[0].([]GetFaultDomainsFilter)[vs[1].(int)]
+	}).(GetFaultDomainsFilterOutput)
+}
+
+type GetGroupsFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetGroupsFilterInput is an input type that accepts GetGroupsFilterArgs and GetGroupsFilterOutput values.
+// You can construct a concrete instance of `GetGroupsFilterInput` via:
+//
+//	GetGroupsFilterArgs{...}
+type GetGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetGroupsFilterOutput() GetGroupsFilterOutput
+	ToGetGroupsFilterOutputWithContext(context.Context) GetGroupsFilterOutput
+}
+
+type GetGroupsFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsFilter)(nil)).Elem()
+}
+
+func (i GetGroupsFilterArgs) ToGetGroupsFilterOutput() GetGroupsFilterOutput {
+	return i.ToGetGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetGroupsFilterArgs) ToGetGroupsFilterOutputWithContext(ctx context.Context) GetGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsFilterOutput)
+}
+
+// GetGroupsFilterArrayInput is an input type that accepts GetGroupsFilterArray and GetGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetGroupsFilterArrayInput` via:
+//
+//	GetGroupsFilterArray{ GetGroupsFilterArgs{...} }
+type GetGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupsFilterArrayOutput() GetGroupsFilterArrayOutput
+	ToGetGroupsFilterArrayOutputWithContext(context.Context) GetGroupsFilterArrayOutput
+}
+
+type GetGroupsFilterArray []GetGroupsFilterInput
+
+func (GetGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsFilter)(nil)).Elem()
+}
+
+func (i GetGroupsFilterArray) ToGetGroupsFilterArrayOutput() GetGroupsFilterArrayOutput {
+	return i.ToGetGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupsFilterArray) ToGetGroupsFilterArrayOutputWithContext(ctx context.Context) GetGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsFilterArrayOutput)
+}
+
+type GetGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsFilter)(nil)).Elem()
+}
+
+func (o GetGroupsFilterOutput) ToGetGroupsFilterOutput() GetGroupsFilterOutput {
+	return o
+}
+
+func (o GetGroupsFilterOutput) ToGetGroupsFilterOutputWithContext(ctx context.Context) GetGroupsFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsFilter)(nil)).Elem()
+}
+
+func (o GetGroupsFilterArrayOutput) ToGetGroupsFilterArrayOutput() GetGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetGroupsFilterArrayOutput) ToGetGroupsFilterArrayOutputWithContext(ctx context.Context) GetGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupsFilter {
+		return vs[0].([]GetGroupsFilter)[vs[1].(int)]
+	}).(GetGroupsFilterOutput)
+}
+
+type GetGroupsGroup struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description you assign to the group. Does not have to be unique, and it's changeable.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the group.
+	Id string `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState string `pulumi:"inactiveState"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetGroupsGroupInput is an input type that accepts GetGroupsGroupArgs and GetGroupsGroupOutput values.
+// You can construct a concrete instance of `GetGroupsGroupInput` via:
+//
+//	GetGroupsGroupArgs{...}
+type GetGroupsGroupInput interface {
+	pulumi.Input
+
+	ToGetGroupsGroupOutput() GetGroupsGroupOutput
+	ToGetGroupsGroupOutputWithContext(context.Context) GetGroupsGroupOutput
+}
+
+type GetGroupsGroupArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description you assign to the group. Does not have to be unique, and it's changeable.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the group.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The detailed status of INACTIVE lifecycleState.
+	InactiveState pulumi.StringInput `pulumi:"inactiveState"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetGroupsGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsGroup)(nil)).Elem()
+}
+
+func (i GetGroupsGroupArgs) ToGetGroupsGroupOutput() GetGroupsGroupOutput {
+	return i.ToGetGroupsGroupOutputWithContext(context.Background())
+}
+
+func (i GetGroupsGroupArgs) ToGetGroupsGroupOutputWithContext(ctx context.Context) GetGroupsGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupOutput)
+}
+
+// GetGroupsGroupArrayInput is an input type that accepts GetGroupsGroupArray and GetGroupsGroupArrayOutput values.
+// You can construct a concrete instance of `GetGroupsGroupArrayInput` via:
+//
+//	GetGroupsGroupArray{ GetGroupsGroupArgs{...} }
+type GetGroupsGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput
+	ToGetGroupsGroupArrayOutputWithContext(context.Context) GetGroupsGroupArrayOutput
+}
+
+type GetGroupsGroupArray []GetGroupsGroupInput
+
+func (GetGroupsGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsGroup)(nil)).Elem()
+}
+
+func (i GetGroupsGroupArray) ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput {
+	return i.ToGetGroupsGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupsGroupArray) ToGetGroupsGroupArrayOutputWithContext(ctx context.Context) GetGroupsGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupArrayOutput)
+}
+
+type GetGroupsGroupOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupsGroup)(nil)).Elem()
+}
+
+func (o GetGroupsGroupOutput) ToGetGroupsGroupOutput() GetGroupsGroupOutput {
+	return o
+}
+
+func (o GetGroupsGroupOutput) ToGetGroupsGroupOutputWithContext(ctx context.Context) GetGroupsGroupOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetGroupsGroupOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetGroupsGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGroupsGroup) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description you assign to the group. Does not have to be unique, and it's changeable.
+func (o GetGroupsGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetGroupsGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGroupsGroup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the group.
+func (o GetGroupsGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The detailed status of INACTIVE lifecycleState.
+func (o GetGroupsGroupOutput) InactiveState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.InactiveState }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetGroupsGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+func (o GetGroupsGroupOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+func (o GetGroupsGroupOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupsGroup) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetGroupsGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupsGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupsGroup)(nil)).Elem()
+}
+
+func (o GetGroupsGroupArrayOutput) ToGetGroupsGroupArrayOutput() GetGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetGroupsGroupArrayOutput) ToGetGroupsGroupArrayOutputWithContext(ctx context.Context) GetGroupsGroupArrayOutput {
+	return o
+}
+
+func (o GetGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetGroupsGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupsGroup {
+		return vs[0].([]GetGroupsGroup)[vs[1].(int)]
+	}).(GetGroupsGroupOutput)
+}
+
+type GetIamWorkRequestErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIamWorkRequestErrorsFilterInput is an input type that accepts GetIamWorkRequestErrorsFilterArgs and GetIamWorkRequestErrorsFilterOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestErrorsFilterInput` via:
+//
+//	GetIamWorkRequestErrorsFilterArgs{...}
+type GetIamWorkRequestErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestErrorsFilterOutput() GetIamWorkRequestErrorsFilterOutput
+	ToGetIamWorkRequestErrorsFilterOutputWithContext(context.Context) GetIamWorkRequestErrorsFilterOutput
+}
+
+type GetIamWorkRequestErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIamWorkRequestErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestErrorsFilterArgs) ToGetIamWorkRequestErrorsFilterOutput() GetIamWorkRequestErrorsFilterOutput {
+	return i.ToGetIamWorkRequestErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestErrorsFilterArgs) ToGetIamWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsFilterOutput)
+}
+
+// GetIamWorkRequestErrorsFilterArrayInput is an input type that accepts GetIamWorkRequestErrorsFilterArray and GetIamWorkRequestErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestErrorsFilterArrayInput` via:
+//
+//	GetIamWorkRequestErrorsFilterArray{ GetIamWorkRequestErrorsFilterArgs{...} }
+type GetIamWorkRequestErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestErrorsFilterArrayOutput() GetIamWorkRequestErrorsFilterArrayOutput
+	ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(context.Context) GetIamWorkRequestErrorsFilterArrayOutput
+}
+
+type GetIamWorkRequestErrorsFilterArray []GetIamWorkRequestErrorsFilterInput
+
+func (GetIamWorkRequestErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestErrorsFilterArray) ToGetIamWorkRequestErrorsFilterArrayOutput() GetIamWorkRequestErrorsFilterArrayOutput {
+	return i.ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestErrorsFilterArray) ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsFilterArrayOutput)
+}
+
+type GetIamWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) ToGetIamWorkRequestErrorsFilterOutput() GetIamWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) ToGetIamWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIamWorkRequestErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestErrorsFilterArrayOutput) ToGetIamWorkRequestErrorsFilterArrayOutput() GetIamWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterArrayOutput) ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestErrorsFilter {
+		return vs[0].([]GetIamWorkRequestErrorsFilter)[vs[1].(int)]
+	}).(GetIamWorkRequestErrorsFilterOutput)
+}
+
+type GetIamWorkRequestErrorsIamWorkRequestError struct {
+	// A machine-usable code for the error that occured.
+	Code string `pulumi:"code"`
+	// A human-readable error string.
+	Message string `pulumi:"message"`
+	// The date and time the error occurred.
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetIamWorkRequestErrorsIamWorkRequestErrorInput is an input type that accepts GetIamWorkRequestErrorsIamWorkRequestErrorArgs and GetIamWorkRequestErrorsIamWorkRequestErrorOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestErrorsIamWorkRequestErrorInput` via:
+//
+//	GetIamWorkRequestErrorsIamWorkRequestErrorArgs{...}
+type GetIamWorkRequestErrorsIamWorkRequestErrorInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestErrorsIamWorkRequestErrorOutput() GetIamWorkRequestErrorsIamWorkRequestErrorOutput
+	ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorOutput
+}
+
+type GetIamWorkRequestErrorsIamWorkRequestErrorArgs struct {
+	// A machine-usable code for the error that occured.
+	Code pulumi.StringInput `pulumi:"code"`
+	// A human-readable error string.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The date and time the error occurred.
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetIamWorkRequestErrorsIamWorkRequestErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestErrorsIamWorkRequestError)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArgs) ToGetIamWorkRequestErrorsIamWorkRequestErrorOutput() GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
+	return i.ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArgs) ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsIamWorkRequestErrorOutput)
+}
+
+// GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput is an input type that accepts GetIamWorkRequestErrorsIamWorkRequestErrorArray and GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput` via:
+//
+//	GetIamWorkRequestErrorsIamWorkRequestErrorArray{ GetIamWorkRequestErrorsIamWorkRequestErrorArgs{...} }
+type GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput() GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput
+	ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput
+}
+
+type GetIamWorkRequestErrorsIamWorkRequestErrorArray []GetIamWorkRequestErrorsIamWorkRequestErrorInput
+
+func (GetIamWorkRequestErrorsIamWorkRequestErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestErrorsIamWorkRequestError)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArray) ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput() GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput {
+	return i.ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArray) ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput)
+}
+
+type GetIamWorkRequestErrorsIamWorkRequestErrorOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestErrorsIamWorkRequestError)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorOutput() GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
+	return o
+}
+
+// A machine-usable code for the error that occured.
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsIamWorkRequestError) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// A human-readable error string.
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsIamWorkRequestError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The date and time the error occurred.
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestErrorsIamWorkRequestError) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestErrorsIamWorkRequestError)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput() GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestErrorsIamWorkRequestError {
+		return vs[0].([]GetIamWorkRequestErrorsIamWorkRequestError)[vs[1].(int)]
+	}).(GetIamWorkRequestErrorsIamWorkRequestErrorOutput)
+}
+
+type GetIamWorkRequestLogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIamWorkRequestLogsFilterInput is an input type that accepts GetIamWorkRequestLogsFilterArgs and GetIamWorkRequestLogsFilterOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestLogsFilterInput` via:
+//
+//	GetIamWorkRequestLogsFilterArgs{...}
+type GetIamWorkRequestLogsFilterInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestLogsFilterOutput() GetIamWorkRequestLogsFilterOutput
+	ToGetIamWorkRequestLogsFilterOutputWithContext(context.Context) GetIamWorkRequestLogsFilterOutput
+}
+
+type GetIamWorkRequestLogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIamWorkRequestLogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestLogsFilterArgs) ToGetIamWorkRequestLogsFilterOutput() GetIamWorkRequestLogsFilterOutput {
+	return i.ToGetIamWorkRequestLogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestLogsFilterArgs) ToGetIamWorkRequestLogsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsFilterOutput)
+}
+
+// GetIamWorkRequestLogsFilterArrayInput is an input type that accepts GetIamWorkRequestLogsFilterArray and GetIamWorkRequestLogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestLogsFilterArrayInput` via:
+//
+//	GetIamWorkRequestLogsFilterArray{ GetIamWorkRequestLogsFilterArgs{...} }
+type GetIamWorkRequestLogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestLogsFilterArrayOutput() GetIamWorkRequestLogsFilterArrayOutput
+	ToGetIamWorkRequestLogsFilterArrayOutputWithContext(context.Context) GetIamWorkRequestLogsFilterArrayOutput
+}
+
+type GetIamWorkRequestLogsFilterArray []GetIamWorkRequestLogsFilterInput
+
+func (GetIamWorkRequestLogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestLogsFilterArray) ToGetIamWorkRequestLogsFilterArrayOutput() GetIamWorkRequestLogsFilterArrayOutput {
+	return i.ToGetIamWorkRequestLogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestLogsFilterArray) ToGetIamWorkRequestLogsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsFilterArrayOutput)
+}
+
+type GetIamWorkRequestLogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestLogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) ToGetIamWorkRequestLogsFilterOutput() GetIamWorkRequestLogsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) ToGetIamWorkRequestLogsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIamWorkRequestLogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestLogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestLogsFilterArrayOutput) ToGetIamWorkRequestLogsFilterArrayOutput() GetIamWorkRequestLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsFilterArrayOutput) ToGetIamWorkRequestLogsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestLogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestLogsFilter {
+		return vs[0].([]GetIamWorkRequestLogsFilter)[vs[1].(int)]
+	}).(GetIamWorkRequestLogsFilterOutput)
+}
+
+type GetIamWorkRequestLogsIamWorkRequestLog struct {
+	// A human-readable error string.
+	Message string `pulumi:"message"`
+	// Date and time the log was written, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetIamWorkRequestLogsIamWorkRequestLogInput is an input type that accepts GetIamWorkRequestLogsIamWorkRequestLogArgs and GetIamWorkRequestLogsIamWorkRequestLogOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestLogsIamWorkRequestLogInput` via:
+//
+//	GetIamWorkRequestLogsIamWorkRequestLogArgs{...}
+type GetIamWorkRequestLogsIamWorkRequestLogInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestLogsIamWorkRequestLogOutput() GetIamWorkRequestLogsIamWorkRequestLogOutput
+	ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(context.Context) GetIamWorkRequestLogsIamWorkRequestLogOutput
+}
+
+type GetIamWorkRequestLogsIamWorkRequestLogArgs struct {
+	// A human-readable error string.
+	Message pulumi.StringInput `pulumi:"message"`
+	// Date and time the log was written, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetIamWorkRequestLogsIamWorkRequestLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestLogsIamWorkRequestLog)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestLogsIamWorkRequestLogArgs) ToGetIamWorkRequestLogsIamWorkRequestLogOutput() GetIamWorkRequestLogsIamWorkRequestLogOutput {
+	return i.ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestLogsIamWorkRequestLogArgs) ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsIamWorkRequestLogOutput)
+}
+
+// GetIamWorkRequestLogsIamWorkRequestLogArrayInput is an input type that accepts GetIamWorkRequestLogsIamWorkRequestLogArray and GetIamWorkRequestLogsIamWorkRequestLogArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestLogsIamWorkRequestLogArrayInput` via:
+//
+//	GetIamWorkRequestLogsIamWorkRequestLogArray{ GetIamWorkRequestLogsIamWorkRequestLogArgs{...} }
+type GetIamWorkRequestLogsIamWorkRequestLogArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutput() GetIamWorkRequestLogsIamWorkRequestLogArrayOutput
+	ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(context.Context) GetIamWorkRequestLogsIamWorkRequestLogArrayOutput
+}
+
+type GetIamWorkRequestLogsIamWorkRequestLogArray []GetIamWorkRequestLogsIamWorkRequestLogInput
+
+func (GetIamWorkRequestLogsIamWorkRequestLogArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestLogsIamWorkRequestLog)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestLogsIamWorkRequestLogArray) ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutput() GetIamWorkRequestLogsIamWorkRequestLogArrayOutput {
+	return i.ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestLogsIamWorkRequestLogArray) ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsIamWorkRequestLogArrayOutput)
+}
+
+type GetIamWorkRequestLogsIamWorkRequestLogOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestLogsIamWorkRequestLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestLogsIamWorkRequestLog)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) ToGetIamWorkRequestLogsIamWorkRequestLogOutput() GetIamWorkRequestLogsIamWorkRequestLogOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogOutput {
+	return o
+}
+
+// A human-readable error string.
+func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsIamWorkRequestLog) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// Date and time the log was written, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsIamWorkRequestLog) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetIamWorkRequestLogsIamWorkRequestLogArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestLogsIamWorkRequestLog)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutput() GetIamWorkRequestLogsIamWorkRequestLogArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestLogsIamWorkRequestLogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestLogsIamWorkRequestLog {
+		return vs[0].([]GetIamWorkRequestLogsIamWorkRequestLog)[vs[1].(int)]
+	}).(GetIamWorkRequestLogsIamWorkRequestLogOutput)
+}
+
+type GetIamWorkRequestResource struct {
+	// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+	ActionType string `pulumi:"actionType"`
+	// The resource type the work request is affects.
+	EntityType string `pulumi:"entityType"`
+	// The URI path that the user can do a GET on to access the resource metadata.
+	EntityUri string `pulumi:"entityUri"`
+	// An OCID of the resource that the work request affects.
+	Identifier string `pulumi:"identifier"`
+}
+
+// GetIamWorkRequestResourceInput is an input type that accepts GetIamWorkRequestResourceArgs and GetIamWorkRequestResourceOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestResourceInput` via:
+//
+//	GetIamWorkRequestResourceArgs{...}
+type GetIamWorkRequestResourceInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestResourceOutput() GetIamWorkRequestResourceOutput
+	ToGetIamWorkRequestResourceOutputWithContext(context.Context) GetIamWorkRequestResourceOutput
+}
+
+type GetIamWorkRequestResourceArgs struct {
+	// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The resource type the work request is affects.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The URI path that the user can do a GET on to access the resource metadata.
+	EntityUri pulumi.StringInput `pulumi:"entityUri"`
+	// An OCID of the resource that the work request affects.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+}
+
+func (GetIamWorkRequestResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestResourceArgs) ToGetIamWorkRequestResourceOutput() GetIamWorkRequestResourceOutput {
+	return i.ToGetIamWorkRequestResourceOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestResourceArgs) ToGetIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestResourceOutput)
+}
+
+// GetIamWorkRequestResourceArrayInput is an input type that accepts GetIamWorkRequestResourceArray and GetIamWorkRequestResourceArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestResourceArrayInput` via:
+//
+//	GetIamWorkRequestResourceArray{ GetIamWorkRequestResourceArgs{...} }
+type GetIamWorkRequestResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestResourceArrayOutput() GetIamWorkRequestResourceArrayOutput
+	ToGetIamWorkRequestResourceArrayOutputWithContext(context.Context) GetIamWorkRequestResourceArrayOutput
+}
+
+type GetIamWorkRequestResourceArray []GetIamWorkRequestResourceInput
+
+func (GetIamWorkRequestResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestResourceArray) ToGetIamWorkRequestResourceArrayOutput() GetIamWorkRequestResourceArrayOutput {
+	return i.ToGetIamWorkRequestResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestResourceArray) ToGetIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestResourceArrayOutput)
+}
+
+type GetIamWorkRequestResourceOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestResourceOutput) ToGetIamWorkRequestResourceOutput() GetIamWorkRequestResourceOutput {
+	return o
+}
+
+func (o GetIamWorkRequestResourceOutput) ToGetIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestResourceOutput {
+	return o
+}
+
+// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+func (o GetIamWorkRequestResourceOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResource) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The resource type the work request is affects.
+func (o GetIamWorkRequestResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResource) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The URI path that the user can do a GET on to access the resource metadata.
+func (o GetIamWorkRequestResourceOutput) EntityUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResource) string { return v.EntityUri }).(pulumi.StringOutput)
+}
+
+// An OCID of the resource that the work request affects.
+func (o GetIamWorkRequestResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+type GetIamWorkRequestResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestResourceArrayOutput() GetIamWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestResource {
+		return vs[0].([]GetIamWorkRequestResource)[vs[1].(int)]
+	}).(GetIamWorkRequestResourceOutput)
+}
+
+type GetIamWorkRequestsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIamWorkRequestsFilterInput is an input type that accepts GetIamWorkRequestsFilterArgs and GetIamWorkRequestsFilterOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsFilterInput` via:
+//
+//	GetIamWorkRequestsFilterArgs{...}
+type GetIamWorkRequestsFilterInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsFilterOutput() GetIamWorkRequestsFilterOutput
+	ToGetIamWorkRequestsFilterOutputWithContext(context.Context) GetIamWorkRequestsFilterOutput
+}
+
+type GetIamWorkRequestsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIamWorkRequestsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsFilterArgs) ToGetIamWorkRequestsFilterOutput() GetIamWorkRequestsFilterOutput {
+	return i.ToGetIamWorkRequestsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsFilterArgs) ToGetIamWorkRequestsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsFilterOutput)
+}
+
+// GetIamWorkRequestsFilterArrayInput is an input type that accepts GetIamWorkRequestsFilterArray and GetIamWorkRequestsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsFilterArrayInput` via:
+//
+//	GetIamWorkRequestsFilterArray{ GetIamWorkRequestsFilterArgs{...} }
+type GetIamWorkRequestsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsFilterArrayOutput() GetIamWorkRequestsFilterArrayOutput
+	ToGetIamWorkRequestsFilterArrayOutputWithContext(context.Context) GetIamWorkRequestsFilterArrayOutput
+}
+
+type GetIamWorkRequestsFilterArray []GetIamWorkRequestsFilterInput
+
+func (GetIamWorkRequestsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsFilter)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsFilterArray) ToGetIamWorkRequestsFilterArrayOutput() GetIamWorkRequestsFilterArrayOutput {
+	return i.ToGetIamWorkRequestsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsFilterArray) ToGetIamWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsFilterArrayOutput)
+}
+
+type GetIamWorkRequestsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsFilterOutput) ToGetIamWorkRequestsFilterOutput() GetIamWorkRequestsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsFilterOutput) ToGetIamWorkRequestsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIamWorkRequestsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIamWorkRequestsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIamWorkRequestsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsFilter)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsFilterArrayOutput) ToGetIamWorkRequestsFilterArrayOutput() GetIamWorkRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsFilterArrayOutput) ToGetIamWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestsFilter {
+		return vs[0].([]GetIamWorkRequestsFilter)[vs[1].(int)]
+	}).(GetIamWorkRequestsFilterOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequest struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the work request.
+	Id string `pulumi:"id"`
+	// The asynchronous operation tracked by this IAM work request.
+	OperationType string `pulumi:"operationType"`
+	// How much progress the operation has made.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// The resources this work request affects.
+	Resources []GetIamWorkRequestsIamWorkRequestResource `pulumi:"resources"`
+	// Status of the work request
+	Status string `pulumi:"status"`
+	// Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished string `pulumi:"timeFinished"`
+	// Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetIamWorkRequestsIamWorkRequestInput is an input type that accepts GetIamWorkRequestsIamWorkRequestArgs and GetIamWorkRequestsIamWorkRequestOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestInput` via:
+//
+//	GetIamWorkRequestsIamWorkRequestArgs{...}
+type GetIamWorkRequestsIamWorkRequestInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsIamWorkRequestOutput() GetIamWorkRequestsIamWorkRequestOutput
+	ToGetIamWorkRequestsIamWorkRequestOutputWithContext(context.Context) GetIamWorkRequestsIamWorkRequestOutput
+}
+
+type GetIamWorkRequestsIamWorkRequestArgs struct {
+	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The OCID of the work request.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The asynchronous operation tracked by this IAM work request.
+	OperationType pulumi.StringInput `pulumi:"operationType"`
+	// How much progress the operation has made.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// The resources this work request affects.
+	Resources GetIamWorkRequestsIamWorkRequestResourceArrayInput `pulumi:"resources"`
+	// Status of the work request
+	Status pulumi.StringInput `pulumi:"status"`
+	// Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetIamWorkRequestsIamWorkRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsIamWorkRequest)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsIamWorkRequestArgs) ToGetIamWorkRequestsIamWorkRequestOutput() GetIamWorkRequestsIamWorkRequestOutput {
+	return i.ToGetIamWorkRequestsIamWorkRequestOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsIamWorkRequestArgs) ToGetIamWorkRequestsIamWorkRequestOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestOutput)
+}
+
+// GetIamWorkRequestsIamWorkRequestArrayInput is an input type that accepts GetIamWorkRequestsIamWorkRequestArray and GetIamWorkRequestsIamWorkRequestArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestArrayInput` via:
+//
+//	GetIamWorkRequestsIamWorkRequestArray{ GetIamWorkRequestsIamWorkRequestArgs{...} }
+type GetIamWorkRequestsIamWorkRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsIamWorkRequestArrayOutput() GetIamWorkRequestsIamWorkRequestArrayOutput
+	ToGetIamWorkRequestsIamWorkRequestArrayOutputWithContext(context.Context) GetIamWorkRequestsIamWorkRequestArrayOutput
+}
+
+type GetIamWorkRequestsIamWorkRequestArray []GetIamWorkRequestsIamWorkRequestInput
+
+func (GetIamWorkRequestsIamWorkRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsIamWorkRequest)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsIamWorkRequestArray) ToGetIamWorkRequestsIamWorkRequestArrayOutput() GetIamWorkRequestsIamWorkRequestArrayOutput {
+	return i.ToGetIamWorkRequestsIamWorkRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsIamWorkRequestArray) ToGetIamWorkRequestsIamWorkRequestArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestArrayOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequestOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsIamWorkRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsIamWorkRequest)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsIamWorkRequestOutput) ToGetIamWorkRequestsIamWorkRequestOutput() GetIamWorkRequestsIamWorkRequestOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestOutput) ToGetIamWorkRequestsIamWorkRequestOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestOutput {
+	return o
+}
+
+// The OCID of the compartment (remember that the tenancy is simply the root compartment).
+func (o GetIamWorkRequestsIamWorkRequestOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the work request.
+func (o GetIamWorkRequestsIamWorkRequestOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The asynchronous operation tracked by this IAM work request.
+func (o GetIamWorkRequestsIamWorkRequestOutput) OperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.OperationType }).(pulumi.StringOutput)
+}
+
+// How much progress the operation has made.
+func (o GetIamWorkRequestsIamWorkRequestOutput) PercentComplete() pulumi.Float64Output {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) float64 { return v.PercentComplete }).(pulumi.Float64Output)
+}
+
+// The resources this work request affects.
+func (o GetIamWorkRequestsIamWorkRequestOutput) Resources() GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) []GetIamWorkRequestsIamWorkRequestResource {
+		return v.Resources
+	}).(GetIamWorkRequestsIamWorkRequestResourceArrayOutput)
+}
+
+// Status of the work request
+func (o GetIamWorkRequestsIamWorkRequestOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetIamWorkRequestsIamWorkRequestOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.TimeAccepted }).(pulumi.StringOutput)
+}
+
+// Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetIamWorkRequestsIamWorkRequestOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetIamWorkRequestsIamWorkRequestOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequest) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsIamWorkRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsIamWorkRequest)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsIamWorkRequestArrayOutput) ToGetIamWorkRequestsIamWorkRequestArrayOutput() GetIamWorkRequestsIamWorkRequestArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestArrayOutput) ToGetIamWorkRequestsIamWorkRequestArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsIamWorkRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestsIamWorkRequest {
+		return vs[0].([]GetIamWorkRequestsIamWorkRequest)[vs[1].(int)]
+	}).(GetIamWorkRequestsIamWorkRequestOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequestResource struct {
+	// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+	ActionType string `pulumi:"actionType"`
+	// The resource type the work request is affects.
+	EntityType string `pulumi:"entityType"`
+	// The URI path that the user can do a GET on to access the resource metadata.
+	EntityUri string `pulumi:"entityUri"`
+	// An OCID of the resource that the work request affects.
+	Identifier string `pulumi:"identifier"`
+}
+
+// GetIamWorkRequestsIamWorkRequestResourceInput is an input type that accepts GetIamWorkRequestsIamWorkRequestResourceArgs and GetIamWorkRequestsIamWorkRequestResourceOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestResourceInput` via:
+//
+//	GetIamWorkRequestsIamWorkRequestResourceArgs{...}
+type GetIamWorkRequestsIamWorkRequestResourceInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsIamWorkRequestResourceOutput() GetIamWorkRequestsIamWorkRequestResourceOutput
+	ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(context.Context) GetIamWorkRequestsIamWorkRequestResourceOutput
+}
+
+type GetIamWorkRequestsIamWorkRequestResourceArgs struct {
+	// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The resource type the work request is affects.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The URI path that the user can do a GET on to access the resource metadata.
+	EntityUri pulumi.StringInput `pulumi:"entityUri"`
+	// An OCID of the resource that the work request affects.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+}
+
+func (GetIamWorkRequestsIamWorkRequestResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsIamWorkRequestResourceArgs) ToGetIamWorkRequestsIamWorkRequestResourceOutput() GetIamWorkRequestsIamWorkRequestResourceOutput {
+	return i.ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsIamWorkRequestResourceArgs) ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestResourceOutput)
+}
+
+// GetIamWorkRequestsIamWorkRequestResourceArrayInput is an input type that accepts GetIamWorkRequestsIamWorkRequestResourceArray and GetIamWorkRequestsIamWorkRequestResourceArrayOutput values.
+// You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestResourceArrayInput` via:
+//
+//	GetIamWorkRequestsIamWorkRequestResourceArray{ GetIamWorkRequestsIamWorkRequestResourceArgs{...} }
+type GetIamWorkRequestsIamWorkRequestResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetIamWorkRequestsIamWorkRequestResourceArrayOutput() GetIamWorkRequestsIamWorkRequestResourceArrayOutput
+	ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(context.Context) GetIamWorkRequestsIamWorkRequestResourceArrayOutput
+}
+
+type GetIamWorkRequestsIamWorkRequestResourceArray []GetIamWorkRequestsIamWorkRequestResourceInput
+
+func (GetIamWorkRequestsIamWorkRequestResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsIamWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetIamWorkRequestsIamWorkRequestResourceArray) ToGetIamWorkRequestsIamWorkRequestResourceArrayOutput() GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
+	return i.ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetIamWorkRequestsIamWorkRequestResourceArray) ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestResourceArrayOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequestResourceOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsIamWorkRequestResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ToGetIamWorkRequestsIamWorkRequestResourceOutput() GetIamWorkRequestsIamWorkRequestResourceOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceOutput {
+	return o
+}
+
+// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequestResource) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The resource type the work request is affects.
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequestResource) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The URI path that the user can do a GET on to access the resource metadata.
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) EntityUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequestResource) string { return v.EntityUri }).(pulumi.StringOutput)
+}
+
+// An OCID of the resource that the work request affects.
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIamWorkRequestsIamWorkRequestResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+type GetIamWorkRequestsIamWorkRequestResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIamWorkRequestsIamWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestsIamWorkRequestResourceArrayOutput() GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsIamWorkRequestResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestsIamWorkRequestResource {
+		return vs[0].([]GetIamWorkRequestsIamWorkRequestResource)[vs[1].(int)]
+	}).(GetIamWorkRequestsIamWorkRequestResourceOutput)
+}
+
 type GetIdentityProviderGroupsFilter struct {
 	// A filter to only return resources that match the given name exactly.
 	Name   string   `pulumi:"name"`
@@ -4787,6 +6777,38 @@ func (o GetUsersUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUsersUser
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserX509certificateInput)(nil)).Elem(), GetDomainsUsersUserX509certificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserX509certificateArrayInput)(nil)).Elem(), GetDomainsUsersUserX509certificateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicGroupsDynamicGroupInput)(nil)).Elem(), GetDynamicGroupsDynamicGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicGroupsDynamicGroupArrayInput)(nil)).Elem(), GetDynamicGroupsDynamicGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicGroupsFilterInput)(nil)).Elem(), GetDynamicGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicGroupsFilterArrayInput)(nil)).Elem(), GetDynamicGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFaultDomainsFaultDomainInput)(nil)).Elem(), GetFaultDomainsFaultDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFaultDomainsFaultDomainArrayInput)(nil)).Elem(), GetFaultDomainsFaultDomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFaultDomainsFilterInput)(nil)).Elem(), GetFaultDomainsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFaultDomainsFilterArrayInput)(nil)).Elem(), GetFaultDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsFilterInput)(nil)).Elem(), GetGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsFilterArrayInput)(nil)).Elem(), GetGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupInput)(nil)).Elem(), GetGroupsGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupArrayInput)(nil)).Elem(), GetGroupsGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestErrorsFilterInput)(nil)).Elem(), GetIamWorkRequestErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestErrorsFilterArrayInput)(nil)).Elem(), GetIamWorkRequestErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestErrorsIamWorkRequestErrorInput)(nil)).Elem(), GetIamWorkRequestErrorsIamWorkRequestErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput)(nil)).Elem(), GetIamWorkRequestErrorsIamWorkRequestErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestLogsFilterInput)(nil)).Elem(), GetIamWorkRequestLogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestLogsFilterArrayInput)(nil)).Elem(), GetIamWorkRequestLogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestLogsIamWorkRequestLogInput)(nil)).Elem(), GetIamWorkRequestLogsIamWorkRequestLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestLogsIamWorkRequestLogArrayInput)(nil)).Elem(), GetIamWorkRequestLogsIamWorkRequestLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestResourceInput)(nil)).Elem(), GetIamWorkRequestResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestResourceArrayInput)(nil)).Elem(), GetIamWorkRequestResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsFilterInput)(nil)).Elem(), GetIamWorkRequestsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsFilterArrayInput)(nil)).Elem(), GetIamWorkRequestsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestInput)(nil)).Elem(), GetIamWorkRequestsIamWorkRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestArrayInput)(nil)).Elem(), GetIamWorkRequestsIamWorkRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestResourceInput)(nil)).Elem(), GetIamWorkRequestsIamWorkRequestResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIamWorkRequestsIamWorkRequestResourceArrayInput)(nil)).Elem(), GetIamWorkRequestsIamWorkRequestResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsFilterInput)(nil)).Elem(), GetIdentityProviderGroupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsFilterArrayInput)(nil)).Elem(), GetIdentityProviderGroupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIdentityProviderGroupsIdentityProviderGroupInput)(nil)).Elem(), GetIdentityProviderGroupsIdentityProviderGroupArgs{})
@@ -4857,6 +6879,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityInput)(nil)).Elem(), GetUsersUserCapabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityArrayInput)(nil)).Elem(), GetUsersUserCapabilityArray{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserX509certificateOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserX509certificateArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicGroupsDynamicGroupOutput{})
+	pulumi.RegisterOutputType(GetDynamicGroupsDynamicGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetDynamicGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFaultDomainsFaultDomainOutput{})
+	pulumi.RegisterOutputType(GetFaultDomainsFaultDomainArrayOutput{})
+	pulumi.RegisterOutputType(GetFaultDomainsFilterOutput{})
+	pulumi.RegisterOutputType(GetFaultDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupsGroupOutput{})
+	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestErrorsIamWorkRequestErrorOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestLogsFilterOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestLogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestLogsIamWorkRequestLogOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestLogsIamWorkRequestLogArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestResourceOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsFilterOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsIamWorkRequestOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsIamWorkRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsIamWorkRequestResourceOutput{})
+	pulumi.RegisterOutputType(GetIamWorkRequestsIamWorkRequestResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetIdentityProviderGroupsFilterOutput{})
 	pulumi.RegisterOutputType(GetIdentityProviderGroupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetIdentityProviderGroupsIdentityProviderGroupOutput{})

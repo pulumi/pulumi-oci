@@ -175,6 +175,8 @@ type DbSystem struct {
 	ScanDnsRecordId pulumi.StringOutput `pulumi:"scanDnsRecordId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds pulumi.StringArrayOutput `pulumi:"scanIpIds"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -376,6 +378,8 @@ type dbSystemState struct {
 	ScanDnsRecordId *string `pulumi:"scanDnsRecordId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds []string `pulumi:"scanIpIds"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -527,6 +531,8 @@ type DbSystemState struct {
 	ScanDnsRecordId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds pulumi.StringArrayInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -656,6 +662,8 @@ type dbSystemArgs struct {
 	PrivateIp *string `pulumi:"privateIp"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 	RecoStorageSizeInGb *int `pulumi:"recoStorageSizeInGb"`
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -772,6 +780,8 @@ type DbSystemArgs struct {
 	PrivateIp pulumi.StringPtrInput
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
 	RecoStorageSizeInGb pulumi.IntPtrInput
+	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
@@ -1117,6 +1127,11 @@ func (o DbSystemOutput) ScanDnsRecordId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 func (o DbSystemOutput) ScanIpIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringArrayOutput { return v.ScanIpIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DbSystemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.

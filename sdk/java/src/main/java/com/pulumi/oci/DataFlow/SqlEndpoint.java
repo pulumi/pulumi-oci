@@ -71,28 +71,28 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The description of CreateSQLEndpointDetails.
+     * (Updatable) The description of CreateSQLEndpointDetails.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The description of CreateSQLEndpointDetails.
+     * @return (Updatable) The description of CreateSQLEndpointDetails.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * The SQL Endpoint name, which can be changed.
+     * (Updatable) The SQL Endpoint name, which can be changed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The SQL Endpoint name, which can be changed.
+     * @return (Updatable) The SQL Endpoint name, which can be changed.
      * 
      */
     public Output<String> displayName() {
@@ -197,28 +197,14 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return this.lakeId;
     }
     /**
-     * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-     * 
-     */
-    @Export(name="lastAcceptedRequestToken", refs={String.class}, tree="[0]")
-    private Output<String> lastAcceptedRequestToken;
-
-    /**
-     * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-     * 
-     */
-    public Output<String> lastAcceptedRequestToken() {
-        return this.lastAcceptedRequestToken;
-    }
-    /**
-     * The maximum number of executors.
+     * (Updatable) The maximum number of executors.
      * 
      */
     @Export(name="maxExecutorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxExecutorCount;
 
     /**
-     * @return The maximum number of executors.
+     * @return (Updatable) The maximum number of executors.
      * 
      */
     public Output<Integer> maxExecutorCount() {
@@ -239,14 +225,14 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return this.metastoreId;
     }
     /**
-     * The minimum number of executors.
+     * (Updatable) The minimum number of executors.
      * 
      */
     @Export(name="minExecutorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> minExecutorCount;
 
     /**
-     * @return The minimum number of executors.
+     * @return (Updatable) The minimum number of executors.
      * 
      */
     public Output<Integer> minExecutorCount() {
@@ -267,14 +253,14 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return this.networkConfiguration;
     }
     /**
-     * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     @Export(name="sparkAdvancedConfigurations", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> sparkAdvancedConfigurations;
 
     /**
-     * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+     * @return (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
     public Output<Map<String,String>> sparkAdvancedConfigurations() {
@@ -295,14 +281,20 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
         return this.sqlEndpointVersion;
     }
     /**
-     * The current state of the Sql Endpoint.
+     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Sql Endpoint.
+     * @return (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> state() {
@@ -367,18 +359,12 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
     private Output<String> warehouseBucketUri;
 
     /**
      * @return The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> warehouseBucketUri() {

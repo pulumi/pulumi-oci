@@ -55,6 +55,7 @@ import * as utilities from "../utilities";
  *     nsgIds: cloudAutonomousVmClusterNsgIds,
  *     scanListenerPortNonTls: cloudAutonomousVmClusterScanListenerPortNonTls,
  *     scanListenerPortTls: cloudAutonomousVmClusterScanListenerPortTls,
+ *     securityAttributes: cloudAutonomousVmClusterSecurityAttributes,
  *     totalContainerDatabases: cloudAutonomousVmClusterTotalContainerDatabases,
  * });
  * ```
@@ -289,6 +290,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly scanListenerPortTls!: pulumi.Output<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
     public /*out*/ readonly shape!: pulumi.Output<string>;
@@ -304,6 +309,14 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    public /*out*/ readonly timeDatabaseSslCertificateExpires!: pulumi.Output<string>;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    public /*out*/ readonly timeOrdsCertificateExpires!: pulumi.Output<string>;
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
@@ -384,10 +397,13 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
             resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
+            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
+            resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["totalAutonomousDataStorageInTbs"] = state ? state.totalAutonomousDataStorageInTbs : undefined;
             resourceInputs["totalContainerDatabases"] = state ? state.totalContainerDatabases : undefined;
@@ -424,6 +440,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["scanListenerPortNonTls"] = args ? args.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = args ? args.scanListenerPortTls : undefined;
+            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
@@ -459,6 +476,8 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeDatabaseSslCertificateExpires"] = undefined /*out*/;
+            resourceInputs["timeOrdsCertificateExpires"] = undefined /*out*/;
             resourceInputs["totalAutonomousDataStorageInTbs"] = undefined /*out*/;
             resourceInputs["totalCpus"] = undefined /*out*/;
         }
@@ -665,6 +684,10 @@ export interface CloudAutonomousVmClusterState {
      */
     scanListenerPortTls?: pulumi.Input<number>;
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
     shape?: pulumi.Input<string>;
@@ -680,6 +703,14 @@ export interface CloudAutonomousVmClusterState {
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time of Database SSL certificate expiration.
+     */
+    timeDatabaseSslCertificateExpires?: pulumi.Input<string>;
+    /**
+     * The date and time of ORDS certificate expiration.
+     */
+    timeOrdsCertificateExpires?: pulumi.Input<string>;
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
@@ -780,6 +811,10 @@ export interface CloudAutonomousVmClusterArgs {
      * The SCAN Listener TLS port. Default is 2484.
      */
     scanListenerPortTls?: pulumi.Input<number>;
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */

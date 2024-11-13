@@ -88,6 +88,7 @@ import javax.annotation.Nullable;
  *             .nsgIds(cloudAutonomousVmClusterNsgIds)
  *             .scanListenerPortNonTls(cloudAutonomousVmClusterScanListenerPortNonTls)
  *             .scanListenerPortTls(cloudAutonomousVmClusterScanListenerPortTls)
+ *             .securityAttributes(cloudAutonomousVmClusterSecurityAttributes)
  *             .totalContainerDatabases(cloudAutonomousVmClusterTotalContainerDatabases)
  *             .build());
  * 
@@ -777,6 +778,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.scanListenerPortTls;
     }
     /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
@@ -831,6 +846,34 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The date and time of Database SSL certificate expiration.
+     * 
+     */
+    @Export(name="timeDatabaseSslCertificateExpires", refs={String.class}, tree="[0]")
+    private Output<String> timeDatabaseSslCertificateExpires;
+
+    /**
+     * @return The date and time of Database SSL certificate expiration.
+     * 
+     */
+    public Output<String> timeDatabaseSslCertificateExpires() {
+        return this.timeDatabaseSslCertificateExpires;
+    }
+    /**
+     * The date and time of ORDS certificate expiration.
+     * 
+     */
+    @Export(name="timeOrdsCertificateExpires", refs={String.class}, tree="[0]")
+    private Output<String> timeOrdsCertificateExpires;
+
+    /**
+     * @return The date and time of ORDS certificate expiration.
+     * 
+     */
+    public Output<String> timeOrdsCertificateExpires() {
+        return this.timeOrdsCertificateExpires;
     }
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.

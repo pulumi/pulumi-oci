@@ -206,7 +206,7 @@ def get_domains_conditions(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Conditions
+    Search conditions.
 
     ## Example Usage
 
@@ -281,7 +281,7 @@ def get_domains_conditions_output(attribute_sets: Optional[pulumi.Input[Optional
     """
     This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Conditions
+    Search conditions.
 
     ## Example Usage
 

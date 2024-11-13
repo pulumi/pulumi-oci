@@ -44,6 +44,7 @@ class ExadbVmClusterArgs:
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
@@ -53,7 +54,9 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
-        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id
+        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
+               
+               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
                The maximum length of the combined hostname and domain is 63 characters.
@@ -76,6 +79,7 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[str] private_zone_id: The private zone ID in which you want DNS records to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
@@ -118,6 +122,8 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
@@ -187,7 +193,9 @@ class ExadbVmClusterArgs:
     @pulumi.getter(name="gridImageId")
     def grid_image_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Grid Setup will be done using this grid image id
+        (Updatable) Grid Setup will be done using this grid image id.
+
+        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -405,6 +413,18 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -465,6 +485,7 @@ class _ExadbVmClusterState:
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -489,7 +510,9 @@ class _ExadbVmClusterState:
         :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id
+        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
+               
+               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         :param pulumi.Input[str] grid_image_type: The type of Grid Image
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
@@ -511,6 +534,7 @@ class _ExadbVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -584,6 +608,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if ssh_public_keys is not None:
@@ -753,7 +779,9 @@ class _ExadbVmClusterState:
     @pulumi.getter(name="gridImageId")
     def grid_image_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Grid Setup will be done using this grid image id
+        (Updatable) Grid Setup will be done using this grid image id.
+
+        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -959,6 +987,18 @@ class _ExadbVmClusterState:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1108,6 +1148,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1140,7 +1181,9 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
         :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id
+        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
+               
+               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
                The maximum length of the combined hostname and domain is 63 characters.
@@ -1154,6 +1197,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] private_zone_id: The private zone ID in which you want DNS records to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -1218,6 +1262,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1268,6 +1313,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             __props__.__dict__["private_zone_id"] = private_zone_id
             __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
             __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
+            __props__.__dict__["security_attributes"] = security_attributes
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
@@ -1332,6 +1378,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1361,7 +1408,9 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id
+        :param pulumi.Input[str] grid_image_id: (Updatable) Grid Setup will be done using this grid image id.
+               
+               The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         :param pulumi.Input[str] grid_image_type: The type of Grid Image
         :param pulumi.Input[str] hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
                
@@ -1383,6 +1432,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -1431,6 +1481,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
         __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
         __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
@@ -1543,7 +1594,9 @@ class ExadbVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="gridImageId")
     def grid_image_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Grid Setup will be done using this grid image id
+        (Updatable) Grid Setup will be done using this grid image id.
+
+        The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name> 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
         """
         return pulumi.get(self, "grid_image_id")
 
@@ -1679,6 +1732,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @property
     @pulumi.getter

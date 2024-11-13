@@ -40,6 +40,7 @@ class CloudAutonomousVmClusterArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None):
         """
@@ -66,6 +67,7 @@ class CloudAutonomousVmClusterArgs:
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
                
@@ -106,6 +108,8 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_container_databases is not None:
@@ -343,6 +347,18 @@ class CloudAutonomousVmClusterArgs:
         pulumi.set(self, "scan_listener_port_tls", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
@@ -420,10 +436,13 @@ class _CloudAutonomousVmClusterState:
                  reserved_cpus: Optional[pulumi.Input[float]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
+                 time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -482,10 +501,13 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[str] time_created: The date and time that the cloud Autonomous VM cluster was created.
+        :param pulumi.Input[str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param pulumi.Input[str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[float] total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous Databases, in TBs.
         :param pulumi.Input[int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
@@ -588,6 +610,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -596,6 +620,10 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_database_ssl_certificate_expires is not None:
+            pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
+        if time_ords_certificate_expires is not None:
+            pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_autonomous_data_storage_in_tbs is not None:
@@ -1175,6 +1203,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "scan_listener_port_tls", value)
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1221,6 +1261,30 @@ class _CloudAutonomousVmClusterState:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @time_database_ssl_certificate_expires.setter
+    def time_database_ssl_certificate_expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_database_ssl_certificate_expires", value)
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
+
+    @time_ords_certificate_expires.setter
+    def time_ords_certificate_expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_ords_certificate_expires", value)
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -1297,6 +1361,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1350,6 +1415,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
             scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
+            security_attributes=cloud_autonomous_vm_cluster_security_attributes,
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
 
@@ -1384,6 +1450,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
@@ -1446,6 +1513,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
             scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
+            security_attributes=cloud_autonomous_vm_cluster_security_attributes,
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
 
@@ -1490,6 +1558,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1526,6 +1595,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
             __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -1563,6 +1633,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_database_ssl_certificate_expires"] = None
+            __props__.__dict__["time_ords_certificate_expires"] = None
             __props__.__dict__["total_autonomous_data_storage_in_tbs"] = None
             __props__.__dict__["total_cpus"] = None
         super(CloudAutonomousVmCluster, __self__).__init__(
@@ -1622,10 +1694,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             reserved_cpus: Optional[pulumi.Input[float]] = None,
             scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
             scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
+            time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
             total_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1689,10 +1764,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[str] time_created: The date and time that the cloud Autonomous VM cluster was created.
+        :param pulumi.Input[str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
+        :param pulumi.Input[str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[float] total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous Databases, in TBs.
         :param pulumi.Input[int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
@@ -1752,10 +1830,13 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["reserved_cpus"] = reserved_cpus
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
+        __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["total_autonomous_data_storage_in_tbs"] = total_autonomous_data_storage_in_tbs
         __props__.__dict__["total_container_databases"] = total_container_databases
@@ -2144,6 +2225,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "scan_listener_port_tls")
 
     @property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
@@ -2174,6 +2263,22 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         The date and time that the cloud Autonomous VM cluster was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeDatabaseSslCertificateExpires")
+    def time_database_ssl_certificate_expires(self) -> pulumi.Output[str]:
+        """
+        The date and time of Database SSL certificate expiration.
+        """
+        return pulumi.get(self, "time_database_ssl_certificate_expires")
+
+    @property
+    @pulumi.getter(name="timeOrdsCertificateExpires")
+    def time_ords_certificate_expires(self) -> pulumi.Output[str]:
+        """
+        The date and time of ORDS certificate expiration.
+        """
+        return pulumi.get(self, "time_ords_certificate_expires")
 
     @property
     @pulumi.getter(name="timeUpdated")

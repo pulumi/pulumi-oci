@@ -206,7 +206,7 @@ def get_domains_rules(attribute_sets: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Rules
+    Search Rules.
 
     ## Example Usage
 
@@ -281,7 +281,7 @@ def get_domains_rules_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     """
     This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
 
-    Search Rules
+    Search Rules.
 
     ## Example Usage
 

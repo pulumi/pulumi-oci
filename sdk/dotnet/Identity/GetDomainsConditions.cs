@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Conditions
+        /// Search conditions.
         /// 
         /// ## Example Usage
         /// 
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
         /// 
-        /// Search Conditions
+        /// Search conditions.
         /// 
         /// ## Example Usage
         /// 

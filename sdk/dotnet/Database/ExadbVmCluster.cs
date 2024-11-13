@@ -98,7 +98,9 @@ namespace Pulumi.Oci.Database
         public Output<string> GiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Grid Setup will be done using this grid image id
+        /// (Updatable) Grid Setup will be done using this grid image id.
+        /// 
+        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Output("gridImageId")]
         public Output<string> GridImageId { get; private set; } = null!;
@@ -203,6 +205,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("scanListenerPortTcpSsl")]
         public Output<int> ScanListenerPortTcpSsl { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the Exadata VM cluster on Exascale Infrastructure resource
@@ -399,7 +407,9 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) Grid Setup will be done using this grid image id
+        /// (Updatable) Grid Setup will be done using this grid image id.
+        /// 
+        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Input("gridImageId", required: true)]
         public Input<string> GridImageId { get; set; } = null!;
@@ -468,6 +478,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("scanListenerPortTcpSsl")]
         public Input<int>? ScanListenerPortTcpSsl { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The shape of the Exadata VM cluster on Exascale Infrastructure resource
@@ -608,7 +630,9 @@ namespace Pulumi.Oci.Database
         public Input<string>? GiVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Grid Setup will be done using this grid image id
+        /// (Updatable) Grid Setup will be done using this grid image id.
+        /// 
+        /// The grid image id can be extracted from 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=&lt;compartmentId&gt;&amp;shape=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt; 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using  API /20160918/giVersions/{version}/minorVersions?compartmentId=&lt;compartmentId&gt;&amp;shapeFamily=EXADB_XS&amp;availabilityDomain=&lt;AD name&gt;
         /// </summary>
         [Input("gridImageId")]
         public Input<string>? GridImageId { get; set; }
@@ -737,6 +761,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("scanListenerPortTcpSsl")]
         public Input<int>? ScanListenerPortTcpSsl { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The shape of the Exadata VM cluster on Exascale Infrastructure resource

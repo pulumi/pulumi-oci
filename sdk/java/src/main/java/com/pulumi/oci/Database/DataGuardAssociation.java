@@ -77,6 +77,7 @@ import javax.annotation.Nullable;
  *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
  *             .dbSystemDefinedTags(dataGuardAssociationDbSystemDefinedTags)
  *             .dbSystemFreeformTags(dataGuardAssociationDbSystemFreeformTags)
+ *             .dbSystemSecurityAttributes(dataGuardAssociationDbSystemSecurityAttributes)
  *             .displayName(dataGuardAssociationDisplayName)
  *             .domain(dataGuardAssociationDomain)
  *             .faultDomains(dataGuardAssociationFaultDomains)
@@ -327,6 +328,20 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Map<String,String>>> dbSystemFreeformTags() {
         return Codegen.optional(this.dbSystemFreeformTags);
+    }
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="dbSystemSecurityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> dbSystemSecurityAttributes;
+
+    /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Optional<Map<String,String>>> dbSystemSecurityAttributes() {
+        return Codegen.optional(this.dbSystemSecurityAttributes);
     }
     @Export(name="deleteStandbyDbHomeOnDelete", refs={String.class}, tree="[0]")
     private Output<String> deleteStandbyDbHomeOnDelete;

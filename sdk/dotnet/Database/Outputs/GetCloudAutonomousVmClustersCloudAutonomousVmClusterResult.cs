@@ -206,6 +206,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int ScanListenerPortTls;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
         public readonly string Shape;
@@ -221,6 +225,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time of Database SSL certificate expiration.
+        /// </summary>
+        public readonly string TimeDatabaseSslCertificateExpires;
+        /// <summary>
+        /// The date and time of ORDS certificate expiration.
+        /// </summary>
+        public readonly string TimeOrdsCertificateExpires;
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
         /// </summary>
@@ -336,6 +348,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int scanListenerPortTls,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             string state,
@@ -343,6 +357,10 @@ namespace Pulumi.Oci.Database.Outputs
             string subnetId,
 
             string timeCreated,
+
+            string timeDatabaseSslCertificateExpires,
+
+            string timeOrdsCertificateExpires,
 
             string timeUpdated,
 
@@ -400,10 +418,13 @@ namespace Pulumi.Oci.Database.Outputs
             ReservedCpus = reservedCpus;
             ScanListenerPortNonTls = scanListenerPortNonTls;
             ScanListenerPortTls = scanListenerPortTls;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
+            TimeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            TimeOrdsCertificateExpires = timeOrdsCertificateExpires;
             TimeUpdated = timeUpdated;
             TotalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             TotalContainerDatabases = totalContainerDatabases;

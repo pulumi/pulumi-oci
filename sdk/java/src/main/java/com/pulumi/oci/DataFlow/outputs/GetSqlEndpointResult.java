@@ -77,11 +77,6 @@ public final class GetSqlEndpointResult {
      */
     private String lakeId;
     /**
-     * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-     * 
-     */
-    private String lastAcceptedRequestToken;
-    /**
      * @return The maximum number of executors.
      * 
      */
@@ -229,13 +224,6 @@ public final class GetSqlEndpointResult {
         return this.lakeId;
     }
     /**
-     * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-     * 
-     */
-    public String lastAcceptedRequestToken() {
-        return this.lastAcceptedRequestToken;
-    }
-    /**
      * @return The maximum number of executors.
      * 
      */
@@ -344,7 +332,6 @@ public final class GetSqlEndpointResult {
         private String id;
         private String jdbcEndpointUrl;
         private String lakeId;
-        private String lastAcceptedRequestToken;
         private Integer maxExecutorCount;
         private String metastoreId;
         private Integer minExecutorCount;
@@ -373,7 +360,6 @@ public final class GetSqlEndpointResult {
     	      this.id = defaults.id;
     	      this.jdbcEndpointUrl = defaults.jdbcEndpointUrl;
     	      this.lakeId = defaults.lakeId;
-    	      this.lastAcceptedRequestToken = defaults.lastAcceptedRequestToken;
     	      this.maxExecutorCount = defaults.maxExecutorCount;
     	      this.metastoreId = defaults.metastoreId;
     	      this.minExecutorCount = defaults.minExecutorCount;
@@ -489,14 +475,6 @@ public final class GetSqlEndpointResult {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "lakeId");
             }
             this.lakeId = lakeId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
-            if (lastAcceptedRequestToken == null) {
-              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "lastAcceptedRequestToken");
-            }
-            this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             return this;
         }
         @CustomType.Setter
@@ -620,7 +598,6 @@ public final class GetSqlEndpointResult {
             _resultValue.id = id;
             _resultValue.jdbcEndpointUrl = jdbcEndpointUrl;
             _resultValue.lakeId = lakeId;
-            _resultValue.lastAcceptedRequestToken = lastAcceptedRequestToken;
             _resultValue.maxExecutorCount = maxExecutorCount;
             _resultValue.metastoreId = metastoreId;
             _resultValue.minExecutorCount = minExecutorCount;

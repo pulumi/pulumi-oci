@@ -50,7 +50,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) PolicyType identifier
+     * (Updatable) PolicyType identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -67,7 +67,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     private Output<String> value;
 
     /**
-     * @return (Updatable) PolicyType identifier
+     * @return (Updatable) PolicyType identifier.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -149,7 +149,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) PolicyType identifier
+         * @param value (Updatable) PolicyType identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -170,7 +170,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) PolicyType identifier
+         * @param value (Updatable) PolicyType identifier.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
